@@ -92,7 +92,38 @@ Ao interagir com este código, a IA deve seguir estas diretrizes:
 
 ---
 
-## 8. Resumo Técnico
+## 8. Lista de Páginas (Módulos)
+
+Atualmente, o projeto conta com as seguintes páginas estruturadas:
+
+- **Acessibilidade**: `/pages/acessibilidade`
+- **Conheça Campina**: `/pages/conheca-campina`
+- **Conselho**: `/pages/conselho`
+- **e-SIC**: `/pages/e-sic`
+- **e-SIC Estatísticas**: `/pages/e-sic-estatisticas`
+- **e-SIC Registrar Pedido**: `/pages/e-sic-registrar-pedido`
+- **Escolas e CMEIs**: `/pages/escola-cmeis`
+- **Formulários**: `/pages/formularios`
+- **Gestão**: `/pages/gestao`
+- **Glossário**: `/pages/glossario`
+- **Home**: `/pages/home`
+- **Mapa do Site**: `/pages/mapa-site`
+- **Notícias**: `/pages/noticias`
+- **Ouvidoria**: `/pages/ouvidoria`
+- **Perguntas Frequentes**: `/pages/perguntas-frequentes`
+- **Política de Privacidade**: `/pages/politica-privacidade`
+- **Portal de Serviços**: `/pages/portal-servicos`
+- **Prefeito**: `/pages/prefeito`
+- **Secretarias**: `/pages/secretarias`
+- **Secretários Municipais**: `/pages/secretarios-municipais`
+- **Serviço**: `/pages/servico`
+- **Transparência**: `/pages/transparencia`
+- **Unidade de Saúde**: `/pages/unidade-saude`
+- **Vice-Prefeito**: `/pages/vice-prefeito`
+
+---
+
+## 9. Resumo Técnico
 
 - **Arquitetura:** Front-end Modular baseado em Web Components e Fragmentos de Conteúdo.
 - **Padrão de Assets:** Globalização em `/_global/` para redução de redundância.
