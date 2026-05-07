@@ -6,7 +6,7 @@ class MeuFooter extends HTMLElement {
         <div class="container">
           <div class="row">
 
-            <!-- ===== COLUNA 1: LOGO + DESCRI��O + SOBRE CAMPINA ===== -->
+            <!-- ===== COLUNA 1: LOGO + DESCRIÇÃO + SOBRE CAMPINA ===== -->
             <div class="col-md-3 col-sm-6 mb-4">
               <div class="d-flex align-items-center mb-3">
                 <a href="${base}pages/home/index.html" class="logo-wrapper" aria-label="Página inicial">
@@ -18,30 +18,30 @@ class MeuFooter extends HTMLElement {
               </div>
 
               <p class="footer-institutional-text" style="font-size:0.75rem;">
-                Munic�pio do estado do Paran�, na Regi�o Metropolitana de Curitiba.
+                Município do estado do Paraná, na Região Metropolitana de Curitiba.
               </p>
 
-              <nav aria-label="Sobre o Munic�pio" class="mt-3">
+              <nav aria-label="Sobre o Município" class="mt-3">
                 <h6>SOBRE CAMPINA</h6>
                 <ul>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">Hist�ria do Munic�pio</a></li>
+                  <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História do Município</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados Municipais</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/mapa-turismo">Mapa do Turismo</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conhe�a Campina</a></li>
+                  <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina</a></li>
                 </ul>
               </nav>
             </div>
 
-            <!-- ===== COLUNA 2: SERVI�OS + PREFEITURA ===== -->
+            <!-- ===== COLUNA 2: SERVIÇOS + PREFEITURA ===== -->
             <div class="col-md-3 col-sm-6 mb-4">
 
-              <nav aria-label="Servi�os Municipais">
-                <h6>SERVI�OS</h6>
+              <nav aria-label="Serviços Municipais">
+                <h6>SERVIÇOS</h6>
                 <ul>
-                  <li><a href="${base}pages/servico/index.html">Consulta de D�bitos</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Servi�os</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licita��es</a></li>
-                  <li><a href="${base}pages/portal-servicos/index.html">Todos os Servi�os</a></li>
+                  <li><a href="${base}pages/servico/index.html">Consulta de Débitos</a></li>
+                  <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
+                  <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
+                  <li><a href="${base}pages/portal-servicos/index.html">Todos os Serviços</a></li>
                 </ul>
               </nav>
 
@@ -49,22 +49,22 @@ class MeuFooter extends HTMLElement {
                 <h6>PREFEITURA</h6>
                 <ul>
                   <li><a href="${base}pages/prefeito/index.html">Prefeito</a></li>
-                  <li><a href="${base}pages/secretarios-municipais/index.html">Secret�rios</a></li>
+                  <li><a href="${base}pages/secretarios-municipais/index.html">Secretários</a></li>
                   <li><a href="${base}pages/ouvidoria/index.html">Ouvidoria</a></li>
                 </ul>
               </nav>
 
             </div>
 
-            <!-- ===== COLUNA 3: TRANSPAR�NCIA + OUTRAS ENTIDADES ===== -->
+            <!-- ===== COLUNA 3: TRANSPARÊNCIA + OUTRAS ENTIDADES ===== -->
             <div class="col-md-3 col-sm-6 mb-4">
 
-              <nav aria-label="Transpar�ncia">
-                <h6>TRANSPAR�NCIA</h6>
+              <nav aria-label="Transparência">
+                <h6>TRANSPARÊNCIA</h6>
                 <ul>
-                  <li><a href="${base}pages/transparencia/index.html">Portal da Transpar�ncia</a></li>
-                  <li><a href="${base}pages/e-sic/index.html">Acesso � Informa��o</a></li>
-                  <li><a href="${base}pages/politica-privacidade/index.html">Pol�tica de Privacidade</a></li>
+                  <li><a href="${base}pages/transparencia/index.html">Portal da Transparência</a></li>
+                  <li><a href="${base}pages/e-sic/index.html">Acesso à Informação</a></li>
+                  <li><a href="${base}pages/politica-privacidade/index.html">Política de Privacidade</a></li>
                   <li><a href="${base}pages/mapa-site/index.html">Mapa do Site</a></li>
                 </ul>
               </nav>
@@ -75,7 +75,7 @@ class MeuFooter extends HTMLElement {
                   <li><a href="https://campinagrandedosul.pr.gov.br/previcamp" target="_blank" rel="noopener noreferrer">PREVICAMP</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/fascamp" target="_blank" rel="noopener noreferrer">FASCAMP</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/assercamp" target="_blank" rel="noopener noreferrer">ASSERCAMP</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/camara-municipal" target="_blank" rel="noopener noreferrer">C�mara Municipal</a></li>
+                  <li><a href="https://campinagrandedosul.pr.gov.br/camara-municipal" target="_blank" rel="noopener noreferrer">Câmara Municipal</a></li>
                 </ul>
               </nav>
 
@@ -85,12 +85,12 @@ class MeuFooter extends HTMLElement {
             <div class="col-md-3 col-sm-6 mb-4">
 
               <h6>CONTATO</h6>
-              <address class="footer-contact" aria-label="Informa��es de contato da Prefeitura" style="font-style:normal;">
+              <address class="footer-contact" aria-label="Informações de contato da Prefeitura" style="font-style:normal;">
 
                 <p>
                   <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                  Pra�a Bento Munhoz, 30 � Centro<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campina Grande do Sul � PR
+                  Praça Bento Munhoz, 30 – Centro<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campina Grande do Sul – PR
                 </p>
 
                 <p>
@@ -105,7 +105,7 @@ class MeuFooter extends HTMLElement {
 
                 <p>
                   <i class="fas fa-clock" aria-hidden="true"></i>
-                  <strong>Seg. a Sex.</strong> � 8h30�12h / 13h30�17h30
+                  <strong>Seg. a Sex.</strong> – 8h30–12h / 13h30–17h30
                 </p>
 
               </address>
@@ -143,9 +143,9 @@ class MeuFooter extends HTMLElement {
 
           <!-- ===== FOOTER BOTTOM ===== -->
           <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,.12); margin-top: 28px; padding-top: 16px; font-size: 0.6875rem; color: rgba(255,255,255,.35); text-align: center;">
-            &copy; 2026 Prefeitura Municipal de Campina Grande do Sul � PR &nbsp;|&nbsp;
-            Pra�a Bento Munhoz da Rocha Neto, 30 � Centro � CEP 83.435-001 &nbsp;|&nbsp;
-            Mantido pela STI � Secretaria de Tecnologia da Informa��o
+            &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
+            Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
+            Mantido pela STI – Secretaria de Tecnologia da Informação
           </div>
 
         </div>

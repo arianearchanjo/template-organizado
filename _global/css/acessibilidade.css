@@ -402,10 +402,10 @@
 }
 
 .pi-search-input:focus {
-  box-shadow: none;
-  border-color: var(--pi-verde);
-  background: #fff;
-  outline: none;
+  box-shadow: none !important;
+  border-color: var(--pi-verde) !important;
+  background: #fff !important;
+  outline: none !important;
 }
 
 .pi-search-btn {

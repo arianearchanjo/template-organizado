@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias - Prefeitura de Campina Grande do Sul</title>
+  
+  <script>
+    function getBasePath() { return "../../"; }
+    const base = getBasePath();
+  </script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="css/noticias.css">
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    
+    <!-- CONTEUDO INTEGRADO (TEMPLATE VISUAL) -->
+    <!-- HERO -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li><a href="../../pages/home/index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+              <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+              <li aria-current="page">Notícias</li>
+            </ol>
+          </nav>
+          <h1 class="pi-hero-titulo">Notícias</h1>
+        </div>
+      </div>
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="pi-main">
+      <div class="container">
+        <div class="not-layout">
+          
+          <!-- COLUNA DE NOTÍCIAS -->
+          <div class="not-content">
+            
+            <!-- FILTROS E BUSCA -->
+            <section class="not-filtros-container" aria-label="Filtros e busca de notícias">
+              <div class="not-search-wrapper">
+                <form id="not-search-form" class="not-search-input-group">
+                  <input type="text" id="not-search-input" class="not-search-input" placeholder="O que você deseja ler?" aria-label="Buscar nas notícias">
+                  <button type="submit" class="not-search-btn" aria-label="Pesquisar">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              
+              <nav class="not-cats-wrapper" aria-label="Filtrar por categoria">
+                <div class="not-cats-scroll" id="not-cats-scroll">
+                  <!-- Categorias injetadas via JS (Apenas visual) -->
+                </div>
+              </nav>
+            </section>
+
+            <!-- GRID DE NOTÍCIAS (EXEMPLOS ESTÁTICOS) -->
+            <div id="not-grid" class="not-grid">
+              <article class="not-card" role="article">
+                <a href="#" class="not-card-link">
+                  <div class="not-card-thumb" style="background-color: #c62828">
+                    <span class="not-card-badge">Saúde</span>
+                    <i class="fas fa-hospital"></i>
+                  </div>
+                  <div class="not-card-body">
+                    <div class="not-card-data">
+                      <i class="far fa-calendar-alt"></i> 04 de maio de 2026
+                    </div>
+                    <h3 class="not-card-titulo">Prefeitura inaugura novo Centro de Saúde na Sede com infraestrutura moderna</h3>
+                    <p class="not-card-resumo">O novo espaço conta com consultórios odontológicos, salas de vacina e atendimento especializado para a população da região central.</p>
+                    <div class="not-card-footer">
+                      <span class="not-btn-ler">Ler mais <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article class="not-card" role="article">
+                <a href="#" class="not-card-link">
+                  <div class="not-card-thumb" style="background-color: #4e342e">
+                    <span class="not-card-badge">Obras</span>
+                    <i class="fas fa-road"></i>
+                  </div>
+                  <div class="not-card-body">
+                    <div class="not-card-data">
+                      <i class="far fa-calendar-alt"></i> 02 de maio de 2026
+                    </div>
+                    <h3 class="not-card-titulo">Obras de pavimentação avançam no bairro Jardim Paulista e melhoram mobilidade</h3>
+                    <p class="not-card-resumo">As intervenções fazem parte do plano municipal de infraestrutura, que visa pavimentar 100% das vias urbanas.</p>
+                    <div class="not-card-footer">
+                      <span class="not-btn-ler">Ler mais <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article class="not-card" role="article">
+                <a href="#" class="not-card-link">
+                  <div class="not-card-thumb" style="background-color: #1565c0">
+                    <span class="not-card-badge">Educação</span>
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="not-card-body">
+                    <div class="not-card-data"><i class="far fa-calendar-alt"></i> 28 de abril de 2026</div>
+                    <h3 class="not-card-titulo">Educação municipal recebe prêmio de excelência</h3>
+                    <p class="not-card-resumo">Iniciativas inovadoras nas escolas elevam índices do IDEB no município.</p>
+                    <div class="not-card-footer">
+                      <span class="not-btn-ler">Ler mais <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article class="not-card" role="article">
+                <a href="#" class="not-card-link">
+                  <div class="not-card-thumb" style="background-color: #6a1b9a">
+                    <span class="not-card-badge">Cultura</span>
+                    <i class="fas fa-masks-theater"></i>
+                  </div>
+                  <div class="not-card-body">
+                    <div class="not-card-data"><i class="far fa-calendar-alt"></i> 25 de abril de 2026</div>
+                    <h3 class="not-card-titulo">Festival Cultural de Inverno terá atrações regionais</h3>
+                    <p class="not-card-resumo">Evento tradicional promete movimentar a economia e oferecer lazer gratuito.</p>
+                    <div class="not-card-footer">
+                      <span class="not-btn-ler">Ler mais <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <!-- PAGINAÇÃO -->
+            <nav class="not-paginacao" id="not-paginacao" aria-label="Paginação de notícias">
+              <!-- Paginação injetada via JS (Visual) -->
+            </nav>
+
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="not-sidebar" aria-label="Menu lateral de notícias">
+            <section class="not-sidebar-widget">
+              <h4 class="not-widget-titulo"><i class="fas fa-tags"></i> Categorias</h4>
+              <ul class="not-sidebar-list" id="not-sidebar-cats">
+                <li><a href="#" class="not-cat-link"><span>Saúde</span></a></li>
+                <li><a href="#" class="not-cat-link"><span>Educação</span></a></li>
+                <li><a href="#" class="not-cat-link"><span>Obras</span></a></li>
+              </ul>
+            </section>
+            <section class="not-sidebar-widget">
+              <h4 class="not-widget-titulo"><i class="fas fa-clock"></i> Mais Recentes</h4>
+              <div id="not-sidebar-recentes">
+                <a href="#" class="not-recente-item">
+                  <div class="not-recente-thumb"><i class="fas fa-hospital"></i></div>
+                  <div class="not-recente-info">
+                    <h5 class="not-recente-titulo">Novo Centro de Saúde na Sede</h5>
+                    <span class="not-recente-data">04 de maio de 2026</span>
+                  </div>
+                </a>
+              </div>
+            </section>
+            <section class="not-sidebar-widget">
+              <h4 class="not-widget-titulo"><i class="fas fa-share-nodes"></i> Redes Sociais</h4>
+              <div class="not-social-grid">
+                <a href="#" class="not-social-btn fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                <a href="#" class="not-social-btn ig"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                <a href="#" class="not-social-btn yt"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/noticias.js"></script>
+</body>
+</html>

@@ -42,14 +42,14 @@ html {
    :focus-visible dispara apenas quando o foco vem do teclado (Tab / setas).
    Clique de mouse não aciona esta regra — nenhuma borda aparece no clique.   */
 :focus-visible {
-  outline: 3px solid var(--amarelo) !important;
-  outline-offset: 2px !important;
-  box-shadow: none !important;
+  outline: 3px solid var(--amarelo);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 :focus:not(:focus-visible) {
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
 * {
