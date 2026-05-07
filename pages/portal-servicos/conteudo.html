@@ -1,0 +1,154 @@
+<!-- /ACESSIBILIDADE -->
+
+
+  <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li>
+              <a href="#">Portais</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li aria-current="page">Portal de Serviços</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Portal de Serviços</h1>
+        <p class="pi-hero-subtitulo">Encontre e acesse os serviços do município de forma rápida e fácil</p>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="ps-main" tabindex="-1">
+    <div class="container">
+
+      <!-- Barra de pesquisa -->
+      <div id="ps-conteudo" class="ps-busca-wrapper" role="search" aria-label="Pesquisar serviços">
+        <label for="ps-busca" class="sr-only">Pesquisar serviço</label>
+        <div class="ps-busca-grupo">
+          <i class="fas fa-search ps-busca-icone" aria-hidden="true"></i>
+          <input
+            id="ps-busca"
+            type="search"
+            class="ps-busca-input"
+            placeholder="Pesquisar serviço…"
+            autocomplete="off"
+            aria-label="Pesquisar serviço"
+          >
+          <button id="ps-btn-limpar" type="button" class="ps-busca-btn" aria-label="Limpar pesquisa" style="display:none;">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /Barra de pesquisa -->
+
+
+      <!-- Layout: filtros + lista -->
+      <div class="ps-layout">
+
+        <!-- FILTROS -->
+        <aside class="ps-filtros" aria-label="Filtros de serviços">
+
+          <!-- Contador de resultados -->
+          <div id="ps-contador" class="ps-contador" aria-live="polite" aria-atomic="true">
+            <span id="ps-num-resultados">0</span> serviço(s) encontrado(s)
+          </div>
+
+          <!-- Filtro: Destinado para -->
+          <div id="ps-filtro-publico" class="ps-filtro-grupo">
+            <h2 class="ps-filtro-titulo">
+              <i class="fas fa-users" aria-hidden="true"></i> Destinado para
+            </h2>
+            <div class="ps-filtro-opcoes" role="group" aria-label="Filtrar por público">
+              <button class="ps-filtro-btn ativo" data-filtro="publico" data-valor="todos" aria-pressed="true">
+                <i class="fas fa-globe" aria-hidden="true"></i> Todos
+              </button>
+              <button class="ps-filtro-btn" data-filtro="publico" data-valor="cidadao" aria-pressed="false">
+                <i class="fas fa-user" aria-hidden="true"></i> Cidadão
+              </button>
+              <button class="ps-filtro-btn" data-filtro="publico" data-valor="empresa" aria-pressed="false">
+                <i class="fas fa-building" aria-hidden="true"></i> Empresa
+              </button>
+              <button class="ps-filtro-btn" data-filtro="publico" data-valor="servidor" aria-pressed="false">
+                <i class="fas fa-id-badge" aria-hidden="true"></i> Servidor
+              </button>
+            </div>
+          </div>
+
+          <!-- Filtro: Forma de atendimento -->
+          <div id="ps-filtro-atendimento" class="ps-filtro-grupo">
+            <h2 class="ps-filtro-titulo">
+              <i class="fas fa-laptop" aria-hidden="true"></i> Forma de atendimento
+            </h2>
+            <div class="ps-filtro-opcoes" role="group" aria-label="Filtrar por forma de atendimento">
+              <button class="ps-filtro-btn ativo" data-filtro="atendimento" data-valor="todos" aria-pressed="true">
+                <i class="fas fa-globe" aria-hidden="true"></i> Todos
+              </button>
+              <button class="ps-filtro-btn" data-filtro="atendimento" data-valor="online" aria-pressed="false">
+                <i class="fas fa-wifi" aria-hidden="true"></i> Online
+              </button>
+              <button class="ps-filtro-btn" data-filtro="atendimento" data-valor="presencial" aria-pressed="false">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Presencial
+              </button>
+              <button class="ps-filtro-btn" data-filtro="atendimento" data-valor="hibrido" aria-pressed="false">
+                <i class="fas fa-exchange-alt" aria-hidden="true"></i> Híbrido
+              </button>
+            </div>
+          </div>
+
+          <button id="ps-btn-limpar-filtros" type="button" class="ps-btn-limpar-filtros">
+            <i class="fas fa-undo" aria-hidden="true"></i> Limpar filtros
+          </button>
+
+        </aside>
+        <!-- /FILTROS -->
+
+
+        <!-- LISTA DE SERVIÇOS -->
+        <section class="ps-lista-wrapper" aria-label="Lista de serviços">
+
+          <!-- Mensagem: nenhum resultado -->
+          <div id="ps-sem-resultado" class="ps-sem-resultado" role="status" aria-live="polite" style="display:none;">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <p>Nenhum serviço encontrado para os filtros selecionados.</p>
+            <button id="ps-btn-limpar-filtros-vazio" type="button" class="ps-btn-limpar-filtros">
+              <i class="fas fa-undo" aria-hidden="true"></i> Limpar filtros
+            </button>
+          </div>
+
+          <!-- Cards de serviços (renderizados via JS) -->
+          <div id="ps-lista" class="ps-lista" role="list" aria-label="Serviços disponíveis"></div>
+
+        </section>
+        <!-- /LISTA DE SERVIÇOS -->
+
+      </div>
+      <!-- /Layout: filtros + lista -->
+
+    </div>
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
+

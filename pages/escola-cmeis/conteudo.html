@@ -1,0 +1,367 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Breadcrumb e título da escola
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da escola">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="escolas-creches-municipais.html">Escolas e Creches Municipais</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Escola Municipal José Eurípedes Gonçalves</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Escola Municipal José Eurípedes Gonçalves</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" tabindex="-1">
+
+        <!-- Navegação por abas — alternância gerenciada pelo escola.js -->
+        <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da escola">
+          <li role="presentation">
+            <button class="sec-tab-btn ativo" role="tab"
+                    id="tab-info" aria-controls="painel-info" aria-selected="true">
+              Informações
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="sec-tab-btn" role="tab"
+                    id="tab-sobre" aria-controls="painel-sobre" aria-selected="false">
+              Sobre a Escola
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="sec-tab-btn" role="tab"
+                    id="tab-links" aria-controls="painel-links" aria-selected="false">
+              Links Úteis
+            </button>
+          </li>
+        </ul>
+
+        <!-- ════════════════════════════════════════════════════════
+             ABA 1 — INFORMAÇÕES
+             Endereço, telefone, e-mail, horário e diretor(a).
+        ════════════════════════════════════════════════════════════ -->
+        <div class="sec-tab-painel ativo" id="painel-info" role="tabpanel" aria-labelledby="tab-info">
+
+          <div class="es-info-bloco">
+            <ul class="es-info-lista">
+
+              <li class="es-info-item">
+                <div class="es-info-icone" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="es-info-texto">
+                  <span class="es-info-label">Endereço</span>
+                  <span class="es-info-valor">
+                    <a href="https://maps.google.com/?q=Rua+Coronel+Monteiro,+443,+Centro,+Campina+Grande+do+Sul"
+                       target="_blank" rel="noopener"
+                       aria-label="Ver no mapa: Rua Coronel Monteiro, 443 – Centro (abre em nova aba)">
+                      Rua Coronel Monteiro, 443 – Centro
+                      <i class="fas fa-external-link-alt" style="font-size:.65rem; margin-left:4px;" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </div>
+              </li>
+
+              <li class="es-info-item">
+                <div class="es-info-icone" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
+                <div class="es-info-texto">
+                  <span class="es-info-label">Telefone</span>
+                  <span class="es-info-valor">
+                    <a href="tel:+554131627109" aria-label="Ligar para a escola: (41) 3162-7109">
+                      (41) 3162-7109
+                    </a>
+                  </span>
+                </div>
+              </li>
+
+              <li class="es-info-item">
+                <div class="es-info-icone" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                <div class="es-info-texto">
+                  <span class="es-info-label">E-mail</span>
+                  <span class="es-info-valor">
+                    <a href="mailto:escolajoseeg@pmcgs.pr.gov.br">escolajoseeg@pmcgs.pr.gov.br</a>
+                  </span>
+                </div>
+              </li>
+
+              <li class="es-info-item">
+                <div class="es-info-icone" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                <div class="es-info-texto">
+                  <span class="es-info-label">Horário de Atendimento</span>
+                  <span class="es-info-valor">
+                    Segunda a sexta-feira, das 07h50 às 11h50 e das 13h15 às 17h15
+                  </span>
+                </div>
+              </li>
+
+            </ul>
+
+            <!-- Diretor(a) da escola -->
+            <div class="es-diretor-bloco">
+              <img class="es-diretor-foto"
+                   src="../../assets/img/escola-cmeis/rosane-mira-rocha.gif"
+                   alt="Foto de Rosane Aparecida de Mira Rocha">
+              <div class="es-diretor-info">
+                <span class="es-diretor-label">Diretor(a)</span>
+                <span class="es-diretor-nome">Rosane Aparecida de Mira Rocha</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ══ /ABA INFORMAÇÕES ══ -->
+
+        <!-- ════════════════════════════════════════════════════════
+             ABA 2 — SOBRE A ESCOLA
+             Seções: Histórico, Breve Biografia, Estrutura, Fotos.
+        ════════════════════════════════════════════════════════════ -->
+        <div class="sec-tab-painel" id="painel-sobre" role="tabpanel" aria-labelledby="tab-sobre">
+
+          <!-- Histórico -->
+          <div class="es-sobre-secao">
+            <h2 class="es-sobre-titulo">Histórico</h2>
+            <div class="es-sobre-texto">
+              <p>
+                Moradores antigos contavam que desde os anos de 1873 já existiam casas particulares onde
+                ensinavam as crianças da comunidade eclesiástica da época. Em 18/04/1873, este local
+                denominou-se Freguesia de São João Batista em louvor ao santo padroeiro do local. No ano de
+                1902 foi construído pelo Governo do Estado o primeiro prédio de madeira com somente duas
+                salas de aula, destinado ao Ensino Primário, em terreno doado à Freguesia de São João Batista,
+                padroeiro da Paróquia, pelos cidadãos Francisco Garcia de Lima e Antônio Ribeiro dos Santos,
+                onde hoje existe a Câmara Municipal.
+              </p>
+              <p>
+                O Grupo Escolar estava sob a jurisdição da 2ª Inspetoria Regional de Estado denominado Escola
+                Normal Regional que oferecia Ensino equivalente ao Ginásio. Pelo Decreto nº 10.468/68 de
+                03/06/68, o Grupo Escolar de Campina Grande do Sul passou a chamar-se Grupo Escolar
+                "Francisco Braga" em homenagem ao grande compositor e professor da Escola Estadual de
+                Música e também compositor do Hino da Bandeira e Proclamação da República.
+              </p>
+              <p>
+                Em 1986, criou-se o segundo grau e o espaço novamente ficou pequeno. Através do Decreto
+                Municipal nº 003/91 de 07/02/91 foi criada a Resolução nº 1.043/91 de 14/03/91, ocasião em
+                que a escola passou por um processo de municipalização do ensino de 1ª a 4ª, criando a Escola
+                Municipal José Eurípedes Gonçalves – Ensino de 1º Grau, em homenagem ao primeiro Prefeito
+                Municipal eleito deste município.
+              </p>
+              <p>
+                Em 1998, houve reconstrução e ampliação de duas salas de aula, reformas e pintura nova,
+                sendo reinaugurada no dia 15/06/1999 pelo Prefeito Municipal Senhor Elerian do Rocio Zanetti.
+              </p>
+              <p>
+                No ano de 2011, o estabelecimento recebeu transformações significativas na estrutura da
+                escola, na reorganização dos espaços, ampliação e reforma, contando com 13 salas de aula,
+                biblioteca, laboratório de informática, sala multifuncional, sala de professores, direção,
+                orientação e supervisão, secretaria, sala de apoio para a equipe de serviços gerais,
+                parquinho, cozinha e despensas para merenda e para material de limpeza, depósito de
+                Educação Física e almoxarifado e banheiros para funcionários e para alunos.
+              </p>
+              <p>
+                O perfil socioeconômico e cultural da comunidade escolar varia de acordo com a renda
+                familiar, e os alunos procedem não só da região urbana, como dos bairros adjacentes e
+                inclusive da zona rural.
+              </p>
+              <p>
+                O Estabelecimento oferece atividade educacional à clientela de Educação Infantil, Ensino
+                Fundamental, Educação de Jovens e Adultos e Educação Especial – AEE.
+              </p>
+              <p>
+                O projeto político da escola assegura a flexibilização dos tempos e espaços escolares na
+                lógica da diversidade, pluralidade, autonomia, criatividade com vistas a uma aprendizagem
+                em todas as dimensões do currículo.
+              </p>
+            </div>
+          </div>
+
+          <hr class="es-divider">
+
+          <!-- Breve Biografia do patrono -->
+          <div class="es-sobre-secao">
+            <h2 class="es-sobre-titulo">Breve Biografia</h2>
+            <div class="es-sobre-texto">
+              <p>
+                Nasceu na Palmeira-PR em 16 de abril de 1864 e faleceu em 1948. Filho de Francisco José
+                Gonçalves e Constança Rebelo Gonçalves.
+              </p>
+              <p>
+                Aos 12 anos começou a trabalhar no comércio, em Curitiba. Aprendeu o ofício de marceneiro
+                e trabalhou como gerente no Engenho do Sr. Joaquim Monteiro de Carvalho. Em 1890 casou
+                com Almedina Gama e Silva Gonçalves, com quem teve oito filhos. Foi nomeado Camarista da
+                municipalidade de Campina Grande e no dia 28 de junho de 1892 foi empossado como
+                Presidente da Câmara Municipal.
+              </p>
+              <p>
+                No mesmo ano houve eleições no município e foi eleito o primeiro Prefeito da Vila de
+                Campina Grande. Governou até 1895. Nunca recebeu dinheiro algum pelo exercício do cargo
+                de Prefeito, tendo abdicado em favor da construção de estradas no município.
+              </p>
+            </div>
+          </div>
+
+          <hr class="es-divider">
+
+          <!-- Estrutura física -->
+          <div class="es-sobre-secao">
+            <h2 class="es-sobre-titulo">Estrutura</h2>
+            <div class="es-sobre-texto">
+              <p>A escola possui 14 salas de aula — sendo uma multifuncional e uma de apoio — distribuídas da seguinte forma:</p>
+            </div>
+            <ul class="es-estrutura-lista" aria-label="Estrutura da escola">
+              <li><i class="fas fa-square" aria-hidden="true"></i> 4 turmas de 1º anos</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> 4 turmas de 2º anos</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> 4 turmas de 3º anos</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> 2 turmas de 4º anos</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> 3 turmas de 5º anos</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Biblioteca</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Laboratório de Informática</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Sala Multifuncional</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Sala de Professores</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Quadra de Esportes</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Parquinho</li>
+              <li><i class="fas fa-square" aria-hidden="true"></i> Cozinha e Refeitório</li>
+            </ul>
+          </div>
+
+          <hr class="es-divider">
+
+          <!-- Galeria de fotos (carrossel) -->
+          <div class="es-sobre-secao">
+            <h2 class="es-galeria-titulo">Fotos</h2>
+
+            <!-- Carrossel — IDs obrigatórios para escola.js -->
+            <div class="es-carrossel" aria-label="Galeria de fotos da escola">
+
+              <div class="es-carrossel-track" id="es-carrossel-track">
+
+                <div class="es-carrossel-slide" role="button" tabindex="0"
+                     aria-label="Foto 1 – Fachada da escola">
+                  <img src="../../assets/img/escola-cmeis/escolas/jose-euripedes/foto-1.jpg"
+                       alt="Fachada da Escola Municipal José Eurípedes Gonçalves" loading="lazy">
+                </div>
+
+                <div class="es-carrossel-slide" role="button" tabindex="0"
+                     aria-label="Foto 2 – Pátio">
+                  <img src="../../assets/img/escola-cmeis/escolas/jose-euripedes/foto-2.jpg"
+                       alt="Pátio da escola" loading="lazy">
+                </div>
+
+                <div class="es-carrossel-slide" role="button" tabindex="0"
+                     aria-label="Foto 3 – Salas de aula">
+                  <img src="../../assets/img/escola-cmeis/escolas/jose-euripedes/foto-3.jpg"
+                       alt="Salas de aula" loading="lazy">
+                </div>
+
+              </div>
+              <!-- fim .es-carrossel-track -->
+
+              <button class="es-carrossel-btn es-carrossel-btn-prev"
+                      id="es-btn-prev" aria-label="Foto anterior">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button class="es-carrossel-btn es-carrossel-btn-next"
+                      id="es-btn-next" aria-label="Próxima foto">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </button>
+
+            </div>
+            <!-- fim .es-carrossel -->
+
+            <!-- Bolinhas indicadoras (geradas pelo JS) -->
+            <div class="es-carrossel-dots" id="es-carrossel-dots" aria-hidden="true"></div>
+
+          </div>
+
+        </div>
+        <!-- ══ /ABA SOBRE A ESCOLA ══ -->
+
+        <!-- ════════════════════════════════════════════════════════
+             ABA 3 — LINKS ÚTEIS
+             Lista de escolas e CMEIs municipais.
+             O <li class="atual"> marca a escola desta página.
+        ════════════════════════════════════════════════════════════ -->
+        <div class="sec-tab-painel" id="painel-links" role="tabpanel" aria-labelledby="tab-links">
+
+          <!-- Escolas Municipais -->
+          <div class="es-links-grupo">
+            <p class="es-links-grupo-titulo">Escolas Municipais</p>
+            <div class="es-links-grid">
+
+              <ul class="es-links-lista">
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Alessandra Cristina Assunção</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Anna Ferreira da Costa</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Antonio José de Carvalho</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Augusto Staben</a></li>
+                <li class="atual"><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal José Eurípedes Gonçalves</a></li>
+              </ul>
+
+              <ul class="es-links-lista">
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Lucídio Florêncio Ribeiro</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Marcos Nicolau Strapassoni</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Professora Nilce Terezinha Zanetti</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Ulisses Guimarães</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- CMEIs -->
+          <div class="es-links-grupo">
+            <p class="es-links-grupo-titulo">CMEIs</p>
+            <div class="es-links-grid">
+
+              <ul class="es-links-lista">
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Glacy Dalprá de Macedo</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Guido Irineu Pelanda</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Iara de Jesus Hathy Medeiros</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Italia Gheno Vidolin</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Laura Bertoni Zanchettin</a></li>
+              </ul>
+
+              <ul class="es-links-lista">
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Lucia Rosenente Gueno Ferrarini</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Nairelle Zanetti</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Rosiel Dalpra</a></li>
+                <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> CMEI Tio Luiz Garcia</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- ══ /ABA LINKS ÚTEIS ══ -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox — exibido ao clicar em uma foto do carrossel -->
+  <div class="es-lightbox" id="es-lightbox"
+       role="dialog" aria-modal="true" aria-label="Visualização de foto">
+    <button class="es-lightbox-fechar" id="es-lightbox-fechar"
+            aria-label="Fechar visualização da foto">&times;</button>
+    <img class="es-lightbox-img" id="es-lightbox-img" src="" alt="">
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
+

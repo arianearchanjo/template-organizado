@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vice Prefeito - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/vice-prefeito.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — título da página, breadcrumb e ilustração
+  ══════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="../gestao/">Gestão</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Vice-Prefeito</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Vice-Prefeito de Campina Grande do Sul</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração de fundo -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL — layout de duas colunas (artigo + sidebar)
+  ══════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ═══════════════════════════════════════════════════════
+             COLUNA PRINCIPAL
+        ════════════════════════════════════════════════════════ -->
+        <article>
+
+          <!-- Bloco institucional do Vice-Prefeito -->
+          <section class="pref-card-principal" aria-label="Dados do Vice-Prefeito">
+            <div class="row align-items-center">
+
+              <!-- Foto oficial -->
+              <div class="col-md-3 col-sm-12 pref-foto-col">
+                <div class="pref-foto-wrapper">
+                  <img
+                    src="../../assets/img/vice-prefeito/eugenio-jose-zanona.gif"
+                    alt="Foto oficial de Eugênio José Zanona, Vice-Prefeito de Campina Grande do Sul"
+                    class="pref-foto"
+                  >
+                  <p class="pref-foto-legenda" aria-hidden="true">Foto oficial</p>
+                </div>
+              </div>
+
+              <!-- Informações institucionais -->
+              <div class="col-md-9 col-sm-12 pref-info-col">
+                <div class="pref-info-corpo">
+
+                  <span class="pref-badge-cargo">
+                    <i class="fas fa-landmark" aria-hidden="true"></i>
+                    Vice-Prefeito Municipal
+                  </span>
+
+                  <h2 class="pref-nome">Eugênio José Zanona</h2>
+                  <p class="pref-cargo-titulo">Vice-Prefeito de Campina Grande do Sul</p>
+
+                  <hr class="pref-divisor" aria-hidden="true">
+
+                  <dl class="pref-meta-lista">
+                    <div class="pref-meta-item">
+                      <dt><i class="fas fa-tag" aria-hidden="true"></i> Partido</dt>
+                      <dd>PSD – Partido Social Democrático</dd>
+                    </div>
+                    <div class="pref-meta-item">
+                      <dt><i class="fas fa-calendar-alt" aria-hidden="true"></i> Mandato</dt>
+                      <dd>2025 – 2028</dd>
+                    </div>
+                    <div class="pref-meta-item">
+                      <dt><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Município</dt>
+                      <dd>Campina Grande do Sul – PR</dd>
+                    </div>
+                  </dl>
+
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Biografia -->
+          <section class="pref-secao" aria-labelledby="sec-bio-titulo">
+            <h2 id="sec-bio-titulo" class="pref-secao-titulo">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              Biografia
+            </h2>
+            <div class="pref-bio-texto">
+              <p>A biografia oficial do vice-prefeito será inserida neste espaço.</p>
+              <p>Esta seção será utilizada para apresentar a trajetória pública, formação e atuação política do vice-prefeito de Campina Grande do Sul.</p>
+            </div>
+          </section>
+
+          <!-- Atribuições -->
+          <section class="pref-secao" aria-labelledby="sec-atrib-titulo">
+            <h2 id="sec-atrib-titulo" class="pref-secao-titulo">
+              <i class="fas fa-list-check" aria-hidden="true"></i>
+              Atribuições do Vice-Prefeito
+            </h2>
+            <ul class="pref-atribuicoes-lista" aria-label="Lista de atribuições do vice-prefeito">
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Substituir o Prefeito em seus impedimentos e ausências legais</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Suceder o Prefeito em caso de vacância do cargo</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Colaborar com o Prefeito na condução das políticas públicas municipais</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Exercer atribuições delegadas pelo Prefeito Municipal</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Participar das reuniões de governo e acompanhar a execução do plano de governo</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Representar o município quando designado pelo Prefeito</li>
+            </ul>
+          </section>
+
+        </article>
+        <!-- fim coluna principal -->
+
+        <!-- ═══════════════════════════════════════════════════════
+             SIDEBAR
+        ════════════════════════════════════════════════════════ -->
+        <aside class="pi-sidebar" aria-label="Navegação lateral">
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Restaurar fonte">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Gestão Municipal -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-landmark" aria-hidden="true"></i> Gestão Municipal</h4>
+            <ul class="pi-sidebar-links">
+              <li><a href="../prefeito/"><span>Prefeito</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li class="ativo"><a href="#"><span>Vice-Prefeito</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="../secretarios-municipais/"><span>Secretários Municipais</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral"><span>Controladoria Geral</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral"><span>Procuradoria Geral</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="../ouvidoria/"><span>Ouvidoria Geral</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Links Úteis -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-link" aria-hidden="true"></i> Links Úteis</h4>
+            <ul class="pi-sidebar-links">
+              <li><a href="../transparencia/"><span>Portal da Transparência</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="../e-sic/"><span>Acesso à Informação</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal"><span>Legislação Municipal</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="../ouvidoria/"><span>Ouvidoria</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+        </aside>
+        <!-- fim sidebar -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ
+  ══════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+</body>
+</html>
+
+

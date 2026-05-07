@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparencia - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/transparencia.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li aria-current="page">Portal da Transparência</li>
+        </ol>
+      </nav>
+      <h1 class="pi-hero-titulo">Portal da Transparência</h1>
+    </div>
+  </div>
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+ 
+<main id="pi-main">
+  <div class="container">
+    <div id="pt-conteudo" class="pt-layout" tabindex="-1">
+ 
+      <!-- ══ SIDEBAR ══ -->
+      <aside class="pt-sidebar" aria-label="Menu de navegação do portal">
+ 
+        <div class="pt-sidebar-search" role="search" aria-label="Pesquisar no portal">
+          <input type="text" id="pt-busca" class="pt-search-input" placeholder="Pesquisar no portal..." aria-label="Pesquisar no portal da transparência" autocomplete="off">
+          <button class="pt-search-btn" id="pt-busca-btn" aria-label="Pesquisar">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+ 
+        <nav aria-label="Categorias do portal da transparência">
+          <ul class="pt-nav-lista" role="list">
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn ativo" data-secao="inicio" aria-expanded="true" aria-controls="secao-inicio">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-house"></i></span>
+                <span class="pt-nav-txt">Início</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="receitas-despesas" aria-expanded="false" aria-controls="secao-receitas-despesas">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+                <span class="pt-nav-txt">Receitas &amp; Despesas</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="licitacoes" aria-expanded="false" aria-controls="secao-licitacoes">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-file-contract"></i></span>
+                <span class="pt-nav-txt">Compras &amp; Licitações</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="pessoal" aria-expanded="false" aria-controls="secao-pessoal">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-users"></i></span>
+                <span class="pt-nav-txt">Pessoal</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="planejamento" aria-expanded="false" aria-controls="secao-planejamento">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                <span class="pt-nav-txt">Planejamento</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="contabilidade" aria-expanded="false" aria-controls="secao-contabilidade">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-calculator"></i></span>
+                <span class="pt-nav-txt">Contabilidade &amp; Finanças</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="legislacao" aria-expanded="false" aria-controls="secao-legislacao">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-gavel"></i></span>
+                <span class="pt-nav-txt">Leis &amp; Atos</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="acesso-informacao" aria-expanded="false" aria-controls="secao-acesso-informacao">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-lock-open"></i></span>
+                <span class="pt-nav-txt">Acesso à Informação</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="servicos-sociais" aria-expanded="false" aria-controls="secao-servicos-sociais">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-city"></i></span>
+                <span class="pt-nav-txt">Saúde, Educação &amp; Social</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <button class="pt-nav-btn" data-secao="administracao" aria-expanded="false" aria-controls="secao-administracao">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-building"></i></span>
+                <span class="pt-nav-txt">Administração</span>
+              </button>
+            </li>
+ 
+            <li role="listitem">
+              <a href="../ouvidoria/" target="_blank" rel="noopener" class="pt-nav-btn pt-nav-btn-externo">
+                <span class="pt-nav-ico" aria-hidden="true"><i class="fas fa-headset"></i></span>
+                <span class="pt-nav-txt">Ouvidoria</span>
+                <i class="fas fa-external-link-alt pt-nav-ext-ico" aria-hidden="true"></i>
+              </a>
+            </li>
+ 
+          </ul>
+        </nav>
+      </aside>
+ 
+      <!-- ══ CONTEÚDO ══ -->
+      <div class="pt-conteudo-area">
+ 
+        <!-- FILTRO ANO (oculto na home e busca) -->
+        <!-- [DESATIVADO] Filtro de exercício comentado temporariamente.
+             Os links das seções apontam para o sistema Elotech (externo),
+             que possui seletor de ano próprio no topo da página.
+        <div class="pt-filtro-ano-barra" id="pt-filtro-barra" role="search" aria-label="Filtrar por exercício">
+          <span class="pt-filtro-label"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Exercício:</span>
+          <div class="pt-filtro-botoes" role="group" aria-label="Anos disponíveis">
+            <button class="pt-btn-ano ativo" data-ano="2026" aria-pressed="true">2026</button>
+            <button class="pt-btn-ano" data-ano="2025" aria-pressed="false">2025</button>
+            <button class="pt-btn-ano" data-ano="2024" aria-pressed="false">2024</button>
+            <button class="pt-btn-ano" data-ano="2023" aria-pressed="false">2023</button>
+            <button class="pt-btn-ano" data-ano="2022" aria-pressed="false">2022</button>
+            <button class="pt-btn-ano" data-ano="2021" aria-pressed="false">2021</button>
+            <button class="pt-btn-ano" data-ano="todos" aria-pressed="false">Todos</button>
+          </div>
+        </div>
+        -->
+ 
+        <!-- ══ SEÇÃO: INÍCIO ══ -->
+        <section id="secao-inicio" class="pt-secao visivel" aria-labelledby="titulo-inicio">
+ 
+          <div class="pt-boas-vindas">
+            <div class="pt-boas-vindas-texto pt-boas-vindas-full">
+              <h2 id="titulo-inicio" class="pt-bv-titulo">Bem-vindo ao Portal da Transparência!</h2>
+              <p>A Prefeitura Municipal de Campina Grande do Sul coloca à sua disposição este espaço de acesso livre e gratuito às informações públicas do município. Aqui você acompanha como os recursos públicos são arrecadados e aplicados, em cumprimento à <strong>Lei de Acesso à Informação (Lei nº 12.527/2011)</strong> e à <strong>Lei de Responsabilidade Fiscal (Lei Complementar nº 101/2000)</strong>.</p>
+              <p>Navegue pelas categorias disponíveis no menu lateral e consulte:</p>
+              <ul class="pt-bv-lista">
+                <li><strong>Receitas &amp; Despesas:</strong> execução orçamentária, valores arrecadados, empenhos, liquidações e pagamentos realizados;</li>
+                <li><strong>Compras &amp; Licitações:</strong> processos licitatórios, contratos, atas de registro de preços, convênios e fornecedores;</li>
+                <li><strong>Pessoal:</strong> servidores municipais, remunerações, diárias, cargos e quadro funcional;</li>
+                <li><strong>Planejamento:</strong> Plano Plurianual (PPA), Lei de Diretrizes Orçamentárias (LDO) e Lei Orçamentária Anual (LOA);</li>
+                <li><strong>Contabilidade &amp; Finanças:</strong> demonstrativos contábeis, LRF e relatórios financeiros;</li>
+                <li><strong>Saúde, Educação &amp; Social:</strong> secretarias, unidades, planos municipais e programas sociais;</li>
+                <li><strong>Acesso à Informação:</strong> pedidos via e-SIC, dados abertos e legislação aplicável.</li>
+              </ul>
+              <p>Use o <strong>menu lateral</strong> para navegar pelas categorias ou a <strong>barra de pesquisa</strong> para localizar qualquer informação rapidamente.</p>
+ 
+              <div class="pt-bv-contato">
+                <div class="pt-bv-contato-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Ouvidoria Geral Municipal</strong>
+                    <span>Praça Bento Munhoz da Rocha, 30 — Campina Grande do Sul / PR</span>
+                  </div>
+                </div>
+                <div class="pt-bv-contato-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone</strong>
+                    <span>(41) 3162-7005</span>
+                  </div>
+                </div>
+                <div class="pt-bv-contato-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>E-mail</strong>
+                    <span><a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a></span>
+                  </div>
+                </div>
+                <div class="pt-bv-contato-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário</strong>
+                    <span>Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+        </section>
+ 
+        <!-- ══ SEÇÃO: RESULTADOS DE BUSCA ══ -->
+        <section id="secao-busca" class="pt-secao" aria-labelledby="titulo-busca" aria-live="polite">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-search"></i></div>
+            <div>
+              <h2 id="titulo-busca" class="pt-secao-titulo">Resultados da Pesquisa</h2>
+              <p class="pt-secao-desc" id="pt-busca-desc">Pesquisando em todos os itens do portal.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <ul class="pt-lista" id="pt-lista-resultados" role="list"></ul>
+          </div>
+          <div class="pt-aviso-vazio" id="pt-busca-vazio" role="alert">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            Nenhum resultado encontrado para a pesquisa realizada.
+          </div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: RECEITAS & DESPESAS ══ -->
+        <section id="secao-receitas-despesas" class="pt-secao" aria-labelledby="titulo-receitas-despesas">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h2 id="titulo-receitas-despesas" class="pt-secao-titulo">Receitas &amp; Despesas</h2>
+              <p class="pt-secao-desc">Execução orçamentária, receitas arrecadadas e despesas realizadas pelo município.</p>
+            </div>
+          </div>
+ 
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> Receitas</h3>
+            <ul class="pt-lista" role="list">
+              <li data-year="2026" data-busca="receita orçada arrecadada" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/receita" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Receita Orçada e Arrecadada</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="receita detalhada" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/receita-detalhada" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Receita Detalhada</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="receita fonte recursos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/receita-fonte-recursos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Receita por Fonte de Recursos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="repasses receita" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/repasses-receita/receita" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Repasses de Receita</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="dívida ativa" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/dividaativa" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Dívida Ativa</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="renúncia receitas fiscal" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/contab/renuncia-receitas" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Renúncia de Receitas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="leis execução receita" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-receita/receita" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Leis de Execução da Receita</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+ 
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-arrow-trend-down" aria-hidden="true"></i> Despesas</h3>
+            <div class="pt-grid-links">
+              <ul class="pt-lista" role="list">
+                <li data-year="2026" data-busca="despesas empenhadas empenhos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/empenhos/cf" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Despesas Empenhadas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas liquidadas" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/liquidacoes/todos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Despesas Liquidadas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas pagas pagamentos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/liquidacoes/pagas" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Despesas Pagas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesa detalhada" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa-detalhada" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Despesa Detalhada</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas órgão secretaria" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/orgao" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Órgão</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas função" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/funcao" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Função</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+              <ul class="pt-lista" role="list">
+                <li data-year="2026" data-busca="despesas programa" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/programa" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Programa</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas projeto" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/projeto" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Projeto</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas elemento" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/elemento" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Elemento</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="despesas fonte recursos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/despesa/fonte-recursos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Por Fonte de Recursos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="fornecedores pagar" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/fornecedores" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Fornecedores a Pagar</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="ordem cronológica pagamentos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/ordem-cronologica-pagamentos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Ordem Cronológica de Pagamentos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: LICITAÇÕES ══ -->
+        <section id="secao-licitacoes" class="pt-secao" aria-labelledby="titulo-licitacoes">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+            <div>
+              <h2 id="titulo-licitacoes" class="pt-secao-titulo">Compras &amp; Licitações</h2>
+              <p class="pt-secao-desc">Processos licitatórios, contratos firmados, atas de registro de preços e convênios.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <ul class="pt-lista" role="list">
+              <li data-year="2026" data-busca="licitações processos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/licitacoes" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Licitações</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="contratos atas" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/contratos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Contratos / Atas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="plano contratação anual" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1758" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Plano de Contratação Anual</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="convênios" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/convenios" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Convênios</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="agenda licitações" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/licitacoes-agendamentos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Agenda de Licitações</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="compras diretas fornecedores" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/compras-diretas-fornecedor" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Compras Diretas por Fornecedores</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="compras diretas itens" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/compras-direta-itens" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Compras Diretas por Itens</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="fornecedores suspensos impedidos licitar" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/fornecedores/suspensos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Fornecedores Suspensos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="fornecedores impedidos licitar" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/fornecedores-impedidos-de-licitar" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Fornecedores Impedidos de Licitar</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="suprimento fundos cartão corporativo" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/suprimentos-fundos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Suprimento de Fundos — Cartão Corporativo</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="emendas parlamentares" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/emendas-parlamentares" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Emendas Parlamentares</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: PESSOAL ══ -->
+        <section id="secao-pessoal" class="pt-secao" aria-labelledby="titulo-pessoal">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-users"></i></div>
+            <div>
+              <h2 id="titulo-pessoal" class="pt-secao-titulo">Pessoal</h2>
+              <p class="pt-secao-desc">Servidores, remunerações, diárias, cargos e quadro funcional do município.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <div class="pt-grid-links">
+              <ul class="pt-lista" role="list">
+                <li data-year="2026" data-busca="servidores folha pagamento" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/servidores" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Servidores / Folha de Pagamento</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="servidores cedidos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/cedidos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Servidores Cedidos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="diárias viagens" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/diarias" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Diárias</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="adiantamento reembolso" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/adiantamento" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Adiantamento / Reembolso</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="ajuda de custo" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/ajuda-custo" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Ajuda de Custo</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+              <ul class="pt-lista" role="list">
+                <li data-year="todos" data-busca="plano cargos salários" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/cargos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Plano de Cargos e Salários</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="quadro pessoal" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/quadro-pessoal" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Quadro de Pessoal</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="funcionários terceirizados" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/19/684" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Funcionários Terceirizados</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="portal servidor" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/servidor" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Portal do Servidor</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="concursos públicos" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/concursos" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Concursos Públicos</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: PLANEJAMENTO ══ -->
+        <section id="secao-planejamento" class="pt-secao" aria-labelledby="titulo-planejamento">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-book-open"></i></div>
+            <div>
+              <h2 id="titulo-planejamento" class="pt-secao-titulo">Planejamento</h2>
+              <p class="pt-secao-desc">Plano Plurianual, Lei de Diretrizes Orçamentárias e Lei Orçamentária Anual.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="ppa ldo loa orçamento anual" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/orcamento" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>PPA / LDO / LOA</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="plano governo" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2022_2140_awca4fepxbr.pdf" target="_blank" rel="noopener" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Plano de Governo</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="manual planejamento" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2024_4438_sl3ongwpcq3.pdf" target="_blank" rel="noopener" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Manual de Planejamento</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="resumo anual dashboard" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/dashboard" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Resumo Anual</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="audiência pública" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1323" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Audiência Pública</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: CONTABILIDADE ══ -->
+        <section id="secao-contabilidade" class="pt-secao" aria-labelledby="titulo-contabilidade">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-calculator"></i></div>
+            <div>
+              <h2 id="titulo-contabilidade" class="pt-secao-titulo">Contabilidade &amp; Finanças</h2>
+              <p class="pt-secao-desc">Demonstrativos contábeis, publicações de LRF e relatórios financeiros.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <div class="pt-grid-links">
+              <ul class="pt-lista" role="list">
+                <li data-year="2026" data-busca="anexos lei 4320" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/3" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Anexos da Lei 4.320/64</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="contas públicas lei 9755" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/14" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Contas Públicas — Lei 9.755/98</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="execução orçamentária" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/4" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Execução Orçamentária</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="lrf gestão fiscal responsabilidade" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/2" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>LRF — Gestão Fiscal</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="2026" data-busca="lrf execução orçamentária responsabilidade fiscal" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>LRF — Execução Orçamentária</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+              <ul class="pt-lista" role="list">
+                <li data-year="todos" data-busca="instrução normativa 58 tce" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/15" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>IN Nº 58/2011 TCE-PR</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="instrução normativa 89 tce" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/16" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>IN Nº 89/2013 TCE-PR</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="plano contas" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/18" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Plano de Contas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="créditos adicionais" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/creditosadicionais" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Créditos Adicionais</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+                <li data-year="todos" data-busca="financeiro" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/5" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Financeiro</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: LEGISLAÇÃO ══ -->
+        <section id="secao-legislacao" class="pt-secao" aria-labelledby="titulo-legislacao">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-gavel"></i></div>
+            <div>
+              <h2 id="titulo-legislacao" class="pt-secao-titulo">Leis &amp; Atos</h2>
+              <p class="pt-secao-desc">Legislação municipal, leis de execução orçamentária, instruções normativas e atos de pessoal.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="leis atos gerais" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-geral/geral" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Leis e Atos Gerais</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="leis execução despesa" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-despesa/despesa" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Leis de Execução da Despesa</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="leis execução receita" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-receita/receita" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Leis de Execução da Receita</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="leis atos pessoal servidor" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-pessoal/pessoal" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Leis e Atos de Pessoal</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="instruções normativas" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1713" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Instruções Normativas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="manuais procedimentos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1759" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Manuais e Procedimentos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="legislação portal transparência" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leisregemportal" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Legislação do Portal</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="pt-aviso-vazio" role="alert" aria-live="polite"><i class="fas fa-folder-open" aria-hidden="true"></i> Nenhum item disponível para o exercício selecionado.</div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: ACESSO À INFORMAÇÃO ══ -->
+        <section id="secao-acesso-informacao" class="pt-secao" aria-labelledby="titulo-acesso">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-lock-open"></i></div>
+            <div>
+              <h2 id="titulo-acesso" class="pt-secao-titulo">Acesso à Informação</h2>
+              <p class="pt-secao-desc">Pedidos de informação, e-SIC, responsáveis pela LAI, adequação à LGPD, documentos sigilosos, perguntas frequentes e dados abertos.</p>
+            </div>
+          </div>
+
+          <!-- ── e-SIC: Solicitação de Acesso à Informação ── -->
+          <div class="pt-bloco pt-bloco-destaque" role="region" aria-label="Solicitação de Acesso à Informação via e-SIC">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-envelope-open-text" aria-hidden="true"></i> e-SIC — Solicitação de Acesso à Informação</h3>
+            <div class="pt-esic-banner">
+              <div class="pt-esic-banner-corpo">
+                <p class="pt-esic-chamada">Não encontrou a informação que procura?</p>
+                <p class="pt-esic-desc">Qualquer cidadão pode solicitar acesso a informações públicas via e-SIC. O prazo de resposta é de até <strong>20 dias úteis</strong>, conforme a Lei de Acesso à Informação (Lei nº 12.527/2011).</p>
+              </div>
+              <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic" target="_blank" rel="noopener noreferrer" class="pt-esic-btn link-externo" aria-label="Abrir o e-SIC para fazer uma solicitação de acesso à informação (abre em nova aba)">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Fazer uma Solicitação
+              </a>
+            </div>
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="consulta sic acompanhar pedido" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-consulta" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Consultar Pedido Existente</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="sic físico atendimento presencial" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-fisico" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>SIC Físico — Atendimento Presencial</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="estatísticas sic relatório pedidos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic/estatisticas" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Estatísticas SIC</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- ── Responsáveis pela LAI ── -->
+          <div class="pt-bloco" role="region" aria-label="Responsáveis pela Lei de Acesso à Informação">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-user-tie" aria-hidden="true"></i> Responsáveis — Lei de Acesso à Informação</h3>
+            <p class="pt-bloco-desc">Conforme o art. 9º da Lei nº 12.527/2011, o município designa responsáveis para recepcionar e processar os pedidos de acesso à informação.</p>
+            <ul class="pt-lista pt-lista-responsaveis" role="list">
+              <li data-year="todos" data-busca="responsável lai acesso informação setor" role="listitem">
+                <div class="pt-responsavel-item">
+                  <div class="pt-responsavel-icone" aria-hidden="true"><i class="fas fa-id-badge"></i></div>
+                  <div class="pt-responsavel-info">
+                    <span class="pt-responsavel-cargo">Responsável pela LAI</span>
+                    <span class="pt-responsavel-nome">Patricia A. Lazarotto </span>
+                    <span class="pt-responsavel-contato"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a></span>
+                  </div>
+                </div>
+              </li>
+              <li data-year="todos" data-busca="ouvidoria municipal reclamação sugestão" role="listitem">
+                <div class="pt-responsavel-item">
+                  <div class="pt-responsavel-icone" aria-hidden="true"><i class="fas fa-comments"></i></div>
+                  <div class="pt-responsavel-info">
+                    <span class="pt-responsavel-cargo">Ouvidoria Municipal</span>
+                    <span class="pt-responsavel-nome">Patricia A. Lazarotto </span>
+                    <span class="pt-responsavel-contato"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a></span>
+                  </div>
+                </div>
+              </li>
+              <li data-year="todos" data-busca="controladoria controle interno auditoria" role="listitem">
+                <div class="pt-responsavel-item">
+                  <div class="pt-responsavel-icone" aria-hidden="true"><i class="fas fa-magnifying-glass-chart"></i></div>
+                  <div class="pt-responsavel-info">
+                    <span class="pt-responsavel-cargo">Controladoria Interna</span>
+                    <span class="pt-responsavel-nome">Nome</span>
+                    <span class="pt-responsavel-contato"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:controladoria@pmcgs.pr.gov.br">controladoria@pmcgs.pr.gov.br</a></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── LGPD — Encarregado de Dados ── -->
+          <div class="pt-bloco" role="region" aria-label="LGPD — Encarregado de Dados Pessoais">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-shield-halved" aria-hidden="true"></i> LGPD — Encarregado de Dados Pessoais (DPO)</h3>
+            <p class="pt-bloco-desc">Conforme o art. 41 da Lei nº 13.709/2018 (LGPD), o município designa um Encarregado pelo tratamento de dados pessoais, responsável por atuar como canal de comunicação com os titulares e com a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+            <ul class="pt-lista pt-lista-responsaveis" role="list">
+              <li data-year="todos" data-busca="lgpd encarregado dados dpo privacidade proteção" role="listitem">
+                <div class="pt-responsavel-item">
+                  <div class="pt-responsavel-icone pt-responsavel-icone-lgpd" aria-hidden="true"><i class="fas fa-user-shield"></i></div>
+                  <div class="pt-responsavel-info">
+                    <span class="pt-responsavel-cargo">Encarregado de Dados (DPO)</span>
+                    <span class="pt-responsavel-nome">A definir</span>
+                    <span class="pt-responsavel-contato"><i class="fas fa-envelope" aria-hidden="true"></i>
+                      <a href="mailto:dpo@campinagrandedosul.pr.gov.br" aria-label="Enviar e-mail para o Encarregado de Dados">dpo@campinagrandedosul.pr.gov.br</a>
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── Documentos e Transparência Passiva ── -->
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-folder-open" aria-hidden="true"></i> Documentos &amp; Transparência Passiva</h3>
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="documentos classificados desclassificados sigilo" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1733" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Documentos Classificados e Desclassificados</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="processos sigilosos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/processos/sigilosos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Processos Sigilosos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="perguntas frequentes faq" role="listitem"><a href="../perguntas-frequentes/" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Perguntas Frequentes</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="dados abertos conjunto" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/dados-abertos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Dados Abertos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="dicionários dados regras utilização" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/24" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Dicionários de Dados e Regras de Utilização</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: SAÚDE / EDUCAÇÃO / SOCIAL ══ -->
+        <section id="secao-servicos-sociais" class="pt-secao" aria-labelledby="titulo-servicos">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-city"></i></div>
+            <div>
+              <h2 id="titulo-servicos" class="pt-secao-titulo">Saúde, Educação &amp; Assistência Social</h2>
+              <p class="pt-secao-desc">Secretarias, unidades, planos municipais, relatórios e programas sociais.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-heartbeat" aria-hidden="true"></i> Saúde</h3>
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="secretaria saúde" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/saude" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Secretaria de Saúde</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="unidades saúde postos" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/unidades-saude" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Unidades de Saúde</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="plano municipal saúde" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1744/717" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Plano Municipal de Saúde</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="2026" data-busca="relatório anual gestão saúde" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1744/725" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Relatório Anual de Gestão</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="estoque medicamentos farmácia" role="listitem"><a href="https://transparencia.fastmedic.com.br/pmcgs" target="_blank" rel="noopener" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Estoque de Medicamentos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Educação</h3>
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="secretaria educação" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/educacao" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Secretaria de Educação</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="escolas municipais" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/escolas-municipais" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Escolas Municipais</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="creches cmeis" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/cmeis" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Creches / CMEIs</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="lista espera cmeis vagas" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/consulta-lista-espera-cmeis" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Lista de Espera CMEIs</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- ── Plano Municipal de Educação ── -->
+          <div class="pt-bloco pt-bloco-destaque" role="region" aria-labelledby="titulo-pme">
+            <h3 id="titulo-pme" class="pt-bloco-titulo"><i class="fas fa-book-open-reader" aria-hidden="true"></i> Plano Municipal de Educação</h3>
+            <p class="pt-bloco-desc">O Plano Municipal de Educação (PME) é o instrumento de planejamento das políticas educacionais do município, elaborado em conformidade com o Plano Nacional de Educação (PNE — Lei Federal nº 13.005/2014). Estabelece metas e estratégias para a melhoria da educação pública local por um período de dez anos.</p>
+
+            <!-- Plano Atual -->
+            <div class="pt-pme-atual" role="region" aria-label="Plano Municipal de Educação vigente">
+              <div class="pt-pme-atual-cabecalho">
+                <span class="pt-pme-badge" aria-label="Documento vigente">Vigente</span>
+                <h4 class="pt-pme-atual-titulo">Plano Municipal de Educação — Documento Atual</h4>
+              </div>
+              <ul class="pt-lista" role="list">
+                <li data-year="todos" data-busca="plano municipal educação pme vigente atual documento" role="listitem">
+                  <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1753" target="_blank" rel="noopener noreferrer" class="pt-link link-externo" aria-label="Acessar o Plano Municipal de Educação vigente (abre em nova aba)">
+                    <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                    <span>Plano Municipal de Educação — Documento Vigente</span>
+                    <i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Histórico -->
+            <div class="pt-pme-historico" role="region" aria-labelledby="titulo-pme-historico">
+              <h4 id="titulo-pme-historico" class="pt-pme-historico-titulo">
+                <i class="fas fa-clock-rotate-left" aria-hidden="true"></i> Histórico
+              </h4>
+              <p class="pt-bloco-desc pt-pme-historico-desc">Acesso aos documentos e relatórios de monitoramento dos anos anteriores.</p>
+              <ul class="pt-lista pt-lista-historico" role="list">
+                <li data-year="2025" data-busca="plano municipal educação pme histórico 2025 monitoramento" role="listitem">
+                  <a href="#" class="pt-link" aria-label="Acessar o Plano Municipal de Educação — exercício 2025">
+                    <span class="pt-historico-ano" aria-hidden="true">2025</span>
+                    <span>Plano Municipal de Educação — 2025</span>
+                    <i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li data-year="2024" data-busca="plano municipal educação pme histórico 2024 monitoramento" role="listitem">
+                  <a href="#" class="pt-link" aria-label="Acessar o Plano Municipal de Educação — exercício 2024">
+                    <span class="pt-historico-ano" aria-hidden="true">2024</span>
+                    <span>Plano Municipal de Educação — 2024</span>
+                    <i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li data-year="2023" data-busca="plano municipal educação pme histórico 2023 monitoramento" role="listitem">
+                  <a href="#" class="pt-link" aria-label="Acessar o Plano Municipal de Educação — exercício 2023">
+                    <span class="pt-historico-ano" aria-hidden="true">2023</span>
+                    <span>Plano Municipal de Educação — 2023</span>
+                    <i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <h3 class="pt-bloco-titulo"><i class="fas fa-hands-helping" aria-hidden="true"></i> Assistência Social</h3>
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="secretaria ação social assistência" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/acao-social" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Secretaria de Ação Social</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="bolsa família programa social" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/bolsa-familia" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Programa Bolsa Família</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </section>
+ 
+        <!-- ══ SEÇÃO: ADMINISTRAÇÃO ══ -->
+        <section id="secao-administracao" class="pt-secao" aria-labelledby="titulo-administracao">
+          <div class="pt-secao-topo">
+            <div class="pt-secao-topo-icone" aria-hidden="true"><i class="fas fa-building"></i></div>
+            <div>
+              <h2 id="titulo-administracao" class="pt-secao-titulo">Administração</h2>
+              <p class="pt-secao-desc">Patrimônio, veículos, almoxarifado, obras públicas e estrutura organizacional.</p>
+            </div>
+          </div>
+          <div class="pt-bloco">
+            <ul class="pt-lista" role="list">
+              <li data-year="todos" data-busca="patrimônio bens imóvel" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/patrimonio" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Patrimônio</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="veículos frota" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/veiculos" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Veículos</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="almoxarifado estoque materiais" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/almoxarifado/posicao" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Almoxarifado</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="obras públicas andamento" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/obraspublicas" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Obras Públicas</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="estrutura organizacional organograma" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/organograma" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Estrutura Organizacional</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="tributação impostos" role="listitem"><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/publicacoes/1720" target="_blank" rel="noopener noreferrer" class="pt-link link-externo"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Tributação</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="secretarias municipais" role="listitem"><a href="https://www.campinagrandedosul.pr.gov.br/secretarias" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Secretarias Municipais</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="conselhos municipais" role="listitem"><a href="http://www.campinagrandedosul.pr.gov.br/conselhos-municipais" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Conselhos Municipais</span><i class="fas fa-chevron-right pt-link-seta" aria-hidden="true"></i></a></li>
+              <li data-year="todos" data-busca="radar transparência pública avaliação" role="listitem"><a href="https://radardatransparencia.atricon.org.br" target="_blank" rel="noopener" class="pt-link"><i class="fas fa-circle-dot" aria-hidden="true"></i><span>Radar da Transparência Pública</span><i class="fas fa-external-link-alt pt-link-seta" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </section>
+ 
+      </div>
+    </div>
+  </div>
+</main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/transparencia.js"></script>
+
+</body>
+</html>
+
+

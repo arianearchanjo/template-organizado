@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossario - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/glossario.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — Breadcrumb e título da página
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Glossário</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Glossário</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout-glossario" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <div class="gloss-coluna-principal">
+
+          <div class="gloss-secao-header">
+            <h2 class="pi-secao-titulo">
+              <i class="fas fa-book-open" aria-hidden="true"></i> Termos e Definições
+            </h2>
+            <hr class="pi-secao-divider">
+            <p class="gloss-intro-texto">
+              Este glossário reúne termos técnicos frequentemente utilizados em documentos oficiais,
+              leis, portais de transparência e serviços públicos municipais. O objetivo é facilitar
+              a compreensão da linguagem administrativa para todos os cidadãos.
+            </p>
+          </div>
+
+          <!-- Campo de pesquisa -->
+          <div class="gloss-pesquisa" role="search" aria-label="Pesquisar termos do glossário">
+            <div class="gloss-pesquisa-group">
+              <label for="gloss-input-pesquisa" class="sr-only">Pesquisar termos</label>
+              <i class="fas fa-search gloss-pesquisa-icone" aria-hidden="true"></i>
+              <input
+                type="search"
+                id="gloss-input-pesquisa"
+                class="gloss-pesquisa-input"
+                placeholder="Pesquisar termo… ex: licitação, empenho, tributo"
+                autocomplete="off"
+                aria-controls="gloss-lista"
+                aria-label="Pesquisar termos do glossário"
+              >
+              <button type="button" class="gloss-pesquisa-limpar" id="gloss-btn-limpar"
+                      aria-label="Limpar pesquisa" style="display:none;">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="gloss-pesquisa-info" id="gloss-pesquisa-info" aria-live="polite" aria-atomic="true"></div>
+          </div>
+
+          <!-- Filtro alfabético -->
+          <section class="gloss-filtro-secao" aria-label="Filtro por letra do alfabeto">
+            <div class="gloss-filtro-header">
+              <span class="gloss-filtro-label"><i class="fas fa-filter" aria-hidden="true"></i> Filtrar por letra:</span>
+              <button class="gloss-letra-todos ativo" type="button" data-letra="todos" aria-pressed="true" aria-label="Exibir todos os termos">
+                Todos
+              </button>
+            </div>
+            <nav class="gloss-alfabeto" aria-label="Letras do alfabeto">
+              <!-- Letras geradas via JS -->
+            </nav>
+            <div class="gloss-filtro-info" id="gloss-info-resultado" aria-live="polite" aria-atomic="true"></div>
+          </section>
+
+          <!-- Lista de termos -->
+          <section id="gloss-lista" aria-label="Lista de termos do glossário">
+
+            <!-- ── Grupo A ── -->
+            <div class="gloss-grupo" data-grupo="A" id="gloss-grupo-A">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra A">A</h2>
+
+              <article class="gloss-card" data-letra="A">
+                <h3 class="gloss-termo">Acesso à Informação</h3>
+                <p class="gloss-definicao">Direito assegurado pela Constituição Federal e regulamentado pela Lei nº 12.527/2011 (Lei de Acesso à Informação — LAI), que garante ao cidadão o direito de solicitar e receber informações produzidas ou custodiadas pelos órgãos públicos, salvo as hipóteses legais de sigilo.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="A">
+                <h3 class="gloss-termo">Adimplente</h3>
+                <p class="gloss-definicao">Situação de uma pessoa física ou jurídica que está em dia com suas obrigações financeiras perante o município, sem débitos tributários ou contratuais em aberto. O oposto de adimplente é inadimplente.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="A">
+                <h3 class="gloss-termo">Administração Pública</h3>
+                <p class="gloss-definicao">Conjunto de órgãos, entidades e agentes do Estado responsáveis pela gestão dos interesses coletivos e pela prestação de serviços públicos à população. A Administração Pública pode ser direta (ministérios, secretarias) ou indireta (autarquias, fundações, empresas públicas).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="A">
+                <h3 class="gloss-termo">Audiência Pública</h3>
+                <p class="gloss-definicao">Mecanismo de participação popular previsto em lei que permite à população opinar e ser ouvida sobre decisões relevantes da administração pública, como elaboração do orçamento municipal (LOA, LDO e PPA), aprovação de projetos de impacto ambiental e revisão de planos diretores.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="A">
+                <h3 class="gloss-termo">Autarquia</h3>
+                <p class="gloss-definicao">Entidade da administração pública indireta, criada por lei, com personalidade jurídica própria de direito público, patrimônio e receitas próprias, destinada a executar atividades típicas do Estado, como o INSS em nível federal ou institutos de previdência municipais.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo B ── -->
+            <div class="gloss-grupo" data-grupo="B" id="gloss-grupo-B">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra B">B</h2>
+
+              <article class="gloss-card" data-letra="B">
+                <h3 class="gloss-termo">Balanço Orçamentário</h3>
+                <p class="gloss-definicao">Demonstrativo contábil que confronta as receitas previstas com as arrecadadas e as despesas fixadas com as realizadas, evidenciando o resultado da execução orçamentária de um exercício financeiro. É parte integrante do Balanço Geral do município.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="B">
+                <h3 class="gloss-termo">Bem Público</h3>
+                <p class="gloss-definicao">Bem pertencente ao patrimônio do Estado, destinado ao uso comum da população (praças, ruas, rios) ou ao uso especial (prédios públicos, equipamentos). Os bens públicos são, em regra, inalienáveis, imprescritíveis e impenhoráveis enquanto afetados à finalidade pública.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo C ── -->
+            <div class="gloss-grupo" data-grupo="C" id="gloss-grupo-C">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra C">C</h2>
+
+              <article class="gloss-card" data-letra="C">
+                <h3 class="gloss-termo">Contrato Administrativo</h3>
+                <p class="gloss-definicao">Acordo firmado entre a Administração Pública e um particular (pessoa física ou jurídica) para a execução de obras, prestação de serviços ou fornecimento de bens, regido pela Lei de Licitações (Lei nº 14.133/2021). O contrato administrativo confere à administração prerrogativas como a rescisão unilateral por interesse público.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="C">
+                <h3 class="gloss-termo">Convênio</h3>
+                <p class="gloss-definicao">Instrumento de cooperação firmado entre entes públicos ou entre a administração pública e entidades privadas sem fins lucrativos, com o objetivo de executar programas de trabalho, projetos ou atividades de interesse comum. Diferentemente dos contratos, nos convênios os partícipes possuem interesses convergentes.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="C">
+                <h3 class="gloss-termo">Controladoria</h3>
+                <p class="gloss-definicao">Órgão interno de controle da administração pública responsável por fiscalizar a legalidade, a economicidade e a eficiência dos atos administrativos, auditar a gestão dos recursos públicos, prevenir a corrupção e garantir o cumprimento das normas. No município de Campina Grande do Sul, essa função é exercida pela Controladoria Geral.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="C">
+                <h3 class="gloss-termo">Crédito Adicional</h3>
+                <p class="gloss-definicao">Autorização legislativa para abertura de dotações orçamentárias não previstas ou insuficientemente dotadas no orçamento original. Divide-se em créditos suplementares (reforço de dotação existente), especiais (criação de nova dotação) e extraordinários (calamidade ou urgência).</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo D ── -->
+            <div class="gloss-grupo" data-grupo="D" id="gloss-grupo-D">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra D">D</h2>
+
+              <article class="gloss-card" data-letra="D">
+                <h3 class="gloss-termo">Despesa Pública</h3>
+                <p class="gloss-definicao">Todo gasto realizado pelo ente público para custear os serviços prestados à sociedade, pagar obrigações financeiras ou investir na melhoria da infraestrutura e dos serviços municipais. As despesas públicas são classificadas em correntes (custeio) e de capital (investimentos e amortizações).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="D">
+                <h3 class="gloss-termo">Diária</h3>
+                <p class="gloss-definicao">Valor pago a servidores públicos para cobertura de despesas com alimentação e hospedagem quando se deslocam a serviço para outro município ou estado. A concessão de diárias deve ser devidamente justificada e está sujeita a controle e publicidade no portal de transparência.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="D">
+                <h3 class="gloss-termo">Dotação Orçamentária</h3>
+                <p class="gloss-definicao">Valor autorizado na Lei Orçamentária Anual (LOA) para que determinado órgão público realize gastos em uma finalidade específica. A dotação orçamentária define o teto de despesa que pode ser executado em cada ação governamental ao longo do exercício financeiro.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo E ── -->
+            <div class="gloss-grupo" data-grupo="E" id="gloss-grupo-E">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra E">E</h2>
+
+              <article class="gloss-card" data-letra="E">
+                <h3 class="gloss-termo">e-SIC</h3>
+                <p class="gloss-definicao">Sistema Eletrônico do Serviço de Informação ao Cidadão. Canal digital pelo qual qualquer pessoa pode solicitar acesso a informações públicas, acompanhar o andamento da solicitação e receber a resposta do órgão competente, em conformidade com a Lei de Acesso à Informação (LAI).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="E">
+                <h3 class="gloss-termo">Empenho</h3>
+                <p class="gloss-definicao">Primeiro estágio da despesa pública. Consiste na reserva de parte da dotação orçamentária para garantir o pagamento de uma obrigação futura. O empenho cria para o Estado a obrigação de pagar, desde que cumpridas as condições estabelecidas (entrega do bem, prestação do serviço).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="E">
+                <h3 class="gloss-termo">Execução Orçamentária</h3>
+                <p class="gloss-definicao">Processo pelo qual o orçamento público aprovado é efetivamente realizado. Compreende as fases de arrecadação das receitas e a realização das despesas mediante empenho, liquidação e pagamento. A execução orçamentária é acompanhada e divulgada no Portal da Transparência.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo F ── -->
+            <div class="gloss-grupo" data-grupo="F" id="gloss-grupo-F">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra F">F</h2>
+
+              <article class="gloss-card" data-letra="F">
+                <h3 class="gloss-termo">Fiscalização</h3>
+                <p class="gloss-definicao">Atividade exercida pela administração pública para verificar o cumprimento das normas, contratos e obrigações assumidas por fornecedores, parceiros e pelo próprio poder público. A fiscalização pode ser interna (controladoria) ou externa (câmara municipal, tribunal de contas, cidadão).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="F">
+                <h3 class="gloss-termo">Fundo Municipal</h3>
+                <p class="gloss-definicao">Instrumento de política pública criado por lei para direcionar recursos financeiros específicos a uma área de atuação, como saúde, educação ou assistência social. Os fundos municipais possuem contabilidade própria e seus recursos são controlados separadamente do orçamento geral.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo G ── -->
+            <div class="gloss-grupo" data-grupo="G" id="gloss-grupo-G">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra G">G</h2>
+
+              <article class="gloss-card" data-letra="G">
+                <h3 class="gloss-termo">Gestão Pública</h3>
+                <p class="gloss-definicao">Conjunto de práticas administrativas e gerenciais adotadas pelo poder público para planejar, organizar, dirigir e controlar o uso dos recursos públicos com eficiência, eficácia e efetividade, visando sempre ao atendimento do interesse coletivo e à melhoria da qualidade de vida da população.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo I ── -->
+            <div class="gloss-grupo" data-grupo="I" id="gloss-grupo-I">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra I">I</h2>
+
+              <article class="gloss-card" data-letra="I">
+                <h3 class="gloss-termo">Inadimplente</h3>
+                <p class="gloss-definicao">Situação de pessoa física ou jurídica que possui débitos em aberto perante o município, como tributos não pagos (IPTU, ISS, taxas), multas ou pendências contratuais. A inadimplência pode gerar restrições de certidões negativas, protesto em cartório e inscrição em dívida ativa.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="I">
+                <h3 class="gloss-termo">Inexigibilidade de Licitação</h3>
+                <p class="gloss-definicao">Situação em que a competição para contratação pela administração pública é inviável, geralmente porque existe apenas um fornecedor capaz de atender a necessidade, ou quando se trata de serviços de notória especialização ou de artistas consagrados. Está disciplinada no art. 74 da Lei nº 14.133/2021.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="I">
+                <h3 class="gloss-termo">Instrução Normativa</h3>
+                <p class="gloss-definicao">Ato normativo interno expedido por autoridade administrativa com o objetivo de orientar e regulamentar procedimentos internos, interpretações de normas superiores ou condutas de servidores. Tem caráter técnico e operacional, sem criar obrigações para os cidadãos externos à administração.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="I">
+                <h3 class="gloss-termo">IPTU</h3>
+                <p class="gloss-definicao">Imposto Predial e Territorial Urbano. Tributo municipal cobrado anualmente sobre a propriedade de imóveis localizados na zona urbana do município. A base de cálculo é o valor venal do imóvel. Os recursos arrecadados são destinados ao financiamento de serviços públicos municipais.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="I">
+                <h3 class="gloss-termo">ISS</h3>
+                <p class="gloss-definicao">Imposto Sobre Serviços de Qualquer Natureza. Tributo municipal incidente sobre a prestação de serviços por empresas ou profissionais autônomos. A alíquota varia conforme o tipo de serviço e a legislação municipal, respeitando os limites mínimos e máximos estabelecidos pela Lei Complementar federal nº 116/2003.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo L ── -->
+            <div class="gloss-grupo" data-grupo="L" id="gloss-grupo-L">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra L">L</h2>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">LAI — Lei de Acesso à Informação</h3>
+                <p class="gloss-definicao">Lei Federal nº 12.527/2011 que garante ao cidadão o direito de acessar informações públicas produzidas ou mantidas por órgãos governamentais, com prazo de resposta de até 20 dias úteis prorrogáveis. Institui a transparência ativa (publicação espontânea) e a transparência passiva (resposta a pedidos).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">LDO — Lei de Diretrizes Orçamentárias</h3>
+                <p class="gloss-definicao">Instrumento de planejamento que estabelece as metas e prioridades da administração pública para o exercício financeiro subsequente, orientando a elaboração da Lei Orçamentária Anual (LOA). Aprovada anualmente pelo legislativo, a LDO define parâmetros de gastos, metas fiscais e normas para a execução do orçamento.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">Licitação</h3>
+                <p class="gloss-definicao">Procedimento administrativo pelo qual o poder público seleciona a proposta mais vantajosa para contratar obras, serviços, compras e alienações. Visa garantir isonomia entre os participantes, a economicidade e a lisura das contratações públicas. Atualmente regulamentada pela Lei nº 14.133/2021 (Nova Lei de Licitações).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">Liquidação</h3>
+                <p class="gloss-definicao">Segundo estágio da despesa pública. Consiste na verificação do direito adquirido pelo credor, confirmando que o bem foi entregue ou o serviço prestado conforme contratado. Somente após a liquidação o pagamento pode ser autorizado. Juntamente com empenho e pagamento, forma o ciclo completo da despesa.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">LOA — Lei Orçamentária Anual</h3>
+                <p class="gloss-definicao">Lei aprovada pelo Poder Legislativo que estima as receitas e autoriza as despesas do município para um exercício financeiro (ano civil). A LOA deve ser compatível com o PPA e a LDO. Sua execução é acompanhada pelo Portal da Transparência e fiscalizada pelo Tribunal de Contas.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="L">
+                <h3 class="gloss-termo">LGPD — Lei Geral de Proteção de Dados</h3>
+                <p class="gloss-definicao">Lei Federal nº 13.709/2018 que regula o tratamento de dados pessoais por pessoas físicas, jurídicas e entidades públicas. No âmbito municipal, a LGPD impõe à prefeitura obrigações de segurança, transparência e responsabilidade no uso de dados de servidores e cidadãos.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo O ── -->
+            <div class="gloss-grupo" data-grupo="O" id="gloss-grupo-O">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra O">O</h2>
+
+              <article class="gloss-card" data-letra="O">
+                <h3 class="gloss-termo">Orçamento Público</h3>
+                <p class="gloss-definicao">Instrumento de planejamento financeiro que estima as receitas e autoriza os gastos do governo para determinado período, geralmente um ano. O orçamento público é elaborado pelo Poder Executivo e aprovado pelo Legislativo, devendo ser de conhecimento de todos os cidadãos por meio do Portal da Transparência.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="O">
+                <h3 class="gloss-termo">Ouvidoria</h3>
+                <p class="gloss-definicao">Canal oficial de comunicação entre o cidadão e a administração pública para registro de reclamações, denúncias, sugestões, elogios e pedidos de informação. A ouvidoria contribui para o aperfeiçoamento dos serviços públicos e é peça fundamental de accountability e controle social.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo P ── -->
+            <div class="gloss-grupo" data-grupo="P" id="gloss-grupo-P">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra P">P</h2>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">Pagamento</h3>
+                <p class="gloss-definicao">Terceiro e último estágio da despesa pública. Consiste na transferência efetiva do recurso financeiro ao credor após o empenho e a liquidação. O pagamento extingue a obrigação do Estado e deve ser registrado contabilmente e divulgado no Portal da Transparência.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">Portal da Transparência</h3>
+                <p class="gloss-definicao">Página na internet mantida obrigatoriamente pelos órgãos públicos em cumprimento à Lei de Acesso à Informação, onde são divulgadas informações sobre receitas, despesas, licitações, contratos, servidores e demais dados de interesse público. O acesso é gratuito, irrestrito e não requer identificação do cidadão.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">PPA — Plano Plurianual</h3>
+                <p class="gloss-definicao">Instrumento de planejamento governamental de médio prazo que estabelece, de forma regionalizada, as diretrizes, objetivos e metas da administração pública para um período de quatro anos. O PPA orienta a elaboração da LDO e da LOA, conectando o planejamento estratégico ao orçamento.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">Pregão</h3>
+                <p class="gloss-definicao">Modalidade de licitação utilizada para aquisição de bens e serviços comuns, cujos padrões de desempenho e qualidade possam ser objetivamente definidos no edital. Pode ser presencial ou eletrônico (Pregão Eletrônico), sendo o critério de seleção o menor preço. É a modalidade mais utilizada na administração pública municipal.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">Princípio da Legalidade</h3>
+                <p class="gloss-definicao">Princípio fundamental da administração pública que determina que o agente público só pode agir quando a lei expressamente autoriza ou determina. Diferentemente do particular (que pode fazer tudo que a lei não proíbe), o servidor público só pode fazer o que a lei permite — conforme o art. 37 da Constituição Federal.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="P">
+                <h3 class="gloss-termo">Processo Administrativo</h3>
+                <p class="gloss-definicao">Conjunto de atos formalizados documentalmente que a administração pública pratica para tomar decisões, resolver conflitos, firmar contratos ou produzir normas. Garante transparência, contraditório e ampla defesa aos envolvidos. No município, processos são registrados e podem ser consultados pelo protocolo geral.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo R ── -->
+            <div class="gloss-grupo" data-grupo="R" id="gloss-grupo-R">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra R">R</h2>
+
+              <article class="gloss-card" data-letra="R">
+                <h3 class="gloss-termo">Receita Pública</h3>
+                <p class="gloss-definicao">Todo ingresso financeiro que o poder público arrecada de forma definitiva para financiar as despesas públicas. Divide-se em receitas correntes (tributos, transferências, serviços) e receitas de capital (operações de crédito, alienação de bens). A arrecadação é registrada e publicada no Portal da Transparência.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="R">
+                <h3 class="gloss-termo">Responsabilidade Fiscal</h3>
+                <p class="gloss-definicao">Conjunto de princípios e normas estabelecidos pela Lei de Responsabilidade Fiscal (Lei Complementar nº 101/2000) que impõem à administração pública o dever de gerir os recursos públicos com equilíbrio das contas, transparência e planejamento, fixando limites para gastos com pessoal e endividamento.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo S ── -->
+            <div class="gloss-grupo" data-grupo="S" id="gloss-grupo-S">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra S">S</h2>
+
+              <article class="gloss-card" data-letra="S">
+                <h3 class="gloss-termo">Serviço Público</h3>
+                <p class="gloss-definicao">Atividade prestada pelo Estado ou por delegatários (concessionárias e permissionárias) para satisfazer necessidades coletivas essenciais, como saúde, educação, segurança, transporte e saneamento. Os serviços públicos municipais são regidos por princípios como universalidade, modicidade tarifária e continuidade.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="S">
+                <h3 class="gloss-termo">Servidor Público</h3>
+                <p class="gloss-definicao">Pessoa física legalmente investida em cargo público por aprovação em concurso, nomeação ou eleição, que exerce funções no âmbito da administração pública. Os servidores municipais de Campina Grande do Sul são regidos pelo Estatuto dos Servidores Públicos Municipal e pela CLT, no caso de empregados públicos.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo T ── -->
+            <div class="gloss-grupo" data-grupo="T" id="gloss-grupo-T">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra T">T</h2>
+
+              <article class="gloss-card" data-letra="T">
+                <h3 class="gloss-termo">Transparência Pública</h3>
+                <p class="gloss-definicao">Princípio constitucional e dever da administração pública de tornar acessíveis ao cidadão as informações sobre a gestão dos recursos públicos, atos administrativos, contratos, licitações e despesas. A transparência é fundamental para o controle social e o combate à corrupção, sendo assegurada pela Lei de Acesso à Informação.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="T">
+                <h3 class="gloss-termo">Tributo</h3>
+                <p class="gloss-definicao">Prestação pecuniária compulsória paga por pessoas físicas ou jurídicas ao Estado para financiar as despesas públicas. O Código Tributário Nacional (CTN) define cinco espécies de tributos: impostos, taxas, contribuições de melhoria, contribuições especiais e empréstimos compulsórios.</p>
+              </article>
+
+              <article class="gloss-card" data-letra="T">
+                <h3 class="gloss-termo">Tomada de Contas Especial</h3>
+                <p class="gloss-definicao">Processo administrativo instaurado para apurar responsabilidade por dano ao erário (prejuízo ao patrimônio público), identificar os responsáveis e obter o ressarcimento ao poder público. Pode ser iniciada de ofício pelo órgão ou por determinação do Tribunal de Contas.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo U ── -->
+            <div class="gloss-grupo" data-grupo="U" id="gloss-grupo-U">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra U">U</h2>
+
+              <article class="gloss-card" data-letra="U">
+                <h3 class="gloss-termo">Unidade Gestora</h3>
+                <p class="gloss-definicao">Unidade orçamentária e financeira da administração pública responsável por executar o orçamento a ela alocado, autorizar despesas, emitir empenhos e processar pagamentos. No município, cada secretaria ou departamento pode constituir uma unidade gestora com autonomia operacional dentro dos limites legais.</p>
+              </article>
+
+            </div>
+
+            <!-- ── Grupo V ── -->
+            <div class="gloss-grupo" data-grupo="V" id="gloss-grupo-V">
+              <h2 class="gloss-grupo-titulo" aria-label="Termos com a letra V">V</h2>
+
+              <article class="gloss-card" data-letra="V">
+                <h3 class="gloss-termo">Valor Venal</h3>
+                <p class="gloss-definicao">Valor de um imóvel calculado pela prefeitura com base em critérios técnicos como localização, metragem, padrão de construção e equipamentos urbanos disponíveis. É a base de cálculo do IPTU e outros tributos imobiliários municipais, sendo periodicamente atualizado pela Planta Genérica de Valores (PGV).</p>
+              </article>
+
+              <article class="gloss-card" data-letra="V">
+                <h3 class="gloss-termo">Vício de Nulidade</h3>
+                <p class="gloss-definicao">Defeito grave que torna um ato administrativo inválido por violação às normas legais ou constitucionais. Um ato nulo não produz efeitos jurídicos válidos e deve ser declarado nulo pela própria administração ou pelo Poder Judiciário, podendo gerar responsabilização do agente público que o praticou.</p>
+              </article>
+
+            </div>
+
+            <!-- Mensagem exibida quando nenhum termo é encontrado -->
+            <div class="gloss-sem-resultado" id="gloss-sem-resultado" style="display:none;" aria-live="polite">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <p>Nenhum termo encontrado para esta letra.</p>
+            </div>
+
+          </section>
+          <!-- ── /LISTA DE TERMOS ──────────────────────────────────── -->
+
+        </div>
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="pi-sidebar" aria-label="Barra lateral">
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Restaurar fonte">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Ativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Links úteis -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-link" aria-hidden="true"></i> Links Úteis</h4>
+            <ul class="pi-sidebar-links">
+              <li><a href="../transparencia/"><span>Portal da Transparência</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="../e-sic/"><span>Acesso à Informação (e-SIC)</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes"><span>Licitações</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/contratos"><span>Contratos</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal"><span>Legislação Municipal</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener"><span>Radar da Transparência</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>            
+                </p>
+            <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — Links institucionais, contato e créditos
+  ════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/glossario.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,425 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Breadcrumb e título da página
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="../ouvidoria/">Ouvidoria</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Cadastrar Manifestação</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Cadastrar Manifestação na Ouvidoria Municipal</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
+        <section id="formulario-servico" aria-labelledby="form-titulo">
+
+          <!-- Área de feedback acessível (aria-live) -->
+          <div class="form-alert" id="form-feedback" role="alert" aria-live="polite"></div>
+
+          <!-- Card do formulário -->
+          <div class="form-card">
+
+            <div class="form-header">
+              <h2 id="form-titulo"><i class="fas fa-comments" aria-hidden="true"></i> Cadastrar Manifestação</h2>
+              <p>Preencha os dados abaixo para registrar sua manifestação na Ouvidoria Municipal.</p>
+            </div>
+
+            <div class="form-body">
+              <form id="pi-form-ouvidoria" novalidate>
+
+                <!-- ─ SEÇÃO: ASSUNTO ─ -->
+                <h3 class="form-section-title"><i class="fas fa-tag" aria-hidden="true"></i> Assunto</h3>
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="assunto">Tipo de Manifestação <span class="req" aria-hidden="true">*</span></label>
+                      <select id="assunto" name="assunto" class="form-control" required
+                              aria-required="true" aria-describedby="assunto-help">
+                        <option value="">Selecione...</option>
+                        <option value="solicitacao">SOLICITAÇÃO</option>
+                        <option value="denuncia">DENÚNCIA</option>
+                        <option value="reclamacao">RECLAMAÇÃO</option>
+                        <option value="sugestao">SUGESTÃO</option>
+                        <option value="elogio">ELOGIO</option>
+                      </select>
+                      <span class="error-msg" id="assunto-help" aria-live="polite">Por favor, selecione o tipo de manifestação.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Preferência de identificação do solicitante -->
+                <div class="row mt-2 mb-3">
+                  <div class="col-12">
+                    <div class="form-check form-check-green mb-2">
+                      <input class="form-check-input" type="radio" name="identificacao" id="id-sem-restricao" value="sem_restricao" checked>
+                      <label class="form-check-label" for="id-sem-restricao">
+                        Desejo me identificar <strong>SEM restrição</strong> dos dados
+                      </label>
+                    </div>
+                    <div class="form-check form-check-green mb-2">
+                      <input class="form-check-input" type="radio" name="identificacao" id="id-com-restricao" value="com_restricao">
+                      <label class="form-check-label" for="id-com-restricao">
+                        Desejo me identificar <strong>COM restrição</strong> dos dados
+                      </label>
+                    </div>
+                    <div class="form-check form-check-green">
+                      <input class="form-check-input" type="radio" name="identificacao" id="id-nao" value="nao_identificar">
+                      <label class="form-check-label" for="id-nao">
+                        <strong>NÃO</strong> desejo me identificar
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ SEÇÃO: IDENTIFICAÇÃO ─ -->
+                <h3 class="form-section-title"><i class="fas fa-user" aria-hidden="true"></i> Identificação do Solicitante</h3>
+
+                <div class="row">
+                  <div class="col-12 col-md-8">
+                    <div class="form-group">
+                      <label for="nome">Nome do Solicitante <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="nome" name="nome" class="form-control"
+                             placeholder="Nome completo" required
+                             aria-required="true" aria-describedby="nome-error"
+                             autocomplete="name">
+                      <span class="error-msg" id="nome-error" aria-live="polite">Por favor, informe seu nome completo.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <div class="form-group">
+                      <label for="cpf">CPF do Solicitante <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="cpf" name="cpf" class="form-control"
+                             placeholder="000.000.000-00" required
+                             aria-required="true" aria-describedby="cpf-error"
+                             inputmode="numeric" maxlength="14" autocomplete="off">
+                      <span class="error-msg" id="cpf-error" aria-live="polite">Por favor, informe um CPF válido.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                      <input type="email" id="email" name="email" class="form-control"
+                             placeholder="seu@email.com.br" required
+                             aria-required="true" aria-describedby="email-error"
+                             autocomplete="email">
+                      <span class="error-msg" id="email-error" aria-live="polite">Por favor, informe um e-mail válido.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="telefone-fixo">Telefone Fixo</label>
+                      <input type="tel" id="telefone-fixo" name="telefone_fixo" class="form-control"
+                             placeholder="(41) 0000-0000"
+                             aria-describedby="tel-fixo-help"
+                             inputmode="numeric" maxlength="14" autocomplete="tel-local">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="celular">Telefone Celular <span class="req" aria-hidden="true">*</span></label>
+                      <input type="tel" id="celular" name="celular" class="form-control"
+                             placeholder="(41) 00000-0000" required
+                             aria-required="true" aria-describedby="celular-error"
+                             inputmode="numeric" maxlength="15" autocomplete="tel">
+                      <span class="error-msg" id="celular-error" aria-live="polite">Por favor, informe seu celular.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ SEÇÃO: ENDEREÇO ─ -->
+                <h3 class="form-section-title mt-2"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Endereço</h3>
+
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="cep">CEP <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="cep" name="cep" class="form-control"
+                             placeholder="00000-000" required
+                             aria-required="true" aria-describedby="cep-error"
+                             inputmode="numeric" maxlength="9" autocomplete="postal-code">
+                      <span class="error-msg" id="cep-error" aria-live="polite">Por favor, informe o CEP.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-7">
+                    <div class="form-group">
+                      <label for="logradouro">Logradouro do Endereço <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="logradouro" name="logradouro" class="form-control"
+                             placeholder="Rua, Avenida, Praça..." required
+                             aria-required="true" aria-describedby="logradouro-error"
+                             autocomplete="street-address">
+                      <span class="error-msg" id="logradouro-error" aria-live="polite">Por favor, informe o logradouro.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <div class="form-group">
+                      <label for="numero">Número <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="numero" name="numero" class="form-control"
+                             placeholder="Nº" required
+                             aria-required="true" aria-describedby="numero-error">
+                      <span class="error-msg" id="numero-error" aria-live="polite">Informe o número.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="complemento">Complemento do Endereço</label>
+                      <input type="text" id="complemento" name="complemento" class="form-control"
+                             placeholder="Apto, bloco, casa..." autocomplete="address-line2">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-md-4">
+                    <div class="form-group">
+                      <label for="bairro">Bairro <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="bairro" name="bairro" class="form-control"
+                             placeholder="Bairro" required
+                             aria-required="true" aria-describedby="bairro-error">
+                      <span class="error-msg" id="bairro-error" aria-live="polite">Por favor, informe o bairro.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-5">
+                    <div class="form-group">
+                      <label for="cidade">Cidade <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="cidade" name="cidade" class="form-control"
+                             value="Campina Grande do Sul" required
+                             aria-required="true" aria-describedby="cidade-error"
+                             autocomplete="address-level2">
+                      <span class="error-msg" id="cidade-error" aria-live="polite">Por favor, informe a cidade.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="uf">UF <span class="req" aria-hidden="true">*</span></label>
+                      <select id="uf" name="uf" class="form-control" required
+                              aria-required="true" autocomplete="address-level1">
+                        <option value="AC">AC</option><option value="AL">AL</option>
+                        <option value="AP">AP</option><option value="AM">AM</option>
+                        <option value="BA">BA</option><option value="CE">CE</option>
+                        <option value="DF">DF</option><option value="ES">ES</option>
+                        <option value="GO">GO</option><option value="MA">MA</option>
+                        <option value="MT">MT</option><option value="MS">MS</option>
+                        <option value="MG">MG</option><option value="PA">PA</option>
+                        <option value="PB">PB</option><option value="PR" selected>PR</option>
+                        <option value="PE">PE</option><option value="PI">PI</option>
+                        <option value="RJ">RJ</option><option value="RN">RN</option>
+                        <option value="RS">RS</option><option value="RO">RO</option>
+                        <option value="RR">RR</option><option value="SC">SC</option>
+                        <option value="SP">SP</option><option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ SEÇÃO: SOLICITAÇÃO ─ -->
+                <h3 class="form-section-title mt-2"><i class="fas fa-file-alt" aria-hidden="true"></i> Solicitação</h3>
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="area">Área <span class="req" aria-hidden="true">*</span></label>
+                      <select id="area" name="area" class="form-control" required
+                              aria-required="true" aria-describedby="area-error">
+                        <option value="">Selecione a área...</option>
+                        <option value="administracao">Administração</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="educacao">Educação</option>
+                        <option value="infraestrutura">Infraestrutura</option>
+                        <option value="saude">Saúde</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="urbanismo">Urbanismo</option>
+                        <option value="outras">Outras</option>
+                      </select>
+                      <span class="error-msg" id="area-error" aria-live="polite">Por favor, selecione a área.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="titulo-solicitacao">Título da Solicitação <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="titulo-solicitacao" name="titulo" class="form-control"
+                             placeholder="Informe um título resumido para sua manifestação" required
+                             aria-required="true" aria-describedby="titulo-error">
+                      <span class="error-msg" id="titulo-error" aria-live="polite">Por favor, informe o título.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="descricao">Descrição da Solicitação <span class="req" aria-hidden="true">*</span></label>
+                      <textarea id="descricao" name="descricao" class="form-control" rows="6"
+                                placeholder="Descreva com detalhes sua manifestação..." required
+                                aria-required="true" aria-describedby="descricao-error"></textarea>
+                      <span class="error-msg" id="descricao-error" aria-live="polite">Por favor, descreva sua solicitação.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ SEÇÃO: ANEXO ─ -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label>Anexo <small style="font-weight:400;color:#777;">(opcional — máx. 10 MB)</small></label>
+                      <div class="btn-upload-wrap">
+                        <label class="btn-upload" for="anexo-input" tabindex="0"
+                               aria-label="Selecionar arquivo de anexo">
+                          <i class="fas fa-paperclip" aria-hidden="true"></i> Selecionar Anexo
+                          <input type="file" id="anexo-input" name="anexo"
+                                 accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip"
+                                 aria-describedby="anexo-info">
+                        </label>
+                        <p class="upload-nome" id="nome-arquivo" aria-live="polite"></p>
+                      </div>
+                      <small id="anexo-info" class="form-text text-muted" style="margin-top:5px;display:block;">
+                        Formatos aceitos: PDF, DOC, DOCX, JPG, PNG, ZIP
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ CAPTCHA ─ -->
+                <div class="form-captcha-wrap">
+                  <div class="g-recaptcha" data-sitekey="SEU_SITE_KEY_AQUI" aria-label="Verificação reCAPTCHA"></div>
+                </div>
+                <!-- Fallback visual quando reCAPTCHA não está configurado -->
+                <div class="form-group" id="captcha-fallback"
+                     style="border:1px solid #ced4da;border-radius:6px;padding:14px 18px;background:#f8f9fa;max-width:300px;display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;">
+                  <input type="checkbox" id="nao-sou-robo" style="width:20px;height:20px;cursor:pointer;" aria-label="Confirmar que não sou um robô">
+                  <label for="nao-sou-robo" style="margin:0;font-size:.9rem;font-weight:500;color:#333;cursor:pointer;">Não sou um robô</label>
+                  <div style="margin-left:auto;text-align:center;">
+                    <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" width="32" style="display:block;margin:0 auto 2px;">
+                    <small style="font-size:.65rem;color:#777;display:block;">reCAPTCHA</small>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <!-- fim form-body -->
+
+            <div class="form-footer">
+              <button type="button" class="btn-cancelar" onclick="history.back()" aria-label="Cancelar e voltar">
+                <i class="fas fa-times" aria-hidden="true"></i> Cancelar
+              </button>
+              <button type="submit" form="pi-form-ouvidoria" class="btn-enviar" aria-label="Enviar manifestação">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar
+              </button>
+            </div>
+
+          </div>
+          <!-- fim form-card -->
+
+        </section>
+        <!-- ── /COLUNA PRINCIPAL ──────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside id="pi-sidebar" class="pi-sidebar" aria-label="Informações e acessibilidade">
+
+          <!-- Tipos de manifestação -->
+          <div class="form-help-card" aria-labelledby="help-titulo">
+            <div class="help-header" id="help-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Tipos de Manifestação
+            </div>
+            <div class="help-body">
+              <div class="form-help-item">
+                <div class="help-tipo">Solicitação</div>
+                <p>Solicite a adoção de providências a serviços públicos prestados.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Denúncia</div>
+                <p>Comunique uma irregularidade ou ato ilícito na administração pública.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Elogio</div>
+                <p>Expresse que você está satisfeito com o atendimento ou serviço prestado.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Sugestão</div>
+                <p>Envie uma ideia ou proposta de melhoria de serviço prestado.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Reclamação</div>
+                <p>Manifeste sua insatisfação com o atendimento ou serviço prestado.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Restaurar fonte">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Ativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Ouvidoria</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>
+            </p>
+            <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full mt-2">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
+

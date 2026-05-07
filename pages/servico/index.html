@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servico - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/servico.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- /ACESSIBILIDADE -->
+
+
+  <!-- HERO -->
+  <!-- EDITAR: breadcrumb e título -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <!-- EDITAR: categoria pai -->
+            <li>
+              <a href="../portal-servicos/">Serviços</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <!-- EDITAR: nome do serviço -->
+            <li aria-current="page">Consulta de Débitos</li>
+          </ol>
+        </nav>
+
+        <!-- EDITAR: título do serviço -->
+        <h1 class="pi-hero-titulo">Consulta de Débitos</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- EDITAR: conteúdo do serviço -->
+  <main id="pi-main" aria-label="Conteúdo do serviço">
+    <div class="container">
+      <div id="pi-conteudo" class="servico-layout" tabindex="-1">
+
+        <!-- ARTIGO PRINCIPAL -->
+        <article>
+
+          <!-- Seção: O que é? -->
+          <section class="servico-secao" aria-labelledby="sec-oque">
+            <h2 id="sec-oque" class="servico-secao-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> O que é?
+            </h2>
+            <div class="servico-texto">
+              <!-- EDITAR: descrição do serviço -->
+              <p>O serviço é destinado para cidadãos e empresários que necessitam acessar a consulta de débitos referente a tributos municipais, como IPTU, ISSQN e outros lançamentos.</p>
+            </div>
+          </section>
+
+          <!-- Seção: Requisitos -->
+          <section class="servico-secao" aria-labelledby="sec-req">
+            <h2 id="sec-req" class="servico-secao-titulo">
+              <i class="fas fa-clipboard-list" aria-hidden="true"></i> Requisitos e/ou documentação exigidos
+            </h2>
+            <!-- EDITAR: lista de requisitos -->
+            <ul class="servico-lista" aria-label="Requisitos necessários">
+              <li>Possuir a informação sobre o número do cadastro municipal que deseja consultar.</li>
+            </ul>
+          </section>
+
+          <!-- Seção: Como solicitar -->
+          <section class="servico-secao" aria-labelledby="sec-como">
+            <h2 id="sec-como" class="servico-secao-titulo">
+              <i class="fas fa-list-ol" aria-hidden="true"></i> Como solicitar
+            </h2>
+            <!-- EDITAR: passo a passo -->
+            <ul class="servico-lista" aria-label="Passos para solicitar o serviço">
+              <li>Clique no botão <strong>INICIAR</strong> para ser direcionado ao sistema de consulta de débitos.</li>
+              <li>Informe o número do cadastro municipal no campo indicado.</li>
+              <li>Clique em <strong>Consultar</strong> para visualizar os débitos em aberto.</li>
+            </ul>
+          </section>
+
+          <!-- Seção: Prazo de execução -->
+          <section class="servico-secao" aria-labelledby="sec-prazo">
+            <h2 id="sec-prazo" class="servico-secao-titulo">
+              <i class="fas fa-clock" aria-hidden="true"></i> Prazo de Execução
+            </h2>
+            <!-- EDITAR: prazo -->
+            <span class="servico-valor-destaque">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Imediato
+            </span>
+          </section>
+
+          <!-- Seção: Valor do serviço -->
+          <section class="servico-secao" aria-labelledby="sec-valor">
+            <h2 id="sec-valor" class="servico-secao-titulo">
+              <i class="fas fa-tag" aria-hidden="true"></i> Valor do Serviço
+            </h2>
+            <!-- EDITAR: custo -->
+            <span class="servico-valor-destaque">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Sem custo
+            </span>
+          </section>
+
+          <!-- Seção: Secretaria Responsável -->
+          <!-- EDITAR: dados da secretaria responsável -->
+          <section class="servico-secao servico-secao-secretaria" aria-labelledby="sec-secretaria">
+            <h2 id="sec-secretaria" class="servico-secao-titulo">
+              <i class="fas fa-building" aria-hidden="true"></i> Secretaria Responsável
+            </h2>
+            <div class="servico-secretaria-destaque">
+              <div class="servico-secretaria-nome">
+                <i class="fas fa-landmark" aria-hidden="true"></i>
+                <!--
+                  EDITAR: mantenha apenas a secretaria responsável e apague as demais.
+                  Secretarias disponíveis:
+                    Secretaria Municipal de Administração
+                    Secretaria Municipal de Cultura
+                    Secretaria Municipal de Desenvolvimento Econômico
+                    Secretaria Municipal de Desenvolvimento Social
+                    Secretaria Municipal de Desenvolvimento Sustentável
+                    Secretaria Municipal de Educação
+                    Secretaria Municipal de Governo e Assuntos Jurídicos
+                    Secretaria Municipal de Infraestrutura
+                    Secretaria Municipal da Mulher e Igualdade Racial
+                    Secretaria Municipal de Ordem Pública e Segurança
+                    Secretaria Municipal de Saúde
+                    Secretaria Municipal de Tecnologia da Informação
+                    Secretaria Municipal de Urbanismo
+                -->
+                <span>Secretaria Municipal de Administração</span>
+              </div>
+              <ul class="servico-secretaria-contatos" aria-label="Contatos da secretaria">
+                <li>
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <!-- EDITAR: telefone -->
+                  <a href="tel:+554132786100">(41) 3162-7010</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <!-- EDITAR: e-mail -->
+                  <a href="mailto:financas@campinagrandedosul.pr.gov.br">administracao@pmcgs.pr.gov.br</a>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <!-- EDITAR: endereço -->
+                  <span>Praça Bento Munhoz da Rocha Neto, 30 - Centro</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Botões de ação -->
+          <!-- EDITAR: href com o link do sistema externo -->
+          <div class="servico-acoes">
+            <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/tributos"
+              class="btn-servico"
+              target="_blank"
+              rel="noopener">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i> INICIAR
+            </a>
+            <a href="../portal-servicos/" class="btn-servico-outline">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i> Ver todos os serviços
+            </a>
+          </div>
+
+        </article>
+        <!-- /ARTIGO PRINCIPAL -->
+
+
+        <!-- SIDEBAR -->
+        <!-- EDITAR: valores de cada campo -->
+        <aside class="servico-sidebar" aria-label="Resumo do serviço">
+
+          <!-- Card: Resumo -->
+          <div class="servico-info-card">
+            <h3><i class="fas fa-bolt" aria-hidden="true"></i> Resumo</h3>
+            <dl>
+              <div class="servico-info-linha">
+                <dt>Categoria</dt>
+                <dd>Tributos</dd> <!-- EDITAR -->
+              </div>
+              <div class="servico-info-linha">
+                <dt>Público-alvo</dt>
+                <dd>Cidadãos e empresas</dd> <!-- EDITAR -->
+              </div>
+              <div class="servico-info-linha">
+                <dt>Atendimento</dt>
+                <dd>Online</dd> <!-- EDITAR -->
+              </div>
+              <div class="servico-info-linha">
+                <dt>Prazo</dt>
+                <dd>Imediato</dd> <!-- EDITAR -->
+              </div>
+              <div class="servico-info-linha">
+                <dt>Custo</dt>
+                <dd>Gratuito</dd> <!-- EDITAR -->
+              </div>
+            </dl>
+          </div>
+
+          <!-- Card: Secretaria Responsável -->
+          <!-- EDITAR: dados da secretaria -->
+          <div class="servico-secretaria-card" aria-label="Secretaria responsável pelo serviço">
+            <h3><i class="fas fa-building" aria-hidden="true"></i> Secretaria Responsável</h3>
+            <!--
+              EDITAR: mantenha apenas a secretaria responsável e apague as demais.
+              Secretarias disponíveis:
+                Secretaria Municipal de Administração
+                Secretaria Municipal de Cultura
+                Secretaria Municipal de Desenvolvimento Econômico
+                Secretaria Municipal de Desenvolvimento Social
+                Secretaria Municipal de Desenvolvimento Sustentável
+                Secretaria Municipal de Educação
+                Secretaria Municipal de Governo e Assuntos Jurídicos
+                Secretaria Municipal de Infraestrutura
+                Secretaria Municipal da Mulher e Igualdade Racial
+                Secretaria Municipal de Ordem Pública e Segurança
+                Secretaria Municipal de Saúde
+                Secretaria Municipal de Tecnologia da Informação
+                Secretaria Municipal de Urbanismo
+            -->
+            <p class="servico-secretaria-card-nome">
+              Secretaria Municipal de Administração
+            </p>
+            <ul class="servico-secretaria-card-lista" aria-label="Contatos da secretaria">
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <!-- EDITAR: telefone -->
+                <a href="tel:+554132786100">(41) 3162-7010</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <!-- EDITAR: e-mail -->
+                <a href="mailto:administracao@pmcgs.pr.gov.br">administracao@pmcgs.pr.gov.br</a>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>Praça Bento Munhoz da Rocha Neto, 30 - Centro</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card: Serviços Relacionados -->
+          <div class="servico-outros-card">
+            <h3><i class="fas fa-th-list" aria-hidden="true"></i> Serviços Relacionados</h3>
+            <!-- EDITAR: lista de serviços relacionados -->
+            <ul class="servico-outros-links">
+              <li>
+                <a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">
+                  <span>Certidão de Débitos</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">
+                  <span>Nota Fiscal de Serviços</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">
+                  <span>Consulta de Processos</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
+      </div>
+    </div>
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/servico.js"></script>
+
+</body>
+</html>
+
+

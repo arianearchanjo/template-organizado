@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretarios Municipais - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/secretarios-municipais.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══ HERO — título + breadcrumb ════════════════════════════════
+       Faixa verde escuro com título e trilha de navegação.
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li>
+              <a href="../gestao/">Gestão</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Secretários Municipais</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Secretários Municipais</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa de fundo -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- ══ fim hero ══ -->
+
+
+  <!-- ══ CONTEÚDO PRINCIPAL — Grid de secretários ════════════════════
+       Grade com cards de cada secretaria e seu respectivo secretário.
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Secretários Municipais">
+    <div class="container">
+      <div id="pi-conteudo" tabindex="-1">
+
+        <div class="secretarios-grid"
+             role="list"
+             aria-label="Lista de secretarias municipais">
+
+
+          <!-- ── Administração ─────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/administracao">
+                Secretaria Municipal de Administração
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/silmara.belo.jpg"
+                   alt="Foto de Silmara Aparecida Giacomitti Belo">
+              <span class="secretario-nome">Silmara Aparecida Giacomitti Belo</span>
+            </div>
+            <p class="secretario-descricao">
+              Contadora, formada em Ciências Contábeis pela FAE – Faculdade Católica de Administração e Economia. Pós-graduada em Planejamento e Gerenciamento Estratégico pela PUC-PR e em Gestão Pública pela UNIBRASIL.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/administracao">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Cultura ─────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/cultura">
+                Secretaria Municipal de Cultura
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/janete.assuncao.jpg"
+                   alt="Foto de Janete Aparecida Ataíde Assunção">
+              <span class="secretario-nome">Janete Aparecida Ataíde Assunção</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/cultura">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Econômico ───────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">
+                Secretaria Municipal de Desenvolvimento Econômico
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/pedro.avelar.jpg"
+                   alt="Foto de Pedro Paulo de Avelar">
+              <span class="secretario-nome">Pedro Paulo de Avelar</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Social ───────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">
+                Secretaria Municipal de Desenvolvimento Social
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/felipe.veiga.jpg"
+                   alt="Foto de Felipe Veiga">
+              <span class="secretario-nome">Felipe Veiga</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Sustentável ───────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">
+                Secretaria Municipal de Desenvolvimento Sustentável
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../_global/img/global/ilustracao.png"
+                   alt="Foto do Secretário">
+              <span class="secretario-nome">Andréia Marina Trevisan Del Zotto</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Educação ──────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/educacao">
+                Secretaria Municipal da Educação
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/belenice.rotini.jpg"
+                   alt="Foto de Belenice Koffke Buff Rotini">
+              <span class="secretario-nome">Belenice Koffke Buff Rotini</span>
+            </div>
+            <p class="secretario-descricao">
+              Belenice nasceu em Porto União, Santa Catarina, em 15 de junho de 1974, vindo a residir no Jardim Paulista em 13/09/1974, onde reside até hoje.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/educacao">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Governo e Assuntos Jurídicos ─────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">
+                Secretaria Municipal de Governo e Assuntos Jurídicos
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/bruna.ferrarini.berleis.gif"
+                   alt="Foto de Bruna Ferrarini Berleis">
+              <span class="secretario-nome">Bruna Ferrarini Berleis</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Infraestrutura ───────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/infraestrutura">
+                Secretaria Municipal de Infraestrutura
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/odorico.bandeira.jpg"
+                   alt="Foto de Odorico Bandeira de Lima Junior">
+              <span class="secretario-nome">Odorico Bandeira de Lima Junior</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/infraestrutura">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Mulher e Igualdade Racial ────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/mulher">
+                Secretaria Municipal da Mulher e Igualdade Racial
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/nelise.noceti.jpg"
+                   alt="Foto de Nelise Cristiane Dalprá Noceti">
+              <span class="secretario-nome">Nelise Cristiane Dalprá Noceti</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/mulher">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Ordem Pública e Segurança ────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/ordem-publica">
+                Secretaria Municipal de Ordem Pública e Segurança
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/claudio.crozetta.jpg"
+                   alt="Foto de Claudio Adão Crozetta">
+              <span class="secretario-nome">Claudio Adão Crozetta</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/ordem-publica">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Saúde ────────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/saude">
+                Secretaria Municipal da Saúde
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/marilda.schwartz.jpg"
+                   alt="Foto de Marilda Barros de Lima Schwartz">
+              <span class="secretario-nome">Marilda Barros de Lima Schwartz</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/saude">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Tecnologia da Informação ─────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="../secretarias/">
+                Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/alexandre.capile.jpg"
+                   alt="Foto de Alexandre Capile">
+              <span class="secretario-nome">Alexandre Capile</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="../secretarias/">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Urbanismo ─────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/urbanismo">
+                Secretaria Municipal de Urbanismo
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/keli.coradin.jpg"
+                   alt="Foto de Keli Coradin">
+              <span class="secretario-nome">Keli Coradin</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/urbanismo">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Procuradoria Geral do Município ────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">
+                Procuradoria Geral do Município
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/fabiana.caricati.jpg"
+                   alt="Foto de Fabiana Baptista Silva Caricati">
+              <span class="secretario-nome">Fabiana Baptista Silva Caricati</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+        </div>
+        <!-- ══ fim grid ══ -->
+
+      </div>
+    </div>
+  </main>
+  <!-- ══ fim conteúdo principal ══ -->
+
+
+  <!-- ══ RODAPÉ ══════════════════════════════════════════════════════
+       Contém: logo, links institucionais, contato e redes sociais.
+  ════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/secretarios-municipais.js"></script>
+
+</body>
+</html>
+
+

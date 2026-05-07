@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretarias - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/secretaria.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- /ACESSIBILIDADE -->
+
+
+  <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da secretaria">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li>
+              <a href="../secretarios-municipais/">Secretarias</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li aria-current="page">
+              Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">
+          Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+        </h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ARTIGO PRINCIPAL -->
+        <article>
+
+          <!-- Navegação por abas -->
+          <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
+            <li role="presentation">
+              <button class="sec-tab-btn ativo"
+                id="tab-secretaria"
+                role="tab"
+                aria-controls="painel-secretaria"
+                aria-selected="true">Secretaria</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                id="tab-departamentos"
+                role="tab"
+                aria-controls="painel-departamentos"
+                aria-selected="false">Departamentos</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                id="tab-acesso"
+                role="tab"
+                aria-controls="painel-acesso"
+                aria-selected="false">Solicitação de Acesso</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                id="tab-links"
+                role="tab"
+                aria-controls="painel-links"
+                aria-selected="false">Links Úteis</button>
+            </li>
+          </ul>
+
+
+          <!-- ABA 1: SECRETARIA -->
+          <div id="painel-secretaria"
+            class="sec-tab-painel ativo"
+            role="tabpanel"
+            aria-labelledby="tab-secretaria">
+
+            <h2 class="sec-titulo">
+              Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+            </h2>
+
+            <div class="sec-texto">
+              <p>
+                A Secretaria Municipal da Tecnologia, Inovação e Transformação Digital tem por competência básica
+                planejar, implementar e gerenciar a infraestrutura tecnológica municipal, desenvolver iniciativas de
+                modernização tecnológica e transformação digital no Município, além de propor políticas públicas de
+                incentivo ao empreendedorismo tecnológico e cidades inteligentes.
+              </p>
+              <p>
+                Entre suas principais atribuições estão: a gestão da infraestrutura de TI da administração pública
+                municipal, o desenvolvimento e manutenção dos sistemas de informação institucionais e a garantia da
+                segurança da informação e conformidade com a Lei Geral de Proteção de Dados (LGPD), atuando em
+                conformidade com as diretrizes do Programa de Governo Digital do Governo Federal.
+              </p>
+              <p>
+                A população de Campina Grande do Sul pode contar com a Secretaria de Tecnologia para acesso a
+                serviços digitais, wi-fi público, atendimento por canais eletrônicos e solicitações relacionadas
+                ao uso de sistemas e equipamentos da Prefeitura. Atualmente, a pasta é liderada pelo Secretário
+                Alexandre Capile, que tem como prioridade a ampliação dos serviços digitais ao cidadão e a
+                modernização dos processos administrativos do município.
+              </p>
+            </div>
+
+            <!-- Contato da secretaria -->
+            <div class="sec-contato-lista" aria-label="Informações de contato da secretaria">
+
+              <div class="sec-contato-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>
+                  <strong>Endereço:</strong>
+                  Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <strong>Telefone:</strong>
+                  <a href="tel:+554131627065">(41) 3162-7065</a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>
+                  <strong>Email:</strong>
+                  <a href="mailto:tecnologiadainformacao@pmcgs.pr.gov.br">tecnologiadainformacao@pmcgs.pr.gov.br</a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span>
+                  <strong>Horário de funcionamento:</strong>
+                  Segunda a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Card do Secretário Municipal -->
+            <div class="sec-secretario-bloco" aria-label="Informações do secretário municipal">
+
+              <div class="sec-secretario-foto" aria-hidden="true">
+                <img src="../../assets/img/secretarias/alexandre-capile.gif"
+                  alt="Foto de Alexandre Capile, Secretário Municipal da Tecnologia, Inovação e Transformação Digital">
+              </div>
+
+              <div class="sec-secretario-corpo">
+                <p class="sec-secretario-label">Secretário Municipal</p>
+                <h3 class="sec-secretario-nome">Alexandre Capile</h3>
+                <div class="sec-secretario-bio">
+                  <p>
+                    [Nome completo] nasceu em [data de nascimento], em [município de nascimento], Paraná.
+                    Formado(a) em [curso] pela [instituição] no ano de [ano], construiu uma trajetória
+                    profissional voltada para [área de atuação]. Antes de assumir o cargo atual, atuou
+                    como [experiências profissionais relevantes].
+                  </p>
+                  <p>
+                    Na política, iniciou sua trajetória como [primeiro cargo político]. Ao longo dos anos,
+                    [descrição da trajetória política e mandatos exercidos].
+                    Atualmente, como Secretário Municipal da Tecnologia, Inovação e Transformação Digital,
+                    tem se dedicado a [principais ações e projetos da gestão], com foco em [áreas prioritárias].
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /ABA 1: SECRETARIA -->
+
+
+          <!-- ABA 2: DEPARTAMENTOS -->
+          <div id="painel-departamentos"
+            class="sec-tab-painel"
+            role="tabpanel"
+            aria-labelledby="tab-departamentos">
+
+            <div class="sec-depto-grid">
+
+              <!-- Card: Administrativo -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Administrativo</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="mailto:tecnologiadainformacao@pmcgs.pr.gov.br">tecnologiadainformacao@pmcgs.pr.gov.br</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Departamento de Sistemas, Inovação e Transformação Digital -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Departamento de Sistemas, Inovação e Transformação Digital</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="mailto:tecnologiadainformacao@pmcgs.pr.gov.br">tecnologiadainformacao@pmcgs.pr.gov.br</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Departamento de Operações, Segurança e Infraestrutura de TI -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Departamento de Operações, Segurança e Infraestrutura de TI</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="mailto:tecnologiadainformacao@pmcgs.pr.gov.br">tecnologiadainformacao@pmcgs.pr.gov.br</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /ABA 2: DEPARTAMENTOS -->
+
+
+          <!-- ABA 3: SOLICITAÇÃO DE ACESSO -->
+          <div id="painel-acesso"
+            class="sec-tab-painel"
+            role="tabpanel"
+            aria-labelledby="tab-acesso">
+
+            <div class="sec-acesso-texto">
+              <p>
+                Para obter acesso aos sistemas da Prefeitura Municipal de Campina Grande do Sul, o solicitante
+                deve preencher o formulário correspondente ao seu perfil e encaminhá-lo ao setor responsável
+                pela Tecnologia da Informação.
+              </p>
+              <p>
+                <strong>Usuário Interno (Funcionários):</strong> destinado aos servidores e colaboradores da
+                Prefeitura que necessitam de acesso aos sistemas institucionais para o exercício de suas funções.
+              </p>
+              <p>
+                <strong>Usuário Externo (Terceiros):</strong> destinado a prestadores de serviço, parceiros ou
+                demais usuários externos que, por necessidade comprovada, precisem de acesso temporário ou
+                restrito aos sistemas municipais.
+              </p>
+              <p>
+                <strong>Cadastro de Equipamento Particular:</strong> destinado ao registro de dispositivos
+                pessoais que serão utilizados na rede municipal, conforme política de uso estabelecida pela
+                Secretaria.
+              </p>
+            </div>
+
+            <div class="sec-aviso" role="note">
+              Os formulários devem ser preenchidos <strong>digitalmente</strong>.
+              Não serão aceitas fichas preenchidas à mão ou com informações incompletas.
+            </div>
+
+            <div class="sec-acesso-texto">
+              <p>
+                Após o preenchimento, o formulário deve ser enviado ao setor de TI para análise e liberação do acesso.
+              </p>
+            </div>
+
+            <!-- Formulários para download -->
+            <div class="sec-form-grid" aria-label="Formulários disponíveis para download">
+
+              <a href="#" class="sec-form-item" aria-label="Download: Formulário para Cadastro de Usuário Interno">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Cadastro de Usuário Interno (Funcionários)</div>
+                  <div class="sec-form-desc">Controle de Acesso aos Sistemas</div>
+                </div>
+              </a>
+
+              <a href="#" class="sec-form-item" aria-label="Download: Formulário para Cadastro de Usuário Externo">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Cadastro de Usuário Externo (Terceiros)</div>
+                  <div class="sec-form-desc">Controle de Acesso aos Sistemas</div>
+                </div>
+              </a>
+
+              <a href="#" class="sec-form-item" aria-label="Download: Formulário para Cadastro de Equipamento Particular">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Formulário para Cadastro de Equipamento Particular</div>
+                  <div class="sec-form-desc">Registro de dispositivos pessoais na rede municipal</div>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+          <!-- /ABA 3: SOLICITAÇÃO DE ACESSO -->
+
+
+          <!-- ABA 4: LINKS ÚTEIS -->
+          <div id="painel-links"
+            class="sec-tab-painel"
+            role="tabpanel"
+            aria-labelledby="tab-links">
+
+            <!-- Categoria: Serviços -->
+            <div class="sec-links-categoria">
+              <h3 class="sec-links-cat-titulo">Serviços</h3>
+              <ul class="sec-links-lista">
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Central de Atendimento Tecnologia da Informação
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Sistema Administrativo de Gestão Pública
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Lista Telefônica
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Email Institucional
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Consulta Endereços de Locais da Prefeitura
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Sistema Administrativo de Fiscalização de Contratos - SIRA
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Categoria: Arquivos -->
+            <div class="sec-links-categoria">
+              <h3 class="sec-links-cat-titulo">Arquivos</h3>
+              <ul class="sec-links-lista">
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Portaria nº 1034-2021 - Designa responsáveis pelo Cadastro e Auditoria do Sistema de Cadastro de Usuários
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 27-2010 Institui Normas para Utilização da Rede de Informática
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 1624-2021 - Instrução Normativa Conjunta 03-2021 - Cadastro de Usuários
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Controle de Acesso aos Sistemas - Formulário para Cadastro de Usuário Interno (Funcionários)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 1521-2021 Aprova e Regulamenta a Política de Segurança da Informação e Comunicação
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Controle de Acesso aos Sistemas - Formulário para Cadastro de Usuário Externo (Terceiros)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 97-2010 Institui Normas para Utilização das Impressoras
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Formulário para Cadastro de Equipamento Particular
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- /ABA 4: LINKS ÚTEIS -->
+
+        </article>
+        <!-- /ARTIGO PRINCIPAL -->
+
+
+        <!-- SIDEBAR -->
+        <aside id="pi-sidebar" class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h3><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h3>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button id="pi-sb-fonte-aumentar" class="pi-ctrl-btn" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="pi-sb-fonte-diminuir" class="pi-ctrl-btn" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="pi-sb-fonte-resetar" class="pi-ctrl-btn" aria-label="Restaurar tamanho da fonte padrão">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button id="pi-sb-btn-contraste"
+                class="pi-ctrl-btn-contraste"
+                aria-pressed="false"
+                aria-label="Ativar ou desativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Navegação: lista de secretarias -->
+          <div class="pi-sidebar-card">
+            <h3><i class="fas fa-building" aria-hidden="true"></i> Secretarias</h3>
+            <ul class="pi-sidebar-links">
+              <li><a href="#"><span>Administração</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Cultura</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Desenvolvimento Econômico</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Desenvolvimento Social</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Educação</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Infraestrutura</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>Tecnologia e Inovação</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li><a href="#"><span>Urbanismo</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h3>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7065</p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> tecnologiadainformacao@pmcgs...</p>
+            <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
+      </div>
+    </div>
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/secretarias.js"></script>
+
+</body>
+</html>
+
+

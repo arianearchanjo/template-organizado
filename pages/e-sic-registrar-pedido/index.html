@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E Sic Registrar Pedido - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+  <link rel="stylesheet" href="css/e-sic.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="../e-sic/">e-SIC</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Registrar Pedido</li>
+          </ol>
+        </nav>
+        <h1 class="pi-hero-titulo">Registrar Pedido de Acesso à Informação</h1>
+      </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- COLUNA PRINCIPAL -->
+        <article>
+
+          <!-- AVISO LAI -->
+          <div class="esic-alerta" role="note">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            <div>
+              Com base na <strong>Lei Federal nº 12.527/2011 (Lei de Acesso à Informação)</strong>,
+              qualquer pessoa pode solicitar informações públicas <strong>sem necessidade de
+              justificativa</strong>. O prazo de resposta é de até <strong>20 dias úteis</strong>.
+              <a href="../e-sic/" class="esic-alerta__link">
+                Ver prazos e instâncias de recurso
+              </a>
+            </div>
+          </div>
+
+          <!-- FORMULÁRIO DE PEDIDO -->
+          <section id="esic-formulario" aria-labelledby="esic-form-titulo" class="pi-mt-secao">
+            <h2 id="esic-form-titulo" class="pi-secao-titulo">
+              <i class="fas fa-plus-circle" aria-hidden="true"></i>
+              Registrar Novo Pedido
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="esic-form-bloco">
+              <p class="esic-form-intro">
+                Preencha o formulário abaixo para registrar seu pedido de acesso à informação.
+                Todos os campos marcados com <abbr title="obrigatório">*</abbr> são obrigatórios.
+                Após o envio, você receberá um número de protocolo para acompanhamento.
+              </p>
+
+              <form class="esic-form" id="esic-pedido-form" novalidate
+                    aria-label="Formulário de pedido de acesso à informação">
+
+                <!-- Linha 1: Nome + E-mail -->
+                <div class="esic-form-row">
+                  <div class="esic-form-group">
+                    <label class="esic-form-label" for="esic-solicitante-nome">
+                      Nome completo <abbr title="obrigatório">*</abbr>
+                    </label>
+                    <input type="text" id="esic-solicitante-nome" name="nome"
+                           class="esic-form-input" required
+                           autocomplete="name"
+                           placeholder="Seu nome completo">
+                  </div>
+                  <div class="esic-form-group">
+                    <label class="esic-form-label" for="esic-solicitante-email">
+                      E-mail <abbr title="obrigatório">*</abbr>
+                    </label>
+                    <input type="email" id="esic-solicitante-email" name="email"
+                           class="esic-form-input" required
+                           autocomplete="email"
+                           placeholder="seu@email.com.br">
+                  </div>
+                </div>
+
+                <!-- Linha 2: Telefone + Órgão -->
+                <div class="esic-form-row">
+                  <div class="esic-form-group">
+                    <label class="esic-form-label" for="esic-solicitante-telefone">
+                      Telefone (opcional)
+                    </label>
+                    <input type="tel" id="esic-solicitante-telefone" name="telefone"
+                           class="esic-form-input"
+                           autocomplete="tel"
+                           placeholder="(41) 9 0000-0000">
+                  </div>
+                  <div class="esic-form-group">
+                    <label class="esic-form-label" for="esic-orgao">
+                      Órgão / Secretaria solicitada
+                    </label>
+                    <select id="esic-orgao" name="orgao" class="esic-form-select">
+                      <option value="">Selecione (opcional)</option>
+                      <optgroup label="Secretarias">
+                        <option value="sec-administracao">Secretaria de Administração</option>
+                        <option value="sec-cultura">Secretaria de Cultura</option>
+                        <option value="sec-desenvolvimento-economico">Secretaria de Desenvolvimento Econômico</option>
+                        <option value="sec-desenvolvimento-social">Secretaria de Desenvolvimento Social</option>
+                        <option value="sec-desenvolvimento-sustentavel">Secretaria de Desenvolvimento Sustentável</option>
+                        <option value="sec-educacao">Secretaria de Educação</option>
+                        <option value="sec-governo-juridico">Secretaria de Governo e Assuntos Jurídicos</option>
+                        <option value="sec-infraestrutura">Secretaria de Infraestrutura</option>
+                        <option value="sec-mulher-igualdade">Secretaria da Mulher e Igualdade Racial</option>
+                        <option value="sec-ordem-publica">Secretaria de Ordem Pública e Segurança</option>
+                        <option value="sec-saude">Secretaria de Saúde</option>
+                        <option value="sec-tecnologia">Secretaria de Tecnologia da Informação</option>
+                        <option value="sec-urbanismo">Secretaria de Urbanismo</option>
+                      </optgroup>
+                      <optgroup label="Outros Órgãos">
+                        <option value="controladoria">Controladoria Geral</option>
+                        <option value="ouvidoria">Ouvidoria Geral</option>
+                        <option value="procuradoria">Procuradoria Geral</option>
+                        <option value="conselhos">Conselhos Municipais</option>
+                      </optgroup>
+                      <optgroup label="Gestão">
+                        <option value="gabinete-prefeito">Gabinete do Prefeito</option>
+                        <option value="gabinete-vice">Gabinete do Vice-Prefeito</option>
+                        <option value="secretarios">Secretários Municipais</option>
+                      </optgroup>
+                      <option value="outro">Não sei / Outro</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Descrição do pedido -->
+                <div class="esic-form-group">
+                  <label class="esic-form-label" for="esic-pedido-texto">
+                    Descrição do pedido <abbr title="obrigatório">*</abbr>
+                  </label>
+                  <textarea id="esic-pedido-texto" name="pedido"
+                            class="esic-form-textarea" required
+                            rows="6"
+                            placeholder="Descreva com detalhes a informação que você solicita. Seja específico sobre o período, documentos ou dados desejados."></textarea>
+                  <span class="esic-form-hint">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    Não é necessário justificar o motivo do pedido. Seja claro e objetivo.
+                  </span>
+                </div>
+
+                <!-- Formato de resposta -->
+                <div class="esic-form-group">
+                  <label class="esic-form-label" for="esic-formato-resposta">
+                    Formato preferido de resposta
+                  </label>
+                  <select id="esic-formato-resposta" name="formato" class="esic-form-select">
+                    <option value="email">E-mail</option>
+                    <option value="pdf">Documento PDF</option>
+                    <option value="presencial">Consulta presencial</option>
+                  </select>
+                </div>
+
+                <!-- LGPD -->
+                <div class="esic-form-check-group">
+                  <label class="esic-form-check">
+                    <input type="checkbox" id="esic-lgpd-aceite" name="lgpd" required>
+                    <span>
+                      Declaro que li e concordo com o tratamento dos meus dados pessoais conforme a
+                      <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong> e a
+                      <a href="../privacidade/index.html" target="_blank" rel="noopener noreferrer">política de privacidade do portal</a>.
+                    </span>
+                  </label>
+                </div>
+
+                <div class="esic-form-acoes">
+                  <button type="submit" class="pi-btn-verde" id="esic-submit-btn">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    Enviar Pedido
+                  </button>
+                  <button type="reset" class="pi-btn-outline" id="esic-reset-btn">
+                    <i class="fas fa-undo" aria-hidden="true"></i>
+                    Limpar
+                  </button>
+                  <a href="../e-sic/" class="pi-btn-outline">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Voltar ao e-SIC
+                  </a>
+                </div>
+
+              </form>
+
+              <!-- Confirmação pós-envio -->
+              <div class="esic-form-confirmacao" id="esic-confirmacao" hidden aria-live="polite">
+                <div class="esic-confirmacao-icone" aria-hidden="true">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Pedido registrado com sucesso!</h3>
+                <p>Seu protocolo é: <strong id="esic-protocolo-numero">e-SIC-2026-000000</strong></p>
+                <p>Guarde este número para acompanhar a resposta. Você também receberá uma confirmação por e-mail.</p>
+                <div class="esic-confirmacao-acoes">
+                  <button class="pi-btn-outline" id="esic-novo-pedido-btn">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Registrar novo pedido
+                  </button>
+                  <a href="../e-sic/" class="pi-btn-verde">
+                    <i class="fas fa-search" aria-hidden="true"></i> Acompanhar pedido
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </article>
+        <!-- /COLUNA PRINCIPAL -->
+
+        <!-- SIDEBAR -->
+        <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-bolt" aria-hidden="true"></i> Ações Rápidas</h4>
+            <a href="../e-sic/" class="pi-btn-outline pi-btn-full">
+              <i class="fas fa-search" aria-hidden="true"></i> Acompanhar Pedido
+            </a>
+            <a href="../e-sic/" class="pi-btn-outline pi-btn-full esic-sidebar-btn-mt">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar ao e-SIC
+            </a>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Orientações</h4>
+            <ul class="pi-sidebar-links" aria-label="Orientações">
+              <li>
+                <a href="../e-sic/">
+                  <span><i class="fas fa-route pi-sidebar-ico" aria-hidden="true"></i>Como Funciona</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../e-sic/">
+                  <span><i class="fas fa-clock pi-sidebar-ico" aria-hidden="true"></i>Prazos Legais</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../e-sic/">
+                  <span><i class="fas fa-gavel pi-sidebar-ico" aria-hidden="true"></i>Recursos e Instâncias</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../perguntas-frequentes/">
+                  <span><i class="fas fa-question-circle pi-sidebar-ico" aria-hidden="true"></i>Perguntas Frequentes</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Destaque prazo legal -->
+          <div class="pi-sidebar-card esic-sidebar-prazo-card">
+            <h4><i class="fas fa-clock" aria-hidden="true"></i> Prazo de Resposta</h4>
+            <div class="esic-sidebar-prazo">
+              <span class="esic-sidebar-prazo__numero">20</span>
+              <span class="esic-sidebar-prazo__unidade">dias<br>úteis</span>
+            </div>
+            <p class="esic-sidebar-prazo__base">
+              <i class="fas fa-balance-scale" aria-hidden="true"></i>
+              Art. 11 da LAI (Lei nº 12.527/2011)
+            </p>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-sitemap" aria-hidden="true"></i> Transparência</h4>
+            <ul class="pi-sidebar-links" aria-label="Páginas relacionadas">
+              <li>
+                <a href="../transparencia/">
+                  <span><i class="fas fa-eye pi-sidebar-ico" aria-hidden="true"></i>Portal da Transparência</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../ouvidoria/">
+                  <span><i class="fas fa-comments pi-sidebar-ico" aria-hidden="true"></i>Ouvidoria</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../privacidade/">
+                  <span><i class="fas fa-shield-alt pi-sidebar-ico" aria-hidden="true"></i>Política de Privacidade</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
+      </div>
+    </div>
+  </main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+</body>
+</html>
+
+

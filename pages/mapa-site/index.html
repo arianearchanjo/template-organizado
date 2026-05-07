@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Site - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/mapa-site.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Mapa do Site</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Mapa do Site</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main">
+    <div class="container ms-grade-wrapper">
+      <div id="pi-conteudo" tabindex="-1">
+
+  <main id="pi-main">
+    <div class="container ms-grade-wrapper">
+      <div id="pi-conteudo" tabindex="-1">
+
+
+        <!-- 1. INFORMAÇÕES -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-info-circle"></i></div><h2 class="ms-grupo-titulo">Informações</h2><span class="ms-grupo-badge">Informações gerais</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria-sus">Ouvidoria do SUS</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/coronavirus">Coronavírus</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/coleta-de-lixo">Coleta de Lixo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Concursos e Processos Seletivos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/progressao-funcional">Progressão Funcional</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/projetos-culturais">Projetos Culturais</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/contribuicao-de-melhorias">Contribuição de Melhorias</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/violencia">Violência</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/moradas-da-campina">Cadastro de interessados em adquirir lotes urbanizados do empreendimento de interesse social "Moradas da Campina"</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/familia-acolhedora">Família Acolhedora</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/transporte-coletivo">Transporte Coletivo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/rota-turistica-peabiru">Consulta Pública Rota Turística Caminhos do Peabiru</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 2. SITE -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-globe"></i></div><h2 class="ms-grupo-titulo">Site</h2><span class="ms-grupo-badge">Sobre o portal</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/conferencia-municipal">Consulta Pública – 16ª Conferência Municipal</a></li>
+              <li><a href="../acessibilidade/">Acessibilidade</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/politica-privacidade">Política de Privacidade</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="../ouvidoria/">Ouvidoria Geral do Município</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/guarda-civil-municipal">Guarda Civil Municipal</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 3. TRANSPARÊNCIA -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-eye"></i></div><h2 class="ms-grupo-titulo">Transparência</h2><span class="ms-grupo-badge">Lei nº 12.527/2011</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/fornecedores-impedidos">Fornecedores Impedidos de Licitar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/comunicados-tributarios">Comunicados Tributários</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/programa-bolsa-familia">Programa Bolsa Família</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/relatorio-partidos">Relatório aos Partidos Divulgação ref. Lei Federal 9.452/1997</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso a Informação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/audiencia-publica">Audiência Publica</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servidores">Servidores Municipais</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/contratos">Contratos e Atas</a></li>
+              <li><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/leiseatos-geral/geral" target="_blank">Leis e Atos</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/credenciamento-empresas">Credenciamento de Empresas</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cardapio-merenda-escolar">Cardápios da Alimentação Escolar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/parcerias-voluntarias">Parcerias Voluntárias</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselhos-municipais">Conselhos Municipais</a></li>
+              <li><a href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener">Radar da Transparência</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/convenios">Convênios</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/diarias">Diárias</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 4. CONSELHOS MUNICIPAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-users"></i></div><h2 class="ms-grupo-titulo">Conselhos Municipais</h2><span class="ms-grupo-badge">Participação social</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/banco-de-projetos">Banco de Projetos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-saude">Conselho Municipal de Saúde</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-educacao">Conselho Municipal da Educação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-fundeb">Conselho Municipal do Fundeb</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-alimentacao-escolar">Conselho Municipal da Alimentação Escolar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/comite-transporte-escolar">Comitê do Transporte Escolar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmdca">Conselho Municipal dos Direitos da Criança e do Adolescente</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/grupo-gestor-praca-ceu">Grupo Gestor Praça CEU</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-pessoa-idosa">Conselho Municipal dos Direitos da Pessoa Idosa</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-assistencia-social">Conselho Municipal de Assistência Social</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-pessoa-deficiencia">Conselho Municipal dos Direitos da Pessoa com Deficiência</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-habitacao">Conselho Gestor do Fundo Municipal de Habitação e Interesse Social</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/comops">Conselho Municipal de Ordem Pública e Segurança – COMOPS</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cosedi">Comissão de Segurança de Edificações e Imóveis – COSEDI</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/compdec">Coordenadoria Municipal de Proteção e Defesa Civil – COMPDEC</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-tutelar">Conselho Tutelar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/conselho-seguranca-alimentar">Conselho Municipal de Segurança Alimentar e Nutricional</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 5. UNIDADES DE SAÚDE MUNICIPAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-clinic-medical"></i></div><h2 class="ms-grupo-titulo">Unidades de Saúde Municipais</h2><span class="ms-grupo-badge">Rede municipal de saúde</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-cerne">Unidade de Apoio Cerne (Cerne)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-divisa">Unidade de Apoio Divisa (Divisa)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-jardim-florida">Unidade de Saúde Adelque Bossardi (Jardim Flórida)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-jardim-paulista">Unidade de Saúde Conceição Maria de Andrade (Jardim Paulista)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-sede">Unidade de Saúde Dacyr Siqueira Trevisan (Sede)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-timbu">Unidade de Saúde Henrique Ferreira (Timbú)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-paiol-de-baixo">Unidade de Saúde Jacira Paulina Balbino Ferreira (Paiol de Baixo)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-santa-rosa">Unidade de Saúde João Hamilton Belo (Santa Rosa)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-taquari">Unidade de Saúde Jorge Ribeiro Camargo (Taquari)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-aracatuba">Unidade de Saúde Manoel Alves Kustel (Araçatuba)</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-barragem">Unidade de Saúde Pedro Casemiro Rodrigues (Barragem)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-jaguatirica">Unidade de Saúde Professora Elvira Tavares de Sant'Anna Camargo (Jaguatirica)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-santa-rita">Unidade de Saúde Rogerio Oliveira de Almeida (Santa Rita)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-canelinha">Unidade de Saúde Rosalina Carvalho de Paula (Canelinha)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ubs-ribeirao-grande">Unidade de Saúde Zacarias Sant'Ana do Nascimento (Ribeirão Grande)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/caps">Centro de Atenção Psicossocial Sandra Paula Dantas – CAPS</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-marcacao">Central de Marcação de Consultas e Exames Especializados</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-remocoes">Central de Remoções</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/vigilancia-saude">Vigilância em Saúde</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/farmacia-central">Farmácia Central</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 6. PORTAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-th-large"></i></div><h2 class="ms-grupo-titulo">Portais</h2><span class="ms-grupo-badge">Portais institucionais</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Portal de Serviços</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/noticias">Portal de Notícias</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servidor">Portal do Servidor</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://turismo.campinagrandedosul.pr.gov.br">Portal do Turismo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal">Bem Estar Animal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/campina-contra-a-dengue">Campina Contra a Dengue</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 7. GESTÃO -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-landmark"></i></div><h2 class="ms-grupo-titulo">Gestão</h2><span class="ms-grupo-badge">Gestão municipal</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito de Campina Grande do Sul</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice Prefeito de Campina Grande do Sul</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários Municipais</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 8. SERVIÇOS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-concierge-bell"></i></div><h2 class="ms-grupo-titulo">Serviços</h2><span class="ms-grupo-badge">Serviços ao cidadão</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Consulta de Licitações</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/contratos">Consulta de Contratos e Atas</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-de-documentos">Emissão de Documentos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-cep">Consulta CEP (Código de Endereço Postal)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-horario-transporte">Consulta Horário do Transporte Coletivo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/iluminacao-publica">Iluminação Pública</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/portal-contribuinte">Portal do Contribuinte</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/parcelamento-debitos">Parcelamento de Débitos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-vagas-emprego">Consulta Vagas de Emprego</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/renovacao-alvara">Renovação de Alvará de Localização e Funcionamento</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/portal-itbi">Portal do ITBI</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/declaracao-itbi">Emitir/Consultar Declaração de ITBI</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/laudo-avaliacao-itbi">Emitir Laudo de Avaliação de ITBI</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/certidao-quitacao-itbi">Certidão de Quitação de ITBI</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cadastro-produtor-rural">Cadastro de Produtor Rural</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-autenticidade-documento">Consulta Autenticidade de Documento</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/patrulha-agricola">Patrulha Agrícola Mecanizada Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-holerite">Emissão do Holerite</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/portal-de-geoprocessamento">Portal de Geoprocessamento</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-atendimento-educacao">Central de Atendimento Secretaria da Educação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-atendimento-comunicacao">Central de Atendimento Setor de Comunicação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/agendamento-ambulancia">Agendamento de Ambulância</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-atendimento-infraestrutura">Central de Atendimento Secretaria de Infraestrutura</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/central-atendimento-ti">Central de Atendimento Tecnologia da Informação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-vida-funcional">Consulta Vida Funcional</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/comprovante-rendimentos">Emissão do Comprovante de Rendimentos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-sepultamentos">Consulta Sepultamentos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-debitos-cemiterio">Consulta Débitos de Cemitério</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servidor">Portal do Servidor</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/sistema-gestao-publica">Acesso ao Sistema Administrativo de Gestão Pública</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/rh24horas">RH24Horas</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/suporte-informatica-saude">Suporte de Informática Saúde</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/limpeza-predial">Limpeza Predial (Roçada)</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/lista-telefonica">Lista Telefônica</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-faf">Emissão da FAF – Ficha de Acompanhamento Funeral</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-velorios">Consulta Velórios</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/email-institucional">Acesso ao Email Institucional</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/sistema-cemiterios">Acesso ao Sistema Administrativo de Gestão de Cemitérios</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/atoteca">Acesso a Atoteca</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-empresas-inidôneas">Consulta Empresas Inidôneas e Suspensas</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-protocolo">Consulta Protocolo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-impedidos">Consulta de Impedidos de Licitar</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/regularidade-fgts">Consulta Regularidade do Empregador FGTS</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cndt">Consulta Certidão de Débitos Trabalhistas CNDT</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/certidao-estadual">Consulta Certidão de Débitos Tributários e de Dívida Ativa Estadual</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/certidao-federal">Consulta Certidão de Débitos Relativos a Créditos Tributários Federais e à Dívida Ativa da União</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/sistema-acao-social">Acesso ao Sistema Administrativo de Gestão da Ação Social IDS</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-diario-oficial">Consulta Diário Oficial</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Consulta Legislação Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/segunda-via-carne">Segunda Via de Carnê de Débitos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Emissão da Certidão de Débitos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/certidao-comprobatoria">Certidão Comprobatória</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-autenticidade-tributario">Consulta Autenticidade de Documento Tributário</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-cadastral-tributario">Consulta Cadastral Tributário</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Emissão da Nota Fiscal de Serviços</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-autenticidade-fiscal">Consulta Autenticidade de Documento Fiscal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/denuncia-nota-fiscal">Efetuar Denúncia sobre Nota Fiscal de Serviço</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-empresas-nfe">Consulta Empresas optantes pela emissão de Nota Fiscal Eletrônica</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-cnae">Consulta CNAE e Serviços</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/lancamento-servico-tomado">Lançamento de Serviço Tomado</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/lancamento-servico-prestado">Lançamento de Serviço Prestado</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/carta-correcao-nf">Carta de Correção de Nota Fiscal de Serviço</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/entregar-declaracao-issqn">Entregar Declaração de ISSQN</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-viabilidade">Consulta de Viabilidade para Edificação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso a Informação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Cadastrar Manifestação na Ouvidoria Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Consulta Endereços de Locais da Prefeitura</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/sira">Acesso ao Sistema Administrativo de Fiscalização de Contratos – SIRA</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ponto-eletronico">Acesso a Consulta de Registros do Ponto Eletrônico</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/lista-espera-cmeis">Lista de Espera CMEIs</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servico-inspecao-municipal">Serviço de Inspeção Municipal – SIM</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/atualizacao-cadastral">Solicitação de Atualização Cadastral de Contribuinte</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/consultar-protocolo-ouvidoria">Consultar Protocolo de Manifestação da Ouvidoria Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/avaliacao-comunicacao">Avaliação Comunicação da Prefeitura</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 9. MUNICÍPIO -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-map-marked-alt"></i></div><h2 class="ms-grupo-titulo">Município</h2><span class="ms-grupo-badge">Turismo · História · Município</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina Grande do Sul</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História de Campina Grande do Sul</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados de Campina Grande do Sul</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/pontos-turisticos">Pontos Turísticos</a></li>
+              <li><a href="https://turismo.campinagrandedosul.pr.gov.br">Portal do Turismo</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/bandeira-brasao">Bandeira e Brasão</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/hino-municipal">Hino Municipal</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/feriados-municipais">Feriados Municipais</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/galeria-de-prefeitos">Galeria de Prefeitos</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 10. ESCOLAS E CRECHES MUNICIPAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-school"></i></div><h2 class="ms-grupo-titulo">Escolas e Creches Municipais</h2><span class="ms-grupo-badge">Rede municipal de ensino</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-alessandra">Escola Municipal Alessandra Cristina Assunção</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-anna">Escola Municipal Anna Ferreira da Costa</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-antonio">Escola Municipal Antonio José de Carvalho</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-augusto">Escola Municipal Augusto Staben</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-jose-euripedes">Escola Municipal José Eurípedes Gonçalves</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-lucidio">Escola Municipal Lucídio Florêncio Ribeiro</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-marcos">Escola Municipal Marcos Nicolau Strapassoni</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-nilce">Escola Municipal Professora Nilce Terezinha Zanetti</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-ulisses">Escola Municipal Ulisses Guimarães</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-castelo-branco">Escola Municipal Humberto Alencar Castelo Branco</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-joao-assuncao">Escola Rural Municipal João Assunção</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-santa-leticia">Escola Rural Municipal Santa Letícia</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/escola-educacao-especial">Escola de Educação Especial Maria Clara Barbosa da Gama</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-alcebíades">CMEI Alcebíades Cooper</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-angela">CMEI Angela Maria Trevisan</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-assis">CMEI Assis Bossardi</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-darvil">CMEI Darvil José Caron</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-ernesto">CMEI Ernesto Zanona</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-florinda">CMEI Florinda Dalprá Ferreira</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-glacy">CMEI Glacy Dalprá de Macedo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-guido">CMEI Guido Irineu Pelanda</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-iara">CMEI Iara de Jesus Hathy Medeiros</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-italia">CMEI Italia Gheno Vidolin</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-laura">CMEI Laura Bertoni Zanchettin</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-lucia">CMEI Lucia Rosenente Gueno Ferrarini</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-nairelle">CMEI Nairelle Zanetti</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-rosiel">CMEI Rosiel Dalpra</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-tio-luiz">CMEI Tio Luiz Garcia</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-vo-elca">CMEI Vó Elça</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-dilacir">CMEI Dilacir da Rocha Lima</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-maria-alice">CMEI Maria Alice Andreata dos Santos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cmei-valmor">CMEI Valmor Manenti</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 11. CONCURSOS E PROCESSOS SELETIVOS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-file-alt"></i></div><h2 class="ms-grupo-titulo">Concursos e Processos Seletivos</h2><span class="ms-grupo-badge">Editais e seleções</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 001/2021</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 002/2021</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 001/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 002/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 003/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 005/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 007/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 004/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 006/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 008/2022</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Concurso Remoção da Secretaria Municipal de Educação – Edital 001/2022</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Eleição Conselho Tutelar 2023 – Resolução 05/2023 CMDCA</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 001/2023</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 002/2023</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Concurso Público Educação – Professor – Edital 002/2023</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Concurso Público Educação – Educador Infantil – Edital 001/2024</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Concurso Público Edital 01/2025</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 001/2024</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo Seletivo Simplificado 001/2025</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/concursos">Processo de nomeação de direção de estabelecimentos municipais de ensino</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 12. OUTRAS ENTIDADES MUNICIPAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-building"></i></div><h2 class="ms-grupo-titulo">Outras Entidades Municipais</h2><span class="ms-grupo-badge">Entidades vinculadas</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/previcamp">Previdência Social de Campina Grande do Sul – PREVICAMP</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/fascamp">Fundação de Atenção à Saúde de Campina Grande do Sul – FASCAMP</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/camara-de-vereadores">Câmara de Vereadores de Campina Grande do Sul</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/assercamp">Associação dos Servidores Públicos Municipais de Campina Grande do Sul – ASSERCAMP</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 13. SECRETARIAS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-sitemap"></i></div><h2 class="ms-grupo-titulo">Secretarias</h2><span class="ms-grupo-badge">Secretarias</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/administracao">Secretaria Municipal de Administração</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/cultura">Secretaria Municipal da Cultura</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">Secretaria Municipal de Desenvolvimento Social</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/educacao">Secretaria Municipal da Educação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">Secretaria Municipal de Governo e Assuntos Jurídicos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/infraestrutura">Secretaria Municipal de Infraestrutura</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ordem-publica">Secretaria Municipal de Ordem Pública e Segurança</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral do Município</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/urbanismo">Secretaria Municipal de Urbanismo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/saude">Secretaria Municipal da Saúde</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/mulher">Secretaria Municipal da Mulher e Igualdade Racial</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/tecnologia-da-informacao">Secretaria Municipal da Tecnologia, Inovação e Transformação Digital</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">Secretaria Municipal de Desenvolvimento Econômico</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">Secretaria Municipal de Desenvolvimento Sustentável</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 14. REDES SOCIAIS -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-share-alt"></i></div><h2 class="ms-grupo-titulo">Redes Sociais</h2><span class="ms-grupo-badge">Siga a Prefeitura</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://www.facebook.com/PrefDeCampina" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="https://www.instagram.com/prefdecampina" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://www.youtube.com/@prefdecampina" target="_blank" rel="noopener">Youtube</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/whatsapp" target="_blank" rel="noopener">Whatsapp</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="ms-sep">
+
+        <!-- 15. DEPARTAMENTOS E SETORES -->
+        <div class="ms-grupo">
+          <div class="ms-grupo-header"><div class="ms-grupo-icon"><i class="fas fa-project-diagram"></i></div><h2 class="ms-grupo-titulo">Departamentos e Setores</h2><span class="ms-grupo-badge">Estrutura administrativa</span></div>
+          <div class="ms-colunas">
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral do Município</a></li>
+            </ul>
+            <ul class="ms-links">
+              <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral do Município</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+  </main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+</body>
+</html>
+
+

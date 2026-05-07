@@ -1,0 +1,230 @@
+<!-- /ACESSIBILIDADE -->
+
+
+  <!-- HERO -->
+  <!-- ALTERAR: breadcrumb e título da unidade -->
+  <section id="pi-hero" aria-label="Identificação da unidade de saúde">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li>
+              <a href="secretaria-saude.html">Secretaria Municipal da Saúde</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li>
+              <a href="unidades-saude.html">Unidades de Saúde Municipais</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li aria-current="page">Unidade de Saúde Dacyr Siqueira Trevisan (Sede)</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Unidade de Saúde Dacyr Siqueira Trevisan (Sede)</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" tabindex="-1">
+
+        <!-- Navegação por abas -->
+        <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da unidade de saúde">
+          <li role="presentation">
+            <button class="sec-tab-btn ativo"
+              id="tab-unidade"
+              role="tab"
+              aria-controls="painel-unidade"
+              aria-selected="true">Unidade</button>
+          </li>
+          <li role="presentation">
+            <button class="sec-tab-btn"
+              id="tab-links"
+              role="tab"
+              aria-controls="painel-links"
+              aria-selected="false">Links Úteis</button>
+          </li>
+        </ul>
+
+
+        <!-- ABA 1: UNIDADE -->
+        <div id="painel-unidade"
+          class="sec-tab-painel ativo"
+          role="tabpanel"
+          aria-labelledby="tab-unidade">
+
+          <!-- Informações da unidade -->
+          <!-- ALTERAR: endereço, telefone, e-mail, horário e diretor(a) -->
+          <div class="us-info-bloco">
+            <ul class="us-info-lista">
+
+              <!-- ALTERAR: endereço -->
+              <li class="us-info-item">
+                <div class="us-info-item-icone" aria-hidden="true">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="us-info-item-texto">
+                  <span class="us-info-item-label">Endereço</span>
+                  <span class="us-info-item-valor">
+                    <a href="https://maps.google.com/?q=Rua+Doutor+João+Candido,+812+-+Centro,+Campina+Grande+do+Sul+-+PR"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Ver no mapa: Rua Doutor João Candido, 812 - Centro">
+                      Rua Doutor João Candido, 812 – Centro
+                      <i class="fas fa-external-link-alt" style="font-size:.65rem; margin-left:4px;" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </div>
+              </li>
+
+              <!-- ALTERAR: telefone -->
+              <li class="us-info-item">
+                <div class="us-info-item-icone" aria-hidden="true">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="us-info-item-texto">
+                  <span class="us-info-item-label">Telefone</span>
+                  <span class="us-info-item-valor">
+                    <a href="tel:+554131627174" aria-label="Ligar: (41) 3162-7174">(41) 3162-7174</a>
+                  </span>
+                </div>
+              </li>
+
+              <!-- ALTERAR: e-mail -->
+              <li class="us-info-item">
+                <div class="us-info-item-icone" aria-hidden="true">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="us-info-item-texto">
+                  <span class="us-info-item-label">E-mail</span>
+                  <span class="us-info-item-valor">
+                    <a href="mailto:ubs.sede@pmcgs.pr.gov.br">ubs.sede@pmcgs.pr.gov.br</a>
+                  </span>
+                </div>
+              </li>
+
+              <!-- ALTERAR: horário de atendimento -->
+              <li class="us-info-item">
+                <div class="us-info-item-icone" aria-hidden="true">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="us-info-item-texto">
+                  <span class="us-info-item-label">Horário de Atendimento</span>
+                  <span class="us-info-item-valor">Segunda-feira a sexta-feira, das 07:00 às 17:00</span>
+                </div>
+              </li>
+
+              <!-- ALTERAR: diretor(a) — se vazio, manter class="nao-informado" -->
+              <li class="us-info-item">
+                <div class="us-info-item-icone" aria-hidden="true">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="us-info-item-texto">
+                  <span class="us-info-item-label">Diretor(a)</span>
+                  <span class="us-info-item-valor nao-informado">Não informado</span>
+                  <!-- Para preencher, substituir a linha acima por:
+                  <span class="us-info-item-valor">Nome do Diretor(a)</span>
+                  -->
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <hr class="us-divider">
+
+          <!-- Sobre a Unidade -->
+          <!-- ALTERAR: texto institucional da unidade -->
+          <h2 class="us-sobre-titulo">
+            <i class="fas fa-info-circle" aria-hidden="true"></i> Sobre a Unidade
+          </h2>
+          <div class="us-sobre-texto">
+            <p>
+              A Unidade de Saúde Dacyr Siqueira Trevisan, conhecida como Sede, é a unidade básica de saúde
+              central do município de Campina Grande do Sul. Localizada no coração do Centro, atende a
+              população das áreas adjacentes e funciona como referência para serviços de atenção primária
+              à saúde.
+            </p>
+            <p>
+              A unidade oferece atendimento em clínica geral, enfermagem, odontologia, vacinação,
+              coleta de exames e acompanhamento de programas de saúde como hipertensão, diabetes,
+              saúde da mulher e saúde da criança.
+            </p>
+            <p>
+              O atendimento é realizado por equipe multidisciplinar comprometida com a promoção da
+              saúde, prevenção de doenças e melhoria da qualidade de vida da população campinense.
+            </p>
+          </div>
+
+        </div>
+        <!-- /ABA 1: UNIDADE -->
+
+
+        <!-- ABA 2: LINKS ÚTEIS -->
+        <!-- ALTERAR: lista de unidades e hrefs — marcar unidade atual com class="atual" -->
+        <div id="painel-links"
+          class="sec-tab-painel"
+          role="tabpanel"
+          aria-labelledby="tab-links">
+
+          <p class="us-links-titulo">Unidades de Saúde Municipais</p>
+
+          <div class="us-links-grid">
+
+            <!-- Coluna 1 -->
+            <ul class="us-links-lista">
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Apoio Cerne (Cerne)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Apoio Divisa (Divisa)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Adelque Bossardi (Jardim Flórida)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Conceição Maria de Andrade (Jardim Paulista)</a></li>
+              <li class="atual"><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Dacyr Siqueira Trevisan (Sede)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Henrique Ferreira (Timbú)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Jacira Paulina Balbino Ferreira (Paiol de Baixo)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde João Hamilton Belo (Santa Rosa)</a></li>
+            </ul>
+
+            <!-- Coluna 2 -->
+            <ul class="us-links-lista">
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Jorge Ribeiro Camargo (Taquari)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Manoel Alves Kustel (Araçatuba)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Pedro Casemiro Rodrigues (Barragem)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Professora Elvira Tavares de Sant'Anna Camargo (Jaguatirica)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Rogerio Oliveira de Almeida (Santa Rita)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Rosalina Carvalho de Paula (Canelinha)</a></li>
+              <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Unidade de Saúde Zacarias Sant'Ana do Nascimento (Ribeirão Grande)</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+        <!-- /ABA 2: LINKS ÚTEIS -->
+
+      </div>
+    </div>
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
+

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Acessibilidade</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Acessibilidade</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main">
+    <div class="container">
+
+      <!-- Layout em grade: coluna principal + sidebar -->
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <article>
+
+          <!-- Seção: Sobre a Acessibilidade do Portal -->
+          <section aria-labelledby="pi-intro-titulo">
+            <h2 id="pi-intro-titulo" class="pi-secao-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+              Sobre a Acessibilidade do Portal
+            </h2>
+            <hr class="pi-secao-divider">
+            <div class="pi-intro-texto">
+              <p>
+                A Prefeitura de Campina Grande do Sul está comprometida em garantir que seu portal seja acessível
+                a todos os cidadãos, independentemente de suas condições físicas, sensoriais, cognitivas ou
+                tecnológicas. O acesso à informação pública é um direito garantido pela
+                <strong>Lei Brasileira de Inclusão (Lei nº 13.146/2015)</strong> e pelo
+                <strong>Decreto nº 5.296/2004</strong>, que regulamentam a acessibilidade digital em âmbito nacional.
+              </p>
+              <p>
+                Este portal foi desenvolvido seguindo as diretrizes do <strong>Modelo de Acessibilidade em
+                Governo Eletrônico (eMAG)</strong> e as recomendações internacionais <strong>WCAG 2.1</strong>,
+                nível AA, promovidas pelo W3C. Nosso objetivo é oferecer uma experiência de navegação inclusiva,
+                intuitiva e eficiente para todos os cidadãos do município.
+              </p>
+            </div>
+          </section>
+
+          <!-- Seção: Recursos de Acessibilidade Disponíveis -->
+          <section aria-labelledby="pi-recursos-titulo" class="pi-mt-secao">
+            <h2 id="pi-recursos-titulo" class="pi-secao-titulo">
+              <i class="fas fa-tools" aria-hidden="true"></i>
+              Recursos de Acessibilidade Disponíveis
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="pi-recursos-grid" role="list">
+
+              <!-- Aumento de Fonte -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Aumento de Fonte</h3>
+                  <p>Utilize o botão <strong>A+</strong> na barra superior para aumentar o tamanho do texto
+                     em todo o portal, melhorando a leitura para pessoas com baixa visão.</p>
+                </div>
+              </article>
+
+              <!-- Redução de Fonte -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-search-minus"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Redução de Fonte</h3>
+                  <p>O botão <strong>A−</strong> reduz o tamanho do texto. O botão <strong>A</strong>
+                     restaura o tamanho padrão (16px). As preferências são salvas automaticamente.</p>
+                </div>
+              </article>
+
+              <!-- Alto Contraste -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-adjust"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Alto Contraste</h3>
+                  <p>Exibe o portal com fundo escuro e texto claro, facilitando a leitura para pessoas
+                     com deficiência visual ou sensibilidade à luz. Ative pelo ícone na barra superior.</p>
+                </div>
+              </article>
+
+              <!-- Navegação por Teclado -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-keyboard"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Navegação por Teclado</h3>
+                  <p>Todo o portal pode ser navegado exclusivamente pelo teclado. Use
+                     <kbd class="pi-kbd">Tab</kbd> para avançar,
+                     <kbd class="pi-kbd">Shift+Tab</kbd> para voltar e
+                     <kbd class="pi-kbd">Enter</kbd> para ativar.</p>
+                </div>
+              </article>
+
+              <!-- Estrutura Semântica -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Estrutura Semântica</h3>
+                  <p>O portal utiliza HTML5 semântico com marcações de
+                     <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                     <code>&lt;article&gt;</code> e <code>&lt;footer&gt;</code>,
+                     facilitando tecnologias assistivas.</p>
+                </div>
+              </article>
+
+              <!-- Compatibilidade com Leitores de Tela -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Compatibilidade com Leitores de Tela</h3>
+                  <p>O portal é compatível com NVDA, JAWS e VoiceOver. Atributos ARIA descrevem
+                     regiões, estados e propriedades dos elementos interativos para usuários de
+                     leitores de tela.</p>
+                </div>
+              </article>
+
+              <!-- VLibras -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-sign-language"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>VLibras – Língua Brasileira de Sinais</h3>
+                  <p>O portal integra o <strong>VLibras</strong>, plugin oficial do Governo Federal
+                     que traduz o conteúdo para Libras, atendendo cidadãos surdos.</p>
+                </div>
+              </article>
+
+              <!-- ═══════════════════════════════════════════════════════
+                   NOVO — Leitor de Texto por Áudio
+              ═══════════════════════════════════════════════════════ -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-headphones"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Leitor de Texto por Áudio</h3>
+                  <p>Ative o ícone de fones de ouvido na barra superior para ligar a leitura automática.
+                     Passe o cursor sobre qualquer texto da página e o conteúdo será lido em voz alta,
+                     sem necessidade de seleção. Clique novamente para desativar.</p>
+                </div>
+              </article>
+
+              <!-- Indicador de Foco Visível -->
+              <article class="pi-recurso-card" role="listitem">
+                <div class="pi-recurso-icon" aria-hidden="true">
+                  <i class="fas fa-dot-circle"></i>
+                </div>
+                <div class="pi-recurso-corpo">
+                  <h3>Indicador de Foco Visível</h3>
+                  <p>Todos os elementos interativos exibem um indicador visual de foco ao serem
+                     acessados pelo teclado, conforme o critério WCAG 2.4.7 — Foco Visível.</p>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Seção: Atalhos de Teclado -->
+          <section aria-labelledby="pi-atalhos-titulo" class="pi-mt-secao">
+            <h2 id="pi-atalhos-titulo" class="pi-secao-titulo">
+              <i class="fas fa-keyboard" aria-hidden="true"></i>
+              Atalhos de Teclado
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <table class="pi-atalhos-tabela"
+                   aria-label="Tabela de atalhos de teclado disponíveis no portal">
+              <thead>
+                <tr>
+                  <th scope="col">Combinação de Teclas</th>
+                  <th scope="col">Ação</th>
+                  <th scope="col">Observação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">1</kbd></td>
+                  <td>Ir para o conteúdo principal</td>
+                  <td>Pula o menu e a barra de navegação</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">2</kbd></td>
+                  <td>Ir para o menu principal</td>
+                  <td>Foco no primeiro item do menu</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">3</kbd></td>
+                  <td>Ir para o rodapé</td>
+                  <td>Links institucionais e contato</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Tab</kbd></td>
+                  <td>Avançar para o próximo elemento interativo</td>
+                  <td>Funciona em toda a página</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Shift</kbd> + <kbd class="pi-kbd">Tab</kbd></td>
+                  <td>Voltar ao elemento anterior</td>
+                  <td>Funciona em toda a página</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Enter</kbd> / <kbd class="pi-kbd">Espaço</kbd></td>
+                  <td>Ativar link ou botão em foco</td>
+                  <td>Para elementos focados</td>
+                </tr>
+                <tr>
+                  <td><kbd class="pi-kbd">Esc</kbd></td>
+                  <td>Fechar menu ou modal aberto</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="pi-nota-tabela">
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+              Em alguns navegadores pode ser necessário usar
+              <kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">Shift</kbd> + número
+              no lugar de apenas <kbd class="pi-kbd">Alt</kbd> + número.
+            </p>
+          </section>
+
+          <!-- Seção: Compromisso com Acessibilidade Digital -->
+          <section aria-labelledby="pi-compromisso-titulo" class="pi-mt-secao">
+            <div class="pi-compromisso-bloco">
+              <h2 id="pi-compromisso-titulo">
+                <i class="fas fa-award" aria-hidden="true"></i>
+                Compromisso com Acessibilidade Digital
+              </h2>
+              <p>
+                O portal da Prefeitura de Campina Grande do Sul foi desenvolvido seguindo rigorosamente as
+                normas e padrões vigentes de acessibilidade digital, garantindo que todos os cidadãos tenham
+                acesso pleno às informações e serviços municipais, independentemente de suas condições.
+              </p>
+
+              <!-- Selos de conformidade com normas de acessibilidade -->
+              <div class="pi-selos-grid">
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>eMAG 3.1</strong><br>
+                    <span class="pi-selo-sub">Modelo de Acessibilidade em Governo Eletrônico</span>
+                  </div>
+                </div>
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>WCAG 2.1 — Nível AA</strong><br>
+                    <span class="pi-selo-sub">Web Content Accessibility Guidelines (W3C)</span>
+                  </div>
+                </div>
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>Lei nº 13.146/2015</strong><br>
+                    <span class="pi-selo-sub">Lei Brasileira de Inclusão da Pessoa com Deficiência</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </article>
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+          <!-- Controles rápidos de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+
+            <!-- Controle de tamanho de texto -->
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho do texto</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Resetar fonte">A</button>
+              </div>
+            </div>
+
+            <!-- Alternador de alto contraste -->
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Alternar modo de alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+                Alternar Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Navegação interna da seção -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Seção</h4>
+            <ul class="pi-sidebar-links" aria-label="Páginas desta seção">
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>
+                    <i class="fas fa-universal-access pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>
+                    Acessibilidade
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../mapa-site/">
+                  <span>
+                    <i class="fas fa-sitemap pi-sidebar-ico" aria-hidden="true"></i>
+                    Mapa do Site
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://campinagrandedosul.pr.gov.br/politica-privacidade">
+                  <span>
+                    <i class="fas fa-shield-alt pi-sidebar-ico" aria-hidden="true"></i>
+                    Política de Privacidade
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../ouvidoria">
+                  <span>
+                    <i class="fas fa-comments pi-sidebar-ico" aria-hidden="true"></i>
+                    Ouvidoria
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recursos externos relacionados -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-external-link-alt" aria-hidden="true"></i> Recursos Externos</h4>
+            <ul class="pi-sidebar-links">
+              <li>
+                <a href="https://emag.governoeletronico.gov.br/" target="_blank" rel="noopener"
+                   aria-label="Modelo eMAG (abre em nova aba)">
+                  <span>Modelo eMAG</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener"
+                   aria-label="WCAG 2.1 no W3C (abre em nova aba)">
+                  <span>WCAG 2.1 – W3C</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://vlibras.gov.br/" target="_blank" rel="noopener"
+                   aria-label="VLibras (abre em nova aba)">
+                  <span>VLibras</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.nvaccess.org/" target="_blank" rel="noopener"
+                   aria-label="NVDA, leitor de tela gratuito (abre em nova aba)">
+                  <span>NVDA – Leitor de Tela</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <a href="../ouvidoria" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+</body>
+</html>
+

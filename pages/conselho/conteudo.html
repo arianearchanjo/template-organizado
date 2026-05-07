@@ -1,0 +1,504 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Breadcrumb e título da página
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="cn-page-header">
+    <div class="container">
+
+      <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+      <nav aria-label="Você está em" class="cn-breadcrumb-nav">
+        <ol class="cn-breadcrumb">
+          <li>
+            <a href="../../index.html">
+              <i class="fas fa-home" aria-hidden="true"></i>
+              <span class="sr-only">Início</span>
+            </a>
+          </li>
+          <li aria-hidden="true"><i class="fas fa-chevron-right cn-breadcrumb-sep"></i></li>
+          <li><a href="https://campinagrandedosul.pr.gov.br/conselhos-municipais">Conselhos Municipais</a></li>
+          <li aria-hidden="true"><i class="fas fa-chevron-right cn-breadcrumb-sep"></i></li>
+          <li aria-current="page">Conselho Municipal dos Direitos da Pessoa com Deficiência</li>
+        </ol>
+      </nav>
+
+      <h1 class="cn-page-titulo">
+        CONSELHO MUNICIPAL DOS DIREITOS DA PESSOA COM DEFICIÊNCIA
+      </h1>
+
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="cn-main">
+    <div class="container">
+      <div id="cn-conteudo" tabindex="-1">
+
+        <!-- Navegação de abas -->
+        <nav class="cn-abas-nav" role="tablist" aria-label="Seções do conselho">
+          <button class="cn-aba-btn cn-aba-ativa"
+                  role="tab"
+                  id="tab-conselho"
+                  aria-controls="painel-conselho"
+                  aria-selected="true">
+            Conselho
+          </button>
+          <button class="cn-aba-btn"
+                  role="tab"
+                  id="tab-composicao"
+                  aria-controls="painel-composicao"
+                  aria-selected="false">
+            Composição
+          </button>
+          <button class="cn-aba-btn"
+                  role="tab"
+                  id="tab-arquivos"
+                  aria-controls="painel-arquivos"
+                  aria-selected="false">
+            Arquivos
+          </button>
+        </nav>
+
+        <!-- ══════════════════════════════════════════════════════
+             PAINEL — ABA "CONSELHO"
+        ═════════════════════════════════════════════════════════ -->
+        <div id="painel-conselho"
+             class="cn-painel cn-painel-ativo"
+             role="tabpanel"
+             aria-labelledby="tab-conselho">
+
+          <!-- Texto institucional -->
+          <div class="cn-texto-institucional">
+            <p>
+              O <strong>Conselho Municipal dos Direitos da Pessoa com Deficiência</strong> é um espaço de
+              participação democrática que realiza ações como o acompanhamento, monitoramento, avaliação e
+              a fiscalização das Políticas destinadas à Pessoa com Deficiência, por meio da articulação e
+              diálogo com as demais instâncias de controle social e os gestores da administração pública
+              direta e indireta.
+            </p>
+            <p>
+              Os Conselhos Municipais de Direitos das Pessoas Portadoras de Deficiência devem ser criados e
+              implementados através de Projetos de Lei Municipais, por proposta do Poder Executivo ou da
+              Sociedade Civil Organizada, aprovados pelo Poder Legislativo.
+            </p>
+            <p>
+              As reuniões do CMDPCD são mensais, e estão previstas para acontecerem sempre toda
+              <strong>Terceira Quinta-feira</strong> de cada mês. Também as comissões de conselheiros,
+              que são formadas para discutir os assuntos da pauta, se reúnem mensalmente, antes da reunião
+              ordinária.
+            </p>
+            <p>
+              As reuniões são públicas, portanto são abertas à população, que pode inclusive pedir a palavra
+              para fazer observações ou tirar dúvidas. Mas somente os conselheiros podem votar nas
+              deliberações do CMDPCD.
+            </p>
+          </div>
+
+          <!-- Card de informações da secretaria executiva -->
+          <div class="cn-info-card">
+            <div class="cn-info-card-titulo">
+              <i class="fas fa-building" aria-hidden="true"></i>
+              Secretaria Executiva do CMAS
+            </div>
+            <div class="cn-info-card-corpo">
+              <div class="cn-info-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <div>
+                  <span class="cn-info-label">E-mail</span>
+                  <a href="mailto:acaosocial@pmcgs.pr.gov.br">acaosocial@pmcgs.pr.gov.br</a>
+                </div>
+              </div>
+              <div class="cn-info-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <div>
+                  <span class="cn-info-label">Telefone</span>
+                  <a href="tel:+554131627234">(41) 3162-7234</a>
+                </div>
+              </div>
+              <div class="cn-info-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <div>
+                  <span class="cn-info-label">Horário</span>
+                  <span>8h30 às 12h00 · 13h30 às 17h00</span>
+                </div>
+              </div>
+              <div class="cn-info-item">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                <div>
+                  <span class="cn-info-label">Reuniões</span>
+                  <span>Toda Terceira Quinta-feira de cada mês, no período da tarde</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="cn-divisor">
+
+          <!-- Competências do CMDPCD -->
+          <div class="cn-bloco-destaque">
+            <h2 class="cn-subtitulo-destaque">
+              <i class="fas fa-list-ul" aria-hidden="true"></i>
+              COMPETÊNCIAS DO CMDPCD
+            </h2>
+          </div>
+
+          <ol class="cn-lista-numerada">
+            <li>Propor e deliberar sobre ações para os planos e programas dos municípios referentes à promoção e à defesa dos direitos das Pessoas com Deficiência;</li>
+            <li>Zelar pela efetiva implementação da Política para inclusão da Pessoa com Deficiência;</li>
+            <li>Acompanhar o planejamento e avaliar a execução das Políticas Públicas relativas à Pessoa com Deficiência;</li>
+            <li>Acompanhar a elaboração e a execução da Proposta Orçamentária pertinente à consecução da Política para inclusão da Pessoa com Deficiência;</li>
+            <li>Propor a elaboração de estudos e pesquisas que objetivem a melhoria da qualidade de vida da Pessoa com Deficiência;</li>
+            <li>Propor e incentivar aos órgãos competentes a realização de campanhas visando à prevenção de deficiências e à promoção e Defesa dos Direitos da Pessoa com Deficiência;</li>
+            <li>Deliberar sobre o Plano de Ação Estadual/Municipal Anual;</li>
+            <li>Acompanhar, mediante Relatórios de Gestão, o desempenho dos programas e projetos da Política Municipal para Inclusão da Pessoa com Deficiência;</li>
+            <li>Eleger seu Corpo Diretivo;</li>
+            <li>Elaborar e aprovar o seu Regimento Interno;</li>
+            <li>Convocar a Conferência Municipal dos Direitos da Pessoa com Deficiência.</li>
+          </ol>
+
+          <hr class="cn-divisor">
+
+          <!-- Estrutura e composição -->
+          <h2 class="cn-subtitulo">
+            Estrutura e Composição do Conselho Municipal dos Direitos da Pessoa com Deficiência
+          </h2>
+
+          <div class="cn-texto-institucional">
+            <p>
+              É através do Regimento Interno que se define a estrutura de um Conselho, se regula o seu
+              funcionamento e se estabelecem regras para participação dos Conselheiros nas Comissões
+              Permanentes, no Plenário e nas representações do Conselho quando demandado.
+            </p>
+            <p>
+              Como os demais Conselhos de Direitos, o <strong>Conselho Municipal dos Direitos da Pessoa com
+              Deficiência</strong> deve ser constituído por representantes do Governo e da Sociedade Civil,
+              com a garantia de um percentual de 50% de Membros para cada setor.
+            </p>
+          </div>
+
+          <!-- Papel dos conselheiros -->
+          <h2 class="cn-subtitulo">Qual é o Papel dos Conselheiros Municipais</h2>
+
+          <div class="cn-texto-institucional">
+            <p>
+              Cabe aos Conselheiros atuar na sensibilização da sociedade em geral acerca da Defesa dos
+              Direitos das Pessoas com Deficiência, além de:
+            </p>
+          </div>
+
+          <ul class="cn-lista-marcadores">
+            <li>Manter-se atualizado os assuntos referentes à área e colaborar no aprofundamento das discussões para auxiliar as decisões do Colegiado;</li>
+            <li>Divulgar as discussões/decisões do Conselho Municipal nas instituições que representa e em outros espaços;</li>
+            <li>Ser assíduo às reuniões e participativo;</li>
+            <li>Desenvolver habilidades de negociação e prática de Gestão Intergovernamental;</li>
+            <li>Conhecer o Marco Legal que rege os serviços, benefícios e programas de Atendimento a Pessoa com Deficiência.</li>
+          </ul>
+
+          <div class="cn-texto-institucional">
+            <p>
+              O processo de participação social acarreta para a Pessoa com Deficiência a possibilidade de
+              ser ouvido, e de exercer não apenas o exercício do Controle Social nos espaços dos Conselhos
+              Municipais, mas também a de desenvolver a capacidade de tomar decisões e de lutar pelos seus
+              direitos, contribuindo assim para a construção e afirmação da cidadania.
+            </p>
+          </div>
+
+        </div>
+        <!-- ══ /PAINEL CONSELHO ══ -->
+
+        <!-- ══════════════════════════════════════════════════════
+             PAINEL — ABA "COMPOSIÇÃO"
+        ═════════════════════════════════════════════════════════ -->
+        <div id="painel-composicao"
+             class="cn-painel"
+             role="tabpanel"
+             aria-labelledby="tab-composicao"
+             hidden>
+
+          <!-- Referência legal -->
+          <p class="cn-decreto-ref">
+            <i class="fas fa-file-alt" aria-hidden="true"></i>
+            Decreto nº 2.178/2024, de 06 de março de 2024
+          </p>
+
+          <!-- Diretoria -->
+          <div class="cn-secao-cabecalho">
+            <h2 class="cn-secao-titulo-bloco">DIRETORIA</h2>
+          </div>
+
+          <div class="cn-diretoria-grid">
+            <div class="cn-diretoria-cargo">
+              <span class="cn-diretoria-label">Presidente</span>
+              <span class="cn-diretoria-nome">Vanessa Dal Ponte</span>
+            </div>
+            <div class="cn-diretoria-cargo">
+              <span class="cn-diretoria-label">Vice-Presidente</span>
+              <span class="cn-diretoria-nome">Rosangela Prestes Chinoli de Miranda</span>
+            </div>
+            <div class="cn-diretoria-cargo">
+              <span class="cn-diretoria-label">Secretária Executiva</span>
+              <span class="cn-diretoria-nome">Denilza Mianes Sacerdote</span>
+            </div>
+          </div>
+
+          <hr class="cn-divisor">
+
+          <!-- I — Representantes Governamentais -->
+          <div class="cn-secao-cabecalho">
+            <h2 class="cn-secao-titulo-bloco">I – REPRESENTANTES GOVERNAMENTAIS</h2>
+          </div>
+
+          <!-- Secretaria de Ação Social -->
+          <div class="cn-secretaria-bloco">
+            <h3 class="cn-secretaria-nome">SECRETARIA MUNICIPAL DE AÇÃO SOCIAL, FAMÍLIA E CULTURA</h3>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Vanessa Dal Ponte</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Letícia Silveira</span>
+            </div>
+          </div>
+
+          <!-- Secretaria de Saúde -->
+          <div class="cn-secretaria-bloco">
+            <h3 class="cn-secretaria-nome">SECRETARIA MUNICIPAL DE SAÚDE</h3>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Patricia do Rocio Gonçalves de Souza</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Mariela Costa Zanini</span>
+            </div>
+          </div>
+
+          <!-- Secretaria de Indústria, Comércio e Turismo -->
+          <div class="cn-secretaria-bloco">
+            <h3 class="cn-secretaria-nome">SECRETARIA MUNICIPAL DE INDÚSTRIA, COMÉRCIO E TURISMO</h3>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Venicio dos Santos Ferreira</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Erica dos Santos Bonfim</span>
+            </div>
+          </div>
+
+          <hr class="cn-divisor">
+
+          <!-- II — Representantes da Sociedade Civil -->
+          <div class="cn-secao-cabecalho">
+            <h2 class="cn-secao-titulo-bloco">II – REPRESENTANTES DA SOCIEDADE CIVIL – PESSOA COM DEFICIÊNCIA</h2>
+          </div>
+
+          <div class="cn-secretaria-bloco cn-secretaria-bloco-sem-titulo">
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Vanira Figueiredo da Cruz Lima</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Luciane Santos</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Claudiane de Fátima Ribeiro</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Josiane Lopes dos Santos</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Maria Aparecida Lopes de Oliveira Thomazini</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Luzia Aparecida de Avelar Fabiano</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-titular">Titular</span>
+              <span class="cn-membro-nome">Rosangela Prestes Chinoli de Miranda</span>
+            </div>
+            <div class="cn-membro-linha">
+              <span class="cn-badge cn-badge-suplente">Suplente</span>
+              <span class="cn-membro-nome">Francelize Vidolin</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- ══ /PAINEL COMPOSIÇÃO ══ -->
+
+        <!-- ══════════════════════════════════════════════════════
+             PAINEL — ABA "ARQUIVOS"
+        ═════════════════════════════════════════════════════════ -->
+        <div id="painel-arquivos"
+             class="cn-painel"
+             role="tabpanel"
+             aria-labelledby="tab-arquivos"
+             hidden>
+
+          <!-- Acordeão de arquivos por categoria -->
+          <div class="cn-acordeon" role="list">
+
+            <!-- Atas 2020 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-atas2020">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Atas 2020</span>
+              </button>
+              <div id="arq-atas2020" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 01/2020</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 02/2020</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 03/2020</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 04/2020</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Atas 2021 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-atas2021">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Atas 2021</span>
+              </button>
+              <div id="arq-atas2021" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 01/2021</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 02/2021</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 03/2021</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 04/2021</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 05/2021</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Atas 2022 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-atas2022">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Atas 2022</span>
+              </button>
+              <div id="arq-atas2022" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 01/2022</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 02/2022</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 03/2022</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Atas 2023 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-atas2023">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Atas 2023</span>
+              </button>
+              <div id="arq-atas2023" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 01/2023</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 02/2023</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 03/2023</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 04/2023</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 05/2023</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Ata 06/2023</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Conferência Municipal -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-conferencia">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Conferência Municipal</span>
+              </button>
+              <div id="arq-conferencia" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Relatório da Conferência Municipal 2022</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Deliberações da Conferência 2022</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Legislação -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-legislacao">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Legislação</span>
+              </button>
+              <div id="arq-legislacao" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Lei de Criação do CMDPCD</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Regimento Interno</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Resoluções 2021 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-res2021">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Resoluções 2021</span>
+              </button>
+              <div id="arq-res2021" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resolução nº 01/2021</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resolução nº 02/2021</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Resoluções 2022 -->
+            <div class="cn-acordeon-item" role="listitem">
+              <button class="cn-acordeon-btn"
+                      aria-expanded="false"
+                      aria-controls="arq-res2022">
+                <i class="fas fa-chevron-down cn-acordeon-icone" aria-hidden="true"></i>
+                <span>Resoluções 2022</span>
+              </button>
+              <div id="arq-res2022" class="cn-acordeon-corpo" hidden>
+                <ul class="cn-arquivo-lista">
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resolução nº 01/2022</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resolução nº 02/2022</a></li>
+                  <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Resolução nº 03/2022</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <!-- ══ /ACORDEÃO ══ -->
+
+        </div>
+        <!-- ══ /PAINEL ARQUIVOS ══ -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
+

@@ -1,0 +1,1315 @@
+/* ══════════════════════════════════════════════════════════════
+   conheca-campina.css — Prefeitura de Campina Grande do Sul
+   Base: index.css (variáveis --verde, --verde-escuro, --verde-medio,
+         --verde-claro, --amarelo, --cinza-borda, --cinza-bg, --texto)
+
+   Índice:
+    1.  Hero da página
+    2.  Layout: grid lateral
+    3.  Menu lateral
+    4.  Painéis / fade
+    5.  Títulos de seção
+    6.  Intro — vídeo + texto
+    7.  Dados municipais — cards
+    8.  Texto corrido
+    9.  Mapa + limites
+   10.  Documentos históricos
+   11.  Galeria de fotos
+   12.  Linha do tempo
+   13.  Pontos turísticos
+   14.  Bandeira e Brasão
+   15.  Hino Municipal
+   16.  Feriados Municipais
+   17.  Galeria de Prefeitos + Bio
+   18.  Utilitários
+   19.  Alto contraste
+   20.  Responsividade
+══════════════════════════════════════════════════════════════ */
+.pi-skip-nav {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pi-skip-nav:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  z-index: 9999;
+  overflow: visible;
+}
+
+/* ── 1. Hero ─────────────────────────────────────────────────── */
+#pi-hero {
+  background: var(--verde-escuro);
+  padding: 20px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 14px;
+}
+
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.pi-breadcrumb li a:hover { color: #fff; text-decoration: underline; }
+.pi-breadcrumb li[aria-current="page"] { color: rgba(255,255,255,.95); font-weight: 500; }
+.pi-breadcrumb-sep { color: rgba(255,255,255,.4); font-size: 0.625rem; }
+
+.pi-hero-titulo {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: .3px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-subtitulo {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,.75);
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.4) 35%, rgba(0,0,0,.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.4) 35%, rgba(0,0,0,.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+
+/* ── 2. Layout ───────────────────────────────────────────────── */
+#pi-main {
+  background: #f7f9f7;
+  padding: 40px 0 64px;
+}
+
+.cc-layout-lateral {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.cc-mt-secao { margin-top: 0; }
+
+
+/* ── 3. Menu lateral ─────────────────────────────────────────── */
+.cc-menu-lateral {
+  position: sticky;
+  top: 24px;
+}
+
+.cc-menu-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+
+.cc-menu-titulo {
+  font-size: 0.6875rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  background: var(--verde-escuro);
+}
+
+.cc-menu-titulo i { font-size: 0.75rem; opacity: .85; }
+
+.cc-menu-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cc-menu-lista li { border-bottom: 1px solid #f0f4f0; }
+.cc-menu-lista li:last-child { border-bottom: none; }
+
+.cc-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 14px 11px 16px;
+  background: #fff;
+  border: none;
+  border-left: 3px solid transparent;
+  font-size: 0.9375rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #444;
+  text-align: left;
+  cursor: pointer;
+  transition: color .15s, padding-left .15s, border-left-color .15s, background .15s;
+  line-height: 1.35;
+}
+
+.cc-menu-item i {
+  font-size: 0.5625rem;
+  color: #ccc;
+  flex-shrink: 0;
+  transition: color .15s, transform .15s;
+}
+
+.cc-menu-item:hover {
+  color: var(--verde-escuro);
+  padding-left: 20px;
+  border-left-color: var(--verde);
+  background: var(--verde-claro);
+}
+
+.cc-menu-item:hover i { color: var(--verde); }
+
+.cc-menu-item:focus-visible {
+  outline: 2px solid var(--amarelo);
+  outline-offset: -2px;
+}
+
+.cc-menu-item.ativo {
+  color: var(--verde-escuro);
+  font-weight: 700;
+  padding-left: 20px;
+  border-left-color: var(--verde);
+  background: var(--verde-claro);
+}
+
+.cc-menu-item.ativo i {
+  color: var(--verde);
+  transform: rotate(90deg);
+}
+
+.cc-menu-item span { flex: 1; }
+
+
+/* ── 4. Painéis ──────────────────────────────────────────────── */
+.cc-tab-painel {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--cinza-borda);
+  padding: 32px 36px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  animation: ccFade .18s ease both;
+}
+
+.cc-tab-painel[hidden] { display: none; }
+
+@keyframes ccFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── 5. Títulos de seção ─────────────────────────────────────── */
+.cc-secao-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--verde);
+  border-left: 3px solid var(--amarelo);
+  padding-left: 10px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Unifica .cc-secao-titulo e .cc-secao-titulo-orig */
+.cc-secao-titulo,
+.cc-secao-titulo-orig {
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: var(--verde-escuro);
+  margin: 0 0 6px;
+  line-height: 1.2;
+  letter-spacing: .2px;
+}
+
+/* Unifica os dividers */
+.cc-secao-divider,
+.cc-secao-divider-orig {
+  border: none;
+  border-top: 2px solid var(--verde-claro);
+  margin: 0 0 28px;
+}
+
+/* Título de subsecção nos docs históricos */
+.cc-docs-titulo {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  margin: 0 0 10px;
+}
+
+/* Botão do portal do turismo (substitui inline margin-top) */
+.cc-btn-turismo {
+  margin-top: 12px;
+}
+
+
+/* ── 6. Intro — vídeo + texto ────────────────────────────────── */
+.cc-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.cc-video-wrap {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.14);
+}
+
+.cc-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Vídeo em destaque — ocupa toda a largura do painel */
+.cc-video-destaque {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,.18);
+}
+
+.cc-video-destaque iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.cc-intro-texto p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.cc-intro-texto p:last-child { margin-bottom: 0; }
+
+
+/* ── 7. Dados municipais ─────────────────────────────────────── */
+.cc-dados-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.cc-dado-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-top: 3px solid var(--verde);
+  border-radius: 8px;
+  padding: 20px 16px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: box-shadow .2s, transform .2s;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+
+.cc-dado-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(45,122,45,.13);
+}
+
+.cc-dado-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--verde-claro);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+
+.cc-dado-card:hover .cc-dado-icon { background: var(--verde-escuro); }
+
+.cc-dado-icon i {
+  font-size: 1.1rem;
+  color: var(--verde-escuro);
+  transition: color .2s;
+}
+
+.cc-dado-card:hover .cc-dado-icon i { color: #fff; }
+
+.cc-dado-corpo h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.cc-dado-corpo p {
+  font-size: 0.78rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.55;
+}
+
+
+/* ── 8. Texto corrido ────────────────────────────────────────── */
+.cc-intro-texto p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.cc-intro-texto p:last-child { margin-bottom: 0; }
+
+
+/* ── 9. Mapa + limites ───────────────────────────────────────── */
+.cc-limites-bloco {
+  background: var(--verde-claro);
+  border: 1px solid #c8dfc8;
+  border-left: 4px solid var(--verde);
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #3a5a3a;
+  margin-bottom: 28px;
+}
+
+.cc-limites-bloco strong { color: var(--verde-escuro); }
+
+.cc-mapa-bloco {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.cc-mapa-bloco img {
+  max-width: 260px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+
+.cc-mapa-bloco figcaption {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+.cc-link-externo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--verde-escuro);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: color .15s;
+}
+
+.cc-link-externo:hover { color: var(--verde-medio); }
+
+
+/* ── 10. Documentos históricos ───────────────────────────────── */
+.cc-docs-bloco {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  background: #f7f9f7;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+
+.cc-docs-img img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.cc-docs-info h3,
+.cc-docs-info h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.cc-docs-info a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--verde);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 16px;
+  transition: color .15s;
+}
+
+.cc-docs-info a:hover { color: var(--verde-escuro); }
+
+
+/* ── 11. Galeria de fotos ────────────────────────────────────── */
+.cc-galeria-titulo {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--verde);
+  border-left: 3px solid var(--amarelo);
+  padding-left: 10px;
+  margin: 28px 0 14px;
+}
+
+.cc-fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.cc-foto-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.cc-foto-item img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ── 12. Linha do tempo ──────────────────────────────────────── */
+.cc-linha-do-tempo-wrapper {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid var(--verde-claro);
+}
+
+.cc-tl-intro {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 28px;
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.cc-timeline {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Linha central contínua */
+.cc-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--cinza-borda);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.cc-tl-item {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  min-height: 72px;
+  align-items: center;
+  position: relative;
+}
+
+.cc-tl-item::before { display: none; }
+
+.cc-tl-esq,
+.cc-tl-dir {
+  padding: 10px 20px;
+}
+
+.cc-tl-esq { text-align: right; }
+
+.cc-tl-texto {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.cc-tl-destaque .cc-tl-texto { color: var(--texto); }
+.cc-tl-destaque .cc-tl-texto strong { color: var(--verde); }
+
+.cc-tl-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.cc-tl-ano {
+  background: var(--verde);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+
+.cc-tl-destaque .cc-tl-ano {
+  background: #b87000;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+}
+
+.cc-tl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--verde);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(45,122,45,.12);
+}
+
+.cc-tl-destaque .cc-tl-dot {
+  border-color: #b87000;
+  background: #b87000;
+  box-shadow: 0 0 0 3px rgba(184,112,0,.15);
+}
+
+
+/* ── 13. Pontos turísticos ───────────────────────────────────── */
+.cc-pontos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.cc-ponto {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e8f0e8;
+}
+
+.cc-pontos-lista > .cc-ponto:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cc-ponto-foto img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+.cc-ponto-info h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 10px;
+}
+
+.cc-ponto-info p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.cc-fotos-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.cc-fotos-mini .cc-foto-item img { border-radius: 5px; }
+
+
+/* ── 14. Bandeira e Brasão ───────────────────────────────────── */
+
+/* Grid de símbolos — dois cards lado a lado */
+.cc-simbolos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.cc-simbolo-bloco {
+  background: var(--verde-escuro);
+  border-radius: 10px;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,.15);
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-simbolo-bloco:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.2);
+}
+
+/* Faixa de rótulo no topo */
+.cc-simbolo-label {
+  font-size: 0.6875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.92);
+  background: rgba(0,0,0,.22);
+  padding: 10px 16px;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+/* Área da imagem com fundo neutro para destacar os símbolos */
+.cc-simbolo-img-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  background: #f0f5f0;
+  min-height: 200px;
+}
+
+/* Brasão — imagem quadrada/vertical, menor */
+.cc-simbolo-img-wrap--brasao .cc-simbolo-img {
+  max-height: 160px;
+  max-width: 80%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.15));
+}
+
+/* Bandeira — imagem retangular, ocupa mais largura */
+.cc-simbolo-img-wrap--bandeira .cc-simbolo-img {
+  max-height: 130px;
+  max-width: 90%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.15));
+}
+
+/* Fallback geral */
+.cc-simbolo-img {
+  max-height: 150px;
+  max-width: 85%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.15));
+}
+
+/* ── Bloco de descrição do brasão ── */
+.cc-brasao-descricao {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-top: 3px solid var(--amarelo);
+  border-radius: 8px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.cc-brasao-descricao > h3 {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--verde-escuro);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cc-brasao-descricao > h3::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: var(--amarelo);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cc-brasao-descricao > p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.78;
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eef2ee;
+}
+
+.cc-brasao-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cc-brasao-lista li {
+  font-size: 0.875rem;
+  color: #444;
+  line-height: 1.65;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #f7f9f7;
+  border-left: 3px solid var(--verde-claro);
+  transition: border-left-color .15s, background .15s, padding-left .15s;
+}
+
+.cc-brasao-lista li:hover {
+  border-left-color: var(--verde);
+  background: var(--verde-claro);
+  padding-left: 20px;
+}
+
+.cc-brasao-lista li strong {
+  color: var(--verde-escuro);
+}
+
+
+/* ── 15. Hino Municipal ──────────────────────────────────────── */
+.cc-hino-container {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 36px 40px;
+  max-width: 560px;
+  box-shadow: 0 1px 8px rgba(0,0,0,.06);
+  position: relative;
+}
+
+.cc-hino-container::before {
+  content: '"';
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  color: var(--verde-claro);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.cc-hino-estrofe {
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: #555;
+  margin-bottom: 22px;
+}
+
+.cc-hino-estrofe:last-child { margin-bottom: 0; }
+
+
+/* ── 16. Feriados ────────────────────────────────────────────── */
+.cc-feriados-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 720px;
+}
+
+.cc-feriado-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-feriado-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(45,122,45,.13);
+}
+
+/* Bloco de calendário — topo do card */
+.cc-feriado-cal {
+  background: var(--verde-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 16px;
+  gap: 2px;
+}
+
+.cc-feriado-mes {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.7);
+  text-transform: uppercase;
+}
+
+.cc-feriado-dia {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+/* Corpo do card */
+.cc-feriado-corpo {
+  padding: 20px 22px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cc-feriado-icone {
+  font-size: 1.25rem;
+  color: var(--verde);
+}
+
+.cc-feriado-corpo h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cc-feriado-corpo p {
+  font-size: 0.8125rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.55;
+}
+
+
+/* ── 17. Galeria de Prefeitos + Bio ──────────────────────────── */
+.cc-prefeitos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.cc-prefeito-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-top: 4px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 24px 14px 18px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: border-top-color .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+
+.cc-prefeito-card:hover {
+  border-top-color: var(--verde-medio);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(45,122,45,.14);
+}
+
+.cc-prefeito-card:focus-visible {
+  outline: 2px solid var(--amarelo);
+  outline-offset: 2px;
+}
+
+.cc-prefeito-card.ativo {
+  border-top-color: var(--verde);
+  box-shadow: 0 4px 16px rgba(45,122,45,.14);
+}
+
+.cc-prefeito-atual {
+  border-top-color: #b87000 !important;
+}
+
+.cc-pref-seq {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: #ccc;
+  letter-spacing: .3px;
+}
+
+.cc-prefeito-atual .cc-pref-seq { color: #b87000; }
+
+.cc-pref-foto {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--cinza-bg);
+  border: 3px solid var(--cinza-borda);
+  margin: 0 auto 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s;
+}
+
+.cc-prefeito-card:hover .cc-pref-foto { border-color: var(--verde-medio); }
+.cc-prefeito-card.ativo .cc-pref-foto { border-color: var(--verde); }
+.cc-prefeito-atual .cc-pref-foto { border-color: rgba(184,112,0,.5); }
+
+.cc-pref-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cc-pref-nome {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  line-height: 1.3;
+  margin: 0 0 5px;
+}
+
+.cc-prefeito-atual .cc-pref-nome { color: #b87000; }
+
+.cc-pref-periodo {
+  font-size: 0.6875rem;
+  color: #888;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.cc-pref-expand {
+  font-size: 0.5938rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.cc-prefeito-card:hover .cc-pref-expand,
+.cc-prefeito-card.ativo .cc-pref-expand { opacity: 1; }
+
+.cc-pref-expand-icon { transition: transform .2s; }
+.cc-prefeito-card.ativo .cc-pref-expand-icon { transform: rotate(180deg); }
+
+/* Painel de biografia */
+.cc-bio-painel {
+  grid-column: 1 / -1;
+  background: var(--verde-claro);
+  border: 1px solid #b8dab8;
+  border-left: 4px solid var(--verde);
+  border-radius: 8px;
+  padding: 24px 28px;
+  animation: ccBioFade .2s ease both;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(45,122,45,.09);
+}
+
+.cc-bio-painel.cc-bio-dourado {
+  border-left-color: #b87000;
+  border-color: #e8d5a0;
+  background: #fffdf5;
+}
+
+@keyframes ccBioFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cc-bio-fechar {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color .15s, background .15s;
+}
+
+.cc-bio-fechar:hover { color: var(--texto); background: rgba(0,0,0,.08); }
+
+.cc-bio-inner {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.cc-bio-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+
+.cc-bio-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cc-bio-texto { flex: 1; }
+
+.cc-bio-texto h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 5px;
+}
+
+.cc-bio-mandato {
+  font-size: 0.775rem;
+  color: var(--verde);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.cc-bio-texto p {
+  font-size: 0.875rem;
+  line-height: 1.78;
+  color: #3a5a3a;
+  margin: 0;
+}
+
+
+/* ── 18. Utilitários ─────────────────────────────────────────── */
+.btn-pref {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--verde-escuro);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .15s, box-shadow .15s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+}
+
+.btn-pref:hover {
+  background: var(--verde);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(45,122,45,.2);
+  text-decoration: none;
+}
+
+.btn-pref.cc-btn-outline {
+  background: #fff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde);
+}
+
+.btn-pref.cc-btn-outline:hover {
+  background: var(--verde-escuro);
+  color: #fff;
+}
+
+
+/* ── 19. Alto contraste ──────────────────────────────────────── */
+body.high-contrast .cc-menu-card        { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-menu-titulo      { background: #001a00 !important; }
+body.high-contrast .cc-menu-item        { background: #000 !important; color: #fff !important; }
+body.high-contrast .cc-menu-item.ativo  { background: #001a00 !important; color: #ff0 !important; border-left-color: #ff0 !important; }
+body.high-contrast .cc-tab-painel       { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-dado-card        { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-dado-icon        { background: #111 !important; }
+body.high-contrast .cc-bio-painel       { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-prefeito-card    { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-feriado-card     { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-feriado-cal      { background: #001a00 !important; }
+body.high-contrast .cc-hino-container   { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-simbolo-bloco    { background: #001a00 !important; }
+body.high-contrast .cc-simbolo-label   { background: #000 !important; color: #ff0 !important; }
+body.high-contrast .cc-simbolo-img-wrap { background: #111 !important; }
+body.high-contrast .cc-brasao-descricao { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .cc-limites-bloco    { background: #111 !important; border-color: #fff !important; color: #fff !important; }
+body.high-contrast .cc-tl-ano          { background: #003300 !important; }
+body.high-contrast .cc-docs-bloco       { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .pi-hero-ilustracao  { display: none; }
+
+
+/* ── 20. Responsividade ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .cc-dados-grid     { grid-template-columns: repeat(2, 1fr); }
+  .cc-prefeitos-grid { grid-template-columns: repeat(3, 1fr); }
+  .cc-tab-painel     { padding: 28px 28px; }
+}
+
+@media (max-width: 900px) {
+  .cc-layout-lateral {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .cc-menu-lateral {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .cc-menu-lista {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cc-menu-lista li { border-bottom: none; border-right: 1px solid #eef2ee; }
+  .cc-menu-lista li:last-child { border-right: none; }
+
+  .cc-menu-item {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 9px 14px;
+    font-size: 0.79rem;
+  }
+
+  .cc-menu-item.ativo,
+  .cc-menu-item:hover {
+    border-left: none;
+    border-bottom-color: var(--verde);
+    padding-left: 14px;
+  }
+
+  .cc-intro-grid    { grid-template-columns: 1fr; }
+  .cc-simbolos-grid { grid-template-columns: 1fr; }
+  .cc-feriados-grid { grid-template-columns: 1fr; }
+  .cc-ponto         { grid-template-columns: 1fr; }
+  .cc-tab-painel    { padding: 24px 20px; }
+}
+
+@media (max-width: 640px) {
+  .cc-prefeitos-grid { grid-template-columns: repeat(2, 1fr); }
+  .cc-dados-grid     { grid-template-columns: 1fr; }
+  .cc-fotos-grid     { grid-template-columns: repeat(3, 1fr); }
+  .cc-hino-container { padding: 28px 22px; }
+  .pi-hero-titulo    { font-size: 1.125rem; }
+
+  /* Linha do tempo: oculta coluna esquerda, empilha no mobile */
+  .cc-tl-item  { grid-template-columns: 0 60px 1fr; }
+  .cc-tl-esq   { display: none; }
+  .cc-tl-dir   { padding-left: 8px; }
+}
+
+@media (max-width: 575px) {
+  .cc-menu-item span    { display: none; }
+  .cc-menu-item         { justify-content: center; padding: 10px; }
+  .cc-menu-item i       { font-size: 0.875rem; color: #888; }
+  .cc-menu-item.ativo i { color: var(--verde); }
+  .cc-tab-painel        { padding: 20px 16px; border-radius: 6px; }
+  .cc-bio-inner         { flex-direction: column; align-items: center; text-align: center; }
+}

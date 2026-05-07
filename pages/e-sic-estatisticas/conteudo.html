@@ -1,0 +1,606 @@
+<!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="../esic/">e-SIC</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Estatísticas</li>
+          </ol>
+        </nav>
+        <h1 class="pi-hero-titulo">Estatísticas do e-SIC</h1>
+      </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- MENU DE NAVEGAÇÃO RÁPIDA -->
+  <nav id="esic-nav-rapida" class="esic-nav-rapida" aria-label="Navegar por seção">
+    <div class="container">
+      <button
+        class="esic-nav-rapida__toggle"
+        id="esic-nav-toggle"
+        aria-expanded="false"
+        aria-controls="esic-nav-lista"
+        type="button">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+        <span>Navegar por seção</span>
+        <i class="fas fa-chevron-down esic-nav-rapida__chevron" aria-hidden="true"></i>
+      </button>
+      <ul class="esic-nav-rapida__lista" id="esic-nav-lista" role="list">
+        <li><a href="#esic-relatorio-anual"   class="esic-nav-rapida__link"><i class="fas fa-table"           aria-hidden="true"></i>Relatório Anual</a></li>
+        <li><a href="#esic-cards-totais"      class="esic-nav-rapida__link"><i class="fas fa-th-large"        aria-hidden="true"></i>Totais</a></li>
+        <li><a href="#esic-implantacao"       class="esic-nav-rapida__link"><i class="fas fa-info-circle"     aria-hidden="true"></i>Desde a Implantação</a></li>
+        <li><a href="#esic-grafico-esic"      class="esic-nav-rapida__link"><i class="fas fa-chart-pie"       aria-hidden="true"></i>Gráfico e-SIC</a></li>
+        <li><a href="#esic-genero"            class="esic-nav-rapida__link"><i class="fas fa-users"           aria-hidden="true"></i>Por Gênero</a></li>
+        <li><a href="#esic-faixa-etaria"      class="esic-nav-rapida__link"><i class="fas fa-birthday-cake"   aria-hidden="true"></i>Faixa Etária</a></li>
+        <li><a href="#esic-escolaridade"      class="esic-nav-rapida__link"><i class="fas fa-graduation-cap"  aria-hidden="true"></i>Escolaridade</a></li>
+        <li><a href="#esic-sic-fisico"        class="esic-nav-rapida__link"><i class="fas fa-building"        aria-hidden="true"></i>SIC Físico</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- COLUNA PRINCIPAL -->
+        <article>
+
+          <!-- ── FILTRO + BUSCA ── -->
+          <div class="esic-estatisticas-filtro" role="search" aria-label="Filtrar estatísticas por ano">
+            <label class="esic-filtro-label" for="esic-filtro-ano">
+              <i class="fas fa-filter" aria-hidden="true"></i> Filtrar por ano:
+            </label>
+            <div class="esic-filtro-controles">
+              <select id="esic-filtro-ano" class="esic-filtro-select" aria-label="Selecione o ano">
+                <option value="todos">Todos os anos</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+              <button class="pi-btn-verde pi-btn-verde--sm" id="esic-btn-filtrar" type="button">
+                <i class="fas fa-search" aria-hidden="true"></i> Filtrar
+              </button>
+            </div>
+            <div class="esic-busca-wrapper" role="search" aria-label="Busca nas estatísticas">
+              <label for="esic-busca-input" class="sr-only">Buscar nas estatísticas</label>
+              <input
+                type="search"
+                id="esic-busca-input"
+                class="esic-busca-input"
+                placeholder="Buscar nas estatísticas…"
+                aria-label="Buscar nas estatísticas"
+                autocomplete="off">
+              <button type="button" class="esic-busca-btn" id="esic-busca-btn" aria-label="Buscar">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <p class="esic-estatisticas-nota" id="esic-stats-nota" aria-live="polite">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            Dados acumulados desde a implantação do e-SIC. Fonte: Sistema interno. Atualizado em março de 2026.
+          </p>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 1 — RELATÓRIO ANUAL DE PEDIDOS
+          ═══════════════════════════════════════════════════════ -->
+          <section id="esic-relatorio-anual" aria-labelledby="titulo-relatorio-anual" class="pi-mt-secao">
+            <h2 id="titulo-relatorio-anual" class="pi-secao-titulo">
+              <i class="fas fa-table" aria-hidden="true"></i>
+              Relatório Anual de Pedidos
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <!-- Barra de exportação (padrão Elotech) -->
+            <div class="esic-export-bar">
+              <div class="btn-group esic-export-bar__btns hidden-print">
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-print"     aria-hidden="true"></i> Imprimir</button>
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-file-excel" aria-hidden="true"></i> XLS</button>
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-file-pdf"   aria-hidden="true"></i> PDF</button>
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-file-alt"   aria-hidden="true"></i> TXT</button>
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-file-code"  aria-hidden="true"></i> CSV</button>
+                <button type="button" class="btn esic-export-btn"><i class="fas fa-file-word"  aria-hidden="true"></i> DOC</button>
+              </div>
+            </div>
+
+            <!-- Tabela no padrão Elotech: striped fancy -->
+            <div class="table-responsive esic-tabela-outer">
+              <table class="esic-tabela-elotech" id="tabela-relatorio-anual" aria-label="Relatório anual de pedidos">
+                <caption class="sr-only">Relatório anual de pedidos e-SIC: quantidade por categoria</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Descrição</th>
+                    <th scope="col" class="text-center">Quantidade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-busca="pedidos">
+                    <td>Pedidos</td>
+                    <td class="text-center"><span id="tbl-pedidos">0</span></td>
+                  </tr>
+                  <tr data-busca="atendidos">
+                    <td>Atendidos</td>
+                    <td class="text-center"><span id="tbl-atendidos">0</span></td>
+                  </tr>
+                  <tr data-busca="cancelados">
+                    <td>Cancelados</td>
+                    <td class="text-center"><span id="tbl-cancelados">0</span></td>
+                  </tr>
+                  <tr data-busca="indeferidos">
+                    <td>Indeferidos</td>
+                    <td class="text-center"><span id="tbl-indeferidos">0</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 2 — CARDS DE TOTAIS (padrão esic-stat-card)
+          ═══════════════════════════════════════════════════════ -->
+          <section id="esic-cards-totais" aria-labelledby="titulo-cards-totais" class="pi-mt-secao">
+            <h2 id="titulo-cards-totais" class="pi-secao-titulo">
+              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              Estatísticas do Ano
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="esic-stats-grid" role="list">
+              <article class="esic-stat-card esic-stat-card--verde" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-inbox"></i></div>
+                <div class="esic-stat-card__numero" id="stat-pedidos">0</div>
+                <div class="esic-stat-card__label">Pedidos Recebidos</div>
+              </article>
+              <article class="esic-stat-card esic-stat-card--verde" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                <div class="esic-stat-card__numero" id="stat-atendidos">0</div>
+                <div class="esic-stat-card__label">Atendidos</div>
+              </article>
+              <article class="esic-stat-card esic-stat-card--amarelo" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+                <div class="esic-stat-card__numero" id="stat-pendentes">0</div>
+                <div class="esic-stat-card__label">Em Andamento</div>
+              </article>
+              <article class="esic-stat-card esic-stat-card--vermelho" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-times-circle"></i></div>
+                <div class="esic-stat-card__numero" id="stat-indeferidos">0</div>
+                <div class="esic-stat-card__label">Indeferidos</div>
+              </article>
+              <article class="esic-stat-card esic-stat-card--cinza" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-ban"></i></div>
+                <div class="esic-stat-card__numero" id="stat-cancelados">0</div>
+                <div class="esic-stat-card__label">Cancelados</div>
+              </article>
+              <article class="esic-stat-card esic-stat-card--azul" role="listitem">
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-stopwatch"></i></div>
+                <div class="esic-stat-card__numero" id="stat-media">0</div>
+                <div class="esic-stat-card__label">Prazo Médio (horas)</div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 3 — DESDE A IMPLANTAÇÃO (tabela padrão Elotech)
+          ═══════════════════════════════════════════════════════ -->
+          <section id="esic-implantacao" aria-labelledby="titulo-implantacao" class="pi-mt-secao">
+            <h2 id="titulo-implantacao" class="pi-secao-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+              Desde a Implantação do e-SIC
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="row">
+
+              <!-- Coluna esquerda: tabela do ano corrente -->
+              <div class="col-md-6 col-sm-6">
+                <div class="esic-widget-panel">
+                  <div class="esic-widget-panel__header">
+                    <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-info-circle"></i></span>
+                    <h3 class="esic-widget-panel__titulo">Estatísticas de Acesso à Informação e-SIC do ano</h3>
+                  </div>
+                  <div class="esic-widget-panel__body p-0">
+                    <div class="table-responsive">
+                      <table class="esic-tabela-elotech" id="tabela-esic-ano" aria-label="Estatísticas e-SIC do ano corrente">
+                        <caption class="sr-only">Totais do ano corrente</caption>
+                        <tbody>
+                          <tr data-busca="pedidos">
+                            <td>Pedidos</td>
+                            <td class="text-center"><span id="ano-pedidos">0</span></td>
+                          </tr>
+                          <tr data-busca="atendidos">
+                            <td>Atendidos</td>
+                            <td class="text-center"><span id="ano-atendidos">0</span></td>
+                          </tr>
+                          <tr data-busca="cancelados">
+                            <td>Cancelados</td>
+                            <td class="text-center"><span id="ano-cancelados">0</span></td>
+                          </tr>
+                          <tr data-busca="indeferidos">
+                            <td>Indeferidos</td>
+                            <td class="text-center"><span id="ano-indeferidos">0</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coluna direita: tabela total desde implantação -->
+              <div class="col-md-6 col-sm-6">
+                <div class="esic-widget-panel">
+                  <div class="esic-widget-panel__header">
+                    <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-info-circle"></i></span>
+                    <h3 class="esic-widget-panel__titulo">Desde a implantação do e-SIC</h3>
+                  </div>
+                  <div class="esic-widget-panel__body p-0">
+                    <div class="table-responsive">
+                      <table class="esic-tabela-elotech" id="tabela-implantacao" aria-label="Totais acumulados desde a implantação">
+                        <caption class="sr-only">Totais acumulados desde a implantação do e-SIC</caption>
+                        <tbody>
+                          <tr data-busca="pedidos">
+                            <td>Pedidos</td>
+                            <td class="text-center"><span id="impl-pedidos">149</span></td>
+                          </tr>
+                          <tr data-busca="atendidos">
+                            <td>Atendidos</td>
+                            <td class="text-center"><span id="impl-atendidos">57</span></td>
+                          </tr>
+                          <tr data-busca="cancelados">
+                            <td>Cancelados</td>
+                            <td class="text-center"><span id="impl-cancelados">6</span></td>
+                          </tr>
+                          <tr data-busca="indeferidos">
+                            <td>Indeferidos</td>
+                            <td class="text-center"><span id="impl-indeferidos">44</span></td>
+                          </tr>
+                          <tr data-busca="média resposta">
+                            <td>Média Resposta</td>
+                            <td class="text-center"><span id="impl-media">779,00</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 4 — GRÁFICO e-SIC + GRÁFICO ANO
+          ═══════════════════════════════════════════════════════ -->
+          <section id="esic-grafico-esic" aria-labelledby="titulo-grafico-esic" class="pi-mt-secao">
+            <h2 id="titulo-grafico-esic" class="pi-secao-titulo">
+              <i class="fas fa-chart-pie" aria-hidden="true"></i>
+              Distribuição dos Pedidos
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="row">
+
+              <!-- Gráfico de barras do ano -->
+              <div class="col-md-6 col-sm-6">
+                <div class="esic-widget-panel">
+                  <div class="esic-widget-panel__header">
+                    <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-bar-chart"></i></span>
+                    <h3 class="esic-widget-panel__titulo">Estatística do ano</h3>
+                  </div>
+                  <div class="esic-widget-panel__body">
+                    <div id="esic-barchart-ano" class="esic-barchart" role="img" aria-label="Gráfico de barras das estatísticas do ano"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gráfico pizza e-SIC -->
+              <div class="col-md-6 col-sm-6">
+                <div class="esic-widget-panel">
+                  <div class="esic-widget-panel__header">
+                    <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-pie-chart"></i></span>
+                    <h3 class="esic-widget-panel__titulo">Estatística do e-SIC</h3>
+                  </div>
+                  <div class="esic-widget-panel__body">
+                    <div class="esic-piechart-wrap">
+                      <svg id="esic-pizza-esic" class="esic-piechart" viewBox="0 0 200 200" aria-hidden="true"></svg>
+                      <ul class="esic-piechart-legenda" id="esic-legenda-esic" aria-label="Legenda gráfico e-SIC"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 5 — GÊNERO E FAIXA ETÁRIA
+          ═══════════════════════════════════════════════════════ -->
+          <div class="row pi-mt-secao">
+
+            <div class="col-md-6 col-sm-6" id="esic-genero">
+              <div class="esic-widget-panel">
+                <div class="esic-widget-panel__header">
+                  <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-pie-chart"></i></span>
+                  <h2 class="esic-widget-panel__titulo">Estatística de processos por Gênero</h2>
+                </div>
+                <div class="esic-widget-panel__body">
+                  <div class="esic-piechart-wrap">
+                    <svg id="esic-pizza-genero" class="esic-piechart" viewBox="0 0 200 200" aria-hidden="true"></svg>
+                    <ul class="esic-piechart-legenda" id="esic-legenda-genero" aria-label="Legenda por gênero"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6" id="esic-faixa-etaria">
+              <div class="esic-widget-panel">
+                <div class="esic-widget-panel__header">
+                  <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-pie-chart"></i></span>
+                  <h2 class="esic-widget-panel__titulo">Estatística de processos por faixa etária</h2>
+                </div>
+                <div class="esic-widget-panel__body">
+                  <div class="esic-piechart-wrap">
+                    <svg id="esic-pizza-faixa" class="esic-piechart" viewBox="0 0 200 200" aria-hidden="true"></svg>
+                    <ul class="esic-piechart-legenda" id="esic-legenda-faixa" aria-label="Legenda por faixa etária"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 6 — ESCOLARIDADE
+          ═══════════════════════════════════════════════════════ -->
+          <div class="row pi-mt-secao">
+
+            <div class="col-md-6 col-sm-6" id="esic-escolaridade">
+              <div class="esic-widget-panel">
+                <div class="esic-widget-panel__header">
+                  <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-pie-chart"></i></span>
+                  <h2 class="esic-widget-panel__titulo">Estatística de processos por escolaridade</h2>
+                </div>
+                <div class="esic-widget-panel__body">
+                  <div class="esic-piechart-wrap">
+                    <svg id="esic-pizza-escolaridade" class="esic-piechart" viewBox="0 0 200 200" aria-hidden="true"></svg>
+                    <ul class="esic-piechart-legenda" id="esic-legenda-escolaridade" aria-label="Legenda por escolaridade"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painel de resultados da busca (oculto por padrão) -->
+            <div class="col-md-6 col-sm-6">
+              <div class="esic-widget-panel esic-busca-resultados" id="esic-busca-resultados" hidden aria-live="polite">
+                <div class="esic-widget-panel__header">
+                  <span class="esic-widget-panel__icon" aria-hidden="true"><i class="fas fa-search"></i></span>
+                  <h2 class="esic-widget-panel__titulo">Resultados da busca</h2>
+                </div>
+                <div class="esic-widget-panel__body" id="esic-busca-conteudo">
+                  <!-- preenchido via JS -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ════════════════════════════════════════════════════
+               SEÇÃO 7 — SIC FÍSICO / CONTATO
+          ═══════════════════════════════════════════════════════ -->
+          <section id="esic-sic-fisico" aria-labelledby="titulo-sic-fisico" class="pi-mt-secao">
+            <h2 id="titulo-sic-fisico" class="pi-secao-titulo">
+              <i class="fas fa-building" aria-hidden="true"></i>
+              SIC Físico — Ouvidoria Geral Municipal
+            </h2>
+            <hr class="pi-secao-divider">
+
+            <div class="esic-sic-unified">
+
+              <!-- Coluna esquerda: contato da ouvidoria -->
+              <div class="esic-sic-col esic-sic-col--contato">
+                <div class="esic-sic-col__header">
+                  <div class="esic-sic-col__icon" aria-hidden="true">
+                    <i class="fas fa-landmark"></i>
+                  </div>
+                  <div>
+                    <span class="esic-sic-card__tag">Atendimento presencial</span>
+                    <h3 class="esic-sic-card__titulo">Ouvidoria Geral Municipal</h3>
+                  </div>
+                </div>
+
+                <address class="esic-sic-itens" style="font-style:normal;">
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                    <span class="esic-sic-item__texto">Praça Bento Munhoz da Rocha Neto, 30 — Centro<br><small>Campina Grande do Sul — PR, CEP 83.430-000</small></span>
+                  </div>
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                    <a href="tel:+554131627005" class="esic-sic-item__texto esic-sic-item__link">(41) 3162-7005</a>
+                  </div>
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                    <a href="mailto:ouvidoria@pmcgs.pr.gov.br" class="esic-sic-item__texto esic-sic-item__link">ouvidoria@pmcgs.pr.gov.br</a>
+                  </div>
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                    <span class="esic-sic-item__texto">Seg. a Sex. — 8h30 às 12h00 e 13h30 às 17h30</span>
+                  </div>
+                </address>
+              </div>
+
+              <!-- Divisor vertical -->
+              <div class="esic-sic-divisor" aria-hidden="true"></div>
+
+              <!-- Coluna direita: responsável LAI -->
+              <div class="esic-sic-col esic-sic-col--responsavel">
+                <div class="esic-sic-col__header">
+                  <div class="esic-sic-col__icon" aria-hidden="true">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                  <div>
+                    <span class="esic-sic-card__tag">Autoridade de Monitoramento — LAI</span>
+                    <h3 class="esic-sic-card__titulo">Responsável pela LAI</h3>
+                  </div>
+                </div>
+
+                <div class="esic-sic-pessoa">
+                  <div class="esic-sic-pessoa__avatar" aria-hidden="true">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="esic-sic-pessoa__info">
+                    <strong class="esic-sic-pessoa__nome">Patricia Aparecida Lazarotto</strong>
+                    <span class="esic-sic-pessoa__cargo">Secretária — Ouvidoria Geral do Município</span>
+                  </div>
+                </div>
+
+                <address class="esic-sic-itens" style="font-style:normal;">
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                    <a href="mailto:ouvidoria@pmcgs.pr.gov.br" class="esic-sic-item__texto esic-sic-item__link">ouvidoria@pmcgs.pr.gov.br</a>
+                  </div>
+                  <div class="esic-sic-item">
+                    <span class="esic-sic-item__icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                    <a href="tel:+554131627005" class="esic-sic-item__texto esic-sic-item__link">(41) 3162-7005</a>
+                  </div>
+                </address>
+
+                <div class="esic-sic-badge">
+                  <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                  Nomeada conforme Art. 40 da Lei nº 12.527/2011
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </article>
+        <!-- /COLUNA PRINCIPAL -->
+
+        <!-- SIDEBAR -->
+        <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-bolt" aria-hidden="true"></i> Ações Rápidas</h4>
+            <a href="../e-sic/registrar-pedido.html" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-plus-circle" aria-hidden="true"></i> Registrar Pedido
+            </a>
+            <a href="../esic/#esic-acompanhar" class="pi-btn-outline pi-btn-full esic-sidebar-btn-mt">
+              <i class="fas fa-search" aria-hidden="true"></i> Acompanhar Pedido
+            </a>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Página</h4>
+            <ul class="pi-sidebar-links" aria-label="Seções desta página">
+              <li class="ativo">
+                <a href="#esic-relatorio-anual">
+                  <span><i class="fas fa-table pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>Relatório Anual</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-cards-totais">
+                  <span><i class="fas fa-chart-bar pi-sidebar-ico" aria-hidden="true"></i>Estatísticas do Ano</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-implantacao">
+                  <span><i class="fas fa-info-circle pi-sidebar-ico" aria-hidden="true"></i>Desde a Implantação</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-grafico-esic">
+                  <span><i class="fas fa-chart-pie pi-sidebar-ico" aria-hidden="true"></i>Distribuição</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-genero">
+                  <span><i class="fas fa-users pi-sidebar-ico" aria-hidden="true"></i>Por Gênero</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-faixa-etaria">
+                  <span><i class="fas fa-birthday-cake pi-sidebar-ico" aria-hidden="true"></i>Faixa Etária</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-escolaridade">
+                  <span><i class="fas fa-graduation-cap pi-sidebar-ico" aria-hidden="true"></i>Escolaridade</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-sic-fisico">
+                  <span><i class="fas fa-building pi-sidebar-ico" aria-hidden="true"></i>SIC Físico</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-sitemap" aria-hidden="true"></i> e-SIC</h4>
+            <ul class="pi-sidebar-links" aria-label="Seções do e-SIC">
+              <li>
+                <a href="../esic/">
+                  <span><i class="fas fa-home pi-sidebar-ico" aria-hidden="true"></i>Página Principal</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../registrar-pedido/">
+                  <span><i class="fas fa-plus-circle pi-sidebar-ico" aria-hidden="true"></i>Registrar Pedido</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../consulta-sic/">
+                  <span><i class="fas fa-search pi-sidebar-ico" aria-hidden="true"></i>Consulta SIC</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span><i class="fas fa-chart-bar pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>Estatísticas</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../perguntas-frequentes/">
+                  <span><i class="fas fa-question-circle pi-sidebar-ico" aria-hidden="true"></i>Perguntas Frequentes</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7005</p>
+            <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
+      </div>
+    </div>
+  </main>
+

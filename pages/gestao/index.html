@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestao - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/gestao.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="gestao-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="gestao-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="gestao-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="gestao-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Gestão</li>
+          </ol>
+        </nav>
+
+        <h1 class="gestao-hero-titulo">Gestão</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="gestao-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="gestao-main">
+    <div class="container">
+
+      <!-- Layout em grade: coluna principal + sidebar -->
+      <div id="gestao-conteudo" class="gestao-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <article>
+
+          <!-- Seção: Cargos da Gestão Municipal -->
+          <section aria-labelledby="gestao-cargos-titulo">
+
+            <h2 id="gestao-cargos-titulo" class="gestao-secao-titulo">
+              <i class="fas fa-landmark" aria-hidden="true"></i>
+              Gestão Municipal
+            </h2>
+            <hr class="gestao-secao-divider">
+
+            <div class="gestao-cargos-grid" role="list">
+
+              <!-- Card: Prefeito -->
+              <article class="gestao-cargo-card" role="listitem">
+                <a href="../prefeito/" class="gestao-cargo-link" aria-label="Ver página do Prefeito de Campina Grande do Sul">
+                  <div class="gestao-cargo-icone" aria-hidden="true">
+                    <i class="fas fa-user-tie"></i>
+                  </div>
+                  <div class="gestao-cargo-corpo">
+                    <h3 class="gestao-cargo-titulo">Prefeito de Campina Grande do Sul</h3>
+                    <p class="gestao-cargo-descricao">Prefeito de Campina Grande do Sul</p>
+                  </div>
+                  <div class="gestao-cargo-seta" aria-hidden="true">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </a>
+              </article>
+
+              <!-- Card: Vice-Prefeito -->
+              <article class="gestao-cargo-card" role="listitem">
+                <a href="../vice-prefeito/" class="gestao-cargo-link" aria-label="Ver página do Vice-Prefeito de Campina Grande do Sul">
+                  <div class="gestao-cargo-icone" aria-hidden="true">
+                    <i class="fas fa-user-tie"></i>
+                  </div>
+                  <div class="gestao-cargo-corpo">
+                    <h3 class="gestao-cargo-titulo">Vice-Prefeito de Campina Grande do Sul</h3>
+                    <p class="gestao-cargo-descricao">Vice-Prefeito de Campina Grande do Sul</p>
+                  </div>
+                  <div class="gestao-cargo-seta" aria-hidden="true">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </a>
+              </article>
+
+              <!-- Card: Secretários Municipais -->
+              <article class="gestao-cargo-card" role="listitem">
+                <a href="../secretarios-municipais/" class="gestao-cargo-link" aria-label="Ver página dos Secretários Municipais de Campina Grande do Sul">
+                  <div class="gestao-cargo-icone" aria-hidden="true">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div class="gestao-cargo-corpo">
+                    <h3 class="gestao-cargo-titulo">Secretários Municipais</h3>
+                    <p class="gestao-cargo-descricao">Secretários Municipais de Campina Grande do Sul</p>
+                  </div>
+                  <div class="gestao-cargo-seta" aria-hidden="true">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </a>
+              </article>
+
+            </div>
+          </section>
+
+        </article>
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="gestao-sidebar" aria-label="Navegação lateral e ferramentas">
+
+          <!-- Navegação interna da seção -->
+          <div class="gestao-sidebar-card">
+            <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Seção</h4>
+            <ul class="gestao-sidebar-links" aria-label="Páginas desta seção">
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>
+                    <i class="fas fa-landmark gestao-sidebar-ico gestao-sidebar-ico-ativo" aria-hidden="true"></i>
+                    Gestão
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../prefeito/">
+                  <span>
+                    <i class="fas fa-user-tie gestao-sidebar-ico" aria-hidden="true"></i>
+                    Prefeito
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../vice-prefeito/">
+                  <span>
+                    <i class="fas fa-user-tie gestao-sidebar-ico" aria-hidden="true"></i>
+                    Vice-Prefeito
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../secretarios-municipais/">
+                  <span>
+                    <i class="fas fa-users gestao-sidebar-ico" aria-hidden="true"></i>
+                    Secretários Municipais
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="gestao-sidebar-card gestao-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <a href="../ouvidoria" class="gestao-btn-verde gestao-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ
+  ════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+</body>
+</html>
+
+

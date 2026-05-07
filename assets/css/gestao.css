@@ -1,0 +1,854 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   gestao.css — Página de Gestão Municipal
+   Prefeitura de Campina Grande do Sul – PR
+
+   DEPENDÊNCIAS EXTERNAS (importadas via HTML):
+     - Bootstrap 4.6
+     - Font Awesome 6.4
+     - Google Fonts: Roboto
+     - index.css (estilos globais do layout)
+
+   Índice de seções:
+     1. Variáveis e Reset
+     2. Skip Navigation (WCAG 2.4.1)
+     3. Hero / Cabeçalho da Página
+     4. Layout Principal (Coluna + Sidebar)
+     5. Seção de Cargos
+     6. Cards de Cargo
+     7. Sidebar
+     8. Botões utilitários
+     9. Responsividade
+    10. Alto Contraste eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. VARIÁVEIS E RESET
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Tokens de identidade visual da Prefeitura.
+   Prefixo --gestao- garante isolamento sem conflito com index.css. */
+:root {
+  --gestao-verde:         #2d7a2d;
+  --gestao-verde-escuro:  #1e5c1e;
+  --gestao-verde-medio:   #3a9a3a;
+  --gestao-verde-claro:   #e8f5e8;
+  --gestao-verde-hover:   #f0faf0;
+  --gestao-amarelo:       #f5c518;
+  --gestao-cinza-bg:      #eef2ee;
+  --gestao-cinza-borda:   #c8d8c8;
+  --gestao-texto:         #1a2a1a;
+  --gestao-texto-sub:     #4a5a4a;
+
+  /* Sombras e raios */
+  --gestao-radius-card:   10px;
+  --gestao-sombra-card:   0 2px 10px rgba(45, 122, 45, 0.10);
+  --gestao-sombra-hover:  0 6px 20px rgba(45, 122, 45, 0.18);
+
+  /* Transições */
+  --gestao-trans:         0.22s ease;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. SKIP NAVIGATION (WCAG 2.4.1)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.gestao-skip-nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--gestao-amarelo);
+  color: #000;
+  font-weight: 700;
+  padding: 10px 20px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+
+.gestao-skip-nav:focus {
+  top: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. HERO / CABEÇALHO DA PÁGINA
+   Padrão idêntico ao hero da página de Acessibilidade:
+   fundo verde escuro, breadcrumb e título em branco,
+   ilustração como faixa horizontal de largura total na base.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Fundo verde escuro; sem padding inferior — a ilustração fecha o bloco */
+#gestao-hero {
+  background: var(--gestao-verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wrapper interno: z-index acima da ilustração */
+.gestao-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────────────────────── */
+
+.gestao-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.gestao-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.gestao-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.gestao-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.gestao-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+/* Separador chevron */
+.gestao-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
+
+/* ── Título da página ──────────────────────────────────────────────────── */
+
+.gestao-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Ilustração decorativa — faixa full-width na base do hero ─────────── */
+/* Fora do .container, ocupa 100% da largura com máscara de gradiente      */
+
+.gestao-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.gestao-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. LAYOUT PRINCIPAL (COLUNA PRINCIPAL + SIDEBAR)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#gestao-main {
+  background: #fff;
+  padding-bottom: 60px;
+}
+
+/* Grade de dois painéis: artigo (flex: 1) + sidebar (fixa em 300px) */
+.gestao-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  padding-top: 36px;
+  outline: none; /* tabindex=-1 sem anel de foco visível */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. SEÇÃO DE CARGOS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Cabeçalho de seção (título + ícone) ──────────────────────────────── */
+
+.gestao-secao-titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gestao-verde-escuro);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+.gestao-secao-titulo i {
+  color: var(--gestao-verde);
+  font-size: 1rem;
+}
+
+/* ── Divisor horizontal abaixo do título ─────────────────────────────── */
+
+.gestao-secao-divider {
+  border: none;
+  border-top: 2px solid var(--gestao-verde-claro);
+  margin: 0 0 24px;
+}
+
+/* ── Grade de cards de cargo ─────────────────────────────────────────── */
+
+.gestao-cargos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. CARDS DE CARGO
+   Cada card representa um cargo/seção da gestão municipal.
+   Preparado para expansão: basta adicionar mais <article> na grade.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.gestao-cargo-card {
+  border: 1px solid var(--gestao-cinza-borda);
+  border-radius: var(--gestao-radius-card);
+  background: #fff;
+  box-shadow: var(--gestao-sombra-card);
+  transition:
+    box-shadow var(--gestao-trans),
+    border-color var(--gestao-trans),
+    transform var(--gestao-trans);
+  overflow: hidden;
+}
+
+/* Efeito de elevação e destaque no hover */
+.gestao-cargo-card:hover {
+  box-shadow: var(--gestao-sombra-hover);
+  border-color: var(--gestao-verde);
+  transform: translateY(-2px);
+}
+
+/* Link interno que cobre toda a área do card */
+.gestao-cargo-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--gestao-trans);
+}
+
+.gestao-cargo-link:hover {
+  background: var(--gestao-verde-hover);
+  color: inherit;
+  text-decoration: none;
+}
+
+.gestao-cargo-link:focus-visible {
+  outline: 3px solid var(--gestao-amarelo);
+  outline-offset: 2px;
+}
+
+/* ── Ícone do cargo ────────────────────────────────────────────────────── */
+
+.gestao-cargo-icone {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--gestao-verde-claro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--gestao-trans);
+}
+
+.gestao-cargo-icone i {
+  font-size: 1.375rem;
+  color: var(--gestao-verde);
+  transition: color var(--gestao-trans);
+}
+
+/* No hover, o ícone assume a cor verde escura */
+.gestao-cargo-card:hover .gestao-cargo-icone {
+  background: var(--gestao-verde);
+}
+
+.gestao-cargo-card:hover .gestao-cargo-icone i {
+  color: #fff;
+}
+
+/* ── Corpo de texto do cargo ───────────────────────────────────────────── */
+
+.gestao-cargo-corpo {
+  flex: 1;
+  min-width: 0; /* evita overflow em containers estreitos */
+}
+
+.gestao-cargo-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gestao-verde);
+  margin: 0 0 4px;
+  line-height: 1.3;
+  transition: color var(--gestao-trans);
+}
+
+.gestao-cargo-card:hover .gestao-cargo-titulo {
+  color: var(--gestao-verde-escuro);
+}
+
+.gestao-cargo-descricao {
+  font-size: 0.875rem;
+  color: var(--gestao-texto-sub);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Seta indicadora de navegação ─────────────────────────────────────── */
+
+.gestao-cargo-seta {
+  flex-shrink: 0;
+  color: var(--gestao-cinza-borda);
+  font-size: 0.875rem;
+  transition: color var(--gestao-trans), transform var(--gestao-trans);
+}
+
+.gestao-cargo-card:hover .gestao-cargo-seta {
+  color: var(--gestao-verde);
+  transform: translateX(3px);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. SIDEBAR
+   Idêntica em estrutura à sidebar de acessibilidade para consistência.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.gestao-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Bloco de controles de acessibilidade ─────────────────────────────── */
+
+.gestao-controles-bloco {
+  background: var(--gestao-verde-claro);
+  border: 1px solid var(--gestao-cinza-borda);
+  border-radius: var(--gestao-radius-card);
+  padding: 18px 20px;
+}
+
+.gestao-controles-bloco h4 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gestao-verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gestao-controles-bloco h4 i {
+  font-size: 0.9375rem;
+  color: var(--gestao-verde);
+}
+
+/* Linha de controle: rótulo à esquerda, botões à direita */
+.gestao-ctrl-row {
+  margin-bottom: 10px;
+}
+
+.gestao-ctrl-row:last-child {
+  margin-bottom: 0;
+}
+
+.gestao-ctrl-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gestao-texto-sub);
+  margin-bottom: 6px;
+}
+
+.gestao-ctrl-btns {
+  display: flex;
+  gap: 6px;
+}
+
+/* Botão de controle individual (A+, A–, A) */
+.gestao-ctrl-btn {
+  background: #fff;
+  border: 1px solid var(--gestao-cinza-borda);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gestao-verde-escuro);
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background var(--gestao-trans), border-color var(--gestao-trans);
+}
+
+.gestao-ctrl-btn:hover {
+  background: var(--gestao-verde-claro);
+  border-color: var(--gestao-verde);
+}
+
+.gestao-ctrl-btn:focus-visible {
+  outline: 2px solid var(--gestao-amarelo);
+  outline-offset: 2px;
+}
+
+/* Botão de alto contraste (ocupa a largura toda) */
+.gestao-ctrl-btn-contraste {
+  width: 100%;
+  background: var(--gestao-verde);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: background var(--gestao-trans);
+}
+
+.gestao-ctrl-btn-contraste:hover {
+  background: var(--gestao-verde-escuro);
+}
+
+.gestao-ctrl-btn-contraste:focus-visible {
+  outline: 2px solid var(--gestao-amarelo);
+  outline-offset: 2px;
+}
+
+/* ── Card genérico da sidebar ─────────────────────────────────────────── */
+
+.gestao-sidebar-card {
+  background: #fff;
+  border: 1px solid var(--gestao-cinza-borda);
+  border-radius: var(--gestao-radius-card);
+  overflow: hidden;
+}
+
+/* Cabeçalho do card sidebar */
+.gestao-sidebar-card h4 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gestao-verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--gestao-cinza-borda);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gestao-sidebar-card h4 i {
+  font-size: 0.9375rem;
+  color: var(--gestao-verde);
+}
+
+/* ── Lista de links na sidebar ────────────────────────────────────────── */
+
+.gestao-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada item da lista */
+.gestao-sidebar-links li {
+  border-bottom: 1px solid var(--gestao-cinza-borda);
+}
+
+.gestao-sidebar-links li:last-child {
+  border-bottom: none;
+}
+
+.gestao-sidebar-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  font-size: 0.875rem;
+  color: var(--gestao-texto);
+  text-decoration: none;
+  transition: background var(--gestao-trans), color var(--gestao-trans);
+}
+
+.gestao-sidebar-links li a span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.gestao-sidebar-links li a:hover {
+  background: var(--gestao-verde-claro);
+  color: var(--gestao-verde-escuro);
+}
+
+.gestao-sidebar-links li a:focus-visible {
+  outline: 2px solid var(--gestao-amarelo);
+  outline-offset: -2px;
+}
+
+/* Seta à direita do link */
+.gestao-sidebar-links li a i.fa-chevron-right {
+  font-size: 0.625rem;
+  color: var(--gestao-cinza-borda);
+  flex-shrink: 0;
+}
+
+/* Ícone do item de lista */
+.gestao-sidebar-ico {
+  font-size: 0.875rem;
+  color: var(--gestao-texto-sub);
+  width: 16px;
+  text-align: center;
+}
+
+/* Item ativo: destaque verde */
+.gestao-sidebar-links li.ativo a {
+  background: var(--gestao-verde-claro);
+  font-weight: 700;
+  color: var(--gestao-verde-escuro);
+}
+
+.gestao-sidebar-ico-ativo {
+  color: var(--gestao-verde) !important;
+}
+
+/* ── Card de contato rápido ───────────────────────────────────────────── */
+
+.gestao-sidebar-contato {
+  background: var(--gestao-verde-claro);
+}
+
+.gestao-sidebar-contato h4 {
+  background: transparent;
+  border-bottom-color: var(--gestao-cinza-borda);
+}
+
+.gestao-sidebar-contato p {
+  font-size: 0.8125rem;
+  color: var(--gestao-texto-sub);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 18px;
+  margin: 12px 0 0;
+}
+
+.gestao-sidebar-contato p i {
+  color: var(--gestao-verde);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.gestao-sidebar-contato p:last-of-type {
+  margin-bottom: 14px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. BOTÕES UTILITÁRIOS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Botão verde primário */
+.gestao-btn-verde {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--gestao-verde);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background var(--gestao-trans), box-shadow var(--gestao-trans);
+}
+
+.gestao-btn-verde:hover {
+  background: var(--gestao-verde-escuro);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(45, 122, 45, 0.28);
+}
+
+.gestao-btn-verde:focus-visible {
+  outline: 2px solid var(--gestao-amarelo);
+  outline-offset: 2px;
+}
+
+/* Modificador: ocupa 100% da largura do container */
+.gestao-btn-full {
+  width: calc(100% - 36px);
+  margin: 0 18px 18px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Telas médias (≤ 1024px): sidebar abaixo do conteúdo ─────────────── */
+@media (max-width: 1024px) {
+  .gestao-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gestao-sidebar {
+    order: -1; /* Sidebar sobe para antes do conteúdo em mobile */
+  }
+}
+
+/* ── Telas pequenas (≤ 768px): ajustes de tipografia e espaçamento ────── */
+@media (max-width: 768px) {
+  .gestao-hero-titulo {
+    font-size: 1.5rem;
+  }
+
+  .gestao-hero-ilustracao {
+    display: none; /* Oculta ilustração em telas estreitas */
+  }
+
+  .gestao-cargo-link {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .gestao-cargo-icone {
+    width: 44px;
+    height: 44px;
+  }
+
+  .gestao-cargo-icone i {
+    font-size: 1.125rem;
+  }
+
+  .gestao-cargo-titulo {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ── Telas muito pequenas (≤ 480px): simplificação do card ────────────── */
+@media (max-width: 480px) {
+  .gestao-cargo-descricao {
+    display: none; /* Simplifica em telas muito estreitas */
+  }
+
+  .gestao-cargo-link {
+    gap: 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   10. ALTO CONTRASTE eMAG
+   Ativado pela classe .high-contrast no <body>, conforme padrão do site.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast #gestao-hero {
+  background: #000 !important;
+  border-bottom: 2px solid #fff;
+}
+
+body.high-contrast .gestao-hero-titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .gestao-breadcrumb li {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.high-contrast .gestao-breadcrumb li a {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-hero-ilustracao {
+  display: none;
+}
+
+body.high-contrast .gestao-secao-titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .gestao-secao-titulo i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-secao-divider {
+  border-color: #555 !important;
+}
+
+body.high-contrast .gestao-cargo-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .gestao-cargo-card:hover {
+  background: #111 !important;
+}
+
+body.high-contrast .gestao-cargo-link:hover {
+  background: #111 !important;
+}
+
+body.high-contrast .gestao-cargo-icone {
+  background: #333 !important;
+}
+
+body.high-contrast .gestao-cargo-icone i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-cargo-card:hover .gestao-cargo-icone {
+  background: #555 !important;
+}
+
+body.high-contrast .gestao-cargo-titulo {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-cargo-descricao {
+  color: #ddd !important;
+}
+
+body.high-contrast .gestao-cargo-seta {
+  color: #888 !important;
+}
+
+body.high-contrast .gestao-controles-bloco {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .gestao-controles-bloco h4 {
+  color: #fff !important;
+}
+
+body.high-contrast .gestao-controles-bloco h4 i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-ctrl-label {
+  color: #ddd !important;
+}
+
+body.high-contrast .gestao-ctrl-btn {
+  background: #111 !important;
+  color: #ff0 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .gestao-ctrl-btn:hover {
+  background: #ff0 !important;
+  color: #000 !important;
+}
+
+body.high-contrast .gestao-ctrl-btn-contraste {
+  background: var(--gestao-amarelo) !important;
+  color: #000 !important;
+  border: 1px solid #fff !important;
+}
+
+body.high-contrast .gestao-sidebar-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .gestao-sidebar-card h4 {
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+body.high-contrast .gestao-sidebar-card h4 i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-sidebar-links li {
+  border-color: #333 !important;
+}
+
+body.high-contrast .gestao-sidebar-links li a {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-sidebar-links li a:hover {
+  color: #fff !important;
+  background: #222 !important;
+}
+
+body.high-contrast .gestao-sidebar-links li.ativo a {
+  background: #111 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-sidebar-links li a i.fa-chevron-right {
+  color: #888 !important;
+}
+
+body.high-contrast .gestao-sidebar-contato {
+  background: #111 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .gestao-sidebar-contato p {
+  color: #ddd !important;
+}
+
+body.high-contrast .gestao-sidebar-contato p i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .gestao-btn-verde {
+  background: #ff0 !important;
+  color: #000 !important;
+  border: 1px solid #fff !important;
+}
+
+body.high-contrast .gestao-btn-verde:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
