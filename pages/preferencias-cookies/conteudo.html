@@ -1,0 +1,169 @@
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pp-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pp-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pp-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pp-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li>
+              <a href="../politica-privacidade/index.html">Privacidade</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pp-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Preferências de Cookies</li>
+          </ol>
+        </nav>
+
+        <h1 class="pp-hero-titulo">Preferências de Cookies</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pp-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pp-main">
+    <div class="container">
+
+      <!-- Layout em grade: coluna principal + sidebar -->
+      <div id="pp-conteudo" class="pp-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <article>
+
+          <!-- ── Seção: Introdução ──────────────────────────────── -->
+          <section aria-labelledby="pp-intro-titulo">
+            <h2 id="pp-intro-titulo" class="pp-secao-titulo">
+              <i class="fas fa-cookie-bite" aria-hidden="true"></i>
+              Gerencie suas preferências
+            </h2>
+            <hr class="pp-secao-divider">
+            <div class="pp-texto">
+              <p>
+                Utilizamos cookies para melhorar sua experiência de navegação, servir anúncios ou conteúdos personalizados e analisar nosso tráfego. 
+                Ao clicar em "Aceitar tudo", você concorda com o uso de cookies.
+              </p>
+              <p>
+                Abaixo você pode personalizar quais tipos de cookies deseja permitir.
+              </p>
+            </div>
+          </section>
+
+          <!-- ── Seção: Tipos de Cookies ───────────────────── -->
+          <section aria-labelledby="pp-tipos-titulo" class="pp-mt-secao">
+            <h2 id="pp-tipos-titulo" class="pp-secao-titulo">
+              <i class="fas fa-list-check" aria-hidden="true"></i>
+              Categorias de Cookies
+            </h2>
+            <hr class="pp-secao-divider">
+            
+            <div class="pp-texto">
+              
+              <!-- Cookie Necessário -->
+              <div class="mb-4 p-3 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="h5 mb-1">Necessários</h3>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="cookie-necessario" checked disabled>
+                    <label class="custom-control-label" for="cookie-necessario">Sempre ativos</label>
+                  </div>
+                </div>
+                <p class="small text-muted mb-0">
+                  Estes cookies são essenciais para que o site funcione corretamente. Eles garantem funcionalidades básicas e recursos de segurança do site, de forma anônima.
+                </p>
+              </div>
+
+              <!-- Cookie Analítico -->
+              <div class="mb-4 p-3 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="h5 mb-1">Analíticos</h3>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="cookie-analitico">
+                    <label class="custom-control-label" for="cookie-analitico"></label>
+                  </div>
+                </div>
+                <p class="small text-muted mb-0">
+                  Cookies analíticos são usados para entender como os visitantes interagem com o site. Esses cookies ajudam a fornecer informações sobre métricas de número de visitantes, taxa de rejeição, origem do tráfego, etc.
+                </p>
+              </div>
+
+              <!-- Cookie Funcional -->
+              <div class="mb-4 p-3 border rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 class="h5 mb-1">Funcionais</h3>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="cookie-funcional">
+                    <label class="custom-control-label" for="cookie-funcional"></label>
+                  </div>
+                </div>
+                <p class="small text-muted mb-0">
+                  Cookies funcionais ajudam a realizar certas funcionalidades, como compartilhar o conteúdo do site em plataformas de mídia social, coletar feedbacks e outros recursos de terceiros.
+                </p>
+              </div>
+
+              <div class="mt-4">
+                <button class="btn btn-primary">Salvar Preferências</button>
+                <button class="btn btn-outline-secondary ml-2">Aceitar Todos</button>
+              </div>
+
+            </div>
+          </section>
+
+        </article>
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="pp-sidebar" aria-label="Navegação lateral e ferramentas">
+          
+          <div class="pp-sidebar-card">
+            <h4><i class="fas fa-shield-halved" aria-hidden="true"></i> Privacidade</h4>
+            <ul class="pp-sidebar-links">
+              <li>
+                <a href="../politica-privacidade/index.html">
+                  <span>
+                    <i class="fas fa-shield-alt pp-sidebar-ico" aria-hidden="true"></i>
+                    Política de Privacidade
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>
+                    <i class="fas fa-cookie-bite pp-sidebar-ico pp-sidebar-ico-ativo" aria-hidden="true"></i>
+                    Preferências de Cookies
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>

@@ -144,7 +144,8 @@ class MeuFooter extends HTMLElement {
           <!-- ===== FOOTER BOTTOM ===== -->
           <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,.12); margin-top: 28px; padding-top: 16px; font-size: 0.6875rem; color: rgba(255,255,255,.35); text-align: center;">
             &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
-            Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
+            <a href="${base}pages/politica-privacidade/index.html" style="color: rgba(255,255,255,.35); text-decoration: none;">Política de Privacidade e</a> 
+            <a href="${base}pages/preferencias-cookies/index.html" style="color: rgba(255,255,255,.35); text-decoration: none;">Preferências de Cookies</a> &nbsp;|&nbsp;
             Mantido pela STI – Secretaria de Tecnologia da Informação
           </div>
 
