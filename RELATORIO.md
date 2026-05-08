@@ -132,4 +132,20 @@ Atualmente, o projeto conta com as seguintes páginas estruturadas:
 - **Manutenção:** Centralizada. Mudanças no Header/Footer em um único arquivo JS afetam o portal inteiro.
 
 ---
+
+## 10. Atualizações Recentes e Melhorias de Migração (Maio/2026)
+
+Recentemente, o projeto passou por uma fase de refatoração focada em **limpeza de redundâncias** e **conformidade legal**, preparando o template para a integração final ao sistema.
+
+### Unificação de Variáveis CSS
+- **Objetivo:** Eliminar a redundância de variáveis de cores e estilos em arquivos CSS específicos.
+- **Ação:** Os arquivos `acessibilidade.css` e `politica-privacidade.css` (globais e locais) foram limpos. O bloco `:root` redundante foi removido e os prefixos de variáveis (ex: `--pi-`, `--pp-`) foram substituídos pelos nomes base (ex: `--verde`, `--amarelo`).
+- **Resultado:** Estes arquivos agora herdam automaticamente os estilos definidos no `index.css` global, reduzindo o tamanho dos arquivos e facilitando a manutenção da identidade visual.
+
+### Atualização das Políticas de Privacidade e Cookies (LGPD)
+- **Privacidade:** O texto foi totalmente reformulado para atender à Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018). Foram adicionadas seções claras sobre Coleta, Tratamento, Compartilhamento e Direitos do Titular.
+- **Cookies:** Criação de uma Política de Cookies detalhada, incluindo uma tabela técnica de serviços de terceiros (Google Analytics, Maps, etc.) e instruções de gerenciamento no navegador.
+- **Design:** Implementação da classe `.pp-subtitulo-interno` para organização hierárquica do texto e atualização das barras laterais com atalhos cruzados entre as políticas, garantindo uma experiência de navegação fluida e acessível.
+
+---
 *Este relatório deve ser mantido atualizado a cada mudança significativa na estrutura de diretórios ou na lógica de componentes do projeto.*

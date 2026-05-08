@@ -26,35 +26,10 @@
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   1. VARIÁVEIS E RESET
+   1. VARIÁVEIS E RESET (Herdados do index.css)
    Reutiliza a identidade visual da Prefeitura (paleta verde/amarelo).
-   Prefixo --pp- garante isolamento em relação ao index.css.
+   Prefixo -- garante isolamento em relação ao index.css.
    ══════════════════════════════════════════════════════════════════════════ */
-
-:root {
-  /* Paleta principal */
-  --pp-verde:         #2d7a2d;
-  --pp-verde-escuro:  #1e5c1e;
-  --pp-verde-medio:   #3a9a3a;
-  --pp-verde-claro:   #e8f5e8;
-  --pp-amarelo:       #f5c518;
-
-  /* Neutros e fundos */
-  --pp-cinza-bg:      #eef2ee;
-  --pp-cinza-borda:   #c8d8c8;
-  --pp-branco:        #ffffff;
-
-  /* Tipografia */
-  --pp-texto:         #1a2a1a;
-  --pp-texto-suave:   #4a5a4a;
-
-  /* Sombras */
-  --pp-sombra-card:   0 2px 8px rgba(0, 0, 0, 0.07);
-  --pp-sombra-hover:  0 4px 16px rgba(0, 0, 0, 0.12);
-
-  /* Transição padrão */
-  --pp-transition:    0.2s ease;
-}
 
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -66,7 +41,7 @@
   position: absolute;
   top: -100px;
   left: 0;
-  background: var(--pp-amarelo);
+  background: var(--amarelo);
   color: #000;
   font-weight: 700;
   padding: 10px 20px;
@@ -88,7 +63,7 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pp-hero {
-  background: var(--pp-verde-escuro);
+  background: var(--verde-escuro);
   padding: 18px 0 0;
   position: relative;
   overflow: hidden;
@@ -177,7 +152,7 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pp-main {
-  background: var(--pp-cinza-bg);
+  background: var(--cinza-bg);
   padding: 40px 0 60px;
   min-height: 60vh;
 }
@@ -204,7 +179,7 @@
 .pp-secao-titulo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -212,7 +187,7 @@
 }
 
 .pp-secao-titulo i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
   font-size: 1.125rem;
   flex-shrink: 0;
 }
@@ -220,13 +195,13 @@
 /* Divisor abaixo dos títulos de seção */
 .pp-secao-divider {
   border: none;
-  border-top: 2px solid var(--pp-cinza-borda);
+  border-top: 2px solid var(--cinza-borda);
   margin: 0 0 20px;
 }
 
 /* Wrapper de parágrafos de conteúdo */
 .pp-texto p {
-  color: var(--pp-texto);
+  color: var(--texto);
   font-size: 0.9375rem;
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -247,8 +222,8 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: var(--pp-verde-claro);
-  border-left: 4px solid var(--pp-verde);
+  background: var(--verde-claro);
+  border-left: 4px solid var(--verde);
   border-radius: 0 6px 6px 0;
   padding: 16px 20px;
   margin-top: 20px;
@@ -256,20 +231,20 @@
 
 .pp-destaque-icone {
   font-size: 1.5rem;
-  color: var(--pp-verde);
+  color: var(--verde);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .pp-destaque strong {
   display: block;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   font-size: 0.9375rem;
   margin-bottom: 6px;
 }
 
 .pp-destaque p {
-  color: var(--pp-texto-suave);
+  color: var(--texto-suave);
   font-size: 0.875rem;
   line-height: 1.6;
   margin: 0;
@@ -282,12 +257,12 @@
   align-items: flex-start;
   gap: 14px;
   background: #fffbea;
-  border-left: 4px solid var(--pp-amarelo);
+  border-left: 4px solid var(--amarelo);
   border-radius: 0 6px 6px 0;
   padding: 14px 18px;
   margin-top: 20px;
   font-size: 0.875rem;
-  color: var(--pp-texto);
+  color: var(--texto);
   line-height: 1.6;
 }
 
@@ -320,12 +295,12 @@
   align-items: flex-start;
   gap: 10px;
   font-size: 0.9375rem;
-  color: var(--pp-texto);
+  color: var(--texto);
   line-height: 1.6;
 }
 
 .pp-lista li i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
   font-size: 0.875rem;
   margin-top: 3px;
   flex-shrink: 0;
@@ -344,30 +319,30 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: var(--pp-branco);
-  border: 1px solid var(--pp-cinza-borda);
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: var(--pp-sombra-card);
-  transition: box-shadow var(--pp-transition), border-color var(--pp-transition);
+  box-shadow: var(--sombra-card);
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
 
 .pp-tec-card:hover {
-  box-shadow: var(--pp-sombra-hover);
-  border-color: var(--pp-verde-medio);
+  box-shadow: var(--sombra-hover);
+  border-color: var(--verde-medio);
 }
 
 /* Ícone do card */
 .pp-tec-icon {
   width: 48px;
   height: 48px;
-  background: var(--pp-verde-claro);
+  background: var(--verde-claro);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--pp-verde);
+  color: var(--verde);
   font-size: 1.25rem;
 }
 
@@ -375,13 +350,13 @@
 .pp-tec-corpo h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   margin: 0 0 8px;
 }
 
 .pp-tec-corpo p {
   font-size: 0.875rem;
-  color: var(--pp-texto-suave);
+  color: var(--texto-suave);
   line-height: 1.65;
   margin: 0;
 }
@@ -392,17 +367,17 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background: var(--pp-branco);
-  border: 1px solid var(--pp-cinza-borda);
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
   border-radius: 10px;
   padding: 28px;
-  box-shadow: var(--pp-sombra-card);
+  box-shadow: var(--sombra-card);
 }
 
 .pp-contato-icon-wrap {
   width: 56px;
   height: 56px;
-  background: var(--pp-verde);
+  background: var(--verde);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -415,13 +390,13 @@
 .pp-contato-corpo h3 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   margin: 0 0 8px;
 }
 
 .pp-contato-corpo > p {
   font-size: 0.9375rem;
-  color: var(--pp-texto-suave);
+  color: var(--texto-suave);
   line-height: 1.65;
   margin-bottom: 14px;
 }
@@ -438,12 +413,12 @@
   align-items: center;
   gap: 7px;
   font-size: 0.875rem;
-  color: var(--pp-texto);
+  color: var(--texto);
   font-weight: 500;
 }
 
 .pp-contato-info span i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
 }
 
 /* ── 6f. Nota de Atualização ── */
@@ -454,15 +429,15 @@
   gap: 10px;
   margin-top: 48px;
   padding: 12px 18px;
-  background: var(--pp-cinza-bg);
-  border: 1px solid var(--pp-cinza-borda);
+  background: var(--cinza-bg);
+  border: 1px solid var(--cinza-borda);
   border-radius: 6px;
   font-size: 0.8125rem;
-  color: var(--pp-texto-suave);
+  color: var(--texto-suave);
 }
 
 .pp-atualizacao i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
   font-size: 1rem;
   flex-shrink: 0;
 }
@@ -476,7 +451,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--pp-verde);
+  background: var(--verde);
   color: #fff;
   font-size: 0.875rem;
   font-weight: 700;
@@ -485,18 +460,18 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background var(--pp-transition), box-shadow var(--pp-transition);
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .pp-btn-verde:hover {
-  background: var(--pp-verde-escuro);
+  background: var(--verde-escuro);
   color: #fff;
   text-decoration: none;
   box-shadow: 0 3px 10px rgba(45, 122, 45, 0.35);
 }
 
 .pp-btn-verde:focus-visible {
-  outline: 3px solid var(--pp-amarelo);
+  outline: 3px solid var(--amarelo);
   outline-offset: 2px;
 }
 
@@ -520,27 +495,27 @@
 /* ── 8a. Bloco de Controles de Acessibilidade ── */
 
 .pp-controles-bloco {
-  background: var(--pp-branco);
-  border: 1px solid var(--pp-cinza-borda);
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
   border-radius: 8px;
   padding: 18px 16px 14px;
-  box-shadow: var(--pp-sombra-card);
+  box-shadow: var(--sombra-card);
 }
 
 .pp-controles-bloco h4 {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   margin: 0 0 14px;
   display: flex;
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--pp-cinza-borda);
+  border-bottom: 1px solid var(--cinza-borda);
 }
 
 .pp-controles-bloco h4 i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
 }
 
 .pp-ctrl-row {
@@ -554,7 +529,7 @@
 .pp-ctrl-label {
   display: block;
   font-size: 0.75rem;
-  color: var(--pp-texto-suave);
+  color: var(--texto-suave);
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -567,23 +542,23 @@
 /* Botões individuais de controle de fonte */
 .pp-ctrl-btn {
   background: #f1f5f1;
-  border: 1px solid var(--pp-cinza-borda);
+  border: 1px solid var(--cinza-borda);
   border-radius: 4px;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   font-size: 0.875rem;
   font-weight: 700;
   padding: 5px 12px;
   cursor: pointer;
-  transition: background var(--pp-transition), border-color var(--pp-transition);
+  transition: background var(--transition), border-color var(--transition);
 }
 
 .pp-ctrl-btn:hover {
-  background: var(--pp-verde-claro);
-  border-color: var(--pp-verde);
+  background: var(--verde-claro);
+  border-color: var(--verde);
 }
 
 .pp-ctrl-btn:focus-visible {
-  outline: 2px solid var(--pp-amarelo);
+  outline: 2px solid var(--amarelo);
   outline-offset: 2px;
 }
 
@@ -593,7 +568,7 @@
   align-items: center;
   gap: 8px;
   width: 100%;
-  background: var(--pp-verde-escuro);
+  background: var(--verde-escuro);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -601,43 +576,43 @@
   font-weight: 700;
   padding: 8px 12px;
   cursor: pointer;
-  transition: background var(--pp-transition);
+  transition: background var(--transition);
 }
 
 .pp-ctrl-btn-contraste:hover {
-  background: var(--pp-verde);
+  background: var(--verde);
 }
 
 .pp-ctrl-btn-contraste:focus-visible {
-  outline: 2px solid var(--pp-amarelo);
+  outline: 2px solid var(--amarelo);
   outline-offset: 2px;
 }
 
 /* ── 8b. Card de Links ── */
 
 .pp-sidebar-card {
-  background: var(--pp-branco);
-  border: 1px solid var(--pp-cinza-borda);
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
   border-radius: 8px;
   padding: 0;
   overflow: hidden;
-  box-shadow: var(--pp-sombra-card);
+  box-shadow: var(--sombra-card);
 }
 
 .pp-sidebar-card h4 {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--pp-verde-escuro);
+  color: var(--verde-escuro);
   margin: 0;
   padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px solid var(--pp-cinza-borda);
+  border-bottom: 1px solid var(--cinza-borda);
 }
 
 .pp-sidebar-card h4 i {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
 }
 
 /* Lista de links da sidebar */
@@ -660,19 +635,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 11px 16px;
-  color: var(--pp-texto);
+  color: var(--texto);
   text-decoration: none;
   font-size: 0.875rem;
-  transition: background var(--pp-transition), color var(--pp-transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .pp-sidebar-links li a:hover {
-  background: var(--pp-verde-claro);
-  color: var(--pp-verde-escuro);
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
 }
 
 .pp-sidebar-links li a:focus-visible {
-  outline: 2px solid var(--pp-amarelo);
+  outline: 2px solid var(--amarelo);
   outline-offset: -2px;
 }
 
@@ -683,33 +658,33 @@
 
 /* Ícone do item de lista */
 .pp-sidebar-ico {
-  color: var(--pp-verde-medio);
+  color: var(--verde-medio);
   font-size: 0.875rem;
   margin-right: 6px;
 }
 
 .pp-sidebar-ico-ativo {
-  color: var(--pp-verde);
+  color: var(--verde);
 }
 
 /* Item ativo na navegação lateral */
 .pp-sidebar-links li.ativo a {
-  background: var(--pp-verde-claro);
-  color: var(--pp-verde-escuro);
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
   font-weight: 700;
-  border-left: 3px solid var(--pp-verde);
+  border-left: 3px solid var(--verde);
 }
 
 /* ── 8c. Card de Contato (sidebar) ── */
 
 .pp-sidebar-contato {
-  background: var(--pp-verde-claro) !important;
+  background: var(--verde-claro) !important;
 }
 
 .pp-sidebar-contato h4 {
-  background: var(--pp-verde);
+  background: var(--verde);
   color: #fff !important;
-  border-color: var(--pp-verde-escuro) !important;
+  border-color: var(--verde-escuro) !important;
 }
 
 .pp-sidebar-contato h4 i {
@@ -721,13 +696,13 @@
   align-items: center;
   gap: 8px;
   font-size: 0.875rem;
-  color: var(--pp-texto);
+  color: var(--texto);
   padding: 10px 16px 0;
   margin: 0;
 }
 
 .pp-sidebar-contato p i {
-  color: var(--pp-verde);
+  color: var(--verde);
   width: 14px;
   flex-shrink: 0;
 }
@@ -948,7 +923,7 @@ body.high-contrast .pp-ctrl-btn:hover {
 }
 
 body.high-contrast .pp-ctrl-btn-contraste {
-  background: var(--pp-amarelo) !important;
+  background: var(--amarelo) !important;
   color: #000 !important;
 }
 
