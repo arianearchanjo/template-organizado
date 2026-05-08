@@ -1,9 +1,43 @@
-<section id="pi-hero" aria-label="Cabeçalho da página">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas Frequentes - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+    <link rel="stylesheet" href="css/perguntas-frequentes.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <section id="pi-hero" aria-label="Cabeçalho da página">
   <div class="container">
     <div class="pi-hero-inner">
       <nav aria-label="Breadcrumb">
         <ol class="pi-breadcrumb">
-          <li><a href="../../index.html"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
+          <li><a href="../../index.html"><i class="fas fa-house" aria-hidden="true"></i> Início</a></li>
           <li aria-hidden="true"><span class="pi-breadcrumb-sep">›</span></li>
           <li><a href="../e-sic/">Acesso à Informação</a></li>
           <li aria-hidden="true"><span class="pi-breadcrumb-sep">›</span></li>
@@ -38,7 +72,7 @@
               aria-label="Pesquisar perguntas"
             >
             <button type="button" class="pi-faq-busca-btn" id="pi-faq-btn-limpar" aria-label="Limpar pesquisa" style="display:none">
-              <i class="fa fa-times" aria-hidden="true"></i>
+              <i class="fas fa-xmark" aria-hidden="true"></i>
               <span>Limpar</span>
             </button>
           </div>
@@ -59,7 +93,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é o Portal da Transparência?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O Portal da Transparência é um site público onde qualquer cidadão pode consultar informações sobre a gestão do município de Campina Grande do Sul. Nele você encontra dados sobre receitas, despesas, servidores, licitações, contratos, obras e muito mais. O portal existe para garantir que a população possa acompanhar e fiscalizar o uso dos recursos públicos.
@@ -69,7 +103,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quais informações estão disponíveis no Portal da Transparência?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               No portal você encontra informações gerais sobre o município, estrutura organizacional, contabilidade e finanças, recursos humanos, compras e licitações, contratos, patrimônio, convênios, obras, legislação municipal e dados sobre Secretarias, Escolas, CMEIs, Unidades de Saúde e demais órgãos da administração municipal.
@@ -79,7 +113,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quem pode acessar o portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Qualquer pessoa pode acessar o Portal da Transparência. O acesso é livre, gratuito e não exige senha ou cadastro. Basta ter conexão com a internet. Não há nenhuma restrição para consultar as informações disponíveis.
@@ -89,7 +123,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como acessar informações sobre despesas e receitas do município?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               No Portal da Transparência, acesse o menu de Contabilidade e Finanças. Lá você encontra as abas de Receitas e Despesas, onde é possível consultar todos os valores arrecadados e gastos pelo município. Você pode filtrar por período, órgão ou categoria para encontrar a informação desejada.
@@ -99,7 +133,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como acompanhar os gastos públicos do município?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Para acompanhar os gastos públicos, acesse as abas de Despesas e Empenhos no portal. Você pode visualizar todos os pagamentos realizados, os fornecedores contratados e os valores envolvidos. Use os filtros disponíveis para refinar sua busca por período, secretaria ou tipo de despesa.
@@ -109,7 +143,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Onde encontro informações sobre licitações e contratos?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               As licitações e contratos estão disponíveis nas abas correspondentes no portal. Você pode consultar processos licitatórios em andamento ou encerrados, ver os vencedores, os valores contratados e baixar os documentos relacionados, como editais e contratos assinados.
@@ -119,7 +153,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como visualizar o edital de uma licitação?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               No Portal da Transparência, acesse a aba "Licitações" e clique no botão disponível na coluna "Edital" para abrir o documento. Se o botão não aparecer, significa que o edital ainda não foi publicado no sistema.
@@ -129,7 +163,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é a Lei de Acesso à Informação (LAI)?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               A Lei de Acesso à Informação (Lei nº 12.527/2011) garante a qualquer pessoa o direito de solicitar e receber informações de órgãos e entidades públicas de todos os níveis de governo. Com essa lei, a transparência passou a ser a regra na administração pública, e o sigilo tornou-se exceção, aplicável apenas em casos previstos em lei.
@@ -139,7 +173,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quando a Lei de Acesso à Informação entrou em vigor?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               A LAI foi publicada em 18 de novembro de 2011 e entrou em vigor 180 dias depois, em 16 de maio de 2012.
@@ -149,7 +183,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quais informações o cidadão pode solicitar pela LAI?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Pela LAI, qualquer pessoa pode solicitar informações públicas produzidas ou guardadas por órgãos e entidades do governo. A regra é que as informações sejam públicas. O acesso só pode ser negado em casos específicos previstos em lei, como informações que coloquem em risco a segurança pública ou que violem a privacidade de pessoas.
@@ -159,7 +193,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quais informações obrigatórias por lei devem estar publicadas no portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               A Lei de Acesso à Informação e a Lei de Responsabilidade Fiscal exigem que os municípios publiquem, no mínimo, informações sobre receitas e despesas, servidores públicos e suas remunerações, licitações e contratos, obras, convênios, patrimônio público e os relatórios fiscais (como o RREO e o RGF). Todas essas informações estão disponíveis neste portal.
@@ -169,7 +203,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Existem informações que podem ser negadas?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. A Lei de Acesso à Informação prevê situações em que o acesso pode ser negado. São casos em que a divulgação pode comprometer a segurança da sociedade ou do Estado, invadir a privacidade de pessoas ou envolver informações com sigilo previsto em lei. Também podem ser restritos documentos ainda em fase de elaboração ou tomada de decisão.
@@ -179,7 +213,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Preciso me identificar para consultar o portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Não. A consulta no Portal da Transparência é completamente anônima e não exige identificação. Já para fazer um pedido formal de informação pelo e-SIC, é necessário informar nome completo e endereço (físico ou eletrônico) para que a resposta possa ser enviada a você.
@@ -189,7 +223,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Preciso justificar o meu pedido de informação?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Não. Você não precisa explicar o motivo do seu pedido. Basta descrever de forma clara e específica qual informação deseja, para que o órgão possa entender e responder adequadamente.
@@ -199,7 +233,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O acesso às informações é gratuito?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. O acesso ao Portal da Transparência e a solicitação de informações pelo e-SIC são totalmente gratuitos. A única exceção é quando o pedido exige a reprodução de documentos em papel — nesse caso, pode ser cobrado o custo das cópias.
@@ -209,7 +243,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é o e-SIC e para que serve?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O e-SIC (Sistema Eletrônico do Serviço de Informação ao Cidadão) é o canal oficial para enviar pedidos formais de acesso à informação ao Poder Executivo Municipal. Por meio dele, qualquer pessoa — física ou jurídica — pode solicitar informações, acompanhar o andamento do pedido e receber a resposta, tudo pela internet.
@@ -219,7 +253,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como fazer um pedido pelo e-SIC?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Acesse o e-SIC pelo link disponível neste portal ou pelo botão "Solicitar via e-SIC" na barra lateral. Preencha o formulário com seu nome, endereço para contato e a descrição clara da informação desejada. Após o envio, você receberá um número de protocolo para acompanhar o andamento da solicitação.
@@ -229,7 +263,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Quais são as funções do e-SIC?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O e-SIC tem três funções principais: orientar os cidadãos sobre como fazer pedidos de informação; informar sobre o andamento dos pedidos já registrados; e receber, registrar e encaminhar as respostas aos solicitantes.
@@ -239,7 +273,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Com que frequência os dados do portal são atualizados?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               As informações financeiras são atualizadas em tempo real, diretamente dos sistemas da Prefeitura. As publicações de atos oficiais ocorrem quase diariamente. Relatórios como os da Lei de Responsabilidade Fiscal, o Plano Plurianual (PPA), a Lei de Diretrizes Orçamentárias (LDO) e a Lei Orçamentária Anual (LOA) são atualizados conforme os prazos legais, que podem ser mensais, bimestrais, quadrimestrais ou anuais.
@@ -249,7 +283,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>De onde vêm os dados exibidos no portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Os dados são obtidos diretamente dos sistemas de gestão utilizados pela Prefeitura de Campina Grande do Sul. A consulta é feita em tempo real: ao acessar qualquer aba do portal, a busca é realizada diretamente no banco de dados do município, garantindo que as informações estejam sempre atualizadas.
@@ -259,7 +293,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Posso consultar informações de anos anteriores?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. Para acessar dados de exercícios anteriores, basta alterar o ano de referência no seletor localizado na parte superior do Portal da Transparência.
@@ -269,7 +303,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Posso fazer uma busca por uma informação específica?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. O portal disponibiliza um campo de pesquisa geral e filtros específicos em cada seção. Use esses recursos para localizar rapidamente a informação que você procura, seja por nome, data, valor ou categoria.
@@ -279,7 +313,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que são dados abertos e como baixá-los?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Dados abertos são informações públicas disponibilizadas em formato digital, de livre acesso e sem restrições de uso. No Portal da Transparência, as tabelas podem ser baixadas em diferentes formatos (como planilhas), sem necessidade de cadastro ou autorização. Basta acessar a seção desejada e utilizar a opção de exportação disponível.
@@ -289,7 +323,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como tirar dúvidas sobre termos e siglas do portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O portal disponibiliza um Glossário com explicações sobre os principais termos técnicos, expressões e siglas utilizados nas páginas. Acesse pelo menu lateral ou pelo link "Glossário" disponível na seção de Acesso à Informação.
@@ -299,7 +333,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é a Lei de Responsabilidade Fiscal (LRF)?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               A Lei de Responsabilidade Fiscal (Lei Complementar nº 101/2000) estabelece regras e limites para o uso do dinheiro público pelos gestores municipais, estaduais e federais. Ela obriga o governo a planejar os gastos, divulgar relatórios periódicos e manter o equilíbrio entre receitas e despesas.
@@ -309,7 +343,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é transparência ativa?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Transparência ativa é quando o próprio governo divulga informações de interesse público por iniciativa própria, sem que o cidadão precise solicitar. O Portal da Transparência é um exemplo disso. Essa prática facilita o acesso da população, reduz a necessidade de pedidos formais e contribui para uma gestão pública mais aberta e responsável.
@@ -319,7 +353,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é transparência passiva?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Transparência passiva é quando o governo disponibiliza informações em resposta a pedidos específicos feitos pelo cidadão. Isso acontece, por exemplo, quando uma pessoa registra uma solicitação pelo e-SIC (Sistema Eletrônico do Serviço de Informação ao Cidadão) ou presencialmente no SIC físico.
@@ -329,7 +363,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O que é o SIC e como funciona o atendimento presencial?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O SIC (Serviço de Informação ao Cidadão) é o ponto de atendimento presencial onde você pode registrar pedidos de acesso à informação, receber orientações e acompanhar o andamento das solicitações. O atendimento é realizado no Paço Municipal da Prefeitura de Campina Grande do Sul, de segunda a sexta-feira, das 8h às 17h.
@@ -339,7 +373,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como consultar servidores públicos e suas remunerações?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               As informações sobre servidores públicos municipais, incluindo cargos, vínculos e remunerações, estão disponíveis na seção de Recursos Humanos do portal. Você pode pesquisar por nome, cargo ou órgão para localizar um servidor específico.
@@ -349,7 +383,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como visualizar o item Pessoal Cedido no portal?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Na seção de Recursos Humanos, acesse o item "Pessoal Cedido" para consultar servidores cedidos pelo município a outros órgãos, ou servidores de outros órgãos cedidos ao município. Se a listagem aparecer em branco, significa que o município não possui servidores nessa situação no período consultado.
@@ -359,7 +393,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O portal possui o organograma da Prefeitura?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. Acesse a seção "Estrutura Organizacional" no portal e escolha a Secretaria de seu interesse para visualizar o respectivo organograma com a hierarquia de cargos e setores.
@@ -369,7 +403,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>O portal exibe os bens patrimoniais do município?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Sim. A relação de bens patrimoniais do município está disponível na aba "Administração", na sub-aba "Patrimônio".
@@ -379,7 +413,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Onde consultar o Plano de Governo da Prefeitura?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O Plano de Governo, com seus programas e metas de monitoramento, está disponível no menu "Plano de Governo" do portal ou pelo link: <a href="https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2022_2140_awca4fepxbr.pdf" target="_blank" rel="noopener">https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2022_2140_awca4fepxbr.pdf</a>
@@ -389,7 +423,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como acessar a Carta de Serviços ao Cidadão?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               A Carta de Serviços ao Cidadão está disponível na aba correspondente no portal ou pelo link: <a href="https://campinagrandedosul.oxy.elotech.com.br/portal-governo-digital/servicos?pessoa=CIDADAO" target="_blank" rel="noopener">https://campinagrandedosul.oxy.elotech.com.br/portal-governo-digital/servicos?pessoa=CIDADAO</a>
@@ -399,7 +433,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Onde encontro o telefone e o e-mail de contato da Prefeitura?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               O telefone de contato da Prefeitura, o e-mail da Ouvidoria e do Controle Interno estão disponíveis no rodapé do Portal da Transparência. Os telefones de cada Secretaria podem ser encontrados na aba "Secretarias".
@@ -409,7 +443,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Onde encontro o telefone e o horário das unidades de saúde?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Essas informações estão disponíveis no site da Prefeitura. Acesse Secretarias › Saúde › Unidades de Saúde para consultar os telefones e horários de atendimento de cada unidade.
@@ -419,7 +453,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como solicitar a segunda via do IPTU?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Acesse o site da Prefeitura e clique em Serviços › Consulta de Débitos. Informe o número do Cadastro Municipal, clique em "Pesquisar", selecione as parcelas desejadas e clique em "Gerar Boleto para Pagamento".
@@ -429,7 +463,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Como acompanhar obras públicas do município?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               As obras públicas realizadas pelo município estão listadas na seção "Obras" do portal. Você pode consultar o nome da obra, o valor contratado, o percentual de execução e os contratos relacionados.
@@ -439,7 +473,7 @@
           <li class="pi-faq-item">
             <button class="pi-faq-pergunta" type="button" aria-expanded="false">
               <span>Não encontrei a informação que precisava. O que fazer?</span>
-              <span class="pi-faq-icone" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+              <span class="pi-faq-icone" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </button>
             <div class="pi-faq-resposta" hidden>
               Se não encontrou a informação no portal, você pode solicitá-la formalmente pelo canal de Acesso à Informação (e-SIC). Após o registro, você receberá um número de protocolo e um código de consulta para acompanhar o andamento do pedido pela internet.
@@ -465,45 +499,45 @@
             rel="noopener"
             aria-label="Solicitar Acesso à Informação via e-SIC (abre em nova aba)"
           >
-            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
             Solicitar via e-SIC
           </a>
         </div>
 
         <nav class="pi-sidebar-links-faq" aria-label="Links de Acesso à Informação">
           <h4>
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
             Acesso à Informação
           </h4>
           <ul>
             <li>
               <a href="../registrar-pedido/" target="_blank" rel="noopener">
-                <span><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; e-SIC (Nova Solicitação)</span>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span><i class="fas fa-desktop" aria-hidden="true"></i>&nbsp; e-SIC (Nova Solicitação)</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
             <li>
               <a href="../e-sic/" target="_blank" rel="noopener">
-                <span><i class="fa fa-search" aria-hidden="true"></i>&nbsp; Consulta SIC</span>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span><i class="fas fa-magnifying-glass" aria-hidden="true"></i>&nbsp; Consulta SIC</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
             <li>
               <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/estatisticas" target="_blank" rel="noopener">
-                <span><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Estatísticas</span>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span><i class="fas fa-chart-column" aria-hidden="true"></i>&nbsp; Estatísticas</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
             <li>
               <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/legislacao" target="_blank" rel="noopener">
-                <span><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp; Legislação LAI</span>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span><i class="fas fa-file-lines" aria-hidden="true"></i>&nbsp; Legislação LAI</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
             <li>
               <a href="../glossario/" target="_blank" rel="noopener">
-                <span><i class="fa fa-book" aria-hidden="true"></i>&nbsp; Glossário</span>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span><i class="fas fa-book" aria-hidden="true"></i>&nbsp; Glossário</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
@@ -515,4 +549,36 @@
     </div>
   </div>
 </main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+    <script src="js/perguntas-frequentes.js"></script>
+
+</body>
+</html>
+
+
+s"></script>
+
+</body>
+</html>
+
 

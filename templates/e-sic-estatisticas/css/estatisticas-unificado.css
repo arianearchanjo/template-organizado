@@ -1,0 +1,2836 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   acessibilidade.css — Página de Acessibilidade
+   Prefeitura de Campina Grande do Sul – PR
+
+   Índice de seções:
+     1. Variáveis e Reset
+     6. Hero / Cabeçalho da Página
+     7. Layout Principal (Coluna + Sidebar)
+     8. Conteúdo Principal
+     9. Sidebar
+    11. Alto Contraste (Específicos da Página Interna)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. VARIÁVEIS E RESET (Herdados do index.css)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* REMOVIDOS (Já definidos no index.css):
+   - Skip Navigation
+   - Barra Superior (Topo Verde)
+   - Header (Logomarca e Busca)
+   - Navbar (Menu Principal)
+   - Rodapé
+*/
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. HERO / CABEÇALHO DA PÁGINA INTERNA
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+#pi-hero {
+  background: var(--verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pi-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pi-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-subtitulo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+@media (max-width: 575px) {
+  .pi-hero-titulo { font-size: 1.125rem; }
+  .pi-hero-ilustracao img { height: 70px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. LAYOUT PRINCIPAL (Coluna + Sidebar)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#pi-main {
+  background: #fff;
+  padding: 40px 0 56px;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .pi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pi-sidebar {
+    order: -1;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. CONTEÚDO PRINCIPAL
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-intro-texto {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.pi-intro-texto p { margin-bottom: 14px; }
+.pi-intro-texto p:last-child { margin-bottom: 0; }
+
+.pi-secao-titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-secao-titulo i {
+  font-size: 1rem;
+  color: var(--verde);
+  flex-shrink: 0;
+}
+
+.pi-secao-divider {
+  border: none;
+  border-top: 2px solid var(--verde-claro);
+  margin: 0 0 24px;
+}
+
+.pi-mt-secao { margin-top: 40px; }
+
+.pi-recursos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 575px) {
+  .pi-recursos-grid { grid-template-columns: 1fr; }
+}
+
+.pi-recurso-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px 20px 20px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.pi-recurso-card:hover {
+  box-shadow: 0 6px 20px rgba(45, 122, 45, 0.12);
+  border-color: var(--verde);
+  transform: translateY(-2px);
+}
+
+.pi-recurso-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  background: var(--verde-claro);
+  border-radius: 10px;
+  font-size: 1.1875rem;
+  color: var(--verde);
+}
+
+.pi-recurso-corpo h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 5px;
+}
+
+.pi-recurso-corpo p {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pi-compromisso-bloco {
+  background: var(--verde-claro);
+  border: 1.5px solid #b3d6be;
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  margin-bottom: 40px;
+}
+
+.pi-compromisso-bloco h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-compromisso-bloco h2 i {
+  font-size: 1rem;
+  color: var(--verde);
+}
+
+.pi-compromisso-bloco p {
+  font-size: 0.875rem;
+  color: #3a5a3a;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.pi-selos-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pi-selo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid #b3d6be;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  flex: 1;
+  min-width: 160px;
+}
+
+.pi-selo i {
+  font-size: 1.25rem;
+  color: var(--verde);
+  flex-shrink: 0;
+}
+
+.pi-selo-sub {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.pi-contato-bloco {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 575px) {
+  .pi-contato-bloco { flex-direction: column; }
+}
+
+.pi-contato-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  background: var(--verde-claro);
+  border-radius: 50%;
+  font-size: 1.375rem;
+  color: var(--verde);
+}
+
+.pi-contato-corpo h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 8px;
+}
+
+.pi-contato-corpo p {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.pi-btn-verde {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--verde);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.pi-btn-verde:hover {
+  background: var(--verde-escuro);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.pi-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--verde);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 6px;
+  border: 1.5px solid var(--verde);
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+.pi-btn-outline:hover {
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  text-decoration: none;
+}
+
+.pi-btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.pi-atalhos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 40px;
+}
+
+.pi-atalhos-tabela thead tr {
+  background: var(--verde-escuro);
+  color: #fff;
+}
+
+.pi-atalhos-tabela thead th {
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.3px;
+}
+
+.pi-atalhos-tabela tbody tr {
+  border-bottom: 1px solid #e8f0e8;
+}
+
+.pi-atalhos-tabela tbody tr:hover {
+  background: var(--verde-claro);
+}
+
+.pi-atalhos-tabela tbody td {
+  padding: 10px 16px;
+  color: #444;
+  vertical-align: middle;
+}
+
+.pi-kbd {
+  display: inline-block;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 1px;
+}
+
+.pi-nota-tabela {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+/* ── Subtítulo interno de seção (h3 com ícone, menor que pi-secao-titulo) ── */
+.pi-subtitulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 24px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-subtitulo i {
+  font-size: 0.875rem;
+  color: var(--verde);
+  flex-shrink: 0;
+}
+
+/* ── Lista numerada de passos de uso ───────────────────────────────────── */
+.pi-lista-passos {
+  padding-left: 20px;
+  margin-bottom: 28px;
+  color: #444;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.pi-lista-passos li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.pi-lista-passos li:last-child {
+  margin-bottom: 0;
+}
+
+/* Alto contraste — subtítulo e lista de passos */
+body.high-contrast .pi-subtitulo {
+  color: #fff !important;
+}
+
+body.high-contrast .pi-subtitulo i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .pi-lista-passos {
+  color: #ddd !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. SIDEBAR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-sidebar-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-sidebar-card h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-card h4 i {
+  font-size: 0.875rem;
+  color: var(--verde);
+}
+
+.pi-sidebar-contato {
+  background: var(--verde-claro);
+  border-color: #b3d6be !important;
+}
+
+.pi-sidebar-contato h4 {
+  border-color: #b3d6be;
+}
+
+.pi-sidebar-contato p {
+  font-size: 0.8125rem;
+  color: #3a5a3a;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-contato p:last-of-type { margin-bottom: 14px; }
+.pi-sidebar-contato p i           { color: var(--verde); flex-shrink: 0; }
+
+.pi-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pi-sidebar-links li {
+  border-bottom: 1px solid #eef2ee;
+}
+
+.pi-sidebar-links li:last-child {
+  border-bottom: none;
+}
+
+.pi-sidebar-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 4px;
+  font-size: 0.8125rem;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.15s, padding-left 0.15s;
+  gap: 8px;
+}
+
+.pi-sidebar-links li a:hover {
+  color: var(--verde);
+  padding-left: 6px;
+}
+
+.pi-sidebar-links li a i.fa-chevron-right {
+  font-size: 0.625rem;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+.pi-sidebar-links li.ativo a {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+.pi-sidebar-ico       { margin-right: 8px; color: #aaa; }
+.pi-sidebar-ico-ativo { color: var(--verde); }
+
+.pi-controles-bloco {
+  background: var(--verde-claro);
+  border: 1.5px solid #b8dab8;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.pi-controles-bloco h4 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-controles-bloco h4 i {
+  color: var(--verde);
+}
+
+.pi-ctrl-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pi-ctrl-row:last-child { margin-bottom: 0; }
+
+.pi-ctrl-label {
+  font-size: 0.75rem;
+  color: #3a5a3a;
+  flex: 1;
+}
+
+.pi-ctrl-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.pi-ctrl-btn {
+  border: 1px solid #b8dab8;
+  background: #fff;
+  color: var(--verde-escuro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pi-ctrl-btn:hover {
+  background: var(--verde);
+  color: #fff;
+  border-color: var(--verde);
+}
+
+.pi-ctrl-btn-contraste {
+  width: 100%;
+  border: 1.5px solid #b8dab8;
+  background: #fff;
+  color: var(--verde-escuro);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pi-ctrl-btn-contraste:hover {
+  background: var(--verde);
+  color: #fff;
+  border-color: var(--verde);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. ALTO CONTRASTE (Específicos da Página Interna)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* NOTA: A maioria das regras de alto contraste já são tratadas pelo index.css.
+   Aqui permanecem apenas ajustes finos para elementos exclusivos das páginas internas. */
+
+body.high-contrast .pi-hero {
+  background: #000 !important;
+  border-bottom: 2px solid #fff;
+}
+
+body.high-contrast .pi-hero-ilustracao {
+  display: none;
+}
+
+body.high-contrast .pi-secao-divider {
+  border-color: #555 !important;
+}
+
+body.high-contrast .pi-recurso-icon,
+body.high-contrast .pi-contato-icon-wrap {
+  background: #222 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .pi-kbd {
+  background: #333 !important;
+  color: #ff0 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .pi-ctrl-btn-contraste {
+  background: var(--amarelo) !important;
+  color: #000 !important;
+  border-color: var(--amarelo) !important;
+  font-weight: 700;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   e-sic.css — Página e-SIC (Serviço de Informação ao Cidadão)
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. VARIÁVEIS LOCAIS
+   ══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --esic-verde:        #2d7a2d;
+  --esic-verde-claro:  #3a9a3a;
+  --esic-verde-bg:     #e8f5e8;
+  --esic-azul:         #1565c0;
+  --esic-azul-bg:      #e3f2fd;
+  --esic-amarelo:      #f57f17;
+  --esic-amarelo-bg:   #fff8e1;
+  --esic-vermelho:     #c62828;
+  --esic-vermelho-bg:  #ffebee;
+  --esic-laranja:      #e65100;
+  --esic-laranja-bg:   #fff3e0;
+  --esic-roxo:         #6a1b9a;
+  --esic-roxo-bg:      #f3e5f5;
+  --esic-teal:         #00695c;
+  --esic-teal-bg:      #e0f2f1;
+  --esic-cinza:        #546e7a;
+  --esic-cinza-bg:     #eceff1;
+  --esic-texto:        #1a2a1a;
+  --esic-texto-medio:  #3a3a3a;
+  --esic-texto-leve:   #616161;
+  --esic-borda:        #c8d8c8;
+  --esic-branco:       #ffffff;
+  --esic-radius:       8px;
+  --esic-radius-lg:    12px;
+  --esic-sombra:       0 2px 8px rgba(0, 0, 0, 0.07);
+  --esic-sombra-hover: 0 6px 20px rgba(45, 122, 45, 0.13);
+  --esic-transicao:    0.2s ease;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. SKIP NAVIGATION
+   ══════════════════════════════════════════════════════════════════════════ */
+.pi-skip-nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #f5c518;
+  color: #000;
+  font-weight: 700;
+  padding: 10px 20px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.pi-skip-nav:focus { top: 0; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. MENU DE ABAS — REMOVIDO
+   O bloco .esic-tabs-nav foi removido do HTML.
+   Os estilos abaixo são mantidos como no-op para não quebrar referências
+   externas, mas display:none garante que nenhum resquício seja visível.
+   ══════════════════════════════════════════════════════════════════════════ */
+.esic-tabs-nav  { display: none !important; }
+.esic-tabs-list { display: none !important; }
+.esic-tab-link  { display: none !important; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. LAYOUT PRINCIPAL
+   ══════════════════════════════════════════════════════════════════════════ */
+.pi-btn-verde--sm {
+  padding: 7px 14px;
+  font-size: 0.8125rem;
+}
+
+.esic-sidebar-btn-mt {
+  margin-top: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. CONTEÚDO — ELEMENTOS ESPECÍFICOS DO e-SIC
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 5.0 CTA — Bloco de destaque "Registrar Pedido" ─────────────────────── */
+
+.esic-cta-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: linear-gradient(135deg, var(--esic-verde) 0%, #1e5c1e 100%);
+  border-radius: var(--esic-radius-lg);
+  padding: 30px 32px;
+  margin-top: 28px;
+  box-shadow: 0 4px 20px rgba(45, 122, 45, 0.25);
+  flex-wrap: wrap;
+}
+
+.esic-cta-texto {
+  flex: 1;
+  min-width: 200px;
+}
+
+.esic-cta-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.esic-cta-titulo i {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.esic-cta-texto p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.esic-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--esic-verde);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--esic-radius);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background var(--esic-transicao), color var(--esic-transicao),
+              box-shadow var(--esic-transicao), transform var(--esic-transicao);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.esic-cta-btn:hover,
+.esic-cta-btn:focus {
+  background: var(--esic-verde-bg);
+  color: var(--esic-verde);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+
+/* ── 5.1 Grid de cards de ações ──────────────────────────────────────────── */
+
+.esic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.esic-card {
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 26px 22px;
+  box-shadow: var(--esic-sombra);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao), border-color var(--esic-transicao);
+}
+
+.esic-card:hover {
+  box-shadow: var(--esic-sombra-hover);
+  border-color: var(--esic-verde);
+  transform: translateY(-3px);
+}
+
+.esic-card__icone {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.esic-card__icone i { font-size: 1.25rem; }
+
+.esic-card__icone--verde    { background: var(--esic-verde-bg);   } .esic-card__icone--verde    i { color: var(--esic-verde);    }
+.esic-card__icone--azul     { background: var(--esic-azul-bg);    } .esic-card__icone--azul     i { color: var(--esic-azul);     }
+.esic-card__icone--laranja  { background: var(--esic-laranja-bg); } .esic-card__icone--laranja  i { color: var(--esic-laranja);  }
+.esic-card__icone--roxo     { background: var(--esic-roxo-bg);    } .esic-card__icone--roxo     i { color: var(--esic-roxo);     }
+.esic-card__icone--teal     { background: var(--esic-teal-bg);    } .esic-card__icone--teal     i { color: var(--esic-teal);     }
+.esic-card__icone--vermelho { background: var(--esic-vermelho-bg);} .esic-card__icone--vermelho i { color: var(--esic-vermelho); }
+
+.esic-card__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 10px;
+}
+
+.esic-card__texto {
+  font-size: 0.875rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.esic-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--esic-verde);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap var(--esic-transicao), color var(--esic-transicao);
+}
+
+.esic-card__link:hover {
+  color: var(--esic-verde-claro);
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* Cards laterais da apresentação */
+.esic-apresentacao-lateral {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+
+/* ── 5.2 Passo a Passo ───────────────────────────────────────────────────── */
+
+.esic-passos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 760px;
+}
+
+.esic-passos::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 56px;
+  bottom: 28px;
+  width: 2px;
+  background: var(--esic-borda);
+}
+
+.esic-passo {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0 0 36px 0;
+  position: relative;
+}
+
+.esic-passo:last-child { padding-bottom: 0; }
+
+.esic-passo__numero {
+  width: 56px;
+  height: 56px;
+  background: var(--esic-verde);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(45, 122, 45, 0.3);
+}
+
+.esic-passo__conteudo { padding-top: 12px; }
+
+.esic-passo__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-passo__texto {
+  font-size: 0.9rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ── 5.3 Cards de Prazos ─────────────────────────────────────────────────── */
+
+.esic-prazos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.esic-prazo-card {
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 26px 18px 22px;
+  text-align: center;
+  box-shadow: var(--esic-sombra);
+  border-top: 4px solid transparent;
+}
+
+.esic-prazo-card--verde   { border-top-color: var(--esic-verde);    }
+.esic-prazo-card--amarelo { border-top-color: var(--esic-amarelo);  }
+.esic-prazo-card--azul    { border-top-color: var(--esic-azul);     }
+.esic-prazo-card--vermelho{ border-top-color: var(--esic-vermelho); }
+
+.esic-prazo-card__numero {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.esic-prazo-card--verde    .esic-prazo-card__numero { color: var(--esic-verde);    }
+.esic-prazo-card--amarelo  .esic-prazo-card__numero { color: var(--esic-amarelo);  }
+.esic-prazo-card--azul     .esic-prazo-card__numero { color: var(--esic-azul);     }
+.esic-prazo-card--vermelho .esic-prazo-card__numero { color: var(--esic-vermelho); }
+
+.esic-prazo-card__unidade {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--esic-texto-leve);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.esic-prazo-card__titulo {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 8px;
+}
+
+.esic-prazo-card__texto {
+  font-size: 0.8rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.esic-prazo-card__base-legal {
+  font-size: 0.75rem;
+  color: var(--esic-texto-leve);
+  margin: 0;
+}
+
+.esic-prazo-card__base-legal i {
+  color: var(--esic-verde);
+  margin-right: 4px;
+}
+
+
+/* ── 5.4 Alertas ─────────────────────────────────────────────────────────── */
+
+.esic-alerta {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--esic-azul-bg);
+  border-left: 4px solid var(--esic-azul);
+  border-radius: 0 var(--esic-radius) var(--esic-radius) 0;
+  padding: 16px 18px;
+}
+
+.esic-alerta i {
+  color: var(--esic-azul);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.esic-alerta div {
+  font-size: 0.875rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.65;
+}
+
+.esic-alerta--destaque {
+  background: var(--esic-amarelo-bg);
+  border-left-color: var(--esic-amarelo);
+}
+
+.esic-alerta--destaque i { color: var(--esic-amarelo); }
+
+/* Link interno dentro do alerta (registrar-pedido.html) */
+.esic-alerta__link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--esic-azul);
+  text-decoration: underline;
+}
+
+.esic-alerta__link:hover,
+.esic-alerta__link:focus {
+  color: #0d47a1;
+}
+
+
+/* ── 5.5 Instâncias de Recursos ──────────────────────────────────────────── */
+
+.esic-instancias {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.esic-instancia {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 20px 24px;
+  box-shadow: var(--esic-sombra);
+}
+
+.esic-instancia__numero {
+  width: 48px;
+  height: 48px;
+  background: var(--esic-verde);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.esic-instancia__numero--especial {
+  background: var(--esic-cinza);
+  font-size: 0.7rem;
+}
+
+.esic-instancia__titulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-instancia__texto {
+  font-size: 0.8125rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.esic-instancia__conector {
+  text-align: center;
+  padding: 6px 0;
+  color: var(--esic-borda);
+  font-size: 1rem;
+}
+
+
+/* ── 5.6 Lista de Legislação ─────────────────────────────────────────────── */
+
+.esic-legislacao-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.esic-lei-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 20px 24px;
+  box-shadow: var(--esic-sombra);
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+}
+
+.esic-lei-item:hover {
+  border-color: var(--esic-verde);
+  box-shadow: var(--esic-sombra-hover);
+}
+
+.esic-lei-item__icone {
+  width: 44px;
+  height: 44px;
+  background: var(--esic-verde-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esic-lei-item__icone i { color: var(--esic-verde); font-size: 1.1rem; }
+
+.esic-lei-item__titulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-lei-item__texto {
+  font-size: 0.8125rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.esic-lei-item__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--esic-verde);
+  text-decoration: none;
+  transition: color var(--esic-transicao);
+}
+
+.esic-lei-item__link:hover {
+  color: var(--esic-verde-claro);
+  text-decoration: underline;
+}
+
+
+/* ── 5.7 Estatísticas e filtro ───────────────────────────────────────────── */
+
+.esic-estatisticas-filtro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 14px 20px;
+  margin-bottom: 28px;
+}
+
+.esic-filtro-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--esic-texto);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.esic-filtro-label i { color: var(--esic-verde); }
+
+.esic-filtro-controles {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.esic-filtro-select {
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 7px 12px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: var(--esic-branco);
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color var(--esic-transicao);
+}
+
+.esic-filtro-select:focus {
+  outline: 2px solid var(--esic-verde);
+  outline-offset: 1px;
+  border-color: var(--esic-verde);
+}
+
+.esic-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: stretch;
+}
+
+.esic-stat-card {
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 26px 18px;
+  text-align: center;
+  box-shadow: var(--esic-sombra);
+  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao);
+  border-top: 3px solid var(--esic-cinza);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.esic-stat-card:hover {
+  box-shadow: var(--esic-sombra-hover);
+  transform: translateY(-2px);
+}
+
+.esic-stat-card--verde   { border-top-color: var(--esic-verde);    }
+.esic-stat-card--amarelo { border-top-color: var(--esic-amarelo);  }
+.esic-stat-card--vermelho{ border-top-color: var(--esic-vermelho); }
+.esic-stat-card--cinza   { border-top-color: var(--esic-cinza);    }
+.esic-stat-card--azul    { border-top-color: var(--esic-azul);     }
+
+.esic-stat-card__icone {
+  width: 46px;
+  height: 46px;
+  background: var(--esic-cinza-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.esic-stat-card--verde   .esic-stat-card__icone { background: var(--esic-verde-bg);    }
+.esic-stat-card--amarelo .esic-stat-card__icone { background: var(--esic-amarelo-bg);  }
+.esic-stat-card--vermelho .esic-stat-card__icone{ background: var(--esic-vermelho-bg); }
+.esic-stat-card--azul    .esic-stat-card__icone { background: var(--esic-azul-bg);     }
+
+.esic-stat-card__icone i { font-size: 1.1rem; color: var(--esic-cinza); }
+
+.esic-stat-card--verde   .esic-stat-card__icone i { color: var(--esic-verde);    }
+.esic-stat-card--amarelo .esic-stat-card__icone i { color: var(--esic-amarelo);  }
+.esic-stat-card--vermelho .esic-stat-card__icone i{ color: var(--esic-vermelho); }
+.esic-stat-card--azul    .esic-stat-card__icone i { color: var(--esic-azul);     }
+
+.esic-stat-card__numero {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--esic-texto);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.esic-stat-card__label {
+  font-size: 0.8rem;
+  color: var(--esic-texto-leve);
+  font-weight: 500;
+}
+
+.esic-estatisticas-nota {
+  font-size: 0.8rem;
+  color: var(--esic-texto-leve);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.esic-estatisticas-nota i {
+  color: var(--esic-verde);
+  flex-shrink: 0;
+}
+
+
+/* ── 5.8 Formulário interno ──────────────────────────────────────────────── */
+
+.esic-form-bloco {
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px;
+  box-shadow: var(--esic-sombra);
+}
+
+.esic-form-intro {
+  font-size: 0.9rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.esic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.esic-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.esic-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.esic-form-group:last-child { margin-bottom: 0; }
+
+.esic-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--esic-texto);
+}
+
+.esic-form-label abbr {
+  color: var(--esic-vermelho);
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.esic-form-input,
+.esic-form-select {
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: #f9fdf9;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+  width: 100%;
+}
+
+.esic-form-input:focus,
+.esic-form-select:focus {
+  outline: none;
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
+  background: #fff;
+}
+
+.esic-form-input::placeholder { color: #aab0aa; }
+
+.esic-form-textarea {
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: #f9fdf9;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+  min-height: 140px;
+  width: 100%;
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+}
+
+.esic-form-textarea:focus {
+  outline: none;
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
+  background: #fff;
+}
+
+.esic-form-textarea::placeholder { color: #aab0aa; }
+
+.esic-form-hint {
+  font-size: 0.8rem;
+  color: var(--esic-texto-leve);
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: 1.5;
+}
+
+.esic-form-hint i {
+  color: var(--esic-verde);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.esic-form-check-group { margin-bottom: 20px; }
+
+.esic-form-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.8125rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.esic-form-check input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--esic-verde);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.esic-form-acoes {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ── Linha de consulta de protocolo ──────────────────────────────────────── */
+
+.esic-consulta-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+.esic-consulta-row .esic-form-group {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+.esic-consulta-btn-col {
+  flex-shrink: 0;
+  align-self: flex-end;
+  padding-bottom: 0;
+}
+
+.esic-consulta-btn {
+  white-space: nowrap;
+  height: 42px;
+  padding: 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Resultado da consulta */
+.esic-consulta-tabela { margin-top: 20px; }
+
+/* Confirmação de pedido enviado */
+.esic-form-confirmacao {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1.5px solid var(--esic-borda);
+  margin-top: 24px;
+}
+
+.esic-confirmacao-icone {
+  font-size: 3rem;
+  color: var(--esic-verde);
+  margin-bottom: 16px;
+}
+
+.esic-form-confirmacao h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 12px;
+}
+
+.esic-form-confirmacao p {
+  font-size: 0.9rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* Botões na confirmação (registrar-pedido.html) */
+.esic-confirmacao-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* Endereço postal */
+.esic-contato-endereco { font-style: normal; }
+
+/* ── Cards de contato — alturas uniformes ────────────────────────────────
+   Sobrescreve o grid global para garantir que todos os 4 cards
+   (Endereço, Horário, Telefone, E-mail) fiquem com a mesma altura.    */
+
+.pi-compromisso-bloco .pi-selos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pi-compromisso-bloco .pi-selo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Card de E-mail oculto conforme solicitado */
+.pi-compromisso-bloco .pi-selos-grid .pi-selo--email,
+.pi-compromisso-bloco .pi-selos-grid .pi-selo:has(a[href^="mailto"]),
+.pi-compromisso-bloco .pi-selos-grid .pi-selo:has([data-cfemail]) {
+  display: none;
+}
+
+
+/* ── 5.9 Erros de validação ──────────────────────────────────────────────── */
+
+.esic-form-input--erro {
+  border-color: var(--esic-vermelho) !important;
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1) !important;
+}
+
+.esic-form-check--erro label { color: var(--esic-vermelho); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. SIDEBAR — ajustes específicos do e-SIC
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-sidebar-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pi-sidebar-contato .pi-btn-verde,
+.pi-sidebar-contato .pi-btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Bloco de prazo em destaque na sidebar (registrar-pedido.html) */
+.esic-sidebar-prazo-card { text-align: center; }
+
+.esic-sidebar-prazo {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px 0 8px;
+}
+
+.esic-sidebar-prazo__numero {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--esic-verde);
+}
+
+.esic-sidebar-prazo__unidade {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--esic-texto-medio);
+  line-height: 1.3;
+  text-align: left;
+}
+
+.esic-sidebar-prazo__base {
+  font-size: 0.78rem;
+  color: var(--esic-texto-leve);
+  margin: 0;
+}
+
+.esic-sidebar-prazo__base i {
+  color: var(--esic-verde);
+  margin-right: 4px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. ANIMAÇÕES
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes esic-count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.esic-stat-card__numero.animating {
+  animation: esic-count-up 0.4s ease forwards;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Tablet: 992px */
+@media (max-width: 992px) {
+  .esic-cards-grid  { grid-template-columns: repeat(2, 1fr); }
+  .esic-prazos-grid { grid-template-columns: repeat(2, 1fr); }
+  .esic-stats-grid  { grid-template-columns: repeat(2, 1fr); }
+  .esic-instancias  { max-width: 100%; }
+  .esic-cta-bloco   { flex-direction: column; align-items: flex-start; }
+}
+
+/* Mobile: 768px */
+@media (max-width: 768px) {
+
+  .esic-cards-grid  { grid-template-columns: 1fr; }
+  .esic-prazos-grid { grid-template-columns: repeat(2, 1fr); }
+  .esic-stats-grid  { grid-template-columns: repeat(2, 1fr); }
+
+  .esic-apresentacao-lateral { grid-template-columns: 1fr; }
+
+  .esic-passos::before { left: 22px; }
+  .esic-passo__numero  { width: 46px; height: 46px; font-size: 1rem; }
+
+  .esic-estatisticas-filtro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Consulta de protocolo em coluna */
+  .esic-consulta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .esic-consulta-btn { width: 100%; justify-content: center; }
+
+  .esic-form-row { grid-template-columns: 1fr; }
+
+  .esic-form-bloco { padding: 20px 16px; }
+
+  .esic-cta-bloco   { padding: 22px 20px; }
+  .esic-cta-btn     { width: 100%; justify-content: center; }
+}
+
+/* Mobile pequeno: 480px */
+@media (max-width: 480px) {
+  .esic-prazos-grid { grid-template-columns: 1fr; }
+  .esic-stats-grid  { grid-template-columns: 1fr 1fr; }
+
+  .esic-instancia {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. ALTO CONTRASTE eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast .esic-cta-bloco {
+  background: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+body.high-contrast .esic-cta-titulo,
+body.high-contrast .esic-cta-texto p { color: #fff !important; }
+
+body.high-contrast .esic-cta-btn {
+  background: #ff0 !important;
+  color: #000 !important;
+}
+
+body.high-contrast .esic-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+body.high-contrast .esic-card:hover    { border-color: #ff0 !important; }
+body.high-contrast .esic-card__titulo  { color: #fff !important; }
+body.high-contrast .esic-card__texto   { color: #ddd !important; }
+body.high-contrast .esic-card__link    { color: #ff0 !important; }
+body.high-contrast .esic-card__icone   { background: #222 !important; }
+body.high-contrast .esic-card__icone i { color: #ff0 !important; }
+
+body.high-contrast .esic-alerta,
+body.high-contrast .esic-alerta--destaque {
+  background: #111 !important;
+  border-left-color: #ff0 !important;
+}
+body.high-contrast .esic-alerta i,
+body.high-contrast .esic-alerta--destaque i { color: #ff0 !important; }
+body.high-contrast .esic-alerta div { color: #ddd !important; }
+
+body.high-contrast .esic-passo__numero   { background: #333 !important; color: #ff0 !important; }
+body.high-contrast .esic-passos::before  { background: #555 !important; }
+body.high-contrast .esic-passo__titulo   { color: #fff !important; }
+body.high-contrast .esic-passo__texto    { color: #ddd !important; }
+
+body.high-contrast .esic-prazo-card          { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-prazo-card__numero  { color: #ff0 !important; }
+body.high-contrast .esic-prazo-card__titulo  { color: #fff !important; }
+body.high-contrast .esic-prazo-card__texto,
+body.high-contrast .esic-prazo-card__unidade,
+body.high-contrast .esic-prazo-card__base-legal { color: #ddd !important; }
+
+body.high-contrast .esic-instancia          { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-instancia__numero  { background: #333 !important; color: #ff0 !important; }
+body.high-contrast .esic-instancia__titulo  { color: #fff !important; }
+body.high-contrast .esic-instancia__texto   { color: #ddd !important; }
+
+body.high-contrast .esic-lei-item             { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-lei-item__icone      { background: #222 !important; }
+body.high-contrast .esic-lei-item__icone i    { color: #ff0 !important; }
+body.high-contrast .esic-lei-item__titulo     { color: #fff !important; }
+body.high-contrast .esic-lei-item__texto      { color: #ddd !important; }
+body.high-contrast .esic-lei-item__link       { color: #ff0 !important; }
+
+body.high-contrast .esic-estatisticas-filtro  { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-filtro-label         { color: #fff !important; }
+body.high-contrast .esic-filtro-select        { background: #000 !important; color: #fff !important; border-color: #fff !important; }
+
+body.high-contrast .esic-stat-card            { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-stat-card__numero    { color: #ff0 !important; }
+body.high-contrast .esic-stat-card__label     { color: #ddd !important; }
+body.high-contrast .esic-stat-card__icone     { background: #222 !important; }
+body.high-contrast .esic-stat-card__icone i   { color: #ff0 !important; }
+body.high-contrast .esic-estatisticas-nota    { color: #ccc !important; }
+
+body.high-contrast .esic-form-bloco           { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-form-input,
+body.high-contrast .esic-form-select,
+body.high-contrast .esic-form-textarea        { background: #111 !important; color: #fff !important; border-color: #fff !important; }
+body.high-contrast .esic-form-label           { color: #fff !important; }
+body.high-contrast .esic-form-hint            { color: #ccc !important; }
+body.high-contrast .esic-form-check           { color: #ddd !important; }
+body.high-contrast .esic-form-confirmacao h3  { color: #fff !important; }
+body.high-contrast .esic-form-confirmacao p   { color: #ddd !important; }
+body.high-contrast .esic-confirmacao-icone    { color: #ff0 !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   estatisticas.css
+   Estilos exclusivos da página Estatísticas do e-SIC
+   Prefeitura de Campina Grande do Sul – PR
+   
+   Depende de: index.css  e  e-sic.css  (carregados antes)
+   Não redefine variáveis nem classes já declaradas nos arquivos pai.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. HERO — subtítulo (exclusivo desta página)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-hero-subtitulo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 4px;
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. MENU DE NAVEGAÇÃO RÁPIDA
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-nav-rapida {
+  background: #fff;
+  border-bottom: 2px solid var(--esic-verde-bg);
+  box-shadow: 0 2px 8px rgba(45, 122, 45, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* Garante que o container do Bootstrap não adicione espaçamento extra */
+.esic-nav-rapida > .container {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Botão de toggle — só aparece no mobile */
+.esic-nav-rapida__toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--pi-verde-escuro);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 14px 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.esic-nav-rapida__toggle span { flex: 1; text-align: left; }
+
+.esic-nav-rapida__chevron {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.esic-nav-rapida__toggle[aria-expanded="true"] .esic-nav-rapida__chevron {
+  transform: rotate(180deg);
+}
+
+/* Lista de links */
+.esic-nav-rapida__lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  flex: 1;
+}
+
+.esic-nav-rapida__lista li { display: flex; }
+
+.esic-nav-rapida__link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 13px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--esic-texto-medio);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.esic-nav-rapida__link i {
+  font-size: 0.72rem;
+  color: var(--pi-verde);
+  flex-shrink: 0;
+}
+
+.esic-nav-rapida__link:hover,
+.esic-nav-rapida__link:focus {
+  color: var(--pi-verde-escuro);
+  border-bottom-color: var(--pi-verde);
+  background: var(--pi-verde-claro);
+  text-decoration: none;
+}
+
+.esic-nav-rapida__link.active {
+  color: var(--pi-verde-escuro);
+  border-bottom-color: var(--pi-verde);
+  font-weight: 700;
+}
+
+/* Mobile: colapsável */
+@media (max-width: 900px) {
+  .esic-nav-rapida > .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .esic-nav-rapida__toggle {
+    display: flex;
+  }
+
+  .esic-nav-rapida__lista {
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-top: 1px solid var(--pi-cinza-borda);
+    padding-bottom: 8px;
+  }
+
+  .esic-nav-rapida__lista.open {
+    display: flex;
+  }
+
+  .esic-nav-rapida__link {
+    padding: 11px 4px;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    width: 100%;
+  }
+
+  .esic-nav-rapida__link:hover,
+  .esic-nav-rapida__link:focus,
+  .esic-nav-rapida__link.active {
+    border-left-color: var(--pi-verde);
+    border-bottom-color: transparent;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. FILTRO DE ANO + BUSCA
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* A barra já existe em e-sic.css (.esic-estatisticas-filtro).
+   Nesta página o filtro tem 3 filhos: label + controles + busca.
+   Sobrescrevemos o layout para que a busca fique à direita. */
+
+.esic-estatisticas-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.esic-busca-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.esic-busca-wrapper:focus-within {
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.1);
+}
+
+.esic-busca-input {
+  border: none;
+  outline: none;
+  padding: 7px 12px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: transparent;
+  min-width: 190px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.esic-busca-input::placeholder { color: #aab0aa; }
+
+.esic-busca-btn {
+  background: var(--esic-verde);
+  border: none;
+  color: #fff;
+  padding: 7px 13px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+}
+
+.esic-busca-btn:hover { background: var(--esic-verde-claro); }
+
+/* Responsive: busca ocupa largura total no mobile */
+@media (max-width: 768px) {
+  .esic-busca-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .esic-busca-input {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. PAINEL DE RESULTADOS DE BUSCA
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-busca-resultados .esic-widget-panel__header {
+  border-bottom-color: var(--esic-amarelo-bg);
+  background: var(--esic-amarelo-bg);
+}
+
+.esic-busca-resultados .esic-widget-panel__icon {
+  background: rgba(245, 127, 23, 0.15);
+}
+
+.esic-busca-resultados .esic-widget-panel__icon i {
+  color: var(--esic-amarelo);
+}
+
+.esic-busca-vazio {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--esic-texto-leve);
+  font-size: 0.875rem;
+}
+
+.esic-busca-vazio i { margin-right: 6px; }
+
+.esic-busca-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f4f0;
+  font-size: 0.875rem;
+  color: var(--esic-texto-medio);
+}
+
+.esic-busca-item:last-child { border-bottom: none; }
+
+.esic-busca-item__secao {
+  color: var(--esic-texto-leve);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+mark.esic-busca-destaque {
+  background: rgba(245, 127, 23, 0.18);
+  color: var(--esic-laranja);
+  border-radius: 2px;
+  padding: 0 2px;
+  font-style: normal;
+}
+
+/* Linha oculta pela busca */
+.esic-tabela-elotech tr.esic-hidden { display: none; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. BARRA DE EXPORTAÇÃO
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-export-bar {
+  margin-bottom: 14px;
+}
+
+.esic-export-bar__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.esic-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border: 1.5px solid var(--esic-borda) !important;
+  border-radius: 5px !important;
+  padding: 5px 11px !important;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+  color: var(--esic-texto-medio) !important;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  line-height: 1.5;
+  height: auto !important;
+}
+
+.esic-export-btn i { font-size: 0.78rem; color: var(--esic-cinza); }
+
+.esic-export-btn:hover {
+  background: var(--pi-verde-claro) !important;
+  border-color: var(--pi-verde) !important;
+  color: var(--pi-verde-escuro) !important;
+}
+
+.esic-export-btn:hover i { color: var(--pi-verde); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. TABELA PADRÃO ELOTECH (striped + fancy header verde)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-tabela-outer {
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.esic-tabela-elotech {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* Cabeçalho verde escuro */
+.esic-tabela-elotech thead tr {
+  background: var(--pi-verde-escuro);
+  color: #fff;
+}
+
+.esic-tabela-elotech thead th {
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.3px;
+  text-align: left;
+  border: none;
+}
+
+/* Zebra */
+.esic-tabela-elotech tbody tr:nth-child(odd)  { background: #fafcfa; }
+.esic-tabela-elotech tbody tr:nth-child(even) { background: #fff; }
+
+.esic-tabela-elotech tbody tr {
+  border-bottom: 1px solid #e8f0e8;
+  transition: background 0.15s;
+}
+
+.esic-tabela-elotech tbody tr:last-child { border-bottom: none; }
+.esic-tabela-elotech tbody tr:hover { background: var(--pi-verde-claro) !important; }
+
+.esic-tabela-elotech tbody td {
+  padding: 10px 16px;
+  color: #444;
+  vertical-align: middle;
+  border: none;
+}
+
+.esic-tabela-elotech tbody td span {
+  font-weight: 700;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. PAINÉIS WIDGET (padrão Elotech "panel widget")
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-widget-panel {
+  background: #fff;
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  box-shadow: var(--esic-sombra);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  height: calc(100% - 24px); /* preenche a coluna Bootstrap */
+}
+
+.esic-widget-panel__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-bottom: 2px solid var(--pi-verde-claro);
+  background: #fafcfa;
+}
+
+.esic-widget-panel__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: var(--pi-verde-claro);
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+.esic-widget-panel__icon i {
+  font-size: 0.8125rem;
+  color: var(--pi-verde);
+}
+
+.esic-widget-panel__titulo {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.esic-widget-panel__body {
+  padding: 18px;
+  flex: 1;
+}
+
+/* Remove padding quando contém tabela diretamente */
+.esic-widget-panel__body.p-0 { padding: 0; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. GRÁFICOS — PIZZA (SVG puro)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-piechart-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.esic-piechart {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.esic-piechart-legenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 110px;
+}
+
+.esic-piechart-legenda li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.35;
+}
+
+.esic-piechart-legenda li .esic-legenda-cor {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.esic-piechart-legenda li .esic-legenda-pct {
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-left: auto;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .esic-piechart-wrap   { flex-direction: column; align-items: center; }
+  .esic-piechart        { width: 150px; height: 150px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. GRÁFICO DE BARRAS (SVG puro)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-barchart {
+  width: 100%;
+  min-height: 200px;
+}
+
+.esic-barchart svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   10. SIC FÍSICO — bloco de contato
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.esic-sic-subtitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0 0 12px;
+}
+
+/* Endereço específico da seção SIC Físico nesta página (parágrafos empilhados) */
+.esic-sic-fisico .esic-contato-endereco {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.esic-sic-fisico .esic-contato-endereco p {
+  font-size: 0.875rem;
+  color: #3a5a3a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.esic-sic-fisico .esic-contato-endereco p i {
+  color: var(--pi-verde);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+}
+
+.esic-sic-fisico .esic-contato-endereco a {
+  color: var(--pi-verde);
+  text-decoration: none;
+}
+
+.esic-sic-fisico .esic-contato-endereco a:hover { text-decoration: underline; }
+
+.esic-redes-sociais__label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin-bottom: 8px;
+}
+
+.esic-redes-sociais__links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.esic-rede-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #3a3a3a;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(45, 90, 45, 0.15);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.esic-rede-btn:hover { transform: translateY(-2px); text-decoration: none; }
+.esic-rede-btn:hover.fa-facebook-square,
+a.esic-rede-btn:nth-child(1):hover { background: #1877f2; color: #fff; border-color: #1877f2; }
+a.esic-rede-btn:nth-child(2):hover { background: #e1306c; color: #fff; border-color: #e1306c; }
+a.esic-rede-btn:nth-child(3):hover { background: #25d366; color: #fff; border-color: #25d366; }
+a.esic-rede-btn:nth-child(4):hover { background: #ff0000; color: #fff; border-color: #ff0000; }
+
+.esic-contato-dl {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.esic-contato-dl div {
+  display: flex;
+  gap: 6px;
+  font-size: 0.875rem;
+}
+
+.esic-contato-dl dt {
+  font-weight: 600;
+  color: var(--pi-verde-escuro);
+  white-space: nowrap;
+}
+
+.esic-contato-dl dd {
+  color: #555;
+  margin: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .esic-widget-panel { height: auto; }
+
+  .esic-estatisticas-filtro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .esic-filtro-controles { flex-wrap: wrap; }
+}
+
+@media (max-width: 576px) {
+  .esic-export-bar__btns { flex-wrap: wrap; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   12. ALTO CONTRASTE eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast .esic-nav-rapida {
+  background: #000 !important;
+  border-bottom-color: #555 !important;
+}
+
+body.high-contrast .esic-nav-rapida__link {
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+body.high-contrast .esic-nav-rapida__link:hover,
+body.high-contrast .esic-nav-rapida__link.active {
+  color: #ff0 !important;
+  background: #111 !important;
+  border-color: #ff0 !important;
+}
+
+body.high-contrast .esic-nav-rapida__toggle { color: #fff !important; }
+
+body.high-contrast .esic-busca-wrapper { border-color: #fff !important; background: #000 !important; }
+body.high-contrast .esic-busca-input   { background: #000 !important; color: #fff !important; }
+body.high-contrast .esic-busca-btn     { background: #ff0 !important; color: #000 !important; }
+
+body.high-contrast .esic-export-btn {
+  background: #000 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+body.high-contrast .esic-export-btn:hover {
+  background: #222 !important;
+}
+
+body.high-contrast .esic-tabela-outer   { border-color: #fff !important; }
+body.high-contrast .esic-tabela-elotech thead tr { background: #222 !important; }
+body.high-contrast .esic-tabela-elotech tbody tr:nth-child(odd)  { background: #111 !important; }
+body.high-contrast .esic-tabela-elotech tbody tr:nth-child(even) { background: #000 !important; }
+body.high-contrast .esic-tabela-elotech tbody td  { color: #fff !important; }
+body.high-contrast .esic-tabela-elotech tbody td span { color: #ff0 !important; }
+body.high-contrast .esic-tabela-elotech tbody tr:hover { background: #222 !important; }
+
+body.high-contrast .esic-widget-panel          { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-widget-panel__header  { background: #111 !important; border-color: #555 !important; }
+body.high-contrast .esic-widget-panel__titulo  { color: #fff !important; }
+body.high-contrast .esic-widget-panel__icon    { background: #333 !important; }
+body.high-contrast .esic-widget-panel__icon i  { color: #ff0 !important; }
+
+body.high-contrast .esic-busca-resultados .esic-widget-panel__header { background: #111 !important; }
+body.high-contrast .esic-busca-item        { color: #fff !important; border-color: #333 !important; }
+body.high-contrast .esic-busca-item__secao { color: #aaa !important; }
+body.high-contrast mark.esic-busca-destaque { background: rgba(255, 200, 0, 0.3) !important; color: #ff0 !important; }
+
+body.high-contrast .esic-rede-btn { background: #333 !important; color: #fff !important; border-color: #fff !important; }
+body.high-contrast .esic-contato-endereco p   { color: #ddd !important; }
+body.high-contrast .esic-contato-endereco a   { color: #ff0 !important; }
+body.high-contrast .esic-contato-dl dt        { color: #fff !important; }
+body.high-contrast .esic-contato-dl dd        { color: #ccc !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   13. SIC FÍSICO — LAYOUT UNIFICADO
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Wrapper único: um card com duas colunas internas separadas por divisor */
+.esic-sic-unified {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  box-shadow: var(--esic-sombra);
+  overflow: hidden;
+}
+
+/* Divisor vertical entre as colunas */
+.esic-sic-divisor {
+  width: 1px;
+  background: var(--esic-borda);
+  flex-shrink: 0;
+  margin: 20px 0;
+}
+
+/* Colunas internas */
+.esic-sic-col {
+  flex: 1;
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Coluna da ouvidoria: fundo branco puro */
+.esic-sic-col--contato {
+  background: #fff;
+}
+
+/* Coluna do responsável: fundo verde muito suave */
+.esic-sic-col--responsavel {
+  background: #f7fbf7;
+}
+
+/* Header de cada coluna */
+.esic-sic-col__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.esic-sic-col__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--esic-verde-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esic-sic-col__icon i {
+  font-size: 1.1rem;
+  color: var(--esic-verde);
+}
+
+/* Tag + título (compartilhados com versão anterior) */
+.esic-sic-card__tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--esic-texto-leve);
+  margin-bottom: 2px;
+}
+
+.esic-sic-card__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Itens de contato */
+.esic-sic-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.esic-sic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.esic-sic-item__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--esic-verde-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.esic-sic-item__icon i {
+  font-size: 0.75rem;
+  color: var(--esic-verde);
+}
+
+.esic-sic-item__texto {
+  font-size: 0.875rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.5;
+  padding-top: 5px;
+}
+
+.esic-sic-item__link {
+  color: var(--esic-verde);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.esic-sic-item__link:hover {
+  text-decoration: underline;
+  color: var(--esic-verde-claro);
+}
+
+/* Bloco da pessoa responsável */
+.esic-sic-pessoa {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1.5px solid #d0e8d0;
+  border-radius: var(--esic-radius);
+  padding: 14px 16px;
+}
+
+.esic-sic-pessoa__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--esic-verde-bg);
+  border: 2px solid #b8d8b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esic-sic-pessoa__avatar i {
+  font-size: 1.1rem;
+  color: var(--esic-verde);
+}
+
+.esic-sic-pessoa__nome {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.esic-sic-pessoa__cargo {
+  font-size: 0.775rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.4;
+}
+
+/* Badge legal */
+.esic-sic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.73rem;
+  color: var(--esic-texto-leve);
+  background: var(--esic-verde-bg);
+  border: 1px solid #c8ddc8;
+  border-radius: 20px;
+  padding: 6px 13px;
+  line-height: 1.3;
+  align-self: flex-start;
+  margin-top: auto; /* empurra para o fundo da coluna */
+}
+
+.esic-sic-badge i {
+  color: var(--esic-verde);
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+/* ── Responsivo: empilha no mobile ── */
+@media (max-width: 768px) {
+  .esic-sic-unified {
+    flex-direction: column;
+  }
+
+  .esic-sic-divisor {
+    width: auto;
+    height: 1px;
+    margin: 0 20px;
+  }
+
+  .esic-sic-col {
+    padding: 22px 20px;
+  }
+}
+
+/* ── Alto contraste ── */
+body.high-contrast .esic-sic-unified   { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .esic-sic-col--contato    { background: #000 !important; }
+body.high-contrast .esic-sic-col--responsavel { background: #111 !important; }
+body.high-contrast .esic-sic-divisor   { background: #444 !important; }
+body.high-contrast .esic-sic-card__titulo { color: #fff !important; }
+body.high-contrast .esic-sic-col__icon { background: #222 !important; }
+body.high-contrast .esic-sic-col__icon i { color: #ff0 !important; }
+body.high-contrast .esic-sic-item__icon   { background: #222 !important; }
+body.high-contrast .esic-sic-item__icon i { color: #ff0 !important; }
+body.high-contrast .esic-sic-item__texto  { color: #ddd !important; }
+body.high-contrast .esic-sic-item__link   { color: #ff0 !important; }
+body.high-contrast .esic-sic-pessoa  { background: #111 !important; border-color: #555 !important; }
+body.high-contrast .esic-sic-pessoa__avatar { background: #222 !important; border-color: #555 !important; }
+body.high-contrast .esic-sic-pessoa__avatar i { color: #ff0 !important; }
+body.high-contrast .esic-sic-pessoa__nome  { color: #fff !important; }
+body.high-contrast .esic-sic-pessoa__cargo { color: #aaa !important; }
+body.high-contrast .esic-sic-badge { background: #111 !important; border-color: #555 !important; color: #aaa !important; }
+body.high-contrast .esic-sic-badge i { color: #ff0 !important; }
