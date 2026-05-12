@@ -1,0 +1,231 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+
+      <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li>
+            <a href="../../index.html">
+              <i class="fas fa-home" aria-hidden="true"></i> Início
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <span class="pi-breadcrumb-sep">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </li>
+          <li aria-current="page">Coleta de Lixo</li>
+        </ol>
+      </nav>
+
+      <h1 class="pi-hero-titulo">Coleta de Lixo</h1>
+
+    </div>
+  </div>
+
+  <!-- Ilustração decorativa (oculta de leitores de tela) -->
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     CONTEÚDO PRINCIPAL
+════════════════════════════════════════════════════════════════ -->
+<main id="pi-main">
+  <div class="container">
+
+    <!-- Layout em grade: coluna principal + sidebar -->
+    <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+      <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+      <article>
+
+        <!-- Seção: Introdução -->
+        <section aria-labelledby="pi-intro-titulo">
+          <h2 id="pi-intro-titulo" class="pi-secao-titulo">
+            <i class="fas fa-trash-alt" aria-hidden="true"></i>
+            Sobre a Coleta de Lixo
+          </h2>
+          <hr class="pi-secao-divider">
+          <div class="pi-intro-texto">
+            <p>
+              A coleta de lixo em Campina Grande do Sul é dividida em três modalidades: 
+              <strong>a coleta noturna, interior e convencional.</strong>
+            </p>
+          </div>
+        </section>
+
+        <!-- Seção: Informações sobre o lixo -->
+        <section aria-labelledby="pi-sobre-lixo-titulo" class="pi-mt-secao">
+          <h2 id="pi-sobre-lixo-titulo" class="pi-secao-titulo">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            Informações e Conscientização
+          </h2>
+          <hr class="pi-secao-divider">
+          
+          <div class="pi-texto">
+            <h3 class="pi-subtitulo">
+              <i class="fas fa-leaf" aria-hidden="true"></i>
+              Sobre o lixo
+            </h3>
+            <p>
+              A degradação e a poluição do meio ambiente não são novidades para a população. Vários problemas ambientais são causados pelo 
+              descarte de lixo na natureza como: inundações, contaminações de rios, lagos e do solo. Preocupada com esses problemas a prefeitura 
+              desenvolve a coleta seletiva e trabalho de educação ambiental nas escolas.
+            </p>
+
+            <h3 class="pi-subtitulo">
+              <i class="fas fa-recycle" aria-hidden="true"></i>
+              Diferença entre lixo e resíduo
+            </h3>
+            <p>
+              Nem tudo que jogamos fora é lixo, também estamos jogando fora resíduos.
+            </p>
+            <ul>
+              <li><strong>Lixo:</strong> É sujeira, coisa sem valor, algo inútil, descartável.</li>
+              <li><strong>Resíduo:</strong> É tudo que ainda podemos reutilizar, reciclando ou reaproveitando.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Seção: Dicas importantes -->
+        <section aria-labelledby="pi-dicas-titulo" class="pi-mt-secao">
+          <h2 id="pi-dicas-titulo" class="pi-secao-titulo">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            Dicas importantes de separação
+          </h2>
+          <hr class="pi-secao-divider">
+          
+          <div class="pi-texto">
+            <p>Para evitar mau cheiro e acumulo de vetores (como ratos e baratas), observe as orientações abaixo:</p>
+            <div class="pi-recursos-grid" style="grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px;">
+              
+              <article class="pi-recurso-card">
+                <div class="pi-recurso-icon"><i class="fas fa-wine-bottle"></i></div>
+                <div class="pi-recurso-corpo">
+                  <h3>Higienização</h3>
+                  <p>Lave garrafas de vidro, plástico, embalagens de iogurte e outros vasilhames antes de colocar no lixo reciclável.</p>
+                </div>
+              </article>
+
+              <article class="pi-recurso-card">
+                <div class="pi-recurso-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="pi-recurso-corpo">
+                  <h3>Segurança</h3>
+                  <p>Lave e pressione as tampas para dentro das latas de bebidas ou de conservas para evitar acidentes.</p>
+                </div>
+              </article>
+
+              <article class="pi-recurso-card">
+                <div class="pi-recurso-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="pi-recurso-corpo">
+                  <h3>Objetos Cortantes</h3>
+                  <p>Embale objetos de vidro para evitar cortes e perfurações de quem manipula o material.</p>
+                </div>
+              </article>
+
+              <article class="pi-recurso-card">
+                <div class="pi-recurso-icon"><i class="fas fa-file-invoice"></i></div>
+                <div class="pi-recurso-corpo">
+                  <h3>Papéis</h3>
+                  <p>Não amasse, nem molhe os papéis destinados à reciclagem.</p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção: Coleta de Entulhos -->
+        <section aria-labelledby="pi-entulhos-titulo" class="pi-mt-secao">
+          <h2 id="pi-entulhos-titulo" class="pi-secao-titulo">
+            <i class="fas fa-truck-pickup" aria-hidden="true"></i>
+            Coleta de Entulhos Domiciliares
+          </h2>
+          <hr class="pi-secao-divider">
+          
+          <div class="pi-compromisso-bloco">
+            <h2><i class="fas fa-calendar-check"></i> Cronograma de Coleta</h2>
+            <p>
+              Mantenha sua calçada limpa e contribua com a organização da nossa cidade. 
+              Clique no link abaixo para conferir o cronograma completo da coleta de entulhos.
+            </p>
+            <a href="../../Downloads/Arquivos/2022_1598_dxid3pytx51.pdf" target="_blank" class="pi-btn-verde">
+              <i class="fas fa-file-pdf"></i>
+              Campina Mais Limpa - Cronograma de Entulhos
+            </a>
+          </div>
+        </section>
+
+      </article>
+      <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+      <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+        <!-- Controles rápidos de acessibilidade -->
+        <div class="pi-controles-bloco">
+          <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+          <div class="pi-ctrl-row">
+            <span class="pi-ctrl-label">Tamanho do texto</span>
+            <div class="pi-ctrl-btns">
+              <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+              <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+              <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Resetar fonte">A</button>
+            </div>
+          </div>
+          <div class="pi-ctrl-row">
+            <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                    aria-pressed="false" aria-label="Alternar modo de alto contraste">
+              <i class="fas fa-adjust" aria-hidden="true"></i>
+              Alternar Alto Contraste
+            </button>
+          </div>
+        </div>
+
+        <!-- Links Relacionados -->
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-link" aria-hidden="true"></i> Veja Também</h4>
+          <ul class="pi-sidebar-links">
+            <li>
+              <a href="../portal-servicos/">
+                <span><i class="fas fa-concierge-bell pi-sidebar-ico"></i>Portal de Serviços</span>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/meio-ambiente">
+                <span><i class="fas fa-seedling pi-sidebar-ico"></i>Meio Ambiente</span>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+            <li>
+              <a href="../ouvidoria/">
+                <span><i class="fas fa-comments pi-sidebar-ico"></i>Ouvidoria</span>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contato rápido -->
+        <div class="pi-sidebar-card pi-sidebar-contato">
+          <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+          <p><i class="fas fa-clock"></i> Seg. a Sex. — 8h30 às 17h30</p>
+          <p><i class="fas fa-phone"></i> (41) 3162-7000</p>
+          <a href="../ouvidoria/" class="pi-btn-verde pi-btn-full">
+            <i class="fas fa-comments"></i> Fale Conosco
+          </a>
+        </div>
+
+      </aside>
+      <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+    </div>
+  </div>
+</main>

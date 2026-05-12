@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campeonato Municipal 2026 - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="../../_global/css/acessibilidade.css">
+  
+  <!-- Estilos Específicos do Campeonato -->
+  <link rel="stylesheet" href="css/campeonato.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    
+    <!-- HERO -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+              <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+              <li aria-current="page">Esportes</li>
+              <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+              <li aria-current="page">Campeonato Municipal</li>
+            </ol>
+          </nav>
+
+          <div id="header-loading" class="skeleton-wrap" style="max-width: 600px;">
+            <div class="skeleton-line" style="width:70%;height:32px;margin-bottom:10px"></div>
+            <div class="skeleton-line" style="width:50%;height:16px;"></div>
+          </div>
+
+          <div id="header-info" style="display:none">
+            <h1 id="champ-name" class="pi-hero-titulo">CAMPEONATO MUNICIPAL</h1>
+            <p id="champ-description" class="pi-hero-subtitulo"></p>
+          </div>
+        </div>
+      </div>
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <!-- CONTEÚDO DASHBOARD -->
+    <main id="pi-main">
+      <div class="container champ-container">
+        
+        <!-- Toggle de Séries -->
+        <div class="series-toggle">
+          <button class="sbtn active" data-id="66ab8c25-f144-485b-bcb7-783eed3bf982">SÉRIE OURO</button>
+          <button class="sbtn" data-id="225a60d5-0964-4339-a37d-ab73b26c0b08">SÉRIE PRATA</button>
+        </div>
+
+        <div class="bento">
+
+          <!-- Classificação -->
+          <section class="bento-cell cell-standings">
+            <div class="cell-header">
+              <div class="cell-header-left">
+                <div class="cell-icon"><i class="fas fa-list-ol"></i></div>
+                <h2>Classificação</h2>
+              </div>
+            </div>
+            <div id="standings-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+            <div id="standings-content" class="cell-body" style="display:none">
+              <div class="table-wrap">
+                <table class="tbl" id="standings-table">
+                  <thead>
+                    <tr>
+                      <th class="col-pos">#</th>
+                      <th class="col-team">CLUBE</th>
+                      <th>PTS</th>
+                      <th>J</th>
+                      <th>V</th>
+                      <th>E</th>
+                      <th>D</th>
+                      <th>GP</th>
+                      <th>GC</th>
+                      <th>SG</th>
+                    </tr>
+                  </thead>
+                  <tbody id="standings-body"></tbody>
+                </table>
+              </div>
+            </div>
+            <div id="standings-empty" class="empty" style="display:none"><i class="fas fa-table"></i><p>Sem dados</p></div>
+          </section>
+
+          <!-- Artilharia -->
+          <section class="bento-cell cell-scorers">
+            <div class="cell-header">
+              <div class="cell-header-left">
+                <div class="cell-icon icon-gold"><i class="fas fa-crosshairs"></i></div>
+                <h2>Artilharia</h2>
+              </div>
+            </div>
+            <div id="scorers-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+            <div id="scorers-content" class="cell-body scrollable" style="display:none"></div>
+            <div id="scorers-empty" class="empty" style="display:none"><i class="fas fa-crosshairs"></i><p>Sem dados</p></div>
+          </section>
+
+          <!-- Jogos & Rodadas -->
+          <section class="bento-cell cell-matches">
+            <div class="cell-header">
+              <div class="cell-header-left">
+                <div class="cell-icon icon-cyan"><i class="fas fa-futbol"></i></div>
+                <h2>Jogos & Rodadas</h2>
+              </div>
+            </div>
+            <div id="matches-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+            <div id="matches-content" class="cell-body" style="display:none">
+              <div class="round-bar">
+                <button class="rbtn" id="prev-round" aria-label="Rodada anterior"><i class="fas fa-chevron-left"></i></button>
+                <select class="rsel" id="round-select" aria-label="Selecionar rodada"></select>
+                <button class="rbtn" id="next-round" aria-label="Próxima rodada"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              <div id="matches-grid" class="mgrid"></div>
+            </div>
+            <div id="matches-empty" class="empty" style="display:none"><i class="fas fa-futbol"></i><p>Sem dados</p></div>
+          </section>
+
+          <!-- Defesa -->
+          <section class="bento-cell cell-defense">
+            <div class="cell-header">
+              <div class="cell-header-left">
+                <div class="cell-icon icon-mint"><i class="fas fa-shield-alt"></i></div>
+                <h2>Melhor Defesa</h2>
+              </div>
+            </div>
+            <div id="defense-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+            <div id="defense-content" class="cell-body scrollable" style="display:none"></div>
+            <div id="defense-empty" class="empty" style="display:none"><i class="fas fa-shield-alt"></i><p>Sem dados</p></div>
+          </section>
+
+          <!-- Times -->
+          <section class="bento-cell cell-teams">
+            <div class="cell-header">
+              <div class="cell-header-left">
+                <div class="cell-icon icon-purple"><i class="fas fa-users"></i></div>
+                <h2>Clubes Participantes</h2>
+              </div>
+            </div>
+            <div id="teams-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
+            <div id="teams-content" class="cell-body" style="display:none"></div>
+            <div id="teams-empty" class="empty" style="display:none"><i class="fas fa-users"></i><p>Sem dados</p></div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  
+  <!-- Script do Campeonato -->
+  <script src="js/campeonato.js"></script>
+  
+</body>
+</html>

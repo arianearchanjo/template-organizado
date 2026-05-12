@@ -1,0 +1,335 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   direito-das-vitimas.css — Estilos de Layout para Página Interna
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── HERO / CABEÇALHO DA PÁGINA ── */
+#pi-hero {
+  background: var(--verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pi-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pi-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+#pi-main {
+  background: #fff;
+  padding: 60px 0 80px;
+  margin-top: 0;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .pi-layout { grid-template-columns: 1fr; }
+  .pi-sidebar { order: -1; }
+}
+
+/* ── CONTEÚDO ── */
+.pi-intro-texto {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.pi-secao-titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-secao-titulo i {
+  font-size: 1rem;
+  color: var(--verde);
+}
+
+.pi-secao-divider {
+  border: none;
+  border-top: 2px solid var(--verde-claro);
+  margin: 0 0 24px;
+}
+
+.pi-subtitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-texto p {
+  font-size: 0.9375rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.pi-mt-secao { margin-top: 40px; }
+
+/* ── GRID E CARDS ── */
+.pi-recursos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 575px) {
+  .pi-recursos-grid { grid-template-columns: 1fr; }
+}
+
+.pi-recurso-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  height: 100%;
+}
+
+.pi-recurso-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: var(--verde-claro);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--verde);
+  font-size: 1rem;
+}
+
+.pi-recurso-corpo h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 5px;
+}
+
+.pi-recurso-corpo p {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── LISTAS DE CONTATO ── */
+.pi-contatos-list {
+  background: #f9fbf9;
+  border-left: 4px solid var(--verde);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 0 8px 8px 0;
+}
+
+.pi-contato-item {
+  font-size: 0.9375rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.pi-contato-item strong { color: var(--verde-escuro); }
+
+.pi-ubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pi-ubs-item {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  color: #555;
+}
+
+/* ── SIDEBAR ── */
+.pi-sidebar-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-sidebar-card h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pi-sidebar-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.8125rem;
+  color: #444;
+  text-decoration: none;
+}
+
+.pi-sidebar-ico { margin-right: 8px; color: #aaa; }
+
+.pi-sidebar-contato {
+  background: var(--verde-claro);
+  border-color: #b3d6be !important;
+}
+
+.pi-sidebar-contato p {
+  font-size: 0.8125rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3a5a3a;
+}
+
+/* ── ACESSIBILIDADE ── */
+.pi-controles-bloco {
+  background: var(--verde-claro);
+  border: 1px solid #b8dab8;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.pi-controles-bloco h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-ctrl-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pi-ctrl-label { font-size: 0.75rem; flex: 1; }
+
+.pi-ctrl-btns { display: flex; gap: 4px; }
+
+.pi-ctrl-btn {
+  border: 1px solid #b8dab8;
+  background: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pi-ctrl-btn-contraste {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #b8dab8;
+  font-size: 0.75rem;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
