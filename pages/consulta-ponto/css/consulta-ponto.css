@@ -1,0 +1,146 @@
+/* Custom styles for Consulta de Ponto page */
+
+/* Layout Full Width */
+.servico-layout-full {
+    display: flex;
+    padding: 40px 0;
+}
+
+/* Badge de Público-alvo */
+.badge-publico {
+    display: inline-flex;
+    align-items: center;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    border: 1px solid var(--verde-medio);
+}
+
+.badge-publico i {
+    margin-right: 8px;
+    color: var(--verde);
+}
+
+/* Botão Web Estilizado */
+.btn-portal-web {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid var(--verde);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-portal-web:hover {
+    background: var(--verde-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.btn-portal-web .icon {
+    font-size: 2.5rem;
+    color: var(--verde);
+    margin-right: 20px;
+}
+
+.btn-portal-web .text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-portal-web .title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.btn-portal-web .subtitle {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-portal-web .arrow {
+    font-size: 1.2rem;
+    color: var(--verde);
+    opacity: 0.5;
+}
+
+/* Botões de App (Estilo Moderno) */
+.btn-app-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    color: #fff !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-app-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-app-download i {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.btn-app-download .text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.btn-app-download .small {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.btn-app-download .large {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Cores específicas das lojas */
+.google-play {
+    background-color: #000;
+    border: 1px solid #333;
+}
+
+.apple-store {
+    background-color: #000;
+    border: 1px solid #333;
+}
+
+/* Container de Vídeo */
+.video-container {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid var(--cinza-borda);
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .btn-portal-web {
+        padding: 15px;
+    }
+    .btn-portal-web .icon {
+        font-size: 2rem;
+        margin-right: 15px;
+    }
+    .btn-portal-web .title {
+        font-size: 1.1rem;
+    }
+}

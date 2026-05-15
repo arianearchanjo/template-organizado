@@ -1,0 +1,596 @@
+<!-- HERO -->
+<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li>
+            <a href="../../index.html">
+              <i class="fas fa-home" aria-hidden="true"></i> Início
+            </a>
+          </li>
+          <li aria-hidden="true">
+            <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+          </li>
+          <li>
+            <a href="#">Institucional</a>
+          </li>
+          <li aria-hidden="true">
+            <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+          </li>
+          <li aria-current="page">Lista Telefônica</li>
+        </ol>
+      </nav>
+
+      <h1 class="pi-hero-titulo">Consulta Lista Telefônica</h1>
+      <p class="pi-hero-subtitulo">Encontre contatos de servidores, departamentos e secretarias municipais</p>
+
+    </div>
+  </div>
+
+  <!-- Ilustração decorativa -->
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+<!-- /HERO -->
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main id="li-main">
+  <div class="container">
+    <div id="pi-conteudo">
+
+      <!-- Área de busca -->
+      <div class="li-busca-wrapper" role="search" aria-label="Filtrar dados da tabela">
+        <div class="li-busca-grupo">
+          <i class="fas fa-search li-busca-icone" aria-hidden="true"></i>
+          <label for="li-busca" class="sr-only">Pesquisar na listagem</label>
+          <input 
+            id="li-busca" 
+            type="search" 
+            class="li-busca-input" 
+            placeholder="Nome, Setor, Telefone..."
+            aria-label="Pesquisar na listagem"
+            autocomplete="off"
+          >
+          <button type="button" class="li-btn-busca" aria-label="Buscar">
+            BUSCAR
+          </button>
+        </div>
+      </div>
+      <!-- /Área de busca -->
+
+      <!-- Barra de Exportação -->
+      <div class="li-export-bar hidden-print">
+        <button type="button" class="li-export-btn" title="Imprimir listagem">
+          <i class="fas fa-print" aria-hidden="true"></i> Imprimir
+        </button>
+        <button type="button" class="li-export-btn" title="Exportar para Excel">
+          <i class="fas fa-file-excel" aria-hidden="true"></i> XLS
+        </button>
+        <button type="button" class="li-export-btn" title="Exportar para PDF">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+        </button>
+        <button type="button" class="li-export-btn" title="Exportar para CSV">
+          <i class="fas fa-file-csv" aria-hidden="true"></i> CSV
+        </button>
+      </div>
+
+      <!-- Tabela Institucional -->
+      <div class="table-responsive li-table-wrapper">
+        <table class="table li-table" id="li-tabela-dados" aria-label="Tabela de lista telefônica">
+          <thead>
+            <tr>
+              <th scope="col" data-sortable="true">NOME <i class="fas fa-sort"></i></th>
+              <th scope="col" data-sortable="true" class="d-none d-md-table-cell">LOCAL <i class="fas fa-sort"></i></th>
+              <th scope="col" class="d-none d-md-table-cell">TELEFONE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>ABNER</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-1" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-1">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> INFRAESTRUTURA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7308</p>
+                      <a href="tel:4131627308" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">INFRAESTRUTURA</td>
+              <td class="d-none d-md-table-cell">3162-7308</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ADILSON</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-2" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-2">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> PATRIMONIO</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7036</p>
+                      <a href="tel:4131627036" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">PATRIMONIO</td>
+              <td class="d-none d-md-table-cell">3162-7036</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ADIR</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-3" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-3">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> DEPARTAMENTO DE RECURSOS HUMANOS</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7004</p>
+                      <a href="tel:4131627004" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">DEPARTAMENTO DE RECURSOS HUMANOS</td>
+              <td class="d-none d-md-table-cell">3162-7004</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ADMINISTRAÇÃO</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-4" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-4">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA DE DESENVOLVIMENTO SOCIAL - PRAÇA CEU</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7213</p>
+                      <a href="tel:4131627213" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA DE DESENVOLVIMENTO SOCIAL - PRAÇA CEU</td>
+              <td class="d-none d-md-table-cell">3162-7213</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ADRIANA/ELIDE/SANDRA BARROS</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-5" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-5">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SAÚDE - SECRETARIA - ATENÇÃO BASICA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7165</p>
+                      <a href="tel:4131627165" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SAÚDE - SECRETARIA - ATENÇÃO BASICA</td>
+              <td class="d-none d-md-table-cell">3162-7165</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ADRYANA VALÉRIA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-6" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-6">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> EDUCAÇÃO - COORDENAÇÃO CONSELHOS MUNICIPAIS</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7119</p>
+                      <a href="tel:4131627119" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">EDUCAÇÃO - COORDENAÇÃO CONSELHOS MUNICIPAIS</td>
+              <td class="d-none d-md-table-cell">3162-7119</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>AGENDAMENTO</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-7" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-7">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SAÚDE - SECRETARIA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7151</p>
+                      <a href="tel:4131627151" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SAÚDE - SECRETARIA</td>
+              <td class="d-none d-md-table-cell">3162-7151</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ALEXANDRE</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-8" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-8">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> INFORMATICA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7066</p>
+                      <a href="tel:4131627066" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">INFORMATICA</td>
+              <td class="d-none d-md-table-cell">3162-7066</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANA CAROL</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-9" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-9">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA DE DESENVOLVIMENTO SOCIAL - CRAS / COORDENAÇÃO</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7223</p>
+                      <a href="tel:4131627223" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA DE DESENVOLVIMENTO SOCIAL - CRAS / COORDENAÇÃO</td>
+              <td class="d-none d-md-table-cell">3162-7223</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANA PAULA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-10" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-10">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> DESENVOLVIMENTO SUSTENTÁVEL</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7323</p>
+                      <a href="tel:4131627323" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">DESENVOLVIMENTO SUSTENTÁVEL</td>
+              <td class="d-none d-md-table-cell">3162-7323</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDERSON</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-11" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-11">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> ADMINISTRAÇÃO - TRIBUTAÇÃO</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7056</p>
+                      <a href="tel:4131627056" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">ADMINISTRAÇÃO - TRIBUTAÇÃO</td>
+              <td class="d-none d-md-table-cell">3162-7056</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDREI</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-12" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-12">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> INFORMATICA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7069</p>
+                      <a href="tel:4131627069" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">INFORMATICA</td>
+              <td class="d-none d-md-table-cell">3162-7069</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDREIA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-13" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-13">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> INFRAESTRUTURA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7309</p>
+                      <a href="tel:4131627309" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">INFRAESTRUTURA</td>
+              <td class="d-none d-md-table-cell">3162-7309</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDREIA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-14" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-14">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> DESENVOLVIMENTO SUSTENTÁVEL - AGRICULTURA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7319</p>
+                      <a href="tel:4131627319" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">DESENVOLVIMENTO SUSTENTÁVEL - AGRICULTURA</td>
+              <td class="d-none d-md-table-cell">3162-7319</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDREIA BISCARO</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-15" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-15">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA MUNICIPAL DE GOVERNO - GABINETE</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7079</p>
+                      <a href="tel:4131627079" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA MUNICIPAL DE GOVERNO - GABINETE</td>
+              <td class="d-none d-md-table-cell">3162-7079</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDRESSA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-16" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-16">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> ADMINISTRAÇÃO - TESOURARIA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7046</p>
+                      <a href="tel:4131627046" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">ADMINISTRAÇÃO - TESOURARIA</td>
+              <td class="d-none d-md-table-cell">3162-7046</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDRESSA</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-17" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-17">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> DEPARTAMENTO DE ATIVIDADES DE ESPORTIVAS</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7301</p>
+                      <a href="tel:4131627301" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">DEPARTAMENTO DE ATIVIDADES DE ESPORTIVAS</td>
+              <td class="d-none d-md-table-cell">3162-7301</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ANDRÉ VIDOLIN</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-18" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-18">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> ORDEM PUBLICA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7251</p>
+                      <a href="tel:4131627251" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">ORDEM PUBLICA</td>
+              <td class="d-none d-md-table-cell">3162-7251</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>APAE CGS</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-19" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-19">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> EDUCAÇÃO - ESCOLAS MUNICIPAIS</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3676-1702</p>
+                      <a href="tel:4136761702" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">EDUCAÇÃO - ESCOLAS MUNICIPAIS</td>
+              <td class="d-none d-md-table-cell">3676-1702</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ARIADNE/RECEPÇÃO</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-20" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-20">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> PREVICAMP</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7240</p>
+                      <a href="tel:4131627240" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">PREVICAMP</td>
+              <td class="d-none d-md-table-cell">3162-7240</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ARIELLY</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-21" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-21">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA DE DESENVOLVIMENTO SOCIAL</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7298</p>
+                      <a href="tel:4131627298" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA DE DESENVOLVIMENTO SOCIAL</td>
+              <td class="d-none d-md-table-cell">3162-7298</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ARTUR/TATIANE</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-22" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-22">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> DESENVOLVIMENTO SUSTENTÁVEL</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7321</p>
+                      <a href="tel:4131627321" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">DESENVOLVIMENTO SUSTENTÁVEL</td>
+              <td class="d-none d-md-table-cell">3162-7321</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>ASSISTENTE SOCIAL</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-23" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-23">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA DE DESENVOLVIMENTO SOCIAL - CREAS</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7226</p>
+                      <a href="tel:4131627226" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA DE DESENVOLVIMENTO SOCIAL - CREAS</td>
+              <td class="d-none d-md-table-cell">3162-7226</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>AUDITOR GABRIEL</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-24" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-24">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> PROCURADORIA</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7294</p>
+                      <a href="tel:4131627294" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">PROCURADORIA</td>
+              <td class="d-none d-md-table-cell">3162-7294</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>BELENICE</strong>
+                <div class="li-mobile-details d-md-none">
+                  <button class="btn-li-info" type="button" data-toggle="collapse" data-target="#info-25" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i> Ver Contato
+                  </button>
+                  <div class="collapse li-details-box" id="info-25">
+                    <div class="li-details-content">
+                      <p><span><i class="fas fa-map-marker-alt"></i> Local:</span> SECRETARIA - EDUCAÇÃO</p>
+                      <p><span><i class="fas fa-phone-alt"></i> Tel:</span> 3162-7118</p>
+                      <a href="tel:4131627118" class="li-btn-ligar-mobile"><i class="fas fa-phone"></i> LIGAR AGORA</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">SECRETARIA - EDUCAÇÃO</td>
+              <td class="d-none d-md-table-cell">3162-7118</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /Tabela Institucional -->
+
+      <!-- Paginação -->
+      <div class="li-pagination-wrapper">
+        <div class="li-pagination-info" aria-live="polite">
+          Mostrando <b>1</b> a <b>25</b> de <b>25</b> registros
+        </div>
+        <nav aria-label="Navegação da listagem">
+          <ul class="li-pagination">
+            <li class="li-pagination-item desativado">
+              <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+            </li>
+            <li class="li-pagination-item ativo">
+              <span aria-current="page">1</span>
+            </li>
+            <li class="li-pagination-item desativado">
+              <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /Paginação -->
+
+    </div>
+  </div>
+</main>
+<!-- /CONTEÚDO PRINCIPAL -->

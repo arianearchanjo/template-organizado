@@ -1,0 +1,253 @@
+/* ══════════════════════════════════════════════════════════════
+   TEMPLATE OUVIDORIA SUS — Prefeitura de Campina Grande do Sul
+   Estilos específicos para a página da Ouvidoria SUS.
+══════════════════════════════════════════════════════════════ */
+
+:root {
+  --pi-verde:        #2d7a2d;
+  --pi-verde-escuro: #1e5c1e;
+  --pi-verde-medio:  #3a9a3a;
+  --pi-verde-claro:  #e8f5e8;
+  --pi-amarelo:      #f5c518;
+  --pi-cinza-bg:     #eef2ee;
+  --pi-cinza-borda:  #c8d8c8;
+  --pi-texto:        #1a2a1a;
+}
+
+/* ══ 1. LAYOUT E CONTEÚDO ════════════════════════════════════ */
+#pi-main {
+  background: #fff;
+  padding: 38px 0 56px;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 40px;
+  align-items: start;
+}
+
+.pi-secao-titulo {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.pi-secao-titulo i {
+  color: var(--pi-verde);
+  font-size: 0.9375rem;
+}
+
+.pi-secao-divider {
+  border: none;
+  border-top: 2px solid var(--pi-verde-claro);
+  margin: 0 0 22px;
+}
+
+.pi-mt-secao { margin-top: 40px; }
+
+/* ══ 2. ABAS (TABS) ══════════════════════════════════════════ */
+.sec-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--pi-cinza-borda);
+  margin-bottom: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.sec-tab-btn {
+  padding: 11px 20px;
+  font-size: 0.875rem;
+  color: #555;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.sec-tab-btn.ativo {
+  color: var(--pi-verde);
+  border-bottom-color: var(--pi-verde);
+  font-weight: 700;
+}
+
+.sec-tab-painel { display: none; }
+.sec-tab-painel.ativo { display: block; }
+
+/* ══ 3. TEXTO E LISTAS ═══════════════════════════════════════ */
+.sec-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin-bottom: 20px;
+}
+
+.sec-texto {
+  font-size: 0.9375rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.sec-texto p { margin-bottom: 14px; }
+
+/* LISTA MODERNA - SOLUÇÃO SIMPLES E ROBUSTA COM SVG */
+.pi-lista-moderna {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pi-lista-moderna li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #444;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232d7a2d'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 4px;
+  background-size: 20px;
+}
+
+.sec-subtitulo-legal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 25px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--pi-cinza-borda);
+}
+
+/* ══ 4. CONTATOS ═════════════════════════════════════════════ */
+.sec-contato-lista { margin-bottom: 30px; }
+
+.sec-contato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.sec-contato-item i {
+  color: var(--pi-verde);
+  margin-top: 4px;
+  width: 20px;
+  text-align: center;
+}
+
+.sec-contato-item strong { color: var(--pi-texto); }
+.sec-contato-item a { color: var(--pi-verde-escuro); text-decoration: none; }
+
+/* ══ 5. SIDEBAR ══════════════════════════════════════════════ */
+.pi-sidebar-card, .pi-controles-bloco {
+  background: #fff;
+  border: 1.5px solid var(--pi-cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-controles-bloco { background: var(--pi-verde-claro); }
+
+.pi-sidebar-card h3, .pi-controles-bloco h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--pi-verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pi-verde-escuro);
+}
+
+.pi-sidebar-card h3 i, .pi-controles-bloco h3 i {
+  color: var(--pi-verde);
+  font-size: 0.875rem;
+}
+
+.pi-sidebar-links { list-style: none; padding: 0; }
+.pi-sidebar-links li { border-bottom: 1px solid #eef2ee; }
+
+.pi-sidebar-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  font-size: 0.85rem;
+  color: #444;
+  text-decoration: none;
+}
+
+.pi-sidebar-links li.ativo a { color: var(--pi-verde); font-weight: 600; }
+
+.pi-ctrl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.pi-ctrl-label { font-size: 0.75rem; color: #3a5a3a; flex: 1; }
+.pi-ctrl-btns { display: flex; gap: 4px; }
+
+.pi-ctrl-btn {
+  border: 1px solid #b8dab8;
+  background: #fff;
+  color: var(--pi-verde-escuro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pi-ctrl-btn-contraste {
+  width: 100%;
+  border: 1.5px solid #b8dab8;
+  background: #fff;
+  color: var(--pi-verde-escuro);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pi-sidebar-contato p {
+  font-size: 0.8125rem;
+  color: #3a5a3a;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-contato p i { color: var(--pi-verde); }
+
+.pi-btn-verde {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--pi-verde);
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* ══ 6. RESPONSIVIDADE ═══════════════════════════════════════ */
+@media (max-width: 991px) {
+  .pi-layout { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processo Seletivo Simplificado 001/2025 - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos Específicos -->
+  <link rel="stylesheet" href="css/processo-seletivo.css">
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    
+    <!-- HERO SECTION -->
+    <section id="pi-hero" aria-label="Identificação da página">
+        <div class="container">
+            <div class="pi-hero-inner">
+                <nav aria-label="Você está em">
+                    <ol class="pi-breadcrumb">
+                        <li><a href="../../index.html"><i class="fas fa-home"></i> Início</a></li>
+                        <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+                        <li><a href="#">Concursos e Seleções</a></li>
+                        <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+                        <li aria-current="page">PSS 001/2025</li>
+                    </ol>
+                </nav>
+                <h1 class="pi-hero-titulo">Processo Seletivo Simplificado 001/2025</h1>
+            </div>
+        </div>
+        <!-- Ilustração decorativa -->
+        <div class="pi-hero-ilustracao" aria-hidden="true">
+            <img src="../../_global/img/global/ilustracao.png" alt="">
+        </div>
+    </section>
+
+    <!-- HEADER DE AÇÕES DO PROCESSO (Badge + Resumo + Botões) -->
+    <section id="ps-header-acoes">
+        <div class="container">
+            <div class="ps-header-inner">
+                <span class="ps-badge ps-badge-aberto">
+                    <i class="fas fa-circle mr-2"></i> Inscrições Abertas
+                </span>
+                <p class="ps-header-resumo">
+                    Contratações em caráter excepcional, emergencial, temporário e imediato de pessoal para exercer a função de <strong>Profissional de Apoio Escolar (PAE)</strong>, de acordo com as normas instituídas no edital.
+                </p>
+                <div class="ps-header-btns">
+                    <a href="#" class="btn-ps btn-ps-primary">
+                        <i class="fas fa-edit mr-2"></i> Clique aqui para fazer a inscrição
+                    </a>
+                    <a href="#ps-publicacoes" class="btn-ps btn-ps-outline">
+                        <i class="fas fa-file-pdf mr-2"></i> Acessar Edital
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK INFO SECTION -->
+    <section id="ps-info">
+        <div class="container">
+            <div class="ps-info-grid">
+                <div class="ps-info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="ps-info-label">Período de Inscrição</span>
+                    <span class="ps-info-valor">22/08 a 15/09/2025</span>
+                </div>
+                <div class="ps-info-card">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="ps-info-label">Cargo/Função</span>
+                    <span class="ps-info-valor">Apoio Escolar (PAE)</span>
+                </div>
+                <div class="ps-info-card">
+                    <i class="fas fa-phone"></i>
+                    <span class="ps-info-label">Informações</span>
+                    <span class="ps-info-valor">(41) 3162-7040</span>
+                </div>
+                <div class="ps-info-card">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="ps-info-label">Modalidade</span>
+                    <span class="ps-info-valor">PSS (Temporário)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PUBLICAÇÕES / DOCUMENTOS -->
+    <section id="ps-publicacoes">
+        <div class="container">
+            <h2 class="ps-secao-titulo">Publicações e Documentos</h2>
+            
+            <div class="ps-filtros-bar">
+                <!-- Busca -->
+                <div class="ps-busca">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="busca-doc" placeholder="Buscar documento por título...">
+                </div>
+
+                <!-- Filtros (Chips) -->
+                <div class="ps-filtros">
+                    <label class="ps-filter-chip">
+                        <input type="radio" name="options" id="filter-all" checked>
+                        <span class="ps-filter-label">Todos</span>
+                    </label>
+                    <label class="ps-filter-chip">
+                        <input type="radio" name="options" id="filter-edital">
+                        <span class="ps-filter-label">Editais</span>
+                    </label>
+                    <label class="ps-filter-chip">
+                        <input type="radio" name="options" id="filter-chamamento">
+                        <span class="ps-filter-label">Chamamentos</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Listagem -->
+            <div class="ps-lista-docs" id="lista-documentos">
+                
+                <!-- Item 1 -->
+                <a href="#" class="ps-doc-item" data-category="edital">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Edital</span>
+                        <h3 class="ps-doc-titulo">Edital de Abertura 001/2025 - Normas Gerais</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 10/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 1.2 MB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+                <!-- Item 2 -->
+                <a href="#" class="ps-doc-item" data-category="comunicado">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-file-lines"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Comunicado</span>
+                        <h3 class="ps-doc-titulo">Retificação nº 01 - Cronograma de Atividades</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 12/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 450 KB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+                <!-- Item 3 -->
+                <a href="#" class="ps-doc-item" data-category="edital">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Edital</span>
+                        <h3 class="ps-doc-titulo">Anexo I - Quadro de Vagas e Requisitos</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 10/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 800 KB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+                <!-- Item 4 -->
+                <a href="#" class="ps-doc-item" data-category="chamamento">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Chamamento</span>
+                        <h3 class="ps-doc-titulo">Homologação das Inscrições Deferidas</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 20/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 1.5 MB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+                <!-- Item 5 -->
+                <a href="#" class="ps-doc-item" data-category="comunicado">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Comunicado</span>
+                        <h3 class="ps-doc-titulo">Gabarito Preliminar da Prova Objetiva</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 22/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 320 KB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+                <!-- Item 6 -->
+                <a href="#" class="ps-doc-item" data-category="chamamento">
+                    <div class="ps-doc-icone">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="ps-doc-info">
+                        <span class="ps-doc-cat">Chamamento</span>
+                        <h3 class="ps-doc-titulo">Resultado Final e Classificação</h3>
+                        <div class="ps-doc-meta">
+                            <span><i class="fas fa-calendar-day"></i> 30/05/2025</span>
+                            <span><i class="fas fa-hdd"></i> 2.1 MB</span>
+                        </div>
+                    </div>
+                    <div class="ps-doc-download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <!-- Scripts Específicos -->
+  <script src="js/processo-seletivo.js"></script>
+</body>
+</html>

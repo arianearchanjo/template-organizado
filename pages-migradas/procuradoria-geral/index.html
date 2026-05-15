@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procuradoria Geral - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos do Template -->
+  <link rel="stylesheet" href="css/procuradoria.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- O conteúdo abaixo será substituído pelo conteúdo dinâmico (conteudo.html) em produção -->
+    
+    <!-- HERO -->
+    <section id="pi-hero" aria-label="Identificação do departamento">
+      <div class="container">
+        <div class="pi-hero-inner">
+
+          <!-- Breadcrumb -->
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li>
+                <a href="../../index.html">
+                  <i class="fas fa-home" aria-hidden="true"></i> Início
+                </a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li>
+                <a href="#">Institucional</a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li aria-current="page">
+                Procuradoria Geral do Município
+              </li>
+            </ol>
+          </nav>
+
+          <h1 class="pi-hero-titulo">
+            Procuradoria Geral do Município
+          </h1>
+
+        </div>
+      </div>
+
+      <!-- Ilustração decorativa -->
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+    <!-- /HERO -->
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="pi-main" aria-label="Conteúdo principal">
+      <div class="container">
+        <div id="pi-conteudo-interno" class="pi-layout" tabindex="-1">
+
+          <!-- ARTIGO PRINCIPAL -->
+          <article>
+
+            <!-- Navegação por abas -->
+            <ul class="sec-tabs-nav" role="tablist" aria-label="Seções do departamento">
+              <li role="presentation">
+                <button class="sec-tab-btn ativo"
+                  id="tab-procuradoria"
+                  role="tab"
+                  aria-controls="painel-procuradoria"
+                  aria-selected="true">Procuradoria</button>
+              </li>
+              <li role="presentation">
+                <button class="sec-tab-btn"
+                  id="tab-links"
+                  role="tab"
+                  aria-controls="painel-links"
+                  aria-selected="false">Links Úteis</button>
+              </li>
+            </ul>
+
+
+            <!-- ABA 1: PROCURADORIA -->
+            <div id="painel-procuradoria"
+              class="sec-tab-painel ativo"
+              role="tabpanel"
+              aria-labelledby="tab-procuradoria">
+
+              <h2 class="sec-titulo">
+                Procuradoria Geral do Município
+              </h2>
+
+              <div class="sec-texto">
+                <p>
+                  A Procuradoria Geral do Município é o órgão incumbido da defesa dos interesses do Município, 
+                  cujas atribuições e competências estão estabelecidas em Lei própria.
+                </p>
+              </div>
+
+              <!-- Contato do departamento -->
+              <div class="sec-contato-lista" aria-label="Informações de contato">
+
+                <div class="sec-contato-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>
+                    <strong>Endereço:</strong>
+                    Rua Doutor João Candido, 135 - Centro
+                  </span>
+                </div>
+
+                <div class="sec-contato-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <span>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627280">(41) 3162-7280</a>
+                  </span>
+                </div>
+
+                <div class="sec-contato-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    <strong>Email:</strong>
+                    <a href="mailto:procuradoria@pmcgs.pr.gov.br">procuradoria@pmcgs.pr.gov.br</a>
+                  </span>
+                </div>
+
+                <div class="sec-contato-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- Card do Responsável (Versão Compacta) -->
+              <div class="sec-secretario-bloco" aria-label="Responsável pelo setor">
+
+                <div class="sec-secretario-foto" aria-hidden="true">
+                  <img src="../../assets/img/secretarios-municipais/fabiana.caricati.jpg"
+                    alt="Foto de Fabiana Baptista Silva Caricati, Procuradora">
+                </div>
+
+                <div class="sec-secretario-corpo">
+                  <p class="sec-secretario-label">Procuradora</p>
+                  <h3 class="sec-secretario-nome">Fabiana Baptista Silva Caricati</h3>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- /ABA 1: PROCURADORIA -->
+
+
+            <!-- ABA 2: LINKS ÚTEIS -->
+            <div id="painel-links"
+              class="sec-tab-painel"
+              role="tabpanel"
+              aria-labelledby="tab-links">
+
+              <div class="sec-links-grid">
+                <div class="spweb-menu" data-model="sitemap" data-type="siteentity" data-id="0" data-entity="0108"></div>
+              </div>
+
+            </div>
+            <!-- /ABA 2: LINKS ÚTEIS -->
+
+          </article>
+          <!-- /ARTIGO PRINCIPAL -->
+
+
+          <!-- SIDEBAR -->
+          <aside id="pi-sidebar" class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
+
+            <!-- Controles de acessibilidade -->
+            <div class="pi-controles-bloco">
+              <h3><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h3>
+              <div class="pi-ctrl-row">
+                <span class="pi-ctrl-label">Tamanho da fonte</span>
+                <div class="pi-ctrl-btns">
+                  <button id="pi-sb-fonte-aumentar" class="pi-ctrl-btn" aria-label="Aumentar tamanho da fonte">A+</button>
+                  <button id="pi-sb-fonte-diminuir" class="pi-ctrl-btn" aria-label="Diminuir tamanho da fonte">A-</button>
+                  <button id="pi-sb-fonte-resetar" class="pi-ctrl-btn" aria-label="Restaurar tamanho da fonte padrão">A</button>
+                </div>
+              </div>
+              <div class="pi-ctrl-row">
+                <button id="pi-sb-btn-contraste"
+                  class="pi-ctrl-btn-contraste"
+                  aria-pressed="false"
+                  aria-label="Ativar ou desativar alto contraste">
+                  <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+                </button>
+              </div>
+            </div>
+
+            <!-- Navegação institucional -->
+            <div class="pi-sidebar-card">
+              <h3><i class="fas fa-building" aria-hidden="true"></i> Departamentos</h3>
+              <ul class="pi-sidebar-links">
+                <li><a href="#"><span>Administrativo</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+                <li><a href="#"><span>Controladoria Geral</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+                <li><a href="#"><span>Ouvidoria Geral</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+                <li class="ativo">
+                  <a href="#" aria-current="page">
+                    <span>Procuradoria Geral</span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li><a href="#"><span>Recursos Humanos</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+
+            <!-- Contato rápido -->
+            <div class="pi-sidebar-card pi-sidebar-contato">
+              <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h3>
+              <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 17h30</p>
+              <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7280</p>
+              <p><i class="fas fa-envelope" aria-hidden="true"></i> procuradoria@pmcgs.pr.gov.br</p>
+              <a href="#" class="pi-btn-verde pi-btn-full">
+                <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+              </a>
+            </div>
+
+          </aside>
+          <!-- /SIDEBAR -->
+
+        </div>
+      </div>
+    </main>
+
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <!-- Scripts Globais -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+
+  <!-- Script do Template -->
+  <script src="js/procuradoria.js"></script>
+
+</body>
+</html>

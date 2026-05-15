@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Ponto - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/servico.css">
+  <link rel="stylesheet" href="css/consulta-ponto.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+
+  <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li aria-current="page">Consulta de Ponto</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Consulta de Ponto</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main" aria-label="Conteúdo">
+    <div class="container">
+      <div id="pi-conteudo" class="servico-layout-full" tabindex="-1">
+
+        <!-- ARTIGO PRINCIPAL -->
+        <article class="w-100">
+
+          <!-- Público-alvo como tag/badge no topo -->
+          <div class="publico-alvo-container mb-4">
+            <span class="badge-publico">
+              <i class="fas fa-users"></i> Público-alvo: <strong>Servidores Municipais</strong>
+            </span>
+          </div>
+
+          <!-- Seção: O que é? -->
+          <section class="servico-secao" aria-labelledby="sec-oque">
+            <h2 id="sec-oque" class="servico-secao-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Sobre o Bio Portal
+            </h2>
+            <div class="servico-texto text-justify">
+              <p>O <strong>Bio Portal</strong> é a plataforma digital para servidores e colaboradores consultarem o ponto eletrônico, banco de horas e registros funcionais de forma prática e segura, modernizando a gestão de RH da Prefeitura.</p>
+            </div>
+          </section>
+
+          <!-- Seção: Acesso ao Sistema -->
+          <section class="servico-secao" aria-labelledby="sec-acesso">
+            <h2 id="sec-acesso" class="servico-secao-titulo">
+              <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Acesso e Download
+            </h2>
+            
+            <div class="row mt-4">
+              <!-- Acesso Web -->
+              <div class="col-md-12 mb-4">
+                <a href="https://portalpmcampinagrandedosul.biofinger.com.br/" target="_blank" class="btn-portal-web">
+                  <div class="icon"><i class="fas fa-desktop"></i></div>
+                  <div class="text">
+                    <span class="title">Acessar Bio Portal</span>
+                    <span class="subtitle">Versão para Navegador (Web)</span>
+                  </div>
+                  <i class="fas fa-external-link-alt arrow"></i>
+                </a>
+              </div>
+
+              <!-- Apps -->
+              <div class="col-md-6 mb-3">
+                <a href="https://play.google.com/store/apps/details?id=com.wsistemas.biomobile&hl=pt_br&pli=1" target="_blank" class="btn-app-download google-play">
+                  <i class="fab fa-google-play"></i>
+                  <div class="text">
+                    <span class="small">Disponível no</span>
+                    <span class="large">Google Play</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 mb-3">
+                <a href="https://apps.apple.com/br/app/biomobile/id1559023818" target="_blank" class="btn-app-download apple-store">
+                  <i class="fab fa-apple"></i>
+                  <div class="text">
+                    <span class="small">Baixar na</span>
+                    <span class="large">App Store</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seção: Vídeo Explicativo -->
+          <section class="servico-secao" aria-labelledby="sec-video">
+            <h2 id="sec-video" class="servico-secao-titulo">
+              <i class="fas fa-video" aria-hidden="true"></i> Como utilizar
+            </h2>
+            <div class="video-container">
+              <!-- Placeholder para o vídeo explicativo -->
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Vídeo explicativo sobre como utilizar o Bio Portal"></iframe>
+              </div>
+            </div>
+          </section>
+
+          <!-- Botões de ação -->
+          <div class="servico-acoes mt-5">
+            <a href="../../index.html" class="btn-servico-outline">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar ao início
+            </a>
+          </div>
+
+        </article>
+        <!-- /ARTIGO PRINCIPAL -->
+
+      </div>
+    </div>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/consulta-ponto.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+
+  <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação do departamento">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li>
+              <a href="#">Institucional</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            </li>
+            <li aria-current="page">
+              Ouvidoria Geral do Município
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">
+          Ouvidoria Geral do Município
+        </h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ARTIGO PRINCIPAL -->
+        <article>
+
+          <!-- Navegação por abas -->
+          <ul class="sec-tabs-nav" role="tablist" aria-label="Seções do departamento">
+            <li role="presentation">
+              <button class="sec-tab-btn ativo"
+                id="tab-ouvidoria"
+                role="tab"
+                aria-controls="painel-ouvidoria"
+                aria-selected="true">Ouvidoria</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                id="tab-links"
+                role="tab"
+                aria-controls="painel-links"
+                aria-selected="false">Links Úteis</button>
+            </li>
+          </ul>
+
+
+          <!-- ABA 1: OUVIDORIA -->
+          <div id="painel-ouvidoria"
+            class="sec-tab-painel ativo"
+            role="tabpanel"
+            aria-labelledby="tab-ouvidoria">
+
+            <h2 class="sec-titulo">
+              Ouvidoria Geral do Município
+            </h2>
+
+            <div class="sec-texto">
+              <p>
+                A Ouvidoria Geral do Município constitui um canal transparente entre os cidadãos e a administração pública, 
+                responsável por viabilizar a escuta de reclamações, sugestões e elogios sobre os serviços prestados pelo 
+                governo municipal.
+              </p>
+            </div>
+
+            <!-- Contato do departamento -->
+            <div class="sec-contato-lista" aria-label="Informações de contato">
+
+              <div class="sec-contato-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>
+                  <strong>Endereço:</strong>
+                  Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <strong>Telefone:</strong>
+                  <a href="tel:+554131627005">(41) 3162-7005</a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>
+                  <strong>Email:</strong>
+                  <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span>
+                  <strong>Horário de funcionamento:</strong>
+                  Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Card do Responsável (Versão Compacta) -->
+            <div class="sec-secretario-bloco" aria-label="Responsável pelo setor">
+
+              <div class="sec-secretario-foto" aria-hidden="true">
+                <img src="../../assets/img/secretarios-municipais/patricia.lazarotto.jpg"
+                  alt="Foto de Patricia A. Lazarotto, Secretária">
+              </div>
+
+              <div class="sec-secretario-corpo">
+                <p class="sec-secretario-label">Secretária</p>
+                <h3 class="sec-secretario-nome">Patricia A. Lazarotto</h3>
+                <!-- Biografia removida para versão compacta conforme solicitado -->
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /ABA 1: OUVIDORIA -->
+
+
+          <!-- ABA 2: LINKS ÚTEIS -->
+          <div id="painel-links"
+            class="sec-tab-painel"
+            role="tabpanel"
+            aria-labelledby="tab-links">
+
+            <div class="sec-links-grid">
+              <div class="spweb-menu" data-model="sitemap" data-type="siteentity" data-id="0" data-entity="0116"></div>
+            </div>
+
+          </div>
+          <!-- /ABA 2: LINKS ÚTEIS -->
+
+        </article>
+        <!-- /ARTIGO PRINCIPAL -->
+
+
+        <!-- SIDEBAR -->
+        <aside id="pi-sidebar" class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h3><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h3>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button id="pi-sb-fonte-aumentar" class="pi-ctrl-btn" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="pi-sb-fonte-diminuir" class="pi-ctrl-btn" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="pi-sb-fonte-resetar" class="pi-ctrl-btn" aria-label="Restaurar tamanho da fonte padrão">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button id="pi-sb-btn-contraste"
+                class="pi-ctrl-btn-contraste"
+                aria-pressed="false"
+                aria-label="Ativar ou desativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Navegação: lista de departamentos -->
+          <div class="pi-sidebar-card">
+            <h3><i class="fas fa-building" aria-hidden="true"></i> Departamentos</h3>
+            <ul class="pi-sidebar-links">
+              <li><a href="#"><span>Administrativo</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Coordenadoria de TI</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>Ouvidoria Geral</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li><a href="#"><span>Recursos Humanos</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h3>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7005</p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> ouvidoria@pmcgs.pr.gov.br</p>
+            <a href="#" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
+      </div>
+    </div>
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
