@@ -1,0 +1,165 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Consulta Pública</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Consulta Pública</h1>
+        <p class="pi-hero-subtitulo">Participe das decisões do nosso município</p>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main">
+    <div class="container">
+
+      <!-- Layout em grade: coluna principal + sidebar -->
+      <div id="pi-conteudo-layout" class="pi-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <article>
+
+          <!-- Seção Principal -->
+          <section aria-labelledby="pi-titulo-consulta">
+            <h2 id="pi-titulo-consulta" class="pi-secao-titulo">
+              <i class="fas fa-bullhorn" aria-hidden="true"></i>
+              16ª Conferência Municipal de Assistência Social
+            </h2>
+            <hr class="pi-secao-divider">
+            
+            <div class="pi-intro-texto">
+              <p>
+                A Consulta Pública prévia do regimento interno da 16ª Conferência Municipal de Assistência Social de Campina Grande do Sul visa promover a participação cidadã no processo de organização do momento conferencial.
+              </p>
+              <p>
+                Sua finalidade é a obtenção de contribuições, sugestões, propostas, críticas e demais manifestações pertinentes, por quaisquer interessados.
+              </p>
+            </div>
+
+            <!-- Card de Destaque para Ação -->
+            <div class="pi-card-acao">
+                <div class="pi-card-acao-header">
+                    <h3>Documentos e contribuições</h3>
+                </div>
+                <div class="pi-card-acao-corpo">
+                    <p>Acesse o formulário abaixo para enviar suas contribuições:</p>
+                    <div class="text-center mt-3">
+                        <a href="https://docs.google.com/forms/d/1OiR91DDPuE07NWZ-1njUsWvsfyc-WvuWgg7VYX_HPQM/viewform" 
+                           class="pi-btn-verde pi-btn-lg" target="_blank">
+                          <i class="fas fa-edit mr-2"></i> Acesse a Consulta Pública
+                        </a>
+                    </div>
+                </div>
+                <div class="pi-card-acao-footer">
+                    <div class="pi-alerta-periodo">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><strong>Período da consulta:</strong> 30/06/2025 a 02/07/2025</span>
+                    </div>
+                </div>
+            </div>
+
+          </section>
+
+        </article>
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+          <!-- Controles rápidos de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho do texto</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Resetar fonte">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Alternar modo de alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+                Alternar Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Navegação interna da seção -->
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-list" aria-hidden="true"></i> Relacionados</h4>
+            <ul class="pi-sidebar-links" aria-label="Páginas desta seção">
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>
+                    <i class="fas fa-bullhorn pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>
+                    Consulta Pública
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../ouvidoria/">
+                  <span>
+                    <i class="fas fa-comments pi-sidebar-ico" aria-hidden="true"></i>
+                    Ouvidoria
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../transparencia/">
+                  <span>
+                    <i class="fas fa-search pi-sidebar-ico" aria-hidden="true"></i>
+                    Transparência
+                  </span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <a href="../ouvidoria" class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>

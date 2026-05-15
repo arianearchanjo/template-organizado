@@ -1,0 +1,66 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   consulta-publica.css — Página de Consulta Pública
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Estilos específicos para a Consulta Pública que não estão no pi-global */
+
+.pi-card-acao {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.pi-card-acao-header {
+  background: var(--verde-claro);
+  padding: 16px 20px;
+  border-bottom: 1px solid #b3d6be;
+}
+
+.pi-card-acao-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0;
+}
+
+.pi-card-acao-corpo {
+  padding: 24px 20px;
+}
+
+.pi-card-acao-corpo p {
+  color: #555;
+  margin-bottom: 0;
+}
+
+.pi-card-acao-footer {
+  background: #f8fcf8;
+  padding: 14px 20px;
+  border-top: 1px solid var(--cinza-borda);
+}
+
+.pi-alerta-periodo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--verde-escuro);
+  font-size: 0.875rem;
+}
+
+.pi-alerta-periodo i {
+  color: var(--verde);
+}
+
+.pi-btn-lg {
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+}
+
+/* Ajustes finos para sidebar se necessário */
+.pi-sidebar-links li a:hover {
+    padding-left: 6px;
+}
