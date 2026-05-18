@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Governo Digital - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos Específicos -->
+  <link rel="stylesheet" href="../../assets/css/governo-digital.css">
+</head>
+
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- HERO -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+              <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+              <li aria-current="page">Governo Digital</li>
+            </ol>
+          </nav>
+          <h1 class="pi-hero-titulo">Governo Digital</h1>
+        </div>
+      </div>
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="pi-main">
+      <div class="container">
+        <div id="pi-conteudo-layout" class="pi-layout" tabindex="-1">
+
+          <!-- COLUNA PRINCIPAL -->
+          <article>
+            <section id="gd-introducao">
+              <h2 class="pi-secao-titulo">
+                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                A Estratégia de Governo Digital
+              </h2>
+              <hr class="pi-secao-divider">
+
+              <div class="pi-intro-texto">
+                <p>
+                  O <strong>Governo Digital</strong> é um programa municipal destinado a simplificar processos
+                  administrativos, utilizar interfaces eletrônicas de autoatendimento, minimizar o uso de documentos
+                  impressos e maximizar o uso de documentos eletrônicos — conforme o Decreto Municipal nº 2.021/2023,
+                  fundamentado na Lei Federal nº 14.129/2021.
+                </p>
+                <p>
+                  Por meio do Portal Governo Digital, cidadãos, pessoas jurídicas e outros entes públicos podem abrir
+                  processos, acompanhar solicitações e receber devolutivas de forma totalmente digital, sem necessidade
+                  de deslocamento até a Prefeitura.
+                </p>
+                <p>
+                  Nesta página, você encontra as normativas vigentes e o acesso direto ao portal de serviços digitais do
+                  município.
+                </p>
+              </div>
+            </section>
+
+            <section id="gd-legislacao" class="mt-5">
+              <h2 class="pi-secao-titulo">
+                <i class="fas fa-gavel" aria-hidden="true"></i>
+                Decreto e Normativas
+              </h2>
+              <hr class="pi-secao-divider">
+
+              <p class="pi-intro-texto">
+                O decreto municipal adota os princípios e instrumentos previstos na Lei Federal nº 14.129/2021,
+                regulamentando o acesso remoto aos serviços públicos municipais por meio do Portal Governo Digital:
+              </p>
+
+              <!-- Card de Decreto -->
+              <a href="#" class="gd-card-decreto" title="Baixar Decreto de Governo Digital">
+                <div class="gd-decreto-icon">
+                  <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="gd-decreto-info">
+                  <h3>Decreto Municipal nº 2.021, de 06 de julho de 2023</h3>
+                  <p>Adota os princípios, regras e instrumentos do Governo Digital no âmbito do Município de Campina
+                    Grande do Sul, com base na Lei Federal nº 14.129/2021.</p>
+                </div>
+                <div class="gd-decreto-action">
+                  <i class="fas fa-download"></i>
+                </div>
+              </a>
+            </section>
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+            <div class="pi-sidebar-card">
+              <h4><i class="fas fa-external-link-alt" aria-hidden="true"></i> Links Relacionados</h4>
+              <ul class="pi-sidebar-links">
+                <li>
+                  <a href="../../pages-migradas/portal-servicos/index.html">
+                    <i class="fas fa-concierge-bell pi-sidebar-ico"></i>
+                    <span>Portal de Serviços</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../lgpd/index.html">
+                    <i class="fas fa-shield-alt pi-sidebar-ico"></i>
+                    <span>Proteção de Dados (LGPD)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../../pages-migradas/transparencia/index.html">
+                    <i class="fas fa-chart-line pi-sidebar-ico"></i>
+                    <span>Transparência</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pi-sidebar-card">
+              <h4><i class="fas fa-info-circle" aria-hidden="true"></i> Informações</h4>
+              <ul class="pi-sidebar-links">
+                <li>
+                  <a href="../../pages-migradas/perguntas-frequentes/index.html">
+                    <i class="fas fa-question-circle pi-sidebar-ico"></i>
+                    <span>Dúvidas sobre Serviços Digitais</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </main>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+</body>
+
+</html>
