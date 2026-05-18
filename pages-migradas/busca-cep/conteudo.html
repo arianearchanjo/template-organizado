@@ -1,0 +1,172 @@
+<!-- HERO -->
+<section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+        <div class="pi-hero-inner">
+            <nav aria-label="Você está em">
+                <ol class="pi-breadcrumb">
+                    <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+                    <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+                    <li aria-current="page">Buscar CEP</li>
+                </ol>
+            </nav>
+            <h1 class="pi-hero-titulo">Buscar CEP</h1>
+            <p class="pi-hero-subtitulo">Consulte códigos postais de Campina Grande do Sul - PR</p>
+        </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+       LAYOUT PRINCIPAL — conteúdo + sidebar
+  ═══════════════════════════════════════════════════════════ -->
+<main id="pi-main" class="pi-main" tabindex="-1">
+    <div class="pi-container">
+        <div class="pi-layout">
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  COLUNA DE CONTEÚDO                             ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <div class="pi-layout__content">
+
+                <!-- ── SEÇÃO 1: Buscador ──────── -->
+                <section aria-labelledby="cep-sec-busca">
+                    <div class="cep-card-busca">
+                        <form id="cepForm" class="cep-form">
+                            <div class="form-group">
+                                <label for="logradouro" class="cep-label">Digite o nome do logradouro:</label>
+                                <div class="input-group">
+                                    <input type="text" id="logradouro" class="form-control cep-input" 
+                                           placeholder="Ex: Rua João Paulo II" required>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="pi-btn-verde">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                            <span class="d-none d-sm-inline ml-1">Buscar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cep-alerta-info" role="note">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <p>Para melhores resultados, digite o nome completo do logradouro e verifique se está escrito corretamente.</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- ── SEÇÃO 2: Estados e Resultados ────────────── -->
+                <section class="pi-section" aria-labelledby="cep-sec-resultado">
+                    
+                    <!-- Loading -->
+                    <div id="loadingContainer" class="cep-loading d-none">
+                        <div class="spinner-border text-success" role="status">
+                            <span class="sr-only">Carregando...</span>
+                        </div>
+                        <p>Buscando CEPs...</p>
+                    </div>
+
+                    <!-- Resultados -->
+                    <div id="resultadoContainer" class="d-none">
+                        <h2 class="pi-section__titulo" id="cep-sec-resultado">
+                            <i class="fas fa-list-ul" aria-hidden="true"></i>
+                            Resultados Encontrados
+                        </h2>
+                        <div id="resultado" class="cep-resultados-grid">
+                            <!-- Os cards de resultado serão injetados aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Erro / Vazio -->
+                    <div id="erroContainer" class="cep-vazio d-none" role="alert">
+                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                        <p id="erroMensagem">Nenhum CEP encontrado para o logradouro informado.</p>
+                    </div>
+
+                </section>
+
+                <!-- ── SEÇÃO 3: Informações Institucionais ────────────── -->
+                <section class="pi-section">
+                    <div class="cep-institucional">
+                        <p>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            As informações disponibilizadas nesta consulta são fornecidas pelos <strong>Correios</strong>, que são os responsáveis pela programação dos CEPs do município.
+                        </p>
+                        <p>
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Para informações adicionais, entre em contato via WhatsApp: 
+                            <a href="https://wa.me/4131627060" class="cep-link-whats" target="_blank" rel="noopener">
+                                (41) 3162-7060
+                            </a>
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+            <!-- /COLUNA DE CONTEÚDO -->
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  SIDEBAR — AÇÕES RÁPIDAS                        ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <aside class="pi-layout__sidebar" aria-label="Ações rápidas e recursos">
+
+                <!-- Bloco: Acessibilidade -->
+                <div class="pi-sidebar-bloco pi-controles-bloco">
+                    <h4 class="pi-sidebar-titulo">
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        Acessibilidade
+                    </h4>
+                    <div class="pi-ctrl-row">
+                        <span class="pi-ctrl-label">Tamanho do texto</span>
+                        <div class="pi-ctrl-btns">
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar" aria-label="Resetar fonte">A</button>
+                        </div>
+                    </div>
+                    <div class="pi-ctrl-row" style="margin-top: 10px;">
+                        <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                                aria-pressed="false" aria-label="Alternar modo de alto contraste">
+                            <i class="fas fa-adjust" aria-hidden="true"></i>
+                            Alternar Alto Contraste
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bloco: Recursos -->
+                <div class="pi-sidebar-bloco">
+                    <h2 class="pi-sidebar-titulo">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        Recursos
+                    </h2>
+                    <nav aria-label="Links para download">
+                        <a href="/Downloads/Arquivos/2025_4934_xrcazwuxdej.pdf" target="_blank" class="pi-btn-outline pi-btn-outline--sm cep-sidebar-btn">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            Tabela de Listagem de CEP
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Bloco: Links Externos -->
+                <div class="pi-sidebar-bloco">
+                    <h2 class="pi-sidebar-titulo">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        Links Externos
+                    </h2>
+                    <nav aria-label="Serviços externos">
+                        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener" class="pi-btn-outline pi-btn-outline--sm cep-sidebar-btn mt-2">
+                            <i class="fas fa-truck" aria-hidden="true"></i>
+                            Busca CEP - Correios
+                        </a>
+                    </nav>
+                </div>
+
+            </aside>
+            <!-- /SIDEBAR -->
+
+        </div>
+        <!-- /pi-layout -->
+    </div>
+    <!-- /pi-container -->
+</main>
