@@ -1,0 +1,255 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   lgpd.css — Página de LGPD (Lei Geral de Proteção de Dados)
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Reutiliza as variáveis do index.css e define locais se necessário */
+
+/* Hero Section */
+#pi-hero {
+  background: var(--verde);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+/* Layout Principal */
+#pi-main {
+  padding: 40px 0 56px;
+  background: #fff;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .pi-layout {
+    grid-template-columns: 1fr;
+  }
+  .pi-sidebar {
+    order: -1;
+  }
+}
+
+.pi-secao-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pi-secao-divider {
+  border: 0;
+  border-top: 2px solid var(--verde-claro);
+  margin: 0 0 24px;
+}
+
+.pi-intro-texto {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.75;
+}
+
+.pi-intro-texto p {
+  margin-bottom: 20px;
+}
+
+/* Card do Encarregado */
+.lgpd-card-encarregado {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lgpd-card-encarregado::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--verde);
+}
+
+.lgpd-encarregado-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.lgpd-encarregado-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--verde-claro);
+  color: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.lgpd-encarregado-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: var(--verde-escuro);
+}
+
+.lgpd-encarregado-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.lgpd-encarregado-detalhes {
+  display: grid;
+  gap: 15px;
+}
+
+.lgpd-detalhe-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.lgpd-detalhe-item i {
+  color: var(--verde);
+  width: 20px;
+  text-align: center;
+}
+
+.lgpd-detalhe-item strong {
+  color: var(--texto);
+}
+
+/* Sidebar */
+.pi-sidebar-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-sidebar-card h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--verde-medio);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-card h4 i {
+  font-size: 0.875rem;
+  color: var(--verde);
+}
+
+.pi-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pi-sidebar-links li {
+  margin-bottom: 12px;
+}
+
+.pi-sidebar-links li:last-child {
+  margin-bottom: 0;
+}
+
+.pi-sidebar-links a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #444;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.pi-sidebar-links a:hover {
+  color: var(--verde);
+}
+
+.pi-sidebar-ico {
+  font-size: 0.85rem;
+  color: var(--verde);
+  margin-top: 3px;
+  width: 16px;
+  text-align: center;
+}
+
+.pi-sidebar-contato {
+  background: var(--verde-claro);
+  border-color: #b3d6be !important;
+}
+
+.pi-sidebar-contato h4 {
+  border-color: #b3d6be;
+}
