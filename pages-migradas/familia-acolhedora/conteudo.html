@@ -1,0 +1,145 @@
+<!-- ══════════════════════════════════════════════════════════════
+       HERO — Título da página, breadcrumb e ilustração decorativa
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Família Acolhedora</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Serviço de Família Acolhedora</h1>
+        <p class="pi-hero-subtitulo">Acolhimento familiar provisório para crianças e adolescentes</p>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main">
+    <div class="container">
+
+      <div id="pi-conteudo-layout" class="pi-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <article>
+
+          <section aria-labelledby="pi-titulo-servico">
+            <h2 id="pi-titulo-servico" class="pi-secao-titulo">
+              <i class="fas fa-hands-holding" aria-hidden="true"></i>
+              Edital de Chamamento Público
+            </h2>
+            <hr class="pi-secao-divider">
+            
+            <div class="pi-intro-texto">
+              <p>
+                O município de Campina Grande do Sul/PR torna público o edital de chamamento para inscrição e seleção de famílias interessadas em participar do serviço de <strong>acolhimento familiar provisório de crianças e adolescentes</strong>, denominado “Serviço de Acolhimento na Modalidade de Família Acolhedora”.
+              </p>
+            </div>
+
+            <!-- Card de Inscrição -->
+            <div class="pi-info-inscricao-card">
+                <div class="pi-info-header">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Como participar</h3>
+                </div>
+                <div class="pi-info-body">
+                    <p>As inscrições são gratuitas e devem ser realizadas presencialmente:</p>
+                    <address class="mt-3">
+                        <strong>Secretaria Municipal de Desenvolvimento Social</strong><br>
+                        Rua Prof. Duílio Calderari, nº 1567, Jardim Paulista<br>
+                        <i class="fas fa-clock mr-1"></i> Segunda a Sexta-feira<br>
+                        <i class="fas fa-sun mr-1"></i> 09:00h às 11:30min e 14:00h às 17:00h
+                    </address>
+                </div>
+            </div>
+
+            <h3 class="pi-subtitulo">Documentos do Chamamento</h3>
+            
+            <div class="pi-pdf-links">
+                <!-- Edital PDF -->
+                <a href="https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2025_4717_czot040xcpl.pdf" 
+                   class="pi-pdf-item" target="_blank">
+                    <div class="pi-pdf-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="pi-pdf-texto">
+                        <strong>Edital de Chamamento Público</strong>
+                        <span>Clique para visualizar o documento completo</span>
+                    </div>
+                    <i class="fas fa-download"></i>
+                </a>
+
+                <!-- Publicação PDF -->
+                <a href="https://www.campinagrandedosul.pr.gov.br/Downloads/Arquivos/2025_4718_x2xqy4gue0q.pdf" 
+                   class="pi-pdf-item" target="_blank">
+                    <div class="pi-pdf-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="pi-pdf-texto">
+                        <strong>Publicação do Edital</strong>
+                        <span>Publicação oficial do chamamento</span>
+                    </div>
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+
+            <div class="pi-contato-ajuda mt-5">
+                <div class="d-flex align-items-center">
+                    <div class="pi-ajuda-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="ml-3">
+                        <p class="mb-0">Para mais informações, ligue para:</p>
+                        <strong>(41) 3162-7222</strong>
+                    </div>
+                </div>
+            </div>
+
+          </section>
+
+        </article>
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside class="pi-sidebar">
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Texto</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir">A−</button>
+              </div>
+            </div>
+            <button class="pi-ctrl-btn-contraste mt-2" id="pi-sb-btn-contraste">
+              <i class="fas fa-adjust"></i> Alto Contraste
+            </button>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-link"></i> Links Úteis</h4>
+            <ul class="pi-sidebar-links">
+                <li><a href="../acessibilidade/">Acessibilidade <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="../ouvidoria/">Ouvidoria <i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>

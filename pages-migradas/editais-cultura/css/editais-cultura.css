@@ -1,0 +1,122 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   editais-cultura.css — Página de Editais de Cultura
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Box de Alerta para o Período */
+.pi-alerta-box {
+  background: var(--verde-claro);
+  border: 1px solid var(--cinza-borda);
+  border-left: 5px solid var(--verde);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pi-alerta-icon {
+  font-size: 1.5rem;
+  color: var(--verde);
+}
+
+.pi-alerta-corpo {
+  font-size: 1rem;
+  color: var(--verde-escuro);
+}
+
+/* Grid de Editais */
+.pi-links-editais {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.pi-edital-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.pi-edital-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.pi-edital-info h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 4px;
+}
+
+.pi-edital-info p {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.pi-btn-edital {
+  background: transparent;
+  color: var(--verde);
+  border: 1.5px solid var(--verde);
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.pi-btn-edital:hover {
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Rodapé de Contato */
+.pi-contato-footer {
+  background: #f9fbf9;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 0.875rem;
+  color: #555;
+  border: 1px dashed var(--cinza-borda);
+}
+
+.pi-contato-footer p {
+  margin-bottom: 8px;
+}
+
+.pi-contato-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.pi-contato-footer a {
+  color: var(--verde);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pi-contato-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 575px) {
+    .pi-edital-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .pi-btn-edital {
+        width: 100%;
+        text-align: center;
+    }
+}
