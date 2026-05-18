@@ -215,33 +215,41 @@
 }
 
 .pi-sidebar-links li {
-  margin-bottom: 12px;
+  border-bottom: 1px solid #eef2ee;
 }
 
 .pi-sidebar-links li:last-child {
-  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .pi-sidebar-links a {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.875rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 4px;
+  font-size: 0.8125rem;
   color: #444;
   text-decoration: none;
-  line-height: 1.4;
-  transition: color 0.2s;
+  transition: color 0.15s, padding-left 0.15s;
+  gap: 8px;
   text-align: left;
 }
 
 .pi-sidebar-links a:hover {
   color: var(--verde);
+  padding-left: 6px;
+}
+
+.pi-sidebar-links a i.fa-chevron-right {
+  font-size: 0.625rem;
+  color: #bbb;
+  flex-shrink: 0;
 }
 
 .pi-sidebar-ico {
+  margin-right: 8px;
+  color: #aaa;
   font-size: 0.85rem;
-  color: var(--verde);
-  margin-top: 3px;
   width: 16px;
   text-align: center;
 }

@@ -1,0 +1,402 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   horarios-onibus.css — Página de Horários de Ônibus
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* — Ônibus — cores principais (Verde Institucional) */
+  --bus-primario:       #2d7a2d;
+  --bus-primario-claro: #3a9a3a;
+  --bus-primario-bg:    #e8f5e8;
+  --bus-borda:          #c8d8c8;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. ESTRUTURA BASE (MIGRADA DE ACESSIBILIDADE.CSS)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#pi-hero {
+  background: var(--verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pi-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pi-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+.pi-main {
+  background: #fff;
+  padding: 40px 0 56px;
+}
+
+.pi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+.pi-section { margin-bottom: 40px; }
+
+.pi-section__titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-section__titulo i { color: var(--verde); font-size: 1rem; }
+
+.pi-sidebar-bloco {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-sidebar-titulo {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-titulo i { color: var(--verde); }
+
+.pi-btn-verde {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--verde);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.pi-btn-verde:hover { background: var(--verde-escuro); color: #fff; text-decoration: none; transform: translateY(-1px); }
+
+.pi-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--verde);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 6px;
+  border: 1.5px solid var(--verde);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.pi-btn-outline:hover { background: var(--verde-claro); color: var(--verde-escuro); text-decoration: none; }
+
+.pi-btn-outline--sm { padding: 7px 14px; font-size: 0.75rem; }
+
+/* Acessibilidade Sidebar */
+.pi-controles-bloco {
+  background: var(--verde-claro);
+  border: 1.5px solid #b8dab8;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.pi-ctrl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.pi-ctrl-label { font-size: 0.75rem; color: #3a5a3a; flex: 1; }
+.pi-ctrl-btns { display: flex; gap: 4px; }
+.pi-ctrl-btn {
+  border: 1px solid #b8dab8;
+  background: #fff;
+  color: var(--verde-escuro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pi-ctrl-btn:hover { background: var(--verde); color: #fff; }
+
+.pi-ctrl-btn-contraste {
+  width: 100%;
+  border: 1.5px solid #b8dab8;
+  background: #fff;
+  color: var(--verde-escuro);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pi-ctrl-btn-contraste:hover { background: var(--verde); color: #fff; }
+
+@media (max-width: 991px) {
+  .pi-layout { grid-template-columns: 1fr; }
+  .pi-layout__sidebar { 
+    order: -1; 
+    margin-bottom: 30px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. ESTILOS LEGACY (COM CORES CORRIGIDAS)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#formservice .card {
+    border: 1px solid var(--bus-borda);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.bus-label-legacy {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 6px;
+}
+
+#formservice .form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 0.9rem;
+}
+
+#resultado h2 {
+    background-color: var(--bus-primario);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+#formservice .saida-container {
+    background-color: var(--bus-primario);
+    border: 1px solid var(--bus-primario);
+    color: #fff;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+#formservice .horarios-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    gap: 10px;
+    padding-left: 4px;
+}
+
+#formservice .horario-btn {
+    background-color: #fff;
+    border: 1.5px solid var(--bus-primario);
+    color: var(--bus-primario);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: default;
+    user-select: none;
+    transition: all 0.2s ease;
+    min-width: 75px;
+    text-align: center;
+}
+
+#formservice .horario-btn:hover {
+    background-color: var(--bus-primario-bg);
+}
+
+.bus-vazio-legacy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    background: #fdfdfd;
+    border: 2px dashed var(--bus-borda);
+    border-radius: 12px;
+    color: #888;
+}
+
+.bus-vazio-legacy i {
+    font-size: 3rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.bus-texto-legacy {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ── Ajustes Sidebar Ônibus ── */
+.pi-sidebar-cidade-destaque {
+    background: var(--bus-primario-bg);
+    border: 2px solid var(--bus-primario);
+}
+
+.bus-label-sidebar {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.bus-select-sidebar {
+    background-color: #fff !important;
+    border: 1px solid var(--bus-primario);
+    font-weight: 600;
+    color: var(--bus-primario);
+}
+
+.bus-sidebar-btn {
+    margin-bottom: 12px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.bus-sidebar-btn:last-child {
+    margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. ALTO CONTRASTE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast #pi-hero { background: #000 !important; border-bottom: 2px solid #fff; }
+body.high-contrast .pi-hero-ilustracao { display: none; }
+body.high-contrast .pi-section__titulo, body.high-contrast .pi-sidebar-titulo { color: #fff !important; border-bottom-color: #fff !important; }
+body.high-contrast .pi-section__titulo i, body.high-contrast .pi-sidebar-titulo i { color: #ff0 !important; }
+
+body.high-contrast .pi-btn-verde { background: #ff0 !important; color: #000 !important; border: 1px solid #fff !important; }
+body.high-contrast .pi-btn-outline { color: #ff0 !important; border-color: #ff0 !important; }
+
+body.high-contrast #resultado h2, 
+body.high-contrast #formservice .saida-container {
+    background-color: #000 !important;
+    color: #ff0 !important;
+    border: 2px solid #fff !important;
+}
+
+body.high-contrast #formservice .horario-btn {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+body.high-contrast .bus-vazio-legacy {
+    background: #000 !important;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+body.high-contrast .pi-sidebar-cidade-destaque {
+    background: #000 !important;
+    border-color: #ff0 !important;
+}

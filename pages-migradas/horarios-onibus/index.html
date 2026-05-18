@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horários de Ônibus - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/horarios-onibus.css">
+  
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+<main id="conteudo-principal" class="pi-main" tabindex="-1">
+    <div class="pi-container">
+        <div class="pi-layout">
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  COLUNA DE CONTEÚDO                             ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <div class="pi-layout__content">
+
+                <!-- ── SEÇÃO 1: Buscador de Horários ──────── -->
+                <section aria-labelledby="bus-sec-busca">
+                    <div class="bus-filtro-container">
+                        <form id="formFiltro" class="bus-form">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="cidade" class="bus-label">Cidade</label>
+                                        <select id="cidade" class="form-control bus-select" disabled>
+                                            <option value="campina_grande_do_sul" selected>Campina Grande do Sul
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="linha" class="bus-label">Selecione a linha:</label>
+                                        <select id="linha" class="form-control bus-select">
+                                            <option value="">Selecione a linha</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="dia" class="bus-label">Selecione o dia:</label>
+                                        <select id="dia" class="form-control bus-select">
+                                            <option value="Dia Útil">Dia Útil</option>
+                                            <option value="Sábado">Sábado</option>
+                                            <option value="Domingo">Domingo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bus-form-footer">
+                                <button id="btnBuscar" type="button" class="pi-btn-verde">
+                                    <i class="fas fa-search" aria-hidden="true"></i> Buscar Horários
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- ── SEÇÃO 2: Resultados ────────────── -->
+                <section class="pi-section" aria-labelledby="bus-sec-resultado">
+                    <div id="resultado-container" class="bus-resultado-area">
+                        <!-- Mensagem inicial ou resultados aqui -->
+                        <div class="bus-vazio">
+                            <i class="fas fa-bus-simple" aria-hidden="true"></i>
+                            <p>Selecione uma linha e o dia para consultar os horários.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── SEÇÃO 3: Informações Adicionais ────────────── -->
+                <section class="pi-section" aria-labelledby="bus-sec-info">
+                    <h2 class="pi-section__titulo" id="bus-sec-info">
+                        <i class="fas fa-circle-info" aria-hidden="true"></i>
+                        Informações Adicionais
+                    </h2>
+                    <p class="bus-texto">
+                        Os horários e itinerários das linhas de ônibus são fornecidos pela Metrocard.
+                        Eventuais alterações no quadro de horários são de responsabilidade da operadora do transporte
+                        coletivo.
+                    </p>
+                    <div class="bus-alerta" role="note">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        <div>
+                            Para mais informações sobre cartões, recargas e outros serviços da Metrocard, acesse o site
+                            oficial:
+                            <a class="bus-alerta__link" href="https://www.cartaometrocard.com.br/" target="_blank"
+                                rel="noopener noreferrer">
+                                cartaometrocard.com.br <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <!-- /COLUNA DE CONTEÚDO -->
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  SIDEBAR — AÇÕES RÁPIDAS                        ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <aside class="pi-layout__sidebar" aria-label="Ações rápidas e contatos">
+
+                <!-- Bloco: Controles de Acessibilidade -->
+                <div class="pi-sidebar-bloco pi-controles-bloco">
+                    <h4 class="pi-sidebar-titulo">
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        Acessibilidade
+                    </h4>
+
+                    <!-- Controle de tamanho de texto -->
+                    <div class="pi-ctrl-row">
+                        <span class="pi-ctrl-label">Tamanho do texto</span>
+                        <div class="pi-ctrl-btns">
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar"
+                                aria-label="Aumentar fonte">A+</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir"
+                                aria-label="Diminuir fonte">A−</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar" aria-label="Resetar fonte">A</button>
+                        </div>
+                    </div>
+
+                    <!-- Alternador de alto contraste -->
+                    <div class="pi-ctrl-row" style="margin-top: 10px;">
+                        <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste" aria-pressed="false"
+                            aria-label="Alternar modo de alto contraste">
+                            <i class="fas fa-adjust" aria-hidden="true"></i>
+                            Alternar Alto Contraste
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bloco: Links Úteis -->
+                <div class="pi-sidebar-bloco">
+                    <h2 class="pi-sidebar-titulo">
+                        <i class="fas fa-link" aria-hidden="true"></i>
+                        Links Úteis
+                    </h2>
+                    <nav aria-label="Links relacionados ao transporte">
+                        <a href="https://cartaometrocard.com.br/cartao-metrocard/" target="_blank" rel="noopener"
+                            class="pi-btn-outline pi-btn-outline--sm bus-sidebar-btn">
+                            <i class="fas fa-address-card" aria-hidden="true"></i>
+                            Cartão Metrocard
+                        </a>
+                        <a href="https://cartaometrocard.com.br/canais-de-atendimento/" target="_blank" rel="noopener"
+                            class="pi-btn-outline pi-btn-outline--sm bus-sidebar-btn bus-sidebar-btn-mt">
+                            <i class="fas fa-question-circle" aria-hidden="true"></i>
+                            Canais de Atendimento Metrocard
+                        </a>
+                    </nav>
+                </div>
+
+
+            </aside>
+            <!-- /SIDEBAR -->
+
+        </div>
+        <!-- /pi-layout -->
+    </div>
+    <!-- /pi-container -->
+</main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+
+  <!-- Script Específico -->
+  <script src="js/horarios.js"></script>
+  
+</body>
+</html>

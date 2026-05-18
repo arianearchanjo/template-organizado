@@ -1,0 +1,165 @@
+<!-- HERO -->
+<section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+        <div class="pi-hero-inner">
+            <nav aria-label="Você está em">
+                <ol class="pi-breadcrumb">
+                    <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+                    <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+                    <li aria-current="page">Horários de Ônibus</li>
+                </ol>
+            </nav>
+            <h1 class="pi-hero-titulo">Horários de Ônibus</h1>
+        </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+       LAYOUT PRINCIPAL — conteúdo + sidebar
+  ═══════════════════════════════════════════════════════════ -->
+<main id="pi-main" class="pi-main" tabindex="-1">
+    <div class="pi-container">
+        <div class="pi-layout">
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  COLUNA DE CONTEÚDO                             ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <div class="pi-layout__content">
+
+                <section id="formservice" class="pb-4">
+                    <div class="row">
+                        <!-- Coluna do Formulário -->
+                        <div class="col-lg-5 col-xl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="formFiltro" class="d-flex flex-column">
+                                        <!-- CIDADE REMOVIDA DAQUI - MOVIDA PARA SIDEBAR -->
+                                        <div class="form-group">
+                                            <label for="linha" class="bus-label-legacy">Seleciona a linha:</label>
+                                            <select id="linha" class="form-control">
+                                                <option value="">Selecione a linha</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dia" class="bus-label-legacy">Seleciona o dia:</label>
+                                            <select id="dia" class="form-control">
+                                                <option value="Dia Útil">Dia Útil</option>
+                                                <option value="Sábado">Sábado</option>
+                                                <option value="Domingo">Domingo</option>
+                                            </select>
+                                        </div>
+                                        <button id="btnBuscar" type="button" class="pi-btn-verde mt-3">
+                                            <i class="fas fa-search" aria-hidden="true"></i> Buscar Horários
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna de Resultados -->
+                        <div class="col-lg-7 col-xl-8">
+                            <div id="resultado" class="p-0">
+                                <!-- Mensagem inicial -->
+                                <div class="bus-vazio-legacy">
+                                    <i class="fas fa-bus-simple" aria-hidden="true"></i>
+                                    <p>Selecione a linha e o dia para exibir os horários.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Informações Adicionais -->
+                <section class="pi-section mt-4" aria-labelledby="bus-sec-info">
+                    <h2 class="pi-section__titulo" id="bus-sec-info">
+                        <i class="fas fa-circle-info" aria-hidden="true"></i>
+                        Informações Adicionais
+                    </h2>
+                    <p class="bus-texto-legacy">
+                        Os horários e itinerários das linhas de ônibus são fornecidos pela Metrocard. 
+                        Eventuais alterações no quadro de horários são de responsabilidade da operadora do transporte coletivo.
+                    </p>
+                </section>
+
+            </div>
+            <!-- /COLUNA DE CONTEÚDO -->
+
+            <!-- ╔══════════════════════════════════════════════════╗
+             ║  SIDEBAR — AÇÕES RÁPIDAS                        ║
+             ╚══════════════════════════════════════════════════╝ -->
+            <aside class="pi-layout__sidebar" aria-label="Ações rápidas e filtros">
+
+                <!-- Bloco: Filtro de Cidade (Destaque) -->
+                <div class="pi-sidebar-bloco pi-sidebar-cidade-destaque">
+                    <h4 class="pi-sidebar-titulo">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        Localidade
+                    </h4>
+                    <div class="form-group mb-0">
+                        <label for="cidade" class="bus-label-sidebar">Cidade</label>
+                        <select id="cidade" class="form-control bus-select-sidebar" disabled>
+                            <option value="campina_grande_do_sul" selected>Campina Grande do Sul</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Bloco: Controles de Acessibilidade -->
+                <div class="pi-sidebar-bloco pi-controles-bloco">
+                    <h4 class="pi-sidebar-titulo">
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        Acessibilidade
+                    </h4>
+
+                    <!-- Controle de tamanho de texto -->
+                    <div class="pi-ctrl-row">
+                        <span class="pi-ctrl-label">Tamanho do texto</span>
+                        <div class="pi-ctrl-btns">
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+                            <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar" aria-label="Resetar fonte">A</button>
+                        </div>
+                    </div>
+
+                    <!-- Alternador de alto contraste -->
+                    <div class="pi-ctrl-row" style="margin-top: 10px;">
+                        <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                                aria-pressed="false" aria-label="Alternar modo de alto contraste">
+                            <i class="fas fa-adjust" aria-hidden="true"></i>
+                            Alternar Alto Contraste
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bloco: Links Úteis -->
+                <div class="pi-sidebar-bloco">
+                    <h2 class="pi-sidebar-titulo">
+                        <i class="fas fa-link" aria-hidden="true"></i>
+                        Links Úteis
+                    </h2>
+                    <nav aria-label="Links relacionados ao transporte">
+                        <a href="https://cartaometrocard.com.br/cartao-metrocard/" target="_blank" rel="noopener" class="pi-btn-outline pi-btn-outline--sm bus-sidebar-btn">
+                            <i class="fas fa-address-card" aria-hidden="true"></i>
+                            Cartão Metrocard
+                        </a>
+                        <a href="https://www.cartaometrocard.com.br/pontos-de-venda/" target="_blank" rel="noopener" class="pi-btn-outline pi-btn-outline--sm bus-sidebar-btn">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            Pontos de Venda
+                        </a>
+                        <a href="https://cartaometrocard.com.br/canais-de-atendimento/" target="_blank" rel="noopener" class="pi-btn-outline pi-btn-outline--sm bus-sidebar-btn">
+                            <i class="fas fa-headset" aria-hidden="true"></i>
+                            Atendimento Metrocard
+                        </a>
+                    </nav>
+                </div>
+
+            </aside>
+            <!-- /SIDEBAR -->
+
+        </div>
+        <!-- /pi-layout -->
+    </div>
+    <!-- /pi-container -->
+</main>
