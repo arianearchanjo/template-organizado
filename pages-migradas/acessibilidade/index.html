@@ -31,7 +31,7 @@
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-  <main id="pi-conteudo">
+  <div id="pi-wrapper">
     <!-- ══════════════════════════════════════════════════════════════
        HERO — Título da página, breadcrumb e ilustração decorativa
   ════════════════════════════════════════════════════════════════ -->
@@ -240,53 +240,55 @@
             </h2>
             <hr class="pi-secao-divider">
 
-            <table class="pi-atalhos-tabela"
-                   aria-label="Tabela de atalhos de teclado disponíveis no portal">
-              <thead>
-                <tr>
-                  <th scope="col">Combinação de Teclas</th>
-                  <th scope="col">Ação</th>
-                  <th scope="col">Observação</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">1</kbd></td>
-                  <td>Ir para o conteúdo principal</td>
-                  <td>Pula o menu e a barra de navegação</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">2</kbd></td>
-                  <td>Ir para o menu principal</td>
-                  <td>Foco no primeiro item do menu</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">3</kbd></td>
-                  <td>Ir para o rodapé</td>
-                  <td>Links institucionais e contato</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Tab</kbd></td>
-                  <td>Avançar para o próximo elemento interativo</td>
-                  <td>Funciona em toda a página</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Shift</kbd> + <kbd class="pi-kbd">Tab</kbd></td>
-                  <td>Voltar ao elemento anterior</td>
-                  <td>Funciona em toda a página</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Enter</kbd> / <kbd class="pi-kbd">Espaço</kbd></td>
-                  <td>Ativar link ou botão em foco</td>
-                  <td>Para elementos focados</td>
-                </tr>
-                <tr>
-                  <td><kbd class="pi-kbd">Esc</kbd></td>
-                  <td>Fechar menu ou modal aberto</td>
-                  <td>—</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="pi-atalhos-wrapper">
+              <table class="pi-atalhos-tabela"
+                     aria-label="Tabela de atalhos de teclado disponíveis no portal">
+                <thead>
+                  <tr>
+                    <th scope="col">Combinação de Teclas</th>
+                    <th scope="col">Ação</th>
+                    <th scope="col">Observação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">1</kbd></td>
+                    <td data-label="Ação">Ir para o conteúdo principal</td>
+                    <td data-label="Observação">Pula o menu e a barra de navegação</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">2</kbd></td>
+                    <td data-label="Ação">Ir para o menu principal</td>
+                    <td data-label="Observação">Foco no primeiro item do menu</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Alt</kbd> + <kbd class="pi-kbd">3</kbd></td>
+                    <td data-label="Ação">Ir para o rodapé</td>
+                    <td data-label="Observação">Links institucionais e contato</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Tab</kbd></td>
+                    <td data-label="Ação">Avançar para o próximo elemento interativo</td>
+                    <td data-label="Observação">Funciona em toda a página</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Shift</kbd> + <kbd class="pi-kbd">Tab</kbd></td>
+                    <td data-label="Ação">Voltar ao elemento anterior</td>
+                    <td data-label="Observação">Funciona em toda a página</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Enter</kbd> / <kbd class="pi-kbd">Espaço</kbd></td>
+                    <td data-label="Ação">Ativar link ou botão em foco</td>
+                    <td data-label="Observação">Para elementos focados</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Teclas"><kbd class="pi-kbd">Esc</kbd></td>
+                    <td data-label="Ação">Fechar menu ou modal aberto</td>
+                    <td data-label="Observação">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <p class="pi-nota-tabela">
               <i class="fas fa-info-circle" aria-hidden="true"></i>
@@ -464,7 +466,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        RODAPÉ — estrutura e conteúdo idênticos ao footer da home
   ════════════════════════════════════════════════════════════════ -->
-  </main>
+  </div> <!-- /pi-wrapper -->
 
   <meu-footer></meu-footer>
 

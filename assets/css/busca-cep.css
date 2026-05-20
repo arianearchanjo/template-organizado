@@ -243,7 +243,7 @@
 
 @media (max-width: 991px) {
   .pi-layout { grid-template-columns: 1fr; }
-  .pi-layout__sidebar { order: -1; margin-bottom: 30px; }
+  .pi-layout__sidebar { margin-bottom: 30px; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -412,10 +412,82 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 575px) {
-  .cep-card-busca { padding: 20px; }
-  .cep-input { border-radius: var(--cep-radius) !important; border-right: 1.5px solid #d1d1d1; margin-bottom: 10px; }
-  .cep-form .pi-btn-verde { border-radius: var(--cep-radius) !important; width: 100%; }
-  .input-group { display: block; }
+  /* Hero */
+  .pi-hero-titulo { font-size: 1.25rem; }
+  .pi-hero-subtitulo { font-size: 0.8125rem; }
+  
+  /* Layout Base */
+  .pi-main { padding: 30px 0 40px; }
+  .pi-container { padding: 0 15px; }
+  .pi-layout { gap: 20px; }
+
+  /* Card de Busca */
+  .cep-card-busca { padding: 24px 15px; margin-bottom: 30px; }
+  .cep-label { font-size: 0.875rem; text-align: left; }
+  
+  .input-group { 
+    display: block !important; 
+  }
+
+  .cep-input { 
+    border-radius: var(--cep-radius) !important; 
+    border: 1.5px solid #d1d1d1 !important; 
+    margin-bottom: 12px; 
+    width: 100% !important;
+    height: 48px;
+    font-size: 0.9375rem;
+  }
+
+  .input-group-append {
+    display: block !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .cep-form .pi-btn-verde { 
+    border-radius: var(--cep-radius) !important; 
+    width: 100%; 
+    justify-content: center;
+    height: 48px;
+    font-size: 0.875rem;
+  }
+
+  .cep-alerta-info { padding: 12px; gap: 10px; }
+  .cep-alerta-info p { font-size: 0.75rem; text-align: left; }
+
+  /* Seções e Resultados */
+  .pi-section { margin-bottom: 30px; }
+  .pi-section__titulo { font-size: 1rem; margin-bottom: 15px; }
+  
+  .cep-result-card { padding: 15px; gap: 6px; }
+  .cep-result-cep { font-size: 1rem; }
+  .cep-result-item { font-size: 0.8125rem; text-align: left; }
+
+  /* Institucional */
+  .cep-institucional { 
+    margin-top: 20px; 
+    padding: 20px 15px; 
+    background: #f9fdf9;
+    border-radius: var(--cep-radius);
+    border: 1px solid var(--cep-primario-bg);
+  }
+
+  .cep-institucional p {
+    font-size: 0.8125rem;
+    text-align: left;
+    display: block; /* Remove flex to allow natural wrapping */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 28px; /* Space for the icon */
+  }
+
+  .cep-institucional p i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 0.9375rem;
+  }
 }
 
 body.high-contrast #pi-hero { background: #000 !important; border-bottom: 2px solid #fff; }

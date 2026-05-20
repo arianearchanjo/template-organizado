@@ -132,20 +132,178 @@
   padding: 40px 0 56px;
 }
 
+#pi-main, #pi-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .pi-layout {
   display: grid;
   grid-template-columns: 1fr 280px;
   gap: 40px;
   align-items: start;
+  width: 100%;
 }
 
 @media (max-width: 991px) {
   .pi-layout {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px;
+    width: 100%;
   }
 
   .pi-sidebar {
-    order: -1;
+    order: 2;
+    width: 100% !important;
+  }
+
+  article {
+    order: 1;
+    width: 100% !important;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .pi-recursos-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pi-selo {
+    min-width: 100% !important;
+  }
+
+  /* Forçar alinhamento à esquerda para títulos principais */
+  .pi-hero-titulo {
+    text-align: left !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Ajustes de Responsividade Adicionais
+   ────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  #pi-main {
+    padding: 24px 0 40px;
+  }
+
+  /* FORÇAR ALINHAMENTO À ESQUERDA EM TUDO QUE É TÍTULO */
+  .pi-hero-titulo, 
+  .pi-secao-titulo,
+  .pi-subtitulo,
+  .pi-recurso-corpo h3,
+  .pi-compromisso-bloco h2,
+  .pi-sidebar-card h4,
+  .pi-controles-bloco h4 {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .pi-intro-texto {
+    text-align: justify;
+  }
+
+  /* TRANSFORMAR TABELA EM CARDS (SOLUÇÃO DEFINITIVA) */
+  .pi-atalhos-wrapper {
+    border: none;
+    background: transparent;
+  }
+
+  .pi-atalhos-tabela, 
+  .pi-atalhos-tabela thead, 
+  .pi-atalhos-tabela tbody, 
+  .pi-atalhos-tabela th, 
+  .pi-atalhos-tabela td, 
+  .pi-atalhos-tabela tr {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pi-atalhos-tabela thead {
+    display: none !important; /* Esconde cabeçalho real */
+  }
+
+  .pi-atalhos-tabela tr {
+    background: #fff;
+    border: 1px solid var(--cinza-borda) !important;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .pi-atalhos-tabela td {
+    border: none !important;
+    padding: 10px 12px 10px 110px !important; /* Espaço para o label */
+    position: relative;
+    min-height: 40px;
+    text-align: left !important;
+    font-size: 0.875rem !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  .pi-atalhos-tabela td:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Gerar labels automáticos via data-label */
+  .pi-atalhos-tabela td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 90px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .pi-recurso-card {
+    padding: 18px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: justify;
+  }
+
+  .pi-recurso-icon {
+    margin-bottom: 8px;
+    align-self: flex-start;
+  }
+
+  .pi-compromisso-bloco {
+    padding: 20px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 575px) {
+  .pi-secao-titulo {
+    font-size: 1.1rem !important;
+    flex-direction: row !important; /* Mantém ícone e texto na mesma linha */
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  .pi-intro-texto {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .pi-selo {
+    padding: 12px;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
   }
 }
 
