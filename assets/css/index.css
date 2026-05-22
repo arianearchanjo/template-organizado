@@ -34,8 +34,13 @@ html {
   box-shadow: none !important;
 }
 
-* {
+*, ::before, ::after {
   box-sizing: border-box;
+}
+
+/* Reset de margens e preenchimentos apenas para elementos de conteúdo,
+   evitando quebrar classes de layout como as do Bootstrap. */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd, fieldset, legend {
   margin: 0;
   padding: 0;
 }
