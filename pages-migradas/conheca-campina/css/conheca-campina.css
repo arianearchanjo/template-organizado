@@ -235,6 +235,10 @@
 
 .cc-menu-item span { flex: 1; }
 
+.cc-menu-scroll-btn {
+  display: none;
+}
+
 
 /* ── 4. Painéis ──────────────────────────────────────────────── */
 .cc-tab-painel {
@@ -1254,35 +1258,141 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
 
 @media (max-width: 900px) {
   .cc-layout-lateral {
-    grid-template-columns: 1fr;
-    gap: 0;
+    display: block;
+    grid-template-columns: none;
   }
 
   .cc-menu-lateral {
-    position: static;
+    position: relative;
+    top: 0;
+    width: 100%;
     margin-bottom: 24px;
+    z-index: 10;
+  }
+
+  .cc-menu-card {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  .cc-menu-titulo {
+    display: none;
   }
 
   .cc-menu-lista {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px 40px 20px 0; /* Espaço na direita para a flexinha */
+    list-style: none;
   }
 
-  .cc-menu-lista li { border-bottom: none; border-right: 1px solid #eef2ee; }
-  .cc-menu-lista li:last-child { border-right: none; }
+  .cc-menu-lista::-webkit-scrollbar { display: none; }
+
+  .cc-menu-lista li {
+    flex: 0 0 calc(50% - 5px); /* Exatamente 2 botões */
+    scroll-snap-align: start;
+    border: none !important;
+    margin: 0 !important;
+  }
+
+  /* Botão de scroll lateral */
+  .cc-menu-scroll-btn {
+    display: flex !important;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--verde);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    z-index: 99;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    animation: pulseChevronCampina 1.5s infinite;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cc-menu-scroll-btn:hover {
+    background: var(--verde-escuro);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .cc-menu-scroll-btn:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  @keyframes pulseChevronCampina {
+    0% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-50%) translateX(5px); opacity: 1; }
+    100% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
+  }
+
 
   .cc-menu-item {
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    padding: 9px 14px;
-    font-size: 0.79rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 12px !important;
+    padding: 15px 10px !important;
+    height: 100% !important;
+    width: 100% !important;
+    border-left: 1px solid #ddd !important; /* Reseta o estilo desktop */
+    transition: all 0.2s;
   }
 
-  .cc-menu-item.ativo,
-  .cc-menu-item:hover {
-    border-left: none;
-    border-bottom-color: var(--verde);
-    padding-left: 14px;
+  .cc-menu-item i {
+    font-size: 1.25rem !important;
+    margin: 0 0 10px 0 !important;
+    color: var(--verde);
+    transform: none !important;
+  }
+
+  .cc-menu-item span {
+    display: block !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    line-height: 1.2;
+    white-space: normal !important;
+    color: #333;
+    flex: none;
+  }
+
+  .cc-menu-item:hover,
+  .cc-menu-item.ativo {
+    background: var(--verde-claro) !important;
+    border-color: var(--verde) !important;
+    padding-left: 10px !important; /* Reseta o padding extra do desktop */
+  }
+
+  .cc-menu-item.ativo i,
+  .cc-menu-item.ativo span {
+    color: var(--verde-escuro);
+  }
+
+  /* Esconde ícone de seta do desktop */
+  .cc-menu-item i.fa-chevron-right {
+    display: none !important;
   }
 
   .cc-intro-grid    { grid-template-columns: 1fr; }
@@ -1291,6 +1401,9 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
   .cc-ponto         { grid-template-columns: 1fr; }
   .cc-tab-painel    { padding: 24px 20px; }
 }
+
+
+
 
 @media (max-width: 640px) {
   .cc-prefeitos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1306,10 +1419,75 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
 }
 
 @media (max-width: 575px) {
-  .cc-menu-item span    { display: none; }
-  .cc-menu-item         { justify-content: center; padding: 10px; }
-  .cc-menu-item i       { font-size: 0.875rem; color: #888; }
-  .cc-menu-item.ativo i { color: var(--verde); }
   .cc-tab-painel        { padding: 20px 16px; border-radius: 6px; }
   .cc-bio-inner         { flex-direction: column; align-items: center; text-align: center; }
+}
+
+
+/* ══ 21. Lightbox ══════════════════════════════════════════════ */
+.cc-lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.cc-lightbox-overlay.ativo {
+  display: flex;
+}
+
+.cc-lightbox-inner {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.cc-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.cc-lightbox-caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.cc-lightbox-fechar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.cc-lightbox-fechar:hover {
+  transform: scale(1.1);
+  color: var(--verde);
+}
+
+.cc-foto-item, .cc-ponto-foto img, .cc-docs-img img {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cc-foto-item:hover, .cc-ponto-foto img:hover, .cc-docs-img img:hover {
+  opacity: 0.85;
 }
