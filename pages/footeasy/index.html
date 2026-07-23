@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FootEasy – Sistema Esportivo Campinense | Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    function getBasePath() { return "../../"; }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos da Página -->
+  <link rel="stylesheet" href="css/footeasy.css">
+</head>
+<body>
+
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <div id="pi-wrapper">
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════════════════════════ -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li>
+                <a href="../../index.html">
+                  <i class="fas fa-home" aria-hidden="true"></i> Início
+                </a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li>
+                <a href="../../pages-migradas/governo-digital/">Tecnologia e Inovação</a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li aria-current="page">FootEasy</li>
+            </ol>
+          </nav>
+
+          <h1 class="pi-hero-titulo">FootEasy – Sistema Esportivo Campinense</h1>
+          <p class="pi-hero-subtitulo">O futebol da nossa cidade agora é 100% digital.</p>
+
+        </div>
+      </div>
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         CONTEÚDO PRINCIPAL
+    ════════════════════════════════════════════════════════════════════ -->
+    <main id="pi-main">
+      <div class="container">
+        <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+          <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
+          <article>
+
+            <!-- Seção: Sobre o FootEasy -->
+            <section aria-labelledby="pi-intro-titulo">
+              <h2 id="pi-intro-titulo" class="pi-secao-titulo">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                Sobre o FootEasy
+              </h2>
+              <hr class="pi-secao-divider">
+              <div class="pi-intro-texto">
+                <p>
+                  O <strong>FootEasy – Sistema Esportivo Campinense</strong> é uma plataforma digital
+                  desenvolvida pela Prefeitura de Campina Grande do Sul para modernizar a gestão dos
+                  campeonatos municipais de futebol, promovendo eficiência, transparência e inclusão
+                  por meio da transformação digital.
+                </p>
+                <p>
+                  A solução integra, em um único ambiente online, todas as etapas das competições
+                  esportivas — do cadastro de atletas e equipes à geração de tabelas, súmulas e
+                  estatísticas em tempo real —, substituindo processos manuais, reduzindo a burocracia
+                  e ampliando o acesso à informação pública.
+                </p>
+                <p>
+                  O sistema atende diferentes perfis de usuários (jogadores, dirigentes, organizadores
+                  e administradores), garantindo autonomia, organização e controle em cada etapa do
+                  processo esportivo. Ao digitalizar a gestão esportiva, o FootEasy posiciona Campina
+                  Grande do Sul como referência em inovação pública.
+                </p>
+              </div>
+            </section>
+
+            <!-- Seção: Números -->
+            <section aria-labelledby="pi-numeros-titulo" class="pi-mt-secao">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+                <h2 id="pi-numeros-titulo" class="pi-secao-titulo mb-0">
+                  <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                  Resultados em Números
+                </h2>
+                <span style="font-size: 0.75rem; color: #777; font-weight: 500;">
+                  <i class="fas fa-sync-alt mr-1"></i> Atualizado em 09/06/2026
+                </span>
+              </div>
+              <hr class="pi-secao-divider">
+
+              <div class="pi-numeros-grid" role="list" aria-label="Indicadores do sistema">
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="757 jogadores registrados">757</span>
+                  <span class="pi-numero-label">Jogadores registrados</span>
+                </div>
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="24 equipes cadastradas">24</span>
+                  <span class="pi-numero-label">Equipes cadastradas</span>
+                </div>
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="84 partidas gerenciadas">84</span>
+                  <span class="pi-numero-label">Partidas gerenciadas</span>
+                </div>
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="2 campeonatos na plataforma">2</span>
+                  <span class="pi-numero-label">Campeonatos na plataforma</span>
+                </div>
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="26 rodadas organizadas">26</span>
+                  <span class="pi-numero-label">Rodadas organizadas</span>
+                </div>
+                <div class="pi-numero-card" role="listitem">
+                  <span class="pi-numero-valor" aria-label="35 presidentes de clubes">35</span>
+                  <span class="pi-numero-label">Presidentes de clubes</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Seção: Funcionalidades -->
+            <section aria-labelledby="pi-func-titulo" class="pi-mt-secao">
+              <h2 id="pi-func-titulo" class="pi-secao-titulo">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                Funcionalidades da Plataforma
+              </h2>
+              <hr class="pi-secao-divider">
+
+              <div class="pi-recursos-grid" role="list">
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-user-plus"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Cadastro de Atletas e Times</h3>
+                    <p>Inscrição online de jogadores e equipes com upload de documentos em PDF, validação
+                       automática e vinculação ao time pelo código do presidente de clube.</p>
+                  </div>
+                </article>
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Tabelas e Rodadas Automáticas</h3>
+                    <p>Geração automática de tabelas e rodadas nos formatos Pontos Corridos,
+                       Mata-Mata e Grupos + Mata-Mata, respeitando regras e limites configurados.</p>
+                  </div>
+                </article>
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-file-alt"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Súmulas Digitais</h3>
+                    <p>Geração e download de súmulas em PDF com registro de gols, cartões
+                       e resultado. Upload da version física também é suportado.</p>
+                  </div>
+                </article>
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Disciplina e Suspensões</h3>
+                    <p>Controle automático de cartões amarelos e vermelhos por jogador, com
+                       suspensão automática por acúmulo e verificação antes de cada partida.</p>
+                  </div>
+                </article>
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Estatísticas em Tempo Real</h3>
+                    <p>Classificação dinâmica, artilharia, melhor defesa e resultados publicados
+                       automaticamente no portal do município via API pública de integração.</p>
+                  </div>
+                </article>
+
+                <article class="pi-recurso-card" role="listitem">
+                  <div class="pi-recurso-icon" aria-hidden="true">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <div class="pi-recurso-corpo">
+                    <h3>Auditoria Completa</h3>
+                    <p>Registro de todas as ações críticas do sistema com autor, data e detalhes.
+                       Logs globais disponíveis para administradores da plataforma.</p>
+                  </div>
+                </article>
+
+              </div>
+            </section>
+
+            <!-- Seção: Perfis de acesso -->
+            <section aria-labelledby="pi-perfis-titulo" class="pi-mt-secao">
+              <h2 id="pi-perfis-titulo" class="pi-secao-titulo">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                Uma Plataforma, Quatro Experiências
+              </h2>
+              <hr class="pi-secao-divider">
+              <p style="font-size:0.9375rem;color:#555;margin-bottom:16px;line-height:1.6;">
+                Cada usuário visualiza apenas as funções pertinentes ao seu papel —
+                do cadastro inicial ao acompanhamento da competição.
+              </p>
+
+              <div class="pi-perfis-grid" role="list" aria-label="Perfis de usuário do sistema">
+                <div class="pi-perfil-card" role="listitem">
+                  <div class="pi-perfil-num" aria-hidden="true">1</div>
+                  <strong>Presidente</strong>
+                  <span>Dirigentes de clubes</span>
+                </div>
+                <div class="pi-perfil-card" role="listitem">
+                  <div class="pi-perfil-num" aria-hidden="true">2</div>
+                  <strong>Jogador</strong>
+                  <span>Atletas</span>
+                </div>
+                <div class="pi-perfil-card" role="listitem">
+                  <div class="pi-perfil-num" aria-hidden="true">3</div>
+                  <strong>Organizador</strong>
+                  <span>Secretaria de Esportes</span>
+                </div>
+                <div class="pi-perfil-card" role="listitem">
+                  <div class="pi-perfil-num" aria-hidden="true">4</div>
+                  <strong>Administrador</strong>
+                  <span>Governança da plataforma</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Seção: Como começar -->
+            <section aria-labelledby="pi-comecar-titulo" class="pi-mt-secao">
+              <h2 id="pi-comecar-titulo" class="pi-secao-titulo">
+                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                Como Começar
+              </h2>
+              <hr class="pi-secao-divider">
+              <p style="font-size:0.9375rem;color:#555;margin-bottom:20px;line-height:1.6;">
+                Acesse o sistema pelo link oficial:
+                <a href="https://futebol.pmcgs.pr.gov.br" target="_blank" rel="noopener"
+                   aria-label="Acessar FootEasy (abre em nova aba)">
+                  futebol.pmcgs.pr.gov.br
+                  <i class="fas fa-external-link-alt" aria-hidden="true" style="font-size:0.75rem;margin-left:4px;"></i>
+                </a>
+              </p>
+
+              <div class="pi-atalhos-wrapper">
+                <table class="pi-atalhos-tabela" aria-label="Etapas de acesso ao sistema FootEasy">
+                  <thead>
+                    <tr>
+                      <th scope="col">Etapa</th>
+                      <th scope="col">Ação do Usuário</th>
+                      <th scope="col">Requisito</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">1</span> Cadastro Inicial</td>
+                      <td data-label="Ação">Escolher "Sou Jogador" ou "Sou Presidente"</td>
+                      <td data-label="Requisito">E-mail e senha válidos</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">2</span> Perfil</td>
+                      <td data-label="Ação">Preencher dados pessoais e de contato</td>
+                      <td data-label="Requisito">Telefone, endereço e aceite dos termos</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">3</span> Vinculação</td>
+                      <td data-label="Ação">Presidente cria o time; Jogador insere o código</td>
+                      <td data-label="Requisito">Código gerado pelo sistema</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">4</span> Documentação</td>
+                      <td data-label="Ação">Jogador envia documentos em PDF para análise</td>
+                      <td data-label="Requisito">Documentos de identificação e residência</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">5</span> Inscrição</td>
+                      <td data-label="Ação">Presidente inscreve o time e seleciona o elenco</td>
+                      <td data-label="Requisito">Documentos dos atletas aprovados</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Etapa"><span class="pi-badge-etapa" aria-hidden="true">6</span> Acompanhamento</td>
+                      <td data-label="Ação">Acompanhar tabelas, resultados e estatísticas</td>
+                      <td data-label="Requisito">Campeonato em andamento</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Seção: Tecnologias -->
+            <section aria-labelledby="pi-tech-titulo" class="pi-mt-secao">
+              <h2 id="pi-tech-titulo" class="pi-secao-titulo">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                Tecnologias Utilizadas
+              </h2>
+              <hr class="pi-secao-divider">
+              <p style="font-size:0.9375rem;color:#555;margin-bottom:16px;line-height:1.6;">
+                O FootEasy foi desenvolvido integralmente pela equipe técnica municipal,
+                utilizando tecnologias modernas e de código aberto.
+              </p>
+
+              <div class="pi-tech-grid" role="list" aria-label="Tecnologias do sistema">
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> Next.js</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> React</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> TypeScript</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-server" aria-hidden="true"></i> Node.js</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-database" aria-hidden="true"></i> MySQL</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-database" aria-hidden="true"></i> Prisma ORM</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-paint-brush" aria-hidden="true"></i> Tailwind CSS</div>
+                <div class="pi-tech-item" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Zod</div>
+              </div>
+            </section>
+
+            <!-- Chamada de ação -->
+            <div class="pi-compromisso-bloco" role="complementary" aria-label="Acesso ao sistema">
+              <h2>Entre em campo. Faça parte.</h2>
+              <p>
+                Cadastre seu time, inscreva seu elenco e acompanhe tudo em tempo real.
+                O futebol de Campina Grande do Sul está 100% digital.
+              </p>
+              <a href="https://futebol.pmcgs.pr.gov.br" target="_blank" rel="noopener"
+                 class="pi-btn-verde"
+                 aria-label="Acessar o sistema FootEasy (abre em nova aba)">
+                <i class="fas fa-futbol" aria-hidden="true"></i>
+                Acessar o FootEasy
+              </a>
+            </div>
+
+            <!-- Seção: Conformidade -->
+            <section aria-labelledby="pi-conform-titulo" class="pi-mt-secao">
+              <h2 id="pi-conform-titulo" class="pi-secao-titulo">
+                <i class="fas fa-award" aria-hidden="true"></i>
+                Caráter Inovador
+              </h2>
+              <hr class="pi-secao-divider">
+              <div class="pi-selos-grid">
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>Tecnologia Própria</strong>
+                    <span class="pi-selo-sub">Desenvolvido pela equipe técnica municipal</span>
+                  </div>
+                </div>
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>Governança Digital</strong>
+                    <span class="pi-selo-sub">Transparência e auditoria completa</span>
+                  </div>
+                </div>
+                <div class="pi-selo">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <div>
+                    <strong>Inovação Pública</strong>
+                    <span class="pi-selo-sub">Secretaria de Tecnologia, Inovação e Transformação Digital</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </article>
+          <!-- ── /COLUNA PRINCIPAL ──────────────────────────────────── -->
+
+          <!-- ── SIDEBAR ───────────────────────────────────────────── -->
+          <aside class="pi-sidebar" aria-label="Acesso e navegação lateral">
+
+            <!-- CTA de acesso -->
+            <div class="pi-sidebar-acesso" role="complementary" aria-label="Acesso rápido ao sistema">
+              <h4><i class="fas fa-futbol" aria-hidden="true"></i> Acesse Agora</h4>
+              <p>Sistema disponível para toda a comunidade esportiva de Campina Grande do Sul.</p>
+              <a href="https://futebol.pmcgs.pr.gov.br" target="_blank" rel="noopener"
+                 class="pi-btn-verde pi-btn-full"
+                 aria-label="Abrir o FootEasy (abre em nova aba)">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                futebol.pmcgs.pr.gov.br
+              </a>
+            </div>
+
+            <!-- Navegação da seção -->
+            <div class="pi-sidebar-card">
+              <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Seção</h4>
+              <ul class="pi-sidebar-links" aria-label="Páginas desta seção">
+                <li class="ativo">
+                  <a href="#" aria-current="page">
+                    <span>
+                      <i class="fas fa-futbol pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>
+                      FootEasy
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="../futebol-2026">
+                    <span>
+                      <i class="fas fa-trophy pi-sidebar-ico" aria-hidden="true"></i>
+                      Copa Campina 2026
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="../transparencia/">
+                    <span>
+                      <i class="fas fa-eye pi-sidebar-ico" aria-hidden="true"></i>
+                      Transparência
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Links úteis -->
+            <div class="pi-sidebar-card">
+              <h4><i class="fas fa-external-link-alt" aria-hidden="true"></i> Links Úteis</h4>
+              <ul class="pi-sidebar-links">
+                <li>
+                  <a href="../../pages-migradas/perguntas-frequentes/">
+                    <span>Perguntas Frequentes</span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="../../pages-migradas/ouvidoria/">
+                    <span>Ouvidoria</span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="pi-sidebar-card pi-sidebar-contato">
+              <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
+              <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+              <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+              <a href="../ouvidoria" class="pi-btn-verde pi-btn-full">
+                <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+              </a>
+            </div>
+
+          </aside>
+          <!-- ── /SIDEBAR ───────────────────────────────────────────── -->
+
+        </div>
+      </div>
+    </main>
+
+  </div><!-- /pi-wrapper -->
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/footeasy.js"></script>
+
+</body>
+</html>

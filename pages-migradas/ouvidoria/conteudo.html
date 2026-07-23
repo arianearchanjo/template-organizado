@@ -172,6 +172,46 @@
               </p>
             </div>
 
+            <!-- Seção de Dados e Transparência -->
+            <div class="mt-5 mb-4">
+              <h3 class="pi-section__titulo">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                Transparência e Resultados
+              </h3>
+              <p class="ouv-texto-intro">
+                Acompanhe abaixo os indicadores de atendimento e os relatórios oficiais das atividades da Ouvidoria.
+              </p>
+            </div>
+
+            <!-- Botões para Estatísticas e Relatórios -->
+            <div class="ouv-tabs-wrapper">
+              <ul class="nav nav-pills mb-3" id="ouv-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="ouv-estat-tab" data-toggle="pill" data-target="#ouv-estat" type="button" role="tab" aria-controls="ouv-estat" aria-selected="true">
+                    <i class="fas fa-chart-bar mr-2"></i> Estatísticas
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="ouv-relat-tab" data-toggle="pill" data-target="#ouv-relat" type="button" role="tab" aria-controls="ouv-relat" aria-selected="false">
+                    <i class="fas fa-file-pdf mr-2"></i> Relatórios
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content ouv-tab-content" id="ouv-tabContent">
+                <div class="tab-pane fade show active" id="ouv-estat" role="tabpanel" aria-labelledby="ouv-estat-tab">
+                  <div class="spweb-view" data-model="_SectionOuvidEstat" data-id="0">
+                    <p class="text-center text-muted p-5">Conteúdo dinâmico de Dados da Ouvidoria a ser exibido pelo sistema.</p>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="ouv-relat" role="tabpanel" aria-labelledby="ouv-relat-tab" style="min-height:250px;">
+                  <div class="spweb-file" data-model="_SectionFiles3" data-category="42" data-subcategory="0">
+                    <p class="text-center text-muted p-5">Conteúdo dinâmico de Relatórios a ser exibido pelo sistema.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </section>
 
 

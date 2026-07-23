@@ -1291,7 +1291,7 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     gap: 10px;
-    padding: 10px 40px 20px 0; /* Espaço na direita para a flexinha */
+    padding: 10px 45px 20px 45px; /* Espaço para as flexinhas (ambos os lados) */
     list-style: none;
   }
 
@@ -1306,9 +1306,8 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
 
   /* Botão de scroll lateral */
   .cc-menu-scroll-btn {
-    display: flex !important;
+    display: none;
     position: absolute;
-    right: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 32px;
@@ -1322,10 +1321,19 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
     font-size: 0.9rem;
     z-index: 99;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    animation: pulseChevronCampina 1.5s infinite;
     cursor: pointer;
     padding: 0;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, opacity 0.3s;
+  }
+
+  .cc-menu-scroll-btn-right {
+    right: 0;
+    animation: pulseChevronCampina 1.5s infinite;
+  }
+
+  .cc-menu-scroll-btn-left {
+    left: 0;
+    animation: pulseChevronCampinaLeft 1.5s infinite;
   }
 
   .cc-menu-scroll-btn:hover {
@@ -1340,6 +1348,12 @@ body.high-contrast .pi-hero-ilustracao  { display: none; }
   @keyframes pulseChevronCampina {
     0% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
     50% { transform: translateY(-50%) translateX(5px); opacity: 1; }
+    100% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
+  }
+
+  @keyframes pulseChevronCampinaLeft {
+    0% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-50%) translateX(-5px); opacity: 1; }
     100% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
   }
 

@@ -1,0 +1,62 @@
+  <!-- LAYOUT PRINCIPAL -->
+  <div id="conteudo-principal" class="pi-main" tabindex="-1">
+    <div class="pi-container">
+      <div class="login-container">
+
+        <div class="login-card">
+          <div class="login-header">
+            <h2 class="login-titulo">
+              <i class="fas fa-lock-open" aria-hidden="true"></i>
+              Identificação
+            </h2>
+            <p class="login-subtitulo">Insira seus dados para iniciar a sessão</p>
+          </div>
+
+          <div class="login-body">
+            <form action="/Account/Login/LoginPartial?ReturnUrl=%2Fhome" id="form-login" method="post" role="form">
+              <div class="form-group">
+                <label for="USER">Usuário</label>
+                <div class="login-input-wrapper">
+                  <span class="login-input-icon"><i class="fas fa-user"></i></span>
+                  <input class="form-control" id="USER" name="USER" placeholder="Digite seu usuário" required="required" type="text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="PASSWORD">Senha</label>
+                <div class="login-input-wrapper">
+                  <span class="login-input-icon"><i class="fas fa-lock"></i></span>
+                  <input class="form-control" id="PASSWORD" name="PASSWORD" placeholder="Digite sua senha" required="required" type="password">
+                </div>
+              </div>
+
+              <div class="login-actions">
+                <button type="submit" class="btn-entrar">
+                  <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                  Entrar no Sistema
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="login-info">
+          <div class="info-bloco">
+            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+            <div>
+              <strong>Acesso Restrito</strong>
+              <p>Este sistema é de uso exclusivo de servidores e pessoas autorizadas.</p>
+            </div>
+          </div>
+          <div class="info-bloco">
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
+            <div>
+              <strong>Segurança</strong>
+              <p>Mantenha sua senha em sigilo.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

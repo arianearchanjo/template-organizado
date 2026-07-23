@@ -31,7 +31,7 @@
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-  <main id="pi-conteudo">
+  <div id="pi-pagina">
     <!-- /ACESSIBILIDADE -->
 
 
@@ -87,36 +87,49 @@
         <article>
 
           <!-- Navegação por abas -->
-          <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
-            <li role="presentation">
-              <button class="sec-tab-btn ativo"
-                id="tab-secretaria"
-                role="tab"
-                aria-controls="painel-secretaria"
-                aria-selected="true">Secretaria</button>
-            </li>
-            <li role="presentation">
-              <button class="sec-tab-btn"
-                id="tab-departamentos"
-                role="tab"
-                aria-controls="painel-departamentos"
-                aria-selected="false">Departamentos</button>
-            </li>
-            <li role="presentation">
-              <button class="sec-tab-btn"
-                id="tab-acesso"
-                role="tab"
-                aria-controls="painel-acesso"
-                aria-selected="false">Solicitação de Acesso</button>
-            </li>
-            <li role="presentation">
-              <button class="sec-tab-btn"
-                id="tab-links"
-                role="tab"
-                aria-controls="painel-links"
-                aria-selected="false">Links Úteis</button>
-            </li>
-          </ul>
+          <div class="sec-menu-card">
+            <button class="sec-tabs-scroll-btn sec-tabs-scroll-btn-left" aria-label="Ver abas anteriores" title="Ver abas anteriores">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="sec-tabs-scroll-btn sec-tabs-scroll-btn-right" aria-label="Ver mais abas" title="Ver mais abas">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
+
+              <li role="presentation">
+                <button class="sec-tab-btn ativo"
+                  id="tab-secretaria"
+                  role="tab"
+                  aria-controls="painel-secretaria"
+                  aria-selected="true">Secretaria</button>
+              </li>
+
+              <li role="presentation">
+                <button class="sec-tab-btn"
+                  id="tab-departamentos"
+                  role="tab"
+                  aria-controls="painel-departamentos"
+                  aria-selected="false">Departamentos</button>
+              </li>
+
+              <li role="presentation">
+                <button class="sec-tab-btn"
+                  id="tab-acesso"
+                  role="tab"
+                  aria-controls="painel-acesso"
+                  aria-selected="false">Solicitação de Acesso</button>
+              </li>
+
+              <li role="presentation">
+                <button class="sec-tab-btn"
+                  id="tab-links"
+                  role="tab"
+                  aria-controls="painel-links"
+                  aria-selected="false">Links Úteis</button>
+              </li>
+
+            </ul>
+          </div>
 
 
           <!-- ABA 1: SECRETARIA -->
@@ -641,7 +654,7 @@
     </div>
   </main>
   <!-- /CONTEÚDO PRINCIPAL -->
-  </main>
+  </div>
 
   <meu-footer></meu-footer>
 

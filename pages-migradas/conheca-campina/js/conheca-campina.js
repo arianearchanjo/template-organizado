@@ -160,28 +160,69 @@
     var card = document.querySelector('.cc-menu-card');
     var lista = document.querySelector('.cc-menu-lista');
     var itens = document.querySelectorAll('.cc-menu-item');
-    var scrollBtn = document.querySelector('.cc-menu-scroll-btn');
+    var scrollBtnLeft = document.querySelector('.cc-menu-scroll-btn-left');
+    var scrollBtnRight = document.querySelector('.cc-menu-scroll-btn-right');
 
     if (!lista) return;
 
-    function scrollMenu() {
+    function scrollMenu(direction) {
       var scrollAmount = lista.clientWidth * 0.8;
-      var newScroll = lista.scrollLeft + scrollAmount;
-      
-      if (lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 15) {
-        lista.scrollTo({ left: 0, behavior: 'smooth' });
+      var newScroll = lista.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      lista.scrollTo({ left: newScroll, behavior: 'smooth' });
+    }
+
+    function updateScrollButtons() {
+      if (!lista || !scrollBtnLeft || !scrollBtnRight) return;
+
+      var scrollLeft = Math.round(lista.scrollLeft);
+      var scrollWidth = lista.scrollWidth;
+      var clientWidth = lista.clientWidth;
+
+      // Se não houver scroll possível, esconde ambos
+      if (scrollWidth <= clientWidth + 5) {
+        scrollBtnLeft.style.setProperty('display', 'none', 'important');
+        scrollBtnRight.style.setProperty('display', 'none', 'important');
+        return;
+      }
+
+      // Esquerda: mostra se não estiver no início (margem de segurança)
+      if (scrollLeft > 50) {
+        scrollBtnLeft.style.setProperty('display', 'flex', 'important');
       } else {
-        lista.scrollTo({ left: newScroll, behavior: 'smooth' });
+        scrollBtnLeft.style.setProperty('display', 'none', 'important');
+      }
+
+      // Direita: mostra se não estiver no fim (margem de segurança)
+      if (scrollLeft + clientWidth < scrollWidth - 10) {
+        scrollBtnRight.style.setProperty('display', 'flex', 'important');
+      } else {
+        scrollBtnRight.style.setProperty('display', 'none', 'important');
       }
     }
 
-    if (scrollBtn) {
-      scrollBtn.addEventListener('click', function(e) {
+    if (scrollBtnLeft) {
+      scrollBtnLeft.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        scrollMenu();
+        scrollMenu('left');
       });
     }
+
+    if (scrollBtnRight) {
+      scrollBtnRight.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollMenu('right');
+      });
+    }
+
+    lista.addEventListener('scroll', updateScrollButtons);
+    window.addEventListener('resize', updateScrollButtons);
+    window.addEventListener('load', updateScrollButtons);
+
+    // Inicializa visibilidade em múltiplos estágios para garantir
+    updateScrollButtons();
+    setTimeout(updateScrollButtons, 100);
+    setTimeout(updateScrollButtons, 500);
+    setTimeout(updateScrollButtons, 1000);
 
     function ativarSecao(item) {
       var alvoId = item.getAttribute('aria-controls');

@@ -1,0 +1,249 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   acesso-sistema.css — Página de Login do Sistema
+   Prefeitura de Campina Grande do Sul – PR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --login-primario:       #2d7a2d;
+  --login-primario-claro: #3a9a3a;
+  --login-primario-bg:    #e8f5e8;
+  --login-borda:          #c8d8c8;
+  --login-texto:          #1a2a1a;
+  --login-texto-leve:     #616161;
+  --login-branco:         #ffffff;
+  --login-radius:         10px;
+  --login-sombra:         0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  align-items: start;
+}
+
+.login-card {
+  background: var(--login-branco);
+  border: 1.5px solid var(--login-borda);
+  border-radius: var(--login-radius);
+  box-shadow: var(--login-sombra);
+  overflow: hidden;
+}
+
+.login-header {
+  background: var(--login-primario-bg);
+  padding: 30px;
+  text-align: center;
+  border-bottom: 3px solid var(--login-primario);
+}
+
+.login-titulo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--login-primario);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.login-subtitulo {
+  font-size: 0.875rem;
+  color: var(--login-texto-leve);
+  margin: 0;
+}
+
+.login-body {
+  padding: 35px 40px;
+}
+
+.form-group label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--login-primario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.login-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.login-input-icon {
+  width: 46px;
+  background: #f0f4f0;
+  border: 1.5px solid var(--login-borda);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--login-primario);
+  font-size: 0.9375rem;
+}
+
+.login-body .form-control {
+  border: 1.5px solid var(--login-borda);
+  border-radius: 0 6px 6px 0;
+  height: 46px;
+  font-size: 0.9375rem;
+  padding: 10px 15px;
+  color: var(--login-texto);
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.login-body .form-control:focus {
+  border-color: var(--login-primario);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.15);
+  outline: none;
+}
+
+.login-actions {
+  margin-top: 30px;
+}
+
+.btn-entrar {
+  width: 100%;
+  height: 50px;
+  background: var(--login-primario);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(45, 122, 45, 0.2);
+}
+
+.btn-entrar:hover {
+  background: var(--login-primario-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(45, 122, 45, 0.3);
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-bloco {
+  background: #fff;
+  border: 1.5px solid var(--login-borda);
+  border-left: 4px solid var(--login-primario);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.info-bloco:hover {
+  transform: translateX(5px);
+  border-color: var(--login-primario);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.info-bloco i {
+  font-size: 1.25rem;
+  color: var(--login-primario);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-bloco strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--login-primario);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.info-bloco p {
+  font-size: 0.8125rem;
+  color: var(--login-texto-leve);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ALTO CONTRASTE
+   ══════════════════════════════════════════════════════════════════════════ */
+body.high-contrast .login-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .login-header {
+  background: #111 !important;
+  border-bottom-color: #ff0 !important;
+}
+
+body.high-contrast .login-titulo {
+  color: #ff0 !important;
+}
+
+body.high-contrast .login-input-icon {
+  background: #222 !important;
+  border-color: #fff !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .login-body .form-control {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .btn-entrar {
+  background: #ff0 !important;
+  color: #000 !important;
+  border: 1px solid #fff !important;
+}
+
+body.high-contrast .info-bloco {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .info-bloco i,
+body.high-contrast .info-bloco strong {
+  color: #ff0 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .login-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .login-body {
+    padding: 25px 20px;
+  }
+}

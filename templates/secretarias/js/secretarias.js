@@ -1,69 +1,121 @@
 /**
  * secretarias.js — Prefeitura de Campina Grande do Sul
- *
- * Funcionalidades:
- *  1. Sistema de abas (tabs) com suporte a teclado
- *
- * Acessibilidade (Fonte, Contraste, Atalhos, TTS, VLibras) agora é gerenciada 
- * centralmente por _global/js/acessibilidade-component.js
  */
 
-/* ══════════════════════════════════════════════════════════════
-   1. SISTEMA DE ABAS (TABS)
-   Controla a troca de painéis via clique ou teclado.
-   Segue o padrão ARIA: role="tab", aria-selected, aria-controls.
-══════════════════════════════════════════════════════════════ */
-
 (function () {
+  'use strict';
 
-  var botoes  = document.querySelectorAll('.sec-tab-btn');
-  var paineis = document.querySelectorAll('.sec-tab-painel');
+  function initTabs() {
+    var card = document.querySelector('.sec-menu-card');
+    var nav = document.querySelector('.sec-tabs-nav');
+    var scrollBtnLeft = document.querySelector('.sec-tabs-scroll-btn-left');
+    var scrollBtnRight = document.querySelector('.sec-tabs-scroll-btn-right');
+    var todosBotoes = document.querySelectorAll('.sec-tab-btn');
+    var todosPaineis = document.querySelectorAll('.sec-tab-painel');
 
-  /**
-   * Ativa a aba correspondente ao botão clicado.
-   * Desativa todas as outras abas e oculta seus painéis.
-   * @param {HTMLElement} btnAtivo - Botão da aba a ativar
-   */
-  function ativarAba(btnAtivo) {
-    var alvo = btnAtivo.getAttribute('aria-controls');
+    if (!nav) return;
 
-    // Desativar todas as abas
-    botoes.forEach(function (btn) {
-      btn.classList.remove('ativo');
-      btn.setAttribute('aria-selected', 'false');
-    });
-
-    // Ocultar todos os painéis
-    paineis.forEach(function (painel) {
-      painel.classList.remove('ativo');
-    });
-
-    // Ativar a aba e o painel selecionados
-    btnAtivo.classList.add('ativo');
-    btnAtivo.setAttribute('aria-selected', 'true');
-
-    var painelAtivo = document.getElementById(alvo);
-    if (painelAtivo) {
-      painelAtivo.classList.add('ativo');
+    // Função para rolar o menu
+    function scrollMenu(direction) {
+      var scrollAmount = nav.clientWidth * 0.8;
+      var newScroll = nav.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      nav.scrollTo({ left: newScroll, behavior: 'smooth' });
     }
+
+    // Gerenciar visibilidade dos botões
+    function updateScrollButtons() {
+      if (!nav || !scrollBtnLeft || !scrollBtnRight) return;
+
+      var scrollLeft = Math.round(nav.scrollLeft);
+      var scrollWidth = nav.scrollWidth;
+      var clientWidth = nav.clientWidth;
+
+      // Se não houver scroll possível, esconde ambos
+      if (scrollWidth <= clientWidth + 5) {
+        scrollBtnLeft.style.setProperty('display', 'none', 'important');
+        scrollBtnRight.style.setProperty('display', 'none', 'important');
+        return;
+      }
+
+      // Esquerda: mostra se não estiver no início (margem de segurança)
+      if (scrollLeft > 50) {
+        scrollBtnLeft.style.setProperty('display', 'flex', 'important');
+      } else {
+        scrollBtnLeft.style.setProperty('display', 'none', 'important');
+      }
+
+      // Direita: mostra se não estiver no fim
+      if (scrollLeft + clientWidth < scrollWidth - 10) {
+        scrollBtnRight.style.setProperty('display', 'flex', 'important');
+      } else {
+        scrollBtnRight.style.setProperty('display', 'none', 'important');
+      }
+    }
+
+    // Clique nos botões físicos de scroll
+    if (scrollBtnLeft) {
+      scrollBtnLeft.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollMenu('left');
+      });
+    }
+
+    if (scrollBtnRight) {
+      scrollBtnRight.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollMenu('right');
+      });
+    }
+
+    nav.addEventListener('scroll', updateScrollButtons);
+    window.addEventListener('resize', updateScrollButtons);
+    window.addEventListener('load', updateScrollButtons);
+
+    // Inicializa visibilidade em múltiplos estágios para garantir
+    updateScrollButtons();
+    setTimeout(updateScrollButtons, 100);
+    setTimeout(updateScrollButtons, 500);
+    setTimeout(updateScrollButtons, 1000);
+    // Função central para ativar aba
+    function ativarAba(btn) {
+      var alvoId = btn.getAttribute('aria-controls');
+      var painel = document.getElementById(alvoId);
+
+      if (!painel) return;
+
+      // Reset
+      todosBotoes.forEach(function (b) {
+        b.classList.remove('ativo');
+        b.setAttribute('aria-selected', 'false');
+      });
+      todosPaineis.forEach(function (p) {
+        p.classList.remove('ativo');
+      });
+
+      // Ativa
+      btn.classList.add('ativo');
+      btn.setAttribute('aria-selected', 'true');
+      painel.classList.add('ativo');
+
+      // Scroll suave mobile para o topo do conteúdo da aba
+      if (window.innerWidth <= 991) {
+        var topPos = card.getBoundingClientRect().top + window.pageYOffset - 10;
+        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      }
+    }
+
+    // Clique em qualquer aba
+    todosBotoes.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        ativarAba(btn);
+      });
+    });
   }
 
-  /* Vincular eventos a cada botão de aba */
-  botoes.forEach(function (btn) {
-
-    // Clique do mouse
-    btn.addEventListener('click', function () {
-      ativarAba(btn);
-    });
-
-    // Suporte a teclado: Enter e Espaço ativam a aba (WCAG 2.1.1)
-    btn.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        ativarAba(btn);
-      }
-    });
-
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTabs);
+  } else {
+    initTabs();
+  }
 
 })();

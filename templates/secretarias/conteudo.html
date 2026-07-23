@@ -53,7 +53,14 @@
         <article>
 
           <!-- Navegação por abas -->
-          <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
+          <div class="sec-menu-card">
+            <button class="sec-tabs-scroll-btn sec-tabs-scroll-btn-left" aria-label="Ver abas anteriores" title="Ver abas anteriores">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="sec-tabs-scroll-btn sec-tabs-scroll-btn-right" aria-label="Ver mais abas" title="Ver mais abas">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
             <li role="presentation">
               <button class="sec-tab-btn ativo"
                 id="tab-secretaria"
@@ -83,6 +90,7 @@
                 aria-selected="false">Links Úteis</button>
             </li>
           </ul>
+          </div>
 
 
           <!-- ABA 1: SECRETARIA -->

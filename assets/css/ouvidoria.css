@@ -740,6 +740,77 @@ address { font-style: normal; }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
+   9.1 TABS — ESTATÍSTICAS E RELATÓRIOS
+   ══════════════════════════════════════════════════════════════════════════ */
+.ouv-tabs-wrapper .nav-pills {
+  gap: 12px;
+}
+
+.ouv-tabs-wrapper .nav-pills .nav-link {
+  color: var(--ouv-primario);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 24px;
+  border: 2px solid var(--ouv-primario);
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--ouv-radius-lg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.ouv-tabs-wrapper .nav-pills .nav-link i {
+  font-size: 1.2rem;
+}
+
+.ouv-tabs-wrapper .nav-pills .nav-link.active {
+  background-color: var(--ouv-primario) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(45, 122, 45, 0.25);
+  transform: translateY(-2px);
+}
+
+.ouv-tabs-wrapper .nav-pills .nav-link:not(.active):hover {
+  background-color: var(--ouv-primario-bg) !important;
+  border-color: var(--ouv-primario-claro);
+  color: var(--ouv-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.ouv-tab-content {
+  background: #fff;
+  border: 1.5px solid var(--ouv-borda);
+  border-radius: var(--ouv-radius-lg);
+  padding: 30px;
+  box-shadow: var(--ouv-sombra);
+  margin-top: 5px;
+}
+
+@media (max-width: 575px) {
+  .ouv-tabs-wrapper .nav-pills .nav-link {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+body.high-contrast .ouv-tabs-wrapper .nav-link {
+  border-color: #ff0 !important;
+  color: #ff0 !important;
+  background: #000 !important;
+  border-width: 2px !important;
+}
+
+body.high-contrast .ouv-tabs-wrapper .nav-link.active {
+  background: #ff0 !important;
+  color: #000 !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
    10. PASSO A PASSO — FLUXO DE ATENDIMENTO
    ══════════════════════════════════════════════════════════════════════════ */
 .ouv-passos {
