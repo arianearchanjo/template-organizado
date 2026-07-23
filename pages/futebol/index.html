@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futebol | Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    function getBasePath() { return "../../"; }
+    const base = getBasePath();
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="css/futebol.css">
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <div id="pi-wrapper">
+    <section id="pi-hero" aria-labelledby="futebol-titulo">
+      <div class="container">
+        <div class="pi-hero-inner">
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li>
+                <a href="../../index.html">
+                  <i class="fas fa-home" aria-hidden="true"></i> Início
+                </a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li aria-current="page">Futebol</li>
+            </ol>
+          </nav>
+
+          <h1 id="futebol-titulo" class="pi-hero-titulo">Futebol</h1>
+          <p class="pi-hero-subtitulo">Acompanhe os campeonatos municipais de Campina Grande do Sul.</p>
+        </div>
+      </div>
+
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <main id="pi-main">
+      <div class="container">
+        <div id="pi-conteudo" tabindex="-1">
+          <section class="fut-intro" aria-labelledby="campeonatos-titulo">
+            <div class="fut-intro-icone" aria-hidden="true">
+              <i class="fas fa-futbol"></i>
+            </div>
+            <div>
+              <span class="fut-label">Competições municipais</span>
+              <h2 id="campeonatos-titulo">Campeonatos por ano</h2>
+              <p>Selecione o ano desejado para acessar informações, equipes, tabelas, resultados e estatísticas da competição.</p>
+            </div>
+          </section>
+
+          <section aria-label="Anos disponíveis">
+            <div class="fut-anos-grid">
+              <article class="fut-ano-card">
+                <a href="../../pages-migradas/campeonato/" aria-label="Acessar campeonato municipal de futebol de 2026">
+                  <div class="fut-ano-topo">
+                    <span class="fut-status">
+                      <i class="fas fa-circle" aria-hidden="true"></i>
+                      Disponível
+                    </span>
+                    <i class="fas fa-trophy fut-trofeu" aria-hidden="true"></i>
+                  </div>
+
+                  <div class="fut-ano-conteudo">
+                    <span class="fut-ano">2026</span>
+                    <h3>Campeonato Municipal de Futebol</h3>
+                    <p>Acesse a página da competição e acompanhe todas as informações da temporada.</p>
+                  </div>
+
+                  <span class="fut-acessar">
+                    Acessar campeonato
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </article>
+            </div>
+          </section>
+
+          <aside class="fut-aviso" role="note">
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
+            <p>Novos anos serão adicionados nesta página conforme os campeonatos forem realizados.</p>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+</body>
+</html>
