@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informações, transparência e canais da Secretaria Municipal da Saúde de Campina Grande do Sul.">
+  <title>Secretaria Municipal da Saúde | Prefeitura de Campina Grande do Sul</title>
+  <script>
+    function getBasePath() { return "../../"; }
+    const base = getBasePath();
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="css/saude.css">
+</head>
+<body>
+  <a href="#saude-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <div id="dynamic-content"></div>
+
+  <meu-footer></meu-footer>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script>
+    fetch("conteudo.html")
+      .then(function (response) {
+        if (!response.ok) throw new Error("Não foi possível carregar conteudo.html");
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("dynamic-content").innerHTML = html;
+        var script = document.createElement("script");
+        script.src = "js/saude.js";
+        document.body.appendChild(script);
+      })
+      .catch(function (error) {
+        document.getElementById("dynamic-content").innerHTML =
+          '<main class="container py-5"><div class="alert alert-danger">Não foi possível carregar o conteúdo da Saúde.</div></main>';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
