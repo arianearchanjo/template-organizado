@@ -254,6 +254,10 @@
   background: linear-gradient(135deg, #5b3f68, #826092);
 }
 
+.sti-card-header--portal {
+  background: var(--verde-escuro, #1e5c1e);
+}
+
 .sti-card-header > i {
   position: relative;
   z-index: 1;
