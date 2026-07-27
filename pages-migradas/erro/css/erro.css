@@ -1,0 +1,274 @@
+:root {
+  --erro-verde: var(--verde, #2d7a2d);
+  --erro-verde-escuro: var(--verde-escuro, #1e5c1e);
+  --erro-verde-claro: var(--verde-claro, #e8f5e8);
+  --erro-fundo: var(--cinza-bg, #eef2ee);
+  --erro-borda: var(--cinza-borda, #c8d8c8);
+  --erro-texto: var(--texto, #1a2a1a);
+}
+
+.erro-pagina {
+  display: flex;
+  min-height: 560px;
+  align-items: center;
+  padding: 64px 0;
+  background: #fff;
+}
+
+.erro-pagina > .pi-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.erro-conteudo {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.erro-icone {
+  display: inline-flex;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+  color: var(--erro-verde);
+  background: var(--erro-verde-claro);
+  border: 1px solid var(--erro-borda);
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.erro-conteudo h1 {
+  margin: 0;
+  color: var(--erro-verde-escuro);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.erro-conteudo h2 {
+  margin: 9px 0 0;
+  color: var(--erro-texto);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.erro-descricao {
+  margin: 12px auto 28px;
+  color: #596659;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.erro-busca {
+  max-width: 620px;
+  margin: 0 auto 34px;
+  text-align: left;
+}
+
+.erro-busca-controle {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-radius: 7px;
+  transition: box-shadow 0.2s ease;
+}
+
+.erro-busca-controle:focus-within {
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.2);
+}
+
+.erro-busca-icone {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 17px;
+  color: var(--erro-verde);
+  transform: translateY(-50%);
+}
+
+.erro-busca input {
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  padding: 10px 16px 10px 46px;
+  color: var(--erro-texto);
+  background: #fff;
+  border: 1px solid var(--erro-borda);
+  border-right: 0;
+  border-radius: 7px 0 0 7px;
+  font: inherit;
+}
+
+.erro-busca input:focus {
+  border-color: var(--erro-verde);
+  outline: none;
+}
+
+.erro-busca input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.erro-busca button {
+  display: inline-flex;
+  min-width: 132px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  color: #fff;
+  background: var(--erro-verde);
+  border: 1px solid var(--erro-verde);
+  border-radius: 0 7px 7px 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.erro-busca button:hover {
+  background: var(--erro-verde-escuro);
+}
+
+.erro-busca-ajuda {
+  margin: 7px 0 0;
+  color: #687568;
+  font-size: 0.75rem;
+}
+
+.erro-atalhos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.erro-atalho {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  color: var(--erro-verde-escuro);
+  background: #fff;
+  border: 1px solid var(--erro-verde);
+  border-radius: 7px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.erro-atalho:hover {
+  color: var(--erro-verde-escuro);
+  background: var(--erro-verde-claro);
+  text-decoration: none;
+}
+
+.erro-atalho--principal {
+  color: #fff;
+  background: var(--erro-verde);
+}
+
+.erro-atalho--principal:hover {
+  color: #fff;
+  background: var(--erro-verde-escuro);
+}
+
+body.high-contrast .erro-pagina,
+body.high-contrast .erro-conteudo {
+  color: #fff !important;
+  background: #000 !important;
+}
+
+body.high-contrast .erro-icone {
+  color: #ff0 !important;
+  background: #111 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .erro-conteudo h1,
+body.high-contrast .erro-conteudo h2 {
+  color: #ff0 !important;
+}
+
+body.high-contrast .erro-descricao,
+body.high-contrast .erro-busca-ajuda {
+  color: #fff !important;
+}
+
+body.high-contrast .erro-busca input {
+  color: #fff !important;
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .erro-busca-controle:focus-within {
+  box-shadow: 0 0 0 3px #ff0 !important;
+}
+
+body.high-contrast .erro-busca button,
+body.high-contrast .erro-atalho {
+  color: #000 !important;
+  background: #ff0 !important;
+  border-color: #fff !important;
+}
+
+@media (max-width: 575px) {
+  .erro-pagina {
+    min-height: 500px;
+    padding: 44px 0;
+  }
+
+  .erro-icone {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+    font-size: 1.65rem;
+  }
+
+  .erro-pagina > .pi-container {
+    padding: 0 16px;
+  }
+
+  .erro-busca-controle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .erro-busca input {
+    border: 1px solid var(--erro-borda);
+    border-radius: 7px;
+  }
+
+  .erro-busca button {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 7px;
+  }
+
+  .erro-atalhos {
+    flex-direction: column;
+  }
+
+  .erro-atalho {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .erro-busca-controle,
+  .erro-busca button,
+  .erro-atalho {
+    transition: none;
+  }
+}
