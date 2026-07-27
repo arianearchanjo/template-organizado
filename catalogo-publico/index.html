@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Livros - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    function getBasePath() {
+      return "../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Open Sans (BookEase) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts - Roboto (Global) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../_global/css/index.css">
+  <!-- Estilos BookEase -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- HERO -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+
+          <!-- Breadcrumb -->
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li>
+                <a href="../index.html">
+                  <i class="fas fa-home" aria-hidden="true"></i> Início
+                </a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+              </li>
+              <li aria-current="page">Catálogo de Livros</li>
+            </ol>
+          </nav>
+
+          <h1 class="pi-hero-titulo">Catálogo de Livros</h1>
+          <p class="pi-hero-subtitulo">Pesquise e consulte o acervo disponível nas bibliotecas do município</p>
+
+        </div>
+      </div>
+
+      <!-- Ilustração decorativa -->
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+    <!-- /HERO -->
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section id="bec-main">
+      <div class="container">
+
+        <!-- Texto explicativo -->
+        <div class="bec-intro">
+          <div class="bec-intro-icone" aria-hidden="true">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="isc-texto">
+            <h2 class="bec-intro-titulo">Bem-vindo ao Catálogo Público</h2>
+            <p class="bec-intro-texto">
+              Consulte o acervo das bibliotecas municipais de Campina Grande do Sul.
+              Utilize a barra de busca para pesquisar por título, autor ou ISBN, e refine os resultados
+              com os filtros de situação, biblioteca, categoria e década de publicação.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /CONTEÚDO PRINCIPAL -->
+
+    <!-- ▼▼▼ COPIE A PARTIR DAQUI ▼▼▼ -->
+    <section class="bec" id="catalogo">
+      <div class="container">
+        <div class="bec-layout">
+
+          <!-- Sidebar de Filtros -->
+          <aside class="bec-sidebar" aria-label="Filtros de busca">
+            
+            <!-- Filtro: Biblioteca -->
+            <div class="bec-filtro" id="bec-filtro-biblioteca">
+              <h3 class="bec-filtro-titulo">
+                <i class="fas fa-building" aria-hidden="true"></i> Biblioteca
+              </h3>
+              <div class="bec-filtro-opcoes" role="radiogroup" aria-label="Filtrar por biblioteca">
+                <label class="bec-radio">
+                  <input type="radio" name="biblioteca" value="" checked>
+                  <span class="bec-radio-custom"></span>
+                  Todas
+                </label>
+              </div>
+            </div>
+
+            <!-- Filtro: Categoria -->
+            <div class="bec-filtro" id="bec-filtro-categoria">
+              <h3 class="bec-filtro-titulo">
+                <i class="fas fa-tags" aria-hidden="true"></i> Categoria
+              </h3>
+              <div class="bec-filtro-opcoes" role="radiogroup" aria-label="Filtrar por categoria">
+                <label class="bec-radio">
+                  <input type="radio" name="categoria" value="" checked>
+                  <span class="bec-radio-custom"></span>
+                  Todas
+                </label>
+              </div>
+            </div>
+
+            <!-- Filtro: Ano -->
+            <div class="bec-filtro" id="bec-filtro-ano">
+              <h3 class="bec-filtro-titulo">
+                <i class="fas fa-calendar" aria-hidden="true"></i> Ano
+              </h3>
+              <div class="bec-filtro-opcoes" role="radiogroup" aria-label="Filtrar por ano">
+                <label class="bec-radio">
+                  <input type="radio" name="ano" value="" checked>
+                  <span class="bec-radio-custom"></span>
+                  Todos
+                </label>
+              </div>
+            </div>
+
+            <!-- Botão Limpar Filtros -->
+            <button class="bec-btn-limpar" id="bec-limpar-filtros">
+              <i class="fas fa-undo" aria-hidden="true"></i> Limpar Filtros
+            </button>
+
+          </aside>
+
+          <!-- Conteúdo Principal -->
+          <div class="bec-conteudo">
+
+            <!-- Barra de Busca -->
+            <div class="bec-busca">
+              <div class="bec-busca-grupo">
+                <i class="fas fa-search bec-busca-icone" aria-hidden="true"></i>
+                <input 
+                  type="search" 
+                  id="bec-input-busca" 
+                  class="bec-busca-input" 
+                  placeholder="Pesquisar por título, ISBN ou categoria..."
+                  aria-label="Pesquisar livros"
+                  autocomplete="off"
+                >
+                <button id="bec-btn-limpar-busca" class="bec-busca-btn-limpar" aria-label="Limpar busca" style="display:none;">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Chips de Situação -->
+            <div class="bec-chips" role="group" aria-label="Filtrar por situação">
+              <button class="bec-chip ativo" data-situacao="" aria-pressed="true">
+                <i class="fas fa-globe" aria-hidden="true"></i> Todos
+              </button>
+              <button class="bec-chip" data-situacao="disponivel" aria-pressed="false">
+                <i class="fas fa-check-circle" aria-hidden="true"></i> Disponível
+              </button>
+              <button class="bec-chip" data-situacao="emprestado" aria-pressed="false">
+                <i class="fas fa-hand-holding" aria-hidden="true"></i> Emprestado
+              </button>
+              <button class="bec-chip" data-situacao="reservado" aria-pressed="false">
+                <i class="fas fa-clock" aria-hidden="true"></i> Reservado
+              </button>
+              <button class="bec-chip" data-situacao="extraviado" aria-pressed="false">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Extraviado
+              </button>
+            </div>
+
+            <!-- Contador de Resultados -->
+            <div class="bec-contador" aria-live="polite" aria-atomic="true">
+              <span id="bec-num-resultados">0</span> livro(s) encontrado(s)
+            </div>
+
+            <!-- Lista de Livros -->
+            <div class="bec-lista" id="bec-lista" role="list" aria-label="Livros encontrados">
+              <!-- Cards de livros serão renderizados via JS -->
+            </div>
+
+            <!-- Mensagem: Nenhum resultado -->
+            <div class="bec-sem-resultado" id="bec-sem-resultado" style="display:none;" role="status" aria-live="polite">
+              <i class="fas fa-book-open" aria-hidden="true"></i>
+              <p>Nenhum livro encontrado para os filtros selecionados.</p>
+              <button class="bec-btn-limpar" id="bec-btn-limpar-vazio">
+                <i class="fas fa-undo" aria-hidden="true"></i> Limpar Filtros
+              </button>
+            </div>
+
+            <!-- Loading -->
+            <div class="bec-loading" id="bec-loading" style="display:none;" role="status" aria-live="polite">
+              <div class="bec-spinner"></div>
+              <p>Carregando livros...</p>
+            </div>
+
+            <!-- Paginação -->
+            <nav class="bec-paginacao" id="bec-paginacao" aria-label="Paginação">
+              <!-- Botões de paginação serão renderizados via JS -->
+            </nav>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ▲▲▲ COPIE ATÉ AQUI ▲▲▲ -->
+
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../_global/js/acessibilidade-component.js"></script>
+  <script src="../_global/js/searh-component.js"></script>
+  <script src="../_global/js/header-component.js"></script>
+  <script src="../_global/js/footer-component.js"></script>
+  
+  <!-- Scripts BookEase -->
+  <script src="script.js"></script>
+</body>
+</html>

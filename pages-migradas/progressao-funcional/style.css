@@ -1,0 +1,141 @@
+:root {
+    --verde: #2d7a2d;
+    --verde-escuro: #1e5c1e;
+    --verde-medio: #3a9a3a;
+    --verde-claro: #e8f5e8;
+    --azul-bar: #1a4f8a;
+    --amarelo: #f5c518;
+    --cinza-bg: #eef2ee;
+    --cinza-borda: #c8d8c8;
+    --texto: #1a2a1a;
+}
+
+body {
+    background: var(--cinza-bg) !important;
+    color: var(--texto);
+}
+
+/* FILTRO */
+.filter-container {
+    border-left: 4px solid var(--verde) !important;
+    background: #f7f9f7 !important;
+}
+
+/* BOTÕES ANO */
+.btn-outline-emerald,
+.filter-container .btn {
+    color: var(--verde-escuro) !important;
+    border: 1px solid var(--verde) !important;
+    background: #fff !important;
+    font-weight: 600;
+}
+
+.btn-outline-emerald:hover,
+.filter-container .btn:hover {
+    background: var(--verde-claro) !important;
+    color: var(--verde-escuro) !important;
+    border-color: var(--verde-escuro) !important;
+}
+
+/* BOTÃO ATIVO */
+.btn-emerald,
+.filter-container .btn.active,
+.filter-container .btn-success,
+.filter-container .btn-primary {
+    background: var(--verde) !important;
+    border-color: var(--verde) !important;
+    color: #fff !important;
+}
+
+.btn-emerald:hover,
+.filter-container .btn.active:hover {
+    background: var(--verde-escuro) !important;
+    border-color: var(--verde-escuro) !important;
+}
+
+/* CARD PRINCIPAL */
+.file-category-wrapper {
+    border: 1px solid var(--cinza-borda) !important;
+    border-radius: 12px !important;
+    background: #fff !important;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.file-category-wrapper:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+}
+
+/* BOTÃO ACCORDION */
+.modern-accordion-btn {
+    background: #fff !important;
+    color: var(--texto) !important;
+    border: none !important;
+}
+
+.modern-accordion-btn:hover {
+    background: #f6faf6 !important;
+}
+
+.modern-accordion-btn:not(.collapsed) {
+    background: var(--verde-claro) !important;
+}
+
+/* ÍCONE PASTA */
+.modern-accordion-btn i,
+.fa-folder,
+.fa-folder-open {
+    color: var(--verde-medio) !important;
+}
+
+/* SETA */
+.transition-icon {
+    color: #5f6b5f !important;
+}
+
+.modern-accordion-btn:not(.collapsed) .transition-icon {
+    color: var(--verde) !important;
+}
+
+/* BADGE ANO */
+.badge-year {
+    background: #edf5ed !important;
+    color: var(--verde-escuro) !important;
+    border: 1px solid var(--cinza-borda) !important;
+    font-weight: 600;
+}
+
+/* ITENS */
+.modern-file-item {
+    border-left: 3px solid transparent;
+    transition: 0.2s ease;
+}
+
+.modern-file-item:hover {
+    background: #f7faf7 !important;
+    border-left-color: var(--verde) !important;
+}
+
+/* ÍCONES */
+.icon-wrapper {
+    background: var(--verde-claro) !important;
+    border: 1px solid var(--cinza-borda) !important;
+}
+
+.modern-file-item:hover .icon-wrapper {
+    background: #dff0df !important;
+}
+
+/* LINKS */
+.document-name,
+.download-icon i {
+    transition: 0.2s ease;
+}
+
+.modern-file-item:hover .document-name {
+    color: var(--verde-escuro) !important;
+}
+
+.modern-file-item:hover .download-icon i {
+    color: var(--verde) !important;
+}

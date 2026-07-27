@@ -58,3 +58,10 @@
 .card-img-link--logo:hover img {
     filter: grayscale(0%);
 }
+
+/* Mantém a ilustração do hero alinhada à borda direita do container. */
+@media (min-width: 1200px) {
+    #hero .hero-imagem {
+        right: max(15px, calc((100% - 1140px) / 2));
+    }
+}
