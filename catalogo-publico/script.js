@@ -61,6 +61,17 @@ var BEC_CONFIG = {
   // ============================================
 
   function init() {
+    /*
+     * A API autoriza o portal sem "www" no CORS. O portal também responde
+     * nesse host, então mantemos a página na origem aceita antes da consulta.
+     */
+    if (window.location.hostname === 'www.campinagrandedosul.pr.gov.br') {
+      var apiCompatibleUrl = new URL(window.location.href);
+      apiCompatibleUrl.hostname = 'campinagrandedosul.pr.gov.br';
+      window.location.replace(apiCompatibleUrl.href);
+      return;
+    }
+
     cacheElements();
     bindEvents();
     fetchBooks();
@@ -158,7 +169,13 @@ var BEC_CONFIG = {
         return response.json();
       })
       .then(function (data) {
-        state.livros = Array.isArray(data) ? data : (data.books || data.data || []);
+        var livros = Array.isArray(data) ? data : (data.books || data.data || []);
+
+        if (!Array.isArray(livros)) {
+          livros = livros.books || livros.items || livros.results || [];
+        }
+
+        state.livros = livros.map(normalizeBook);
         extractFilters();
         applyFilters();
         showLoading(false);
@@ -168,6 +185,62 @@ var BEC_CONFIG = {
         showLoading(false);
         showSemResultado(true);
       });
+  }
+
+  /**
+   * Converte o contrato atual da API do BookEase para os campos usados pela
+   * interface. A normalização também mantém compatibilidade com a API legada.
+   */
+  function normalizeBook(livro) {
+    var categorias = livro.Categories || livro.categories || livro.category || livro.categoria;
+    var autores = livro.Authors || livro.authors || livro.author || livro.autor;
+    var categoria = normalizeRelatedName(categorias);
+    var autor = normalizeRelatedName(autores);
+
+    return {
+      id: livro.id,
+      title: livro.title || livro.titulo || livro.name || '',
+      author: autor,
+      isbn: livro.isbn || '',
+      category: categoria,
+      organization: livro.organization || livro.biblioteca || livro.library || '',
+      year: livro.year || livro.ano || livro.publicationYear || '',
+      status: normalizeStatus(livro.status || livro.situacao || ''),
+      coverImage: livro.coverImage || livro.cover_image || livro.coverUrl ||
+        livro.cover_url || livro.capa || livro.image || '',
+      publisher: livro.publisher || livro.editora || '',
+      pages: livro.pages || livro.paginas || '',
+      description: livro.description || livro.sinopse || livro.resumo || ''
+    };
+  }
+
+  function normalizeRelatedName(value) {
+    if (!value) return '';
+
+    if (Array.isArray(value)) {
+      return value.map(normalizeRelatedName).filter(Boolean).join(', ');
+    }
+
+    if (typeof value === 'string') {
+      return value;
+    }
+
+    return value.name || value.nome || '';
+  }
+
+  function normalizeStatus(status) {
+    var statusMap = {
+      AVAILABLE: 'disponivel',
+      UNAVAILABLE: 'indisponivel',
+      BORROWED: 'emprestado',
+      LOANED: 'emprestado',
+      RESERVED: 'reservado',
+      LOST: 'extraviado',
+      MISSING: 'extraviado'
+    };
+    var normalized = String(status).trim();
+
+    return statusMap[normalized.toUpperCase()] || normalized.toLowerCase();
   }
 
   // ============================================
@@ -245,14 +318,25 @@ var BEC_CONFIG = {
     if (!container) return;
 
     container.innerHTML = '';
+    container.id = 'bec-categorias-opcoes';
 
     var allLabel = createRadioLabel('categoria', '', 'Todas', true);
     container.appendChild(allLabel);
 
+    var categoryLabels = [];
     state.categorias.forEach(function (cat) {
       var label = createRadioLabel('categoria', cat, cat, false);
       container.appendChild(label);
+      categoryLabels.push(label);
     });
+
+    setupExpandableFilter(
+      elements.filtroCategoria,
+      container,
+      categoryLabels,
+      'categorias',
+      4
+    );
 
     container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
       radio.addEventListener('change', function () {
@@ -268,14 +352,25 @@ var BEC_CONFIG = {
     if (!container) return;
 
     container.innerHTML = '';
+    container.id = 'bec-anos-opcoes';
 
     var allLabel = createRadioLabel('ano', '', 'Todos', true);
     container.appendChild(allLabel);
 
+    var yearLabels = [];
     state.anos.forEach(function (decada) {
       var label = createRadioLabel('ano', decada, decada + 's', false);
       container.appendChild(label);
+      yearLabels.push(label);
     });
+
+    setupExpandableFilter(
+      elements.filtroAno,
+      container,
+      yearLabels,
+      'anos',
+      5
+    );
 
     container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
       radio.addEventListener('change', function () {
@@ -284,6 +379,58 @@ var BEC_CONFIG = {
         applyFilters();
       });
     });
+  }
+
+  function setupExpandableFilter(filter, container, optionLabels, label, visibleLimit) {
+    var previousButton = filter.querySelector('.bec-filtro-mais');
+
+    if (previousButton) {
+      previousButton.remove();
+    }
+
+    if (optionLabels.length <= visibleLimit) {
+      return;
+    }
+
+    optionLabels.slice(visibleLimit).forEach(function (option) {
+      option.hidden = true;
+    });
+
+    var hiddenCount = optionLabels.length - visibleLimit;
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'bec-filtro-mais';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', container.id);
+
+    function updateButton(expanded) {
+      button.replaceChildren();
+
+      var icon = document.createElement('i');
+      icon.className = expanded ? 'fas fa-chevron-up' : 'fas fa-plus';
+      icon.setAttribute('aria-hidden', 'true');
+
+      button.appendChild(icon);
+      button.appendChild(document.createTextNode(
+        expanded ? ' Mostrar menos' : ' Mais ' + label + ' (' + hiddenCount + ')'
+      ));
+    }
+
+    updateButton(false);
+
+    button.addEventListener('click', function () {
+      var expanded = button.getAttribute('aria-expanded') === 'true';
+      var nextExpanded = !expanded;
+
+      optionLabels.slice(visibleLimit).forEach(function (option) {
+        option.hidden = !nextExpanded;
+      });
+
+      button.setAttribute('aria-expanded', String(nextExpanded));
+      updateButton(nextExpanded);
+    });
+
+    filter.insertBefore(button, filter.querySelector('.bec-btn-limpar'));
   }
 
   function createRadioLabel(name, value, text, checked) {
@@ -473,13 +620,19 @@ var BEC_CONFIG = {
     var status = (livro.status || livro.situacao || '').toLowerCase();
 
     var capaHtml = capa
-      ? '<img src="' + escapeHtml(capa) + '" alt="' + escapeHtml(titulo) + '" loading="lazy">'
-      : '<i class="fas fa-book" aria-hidden="true"></i>';
+      ? '<div class="bec-card-capa">' +
+          '<img src="' + escapeHtml(capa) + '" alt="' + escapeHtml(titulo) + '" loading="lazy">' +
+        '</div>'
+      : '';
 
-    return '<div class="bec-card" role="listitem" tabindex="0" aria-label="' + escapeHtml(titulo) + '">' +
-      '<div class="bec-card-capa">' + capaHtml + '</div>' +
+    return '<div class="bec-card' + (capa ? '' : ' bec-card-sem-capa') +
+      '" role="listitem" tabindex="0" aria-label="' + escapeHtml(titulo) + '">' +
+      capaHtml +
       '<div class="bec-card-body">' +
-        '<h3 class="bec-card-titulo">' + escapeHtml(titulo) + '</h3>' +
+        '<div class="bec-card-cabecalho">' +
+          (!capa ? '<span class="bec-card-livro-icone" aria-hidden="true"><i class="fas fa-book"></i></span>' : '') +
+          '<h3 class="bec-card-titulo">' + escapeHtml(titulo) + '</h3>' +
+        '</div>' +
         '<p class="bec-card-autor">' + escapeHtml(autor) + '</p>' +
         '<div class="bec-card-meta">' +
           (categoria ? '<span class="bec-card-categoria">' + escapeHtml(categoria) + '</span>' : '') +
@@ -592,7 +745,9 @@ var BEC_CONFIG = {
 
     var capaHtml = capa
       ? '<img src="' + escapeHtml(capa) + '" alt="' + escapeHtml(titulo) + '" class="bec-modal-capa">'
-      : '<div class="bec-modal-capa" style="display:flex;align-items:center;justify-content:center;"><i class="fas fa-book" style="font-size:4rem;color:#bdc3c7;"></i></div>';
+      : '<div class="bec-modal-capa bec-modal-capa-placeholder" aria-hidden="true">' +
+          '<i class="fas fa-book-open"></i>' +
+        '</div>';
 
     overlay.innerHTML =
       '<div class="bec-modal">' +
