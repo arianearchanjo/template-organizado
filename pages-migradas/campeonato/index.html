@@ -3,41 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campeonato Municipal 2026 - Prefeitura de Campina Grande do Sul</title>
-
+  <meta name="description" content="Classificação, partidas, artilharia e clubes do Campeonato Municipal de Campina Grande do Sul.">
+  <title>Campeonato Municipal - Prefeitura de Campina Grande do Sul</title>
   <script>
-    // Define o caminho base para assets e links
-    function getBasePath() {
-      return "../../";
-    }
+    function getBasePath() { return "../../"; }
     const base = getBasePath();
   </script>
-
-  <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  
-  <!-- Estilos Globais -->
   <link rel="stylesheet" href="../../_global/css/index.css">
   <link rel="stylesheet" href="../../_global/css/acessibilidade.css">
-  
-  <!-- Estilos Específicos do Campeonato -->
   <link rel="stylesheet" href="css/campeonato.css">
-
 </head>
 <body>
   <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
-  
   <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
   <main id="pi-conteudo">
-    
-    <!-- HERO -->
     <section id="pi-hero" aria-label="Identificação da página">
       <div class="container">
         <div class="pi-hero-inner">
@@ -45,19 +30,19 @@
             <ol class="pi-breadcrumb">
               <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
               <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
-              <li aria-current="page">Esportes</li>
+              <li>Esportes</li>
               <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
               <li aria-current="page">Campeonato Municipal</li>
             </ol>
           </nav>
 
-          <div id="header-loading" class="skeleton-wrap" style="max-width: 600px;">
+          <div id="header-loading" class="skeleton-wrap" style="max-width:600px">
             <div class="skeleton-line" style="width:70%;height:32px;margin-bottom:10px"></div>
-            <div class="skeleton-line" style="width:50%;height:16px;"></div>
+            <div class="skeleton-line" style="width:50%;height:16px"></div>
           </div>
 
           <div id="header-info" style="display:none">
-            <h1 id="champ-name" class="pi-hero-titulo">CAMPEONATO MUNICIPAL</h1>
+            <h1 id="champ-name" class="pi-hero-titulo">Campeonato Municipal</h1>
             <p id="champ-description" class="pi-hero-subtitulo"></p>
           </div>
         </div>
@@ -68,7 +53,7 @@
     </section>
 
     <!-- CONTEÚDO DASHBOARD -->
-    <main id="pi-main">
+    <div id="pi-main">
       <div class="container champ-container">
         
         <!-- Toggle de Séries -->
@@ -138,9 +123,22 @@
             <div id="matches-loading" class="loader"><div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div></div>
             <div id="matches-content" class="cell-body" style="display:none">
               <div class="round-bar">
-                <button class="rbtn" id="prev-round" aria-label="Rodada anterior"><i class="fas fa-chevron-left"></i></button>
-                <select class="rsel" id="round-select" aria-label="Selecionar rodada"></select>
-                <button class="rbtn" id="next-round" aria-label="Próxima rodada"><i class="fas fa-chevron-right"></i></button>
+                <button class="rbtn" id="prev-round" type="button" aria-label="Selecionar rodada anterior">
+                  <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="round-selector">
+                  <label for="round-select">Selecione a rodada</label>
+                  <div class="round-select-wrap">
+                    <i class="fas fa-calendar-days" aria-hidden="true"></i>
+                    <select class="rsel" id="round-select">
+                      <option>Carregando rodadas...</option>
+                    </select>
+                    <i class="fas fa-chevron-down round-select-chevron" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <button class="rbtn" id="next-round" type="button" aria-label="Selecionar próxima rodada">
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
               </div>
               <div id="matches-grid" class="mgrid"></div>
             </div>
@@ -175,7 +173,7 @@
 
         </div>
       </div>
-    </main>
+    </div>
 
   </main>
 
@@ -183,24 +181,16 @@
 
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
   </div>
 
-  <!-- Scripts Externos -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
-  <!-- Scripts Globais (Componentes) -->
   <script src="../../_global/js/acessibilidade-component.js"></script>
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
-  
-  <!-- Script do Campeonato -->
   <script src="js/campeonato.js"></script>
-  
 </body>
 </html>

@@ -16,7 +16,7 @@
               <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
             </li>
             <li>
-              <a href="#">Saúde</a>
+              <a href="../saude/">Saúde</a>
             </li>
             <li aria-hidden="true">
               <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
@@ -240,17 +240,7 @@
             class="sec-tab-painel"
             role="tabpanel"
             aria-labelledby="tab-estatisticas">
-
-            <div class="sec-texto">
-              <p>Esta seção será populada futuramente com gráficos, tabelas e indicadores de atendimento da Ouvidoria SUS.</p>
-            </div>
-
-            <!-- Espaço reservado para integração futura -->
-            <div class="pi-placeholder-dados" style="border: 2px dashed var(--pi-cinza-borda); border-radius: 8px; padding: 40px; text-align: center; color: var(--pi-verde-escuro); opacity: 0.6;">
-              <i class="fas fa-chart-bar" style="font-size: 3rem; margin-bottom: 15px;"></i>
-              <p>Área reservada para indicadores estatísticos dinâmicos.</p>
-            </div>
-
+            <div class="spweb-formdata" data-model="_SectionOuvSusGraph" data-id="6"></div>
           </div>
           <!-- /ABA 2: DADOS ESTATÍSTICOS -->
 
@@ -282,19 +272,22 @@
             </div>
           </div>
 
-          <!-- Navegação institucional -->
+          <!-- Acessos da Saúde -->
           <div class="pi-sidebar-card">
-            <h3><i class="fas fa-building" aria-hidden="true"></i> Saúde</h3>
+            <h3><i class="fas fa-heart-pulse" aria-hidden="true"></i> Saúde</h3>
             <ul class="pi-sidebar-links">
-              <li><a href="#"><span>Secretaria de Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-              <li><a href="#"><span>Unidades de Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-              <li class="ativo">
-                <a href="#" aria-current="page">
-                  <span>Ouvidoria SUS</span>
+              <li>
+                <a href="../saude/">
+                  <span>Secretaria Municipal da Saúde</span>
                   <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </a>
               </li>
-              <li><a href="#"><span>Vigilância Sanitária</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li>
+                <a href="../saude/#painel-fila">
+                  <span>Fila de Espera do SUS</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -304,9 +297,6 @@
             <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 17h30</p>
             <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7155</p>
             <p><i class="fas fa-envelope" aria-hidden="true"></i> ouvidoriasus@pmcgs.pr...</p>
-            <a href="#" class="pi-btn-verde pi-btn-full">
-              <i class="fas fa-comments" aria-hidden="true"></i> Registrar Manifestação
-            </a>
           </div>
 
         </aside>

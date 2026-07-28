@@ -27,6 +27,8 @@
   align-items: start;
 }
 
+.pi-layout > article { min-width: 0; }
+
 .pi-secao-titulo {
   font-size: 1.0625rem;
   font-weight: 700;
@@ -125,25 +127,60 @@
 }
 
 /* ══ 4. CONTATOS ═════════════════════════════════════════════ */
-.sec-contato-lista { margin-bottom: 30px; }
+.sec-contato-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--pi-verde-escuro);
+  box-shadow: 0 7px 22px rgba(30, 92, 30, 0.17);
+}
 
 .sec-contato-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 10px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
   font-size: 0.95rem;
 }
 
 .sec-contato-item i {
-  color: var(--pi-verde);
+  color: var(--pi-amarelo);
   margin-top: 4px;
   width: 20px;
   text-align: center;
 }
 
-.sec-contato-item strong { color: var(--pi-texto); }
-.sec-contato-item a { color: var(--pi-verde-escuro); text-decoration: none; }
+.sec-contato-item strong { color: #fff; }
+.sec-contato-item a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+.sec-contato-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.pi-mt-secao {
+  padding: 26px;
+  border: 1px solid var(--pi-cinza-borda);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(30, 92, 30, 0.055);
+}
+
+#painel-estatisticas {
+  min-height: 360px;
+  padding: 22px;
+  border: 1px solid var(--pi-cinza-borda);
+  border-radius: 8px;
+  background: #fff;
+}
 
 /* ══ 5. SIDEBAR ══════════════════════════════════════════════ */
 .pi-sidebar-card, .pi-controles-bloco {
@@ -250,4 +287,24 @@
 /* ══ 6. RESPONSIVIDADE ═══════════════════════════════════════ */
 @media (max-width: 991px) {
   .pi-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575px) {
+  .sec-tabs-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .sec-tab-btn { white-space: nowrap; }
+  .sec-contato-lista { grid-template-columns: 1fr; }
+  .pi-mt-secao { padding: 18px; }
+}
+
+body.high-contrast .sec-contato-item,
+body.high-contrast .pi-mt-secao,
+body.high-contrast #painel-estatisticas {
+  border-color: #fff !important;
+  background: #000 !important;
+  color: #fff !important;
+  box-shadow: none !important;
 }

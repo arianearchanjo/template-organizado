@@ -269,7 +269,9 @@ async function loadMatches() {
     data.forEach((r, i) => {
       const opt = document.createElement('option');
       opt.value = i;
-      opt.textContent = (r.round.name || 'RODADA ' + r.round.numero).toUpperCase();
+      const roundName = (r.round.name || 'RODADA ' + r.round.numero).toUpperCase();
+      const matchCount = Array.isArray(r.matches) ? r.matches.length : 0;
+      opt.textContent = `${roundName} — ${matchCount} ${matchCount === 1 ? 'PARTIDA' : 'PARTIDAS'}`;
       sel.appendChild(opt);
       
       if (r.round.numero === apiCurrentRound) {

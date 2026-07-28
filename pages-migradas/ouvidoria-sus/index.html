@@ -4,369 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ouvidoria Pública do SUS - Prefeitura de Campina Grande do Sul</title>
-
   <script>
-    // Define o caminho base para assets e links
-    function getBasePath() {
-      return "../../";
-    }
+    function getBasePath() { return "../../"; }
     const base = getBasePath();
   </script>
-
-  <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos Globais -->
   <link rel="stylesheet" href="../../_global/css/index.css">
-  <!-- Estilos do Template -->
+  <link rel="stylesheet" href="../../_global/css/acessibilidade.css">
   <link rel="stylesheet" href="css/ouvidoria-sus.css">
-
 </head>
 <body>
   <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
-  
   <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-  <main id="pi-conteudo">
-    <!-- O conteúdo abaixo será substituído pelo conteúdo dinâmico (conteudo.html) em produção -->
-    
-    <!-- HERO -->
-    <section id="pi-hero" aria-label="Identificação da Ouvidoria SUS">
-      <div class="container">
-        <div class="pi-hero-inner">
-
-          <!-- Breadcrumb -->
-          <nav aria-label="Você está em">
-            <ol class="pi-breadcrumb">
-              <li>
-                <a href="../../index.html">
-                  <i class="fas fa-home" aria-hidden="true"></i> Início
-                </a>
-              </li>
-              <li aria-hidden="true">
-                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-              </li>
-              <li>
-                <a href="#">Saúde</a>
-              </li>
-              <li aria-hidden="true">
-                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-              </li>
-              <li aria-current="page">
-                Ouvidoria Pública do SUS
-              </li>
-            </ol>
-          </nav>
-
-          <h1 class="pi-hero-titulo">
-            Ouvidoria Pública do SUS
-          </h1>
-
-        </div>
-      </div>
-
-      <!-- Ilustração decorativa -->
-      <div class="pi-hero-ilustracao" aria-hidden="true">
-        <img src="../../_global/img/global/ilustracao.png" alt="">
-      </div>
-    </section>
-    <!-- /HERO -->
-
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main id="pi-main" aria-label="Conteúdo principal">
-      <div class="container">
-        <div id="pi-conteudo-interno" class="pi-layout" tabindex="-1">
-
-          <!-- ARTIGO PRINCIPAL -->
-          <article>
-
-            <!-- Navegação por abas -->
-            <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da Ouvidoria SUS">
-              <li role="presentation">
-                <button class="sec-tab-btn ativo"
-                  id="tab-ouvidoria"
-                  role="tab"
-                  aria-controls="painel-ouvidoria"
-                  aria-selected="true">Ouvidoria SUS</button>
-              </li>
-              <li role="presentation">
-                <button class="sec-tab-btn"
-                  id="tab-estatisticas"
-                  role="tab"
-                  aria-controls="painel-estatisticas"
-                  aria-selected="false">Dados Estatísticos</button>
-              </li>
-            </ul>
-
-
-            <!-- ABA 1: OUVIDORIA SUS -->
-            <div id="painel-ouvidoria"
-              class="sec-tab-painel ativo"
-              role="tabpanel"
-              aria-labelledby="tab-ouvidoria">
-
-              <h2 class="sec-titulo">
-                Ouvidoria Pública do SUS de Campina Grande do Sul
-              </h2>
-
-              <!-- Informações Institucionais -->
-              <div class="sec-contato-lista" aria-label="Informações de contato e atendimento">
-
-                <div class="sec-contato-item">
-                  <i class="fas fa-user-tie" aria-hidden="true"></i>
-                  <span>
-                    <strong>Ouvidora:</strong>
-                    Cristiane Damasio de Oliveira
-                  </span>
-                </div>
-
-                <div class="sec-contato-item">
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                  <span>
-                    <strong>Endereço:</strong>
-                    Rodovia do Caqui, 540 - Recanto Verde
-                  </span>
-                </div>
-
-                <div class="sec-contato-item">
-                  <i class="fas fa-phone" aria-hidden="true"></i>
-                  <span>
-                    <strong>Telefone:</strong>
-                    <a href="tel:+554131627155">(41) 3162-7155</a>
-                  </span>
-                </div>
-
-                <div class="sec-contato-item">
-                  <i class="fas fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    <strong>Email:</strong>
-                    <a href="mailto:ouvidoriasus@pmcgs.pr.gov.br">ouvidoriasus@pmcgs.pr.gov.br</a>
-                  </span>
-                </div>
-
-                <div class="sec-contato-item">
-                  <i class="fas fa-clock" aria-hidden="true"></i>
-                  <span>
-                    <strong>Horário de Atendimento:</strong>
-                    Segunda a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
-                  </span>
-                </div>
-
-              </div>
-
-              <!-- Como Funciona -->
-              <section class="pi-mt-secao">
-                <h3 class="pi-secao-titulo">
-                  <i class="fas fa-info-circle" aria-hidden="true"></i> Como Funciona
-                </h3>
-                <hr class="pi-secao-divider">
-                
-                <div class="sec-texto">
-                  <ul class="pi-lista-moderna">
-                    <li>A Ouvidoria recebe e analisa as manifestações;</li>
-                    <li>Identifica as demandas;</li>
-                    <li>Remete ao setor competente para os devidos encaminhamentos;</li>
-                    <li>Analisa a decisão;</li>
-                    <li>Retorna ao usuário;</li>
-                    <li>Orienta o cidadão sobre os serviços ofertados pelo SUS Campina Grande do Sul.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <!-- Seção Institucional Principal -->
-              <section class="pi-mt-secao">
-                <h3 class="pi-secao-titulo">
-                  <i class="fas fa-bullhorn" aria-hidden="true"></i> Ouvidoria Pública
-                </h3>
-                <hr class="pi-secao-divider">
-
-                <div class="sec-texto">
-                  <p>
-                    A ouvidoria constitui-se de uma ferramenta complementar no processo de identificação das reais necessidades 
-                    dos usuários desta secretaria em relação aos serviços prestados, ao captar os anseios dos cidadãos a 
-                    organização deve estar disposta a modificar os processos de resultados deficientes na rede.
-                  </p>
-                  <p>
-                    O cidadão pode participar da gestão administrativa fazendo denúncias, ou mesmo, dando sugestões, 
-                    assim exercerá a cidadania.
-                  </p>
-                  <p>
-                    É importante que a pessoa que atende ao consumidor coloque-se no seu lugar, procurando entender o problem. 
-                    A resposta deve ser clara, demonstrando interesse e esclarecimento das providências que serão tomadas, 
-                    para que se estabeleça um vínculo de confiança.
-                  </p>
-                  <p>
-                    Com la implantação da ouvidoria, deve-se estar aberto às críticas apresentadas pelos usuários e às 
-                    manifestações do ouvidor.
-                  </p>
-                </div>
-              </section>
-
-              <!-- Seção Explicativa da Ouvidoria SUS -->
-              <section class="pi-mt-secao">
-                <h3 class="pi-secao-titulo">
-                  <i class="fas fa-hospital-user" aria-hidden="true"></i> Ouvidoria Pública do SUS de Campina Grande do Sul
-                </h3>
-                <hr class="pi-secao-divider">
-
-                <div class="sec-texto">
-                  <p>
-                    O objetivo da Ouvidoria do SUS de Campina Grande do Sul é ouvir e registrar reclamações, solicitações, 
-                    sugestões e elogios.
-                  </p>
-                  <p>
-                    A Ouvidoria atua como intermediadora entre cidadão e administração pública, encaminhando manifestações 
-                    aos setores responsáveis de forma imparcial e transparente.
-                  </p>
-                  <p>
-                    A Secretaria Municipal de Saúde disponibilizará acompanhamento estatístico dos atendimentos realizados, 
-                    permitindo análise contínua das demandas recebidas.
-                  </p>
-                  <p>
-                    As informações coletadas poderão ser utilizadas em reuniões internas e processos de melhoria contínua 
-                    dos serviços prestados à população.
-                  </p>
-                  <p>
-                    Espera-se, desta forma, fortalecer la qualidade das ações e serviços ofertados pela Secretaria Municipal de Saúde.
-                  </p>
-                </div>
-              </section>
-
-              <!-- Fundamento Legal -->
-              <section class="pi-mt-secao">
-                <h3 class="pi-secao-titulo">
-                  <i class="fas fa-gavel" aria-hidden="true"></i> Fundamento Legal
-                </h3>
-                <hr class="pi-secao-divider">
-
-                <div class="sec-texto">
-                  <h4 class="sec-subtitulo-legal">Deliberação</h4>
-                  
-                  <p>
-                    A <strong>Lei Federal nº 8.080/90</strong> assegura a participação da população na gestão pública em saúde 
-                    dentro dos princípios e diretrizes do SUS.
-                  </p>
-                  <p>
-                    A Ouvidoria do SUS constitui-se em espaço estratégico e democrático de comunicação entre o cidadão e 
-                    os gestores do Sistema Único de Saúde.
-                  </p>
-                  <p>
-                    A <strong>Deliberação CIB/PR 42/12 ATT</strong>, aprovada em 27 de março de 2012, define os critérios 
-                    mínimos para implantação de Ouvidoria Municipal SUS no Estado do Paraná.
-                  </p>
-                  <p>
-                    O <strong>Decreto nº 833/17</strong>, aprovado em 03 de abril de 2017, estabelece os critérios mínimos 
-                    para implantação da Ouvidoria Municipal de Campina Grande do Sul/PR.
-                  </p>
-                </div>
-              </section>
-
-            </div>
-            <!-- /ABA 1: OUVIDORIA SUS -->
-
-
-            <!-- ABA 2: DADOS ESTATÍSTICOS -->
-            <div id="painel-estatisticas"
-              class="sec-tab-painel"
-              role="tabpanel"
-              aria-labelledby="tab-estatisticas">
-
-              <div class="sec-texto">
-                <p>Esta seção será populada futuramente com gráficos, tabelas e indicadores de atendimento da Ouvidoria SUS.</p>
-              </div>
-
-              <!-- Espaço reservado para integração futura -->
-              <div class="pi-placeholder-dados" style="border: 2px dashed var(--pi-cinza-borda); border-radius: 8px; padding: 40px; text-align: center; color: var(--pi-verde-escuro); opacity: 0.6;">
-                <i class="fas fa-chart-bar" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                <p>Área reservada para indicadores estatísticos dinâmicos.</p>
-              </div>
-
-            </div>
-            <!-- /ABA 2: DADOS ESTATÍSTICOS -->
-
-          </article>
-          <!-- /ARTIGO PRINCIPAL -->
-
-
-          <!-- SIDEBAR -->
-          <aside id="pi-sidebar" class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
-
-            <!-- Controles de acessibilidade -->
-            <div class="pi-controles-bloco">
-              <h3><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h3>
-              <div class="pi-ctrl-row">
-                <span class="pi-ctrl-label">Tamanho da fonte</span>
-                <div class="pi-ctrl-btns">
-                  <button id="pi-sb-fonte-aumentar" class="pi-ctrl-btn" aria-label="Aumentar tamanho da fonte">A+</button>
-                  <button id="pi-sb-fonte-diminuir" class="pi-ctrl-btn" aria-label="Diminuir tamanho da fonte">A-</button>
-                  <button id="pi-sb-fonte-resetar" class="pi-ctrl-btn" aria-label="Restaurar tamanho da fonte padrão">A</button>
-                </div>
-              </div>
-              <div class="pi-ctrl-row">
-                <button id="pi-sb-btn-contraste"
-                  class="pi-ctrl-btn-contraste"
-                  aria-pressed="false"
-                  aria-label="Ativar ou desativar alto contraste">
-                  <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
-                </button>
-              </div>
-            </div>
-
-            <!-- Navegação institucional -->
-            <div class="pi-sidebar-card">
-              <h3><i class="fas fa-building" aria-hidden="true"></i> Saúde</h3>
-              <ul class="pi-sidebar-links">
-                <li><a href="#"><span>Secretaria de Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-                <li><a href="#"><span>Unidades de Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-                <li class="ativo">
-                  <a href="#" aria-current="page">
-                    <span>Ouvidoria SUS</span>
-                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li><a href="#"><span>Vigilância Sanitária</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-
-            <!-- Contato rápido -->
-            <div class="pi-sidebar-card pi-sidebar-contato">
-              <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato Direto</h3>
-              <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 17h30</p>
-              <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7155</p>
-              <p><i class="fas fa-envelope" aria-hidden="true"></i> ouvidoriasus@pmcgs.pr...</p>
-              <a href="#" class="pi-btn-verde pi-btn-full">
-                <i class="fas fa-comments" aria-hidden="true"></i> Registrar Manifestação
-              </a>
-            </div>
-
-          </aside>
-          <!-- /SIDEBAR -->
-
-        </div>
-      </div>
-    </main>
-
-  </main>
+  <div id="dynamic-content"></div>
 
   <meu-footer></meu-footer>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+  </div>
 
-  <!-- Scripts Globais -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
-  
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
-  <script src="../../_global/js/searh-component.js"></script>
-  <script src="../../_global/js/acessibilidade-component.js"></script>
-
-  <!-- Script do Template -->
-  <script src="js/ouvidoria-sus.js"></script>
-
+  <script>
+    fetch("conteudo.html")
+      .then(function (response) {
+        if (!response.ok) throw new Error("Não foi possível carregar conteudo.html");
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("dynamic-content").innerHTML = html;
+        var script = document.createElement("script");
+        script.src = "js/ouvidoria-sus.js";
+        document.body.appendChild(script);
+      })
+      .catch(function (error) {
+        document.getElementById("dynamic-content").innerHTML =
+          '<main class="container py-5"><div class="alert alert-danger">Não foi possível carregar o conteúdo da Ouvidoria do SUS.</div></main>';
+        console.error(error);
+      });
+  </script>
 </body>
 </html>

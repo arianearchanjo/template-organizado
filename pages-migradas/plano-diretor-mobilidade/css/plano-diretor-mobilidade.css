@@ -713,7 +713,23 @@ html {
   width: 100%;
 }
 
+.pdm-download-group {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--pdm-borda);
+}
+
+.pdm-download-group__title {
+  margin: 0 0 14px;
+  color: var(--pdm-verde-escuro);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .pdm-files-legacy .spweb-file,
+.pdm-download-group .spweb-file,
 .pdm-document-folders .spweb-file {
   width: 100%;
   min-width: 0;
@@ -1023,6 +1039,14 @@ body.high-contrast .pdm-doc-stage {
 }
 
 body.high-contrast .pdm-content-tabs__list button.ativo {
+  color: #ff0 !important;
+}
+
+body.high-contrast .pdm-download-group {
+  border-top-color: #fff !important;
+}
+
+body.high-contrast .pdm-download-group__title {
   color: #ff0 !important;
 }
 

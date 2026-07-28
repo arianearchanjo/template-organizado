@@ -141,8 +141,10 @@
   }
 
   function initializeDownloadFiles() {
-    var source = document.querySelector(".pdm-download-source");
-    if (!source) return;
+    var sources = Array.prototype.slice.call(
+      document.querySelectorAll(".pdm-download-source")
+    );
+    if (!sources.length) return;
 
     var legislation = [
       {
@@ -169,6 +171,36 @@
         match: "codigo de posturas",
         label: "Consultar Lei Complementar nº 101/2026",
         url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-complementar/2026/101/lei-complementar-n-101-2026-dispoe-sobre-o-codigo-de-posturas-no-municipio-de-campina-grande-do-sul-e-da-outras"
+      },
+      {
+        match: "estudo de impacto de vizinhanca",
+        label: "Consultar Lei Ordinária nº 1121/2026",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2026/1121/lei-ordinaria-n-1121-2026-dispoe-sobre-o-estudo-de-impacto-de-vizinhanca-eiv-no-municipio-de-campina-grande-do-sul-e-da-outras/?termo=1121"
+      },
+      {
+        match: "perimetro urbano",
+        label: "Consultar Lei Ordinária nº 1122/2026",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2026/1122/lei-ordinaria-n-1122-2026-estabelece-o-perimetro-urbano-e-a-divisao-dos-bairros-do-municipio-de-campina-grande-do-sul-e-da-outras/?termo=1122"
+      },
+      {
+        match: "outorga onerosa",
+        label: "Consultar Lei Ordinária nº 1123/2026",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2026/1123/lei-ordinaria-n-1123-2026-regulamenta-o-instrumento-da-outorga-onerosa-do-direito-de-construir-oodc-no-municipio-de-campina-grande-do-sul-e-da-outras/?termo=1123"
+      },
+      {
+        match: "direito de preempcao",
+        label: "Consultar Lei Ordinária nº 1124/2026",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2026/1124/lei-ordinaria-n-1124-2026-regulamenta-o-instrumento-urbanistico-do-direito-de-preempcao-no-municipio-de-campina-grande-do-sul-e-da-outras/?termo=1124"
+      },
+      {
+        match: "instrumentos urbanisticos do parcelamento",
+        label: "Consultar Lei Ordinária nº 1125/2026",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2026/1125/lei-ordinaria-n-1125-2026-regulamenta-os-instrumentos-urbanisticos-do-parcelamento-edificacao-ou-utilizacao-compulsorios-e-consorcio-imobiliario-no-municipio-de-campina-grande-do-sul-e-da-outras/?termo=1125"
+      },
+      {
+        match: "passeios em vias publicas",
+        label: "Consultar Lei Ordinária nº 83/2010",
+        url: "https://leis.org/prefeitura/pr/campina-grande-do-sul/lei/lei-ordinaria/2010/83/lei-ordinaria-n-83-2010-dispoe-sobre-a-construcao-reconstrucao-conservacao-e-padrao-construtivo-de-passeios-em-vias-publicas-do-municipio-de-campina-grande-do-sul-e-da-outras/?termo=83%2F2010"
       }
     ];
 
@@ -194,8 +226,9 @@
       return "far fa-file-alt pdm-file-icon--default";
     }
 
-    function transform(observer) {
+    function transform(source, sourceIndex, observer) {
       if (source.dataset.pdmTransformed === "true") return true;
+      var categoryId = source.getAttribute("data-category") || String(sourceIndex);
       var rows = Array.prototype.slice.call(source.querySelectorAll("tbody tr"));
       var categories = [];
 
@@ -232,8 +265,8 @@
 
       categories.forEach(function (category, index) {
         var card = document.createElement("article");
-        var headingId = "pdm-download-heading-" + index;
-        var panelId = "pdm-download-panel-" + index;
+        var headingId = "pdm-download-heading-" + categoryId + "-" + index;
+        var panelId = "pdm-download-panel-" + categoryId + "-" + index;
         card.className = "pdm-modern-files__category";
 
         var heading = document.createElement("h3");
@@ -302,9 +335,13 @@
       return true;
     }
 
-    if (transform()) return;
-    var observer = new MutationObserver(function () { transform(observer); });
-    observer.observe(source, { childList: true, subtree: true });
+    sources.forEach(function (source, sourceIndex) {
+      if (transform(source, sourceIndex)) return;
+      var observer = new MutationObserver(function () {
+        transform(source, sourceIndex, observer);
+      });
+      observer.observe(source, { childList: true, subtree: true });
+    });
   }
 
   function initializePage() {
