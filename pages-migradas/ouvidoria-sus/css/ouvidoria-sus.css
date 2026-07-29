@@ -308,3 +308,86 @@ body.high-contrast #painel-estatisticas {
   color: #fff !important;
   box-shadow: none !important;
 }
+
+/* Fila de Espera do SUS */
+#painel-fila {
+  --saude-verde: var(--verde, var(--pi-verde));
+  --saude-verde-escuro: var(--verde-escuro, var(--pi-verde-escuro));
+  --saude-verde-claro: var(--verde-claro, var(--pi-verde-claro));
+  --saude-amarelo: var(--pi-amarelo);
+  --saude-cinza: #647064;
+  --saude-borda: var(--cinza-borda, #dbe5db);
+}
+
+#painel-fila .saude-intro { max-width: 900px; margin-bottom: 30px; }
+#painel-fila .saude-kicker { display: block; margin-bottom: 7px; color: var(--saude-verde); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+#painel-fila .saude-intro h2 { margin: 0 0 18px; color: var(--saude-verde-escuro); font-size: 1.75rem; font-weight: 900; }
+#painel-fila .saude-intro p,
+#painel-fila .saude-card p,
+#painel-fila .fila-fecho { color: var(--saude-cinza); line-height: 1.75; }
+#painel-fila .saude-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; margin-top: 10px; padding: 14px 22px; border-radius: 7px; background: var(--saude-verde); color: #fff; font-size: .95rem; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; }
+#painel-fila .saude-btn:hover { background: var(--saude-verde-escuro); color: #fff; text-decoration: none; transform: translateY(-1px); }
+
+.fila-infografico { margin: 8px 0 28px; padding: 32px 26px 26px; border: 1px solid var(--saude-borda); border-radius: 12px; background: #fff; box-shadow: 0 5px 18px rgba(30,92,30,.055); }
+.fila-infografico-cabecalho { text-align: center; }
+.fila-infografico-cabecalho h3 { margin: 0; color: var(--saude-verde-escuro); font-size: 1.45rem; font-weight: 900; }
+.fila-infografico-cabecalho p { margin: 6px 0 20px; color: var(--saude-cinza); }
+.fila-central { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 134px; height: 134px; margin: 0 auto; border: 3px solid var(--saude-verde); border-radius: 50%; background: #fff; color: var(--saude-verde-escuro); text-align: center; box-shadow: 0 0 0 7px var(--saude-verde-claro); }
+.fila-central i { margin-bottom: 7px; color: var(--saude-verde); font-size: 1.9rem; }
+.fila-central strong { font-size: .67rem; line-height: 1.2; text-transform: uppercase; }
+.fila-conectores { height: 44px; }
+.fila-conectores path { fill: none; stroke: var(--saude-verde); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.fila-pilares { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.fila-pilar { overflow: hidden; border: 1px solid var(--saude-borda); border-radius: 10px; background: #fff; box-shadow: 0 5px 16px rgba(24,60,30,.07); }
+.fila-pilar h4 { display: flex; align-items: center; gap: 9px; min-height: 54px; margin: 0; padding: 13px 17px; background: var(--saude-verde-escuro); color: #fff; font-size: .95rem; font-weight: 800; text-transform: uppercase; }
+.fila-pilar-corpo { padding: 16px; }
+.fila-ilustracao { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 125px; margin-bottom: 12px; border-radius: 8px; background: var(--saude-verde-claro); color: var(--saude-verde-escuro); text-align: center; }
+.fila-ilustracao i { margin-bottom: 9px; font-size: 2.25rem; }
+.fila-ilustracao span { max-width: 170px; font-size: .72rem; font-weight: 700; }
+.fila-pilar ul { margin: 0; padding: 0; list-style: none; }
+.fila-pilar li { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; color: #4d584d; font-size: .79rem; line-height: 1.45; }
+.fila-pilar li:last-child { margin-bottom: 0; }
+.fila-pilar li > i { flex: 0 0 auto; margin-top: 3px; color: var(--saude-verde); }
+.fila-infografico-rodape { display: flex; gap: 13px; align-items: center; margin-top: 25px; padding: 16px 19px; border-left: 6px solid var(--saude-verde); border-radius: 7px; background: var(--saude-verde-claro); color: var(--saude-verde-escuro); }
+.fila-infografico-rodape i { flex: 0 0 auto; font-size: 1.35rem; }
+.fila-infografico-rodape p { margin: 0; line-height: 1.55; }
+.fila-destaques { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-bottom: 22px; }
+.fila-destaques article { padding: 23px; border-radius: 11px; background: var(--saude-verde-escuro); color: #fff; }
+.fila-destaques i { color: var(--saude-amarelo); font-size: 1.35rem; }
+.fila-destaques h3 { margin: 12px 0 8px; font-size: 1rem; }
+.fila-destaques p { margin: 0; color: rgba(255,255,255,.76); font-size: .84rem; line-height: 1.6; }
+#painel-fila .saude-card { position: relative; padding: 26px; border: 1px solid var(--saude-borda); border-radius: 12px; background: #fff; box-shadow: 0 5px 18px rgba(30,92,30,.055); }
+#painel-fila .saude-card h3 { margin: 12px 0; color: var(--saude-verde-escuro); font-size: 1.05rem; font-weight: 800; line-height: 1.35; }
+#painel-fila .fila-texto h3:not(:first-child) { margin-top: 26px; }
+#painel-fila .saude-alerta { display: flex; gap: 15px; align-items: flex-start; margin-top: 22px; padding: 18px 20px; border-left: 4px solid #2379a4; border-radius: 8px; background: #eef7fb; color: #195d7d; }
+#painel-fila .saude-alerta i { margin-top: 4px; font-size: 1.2rem; }
+#painel-fila .saude-alerta p { margin: 0; line-height: 1.55; }
+.fila-fecho { max-width: 850px; margin: 26px auto 0; text-align: center; font-weight: 500; }
+
+@media (max-width: 991px) {
+  .fila-conectores { display: none; }
+  .fila-pilares { margin-top: 25px; }
+}
+
+@media (max-width: 575px) {
+  .fila-pilares, .fila-destaques { grid-template-columns: 1fr; }
+  .fila-infografico { padding: 26px 16px 18px; }
+  #painel-fila .saude-intro h2 { font-size: 1.4rem; }
+  #painel-fila .saude-btn { width: 100%; }
+}
+
+body.high-contrast .fila-infografico,
+body.high-contrast .fila-pilar,
+body.high-contrast .fila-central,
+body.high-contrast #painel-fila .saude-card {
+  border-color: #fff !important;
+  background: #000 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+body.high-contrast #painel-fila h2,
+body.high-contrast #painel-fila h3,
+body.high-contrast #painel-fila .saude-kicker { color: #ff0 !important; }
+body.high-contrast #painel-fila p,
+body.high-contrast .fila-pilar li { color: #fff !important; }

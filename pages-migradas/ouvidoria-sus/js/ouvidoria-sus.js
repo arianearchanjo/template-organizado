@@ -1,69 +1,68 @@
-/**
- * secretarias.js — Prefeitura de Campina Grande do Sul
- *
- * Funcionalidades:
- *  1. Sistema de abas (tabs) com suporte a teclado
- *
- * Acessibilidade (Fonte, Contraste, Atalhos, TTS, VLibras) agora é gerenciada 
- * centralmente por _global/js/acessibilidade-component.js
- */
-
-/* ══════════════════════════════════════════════════════════════
-   1. SISTEMA DE ABAS (TABS)
-   Controla a troca de painéis via clique ou teclado.
-   Segue o padrão ARIA: role="tab", aria-selected, aria-controls.
-══════════════════════════════════════════════════════════════ */
-
 (function () {
+  "use strict";
 
-  var botoes  = document.querySelectorAll('.sec-tab-btn');
-  var paineis = document.querySelectorAll('.sec-tab-painel');
+  var botoes = Array.prototype.slice.call(document.querySelectorAll(".sec-tab-btn"));
+  var paineis = Array.prototype.slice.call(document.querySelectorAll(".sec-tab-painel"));
 
-  /**
-   * Ativa a aba correspondente ao botão clicado.
-   * Desativa todas as outras abas e oculta seus painéis.
-   * @param {HTMLElement} btnAtivo - Botão da aba a ativar
-   */
-  function ativarAba(btnAtivo) {
-    var alvo = btnAtivo.getAttribute('aria-controls');
+  function ativarAba(botao, focar, atualizarHash) {
+    var painelId = botao.getAttribute("aria-controls");
 
-    // Desativar todas as abas
-    botoes.forEach(function (btn) {
-      btn.classList.remove('ativo');
-      btn.setAttribute('aria-selected', 'false');
+    botoes.forEach(function (item) {
+      var ativo = item === botao;
+      item.classList.toggle("ativo", ativo);
+      item.setAttribute("aria-selected", String(ativo));
+      item.tabIndex = ativo ? 0 : -1;
     });
 
-    // Ocultar todos os painéis
     paineis.forEach(function (painel) {
-      painel.classList.remove('ativo');
+      var ativo = painel.id === painelId;
+      painel.classList.toggle("ativo", ativo);
+      painel.hidden = !ativo;
     });
 
-    // Ativar a aba e o painel selecionados
-    btnAtivo.classList.add('ativo');
-    btnAtivo.setAttribute('aria-selected', 'true');
+    if (focar) {
+      botao.focus();
+    }
 
-    var painelAtivo = document.getElementById(alvo);
-    if (painelAtivo) {
-      painelAtivo.classList.add('ativo');
+    if (atualizarHash && window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", "#" + painelId);
     }
   }
 
-  /* Vincular eventos a cada botão de aba */
-  botoes.forEach(function (btn) {
-
-    // Clique do mouse
-    btn.addEventListener('click', function () {
-      ativarAba(btn);
+  function ativarPeloHash() {
+    var botao = botoes.find(function (item) {
+      return "#" + item.getAttribute("aria-controls") === window.location.hash;
     });
 
-    // Suporte a teclado: Enter e Espaço ativam a aba (WCAG 2.1.1)
-    btn.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        ativarAba(btn);
+    if (botao) {
+      ativarAba(botao, false, false);
+    }
+  }
+
+  botoes.forEach(function (botao, indice) {
+    botao.addEventListener("click", function () {
+      ativarAba(botao, false, true);
+    });
+
+    botao.addEventListener("keydown", function (evento) {
+      var proximoIndice;
+
+      if (evento.key === "ArrowRight") proximoIndice = (indice + 1) % botoes.length;
+      if (evento.key === "ArrowLeft") proximoIndice = (indice - 1 + botoes.length) % botoes.length;
+      if (evento.key === "Home") proximoIndice = 0;
+      if (evento.key === "End") proximoIndice = botoes.length - 1;
+
+      if (typeof proximoIndice === "number") {
+        evento.preventDefault();
+        ativarAba(botoes[proximoIndice], true, true);
       }
     });
-
   });
 
+  paineis.forEach(function (painel) {
+    painel.hidden = !painel.classList.contains("ativo");
+  });
+
+  ativarPeloHash();
+  window.addEventListener("hashchange", ativarPeloHash);
 })();
