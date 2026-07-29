@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Documentos e publicações oficiais do Plano Municipal de Educação de Campina Grande do Sul.">
+  <title>Plano Municipal da Educação - PME | Prefeitura de Campina Grande do Sul</title>
+
+  <script>function getBasePath() { return '../../'; }</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="../../_global/css/acessibilidade.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#pme-content" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pme-content">
+    <div id="pme-page-include">
+      <noscript>
+        <div class="container py-5">
+          <p>Ative o JavaScript para visualizar esta página.</p>
+        </div>
+      </noscript>
+    </div>
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="script.js"></script>
+  <script>
+    fetch('conteudo.html')
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Não foi possível carregar o conteúdo.');
+        }
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById('pme-page-include').outerHTML = html;
+      })
+      .catch(function () {
+        document.getElementById('pme-page-include').innerHTML =
+          '<div class="container py-5"><p class="pme-empty">Não foi possível carregar o conteúdo desta página.</p></div>';
+      });
+  </script>
+</body>
+</html>

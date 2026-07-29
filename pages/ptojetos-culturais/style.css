@@ -1,0 +1,680 @@
+/* Página de Projetos Culturais */
+
+#pi-conteudo-layout {
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+}
+
+.pc-projetos-culturais {
+  min-width: 0;
+}
+
+.pc-projetos-culturais > .pi-secao-titulo {
+  align-items: center;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.pc-projetos-culturais > .pi-secao-titulo i {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--verde-claro, #e8f5e8);
+  color: var(--verde, #2d7a2d);
+}
+
+.pc-projetos-culturais > .pi-secao-divider {
+  margin-bottom: 24px;
+}
+
+.pc-tabs {
+  --pc-verde: var(--verde, #2d7a2d);
+  --pc-verde-escuro: var(--verde-escuro, #1e5c1e);
+  --pc-verde-claro: var(--verde-claro, #e8f5e8);
+  --pc-cinza-bg: var(--cinza-bg, #eef2ee);
+  --pc-cinza-borda: var(--cinza-borda, #c8d8c8);
+  --pc-texto: var(--texto, #1a2a1a);
+}
+
+.pc-tabs-faixa {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid var(--pc-cinza-borda);
+  border-radius: 12px;
+  background: var(--pc-cinza-bg);
+}
+
+.pc-tabs-rolagem {
+  min-width: 0;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pc-tabs-rolagem::-webkit-scrollbar {
+  display: none;
+}
+
+.pc-tabs-lista {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 8px;
+}
+
+.pc-tab {
+  flex: 1 0 150px;
+  min-height: 48px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--pc-verde-escuro);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 11px 28px;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.pc-tab:hover {
+  border-color: var(--pc-cinza-borda);
+  background: #fff;
+}
+
+.pc-tab.ativo {
+  border-color: var(--pc-verde);
+  background: var(--pc-verde);
+  box-shadow: 0 3px 9px rgba(30, 92, 30, 0.18);
+  color: #fff;
+}
+
+.pc-tab:focus-visible,
+.pc-tabs-seta:focus-visible,
+.pc-projetos-culturais .pi-btn-edital:focus-visible {
+  outline: 3px solid var(--amarelo, #f5c518);
+  outline-offset: 3px;
+}
+
+.pc-tabs-seta {
+  z-index: 2;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  margin: 0 3px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pc-cinza-borda);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(30, 60, 35, 0.12);
+  color: var(--pc-verde);
+  cursor: pointer;
+}
+
+.pc-tabs-seta:not([hidden]) {
+  display: flex;
+}
+
+.pc-paineis {
+  margin-top: 14px;
+}
+
+.pc-painel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--pc-cinza-borda);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(26, 42, 26, 0.06);
+  padding: 30px;
+}
+
+.pc-painel::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: var(--pc-verde);
+  content: "";
+}
+
+.pc-painel[hidden] {
+  display: none;
+}
+
+.pc-painel-titulo {
+  max-width: 700px;
+  color: var(--pc-verde-escuro);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 4px 0 18px;
+}
+
+.pc-projetos-culturais .pi-intro-texto {
+  max-width: 760px;
+  margin-bottom: 24px;
+  color: #3f4a42;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.pc-projetos-culturais .pi-alerta-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px !important;
+  border: 1px solid var(--pc-cinza-borda);
+  border-left: 5px solid var(--pc-verde);
+  border-radius: 10px;
+  background: var(--pc-verde-claro);
+  padding: 16px 18px;
+}
+
+.pc-projetos-culturais .pi-alerta-icon {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--pc-verde);
+  font-size: 1.15rem;
+}
+
+.pc-projetos-culturais .pi-alerta-corpo {
+  color: var(--pc-verde-escuro);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pc-projetos-culturais .pi-subtitulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--pc-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.pc-projetos-culturais .pi-subtitulo::before {
+  width: 4px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--pc-verde);
+  content: "";
+}
+
+.pc-projetos-culturais .pi-links-editais {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-documentos {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-spweb-fonte {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pc-pasta {
+  overflow: hidden;
+  border: 1px solid var(--pc-cinza-borda);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(26, 42, 26, 0.05);
+}
+
+.pc-pasta-cabecalho {
+  margin: 0;
+}
+
+.pc-pasta-botao {
+  display: flex;
+  width: 100%;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 0;
+  background: #fff;
+  color: var(--pc-texto);
+  cursor: pointer;
+  padding: 16px 20px;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.pc-pasta-botao:hover {
+  background: #f6faf6;
+}
+
+.pc-pasta-botao[aria-expanded="true"] {
+  background: var(--pc-verde-claro);
+}
+
+.pc-pasta-identificacao {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 14px;
+}
+
+.pc-pasta-icone {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--pc-verde-claro);
+  color: var(--pc-verde);
+  font-size: 1.2rem;
+}
+
+.pc-pasta-botao[aria-expanded="true"] .pc-pasta-icone {
+  background: #fff;
+}
+
+.pc-pasta-titulo,
+.pc-pasta-descricao {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.pc-pasta-titulo {
+  color: var(--pc-verde-escuro);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pc-pasta-descricao {
+  margin-top: 3px;
+  color: #5d685f;
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pc-pasta-seta {
+  flex: 0 0 auto;
+  color: var(--pc-verde);
+  transition: transform 0.2s;
+}
+
+.pc-pasta-botao[aria-expanded="true"] .pc-pasta-seta {
+  transform: rotate(180deg);
+}
+
+.pc-pasta-painel {
+  border-top: 1px solid var(--pc-cinza-borda);
+  background: #fff;
+  padding: 14px;
+}
+
+.pc-pasta-painel[hidden] {
+  display: none;
+}
+
+.pc-documentos-pendentes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 3px solid var(--pc-cinza-borda);
+  background: var(--pc-cinza-bg);
+  color: #5d685f;
+  padding: 14px 16px;
+}
+
+.pc-documentos-pendentes i {
+  flex: 0 0 auto;
+  color: var(--pc-verde);
+  font-size: 1.15rem;
+}
+
+.pc-documentos-pendentes p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.pc-arquivo-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  border-radius: 7px;
+  color: var(--pc-texto);
+  padding: 12px 14px;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.pc-arquivo-item:hover {
+  border-color: var(--pc-cinza-borda);
+  border-left-color: var(--pc-verde);
+  background: #f6faf6;
+  color: var(--pc-texto);
+  text-decoration: none;
+}
+
+.pc-arquivo-icone {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: var(--pc-verde-claro);
+  border: 1px solid var(--pc-cinza-borda);
+  color: var(--pc-verde);
+  font-size: 1.05rem;
+}
+
+.pc-arquivo-item:hover .pc-arquivo-icone {
+  background: #dff0df;
+}
+
+.pc-arquivo-icone-edital {
+  border-color: var(--pc-verde);
+  background: var(--pc-verde);
+  color: #fff;
+}
+
+.pc-arquivo-item:hover .pc-arquivo-icone-edital {
+  background: var(--pc-verde-escuro);
+}
+
+.pc-arquivo-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.pc-arquivo-nome,
+.pc-arquivo-tipo {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.pc-arquivo-nome {
+  color: var(--pc-verde-escuro);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.pc-arquivo-tipo {
+  margin-top: 2px;
+  color: #667068;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.pc-arquivo-acao {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  color: var(--pc-verde);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pc-projetos-culturais .pi-edital-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border: 1px solid var(--pc-cinza-borda);
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  background: #fff;
+  padding: 18px 20px;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.pc-projetos-culturais .pi-edital-card:hover {
+  border-color: var(--pc-cinza-borda);
+  border-left-color: var(--pc-verde);
+  background: #f8fbf8;
+  box-shadow: 0 5px 14px rgba(26, 42, 26, 0.07);
+  transform: translateY(-1px);
+}
+
+.pc-projetos-culturais .pi-edital-info {
+  min-width: 0;
+}
+
+.pc-projetos-culturais .pi-edital-info h4 {
+  margin: 0 0 5px;
+  color: var(--pc-verde-escuro);
+  font-size: 1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pc-projetos-culturais .pi-edital-info p {
+  margin: 0;
+  color: #5d685f;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.pc-projetos-culturais .pi-btn-edital {
+  display: inline-flex;
+  min-height: 42px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pc-verde);
+  border-radius: 7px;
+  background: var(--pc-verde);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 9px 17px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.pc-projetos-culturais .pi-btn-edital:hover {
+  border-color: var(--pc-verde-escuro);
+  background: var(--pc-verde-escuro);
+  color: #fff;
+  text-decoration: none;
+}
+
+.pc-projetos-culturais .pi-contato-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 9px;
+  margin-top: 28px !important;
+  border: 1px solid var(--pc-cinza-borda);
+  border-radius: 10px;
+  background: var(--pc-cinza-bg);
+  color: #4e5951;
+  font-size: 0.875rem;
+  padding: 18px 20px;
+}
+
+.pc-projetos-culturais .pi-contato-footer p {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.pc-projetos-culturais .pi-contato-footer i {
+  width: 20px;
+  flex: 0 0 20px;
+  color: var(--pc-verde);
+  text-align: center;
+}
+
+.pc-projetos-culturais .pi-contato-footer a {
+  color: var(--pc-verde-escuro);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#pi-conteudo-layout > .pi-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+#pi-conteudo-layout > .pi-sidebar .pi-sidebar-card {
+  overflow: hidden;
+  border-top: 4px solid var(--verde, #2d7a2d);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(26, 42, 26, 0.06);
+}
+
+#pi-conteudo-layout > .pi-sidebar .pi-btn-verde {
+  min-height: 42px;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  #pi-conteudo-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #pi-conteudo-layout > article {
+    order: 1;
+  }
+
+  #pi-conteudo-layout > .pi-sidebar {
+    position: static;
+    order: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .pc-projetos-culturais > .pi-secao-titulo {
+    font-size: 1.125rem;
+  }
+
+  .pc-tabs-faixa {
+    padding: 5px;
+  }
+
+  .pc-tab {
+    flex-basis: 112px;
+    min-height: 44px;
+    padding: 9px 20px;
+  }
+
+  .pc-painel {
+    border-radius: 11px;
+    padding: 24px 16px 20px;
+  }
+
+  .pc-painel-titulo {
+    font-size: 1.15rem;
+  }
+
+  .pc-projetos-culturais .pi-alerta-box {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .pc-projetos-culturais .pi-alerta-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .pc-projetos-culturais .pi-edital-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 15px;
+    padding: 17px 16px;
+  }
+
+  .pc-projetos-culturais .pi-btn-edital {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .pc-projetos-culturais .pi-contato-footer {
+    padding: 16px;
+  }
+
+  .pc-pasta-botao {
+    min-height: 72px;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .pc-pasta-identificacao {
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .pc-pasta-icone {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .pc-arquivo-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 11px;
+  }
+
+  .pc-arquivo-info {
+    width: calc(100% - 55px);
+    flex-basis: calc(100% - 55px);
+  }
+
+  .pc-arquivo-acao {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-projetos-culturais *,
+  .pc-projetos-culturais *::before,
+  .pc-projetos-culturais *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

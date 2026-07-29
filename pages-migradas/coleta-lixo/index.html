@@ -70,6 +70,10 @@
                   A coleta de lixo em Campina Grande do Sul é dividida em três modalidades: 
                   <strong>a coleta noturna, interior e convencional.</strong>
                 </p>
+                <a class="pi-btn-verde pi-acesso-cronogramas" href="#pi-banners-titulo">
+                  <i class="fas fa-calendar-days" aria-hidden="true"></i>
+                  Acessar cronogramas
+                </a>
               </div>
             </section>
 
@@ -132,6 +136,41 @@
               </div>
             </section>
 
+            <section aria-labelledby="pi-banners-titulo" class="pi-mt-secao">
+              <h2 id="pi-banners-titulo" class="pi-secao-titulo">
+                <i class="fas fa-calendar-days" aria-hidden="true"></i>
+                Cronogramas e orientações
+              </h2>
+              <hr class="pi-secao-divider">
+              <p class="pi-banners-intro">Clique em um banner para visualizar todas as informações em tela cheia.</p>
+
+              <div class="pi-banners-grid">
+                <button class="pi-banner-card" type="button"
+                        data-pi-banner-src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0ajpepilonx.jpeg"
+                        data-pi-banner-alt="Cronograma de coleta de entulhos por bairros"
+                        aria-label="Ampliar cronograma de coleta de entulhos por bairros"
+                        aria-haspopup="dialog">
+                  <span class="pi-banner-card__imagem">
+                    <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0ajpepilonx.jpeg"
+                         alt="Cronograma de coleta de entulhos por bairros"
+                         loading="lazy">
+                  </span>
+                </button>
+
+                <button class="pi-banner-card" type="button"
+                        data-pi-banner-src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/fsorcnggzun.jpeg"
+                        data-pi-banner-alt="Orientações para separação correta do lixo reciclável"
+                        aria-label="Ampliar orientações para separação correta do lixo reciclável"
+                        aria-haspopup="dialog">
+                  <span class="pi-banner-card__imagem">
+                    <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/fsorcnggzun.jpeg"
+                         alt="Orientações para separação correta do lixo reciclável"
+                         loading="lazy">
+                  </span>
+                </button>
+              </div>
+            </section>
+
             <section aria-labelledby="pi-entulhos-titulo" class="pi-mt-secao">
               <h2 id="pi-entulhos-titulo" class="pi-secao-titulo">
                 <i class="fas fa-truck-pickup" aria-hidden="true"></i>
@@ -140,10 +179,10 @@
               <hr class="pi-secao-divider">
               <div class="pi-compromisso-bloco">
                 <h2><i class="fas fa-calendar-check"></i> Cronograma de Coleta</h2>
-                <p>Mantenha sua calçada limpa e contribua com a organização da nossa cidade. Clique no link abaixo para conferir o cronograma completo da coleta de entulhos.</p>
-                <a href="../../Downloads/Arquivos/2022_1598_dxid3pytx51.pdf" target="_blank" class="pi-btn-verde">
-                  <i class="fas fa-file-pdf"></i>
-                  Campina Mais Limpa - Cronograma de Entulhos
+                <p>Mantenha sua calçada limpa e contribua com a organização da nossa cidade. Confira no banner atualizado as datas da coleta em cada bairro.</p>
+                <a href="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0ajpepilonx.jpeg" target="_blank" rel="noopener" class="pi-btn-verde">
+                  <i class="fas fa-image"></i>
+                  Abrir cronograma de entulhos
                 </a>
               </div>
             </section>
@@ -190,6 +229,26 @@
 
   <meu-footer></meu-footer>
 
+  <div class="pi-banner-lightbox" id="pi-banner-lightbox" role="dialog" aria-modal="true"
+       aria-label="Visualização ampliada do banner" hidden>
+    <button class="pi-banner-lightbox__fechar" type="button" aria-label="Fechar visualização">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <div class="pi-banner-lightbox__controles" aria-label="Controles de zoom">
+      <button type="button" data-pi-zoom="out" aria-label="Diminuir zoom">
+        <i class="fas fa-minus" aria-hidden="true"></i>
+      </button>
+      <button class="pi-banner-lightbox__nivel" type="button" data-pi-zoom="reset"
+              aria-label="Restaurar zoom para 100%">100%</button>
+      <button type="button" data-pi-zoom="in" aria-label="Aumentar zoom">
+        <i class="fas fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="pi-banner-lightbox__conteudo">
+      <img src="" alt="">
+    </div>
+  </div>
+
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -207,6 +266,7 @@
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/coleta-lixo.js"></script>
   
 </body>
 </html>
