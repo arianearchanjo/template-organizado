@@ -183,6 +183,10 @@
   margin-top: 4px;
 }
 
+.pi-layout--sem-sidebar {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .pi-banners-intro {
   color: var(--texto, #444);
   font-size: 0.9375rem;
@@ -194,6 +198,154 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+
+.pi-banners-grid--destaque {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pi-banner-destaque-secao {
+  width: 100%;
+}
+
+.pi-banners-grid--destaque .pi-banner-card {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(20, 65, 20, 0.12);
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+
+.pi-banners-grid--destaque .pi-banner-card__imagem,
+.pi-banners-grid--destaque .pi-banner-card__imagem img {
+  background: #fff;
+  filter: brightness(1.1) contrast(1.04);
+  opacity: 1;
+}
+
+body.high-contrast .pi-banners-grid--destaque .pi-banner-card__imagem img {
+  filter: grayscale(30%) contrast(1.1);
+}
+
+.pi-cronograma-transcrito {
+  margin-top: 28px;
+}
+
+.pi-cronograma-cabecalho {
+  align-items: center;
+  background: var(--cinza-bg, #f4f6f4);
+  border: 1px solid var(--cinza-borda, #d9e0d9);
+  border-radius: 12px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 20px;
+}
+
+.pi-cronograma-cabecalho h3 {
+  color: var(--verde-escuro, #174d2b);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.pi-cronograma-cabecalho p {
+  color: var(--texto, #444);
+  margin: 0;
+}
+
+.pi-cronograma-horario {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.pi-cronograma-horario span {
+  align-items: center;
+  color: var(--texto, #333);
+  display: flex;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.pi-cronograma-horario i {
+  color: var(--verde, #287a3e);
+  width: 18px;
+}
+
+.pi-cronograma-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pi-cronograma-card {
+  background: #fff;
+  border: 1px solid var(--cinza-borda, #d9e0d9);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(20, 65, 20, 0.07);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.pi-cronograma-card h4 {
+  background: var(--verde-escuro, #174d2b);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 12px 16px;
+}
+
+.pi-cronograma-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 12px 16px 16px;
+}
+
+.pi-cronograma-card li {
+  border-bottom: 1px solid var(--cinza-borda, #e2e7e2);
+  color: var(--texto, #333);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  padding: 8px 0;
+}
+
+.pi-cronograma-card li:last-child {
+  border-bottom: 0;
+}
+
+.pi-cronograma-card li:first-child {
+  color: var(--verde-escuro, #174d2b);
+  font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  .pi-layout--sem-sidebar .pi-banner-destaque-secao {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .pi-cronograma-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .pi-cronograma-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pi-cronograma-horario {
+    width: 100%;
+  }
+
+  .pi-cronograma-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .pi-banner-card {

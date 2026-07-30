@@ -3,7 +3,13 @@
 
   function initColetaLixoBanners(root) {
     var scope = root || document;
+    var transcript = scope.querySelector(".pi-cronograma-transcrito");
+    var highlightedBanner = scope.querySelector(".pi-banners-grid--destaque");
     var lightbox = document.getElementById("pi-banner-lightbox");
+
+    if (transcript && highlightedBanner && transcript.previousElementSibling !== highlightedBanner) {
+      highlightedBanner.insertAdjacentElement("afterend", transcript);
+    }
 
     if (!lightbox || lightbox.dataset.piBannerInitialized === "true") {
       return;
