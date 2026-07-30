@@ -1,9 +1,9 @@
 :root {
-  --sti-green: #2d7a2d;
-  --sti-green-dark: #1e5c1e;
-  --sti-green-light: #e8f5e8;
-  --sti-border: #dde8dd;
-  --sti-text: #444;
+  --sti-green: var(--verde, #2d7a2d);
+  --sti-green-dark: var(--verde-escuro, #1e5c1e);
+  --sti-green-light: var(--verde-claro, #e8f5e8);
+  --sti-border: var(--cinza-borda, #dde8dd);
+  --sti-text: var(--texto, #444);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
