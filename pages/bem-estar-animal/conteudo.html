@@ -1,254 +1,217 @@
-<!-- ══════════════════════════════════════════════════════════════
-       HERO — Redesign Institucional
-  ════════════════════════════════════════════════════════════════ -->
-<section id="pi-hero" aria-label="Identificação da página">
-  <div class="container">
-    <div class="pi-hero-inner">
-      <nav aria-label="Você está em">
-        <ol class="pi-breadcrumb mb-4">
-          <li><a href="../../index.html" class="text-white opacity-75"><i class="fas fa-home"></i> Início</a></li>
-          <li aria-hidden="true" class="mx-2 opacity-50"><i class="fas fa-chevron-right fa-xs"></i></li>
-          <li aria-current="page" class="text-white">Bem-estar Animal</li>
-        </ol>
-      </nav>
-      
-      <h1 class="pi-hero-titulo">Bem-estar Animal</h1>
-      <p class="pi-hero-subtitulo">
-        Promovendo a proteção, o cuidado e o respeito aos animais. Conheça nossos programas de castração, adoção e canais de denúncia.
-      </p>
-      
-      <div class="pi-hero-btns">
-        <a href="#denuncias" class="btn-hero btn-hero-primary">Denunciar Maus-tratos</a>
-        <a href="../adocao-animais/" class="btn-hero btn-hero-outline">Adotar um Amigo</a>
+<main id="pi-conteudo" class="bea-main" tabindex="-1">
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Bem-estar animal</li>
+          </ol>
+        </nav>
+        <h1 id="bea-titulo" class="pi-hero-titulo">Bem-estar animal</h1>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     CONTEÚDO PRINCIPAL
-════════════════════════════════════════════════════════════════ -->
-<main id="pi-main">
-  
-  <!-- Seção: Cards de Ação Rápida -->
-  <section class="pi-action-grid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="pi-card-action">
-            <div class="pi-card-icon"><i class="fas fa-exclamation-triangle"></i></div>
-            <h3>Denúncias</h3>
-            <p>Registre maus-tratos de forma segura e anônima. Sua atitude pode salvar uma vida.</p>
-            <a href="#denuncias" class="btn-card">Saber como <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="pi-card-action">
-            <div class="pi-card-icon"><i class="fas fa-ban"></i></div>
-            <h3>Abandono</h3>
-            <p>O abandono de animais é crime ambiental e gera sofrimento. Conheça as leis de proteção.</p>
-            <a href="#educativo" class="btn-card">Ver detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="pi-card-action">
-            <div class="pi-card-icon"><i class="fas fa-syringe"></i></div>
-            <h3>Castração</h3>
-            <p>Programa municipal de controle populacional. Saiba como solicitar a cirurgia gratuita.</p>
-            <a href="#educativo" class="btn-card">Como funciona <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="pi-card-action">
-            <div class="pi-card-icon"><i class="fas fa-paw"></i></div>
-            <h3>Adoção</h3>
-            <p>Muitos animais esperam por um lar. Adote com responsabilidade e ganhe um amigo leal.</p>
-            <a href="../adocao-animais/" class="btn-card">Ver animais <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
     </div>
   </section>
 
-  <div id="pi-conteudo" tabindex="-1">
-    
-    <!-- Seção: Informações e Denúncias -->
-    <section id="denuncias" class="pi-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <div class="pr-lg-5">
-              <span class="badge badge-success mb-2 px-3 py-2">Serviço ao Cidadão</span>
-              <h2 class="font-weight-bold mb-4" style="color: var(--cinza-titulo); font-size: 2.2rem;">Como denunciar maus-tratos?</h2>
-              <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                Se você presenciar maus-tratos a animais, registre o máximo de informações possível. O anonimato é garantido e sua atitude salva vidas.
-              </p>
-              <ul class="pi-check-modern">
-                <li><strong>Órgãos Municipais:</strong> Entre em contato direto com a secretaria responsável.</li>
-                <li><strong>Polícia Civil (181):</strong> Canal para denúncias anônimas em todo o estado.</li>
-                <li><strong>Evidências:</strong> Fotos, vídeos e endereços precisos facilitam a fiscalização.</li>
+  <div id="pi-main">
+  <div class="container bea-tabs-wrap">
+    <nav class="bea-tabs" aria-label="Conteúdo de bem-estar animal">
+      <div class="bea-tabs-faixa">
+        <button class="bea-tabs-seta bea-tabs-seta--esquerda" type="button" aria-label="Ver aba anterior" hidden>
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="bea-tabs-rolagem">
+          <div class="bea-tabs-lista" id="bea-tabs" role="tablist" aria-label="Áreas da página">
+            <button class="bea-tab ativo" id="bem-estar-tab" type="button" role="tab"
+              aria-controls="bem-estar" aria-selected="true" tabindex="0">
+              <i class="fas fa-shield-dog" aria-hidden="true"></i>
+              <span>Bem-estar animal</span>
+            </button>
+            <button class="bea-tab" id="adocao-tab" type="button" role="tab"
+              aria-controls="adocao" aria-selected="false" tabindex="-1">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+              <span>Adoção</span>
+            </button>
+          </div>
+        </div>
+        <button class="bea-tabs-seta bea-tabs-seta--direita" type="button" aria-label="Ver próxima aba" hidden>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="bea-tab-paineis" id="bea-tab-content">
+      <div class="bea-tab-painel" id="bem-estar" role="tabpanel" aria-labelledby="bem-estar-tab">
+        <div class="bea-page-intro">
+          <p><strong>Cuidar é amar.</strong> Conheça seus deveres como tutor e ajude a proteger quem conta com você.</p>
+        </div>
+        <section class="bea-intro" aria-labelledby="guarda-responsavel-titulo">
+          <div class="bea-section-heading">
+            <span class="bea-section-heading__icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span>
+            <div>
+              <p class="bea-kicker">Guarda responsável</p>
+              <h2 id="guarda-responsavel-titulo">Proteger também é cuidar</h2>
+            </div>
+          </div>
+          <p>Ter um animal é assumir um compromisso com sua saúde, segurança e qualidade de vida. Alimentação adequada,
+            abrigo, cuidados veterinários, carinho e proteção fazem parte dessa responsabilidade.</p>
+        </section>
+
+        <section class="bea-card-grid" aria-label="Orientações de bem-estar animal">
+          <article class="bea-info-card bea-info-card--alert">
+            <div class="bea-info-card__icon"><i class="fas fa-house-circle-xmark" aria-hidden="true"></i></div>
+            <div class="bea-info-card__body">
+              <p class="bea-kicker">Não ao abandono</p>
+              <h2>Abandono é crime. Diga sim à guarda responsável!</h2>
+              <p>Ao abandonar um animal, o tutor causa sofrimento e coloca toda a comunidade em risco.</p>
+              <ul class="bea-list">
+                <li><i class="fas fa-scale-balanced" aria-hidden="true"></i><span>É crime, conforme a Lei Federal nº 9.605/1998.</span></li>
+                <li><i class="fas fa-dog" aria-hidden="true"></i><span>Causa ninhadas indesejadas e aumenta o número de animais nas ruas.</span></li>
+                <li><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>Pode provocar agressividade por medo e sobrevivência.</span></li>
+                <li><i class="fas fa-car" aria-hidden="true"></i><span>Aumenta o risco de acidentes de trânsito.</span></li>
+                <li><i class="fas fa-heart-crack" aria-hidden="true"></i><span>Provoca sofrimento físico e psicológico: medo, fome, sede e desamparo.</span></li>
               </ul>
-              <div class="mt-4 p-3 border-left border-success bg-light rounded">
-                <p class="mb-0 font-weight-bold text-success"><i class="fas fa-info-circle mr-2"></i> Lembre-se: negligência também é considerada maus-tratos.</p>
-              </div>
+              <p class="bea-callout">Não abandone quem nunca vai abandonar você.</p>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="rounded-lg shadow-lg overflow-hidden">
-              <img src="https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/okdxm4qzoum.jpg" alt="Denuncie" class="img-fluid w-100">
+          </article>
+
+          <article class="bea-info-card bea-info-card--health">
+            <div class="bea-info-card__icon"><i class="fas fa-shield-cat" aria-hidden="true"></i></div>
+            <div class="bea-info-card__body">
+              <p class="bea-kicker">Saúde e prevenção</p>
+              <h2>Por que castrar o seu pet?</h2>
+              <ul class="bea-list">
+                <li><i class="fas fa-notes-medical" aria-hidden="true"></i><span><strong>Previne doenças graves,</strong> como câncer de mama, infecções uterinas e tumores prostáticos.</span></li>
+                <li><i class="fas fa-paw" aria-hidden="true"></i><span><strong>Evita ninhadas indesejadas</strong> e ajuda a reduzir o abandono.</span></li>
+                <li><i class="fas fa-heart-pulse" aria-hidden="true"></i><span><strong>Prolonga a vida</strong> do seu animal.</span></li>
+                <li><i class="fas fa-face-smile" aria-hidden="true"></i><span><strong>Melhora o comportamento:</strong> seu pet pode ficar mais tranquilo e amoroso.</span></li>
+              </ul>
+              <p class="bea-callout">Como verdadeiros guardiões responsáveis, devemos cuidar e proteger nossos companheiros animais.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </article>
+        </section>
 
-    <!-- Seção: Educativo (Mitos e Verdades) -->
-    <section id="educativo" class="pi-section pi-section-gray">
-      <div class="container">
-        <div class="pi-section-title">
-          <h2>Conscientização e Saúde</h2>
-          <p>Informação é a base para o cuidado responsável. Tire suas dúvidas sobre castração e as leis de proteção animal.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="accordion pi-accordion" id="accordionAnimal">
-              
-              <!-- Accordion 1 -->
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Mitos e Verdades sobre a Castração
-                  </button>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAnimal">
-                  <div class="card-body">
-                    <p>A castração é o método mais eficaz de controle populacional e previne diversas doenças graves em pets.</p>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <div class="p-3 bg-white border rounded h-100">
-                          <span class="badge badge-danger mb-2">MITO</span>
-                          <p class="small mb-0 text-dark font-weight-bold">Castrar engorda o animal ou causa depressão.</p>
-                          <hr class="my-2">
-                          <span class="badge badge-success mb-2">VERDADE</span>
-                          <p class="small mb-0 text-muted">A obesidade é causada por dieta inadequada e falta de exercícios.</p>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <div class="p-3 bg-white border rounded h-100">
-                          <span class="badge badge-danger mb-2">MITO</span>
-                          <p class="small mb-0 text-dark font-weight-bold">Fêmeas precisam ter uma cria antes da cirurgia.</p>
-                          <hr class="my-2">
-                          <span class="badge badge-success mb-2">VERDADE</span>
-                          <p class="small mb-0 text-muted">Não há benefícios em aguardar a primeira cria para castrar.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Accordion 2 -->
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Por que a castração é importante?
-                  </button>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionAnimal">
-                  <div class="card-body">
-                    <ul class="pi-check-modern">
-                      <li><strong>Saúde:</strong> Previne câncer de mama, útero e próstata.</li>
-                      <li><strong>Comportamento:</strong> Reduz agressividade e hábito de demarcação de território.</li>
-                      <li><strong>Segurança:</strong> Diminui o risco de fugas e atropelamentos em busca de parceiros.</li>
-                      <li><strong>Responsabilidade:</strong> Evita crias indesejadas e o abandono de filhotes.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Accordion 3 -->
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Abandono é Crime: Saiba mais
-                  </button>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionAnimal">
-                  <div class="card-body">
-                    <p>O abandono de animais é uma prática cruel e punível por lei (Lei Federal 9.605/98). Ser tutor é um compromisso vitalício com o bem-estar do animal.</p>
-                    <ul class="pi-check-modern text-muted">
-                      <li>O tutor responde civil e criminalmente por seus animais.</li>
-                      <li>O abandono gera riscos à saúde pública e segurança viária.</li>
-                      <li>Animais abandonados sofrem de estresse severo, fome e doenças.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção: Notícias Relacionadas -->
-    <section class="pi-section">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-end mb-5">
+        <section class="bea-report" aria-labelledby="denuncia-titulo">
+          <div class="bea-report__icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
           <div>
-            <h2 class="font-weight-bold mb-2" style="color: var(--cinza-titulo);">Notícias e Atualizações</h2>
-            <p class="text-muted mb-0">Fique por dentro das ações da prefeitura em prol dos animais.</p>
+            <p class="bea-kicker">Não se cale</p>
+            <h2 id="denuncia-titulo">Como denunciar maus-tratos?</h2>
+            <p>Ao presenciar maus-tratos, anote o endereço, descreva o ocorrido e, se for possível e seguro, registre
+              fotos ou vídeos. Procure o órgão responsável do município. A denúncia também pode ser feita anonimamente
+              pelo telefone <strong>181</strong> ou pelos canais da Polícia Civil.</p>
           </div>
-          <a href="#" class="btn btn-outline-success btn-sm px-4">Ver todas <i class="fas fa-chevron-right ml-1"></i></a>
-        </div>
-        
-        <div class="row">
-          <!-- Card Notícia 1 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <article class="pi-news-card">
-              <div class="pi-news-img">
-                <img src="https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/okdxm4qzoum.jpg" alt="">
-              </div>
-              <div class="pi-news-content">
-                <span class="pi-news-date">10 Mai 2026</span>
-                <h3>Campanha de vacinação contra raiva começa na próxima segunda</h3>
-                <p>Equipes percorrerão diversos bairros para garantir a imunização dos pets municipais.</p>
-                <a href="#" class="btn-news">Ler matéria <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </article>
-          </div>
-          <!-- Card Notícia 2 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <article class="pi-news-card">
-              <div class="pi-news-img">
-                <img src="https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/oil5ckdpvoa.jpg" alt="">
-              </div>
-              <div class="pi-news-content">
-                <span class="pi-news-date">08 Mai 2026</span>
-                <h3>Prefeitura amplia programa de castração gratuita para pets</h3>
-                <p>Novas vagas foram abertas para o mutirão que acontecerá no final deste mês.</p>
-                <a href="#" class="btn-news">Ler matéria <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </article>
-          </div>
-          <!-- Card Notícia 3 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <article class="pi-news-card">
-              <div class="pi-news-img">
-                <img src="https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/owhrqj351hl.jpeg" alt="">
-              </div>
-              <div class="pi-news-content">
-                <span class="pi-news-date">05 Mai 2026</span>
-                <h3>Evento de adoção no Parque de Eventos atrai dezenas de famílias</h3>
-                <p>Mais de 15 animais encontraram um novo lar durante a feira realizada no último sábado.</p>
-                <a href="#" class="btn-news">Ler matéria <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
+        <section class="bea-adoption-cta" aria-labelledby="animais-disponiveis-titulo">
+          <div class="bea-adoption-cta__icon"><i class="fas fa-dog" aria-hidden="true"></i></div>
+          <div class="bea-adoption-cta__content">
+            <p class="bea-kicker">Encontre seu novo companheiro</p>
+            <h2 id="animais-disponiveis-titulo">Os animais disponíveis estão na aba Adoção</h2>
+            <p>Conheça os cães e gatos que esperam por um lar responsável e cheio de carinho.</p>
+          </div>
+          <a class="bea-adoption-cta__button" id="ver-animais-disponiveis" href="#adocao">
+            Ver animais disponíveis <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </section>
+
+      </div>
+
+      <div class="bea-tab-painel" id="adocao" role="tabpanel" aria-labelledby="adocao-tab" hidden>
+        <section class="bea-adoption" aria-labelledby="adocao-titulo">
+          <div class="bea-adoption__intro">
+            <span class="bea-adoption__icon"><i class="fas fa-paw" aria-hidden="true"></i></span>
+            <p class="bea-kicker">Um novo amigo espera por você</p>
+            <h2 id="adocao-titulo">Adoção</h2>
+            <p>Conheça cães e gatos disponíveis para adoção e encontre um companheiro para fazer parte da sua família.</p>
+          </div>
+
+          <div id="sibea-adoption-list" class="bea-sibea" data-integration="sibea">
+            <button class="bea-filters-toggle collapsed" type="button" data-toggle="collapse"
+              data-target="#sibea-filters-panel" aria-expanded="false" aria-controls="sibea-filters-panel">
+              <span><i class="fas fa-sliders" aria-hidden="true"></i> Filtrar animais</span>
+              <i class="fas fa-chevron-down bea-filters-toggle__arrow" aria-hidden="true"></i>
+            </button>
+            <div class="collapse" id="sibea-filters-panel">
+            <form id="sibea-filters" class="bea-filters" aria-label="Filtros de animais para adoção">
+              <div class="bea-filter bea-filter--search">
+                <label for="sibea-q">Pesquisar</label>
+                <div class="bea-search-field">
+                  <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                  <input id="sibea-q" name="q" type="search" maxlength="100"
+                    placeholder="Nome, raça ou característica" autocomplete="off">
+                </div>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-species">Espécie</label>
+                <select id="sibea-species" name="speciesId"><option value="">Todas</option></select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-breed">Raça</label>
+                <select id="sibea-breed" name="breedId" disabled><option value="">Todas</option></select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-sex">Sexo</label>
+                <select id="sibea-sex" name="sex"><option value="">Todos</option></select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-age">Idade</label>
+                <select id="sibea-age" name="age"><option value="">Todas</option></select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-size">Porte</label>
+                <select id="sibea-size" name="size"><option value="">Todos</option></select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-castrated">Castração</label>
+                <select id="sibea-castrated" name="castrated">
+                  <option value="">Todos</option><option value="true">Castrado</option><option value="false">Não castrado</option>
+                </select>
+              </div>
+              <div class="bea-filter">
+                <label for="sibea-vaccinated">Vacinação</label>
+                <select id="sibea-vaccinated" name="vaccinated">
+                  <option value="">Todos</option><option value="true">Vacinado</option><option value="false">Não vacinado</option>
+                </select>
+              </div>
+              <div class="bea-filter bea-filter--actions">
+                <button id="sibea-clear-filters" class="bea-clear-button" type="button">
+                  <i class="fas fa-rotate-left" aria-hidden="true"></i> Limpar filtros
+                </button>
+              </div>
+            </form>
+            </div>
+
+            <div id="sibea-filter-warning" class="bea-api-warning" role="status" hidden></div>
+            <div id="sibea-results-summary" class="bea-results-summary" aria-live="polite"></div>
+            <div id="sibea-results" class="bea-animal-grid" aria-live="polite" aria-busy="true"></div>
+            <nav id="sibea-pagination" class="bea-pagination" aria-label="Paginação dos animais"></nav>
+          </div>
+
+          <aside class="bea-responsible" aria-labelledby="adocao-responsavel-titulo">
+            <h3 id="adocao-responsavel-titulo"><i class="fas fa-heart" aria-hidden="true"></i> Adote com responsabilidade</h3>
+            <p>A adoção é um compromisso para toda a vida. Antes de escolher seu novo amigo, considere os cuidados,
+              o espaço, os custos e o tempo necessários para oferecer um lar seguro e cheio de carinho.</p>
+          </aside>
+        </section>
+      </div>
+    </div>
   </div>
+  </div>
+
+  <div class="modal fade bea-animal-modal" id="sibea-animal-modal" tabindex="-1" role="dialog"
+    aria-labelledby="sibea-animal-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="bea-modal-close" data-dismiss="modal" aria-label="Fechar detalhes">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div id="sibea-animal-detail" class="bea-animal-detail" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
 </main>

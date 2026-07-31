@@ -19,6 +19,7 @@
   
   <!-- Estilos Globais -->
   <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/servico.css">
   <!-- Estilos de Página Interna -->
   <link rel="stylesheet" href="css/bem-estar-animal.css">
 
@@ -44,6 +45,7 @@
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/sibea-adoption.js"></script>
 
   <script>
     // Carregamento do fragmento conteudo.html
@@ -51,6 +53,11 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('dynamic-content').innerHTML = html;
+
+        if (window.SibeaAdoption) {
+          window.SibeaAdoption.init();
+        }
+
         if (typeof window.dispatchEvent === 'function') {
            window.dispatchEvent(new Event('load'));
         }
