@@ -25,13 +25,15 @@
           <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
         <div class="bea-tabs-rolagem">
-          <div class="bea-tabs-lista" id="bea-tabs" role="tablist" aria-label="Áreas da página">
-            <button class="bea-tab ativo" id="bem-estar-tab" type="button" role="tab"
+          <div class="bea-tabs-lista nav" id="bea-tabs" role="tablist" aria-label="Áreas da página">
+            <button class="bea-tab active" id="bem-estar-tab" type="button" role="tab"
+              data-toggle="tab" data-target="#bem-estar"
               aria-controls="bem-estar" aria-selected="true" tabindex="0">
-              <i class="fas fa-shield-dog" aria-hidden="true"></i>
+              <i class="fas fa-paw" aria-hidden="true"></i>
               <span>Bem-estar animal</span>
             </button>
             <button class="bea-tab" id="adocao-tab" type="button" role="tab"
+              data-toggle="tab" data-target="#adocao"
               aria-controls="adocao" aria-selected="false" tabindex="-1">
               <i class="fas fa-heart" aria-hidden="true"></i>
               <span>Adoção</span>
@@ -44,14 +46,14 @@
       </div>
     </nav>
 
-    <div class="bea-tab-paineis" id="bea-tab-content">
-      <div class="bea-tab-painel" id="bem-estar" role="tabpanel" aria-labelledby="bem-estar-tab">
+    <div class="bea-tab-paineis tab-content" id="bea-tab-content">
+      <div class="bea-tab-painel tab-pane fade show active" id="bem-estar" role="tabpanel" aria-labelledby="bem-estar-tab">
         <div class="bea-page-intro">
           <p><strong>Cuidar é amar.</strong> Conheça seus deveres como tutor e ajude a proteger quem conta com você.</p>
         </div>
         <section class="bea-intro" aria-labelledby="guarda-responsavel-titulo">
           <div class="bea-section-heading">
-            <span class="bea-section-heading__icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span>
+            <span class="bea-section-heading__icon"><i class="fa fa-paw" aria-hidden="true"></i></span>
             <div>
               <p class="bea-kicker">Guarda responsável</p>
               <h2 id="guarda-responsavel-titulo">Proteger também é cuidar</h2>
@@ -120,7 +122,7 @@
 
       </div>
 
-      <div class="bea-tab-painel" id="adocao" role="tabpanel" aria-labelledby="adocao-tab" hidden>
+      <div class="bea-tab-painel tab-pane fade" id="adocao" role="tabpanel" aria-labelledby="adocao-tab">
         <section class="bea-adoption" aria-labelledby="adocao-titulo">
           <div class="bea-adoption__intro">
             <span class="bea-adoption__icon"><i class="fas fa-paw" aria-hidden="true"></i></span>
@@ -187,7 +189,12 @@
 
             <div id="sibea-filter-warning" class="bea-api-warning" role="status" hidden></div>
             <div id="sibea-results-summary" class="bea-results-summary" aria-live="polite"></div>
-            <div id="sibea-results" class="bea-animal-grid" aria-live="polite" aria-busy="true"></div>
+            <div id="sibea-results" class="bea-animal-grid" aria-live="polite" aria-busy="true">
+              <div class="bea-state bea-state--loading">
+                <span class="bea-spinner" aria-hidden="true"></span>
+                <p>Carregando animais disponíveis…</p>
+              </div>
+            </div>
             <nav id="sibea-pagination" class="bea-pagination" aria-label="Paginação dos animais"></nav>
           </div>
 

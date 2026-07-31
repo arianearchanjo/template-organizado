@@ -58,10 +58,13 @@
       tabs.forEach(item => {
         const active = item === tab;
         const panel = document.getElementById(item.getAttribute('aria-controls'));
-        item.classList.toggle('ativo', active);
+        item.classList.toggle('active', active);
         item.setAttribute('aria-selected', active ? 'true' : 'false');
         item.setAttribute('tabindex', active ? '0' : '-1');
-        if (panel) panel.hidden = !active;
+        if (panel) {
+          panel.classList.toggle('active', active);
+          panel.classList.toggle('show', active);
+        }
       });
 
       if (tab === tabs[0]) {
@@ -123,7 +126,7 @@
       });
     }
 
-    updateArrows();
+    activateTab(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0], false);
   }
 
   class ApiError extends Error {
