@@ -54,7 +54,7 @@
           <hr class="pi-secao-divider">
           <div class="pi-intro-texto">
             <p>
-              A coleta de lixo em Campina Grande do Sul é dividida em três modalidades: 
+              A coleta de lixo em Campina Grande do Sul é dividida em três modalidades:
               <strong>a coleta noturna, interior e convencional.</strong>
             </p>
             <a class="pi-btn-verde pi-acesso-cronogramas" href="#pi-banners-titulo">
@@ -147,25 +147,65 @@
           </div>
         </section>
 
-        <section aria-labelledby="pi-banners-titulo" class="pi-mt-secao pi-banner-destaque-secao">
+        <section aria-labelledby="pi-banners-titulo" class="pi-mt-secao pi-banner-destaque-secao" data-pi-cronogramas>
           <h2 id="pi-banners-titulo" class="pi-secao-titulo">
             <i class="fas fa-calendar-days" aria-hidden="true"></i>
-            Cronograma da coleta na área rural
+            Cronogramas da coleta de lixo
           </h2>
           <hr class="pi-secao-divider">
-          <p class="pi-banners-intro">Confira os dias e as localidades atendidas pela coleta de lixo na área rural.</p>
-          <div class="pi-banners-grid pi-banners-grid--destaque">
-            <a class="pi-banner-card"
-               href="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0fi3zj34cdl.jpeg"
-               target="_blank"
-               rel="noopener"
-               aria-label="Abrir cronograma da coleta de lixo na área rural em nova aba">
-              <span class="pi-banner-card__imagem">
-                <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0fi3zj34cdl.jpeg"
-                     alt="Cronograma da coleta de lixo na área rural"
-                     loading="lazy">
-              </span>
-            </a>
+                    <div class="pi-cronograma-seletor" role="group" aria-label="Escolha o cronograma">
+            <span class="pi-cronograma-seletor__rotulo">Selecione a região</span>
+            <div class="pi-cronograma-botoes">
+              <button type="button" class="pi-cronograma-botao" data-pi-cronograma-botao="urbano" aria-controls="pi-cronograma-urbano" aria-expanded="false">
+                <i class="fas fa-city" aria-hidden="true"></i> Cronograma urbano
+              </button>
+              <button type="button" class="pi-cronograma-botao" data-pi-cronograma-botao="rural" aria-controls="pi-cronograma-rural" aria-expanded="false">
+                <i class="fas fa-tree" aria-hidden="true"></i> Cronograma rural
+              </button>
+            </div>
+          </div>
+
+          <div id="pi-cronograma-urbano" class="pi-cronograma-painel" data-pi-cronograma-painel="urbano" role="region" aria-labelledby="pi-banners-titulo" hidden>
+            <p class="pi-banners-intro">Confira o cronograma da coleta de lixo na área urbana.</p>
+            <div class="pi-banners-grid pi-banners-grid--destaque">
+              <a class="pi-banner-card"
+                 href="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/soj0rutkxx5.jpeg"
+                 target="_blank"
+                 rel="noopener"
+                 aria-label="Abrir cronograma da coleta de lixo na área urbana em nova aba">
+                <span class="pi-banner-card__imagem">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/soj0rutkxx5.jpeg"
+                       alt="Cronograma da coleta de lixo na área urbana"
+                       loading="lazy">
+                </span>
+              </a>
+            </div>
+
+<div class="pi-cronograma-transcrito pi-cronograma-transcrito--urbano" aria-labelledby="pi-cronograma-urbano-texto">
+  <div class="pi-cronograma-cabecalho"><div><h3 id="pi-cronograma-urbano-texto">Cronograma da área urbana em texto</h3><p>Consulte os bairros atendidos em cada dia.</p></div></div>
+  <div class="pi-cronograma-grid">
+    <article class="pi-cronograma-card"><h4>Segunda e quinta</h4><div class="pi-cronograma-horario pi-cronograma-horario--card"><span>Lixo comum: 7h</span><span>Lixo reciclável: 14h</span></div><ul><li>Sede</li><li>Mitra</li><li>Jardim da Campina</li><li>Jardim da Colina</li><li>Chácaras Bela Vista</li><li>Jardim Nova Campina</li><li>Chácaras Campina Verde</li><li>Chácaras Renascença</li><li>Imbuial</li><li>Mandaçaia</li></ul></article>
+    <article class="pi-cronograma-card"><h4>Terça e sexta</h4><div class="pi-cronograma-horario pi-cronograma-horario--card"><span>Lixo comum: 7h</span><span>Lixo reciclável: 14h</span></div><ul><li>Jardim Santa Rita</li><li>Área Industrial Campo Fundo</li><li>Área Industrial Pocinho</li><li>Estrada da Colônia Japonesa</li><li>Caraguatá</li><li>Rancho Alegre</li><li>Subdivisão José Alzamora Neto</li><li>Chácaras Olhos D'Água</li><li>Cacaiguera</li><li>Saltinho (próximo à Roseira)</li><li>Palmeirinha</li><li>Travessa Ruzenente</li></ul></article>
+    <article class="pi-cronograma-card"><h4>Quarta e sábado</h4><div class="pi-cronograma-horario pi-cronograma-horario--card"><span>Lixo comum: 7h</span><span>Lixo reciclável: 7h</span></div><ul><li>Rodovia do Caqui</li><li>Jardim Daher</li><li>Área Industrial Riachuelo La Plata</li><li>Área Industrial São Paulo do Araçatuba (Rua Vereador Leonildo Zanona)</li><li>Jardim Diamante</li><li>Jardim Araçatuba</li><li>Jardim João Paulo II</li><li>Jardim Santa Angelina</li><li>Jardim Santa Rosa</li><li>Subdivisão Osni Strapasson</li><li>Cohapar</li><li>Área Industrial CICAMP</li><li>Recanto Verde</li><li>Cupim Vermelho</li></ul></article>
+    <article class="pi-cronograma-card"><h4>Sábado</h4><div class="pi-cronograma-horario pi-cronograma-horario--card"><span>Lixo comum: 7h</span><span>Lixo reciclável: 14h</span></div><ul><li>Joana Olímpia</li><li>Jardim Ceccon</li><li>Jardim Água Doce</li><li>Timbu Velho</li><li>Moradias Timbu</li><li>São Cosme</li><li>Jardim Flórida</li><li>Jardim Nesita</li><li>Jardim Senhora das Graças</li><li>Vila Chacrinhas</li><li>Vila Santa Cecília</li></ul></article>
+  </div>
+</div></div>
+
+          <div id="pi-cronograma-rural" class="pi-cronograma-painel" data-pi-cronograma-painel="rural" role="region" aria-labelledby="pi-banners-titulo" hidden>
+            <p class="pi-banners-intro">Confira os dias e as localidades atendidas pela coleta de lixo na área rural.</p>
+            <div class="pi-banners-grid pi-banners-grid--destaque">
+              <a class="pi-banner-card"
+                 href="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0fi3zj34cdl.jpeg"
+                 target="_blank"
+                 rel="noopener"
+                 aria-label="Abrir cronograma da coleta de lixo na área rural em nova aba">
+                <span class="pi-banner-card__imagem">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/0fi3zj34cdl.jpeg"
+                       alt="Cronograma da coleta de lixo na área rural"
+                       loading="lazy">
+                </span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -176,15 +216,15 @@
             Informações e Conscientização
           </h2>
           <hr class="pi-secao-divider">
-          
+
           <div class="pi-texto">
             <h3 class="pi-subtitulo">
               <i class="fas fa-leaf" aria-hidden="true"></i>
               Sobre o lixo
             </h3>
             <p>
-              A degradação e a poluição do meio ambiente não são novidades para a população. Vários problemas ambientais são causados pelo 
-              descarte de lixo na natureza como: inundações, contaminações de rios, lagos e do solo. Preocupada com esses problemas a prefeitura 
+              A degradação e a poluição do meio ambiente não são novidades para a população. Vários problemas ambientais são causados pelo
+              descarte de lixo na natureza como: inundações, contaminações de rios, lagos e do solo. Preocupada com esses problemas a prefeitura
               desenvolve a coleta seletiva e trabalho de educação ambiental nas escolas.
             </p>
 
@@ -209,11 +249,11 @@
             Dicas importantes de separação
           </h2>
           <hr class="pi-secao-divider">
-          
+
           <div class="pi-texto">
             <p>Para evitar mau cheiro e acumulo de vetores (como ratos e baratas), observe as orientações abaixo:</p>
             <div class="pi-recursos-grid" style="grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px;">
-              
+
               <article class="pi-recurso-card">
                 <div class="pi-recurso-icon"><i class="fas fa-wine-bottle"></i></div>
                 <div class="pi-recurso-corpo">

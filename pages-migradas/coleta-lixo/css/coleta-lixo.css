@@ -208,6 +208,150 @@
   width: 100%;
 }
 
+.pi-cronograma-seletor {
+  background: var(--cinza-bg, #f4f6f4);
+  border: 1px solid var(--cinza-borda, #d9e0d9);
+  border-radius: 12px;
+  margin-bottom: 22px;
+  padding: 18px;
+}
+
+.pi-cronograma-seletor__rotulo {
+  color: var(--verde-escuro, #174d2b);
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pi-cronograma-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pi-cronograma-botao {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--cinza-borda, #d9e0d9);
+  border-radius: 8px;
+  color: var(--texto, #333);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 600;
+  gap: 8px;
+  padding: 11px 16px;
+}
+
+.pi-cronograma-botao:focus-visible {
+  outline: 3px solid var(--verde, #287a3e);
+  outline-offset: 2px;
+}
+
+.pi-cronograma-botao.is-active {
+  background: var(--verde, #287a3e);
+  border-color: var(--verde, #287a3e);
+  color: #fff;
+}
+
+.pi-cronograma-botao i {
+  color: var(--verde, #287a3e);
+  flex-shrink: 0;
+}
+
+.pi-cronograma-botao.is-active i {
+  color: #fff;
+}
+
+.pi-cronograma-transcrito {
+  display: none;
+}
+
+.pi-cronograma-painel .pi-cronograma-transcrito {
+  display: block;
+}
+
+.pi-cronograma-horario--card {
+  background: var(--cinza-bg, #f4f6f4);
+  border-bottom: 1px solid var(--cinza-borda, #e2e7e2);
+  padding: 10px 16px;
+}
+
+.pi-cronograma-horario--card span {
+  font-size: 0.8125rem;
+}
+
+.pi-cronograma-transcrito {
+  margin-top: 28px;
+}
+
+.pi-cronograma-transcrito--urbano {
+  margin-top: 26px;
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-cabecalho {
+  background: linear-gradient(135deg, var(--verde-claro, #e7f4e7), #fff);
+  border-color: #b8d7bd;
+  margin-bottom: 16px;
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-grid {
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-card {
+  border-radius: 14px;
+  box-shadow: 0 5px 16px rgba(20, 65, 20, 0.09);
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-card h4 {
+  align-items: center;
+  display: flex;
+  font-size: 0.9375rem;
+  letter-spacing: 0.1px;
+  min-height: 48px;
+}
+
+.pi-cronograma-horario--card {
+  background: #f7faf7;
+  border-bottom: 1px solid var(--cinza-borda, #e2e7e2);
+  display: grid;
+  gap: 6px;
+  padding: 12px 16px;
+}
+
+.pi-cronograma-horario--card span {
+  color: var(--texto, #333);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.pi-cronograma-horario--card span i {
+  color: var(--verde, #287a3e);
+  margin-right: 5px;
+  width: 16px;
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-card ul {
+  padding: 8px 16px 14px;
+}
+
+.pi-cronograma-transcrito--urbano .pi-cronograma-card li {
+  font-size: 0.875rem;
+  padding: 7px 0;
+}
+
+@media (max-width: 767px) {
+  .pi-cronograma-transcrito--urbano .pi-cronograma-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.pi-cronograma-painel[hidden] {
+  display: none;
+}
+
 .pi-banners-grid--destaque .pi-banner-card {
   background: #fff;
   box-shadow: 0 8px 24px rgba(20, 65, 20, 0.12);

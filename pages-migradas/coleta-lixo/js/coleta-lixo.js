@@ -4,11 +4,46 @@
   function initColetaLixoBanners(root) {
     var scope = root || document;
     var transcript = scope.querySelector(".pi-cronograma-transcrito");
-    var highlightedBanner = scope.querySelector(".pi-banners-grid--destaque");
+    var schedules = scope.querySelector("[data-pi-cronogramas]");
     var lightbox = document.getElementById("pi-banner-lightbox");
 
-    if (transcript && highlightedBanner && transcript.previousElementSibling !== highlightedBanner) {
-      highlightedBanner.insertAdjacentElement("afterend", transcript);
+    if (schedules && schedules.dataset.piCronogramasInitialized !== "true") {
+      var ruralPanel = schedules.querySelector('[data-pi-cronograma-painel="rural"]');
+      if (transcript && ruralPanel && !ruralPanel.contains(transcript)) {
+        ruralPanel.appendChild(transcript);
+      }
+
+      var buttons = schedules.querySelectorAll("[data-pi-cronograma-botao]");
+      var panels = schedules.querySelectorAll("[data-pi-cronograma-painel]");
+
+      function showSchedule(value) {
+        panels.forEach(function (panel) {
+          var active = panel.dataset.piCronogramaPainel === value;
+          panel.hidden = !active;
+        });
+        buttons.forEach(function (button) {
+          var active = button.dataset.piCronogramaBotao === value;
+          button.setAttribute("aria-expanded", active ? "true" : "false");
+          button.classList.toggle("is-active", active);
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var value = button.dataset.piCronogramaBotao;
+          var activePanel = schedules.querySelector('[data-pi-cronograma-painel="' + value + '"]');
+          var isOpen = activePanel && !activePanel.hidden;
+          if (isOpen) {
+            activePanel.hidden = true;
+            button.setAttribute("aria-expanded", "false");
+            button.classList.remove("is-active");
+          } else {
+            showSchedule(value);
+          }
+        });
+      });
+
+      schedules.dataset.piCronogramasInitialized = "true";
     }
 
     if (!lightbox || lightbox.dataset.piBannerInitialized === "true") {
