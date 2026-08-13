@@ -1,311 +1,1478 @@
-:root {
-  --fut-verde: #2d7a2d;
-  --fut-verde-escuro: #1e5c1e;
-  --fut-verde-claro: #e8f5e8;
-  --fut-borda: #dde8dd;
-  --fut-texto: #444;
-}
+:root{--fut-verde:var(--verde,#2d7a2d);--fut-verde-escuro:var(--verde-escuro,#1e5c1e);--fut-verde-claro:var(--verde-claro,#e8f5e8);--fut-bg:var(--cinza-bg,#f5f7f5);--fut-borda:var(--cinza-borda,#dfe5df);--fut-texto:var(--texto,#343a40)}
+*,*::before,*::after{box-sizing:border-box}#pi-wrapper{overflow-x:hidden;width:100%}#pi-hero{background:var(--fut-verde-escuro);overflow:hidden;padding:18px 0 0}.pi-hero-inner{padding-bottom:12px;position:relative;z-index:2}.pi-breadcrumb{align-items:center;display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 12px;padding:0}.pi-breadcrumb li,.pi-breadcrumb a{color:rgba(255,255,255,.78);font-size:.75rem}.pi-breadcrumb-sep{color:rgba(255,255,255,.42);font-size:.625rem}.pi-hero-titulo{color:#fff;font-size:1.5rem;font-weight:900;line-height:1.2;margin:0 0 4px;text-transform:uppercase}.pi-hero-subtitulo{color:rgba(255,255,255,.78);font-size:.875rem;margin:0}.pi-hero-ilustracao img{display:block;height:70px;object-fit:cover;opacity:.18;width:100%}#pi-main{background:var(--fut-bg);min-height:540px;padding:40px 0 60px}
+.fut-head{align-items:center;display:flex;gap:16px;justify-content:space-between;margin-bottom:24px}.fut-head h2{color:var(--fut-verde-escuro);font-size:1.55rem;font-weight:800;margin:0 0 5px}.fut-head p{color:#68716b;margin:0}.fut-btn{align-items:center;background:#fff;border:1px solid var(--fut-borda);border-radius:8px;color:var(--fut-verde-escuro);cursor:pointer;display:inline-flex;font-weight:700;gap:8px;padding:10px 14px}.fut-btn:hover{border-color:var(--fut-verde);color:var(--fut-verde);text-decoration:none}
+.fut-next,.fut-box{background:#fff;border:1px solid var(--fut-borda);border-radius:12px;box-shadow:0 3px 14px rgba(22,67,33,.07);margin-bottom:24px;padding:22px}.fut-next{border-left:4px solid var(--fut-verde)}.fut-kicker{color:var(--fut-verde);display:block;font-size:.72rem;font-weight:800;letter-spacing:.08em;margin-bottom:9px;text-transform:uppercase}.fut-next h2{color:var(--fut-texto);font-size:1.18rem;margin:0 0 16px}.fut-match-main{align-items:center;display:grid;gap:18px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}.fut-team{align-items:center;display:flex;flex-direction:column;gap:9px;min-width:0;text-align:center}.fut-team strong{overflow-wrap:anywhere}.fut-logo{align-items:center;background:var(--fut-verde-claro);border:1px solid var(--fut-borda);border-radius:50%;display:flex;height:72px;justify-content:center;overflow:hidden;width:72px}.fut-logo img{height:100%;object-fit:contain;padding:7px;width:100%}.fut-logo i{color:var(--fut-verde);font-size:1.6rem}.fut-when{color:#606a63;min-width:145px;text-align:center}.fut-when strong{color:var(--fut-verde-escuro);display:block}.fut-venue{border-top:1px solid var(--fut-borda);color:#626a65;margin:18px 0 0;padding-top:13px;text-align:center}
+.fut-grid{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}.fut-card{background:#fff;border:1px solid var(--fut-borda);border-radius:11px;box-shadow:0 2px 9px rgba(22,67,33,.05);color:inherit;cursor:pointer;display:flex;flex-direction:column;min-width:0;padding:22px;text-align:left;transition:.2s;width:100%}.fut-card:hover{border-color:#9bc49f;box-shadow:0 7px 20px rgba(22,67,33,.11);color:inherit;text-decoration:none;transform:translateY(-2px)}.fut-year{color:var(--fut-verde-escuro);font-size:2.65rem;font-weight:900;letter-spacing:-.04em;line-height:1}.fut-card h3{color:var(--fut-texto);font-size:1.05rem;margin:14px 0 9px;overflow-wrap:anywhere}.fut-meta{color:#67706a;display:flex;flex-wrap:wrap;font-size:.83rem;gap:8px 16px;margin-top:auto}.fut-card .fut-logo{margin:0 auto}.fut-type{align-self:flex-start;background:var(--fut-verde-claro);border-radius:999px;color:var(--fut-verde-escuro);font-size:.68rem;font-weight:800;padding:5px 9px;text-transform:uppercase}.fut-type.history{background:#eef0ee;color:#5e655f}
+.fut-tabs{background:#fff;border:1px solid var(--fut-borda);border-radius:10px;display:flex;gap:4px;overflow-x:auto;padding:6px}.fut-tab{background:transparent;border:0;border-radius:7px;color:#58615b;cursor:pointer;flex:0 0 auto;font-weight:700;padding:10px 14px}.fut-tab[aria-selected=true]{background:var(--fut-verde);color:#fff}.fut-panel{padding-top:22px}.fut-panel[hidden]{display:none}.fut-box h3{color:var(--fut-verde-escuro);font-size:1.15rem;margin:0 0 16px}.fut-stats{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}.fut-stat{background:var(--fut-bg);border-radius:8px;padding:16px}.fut-stat strong{color:var(--fut-verde-escuro);display:block;font-size:1.5rem}.fut-stat span{color:#67706a;font-size:.8rem}
+.fut-round{margin-bottom:24px}.fut-round h3{border-bottom:2px solid var(--fut-verde-claro);color:var(--fut-verde-escuro);font-size:1rem;padding-bottom:9px}.fut-match{align-items:center;border-bottom:1px solid var(--fut-borda);display:grid;gap:12px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);padding:15px 4px}.fut-match-team{align-items:center;display:flex;gap:8px;min-width:0}.fut-match-team.away{flex-direction:row-reverse;text-align:right}.fut-mini-logo{height:32px;object-fit:contain;width:32px}.fut-score{font-size:1.1rem;font-weight:900;text-align:center;white-space:nowrap}.fut-detail{color:#68716b;font-size:.78rem;grid-column:1/-1;text-align:center}.fut-note{background:#fff8e4;border-radius:6px;color:#695719;padding:8px}
+.fut-table-wrap{overflow-x:auto}.fut-table{border-collapse:collapse;min-width:650px;width:100%}.fut-table th,.fut-table td{border-bottom:1px solid var(--fut-borda);padding:11px 8px;text-align:center}.fut-table th{background:var(--fut-bg);font-size:.72rem;text-transform:uppercase}.fut-table th:nth-child(2),.fut-table td:nth-child(2){text-align:left}.fut-list{display:grid;gap:10px}.fut-rank{align-items:center;background:var(--fut-bg);border-radius:8px;display:grid;gap:12px;grid-template-columns:34px minmax(0,1fr) auto;padding:12px}.fut-pos{align-items:center;background:#fff;border-radius:50%;display:flex;font-weight:800;height:32px;justify-content:center}.fut-value{color:var(--fut-verde-escuro);font-weight:900}.fut-team-card{align-items:center;text-align:center}
+.fut-state{align-items:center;background:#fff;border:1px solid var(--fut-borda);border-radius:10px;color:#626a65;display:flex;flex-direction:column;gap:12px;justify-content:center;min-height:150px;padding:24px;text-align:center}.fut-state i{color:var(--fut-verde);font-size:1.6rem}.fut-state h2,.fut-state p{margin:0}.fut-skeletons{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}.fut-skeleton{animation:pulse 1.35s ease-in-out infinite;background:linear-gradient(90deg,#e8ece8 25%,#f7f8f7 50%,#e8ece8 75%);background-size:200% 100%;border-radius:10px;height:180px}@keyframes pulse{to{background-position:-200% 0}}
+@media(max-width:991.98px){.fut-grid,.fut-skeletons{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:575.98px){#pi-main{padding:30px 0 44px}.fut-head{align-items:flex-start;flex-direction:column}.fut-grid,.fut-skeletons,.fut-stats{grid-template-columns:1fr}.fut-next{padding:18px 12px}.fut-match-main{gap:8px}.fut-logo{height:54px;width:54px}.fut-when{font-size:.75rem;min-width:80px}.fut-match{gap:6px}.fut-match-team{align-items:flex-start;flex-direction:column;font-size:.82rem}.fut-match-team.away{align-items:flex-end;flex-direction:column}}@media(prefers-reduced-motion:reduce){.fut-card{transition:none}.fut-skeleton{animation:none}}
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
-#pi-wrapper {
-  overflow-x: hidden;
+#futebol-app:not(.fut-dashboard) > .fut-next.fut-next-empty {
+  border-left-color: #8cab90 !important;
+  display: block;
+  padding: 0 !important;
+}
+#futebol-app:not(.fut-dashboard) > .fut-next.fut-next-empty::before { display: none; }
+.fut-next-empty .fut-state {
+  align-items: center;
+  background: #fff;
+  border: 0;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 66px minmax(0,1fr);
+  min-height: 132px;
+  padding: 24px 26px;
+  text-align: left;
+}
+.fut-next-empty-icon {
+  align-items: center;
+  background: var(--fut-verde-claro);
+  border-radius: 8px;
+  color: var(--fut-verde);
+  display: flex;
+  font-size: 1.35rem;
+  height: 60px;
+  justify-content: center;
+  width: 60px;
+}
+.fut-next-empty .fut-kicker { margin: 0 0 5px; }
+.fut-next-empty h2 { color: var(--fut-verde-escuro); font-size: 1.05rem; margin: 0 0 6px; }
+.fut-next-empty p { color: #69716b; font-size: .84rem; line-height: 1.5; margin: 0; }
+@media(max-width:575.98px){.fut-next-empty .fut-state{gap:13px;grid-template-columns:48px minmax(0,1fr);min-height:110px;padding:18px 15px}.fut-next-empty-icon{font-size:1rem;height:44px;width:44px}.fut-next-empty h2{font-size:.92rem}.fut-next-empty p{font-size:.76rem}}
+body.high-contrast .fut-next-empty .fut-state,body.high-contrast .fut-next-empty-icon{background:#000!important;border-color:#fff!important;color:#ff0!important}
+
+
+.fut-current-round { margin-bottom: 28px; }
+.fut-current-round:last-child { margin-bottom: 0; }
+.fut-current-round>h3 { border-bottom: 2px solid var(--fut-verde-claro); color: var(--fut-verde-escuro); font-size: .92rem; margin: 0 0 12px; padding-bottom: 9px; }
+.fut-current-matches-grid { display: grid; gap: 12px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.fut-current-match { background: #fff; border: 1px solid var(--fut-borda); border-radius: 8px; overflow: hidden; }
+.fut-current-match-teams { align-items: center; display: grid; gap: 10px; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); min-height: 105px; padding: 16px; }
+.fut-current-team { align-items: center; display: flex; flex-direction: column; gap: 7px; min-width: 0; text-align: center; }
+.fut-current-team strong { color: #404841; font-size: .77rem; line-height: 1.25; overflow-wrap: anywhere; }
+.fut-current-crest { align-items: center; color: var(--fut-verde-escuro); display: flex; font-size: .7rem; font-weight: 800; height: 46px; justify-content: center; width: 46px; }
+.fut-current-crest img { height: 100%; object-fit: contain; width: 100%; }
+.fut-current-crest.is-fallback { background: var(--fut-verde-claro); border-radius: 6px; }
+.fut-current-score { background: var(--fut-verde-escuro); border-radius: 5px; color: #fff; font-size: 1rem; font-weight: 800; min-width: 62px; padding: 8px; text-align: center; }
+.fut-current-details { align-items: center; background: var(--fut-bg); border-top: 1px solid var(--fut-borda); color: #69716b; display: flex; flex-wrap: wrap; font-size: .68rem; gap: 6px 14px; padding: 9px 12px; }
+.fut-current-details i { color: var(--fut-verde); }
+.fut-current-status { margin-left: auto; }
+.fut-current-status::before { background: #9aa29b; border-radius: 50%; content: ""; display: inline-block; height: 5px; margin: 0 5px 1px 0; width: 5px; }
+.fut-current-status.status-finished::before { background: var(--fut-verde); }
+.fut-current-status.status-in_progress::before,.fut-current-status.status-live::before { background: #c43b32; }
+@media(max-width:767.98px){.fut-current-matches-grid{grid-template-columns:1fr}}
+@media(max-width:375px){.fut-current-match-teams{gap:6px;padding:13px 8px}.fut-current-score{min-width:54px}.fut-current-details{align-items:flex-start;flex-direction:column}.fut-current-status{margin-left:0}}
+body.high-contrast .fut-current-match,body.high-contrast .fut-current-match-teams,body.high-contrast .fut-current-details{background:#000!important;border-color:#fff!important;color:#fff!important}
+
+
+.fut-dashboard > .fut-head { padding-left: 142px; }
+.fut-dashboard > .fut-head::before, .fut-dashboard > .fut-head::after { display: none; }
+.fut-champ-logo {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--fut-borda);
+  border-radius: 14px;
+  box-shadow: 0 5px 16px rgba(24,67,34,.1);
+  display: flex;
+  height: 92px;
+  justify-content: center;
+  left: 24px;
+  overflow: hidden;
+  padding: 9px;
+  position: absolute;
+  top: 24px;
+  width: 92px;
+}
+.fut-champ-logo img { height: 100%; object-fit: contain; width: 100%; }
+.fut-champ-logo.is-fallback { background: var(--fut-verde-claro); color: var(--fut-verde-escuro); font-size: 1.5rem; font-weight: 900; }
+.fut-table-team, .fut-rank-identity { align-items: center; display: flex; gap: 11px; min-width: 0; }
+.fut-table-crest, .fut-rank-crest {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--fut-borda);
+  border-radius: 50%;
+  display: inline-flex;
+  flex: 0 0 36px;
+  font-size: .62rem;
+  font-weight: 900;
+  height: 36px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3px;
+  width: 36px;
+}
+.fut-table-crest img, .fut-rank-crest img { height: 100%; object-fit: contain; width: 100%; }
+.fut-table-crest.is-fallback, .fut-rank-crest.is-fallback, .fut-team-card .fut-logo.is-fallback { background: var(--fut-verde-claro); color: var(--fut-verde-escuro); }
+.fut-rank { grid-template-columns: 34px minmax(0,1fr) auto; }
+.fut-rank-identity { flex-wrap: wrap; }
+.fut-rank-identity strong { flex: 1 1 calc(100% - 50px); }
+.fut-rank-identity small { color: #727a75; font-size: .72rem; margin-left: 47px; margin-top: -9px; width: 100%; }
+.fut-team-card .fut-logo.is-fallback { font-size: 1.25rem; font-weight: 900; }
+@media(max-width:767.98px){.fut-dashboard > .fut-head{padding-left:112px}.fut-champ-logo{height:70px;left:20px;top:20px;width:70px}}
+@media(max-width:575.98px){.fut-dashboard > .fut-head{padding:104px 18px 20px}.fut-champ-logo{height:70px;left:50%;top:17px;transform:translateX(-50%);width:70px}.fut-table-crest{flex-basis:30px;height:30px;width:30px}.fut-rank{grid-template-columns:32px minmax(0,1fr)}.fut-rank-identity{grid-column:2}.fut-rank .fut-value{grid-column:2}}
+
+
+/* Correções pontuais do detalhe do campeonato */
+.fut-dashboard>.fut-head { isolation: isolate; overflow: hidden; }
+.fut-dashboard>.fut-head>div,.fut-dashboard>.fut-head>.fut-btn { min-width: 0; position: relative; z-index: 2; }
+.fut-dashboard .fut-champ-logo { align-self: center; display: flex; flex: 0 0 auto; grid-column: 1; grid-row: 1 / 3; inset: auto; margin: 0; max-height: 88px; max-width: 88px; position: relative; transform: none; z-index: 2; }
+.fut-dashboard .fut-champ-logo img { display: block; height: 100%; max-height: 72px; object-fit: contain; width: 100%; }
+
+#fut-panel-defense .fut-value { gap: 4px; line-height: 1.15; padding: 4px 8px; }
+#fut-panel-defense .fut-value small { display: block; line-height: 1.25; margin: 0; white-space: nowrap; }
+
+.fut-round-controls { align-items: end; background: #f3f6f3; border: 1px solid var(--fut-borda); border-radius: 8px; display: grid; gap: 12px; grid-template-columns: 42px minmax(180px,340px) 42px; justify-content: center; margin-bottom: 22px; padding: 14px; }
+.fut-round-field { min-width: 0; }
+.fut-round-field label { color: #59625c; display: block; font-size: .7rem; font-weight: 700; margin: 0 0 5px; text-transform: uppercase; }
+.fut-round-select { appearance: auto; background: #fff; border: 1px solid #cbd4cc; border-radius: 6px; color: var(--fut-texto); font-size: .86rem; height: 42px; padding: 0 10px; width: 100%; }
+.fut-round-button { align-items: center; background: var(--fut-verde); border: 0; border-radius: 6px; color: #fff; cursor: pointer; display: flex; height: 42px; justify-content: center; width: 42px; }
+.fut-round-button:hover:not(:disabled) { background: var(--fut-verde-escuro); }
+.fut-round-button:disabled { background: #c6cec7; cursor: not-allowed; }
+.fut-current-round[hidden] { display: none !important; }
+.fut-type { display: none !important; }
+
+@media(max-width:575.98px){.fut-dashboard .fut-champ-logo{height:62px;max-height:62px;max-width:62px;width:62px}.fut-dashboard .fut-champ-logo img{max-height:56px}.fut-round-controls{gap:8px;grid-template-columns:38px minmax(0,1fr) 38px;padding:10px}.fut-round-button{height:40px;width:38px}.fut-round-select{height:40px}}
+body.high-contrast .fut-round-controls,body.high-contrast .fut-round-select{background:#000!important;border-color:#fff!important;color:#fff!important}
+
+
+/* Cabeçalho do campeonato */
+.fut-dashboard>.fut-head {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dce2dc;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(27,55,33,.07);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 82px minmax(0,1fr) auto;
+  min-height: 118px;
+  overflow: visible;
+  padding: 18px 20px;
+}
+.fut-dashboard>.fut-head::before,.fut-dashboard>.fut-head::after { display: none !important; }
+.fut-dashboard .fut-champ-logo {
+  align-items: center;
+  background: #f5f7f5;
+  border: 1px solid #e0e5e0;
+  border-radius: 8px;
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  height: 78px;
+  justify-content: center;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  padding: 7px;
+  width: 78px;
+}
+.fut-dashboard .fut-champ-logo img { height: 100%; max-height: none; object-fit: contain; width: 100%; }
+.fut-dashboard>.fut-head>div { grid-column: 2; grid-row: 1; }
+.fut-dashboard>.fut-head h2 { color: #24452a; font-size: clamp(1.25rem,2.2vw,1.7rem); font-weight: 750; line-height: 1.2; margin: 0 0 7px; }
+.fut-dashboard>.fut-head p { color: #6b746d; font-size: .8rem; margin: 0; }
+.fut-dashboard>.fut-head .fut-btn {
+  align-self: center;
+  background: #fff;
+  border: 1px solid #c9d2ca;
+  border-radius: 6px;
+  color: #315f38;
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0;
+  padding: 9px 12px;
+  white-space: nowrap;
+}
+.fut-dashboard>.fut-head .fut-btn:hover { background: #edf3ed; border-color: #9eb6a1; color: #244f2b; }
+
+/* Navegação entre rodadas */
+.fut-round-controls {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dce2dc;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 38px minmax(220px,360px) 38px;
+  justify-content: center;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+}
+.fut-round-field { position: relative; }
+.fut-round-field label { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.fut-round-select {
+  appearance: none;
+  background-color: #f5f7f5;
+  background-image: linear-gradient(45deg,transparent 50%,#526057 50%),linear-gradient(135deg,#526057 50%,transparent 50%);
+  background-position: calc(100% - 15px) 17px,calc(100% - 10px) 17px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px,5px 5px;
+  border: 1px solid #d4dcd5;
+  border-radius: 6px;
+  color: #344139;
+  cursor: pointer;
+  font-size: .88rem;
+  font-weight: 600;
+  height: 42px;
+  padding: 0 34px 0 13px;
   width: 100%;
 }
-
-#pi-hero {
-  background: var(--fut-verde-escuro);
-  overflow: hidden;
-  padding: 18px 0 0;
-  position: relative;
+.fut-round-select:hover { background-color: #eef3ee; border-color: #afbeb1; }
+.fut-round-select:focus { border-color: var(--fut-verde); box-shadow: 0 0 0 3px rgba(45,122,45,.14); outline: 0; }
+.fut-round-button {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #cbd4cc;
+  border-radius: 6px;
+  color: #315f38;
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
 }
+.fut-round-button:hover:not(:disabled) { background: #e9f0ea; border-color: #9eb6a1; color: #244f2b; }
+.fut-round-button:disabled { background: #f3f5f3; border-color: #e1e5e1; color: #b5bbb6; }
 
-.pi-hero-inner {
-  padding-bottom: 12px;
-  position: relative;
-  z-index: 2;
+@media(max-width:767.98px){.fut-dashboard>.fut-head{grid-template-columns:70px minmax(0,1fr);gap:14px;padding:16px}.fut-dashboard .fut-champ-logo{height:66px;width:66px}.fut-dashboard>.fut-head .fut-btn{grid-column:2;grid-row:2;justify-self:start}.fut-round-controls{grid-template-columns:38px minmax(0,1fr) 38px}}
+@media(max-width:575.98px){.fut-dashboard>.fut-head{align-items:center;display:grid;text-align:left}.fut-dashboard>.fut-head h2{font-size:1.15rem}.fut-dashboard>.fut-head .fut-btn{width:auto}.fut-round-controls{gap:7px;padding:9px}.fut-round-select{font-size:.8rem;padding-left:10px}.fut-round-button{width:36px}}
+body.high-contrast .fut-dashboard>.fut-head,body.high-contrast .fut-round-controls,body.high-contrast .fut-round-select,body.high-contrast .fut-round-button{background:#000!important;border-color:#fff!important;color:#fff!important}
+
+
+.fut-round-controls {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--fut-borda);
+  border-radius: 0;
+  gap: 14px;
+  grid-template-columns: 40px minmax(220px,390px) 40px;
+  margin-bottom: 24px;
+  padding: 0 0 18px;
 }
+.fut-round-field::before {
+  color: var(--fut-verde);
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-size: .84rem;
+  font-weight: 900;
+  left: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.fut-round-select {
+  background-color: #fff;
+  background-image: linear-gradient(45deg,transparent 50%,var(--fut-verde) 50%),linear-gradient(135deg,var(--fut-verde) 50%,transparent 50%);
+  background-position: calc(100% - 17px) 19px,calc(100% - 12px) 19px;
+  border: 1px solid #b9c8bb;
+  border-radius: 7px;
+  box-shadow: 0 2px 7px rgba(31,72,39,.06);
+  color: #29452e;
+  font-size: .9rem;
+  height: 46px;
+  padding: 0 38px 0 40px;
+}
+.fut-round-select:hover { background-color: #fff; border-color: var(--fut-verde); }
+.fut-round-button {
+  background: #fff;
+  border: 1.5px solid var(--fut-verde);
+  border-radius: 50%;
+  color: var(--fut-verde);
+  height: 40px;
+  width: 40px;
+}
+.fut-round-button i { color: var(--fut-verde); }
+.fut-round-button:hover:not(:disabled) { background: var(--fut-verde-claro); border-color: var(--fut-verde-escuro); color: var(--fut-verde-escuro); }
+.fut-round-button:hover:not(:disabled) i { color: var(--fut-verde-escuro); }
+.fut-round-button:disabled { background: #f3f5f3; border-color: #cbd2cc; color: #a9b0aa; }
+.fut-round-button:disabled i { color: #a9b0aa; }
+@media(max-width:575.98px){.fut-round-controls{gap:9px;grid-template-columns:38px minmax(0,1fr) 38px}.fut-round-button{height:38px;width:38px}.fut-round-select{font-size:.82rem;height:44px}.fut-round-field::before{left:12px}}
 
-.pi-breadcrumb {
+
+.fut-historical-extras { background: #fff; border-top: 1px dashed #d6ddd7; color: #59635c; display: grid; font-size: .7rem; gap: 7px; padding: 10px 12px; }
+.fut-historical-extras>span { align-items: flex-start; display: flex; line-height: 1.4; }
+.fut-historical-extras i { color: var(--fut-verde); flex: 0 0 17px; margin-top: 2px; }
+.fut-historical-note { background: #fff8e5; border-radius: 5px; color: #66571f; padding: 7px 8px; }
+.fut-historical-match .fut-current-details { border-top-color: var(--fut-borda); }
+@media(max-width:575.98px){.fut-historical-extras{font-size:.66rem;padding:9px}}
+
+
+#fut-panel-defense .fut-box { padding: 0; overflow: hidden; }
+.fut-defense-rule { align-items: center; background: #f1f5f1; border-bottom: 1px solid var(--fut-borda); display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 13px 16px; }
+.fut-defense-rule strong { color: var(--fut-verde-escuro); font-size: .76rem; }
+.fut-defense-rule span { color: #657068; font-size: .75rem; }
+.fut-defense-list { background: #fff; }
+.fut-defense-row { align-items: center; border-bottom: 1px solid #e8ece8; display: grid; gap: 14px; grid-template-columns: 34px minmax(0,1fr) 72px; min-height: 74px; padding: 11px 16px; }
+.fut-defense-row:last-child { border-bottom: 0; }
+.fut-defense-row:hover { background: #f8faf8; }
+.fut-defense-position { align-items: center; background: var(--fut-verde-claro); border-radius: 50%; color: var(--fut-verde-escuro); display: flex; font-size: .78rem; font-weight: 800; height: 32px; justify-content: center; width: 32px; }
+.fut-defense-team { align-items: center; display: flex; gap: 12px; min-width: 0; }
+.fut-defense-team>div { min-width: 0; }
+.fut-defense-team strong { color: #344039; display: block; font-size: .86rem; line-height: 1.25; overflow-wrap: anywhere; }
+.fut-defense-team small { color: #747d76; display: block; font-size: .68rem; margin-top: 3px; }
+.fut-defense-crest { align-items: center; display: flex; flex: 0 0 42px; font-size: .65rem; font-weight: 800; height: 42px; justify-content: center; width: 42px; }
+.fut-defense-crest img { height: 100%; object-fit: contain; width: 100%; }
+.fut-defense-crest.is-fallback { background: var(--fut-verde-claro); border-radius: 6px; color: var(--fut-verde-escuro); }
+.fut-defense-value { color: var(--fut-verde-escuro); text-align: center; }
+.fut-defense-value strong { display: block; font-size: 1rem; line-height: 1.1; }
+.fut-defense-value small { color: #6e776f; display: block; font-size: .6rem; letter-spacing: .04em; margin-top: 4px; text-transform: uppercase; }
+.fut-defense-empty { color: #68716b; font-size: .84rem; margin: 0; padding: 28px 18px; text-align: center; }
+@media(max-width:575.98px){.fut-defense-rule{align-items:flex-start;flex-direction:column}.fut-defense-row{gap:9px;grid-template-columns:30px minmax(0,1fr) 58px;padding:10px}.fut-defense-position{height:28px;width:28px}.fut-defense-crest{flex-basis:36px;height:36px;width:36px}.fut-defense-team{gap:8px}.fut-defense-team strong{font-size:.76rem}.fut-defense-team small{font-size:.62rem}.fut-defense-value strong{font-size:.9rem}}
+body.high-contrast .fut-defense-rule,body.high-contrast .fut-defense-list,body.high-contrast .fut-defense-row{background:#000!important;border-color:#fff!important;color:#fff!important}
+
+
+.fut-historical-extras {
+  background: #f5f7f5;
+  border-top: 1px solid #dce2dc;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+.fut-historical-extras>span {
+  align-items: flex-start;
+  background: transparent;
+  border-bottom: 1px solid #e1e6e1;
+  color: #4f5b52;
+  display: grid;
+  font-size: .72rem;
+  gap: 8px;
+  grid-template-columns: 20px minmax(0,1fr);
+  line-height: 1.45;
+  padding: 10px 12px;
+}
+.fut-historical-extras>span:last-child { border-bottom: 0; }
+.fut-historical-extras i {
+  align-items: center;
+  background: #dfe9e0;
+  border-radius: 4px;
+  color: var(--fut-verde-escuro);
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin: 0;
+  width: 20px;
+}
+.fut-historical-penalties { color: #304d35 !important; font-weight: 600; }
+.fut-historical-own-goals { color: #5e5545 !important; }
+.fut-historical-note {
+  background: #fff8e6 !important;
+  border: 0;
+  border-radius: 0;
+  color: #64551f !important;
+}
+.fut-historical-note i { background: #f1e3ae; color: #765f0e; }
+@media(max-width:575.98px){.fut-historical-extras>span{font-size:.67rem;padding:9px 10px}}
+
+
+.fut-year-search { align-items: end; display: flex; justify-content: flex-end; margin: -4px 0 18px; }
+.fut-year-search label { color: #59635c; font-size: .76rem; font-weight: 700; margin: 0 12px 0 0; }
+.fut-year-search-field { max-width: 310px; position: relative; width: 100%; }
+.fut-year-search-field i { color: var(--fut-verde); left: 13px; pointer-events: none; position: absolute; top: 50%; transform: translateY(-50%); }
+.fut-year-search-field input { background: #fff; border: 1px solid #cbd4cc; border-radius: 7px; color: var(--fut-texto); font-size: .84rem; height: 42px; padding: 0 13px 0 38px; width: 100%; }
+.fut-year-search-field input::placeholder { color: #8a928c; }
+.fut-year-search-field input:hover { border-color: #a8b8aa; }
+.fut-year-search-field input:focus { border-color: var(--fut-verde); box-shadow: 0 0 0 3px rgba(45,122,45,.13); outline: 0; }
+.fut-year-search-empty { background: #f5f7f5; border: 1px solid var(--fut-borda); border-radius: 7px; color: #667068; font-size: .84rem; margin: 0; padding: 18px; text-align: center; }
+.fut-year-search-empty[hidden],#futebol-years-results>.fut-card[hidden] { display: none !important; }
+@media(max-width:575.98px){.fut-year-search{align-items:stretch;flex-direction:column;gap:7px}.fut-year-search label{margin:0}.fut-year-search-field{max-width:none}}
+body.high-contrast .fut-year-search-field input,body.high-contrast .fut-year-search-empty{background:#000!important;border-color:#fff!important;color:#fff!important}
+
+
+.fut-year-search {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: -8px 0 16px;
+}
+.fut-year-search>label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.fut-year-search-field { max-width: 230px; }
+.fut-year-search-field i { color: #6d7a70; font-size: .78rem; left: 12px; }
+.fut-year-search-field input {
+  background: #fff;
+  border: 1px solid #d0d8d1;
+  border-radius: 6px;
+  box-shadow: none;
+  color: #354139;
+  font-size: .8rem;
+  height: 39px;
+  padding: 0 11px 0 34px;
+}
+.fut-year-search-field input::placeholder { color: #818a83; }
+.fut-year-search-field input:hover { border-color: #aebbb0; }
+.fut-year-search-field input:focus { border-color: var(--fut-verde); box-shadow: 0 0 0 2px rgba(45,122,45,.1); }
+.fut-year-search-empty { background: transparent; border: 1px dashed #ccd5cd; color: #667068; padding: 16px; }
+@media(max-width:575.98px){.fut-year-search{margin-top:-4px}.fut-year-search-field{max-width:none;width:100%}.fut-year-search-field input{height:41px}}
+
+
+.fut-year-search {
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid #d7ded8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(28,58,35,.05);
+  display: block;
+  margin: 0 0 20px;
+  overflow: hidden;
+  padding: 0;
+}
+.fut-year-search-field { display: grid; grid-template-columns: 50px minmax(0,1fr); max-width: none; width: 100%; }
+.fut-year-search-field::before {
+  align-items: center;
+  background: #e4ece5;
+  color: #315f38;
+  content: "\f002";
+  display: flex;
+  font-family: "Font Awesome 5 Free";
+  font-size: .9rem;
+  font-weight: 900;
+  grid-column: 1;
+  grid-row: 1;
+  justify-content: center;
+}
+.fut-year-search-field>i { display: none; }
+.fut-year-search-field input {
+  background: #fff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #344139;
+  font-size: .86rem;
+  grid-column: 2;
+  grid-row: 1;
+  height: 48px;
+  padding: 0 16px;
+}
+.fut-year-search-field input:hover { border: 0; }
+.fut-year-search-field input:focus { border: 0; box-shadow: inset 0 0 0 2px rgba(45,122,45,.2); outline: 0; }
+.fut-year-search-field input::placeholder { color: #747e76; }
+@media(max-width:575.98px){.fut-year-search{margin-bottom:16px}.fut-year-search-field{grid-template-columns:44px minmax(0,1fr)}.fut-year-search-field input{font-size:.8rem;height:46px;padding:0 12px}}
+
+
+/* Destaque dos campeonatos disponíveis no ano */
+.fut-grid[aria-label="Campeonatos do ano"] {
+  gap: 22px;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d9e0da !important;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(27,61,34,.09) !important;
+  display: grid;
+  gap: 8px 20px;
+  grid-template-columns: 112px minmax(0,1fr);
+  grid-template-rows: auto auto;
+  min-height: 176px !important;
+  overflow: hidden;
+  padding: 24px 54px 24px 22px;
+  position: relative;
+  transition: border-color .2s,box-shadow .2s,transform .2s;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before {
+  background: #e7eee8;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 164px;
+  left: -42px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 164px;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card::after {
+  align-items: center;
+  background: var(--fut-verde);
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  content: "\f061";
+  display: flex;
+  font-family: "Font Awesome 5 Free";
+  font-size: .72rem;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card:hover {
+  background: #fff;
+  border-color: #a9bdac !important;
+  box-shadow: 0 10px 26px rgba(27,61,34,.14) !important;
+  transform: translateY(-3px);
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card:hover::after { background: var(--fut-verde-escuro); }
+.fut-grid[aria-label="Campeonatos do ano"] .fut-logo {
+  background: #fff;
+  border: 0;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px rgba(27,61,34,.12);
+  grid-column: 1;
+  grid-row: 1 / 3;
+  height: 98px;
+  margin: 0;
+  padding: 9px;
+  position: relative;
+  width: 98px;
+  z-index: 1;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-logo img { padding: 0; }
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card h3 {
+  align-self: end;
+  color: #29482f;
+  font-size: 1.08rem;
+  font-weight: 750;
+  grid-column: 2;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-meta {
+  align-self: start;
+  background: transparent;
+  border: 0;
+  color: #667169;
+  display: flex;
+  font-size: .73rem;
+  gap: 0;
+  grid-column: 2;
+  margin: 3px 0 0;
+  padding: 0;
+}
+.fut-grid[aria-label="Campeonatos do ano"] .fut-meta span { white-space: nowrap; }
+.fut-grid[aria-label="Campeonatos do ano"] .fut-meta span+span::before { color: #aab2ac; content: "•"; display: inline; margin: 0 7px; }
+@media(max-width:991.98px){.fut-grid[aria-label="Campeonatos do ano"]{grid-template-columns:1fr}}
+@media(max-width:575.98px){.fut-grid[aria-label="Campeonatos do ano"]{gap:14px}.fut-grid[aria-label="Campeonatos do ano"] .fut-card{gap:5px 13px;grid-template-columns:78px minmax(0,1fr);min-height:130px!important;padding:17px 42px 17px 14px}.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before{height:115px;left:-35px;width:115px}.fut-grid[aria-label="Campeonatos do ano"] .fut-card::after{height:30px;right:10px;width:30px}.fut-grid[aria-label="Campeonatos do ano"] .fut-logo{height:72px;padding:6px;width:72px}.fut-grid[aria-label="Campeonatos do ano"] .fut-card h3{font-size:.9rem}.fut-grid[aria-label="Campeonatos do ano"] .fut-meta{align-items:flex-start;flex-direction:column;font-size:.66rem}.fut-grid[aria-label="Campeonatos do ano"] .fut-meta span+span::before{display:none}}
+@media(prefers-reduced-motion:reduce){.fut-grid[aria-label="Campeonatos do ano"] .fut-card{transition:none}.fut-grid[aria-label="Campeonatos do ano"] .fut-card:hover{transform:none}}
+body.high-contrast .fut-grid[aria-label="Campeonatos do ano"] .fut-card,body.high-contrast .fut-grid[aria-label="Campeonatos do ano"] .fut-card::before{background:#000!important;border-color:#fff!important}
+
+
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before {
+  border-radius: 0 12px 12px 0;
+  bottom: 0;
+  height: auto;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 136px;
+}
+@media(max-width:575.98px){.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before{border-radius:0 9px 9px 0;height:auto;left:0;top:0;width:94px}}
+
+
+.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before {
+  border-radius: 50%;
+  bottom: auto;
+  height: 164px;
+  left: -42px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 164px;
+}
+@media(max-width:575.98px){.fut-grid[aria-label="Campeonatos do ano"] .fut-card::before{border-radius:50%;bottom:auto;height:115px;left:-35px;top:50%;transform:translateY(-50%);width:115px}}
+
+
+/* Cabeçalho e navegação interna do campeonato */
+.fut-dashboard>.fut-head {
+  align-items: center;
+  background: linear-gradient(105deg,#234b2a 0%,#2d6336 100%);
+  border: 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 6px 20px rgba(24,58,31,.16);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 94px minmax(0,1fr) auto;
+  min-height: 142px;
+  overflow: hidden;
+  padding: 22px 26px;
+  position: relative;
+}
+.fut-dashboard>.fut-head::before {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  content: "";
+  display: block !important;
+  height: 210px;
+  position: absolute;
+  right: -65px;
+  top: -130px;
+  width: 210px;
+}
+.fut-dashboard>.fut-head::after {
+  background: rgba(255,255,255,.035);
+  border-radius: 50%;
+  bottom: -120px;
+  content: "";
+  display: block !important;
+  height: 190px;
+  left: 30%;
+  position: absolute;
+  width: 190px;
+}
+.fut-dashboard .fut-champ-logo {
+  align-items: center;
+  background: #fff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(8,31,13,.2);
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  height: 88px;
+  justify-content: center;
+  margin: 0;
+  padding: 9px;
+  position: relative;
+  width: 88px;
+  z-index: 2;
+}
+.fut-dashboard .fut-champ-logo img { height: 100%; object-fit: contain; width: 100%; }
+.fut-dashboard>.fut-head>div { grid-column: 2; grid-row: 1; position: relative; z-index: 2; }
+.fut-dashboard>.fut-head h2 {
+  color: #fff;
+  font-size: clamp(1.4rem,2.7vw,2rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.15;
+  margin: 0 0 9px;
+}
+.fut-dashboard>.fut-head p { color: rgba(255,255,255,.72); font-size: .78rem; margin: 0; }
+.fut-dashboard>.fut-head .fut-btn {
+  align-self: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.36);
+  border-radius: 7px;
+  color: #fff;
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0;
+  padding: 10px 13px;
+  position: relative;
+  white-space: nowrap;
+  z-index: 2;
+}
+.fut-dashboard>.fut-head .fut-btn:hover { background: #fff; border-color: #fff; color: #28552f; }
+
+.fut-dashboard .fut-tabs-wrap {
+  background: #fff;
+  border: 1px solid #d9e0da;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;
+  box-shadow: 0 5px 15px rgba(27,58,34,.08);
+  margin: 0 0 2px;
+  padding: 0 18px;
+  position: relative;
+  top: auto;
+}
+.fut-dashboard .fut-tabs {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  gap: 4px;
+  justify-content: flex-start;
+  padding: 0;
+}
+.fut-dashboard .fut-tab {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  color: #657068;
+  font-size: .8rem;
+  font-weight: 650;
+  min-height: 56px;
+  padding: 0 14px;
+  position: relative;
+}
+.fut-dashboard .fut-tab[aria-selected="true"] {
+  background: transparent;
+  border-bottom-color: var(--fut-verde);
+  box-shadow: none;
+  color: var(--fut-verde-escuro);
+}
+.fut-dashboard .fut-tab[aria-selected="true"]::after {
+  background: var(--fut-verde-claro);
+  border-radius: 4px;
+  bottom: 8px;
+  content: "";
+  height: 5px;
+  left: 50%;
+  opacity: .7;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 5px;
+}
+.fut-dashboard .fut-tab:not([aria-selected="true"]):hover { background: #f5f8f5; color: #315b37; }
+.fut-dashboard .fut-tabs-arrow { top: 11px; }
+
+@media(max-width:767.98px){
+  .fut-dashboard>.fut-head{gap:15px;grid-template-columns:72px minmax(0,1fr);min-height:128px;padding:18px}.fut-dashboard .fut-champ-logo{height:68px;width:68px}.fut-dashboard>.fut-head h2{font-size:1.35rem}.fut-dashboard>.fut-head .fut-btn{grid-column:2;grid-row:2;justify-self:start;padding:8px 11px}.fut-dashboard .fut-tabs-wrap{padding:0 10px}.fut-dashboard .fut-tab{min-height:52px;padding:0 12px}
+}
+@media(max-width:575.98px){
+  .fut-dashboard>.fut-head{border-radius:9px 9px 0 0;grid-template-columns:58px minmax(0,1fr);min-height:116px;padding:15px}.fut-dashboard .fut-champ-logo{border-radius:7px;height:56px;padding:5px;width:56px}.fut-dashboard>.fut-head h2{font-size:1.12rem;margin-bottom:5px}.fut-dashboard>.fut-head p{font-size:.7rem}.fut-dashboard>.fut-head .fut-btn{font-size:.72rem}.fut-dashboard .fut-tabs-wrap{border-radius:0 0 8px 8px;padding:0 7px}.fut-dashboard .fut-tab{font-size:.75rem;min-height:49px;padding:0 10px}
+}
+body.high-contrast .fut-dashboard>.fut-head,body.high-contrast .fut-dashboard .fut-tabs-wrap{background:#000!important;border-color:#fff!important}body.high-contrast .fut-dashboard .fut-tab[aria-selected="true"]{border-bottom-color:#ff0!important;color:#ff0!important}
+
+
+.fut-dashboard>.fut-head::before,.fut-dashboard>.fut-head::after { content: none !important; display: none !important; }
+
+.fut-dashboard .fut-tabs-wrap {
+  background: #fff;
+  border: 1px solid #d5ddd6;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;
+  box-shadow: 0 5px 15px rgba(27,58,34,.08);
+  padding: 10px 14px;
+}
+.fut-dashboard .fut-tabs {
+  align-items: center;
+  background: #edf3ee;
+  border: 0;
+  border-radius: 8px;
+  display: flex;
   gap: 6px;
-  list-style: none;
-  margin: 0 0 12px;
+  padding: 5px;
+}
+.fut-dashboard .fut-tab {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: #526057;
+  font-size: .8rem;
+  font-weight: 650;
+  min-height: 42px;
+  padding: 0 14px;
+  transition: background-color .18s,color .18s,box-shadow .18s;
+}
+.fut-dashboard .fut-tab::before,.fut-dashboard .fut-tab::after { content: none !important; display: none !important; }
+.fut-dashboard .fut-tab[aria-selected="true"] {
+  background: var(--fut-verde);
+  border: 0;
+  box-shadow: 0 3px 8px rgba(35,91,43,.2);
+  color: #fff;
+}
+.fut-dashboard .fut-tab:not([aria-selected="true"]):hover { background: #dbe8dc; color: #244b2a; }
+.fut-dashboard .fut-tab:focus-visible { box-shadow: 0 0 0 3px rgba(45,122,45,.24); outline: 0; }
+.fut-dashboard .fut-tabs-arrow { background: #fff; border: 1px solid var(--fut-verde); color: var(--fut-verde); top: 14px; }
+.fut-dashboard .fut-tabs-arrow i { color: var(--fut-verde); }
+@media(max-width:767.98px){.fut-dashboard .fut-tabs-wrap{padding:9px 10px}.fut-dashboard .fut-tabs{overflow-x:auto}.fut-dashboard .fut-tab{min-height:40px;padding:0 12px}}
+@media(prefers-reduced-motion:reduce){.fut-dashboard .fut-tab{transition:none}}
+body.high-contrast .fut-dashboard .fut-tabs{background:#000!important;border:1px solid #fff!important}body.high-contrast .fut-dashboard .fut-tab[aria-selected="true"]{background:#ff0!important;color:#000!important}
+
+
+.fut-dashboard .fut-tabs-wrap {
+  background: #fff;
+  border: 1px solid #d8dfd9;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;
+  box-shadow: 0 5px 15px rgba(27,58,34,.08);
+  padding: 14px 16px;
+}
+.fut-dashboard .fut-tabs {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  overflow: visible;
+  padding: 0;
+}
+.fut-dashboard .fut-tab {
+  background: #fff;
+  border: 1px solid #cbd4cc;
+  border-radius: 7px;
+  color: #526057;
+  flex: 0 0 auto;
+  font-size: .79rem;
+  font-weight: 650;
+  min-height: 40px;
+  padding: 0 14px;
+  transition: background-color .18s,border-color .18s,color .18s,box-shadow .18s,transform .18s;
+}
+.fut-dashboard .fut-tab[aria-selected="true"] {
+  background: var(--fut-verde);
+  border-color: var(--fut-verde);
+  box-shadow: 0 3px 8px rgba(35,91,43,.2);
+  color: #fff;
+}
+.fut-dashboard .fut-tab:not([aria-selected="true"]):hover {
+  background: var(--fut-verde-claro);
+  border-color: #9dbba0;
+  color: var(--fut-verde-escuro);
+  transform: translateY(-1px);
+}
+.fut-dashboard .fut-tab:focus-visible { box-shadow: 0 0 0 3px rgba(45,122,45,.22); outline: 0; }
+.fut-dashboard .fut-tabs-arrow { top: 16px; }
+@media(max-width:991.98px){.fut-dashboard .fut-tabs{flex-wrap:nowrap;overflow-x:auto;padding:1px 2px 5px;scrollbar-width:none}.fut-dashboard .fut-tabs::-webkit-scrollbar{display:none}.fut-dashboard .fut-tabs-wrap{padding:11px 13px}.fut-dashboard .fut-tab{min-height:39px;padding:0 13px}}
+@media(max-width:575.98px){.fut-dashboard .fut-tabs-wrap{padding:10px}.fut-dashboard .fut-tabs{gap:7px}.fut-dashboard .fut-tab{font-size:.74rem;min-height:38px;padding:0 11px}}
+@media(prefers-reduced-motion:reduce){.fut-dashboard .fut-tab{transition:none}.fut-dashboard .fut-tab:not([aria-selected="true"]):hover{transform:none}}
+
+
+/* Abas centralizadas no padrão verde institucional */
+.fut-dashboard .fut-tabs-wrap {
+  background: #fff;
+  border: 1px solid #d7ded8;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;
+  padding: 13px 16px;
+}
+.fut-dashboard .fut-tabs {
+  align-items: center;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  overflow: visible;
+  padding: 0;
+}
+.fut-dashboard .fut-tab {
+  background: #f2f7f2;
+  border: 1px solid #c8d9ca;
+  border-radius: 6px;
+  color: var(--fut-verde-escuro);
+  font-size: .79rem;
+  font-weight: 650;
+  min-height: 40px;
+  padding: 0 14px;
+}
+.fut-dashboard .fut-tab[aria-selected="true"] {
+  background: var(--fut-verde);
+  border-color: var(--fut-verde);
+  box-shadow: 0 3px 8px rgba(31,92,39,.2);
+  color: #fff;
+}
+.fut-dashboard .fut-tab:not([aria-selected="true"]):hover { background: #deebdf; border-color: #95b899; color: #204d27; }
+
+/* Defesas com o mesmo padrão visual da Artilharia */
+#fut-panel-defense .fut-box { background: #fff; border: 1px solid var(--fut-borda); border-radius: 9px; box-shadow: 0 3px 12px rgba(27,58,34,.07); overflow: hidden; padding: 0; }
+.fut-defense-rule { align-items: center; background: #f2f7f2; border-bottom: 1px solid #dbe3dc; display: flex; gap: 8px; padding: 11px 14px; }
+.fut-defense-rule::before { color: var(--fut-verde); content: "\f05a"; font-family: "Font Awesome 5 Free"; font-size: .75rem; font-weight: 900; }
+.fut-defense-rule strong { color: var(--fut-verde-escuro); font-size: .73rem; }
+.fut-defense-rule span { color: #657068; font-size: .71rem; }
+.fut-defense-list { display: grid; gap: 8px; padding: 14px; }
+.fut-defense-row {
+  align-items: center;
+  background: #f7f9f7;
+  border: 0;
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 34px minmax(0,1fr) auto;
+  min-height: 62px;
+  padding: 10px 12px;
+}
+.fut-defense-row:hover { background: #eef4ef; }
+.fut-defense-position { align-items: center; background: #fff; border-radius: 50%; color: #48534b; display: flex; font-size: .78rem; font-weight: 800; height: 32px; justify-content: center; width: 32px; }
+.fut-defense-row:nth-child(1) .fut-defense-position { background: #f3cf63; color: #5b4300; }
+.fut-defense-row:nth-child(2) .fut-defense-position { background: #d9dedb; color: #404642; }
+.fut-defense-row:nth-child(3) .fut-defense-position { background: #d9aa7d; color: #533112; }
+.fut-defense-team { align-items: center; display: flex; gap: 10px; min-width: 0; }
+.fut-defense-crest { flex-basis: 38px; height: 38px; width: 38px; }
+.fut-defense-team strong { font-size: .82rem; }
+.fut-defense-team small { font-size: .66rem; }
+.fut-defense-value { background: var(--fut-verde-claro); border-radius: 999px; color: var(--fut-verde-escuro); min-width: 76px; padding: 7px 10px; text-align: center; }
+.fut-defense-value strong { display: inline; font-size: .88rem; }
+.fut-defense-value small { display: inline; font-size: .58rem; margin: 0 0 0 3px; text-transform: uppercase; }
+@media(max-width:991.98px){.fut-dashboard .fut-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.fut-dashboard .fut-tabs::-webkit-scrollbar{display:none}}
+@media(max-width:575.98px){.fut-dashboard .fut-tabs-wrap{padding:10px}.fut-dashboard .fut-tab{font-size:.74rem;min-height:38px;padding:0 11px}.fut-defense-rule{align-items:flex-start;flex-wrap:wrap}.fut-defense-list{padding:10px}.fut-defense-row{gap:8px;grid-template-columns:30px minmax(0,1fr);padding:9px}.fut-defense-value{grid-column:2;justify-self:start}.fut-defense-position{height:28px;width:28px}}
+
+
+.fut-champion {
+  align-items: center;
+  background: linear-gradient(105deg,#234b2a,#2d6336);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(25,67,33,.16);
+  color: #fff;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 88px minmax(0,1fr);
+  margin-bottom: 18px;
+  min-height: 126px;
+  overflow: hidden;
+  padding: 19px 22px;
+  position: relative;
+}
+.fut-champion::after { color: rgba(255,255,255,.07); content: "\f091"; font-family: "Font Awesome 5 Free"; font-size: 6rem; font-weight: 900; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+.fut-champion-emblem { align-items: center; background: #fff; border-radius: 8px; display: flex; height: 82px; justify-content: center; overflow: hidden; padding: 7px; position: relative; width: 82px; z-index: 1; }
+.fut-champion-emblem img { height: 100%; object-fit: contain; width: 100%; }
+.fut-champion-emblem.is-fallback { color: var(--fut-verde-escuro); font-size: 1.15rem; font-weight: 800; }
+.fut-champion>div { min-width: 0; position: relative; z-index: 1; }
+.fut-champion-label { color: #d5ead7; display: inline-flex; font-size: .7rem; font-weight: 700; gap: 7px; letter-spacing: .07em; margin-bottom: 6px; text-transform: uppercase; }
+.fut-champion-label i { color: #f1cc55; }
+.fut-champion h3 { color: #fff; font-size: 1.35rem; line-height: 1.2; margin: 0 0 5px; }
+.fut-champion p { color: rgba(255,255,255,.72); font-size: .76rem; margin: 0; }
+@media(max-width:575.98px){.fut-champion{gap:14px;grid-template-columns:64px minmax(0,1fr);min-height:102px;padding:15px}.fut-champion::after{display:none}.fut-champion-emblem{height:60px;padding:5px;width:60px}.fut-champion h3{font-size:1.05rem}.fut-champion p{font-size:.68rem}}
+body.high-contrast .fut-champion{background:#000!important;border:1px solid #fff!important}
+
+
+/* Classificação, Artilharia e Defesas */
+#fut-panel-standings .fut-box,
+#fut-panel-scorers .fut-box,
+#fut-panel-defense .fut-box {
+  background: #fff;
+  border: 1px solid #d9e0da;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(26,58,33,.07);
+  overflow: hidden;
   padding: 0;
 }
 
-.pi-breadcrumb li,
-.pi-breadcrumb a {
-  color: rgba(255, 255, 255, .75);
-  font-size: .75rem;
+/* Classificação */
+#fut-panel-standings .fut-table-wrap { border: 0; border-radius: 0; box-shadow: none; }
+#fut-panel-standings .fut-table { min-width: 720px; }
+#fut-panel-standings .fut-table thead { background: #244b2a; }
+#fut-panel-standings .fut-table th {
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,.82);
+  font-size: .66rem;
+  font-weight: 700;
+  height: 48px;
+  letter-spacing: .04em;
+  padding: 10px 8px;
 }
-
-.pi-breadcrumb a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.pi-breadcrumb-sep {
-  color: rgba(255, 255, 255, .4);
-  font-size: .625rem;
-}
-
-.pi-hero-titulo {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: .2px;
-  line-height: 1.2;
-  margin: 0 0 4px;
-  text-transform: uppercase;
-}
-
-.pi-hero-subtitulo {
-  color: rgba(255, 255, 255, .75);
-  font-size: .875rem;
-  font-weight: 300;
-  margin: 0;
-}
-
-.pi-hero-ilustracao {
-  display: block;
-  line-height: 0;
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .4) 35%, rgba(0, 0, 0, .75) 100%);
-  width: 100%;
-}
-
-.pi-hero-ilustracao img {
-  display: block;
-  height: 70px;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: .18;
-  width: 100%;
-}
-
-#pi-main {
+#fut-panel-standings .fut-table th:nth-child(2) { color: #fff; }
+#fut-panel-standings .fut-table td {
   background: #fff;
-  padding: 44px 0 60px;
+  border-bottom: 1px solid #e7ebe7;
+  color: #59635c;
+  font-size: .78rem;
+  height: 60px;
+  padding: 9px 8px;
 }
+#fut-panel-standings .fut-table tbody tr:last-child td { border-bottom: 0; }
+#fut-panel-standings .fut-table tbody tr:nth-child(even) td { background: #f7f9f7; }
+#fut-panel-standings .fut-table tbody tr:hover td { background: #edf4ee; }
+#fut-panel-standings .fut-table td:first-child { color: #455047; font-size: .82rem; font-weight: 800; width: 44px; }
+#fut-panel-standings .fut-table tbody tr:nth-child(1) td:first-child,
+#fut-panel-standings .fut-table tbody tr:nth-child(2) td:first-child,
+#fut-panel-standings .fut-table tbody tr:nth-child(3) td:first-child { color: var(--fut-verde); }
+#fut-panel-standings .fut-table td:nth-child(2) { color: #344039; font-weight: 700; min-width: 210px; }
+#fut-panel-standings .fut-table td:nth-child(3) { color: #244b2a; font-size: .94rem; font-weight: 900; }
+#fut-panel-standings .fut-table-team { gap: 11px; }
+#fut-panel-standings .fut-table-crest { flex: 0 0 38px; height: 38px; padding: 2px; width: 38px; }
 
-.fut-intro {
-  align-items: flex-start;
-  border-bottom: 2px solid var(--fut-verde-claro);
-  display: flex;
-  gap: 18px;
-  margin-bottom: 28px;
-  padding-bottom: 22px;
-}
-
-.fut-intro-icone {
+/* Artilharia */
+#fut-panel-scorers .fut-list { background: #fff; display: grid; gap: 0; padding: 0; }
+#fut-panel-scorers .fut-rank {
   align-items: center;
-  background: var(--fut-verde-claro);
-  border-radius: 10px;
-  color: var(--fut-verde);
-  display: flex;
-  flex: 0 0 54px;
-  font-size: 1.35rem;
-  height: 54px;
-  justify-content: center;
-}
-
-.fut-label {
-  color: var(--fut-verde);
-  display: block;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.fut-intro h2 {
-  color: var(--fut-verde-escuro);
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0 0 7px;
-  text-transform: uppercase;
-}
-
-.fut-intro p {
-  color: #666;
-  font-size: .9375rem;
-  line-height: 1.65;
-  margin: 0;
-  max-width: 760px;
-}
-
-.fut-anos-grid {
+  background: #fff;
+  border: 0 !important;
+  border-bottom: 1px solid #e6ebe7 !important;
+  border-radius: 0;
+  box-shadow: none;
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  grid-template-columns: 42px minmax(0,1fr) auto;
+  min-height: 78px;
+  padding: 12px 18px;
+}
+#fut-panel-scorers .fut-rank:last-child { border-bottom: 0 !important; }
+#fut-panel-scorers .fut-rank:hover { background: #f5f8f5; transform: none; }
+#fut-panel-scorers .fut-pos {
+  align-items: center;
+  background: #e5ede6 !important;
+  border: 0;
+  border-radius: 7px;
+  box-shadow: none;
+  color: #315b37 !important;
+  display: flex;
+  font-size: .82rem !important;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+#fut-panel-scorers .fut-rank:nth-child(1) .fut-pos { background: #f4d774 !important; color: #5d4700 !important; }
+#fut-panel-scorers .fut-rank:nth-child(2) .fut-pos { background: #dfe3e0 !important; color: #424a44 !important; }
+#fut-panel-scorers .fut-rank:nth-child(3) .fut-pos { background: #dfb589 !important; color: #5b3515 !important; }
+#fut-panel-scorers .fut-rank-identity { align-items: center; display: grid; gap: 1px 11px; grid-template-columns: 44px minmax(0,1fr); }
+#fut-panel-scorers .fut-rank-crest { grid-column: 1; grid-row: 1 / 3; height: 42px; width: 42px; }
+#fut-panel-scorers .fut-rank-identity strong { color: #354038; font-size: .86rem; grid-column: 2; }
+#fut-panel-scorers .fut-rank-identity small { color: #778079; font-size: .66rem; grid-column: 2; margin: 0; width: auto; }
+#fut-panel-scorers .fut-value {
+  background: #e4eee5;
+  border-radius: 6px;
+  color: #28552f;
+  font-size: .82rem;
+  font-weight: 800;
+  min-width: 72px;
+  padding: 8px 10px;
+  text-align: center;
 }
 
-.fut-ano-card {
+/* Defesas — mesma linguagem da Artilharia */
+#fut-panel-defense .fut-defense-rule {
+  align-items: center;
+  background: #f0f5f1;
+  border-bottom: 1px solid #dce4dd;
+  display: grid;
+  gap: 2px 10px;
+  grid-template-columns: 28px minmax(0,1fr);
+  padding: 13px 18px;
+}
+#fut-panel-defense .fut-defense-rule::before {
+  align-items: center;
+  background: #dce9de;
+  border-radius: 5px;
+  color: #315c37;
+  display: flex;
+  grid-row: 1 / 3;
+  height: 28px;
+  justify-content: center;
+  width: 28px;
+}
+#fut-panel-defense .fut-defense-rule strong { color: #315039; font-size: .73rem; grid-column: 2; }
+#fut-panel-defense .fut-defense-rule span { color: #6d776f; font-size: .68rem; grid-column: 2; }
+#fut-panel-defense .fut-defense-list { display: grid; gap: 0; padding: 0; }
+#fut-panel-defense .fut-defense-row {
+  align-items: center;
   background: #fff;
-  border: 1.5px solid var(--fut-borda);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(45, 122, 45, .06);
+  border: 0;
+  border-bottom: 1px solid #e6ebe7;
+  border-radius: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 42px minmax(0,1fr) auto;
+  min-height: 78px;
+  padding: 12px 18px;
+}
+#fut-panel-defense .fut-defense-row:last-child { border-bottom: 0; }
+#fut-panel-defense .fut-defense-row:hover { background: #f5f8f5; }
+#fut-panel-defense .fut-defense-position {
+  background: #e5ede6;
+  border-radius: 7px;
+  color: #315b37;
+  font-size: .82rem;
+  height: 36px;
+  width: 36px;
+}
+#fut-panel-defense .fut-defense-row:nth-child(1) .fut-defense-position { background: #f4d774; color: #5d4700; }
+#fut-panel-defense .fut-defense-row:nth-child(2) .fut-defense-position { background: #dfe3e0; color: #424a44; }
+#fut-panel-defense .fut-defense-row:nth-child(3) .fut-defense-position { background: #dfb589; color: #5b3515; }
+#fut-panel-defense .fut-defense-team { gap: 11px; }
+#fut-panel-defense .fut-defense-crest { flex: 0 0 42px; height: 42px; width: 42px; }
+#fut-panel-defense .fut-defense-team strong { color: #354038; font-size: .86rem; }
+#fut-panel-defense .fut-defense-team small { color: #778079; font-size: .66rem; }
+#fut-panel-defense .fut-defense-value {
+  background: #e4eee5;
+  border-radius: 6px;
+  color: #28552f;
+  min-width: 72px;
+  padding: 8px 10px;
+}
+#fut-panel-defense .fut-defense-value strong { display: block; font-size: .86rem; }
+#fut-panel-defense .fut-defense-value small { display: block; font-size: .56rem; margin: 3px 0 0; }
+
+@media(max-width:575.98px){
+  #fut-panel-standings .fut-box{border-radius:8px}#fut-panel-scorers .fut-rank,#fut-panel-defense .fut-defense-row{gap:9px;grid-template-columns:34px minmax(0,1fr);padding:10px}#fut-panel-scorers .fut-pos,#fut-panel-defense .fut-defense-position{height:31px;width:31px}#fut-panel-scorers .fut-value,#fut-panel-defense .fut-defense-value{grid-column:2;justify-self:start;margin-left:53px;min-width:66px}#fut-panel-scorers .fut-rank-identity{grid-template-columns:40px minmax(0,1fr)}#fut-panel-scorers .fut-rank-crest,#fut-panel-defense .fut-defense-crest{height:38px;width:38px}#fut-panel-defense .fut-defense-rule{padding:11px 12px}
+}
+body.high-contrast #fut-panel-standings .fut-box,body.high-contrast #fut-panel-scorers .fut-box,body.high-contrast #fut-panel-defense .fut-box,body.high-contrast #fut-panel-scorers .fut-rank,body.high-contrast #fut-panel-defense .fut-defense-row{background:#000!important;border-color:#fff!important}
+
+
+/* Ranking esportivo limpo: Artilharia e Defesas */
+#fut-panel-scorers .fut-box,
+#fut-panel-defense .fut-box {
+  background: #fff;
+  border: 1px solid #d8dfd9;
+  border-radius: 9px;
+  box-shadow: 0 3px 11px rgba(27,58,34,.06);
   overflow: hidden;
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
-.fut-ano-card:hover {
-  border-color: #acd2ac;
-  box-shadow: 0 7px 20px rgba(45, 122, 45, .12);
-  transform: translateY(-3px);
-}
-
-.fut-ano-card > a {
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 24px;
-  text-decoration: none;
-}
-
-.fut-ano-topo {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 26px;
-}
-
-.fut-status {
-  align-items: center;
-  background: var(--fut-verde-claro);
-  border-radius: 999px;
-  color: var(--fut-verde-escuro);
-  display: inline-flex;
-  font-size: .6875rem;
-  font-weight: 700;
-  gap: 6px;
-  padding: 5px 10px;
-  text-transform: uppercase;
-}
-
-.fut-status i {
-  color: var(--fut-verde);
-  font-size: .45rem;
-}
-
-.fut-trofeu {
-  color: #d09a1e;
-  font-size: 1.3rem;
-}
-
-.fut-ano {
-  color: var(--fut-verde-escuro);
+#fut-panel-scorers .fut-list,
+#fut-panel-defense .fut-defense-list {
+  background: #fff;
   display: block;
-  font-size: 3rem;
-  font-weight: 900;
-  letter-spacing: -.04em;
-  line-height: 1;
-  margin-bottom: 12px;
+  padding: 0;
 }
 
-.fut-ano-conteudo h3 {
-  color: #333;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-.fut-ano-conteudo p {
-  color: #666;
-  font-size: .875rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.fut-acessar {
+#fut-panel-scorers .fut-rank,
+#fut-panel-defense .fut-defense-row {
   align-items: center;
-  border-top: 1px solid var(--fut-borda);
-  color: var(--fut-verde);
+  background: #fff;
+  border: 0 !important;
+  border-bottom: 1px solid #e3e8e4 !important;
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 48px minmax(0,1fr) 86px;
+  min-height: 82px;
+  padding: 13px 20px;
+}
+
+#fut-panel-scorers .fut-rank:last-child,
+#fut-panel-defense .fut-defense-row:last-child { border-bottom: 0 !important; }
+
+#fut-panel-scorers .fut-rank:hover,
+#fut-panel-defense .fut-defense-row:hover { background: #f6f9f6; transform: none; }
+
+#fut-panel-scorers .fut-pos,
+#fut-panel-defense .fut-defense-position {
+  align-items: center;
+  background: transparent !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #69736c !important;
   display: flex;
-  font-size: .8125rem;
+  font-size: 1.05rem !important;
+  font-weight: 800;
+  height: auto;
+  justify-content: center;
+  width: 100%;
+}
+
+#fut-panel-scorers .fut-rank:nth-child(-n+3) .fut-pos,
+#fut-panel-defense .fut-defense-row:nth-child(-n+3) .fut-defense-position {
+  background: transparent !important;
+  color: var(--fut-verde) !important;
+  font-size: 1.3rem !important;
+}
+
+#fut-panel-scorers .fut-rank:nth-child(-n+3),
+#fut-panel-defense .fut-defense-row:nth-child(-n+3) { box-shadow: inset 3px 0 0 var(--fut-verde); }
+
+#fut-panel-scorers .fut-rank-identity,
+#fut-panel-defense .fut-defense-team {
+  align-items: center;
+  display: grid;
+  gap: 2px 13px;
+  grid-template-columns: 48px minmax(0,1fr);
+  min-width: 0;
+}
+
+#fut-panel-scorers .fut-rank-crest,
+#fut-panel-defense .fut-defense-crest {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  flex: none;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  height: 46px;
+  padding: 2px;
+  width: 46px;
+}
+
+#fut-panel-scorers .fut-rank-identity strong,
+#fut-panel-defense .fut-defense-team strong {
+  color: #303b33;
+  display: block;
+  font-size: .88rem;
   font-weight: 700;
-  gap: 8px;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 15px;
+  grid-column: 2;
+  line-height: 1.25;
 }
 
-.fut-ano-card:hover .fut-acessar i {
-  transform: translateX(3px);
+#fut-panel-scorers .fut-rank-identity small,
+#fut-panel-defense .fut-defense-team small {
+  color: #778079;
+  display: block;
+  font-size: .68rem;
+  grid-column: 2;
+  line-height: 1.3;
+  margin: 0;
+  width: auto;
 }
 
-.fut-acessar i {
-  transition: transform .2s ease;
+#fut-panel-scorers .fut-value,
+#fut-panel-defense .fut-defense-value {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #dce2dd;
+  border-radius: 0;
+  color: var(--fut-verde-escuro);
+  min-width: 0;
+  padding: 4px 0 4px 16px;
+  text-align: center;
 }
 
-.fut-aviso {
-  align-items: flex-start;
-  background: #f8faf8;
-  border: 1px solid var(--fut-borda);
-  border-left: 3px solid var(--fut-verde);
-  border-radius: 0 8px 8px 0;
-  color: #59645e;
+#fut-panel-scorers .fut-value { font-size: 1rem; font-weight: 800; }
+#fut-panel-defense .fut-defense-value strong { display: block; font-size: 1rem; line-height: 1.1; }
+#fut-panel-defense .fut-defense-value small { color: #778079; display: block; font-size: .58rem; letter-spacing: .03em; margin: 4px 0 0; text-transform: uppercase; }
+
+#fut-panel-defense .fut-defense-rule {
+  align-items: center;
+  background: #f2f6f2;
+  border-bottom: 1px solid #dbe2dc;
   display: flex;
-  gap: 10px;
-  margin-top: 24px;
-  padding: 14px 16px;
+  gap: 7px;
+  padding: 11px 18px;
+}
+#fut-panel-defense .fut-defense-rule::before { background: transparent; color: var(--fut-verde); display: inline; height: auto; width: auto; }
+#fut-panel-defense .fut-defense-rule strong { color: #405047; font-size: .71rem; }
+#fut-panel-defense .fut-defense-rule span { color: #707a72; font-size: .69rem; }
+
+@media(max-width:575.98px){
+  #fut-panel-scorers .fut-rank,#fut-panel-defense .fut-defense-row{gap:9px;grid-template-columns:30px minmax(0,1fr) 62px;min-height:72px;padding:10px 9px}#fut-panel-scorers .fut-rank-identity,#fut-panel-defense .fut-defense-team{gap:2px 8px;grid-template-columns:38px minmax(0,1fr)}#fut-panel-scorers .fut-rank-crest,#fut-panel-defense .fut-defense-crest{height:36px;width:36px}#fut-panel-scorers .fut-rank-identity strong,#fut-panel-defense .fut-defense-team strong{font-size:.76rem}#fut-panel-scorers .fut-rank-identity small,#fut-panel-defense .fut-defense-team small{font-size:.61rem}#fut-panel-scorers .fut-value,#fut-panel-defense .fut-defense-value{grid-column:3;margin:0;padding-left:8px}#fut-panel-defense .fut-defense-rule{align-items:flex-start;flex-direction:column;gap:2px;padding:10px 12px}#fut-panel-defense .fut-defense-rule::before{display:none}
 }
 
-.fut-aviso i {
-  color: var(--fut-verde);
+
+/* Acabamento visual — preserva a estrutura atual */
+#fut-panel-scorers .fut-box,
+#fut-panel-defense .fut-box {
+  background: #eef3ef;
+  border: 1px solid #d5ded6;
+  border-radius: 11px;
+  box-shadow: none;
+  padding: 14px;
+}
+
+#fut-panel-scorers .fut-list,
+#fut-panel-defense .fut-defense-list {
+  background: transparent;
+  display: grid;
+  gap: 10px;
+}
+
+#fut-panel-scorers .fut-rank,
+#fut-panel-defense .fut-defense-row {
+  background: #fff;
+  border: 1px solid #dbe2dc !important;
+  border-radius: 9px;
+  box-shadow: 0 2px 7px rgba(28,58,35,.045);
+  min-height: 76px;
+  padding: 11px 14px;
+  transition: border-color .18s,box-shadow .18s,transform .18s;
+}
+
+#fut-panel-scorers .fut-rank:hover,
+#fut-panel-defense .fut-defense-row:hover {
+  background: #fff;
+  border-color: #afc2b1 !important;
+  box-shadow: 0 5px 14px rgba(28,58,35,.09);
+  transform: translateY(-1px);
+}
+
+#fut-panel-scorers .fut-rank:nth-child(-n+3),
+#fut-panel-defense .fut-defense-row:nth-child(-n+3) {
+  border-color: #c5d5c7 !important;
+  box-shadow: inset 4px 0 0 #5f9466,0 2px 7px rgba(28,58,35,.045);
+}
+
+#fut-panel-scorers .fut-pos,
+#fut-panel-defense .fut-defense-position {
+  background: #e7eee8 !important;
+  border-radius: 7px;
+  color: #48604d !important;
+  font-size: .86rem !important;
+  height: 38px;
+  width: 38px;
+}
+
+#fut-panel-scorers .fut-rank:nth-child(-n+3) .fut-pos,
+#fut-panel-defense .fut-defense-row:nth-child(-n+3) .fut-defense-position {
+  background: #315f38 !important;
+  color: #fff !important;
+  font-size: .9rem !important;
+}
+
+#fut-panel-scorers .fut-rank-crest,
+#fut-panel-defense .fut-defense-crest {
+  background: #f5f7f5;
+  border: 1px solid #e0e5e0;
+  border-radius: 8px;
+  height: 48px;
+  padding: 4px;
+  width: 48px;
+}
+
+#fut-panel-scorers .fut-rank-identity strong,
+#fut-panel-defense .fut-defense-team strong {
+  color: #29342c;
+  font-size: .88rem;
+  font-weight: 750;
+  letter-spacing: -.005em;
+}
+
+#fut-panel-scorers .fut-rank-identity small,
+#fut-panel-defense .fut-defense-team small {
+  color: #737d75;
+  font-size: .67rem;
   margin-top: 3px;
 }
 
-.fut-aviso p {
-  font-size: .8125rem;
-  line-height: 1.55;
-  margin: 0;
+#fut-panel-scorers .fut-value,
+#fut-panel-defense .fut-defense-value {
+  background: #315f38;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  min-width: 78px;
+  padding: 9px 11px;
 }
 
-@media (max-width: 991.98px) {
-  .fut-anos-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+#fut-panel-scorers .fut-value { font-size: .92rem; }
+#fut-panel-defense .fut-defense-value strong { color: #fff; font-size: .92rem; }
+#fut-panel-defense .fut-defense-value small { color: rgba(255,255,255,.72); font-size: .56rem; }
+
+#fut-panel-defense .fut-defense-rule {
+  background: #fff;
+  border: 1px solid #dbe2dc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 11px 13px;
+}
+#fut-panel-defense .fut-defense-rule strong { color: #315f38; }
+
+@media(max-width:575.98px){
+  #fut-panel-scorers .fut-box,#fut-panel-defense .fut-box{padding:9px}#fut-panel-scorers .fut-list,#fut-panel-defense .fut-defense-list{gap:8px}#fut-panel-scorers .fut-rank,#fut-panel-defense .fut-defense-row{min-height:70px;padding:9px 8px}#fut-panel-scorers .fut-pos,#fut-panel-defense .fut-defense-position{height:31px;width:31px}#fut-panel-scorers .fut-rank-crest,#fut-panel-defense .fut-defense-crest{height:38px;padding:3px;width:38px}#fut-panel-scorers .fut-value,#fut-panel-defense .fut-defense-value{border-radius:6px;min-width:60px;padding:7px 8px}
+}
+@media(prefers-reduced-motion:reduce){#fut-panel-scorers .fut-rank,#fut-panel-defense .fut-defense-row{transition:none}#fut-panel-scorers .fut-rank:hover,#fut-panel-defense .fut-defense-row:hover{transform:none}}
+
+
+#fut-panel-scorers .fut-value,
+#fut-panel-defense .fut-defense-value {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #d8dfd9;
+  border-radius: 0;
+  color: var(--fut-verde-escuro);
+  min-width: 78px;
+  padding: 5px 0 5px 14px;
+}
+#fut-panel-scorers .fut-value { font-size: 1rem; }
+#fut-panel-defense .fut-defense-value strong { color: var(--fut-verde-escuro); font-size: 1rem; }
+#fut-panel-defense .fut-defense-value small { color: #717b73; }
+@media(max-width:575.98px){#fut-panel-scorers .fut-value,#fut-panel-defense .fut-defense-value{min-width:58px;padding:4px 0 4px 8px}}
+
+
+#fut-panel-scorers .fut-value,
+#fut-panel-defense .fut-defense-value {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+#fut-panel-defense .fut-defense-value strong {
+  display: inline;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+#fut-panel-defense .fut-defense-value small {
+  display: inline;
+  font-family: inherit;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 0 0 4px;
+  text-transform: uppercase;
+}
+@media(max-width:575.98px){#fut-panel-scorers .fut-value,#fut-panel-defense .fut-defense-value,#fut-panel-defense .fut-defense-value strong{font-size:.9rem}#fut-panel-defense .fut-defense-value small{font-size:.56rem}}
+/* Espaçamento do fragmento quando inserido diretamente no main do portal. */
+.futebol-page {
+  background: var(--fut-bg);
+  min-height: 540px;
+  padding: 40px 0 60px;
 }
 
 @media (max-width: 575.98px) {
-  .pi-hero-titulo {
-    font-size: 1.125rem;
-  }
-
-  #pi-main {
-    padding: 36px 0 48px;
-  }
-
-  .fut-intro {
-    gap: 13px;
-  }
-
-  .fut-intro-icone {
-    flex-basis: 46px;
-    font-size: 1.1rem;
-    height: 46px;
-  }
-
-  .fut-intro h2 {
-    font-size: 1.05rem;
-  }
-
-  .fut-anos-grid {
-    grid-template-columns: 1fr;
+  .futebol-page {
+    min-height: 420px;
+    padding: 30px 0 44px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .fut-ano-card,
-  .fut-acessar i {
-    transition: none;
-  }
+/* Retorno vazio ou indisponibilidade da API. */
+.fut-api-message {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--fut-borda);
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(22, 67, 33, .07);
+  display: grid;
+  gap: 20px;
+  grid-column: 1 / -1;
+  grid-template-columns: 64px minmax(0, 1fr);
+  min-height: 190px;
+  padding: 28px;
 }
+.fut-api-message-icon {
+  align-items: center;
+  background: var(--fut-verde-claro);
+  border: 1px solid var(--fut-borda);
+  border-radius: 50%;
+  color: var(--fut-verde-escuro);
+  display: flex;
+  font-size: 1.35rem;
+  height: 58px;
+  justify-content: center;
+  width: 58px;
+}
+.fut-api-message-label {
+  color: var(--fut-verde);
+  display: block;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.fut-api-message h2 { color: var(--fut-texto); font-size: 1.15rem; margin: 0 0 6px; }
+.fut-api-message p { color: #68716b; line-height: 1.5; margin: 0; }
+.fut-api-retry { margin-top: 16px; }
+@media (max-width: 575.98px) {
+  .fut-api-message { gap: 14px; grid-template-columns: 46px minmax(0, 1fr); min-height: 160px; padding: 20px 16px; }
+  .fut-api-message-icon { font-size: 1rem; height: 42px; width: 42px; }
+  .fut-api-message h2 { font-size: 1rem; }
+  .fut-api-message p { font-size: .84rem; }
+}
+/* Ícones desenhados sem dependência da versão do Font Awesome do portal. */
+.fut-year-search-field::before {
+  align-self: center;
+  background: transparent;
+  border: 2px solid var(--fut-verde-escuro);
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+  height: 13px;
+  justify-self: center;
+  transform: translate(-2px, -2px);
+  width: 13px;
+}
+.fut-year-search-field::after {
+  background: var(--fut-verde-escuro);
+  border-radius: 2px;
+  content: "";
+  height: 2px;
+  left: 27px;
+  position: absolute;
+  top: 29px;
+  transform: rotate(45deg);
+  width: 7px;
+}
+.fut-arrow-symbol {
+  color: inherit;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: .7;
+  transform: translateY(-1px);
+}
+.fut-tabs-arrow i,
+.fut-round-button i { display: none; }
