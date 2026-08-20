@@ -229,6 +229,7 @@
         if (results[2].status === "fulfilled") addRankingCrests("fut-panel-defense", results[2].value || [], true);
       } else {
         const historical = await json(`/historical-championships/${encodeURIComponent(id)}`);
+        if (historical.standings?.length) addStandingsCrests(historical.standings);
         addRankingCrests("fut-panel-scorers", historical.topScorers || [], false);
         addRankingCrests("fut-panel-defense", historical.bestDefenses || [], true);
       }
@@ -695,10 +696,11 @@
 
   function countMatches(rounds) { return list(rounds).reduce((sum, round) => sum + list(round.matches).length, 0); }
   function matchTeam(match, side) {
-    const team = match[`${side}Team`] || {};
+    const key = side === "home" ? "A" : "B";
+    const team = match[`${side}Team`] || match[`team${key}`] || {};
     const name = match[`${side}TeamName`] || team.name || (side === "home" ? "Mandante" : "Visitante");
     const src = match[`${side}TeamLogo`] || team.logo;
-    return { name, src, id: team.id || match[`${side}TeamId`] };
+    return { name, src, id: team.id || match[`${side}TeamId`] || match[`team${key}Id`] };
   }
 
   function matches(data) {
@@ -715,15 +717,37 @@
   function matchCard(match) {
     const home = matchTeam(match, "home");
     const away = matchTeam(match, "away");
-    const hasScore = match.homeScore != null && match.awayScore != null;
-    const score = hasScore ? `${number(match.homeScore)} × ${number(match.awayScore)}` : "×";
-    const hasPenalties = match.homePenalties != null && match.awayPenalties != null;
+    const hasScore = (match.homeScore ?? match.teamAScore) != null && (match.awayScore ?? match.teamBScore) != null;
+    const score = hasScore ? `${number(match.homeScore ?? match.teamAScore)} × ${number(match.awayScore ?? match.teamBScore)}` : "×";
+    const hasPenalties = (match.homePenalties ?? match.teamAPenalties) != null && (match.awayPenalties ?? match.teamBPenalties) != null;
     const winner = match.penaltyWinnerTeamId ? (String(match.penaltyWinnerTeamId) === String(home.id) ? home.name : away.name) : "";
     const when = match.playedAt || match.dataHora;
     const info = [when ? formatDateTime(when) : "", match.venue || match.stadium?.name].filter(Boolean).join(" — ");
-    const ownGoals = number(match.homeOwnGoals) || number(match.awayOwnGoals) ? `Gols contra: ${home.name} ${number(match.homeOwnGoals)}, ${away.name} ${number(match.awayOwnGoals)}` : "";
-    const scorers = list(match.scorers).map((item) => item.player?.name || item.playerName || item.name).filter(Boolean).join(", ");
-    return `<article class="fut-match"><div class="fut-match-team">${home.src ? logo(home.src, true) : ""}<strong>${escapeHtml(home.name)}</strong></div><div class="fut-score">${escapeHtml(score)}</div><div class="fut-match-team away">${away.src ? logo(away.src, true) : ""}<strong>${escapeHtml(away.name)}</strong></div>${hasPenalties ? `<div class="fut-detail"><strong>Pênaltis:</strong> ${number(match.homePenalties)} × ${number(match.awayPenalties)}${winner ? ` — vencedor: ${escapeHtml(winner)}` : ""}</div>` : ""}${info ? `<div class="fut-detail">${escapeHtml(info)}</div>` : ""}${ownGoals ? `<div class="fut-detail">${escapeHtml(ownGoals)}</div>` : ""}${scorers ? `<div class="fut-detail">Gols: ${escapeHtml(scorers)}</div>` : ""}${match.note ? `<div class="fut-detail fut-note">${escapeHtml(match.note)}</div>` : ""}</article>`;
+    const homeOG = match.homeOwnGoals ?? match.teamAOwnGoals;
+    const awayOG = match.awayOwnGoals ?? match.teamBOwnGoals;
+    const ownGoals = number(homeOG) || number(awayOG) ? `Gols contra: ${home.name} ${number(homeOG)}, ${away.name} ${number(awayOG)}` : "";
+    const allScorers = list(match.scorers || match.goals).filter((item) => !item.ownGoal);
+    function scorerRow(items, side) {
+      const g = new Map();
+      items.forEach((i) => {
+        const n = i.player?.name || i.playerName || i.name || "";
+        if (!n) return;
+        const m = i.minute != null ? i.minute : null;
+        const e = g.get(n);
+        if (e) e.push(m); else g.set(n, [m]);
+      });
+      const entries = [...g.entries()];
+      if (!entries.length) return "";
+      const inner = entries.map(([n, minutes]) => {
+        const mins = minutes.filter((m) => m != null).map((m) => `<span class="fut-scorer-min">${m}&apos;</span>`).join("");
+        return `<span class="fut-scorer"><span class="fut-scorer-name">${escapeHtml(n)}</span>${mins}</span>`;
+      }).join('<span class="fut-scorer-sep" aria-hidden="true">&middot;</span>');
+      return `<div class="fut-scorers-row fut-scorers-row--${side}"><span class="fut-scorers-list">${inner}</span></div>`;
+    }
+    const homeRow = scorerRow(allScorers.filter((item) => String(item.teamId) === String(home.id)), "home");
+    const awayRow = scorerRow(allScorers.filter((item) => String(item.teamId) === String(away.id)), "away");
+    const hasScorers = homeRow || awayRow;
+    return `<article class="fut-match"><div class="fut-match-team">${home.src ? logo(home.src, true) : ""}<strong>${escapeHtml(home.name)}</strong></div><div class="fut-score">${escapeHtml(score)}</div><div class="fut-match-team away">${away.src ? logo(away.src, true) : ""}<strong>${escapeHtml(away.name)}</strong></div>${hasScorers ? `<div class="fut-match-scorers">${homeRow}${awayRow}</div>` : ""}${hasPenalties ? `<div class="fut-detail"><strong>Pênaltis:</strong> ${number(match.homePenalties ?? match.teamAPenalties)} × ${number(match.awayPenalties ?? match.teamBPenalties)}${winner ? ` — vencedor: ${escapeHtml(winner)}` : ""}</div>` : ""}${info ? `<div class="fut-detail">${escapeHtml(info)}</div>` : ""}${ownGoals ? `<div class="fut-detail">${escapeHtml(ownGoals)}</div>` : ""}${match.note ? `<div class="fut-detail fut-note">${escapeHtml(match.note)}</div>` : ""}</article>`;
   }
 
   function formatDateTime(value) {
@@ -801,14 +825,14 @@
     try { result = await request(`/historical-championships/${encodeURIComponent(competition.id)}`); }
     catch (_) { if (token === routeToken) app.innerHTML = state("fa-exclamation-triangle", "Campeonato indisponível", "Não foi possível carregar o histórico.", `<button class="fut-btn" data-route='{}'>Voltar ao início</button>`); bindNavigation(); return; }
     if (token !== routeToken) return;
-    const notes = list(result.annotations);
+    const historicalStandings = list(result.standings).map((item) => ({ ...item, goalDifference: item.goalDifference ?? item.goalDiff }));
     const sections = [
       { id: "overview", label: "Visão geral", content: overview(result, competition) },
+      { id: "standings", label: "Classificação", content: `<div class="fut-box">${standings({ standings: historicalStandings }) || empty("Não há classificação registrada.")}</div>` },
       { id: "matches", label: "Jogos e resultados", content: `<div class="fut-box">${matches(result.rounds) || empty("Não há partidas registradas.")}</div>` },
       { id: "teams", label: "Equipes", content: teams(result.teams) || empty("Não há equipes registradas.") },
       { id: "scorers", label: "Artilharia", content: `<div class="fut-box">${ranking(result.topScorers, "topScorers") || empty("Não há artilharia registrada.")}</div>` },
-      { id: "defense", label: "Defesas", content: `<div class="fut-box">${ranking(result.bestDefenses, "bestDefenses") || empty("Não há defesas registradas.")}</div>` },
-      { id: "annotations", label: "Anotações", content: `<div class="fut-box">${annotations(notes) || empty("Não há anotações registradas.")}</div>`, omit: !notes.length }
+      { id: "defense", label: "Defesas", content: `<div class="fut-box">${ranking(result.bestDefenses, "bestDefenses") || empty("Não há defesas registradas.")}</div>` }
     ];
     renderDashboard({ ...competition, ...result }, sections);
   }
@@ -876,6 +900,90 @@
     const year = description.textContent.match(/\b\d{4}\b/);
     const cleanText = year ? year[0] : "Campeonato municipal";
     if (description.textContent !== cleanText) description.textContent = cleanText;
+  }
+
+  function enrichCurrentScorers(rounds) {
+    if (!rounds) return;
+    const allMatches = new Map();
+    list(rounds).forEach((entry) => {
+      const round = entry.round || entry;
+      list(entry.matches || round.matches).forEach((match) => {
+        if (match.id) allMatches.set(String(match.id), match);
+      });
+    });
+    app.querySelectorAll(".fut-match").forEach((article) => {
+      const homeEl = article.querySelector(".fut-match-team strong");
+      const awayEl = article.querySelector(".fut-match-team.away strong");
+      if (!homeEl || !awayEl) return;
+      const homeName = homeEl.textContent;
+      const awayName = awayEl.textContent;
+      let matchData = null;
+      allMatches.forEach((m) => {
+        const mHome = m.homeTeam?.name || m.teamA?.name || "";
+        const mAway = m.awayTeam?.name || m.teamB?.name || "";
+        if (mHome === homeName && mAway === awayName) matchData = m;
+      });
+      if (!matchData) return;
+      const goals = list(matchData.goals || matchData.scorers).filter((g) => !g.ownGoal);
+      if (!goals.length) return;
+      const homeId = String((matchData.homeTeam || matchData.teamA || {}).id || "");
+      const awayId = String((matchData.awayTeam || matchData.teamB || {}).id || "");
+      const homeScorers = goals.filter((g) => String(g.teamId) === homeId);
+      const awayScorers = goals.filter((g) => String(g.teamId) === awayId);
+      if (!homeScorers.length && !awayScorers.length) return;
+      const existing = article.querySelector(".fut-match-scorers");
+      if (existing) existing.remove();
+      function groupScorers(items) {
+        const grouped = new Map();
+        items.forEach((g) => {
+          const name = g.playerName || g.player?.name || g.name || "";
+          if (!name) return;
+          const m = g.minute != null ? g.minute : null;
+          const e = grouped.get(name);
+          if (e) e.push(m); else grouped.set(name, [m]);
+        });
+        return [...grouped.entries()];
+      }
+      function buildScorerSpan(entries) {
+        const span = document.createElement("span");
+        span.className = "fut-scorer";
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "fut-scorer-name";
+        nameSpan.textContent = entries[0];
+        span.appendChild(nameSpan);
+        entries[1].filter((m) => m != null).forEach((m) => {
+          const badge = document.createElement("span");
+          badge.className = "fut-scorer-min";
+          badge.textContent = m + "'";
+          span.appendChild(badge);
+        });
+        return span;
+      }
+      function buildScorerRow(items, side) {
+        const entries = groupScorers(items);
+        const row = document.createElement("div");
+        row.className = "fut-scorers-row fut-scorers-row--" + side;
+        if (!entries.length) return row;
+        const listEl = document.createElement("span");
+        listEl.className = "fut-scorers-list";
+        entries.forEach((e, i) => {
+          if (i > 0) {
+            const sep = document.createElement("span");
+            sep.className = "fut-scorer-sep";
+            sep.setAttribute("aria-hidden", "true");
+            sep.textContent = "\u00B7";
+            listEl.appendChild(sep);
+          }
+          listEl.appendChild(buildScorerSpan(e));
+        });
+        row.appendChild(listEl);
+        return row;
+      }
+      const div = document.createElement("div");
+      div.className = "fut-match-scorers";
+      div.append(buildScorerRow(homeScorers, "home"), buildScorerRow(awayScorers, "away"));
+      article.appendChild(div);
+    });
   }
 
   function updateOverview(teams, rounds) {
@@ -957,6 +1065,7 @@
         ]);
         if (routeKey !== key) return;
         updateOverview(teams, rounds);
+        enrichCurrentScorers(rounds);
         requestAnimationFrame(() => enhanceRoundSelector(championship.currentRoundNumber));
       } else {
         const championship = await request(`/historical-championships/${encodeURIComponent(id)}`);
@@ -1067,6 +1176,64 @@
     details.append(detail("fas fa-check-circle", "Encerrado", "fut-current-status status-finished"));
     article.append(teams, details);
 
+    const scorersList = Array.isArray(match.scorers) ? match.scorers : [];
+    const homeId = String(home.id || "");
+    const awayId = String(away.id || "");
+    const homeScorers = scorersList.filter((s) => String(s.teamId) === homeId);
+    const awayScorers = scorersList.filter((s) => String(s.teamId) === awayId);
+    if (homeScorers.length || awayScorers.length) {
+      function groupScorers(items) {
+        const grouped = new Map();
+        items.forEach((s) => {
+          const name = s.playerName || s.player?.name || s.name || "";
+          if (!name) return;
+          const m = s.minute != null ? s.minute : null;
+          const e = grouped.get(name);
+          if (e) e.push(m); else grouped.set(name, [m]);
+        });
+        return [...grouped.entries()];
+      }
+      function buildScorerSpan(entries) {
+        const span = document.createElement("span");
+        span.className = "fut-scorer";
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "fut-scorer-name";
+        nameSpan.textContent = entries[0];
+        span.appendChild(nameSpan);
+        entries[1].filter((m) => m != null).forEach((m) => {
+          const badge = document.createElement("span");
+          badge.className = "fut-scorer-min";
+          badge.textContent = m + "'";
+          span.appendChild(badge);
+        });
+        return span;
+      }
+      function buildScorerRow(items, side) {
+        const entries = groupScorers(items);
+        const row = document.createElement("div");
+        row.className = "fut-scorers-row fut-scorers-row--" + side;
+        if (!entries.length) return row;
+        const list = document.createElement("span");
+        list.className = "fut-scorers-list";
+        entries.forEach((e, i) => {
+          if (i > 0) {
+            const sep = document.createElement("span");
+            sep.className = "fut-scorer-sep";
+            sep.setAttribute("aria-hidden", "true");
+            sep.textContent = "\u00B7";
+            list.appendChild(sep);
+          }
+          list.appendChild(buildScorerSpan(e));
+        });
+        row.appendChild(list);
+        return row;
+      }
+      const scorersDiv = document.createElement("div");
+      scorersDiv.className = "fut-match-scorers";
+      scorersDiv.append(buildScorerRow(homeScorers, "home"), buildScorerRow(awayScorers, "away"));
+      article.appendChild(scorersDiv);
+    }
+
     const extras = document.createElement("div");
     extras.className = "fut-historical-extras";
     const hasPenalties = Number(match.homePenalties) > 0 || Number(match.awayPenalties) > 0;
@@ -1129,6 +1296,12 @@
     const panel = app.querySelector("#fut-panel-matches .fut-box");
     if (!panel) return;
     const teamsById = new Map((championship.teams || []).map((team) => [String(team.id || team.teamId), team]));
+    const annotationsByRound = new Map();
+    (championship.annotations || []).forEach((annotation) => {
+      const roundId = annotation.roundId || "";
+      if (!annotationsByRound.has(roundId)) annotationsByRound.set(roundId, []);
+      annotationsByRound.get(roundId).push(annotation);
+    });
     panel.textContent = "";
     const roundElements = [];
     (championship.rounds || []).forEach((round, index) => {
@@ -1140,6 +1313,18 @@
       grid.className = "fut-current-matches-grid";
       (round.matches || []).forEach((match) => grid.appendChild(matchCard(match, teamsById)));
       section.append(heading, grid);
+      const roundAnnotations = annotationsByRound.get(round.id || "") || [];
+      roundAnnotations.forEach((annotation) => {
+        const note = document.createElement("div");
+        note.className = "fut-round-annotation";
+        const icon = document.createElement("i");
+        icon.className = "fas fa-sticky-note";
+        icon.setAttribute("aria-hidden", "true");
+        const text = document.createElement("span");
+        text.textContent = annotation.note || "";
+        note.append(icon, text);
+        section.appendChild(note);
+      });
       panel.appendChild(section);
       roundElements.push(section);
     });
@@ -1491,3 +1676,4 @@
   }).observe(app, { childList: true });
   sortTeams();
 })();
+

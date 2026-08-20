@@ -882,6 +882,22 @@ body.high-contrast .ouv-tabs-wrapper .nav-link.active {
 }
 
 
+
+/* Prazos de resposta */
+.ouv-prazos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0 16px; }
+.ouv-prazo-card { background: var(--ouv-branco); border: 1.5px solid var(--ouv-borda); border-top: 4px solid var(--ouv-primario); border-radius: var(--ouv-radius-lg); padding: 24px; box-shadow: var(--ouv-sombra); }
+.ouv-prazo-card--prorrogacao { border-top-color: var(--ouv-amarelo); }
+.ouv-prazo-card__numero { color: var(--ouv-primario); font-size: 2.5rem; font-weight: 900; line-height: 1; }
+.ouv-prazo-card--prorrogacao .ouv-prazo-card__numero { color: var(--ouv-amarelo); }
+.ouv-prazo-card__unidade { color: var(--ouv-texto-leve); font-size: .8rem; font-weight: 700; letter-spacing: .08em; margin: 4px 0 14px; text-transform: uppercase; }
+.ouv-prazo-card__titulo { color: var(--ouv-texto); font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
+.ouv-prazo-card__texto { color: var(--ouv-texto-leve); font-size: .9rem; line-height: 1.65; margin: 0; }
+.ouv-prazo-total { align-items: center; background: var(--ouv-primario-bg); border: 1px solid var(--ouv-borda); border-left: 4px solid var(--ouv-primario); border-radius: var(--ouv-radius); display: flex; gap: 16px; margin-bottom: 16px; padding: 18px 20px; }
+.ouv-prazo-total > i { color: var(--ouv-primario); flex-shrink: 0; font-size: 1.5rem; }
+.ouv-prazo-total p, .ouv-prazo-alerta p { margin: 0; }
+.ouv-prazo-alerta { margin-bottom: 16px; }
+.ouv-prazo-acompanhamento { align-items: baseline; color: var(--ouv-texto); display: flex; gap: 9px; line-height: 1.65; margin: 0; }
+.ouv-prazo-acompanhamento i { color: var(--ouv-primario); }
 /* ══════════════════════════════════════════════════════════════════════════
    11. GRID DE SERVIÇOS (contatos diretos)
    ══════════════════════════════════════════════════════════════════════════ */
@@ -1293,6 +1309,8 @@ body.high-contrast .ouv-tabs-wrapper .nav-link.active {
 
 /* Mobile pequeno: 480px */
 @media (max-width: 480px) {
+  .ouv-prazos-grid   { grid-template-columns: 1fr; }
+  .ouv-prazo-total   { align-items: flex-start; }
   .ouv-servicos-grid { grid-template-columns: 1fr; }
   .pi-footer__grid   { grid-template-columns: 1fr; }
   .ouv-cta-btn       { width: 100%; justify-content: center; }
@@ -1391,6 +1409,14 @@ body.high-contrast .ouv-passos::before      { background: #555 !important; }
 body.high-contrast .ouv-passo__titulo       { color: #fff !important; }
 body.high-contrast .ouv-passo__texto        { color: #ddd !important; }
 
+body.high-contrast .ouv-prazo-card { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .ouv-prazo-card__numero { color: #ff0 !important; }
+body.high-contrast .ouv-prazo-card__titulo { color: #fff !important; }
+body.high-contrast .ouv-prazo-card__texto,
+body.high-contrast .ouv-prazo-card__unidade { color: #ddd !important; }
+body.high-contrast .ouv-prazo-total { background: #111 !important; border-color: #fff !important; }
+body.high-contrast .ouv-prazo-total > i,
+body.high-contrast .ouv-prazo-acompanhamento i { color: #ff0 !important; }
 body.high-contrast .ouv-lei-item            { background: #000 !important; border-color: #fff !important; }
 body.high-contrast .ouv-lei-item__icone i   { color: #ff0 !important; }
 body.high-contrast .ouv-lei-item__titulo    { color: #fff !important; }

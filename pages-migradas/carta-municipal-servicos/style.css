@@ -1,0 +1,247 @@
+:root {
+  --carta-verde: var(--verde, #257a38);
+  --carta-verde-escuro: var(--verde-escuro, #195a29);
+  --carta-verde-claro: var(--verde-claro, #eaf5ed);
+  --carta-bg: var(--cinza-bg, #f6f7f6);
+  --carta-borda: var(--cinza-borda, #dfe4df);
+  --carta-texto: var(--texto, #26312a);
+  --carta-leve: #5d685f;
+}
+
+.carta-container {
+  padding: 44px 15px 64px;
+}
+
+.carta-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: start;
+}
+
+.carta-secao+.carta-secao {
+  margin-top: 48px;
+}
+
+.carta-texto {
+  color: var(--carta-leve);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.carta-texto p {
+  margin: 0 0 16px;
+}
+
+.carta-texto a {
+  color: var(--carta-verde-escuro);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.carta-destaque {
+  align-items: center;
+  background: var(--carta-verde-claro);
+  border: 1px solid var(--carta-borda);
+  border-left: 4px solid var(--carta-verde);
+  border-radius: 10px;
+  display: flex;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 22px;
+}
+
+.carta-destaque p {
+  color: var(--carta-texto);
+  line-height: 1.7;
+  margin: 0
+}
+
+.carta-destaque__icone {
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  color: var(--carta-verde);
+  display: flex;
+  flex: 0 0 52px;
+  font-size: 1.3rem;
+  height: 52px;
+  justify-content: center;
+}
+
+.carta-subtitulo {
+  color: var(--carta-texto);
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin: 28px 0 16px;
+}
+
+.carta-requisitos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0
+}
+
+.carta-requisitos li {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--carta-borda);
+  border-radius: 10px;
+  color: var(--carta-texto);
+  display: flex;
+  gap: 13px;
+  min-width: 0;
+  padding: 17px;
+  box-shadow: 0 3px 12px rgba(26, 55, 34, .06);
+}
+
+.carta-requisitos i {
+  align-items: center;
+  background: var(--carta-verde-claro);
+  border-radius: 8px;
+  color: var(--carta-verde);
+  display: flex;
+  flex: 0 0 38px;
+  height: 38px;
+  justify-content: center;
+}
+
+.carta-principios {
+  align-items: flex-start;
+  background: var(--carta-bg);
+  border: 1px solid var(--carta-borda);
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+}
+
+.carta-principios>i {
+  color: var(--carta-verde);
+  font-size: 1.4rem;
+  margin-top: 3px;
+}
+
+.carta-principios p {
+  color: var(--carta-leve);
+  line-height: 1.7;
+  margin: 0
+}
+
+.carta-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.carta-sidebar__card {
+  background: #fff;
+  border: 1px solid var(--carta-borda);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(26, 55, 34, .07);
+  overflow: hidden;
+}
+
+.carta-sidebar__card h2 {
+  color: var(--carta-texto);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 18px 20px;
+}
+
+.carta-sidebar__card h2 i {
+  color: var(--carta-verde);
+  margin-right: 7px;
+}
+
+.carta-sidebar__card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 12px 12px;
+}
+
+.carta-sidebar__card li+li {
+  border-top: 1px solid var(--carta-borda);
+}
+
+.carta-sidebar__card li a {
+  align-items: center;
+  color: var(--carta-texto);
+  display: flex;
+  font-size: .9rem;
+  justify-content: space-between;
+  padding: 12px 8px;
+  text-decoration: none;
+}
+
+.carta-sidebar__card li a:hover, .carta-sidebar__card li a:focus {
+  color: var(--carta-verde-escuro);
+}
+
+.carta-sidebar__card li i {
+  color: var(--carta-verde);
+  font-size: .7rem;
+}
+
+@media(max-width:991px) {
+  .carta-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+@media(max-width:767px) {
+  .carta-container {
+    padding-bottom: 44px;
+    padding-top: 32px;
+  }
+
+  .carta-requisitos {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+@media(max-width:375px) {
+  .carta-destaque {
+    align-items: flex-start;
+    padding: 17px;
+  }
+
+  .carta-destaque__icone {
+    flex-basis: 42px;
+    height: 42px;
+  }
+
+  .carta-requisitos li {
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+}
+
+body.high-contrast .carta-destaque, body.high-contrast .carta-requisitos li, body.high-contrast .carta-principios, body.high-contrast .carta-sidebar__card {
+  background: #000!important;
+  border: 2px solid #fff!important;
+  color: #fff!important;
+}
+
+body.high-contrast .carta-destaque__icone, body.high-contrast .carta-requisitos i {
+  background: #222!important;
+  color: #ff0!important;
+}
+
+body.high-contrast .carta-texto, body.high-contrast .carta-texto p, body.high-contrast .carta-principios p {
+  color: #fff!important;
+}
+
+body.high-contrast .carta-texto a, body.high-contrast .carta-sidebar a {
+  color: #ff0!important;
+}
+

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas de Emprego - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos da página -->
+  <link rel="stylesheet" href="vagas.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <div id="pi-wrapper">
+    <!-- ══════════════════════════════════════════════════════════════
+        HERO — Título da página, breadcrumb e ilustração decorativa
+   ════════════════════════════════════════════════════════════════ -->
+    <section id="pi-hero" aria-label="Identificação da página">
+      <div class="container">
+        <div class="pi-hero-inner">
+
+          <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+          <nav aria-label="Você está em">
+            <ol class="pi-breadcrumb">
+              <li>
+                <a href="../../index.html">
+                  <i class="fas fa-home" aria-hidden="true"></i> Início
+                </a>
+              </li>
+              <li aria-hidden="true">
+                <span class="pi-breadcrumb-sep">
+                  <i class="fas fa-chevron-right"></i>
+                </span>
+              </li>
+              <li aria-current="page">Vagas de Emprego</li>
+            </ol>
+          </nav>
+
+          <h1 class="pi-hero-titulo">Vagas de Emprego</h1>
+          <p class="pi-hero-subtitulo">Oportunidades disponíveis na Agência do Trabalhador</p>
+
+        </div>
+      </div>
+
+      <!-- Ilustração decorativa (oculta de leitores de tela) -->
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+        CONTEÚDO PRINCIPAL
+   ════════════════════════════════════════════════════════════════ -->
+    <main id="pi-main">
+      <div class="container">
+
+        <!-- Layout em grade: coluna principal + sidebar -->
+        <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+          <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+          <article>
+
+            <!-- Seção: Sobre as vagas -->
+            <section aria-labelledby="vg-intro-titulo">
+              <h2 id="vg-intro-titulo" class="pi-secao-titulo">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                Sobre as Vagas de Emprego
+              </h2>
+              <hr class="pi-secao-divider">
+              <div class="pi-intro-texto">
+                <p>
+                  A <strong>Agência do Trabalhador de Campina Grande do Sul</strong>, vinculada à Secretaria
+                  Municipal de Desenvolvimento Social, divulga semanalmente as vagas de emprego disponíveis
+                  junto às empresas parceiras do município e região. O serviço é <strong>gratuito</strong>
+                  e atende todos os cidadãos em busca de recolocação no mercado de trabalho.
+                </p>
+                <p>
+                  As vagas listadas abaixo são atualizadas periodicamente. Para mais detalhes sobre cada
+                  oportunidade, requisitos específicos e para se candidatar, compareça pessoalmente à
+                  Agência do Trabalhador com os documentos indicados na seção
+                  <a href="#vg-candidatar">Como se Candidatar</a>.
+                </p>
+              </div>
+            </section>
+
+            <!-- ============================================
+                 ATUALIZAÇÃO SEMANAL — Total de vagas e data
+                 Altere o número abaixo e a data de atualização
+            ============================================ -->
+            <div class="vg-destaque">
+              <div class="vg-destaque-icone" aria-hidden="true">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="vg-destaque-texto">
+                <strong id="vg-total-semana">438 vagas</strong>
+                <span>disponíveis para essa semana</span>
+              </div>
+              <div class="vg-destaque-atualizado">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                Atualizado em 19/08/2026
+              </div>
+            </div>
+
+            <!-- Seção: Lista de vagas -->
+            <section aria-labelledby="vg-lista-titulo" class="pi-mt-secao">
+              <h2 id="vg-lista-titulo" class="pi-secao-titulo">
+                <i class="fas fa-list-check" aria-hidden="true"></i>
+                Vagas em Destaque
+              </h2>
+              <hr class="pi-secao-divider">
+
+              <!-- Busca e filtros -->
+              <div class="vg-ferramentas">
+                <div class="vg-busca">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <label for="vg-busca-input" class="sr-only">Buscar vaga por nome</label>
+                  <input type="text" id="vg-busca-input" placeholder="Buscar vaga, por exemplo: Auxiliar de Produção">
+                </div>
+
+                <div class="vg-filtros" role="group" aria-label="Filtrar vagas por área">
+                  <button type="button" class="vg-filtro-btn ativo" data-categoria="todas" aria-pressed="true">Todas as áreas</button>
+                  <button type="button" class="vg-filtro-btn" data-categoria="industria" aria-pressed="false">Indústria e Produção</button>
+                  <button type="button" class="vg-filtro-btn" data-categoria="construcao" aria-pressed="false">Construção Civil</button>
+                  <button type="button" class="vg-filtro-btn" data-categoria="comercio" aria-pressed="false">Comércio e Administrativo</button>
+                  <button type="button" class="vg-filtro-btn" data-categoria="logistica" aria-pressed="false">Logística</button>
+                  <button type="button" class="vg-filtro-btn" data-categoria="servicos" aria-pressed="false">Serviços Gerais</button>
+                </div>
+              </div>
+
+              <p class="vg-resultado-info" aria-live="polite">
+                Exibindo <strong id="vg-contagem">15</strong> vagas
+              </p>
+
+              <!-- ============================================
+                   ATUALIZAÇÃO SEMANAL — Lista de vagas
+                   Para adicionar uma vaga, copie um bloco .vg-card existente
+                   e altere: data-categoria, data-titulo, vg-card-categoria,
+                   vg-card-titulo, vg-card-badge e o conteúdo de vg-card-detalhes.
+                   Mantenha os IDs únicos ( vg-det-N ).
+                   Para remover, delete o bloco .vg-card inteiro.
+              ============================================ -->
+              <div class="vg-grid" id="vg-grid" role="list">
+
+                <div class="vg-card" role="listitem" data-categoria="logistica" data-titulo="auxiliar de logística">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-1">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Logística</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Auxiliar de Logística</span>
+                    </span>
+                    <span class="vg-card-badge">150<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-1" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental completo. Experiência anterior em armazenamento e movimentação de mercadorias. Conhecimento básico em informática.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="comercio" data-titulo="vagas para mercado">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-2">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Comércio</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Vagas para Mercado</span>
+                    </span>
+                    <span class="vg-card-badge">120<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-2" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental completo. Disponibilidade de horário, incluindo finais de semana. Experiência em atendimento ao cliente é diferencial.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="auxiliar de produção">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-3">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Auxiliar de Produção</span>
+                    </span>
+                    <span class="vg-card-badge">115<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-3" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental completo. Residir próximo ao município. Disponibilidade para turnos (manhã, tarde ou noite).</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="servicos" data-titulo="auxiliar de limpeza">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-4">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Serviços Gerais</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Auxiliar de Limpeza</span>
+                    </span>
+                    <span class="vg-card-badge">35<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-4" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental incompleto. Experiência comprovada em serviços de limpeza. Documentação em dia.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="logistica" data-titulo="auxiliar de armazém">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-5">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Logística</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Auxiliar de Armazém</span>
+                    </span>
+                    <span class="vg-card-badge">5<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-5" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental completo. Capacidade de organização e agilidade. Experiência em separação e conferência de mercadorias.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="comercio" data-titulo="estoquista">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-6">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Comércio</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Estoquista</span>
+                    </span>
+                    <span class="vg-card-badge">2<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-6" hidden>
+                    <p><strong>Requisitos:</strong> Ensino médio completo. Experiência em controle de estoque e sistemas de gestão. Conhecimento em planilhas eletrônicas.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="construcao" data-titulo="pedreiro">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-7">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Construção Civil</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Pedreiro</span>
+                    </span>
+                    <span class="vg-card-badge">2<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-7" hidden>
+                    <p><strong>Requisitos:</strong> Experiência comprovada em alvenaria e acabamentos. Disponibilidade para trabalhos em altura. NR-18 desejável.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="construcao" data-titulo="servente de pedreiro">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-8">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Construção Civil</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Servente de Pedreiro</span>
+                    </span>
+                    <span class="vg-card-badge">2<span class="vg-card-badge-un">vagas</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-8" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental incompleto. Disponibilidade para atividades físicas. Experiência básica em construção civil.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="analista de qualidade">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-9">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Analista de Qualidade</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-9" hidden>
+                    <p><strong>Requisitos:</strong> Ensino superior completo (Engenharia ou áreas afins). Experiência com normas ISO. Conhecimento em ferramentas da qualidade.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="comercio" data-titulo="analista de compras">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-10">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Comércio</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Analista de Compras</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-10" hidden>
+                    <p><strong>Requisitos:</strong> Ensino superior completo (Administração ou áreas afins). Experiência em processos de compras e negociação com fornecedores.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="técnico de segurança do trabalho">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-11">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Téc. Segurança do Trabalho</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-11" hidden>
+                    <p><strong>Requisitos:</strong> Curso técnico em Segurança do Trabalho completo. Registro no MTE. Experiência em indústria.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="operador de máquinas">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-12">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Operador de Máquinas</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-12" hidden>
+                    <p><strong>Requisitos:</strong> Ensino médio completo. Curso de operação de máquinas industriais. Experiência mínima de 1 ano.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="operador de serra">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-13">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Operador de Serra</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-13" hidden>
+                    <p><strong>Requisitos:</strong> Ensino fundamental completo. Experiência com serras de corte industrial. NR-12 desejável. Conhecimento em leitura de projetos.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="polidor automotivo">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-14">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Polidor Automotivo</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-14" hidden>
+                    <p><strong>Requisitos:</strong> Experiência em polimento e acabamento automotivo. Atenção a detalhes. Disponibilidade de horário.</p>
+                  </div>
+                </div>
+
+                <div class="vg-card" role="listitem" data-categoria="industria" data-titulo="operador cnc">
+                  <button type="button" class="vg-card-header" aria-expanded="false" aria-controls="vg-det-15">
+                    <span class="vg-card-info">
+                      <span class="vg-card-categoria">Indústria</span>
+                      <span class="vg-card-titulo" role="heading" aria-level="3">Operador CNC</span>
+                    </span>
+                    <span class="vg-card-badge">1<span class="vg-card-badge-un">vaga</span></span>
+                    <i class="fas fa-chevron-down vg-card-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="vg-card-detalhes" id="vg-det-15" hidden>
+                    <p><strong>Requisitos:</strong> Ensino médio completo. Curso de operação CNC. Leitura de desenho técnico e experiência comprovada.</p>
+                  </div>
+                </div>
+
+              </div>
+              <!-- /Grade de vagas -->
+
+              <!-- Mensagem exibida quando a busca/filtro não encontra resultados -->
+              <div class="vg-sem-resultado" id="vg-sem-resultado">
+                <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                Nenhuma vaga encontrada com esse termo ou filtro.<br>
+                Tente outra palavra-chave ou selecione "Todas as áreas".
+              </div>
+
+              <!-- Paginação -->
+              <nav class="vg-paginacao" id="vg-paginacao" aria-label="Paginação das vagas">
+                <button type="button" class="vg-pag-btn vg-pag-prev" id="vg-pag-prev" aria-label="Página anterior" disabled>
+                  <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="vg-pag-numeros" id="vg-pag-numeros" role="group" aria-label="Páginas"></div>
+                <button type="button" class="vg-pag-btn vg-pag-next" id="vg-pag-next" aria-label="Próxima página">
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </nav>
+
+            </section>
+
+            <!-- Seção: Como se candidatar -->
+            <section aria-labelledby="vg-candidatar-titulo" id="vg-candidatar" class="pi-mt-secao">
+              <div class="vg-candidatar-bloco">
+                <h2 id="vg-candidatar-titulo">
+                  <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                  Como se Candidatar
+                </h2>
+                <p>
+                  Para concorrer às vagas, o candidato deve comparecer pessoalmente à Agência do Trabalhador,
+                  no horário de atendimento, portando os documentos abaixo. Não é necessário agendamento prévio.
+                </p>
+
+                <ul class="vg-candidatar-lista">
+                  <li>
+                    <span class="vg-candidatar-icone" aria-hidden="true"><i class="fas fa-id-card"></i></span>
+                    <div>
+                      <strong>Documentos pessoais</strong>
+                      <span>RG, CPF e Carteira de Trabalho (física ou digital, pelo app Carteira de Trabalho Digital).</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="vg-candidatar-icone" aria-hidden="true"><i class="fas fa-house-chimney"></i></span>
+                    <div>
+                      <strong>Comprovante de residência</strong>
+                      <span>Documento atualizado, em nome do candidato ou de um responsável.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="vg-candidatar-icone" aria-hidden="true"><i class="fas fa-file-lines"></i></span>
+                    <div>
+                      <strong>Currículo atualizado</strong>
+                      <span>Se possível, leve uma cópia impressa com suas experiências e qualificações.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="vg-candidatar-icone" aria-hidden="true"><i class="fas fa-user-plus"></i></span>
+                    <div>
+                      <strong>Cadastro no local</strong>
+                      <span>A equipe da Agência fará seu cadastro e o direcionará às vagas compatíveis com seu perfil.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+          </article>
+          <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+
+          <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+          <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
+
+            <!-- Controles rápidos de acessibilidade -->
+            <div class="pi-controles-bloco">
+              <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+
+              <!-- Controle de tamanho de texto -->
+              <div class="pi-ctrl-row">
+                <span class="pi-ctrl-label">Tamanho do texto</span>
+                <div class="pi-ctrl-btns">
+                  <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                  <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A−</button>
+                  <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Resetar fonte">A</button>
+                </div>
+              </div>
+
+              <!-- Alternador de alto contraste -->
+              <div class="pi-ctrl-row">
+                <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                        aria-pressed="false" aria-label="Alternar modo de alto contraste">
+                  <i class="fas fa-adjust" aria-hidden="true"></i>
+                  Alternar Alto Contraste
+                </button>
+              </div>
+            </div>
+
+            <!-- Navegação interna da seção -->
+            <div class="pi-sidebar-card">
+              <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Seção</h4>
+              <ul class="pi-sidebar-links" aria-label="Páginas desta seção">
+                <li class="ativo">
+                  <a href="#" aria-current="page">
+                    <span>
+                      <i class="fas fa-briefcase pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>
+                      Vagas de Emprego
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="../mapa-site/">
+                    <span>
+                      <i class="fas fa-sitemap pi-sidebar-ico" aria-hidden="true"></i>
+                      Mapa do Site
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="../acessibilidade/">
+                    <span>
+                      <i class="fas fa-universal-access pi-sidebar-ico" aria-hidden="true"></i>
+                      Acessibilidade
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="../ouvidoria">
+                    <span>
+                      <i class="fas fa-comments pi-sidebar-ico" aria-hidden="true"></i>
+                      Ouvidoria
+                    </span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contato / Localização da Agência -->
+            <div class="pi-sidebar-card pi-sidebar-contato">
+              <h4><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Agência do Trabalhador</h4>
+              <p><i class="fas fa-location-dot" aria-hidden="true"></i> Rua João Trevisan, 1296<br>Jardim Paulista<br>Campina Grande do Sul — PR</p>
+              <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+              <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7266 / 3162-7264</p>
+              <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:agtrabalhador@pmcgs.pr.gov.br">agtrabalhador@pmcgs.pr.gov.br</a></p>
+            </div>
+
+          </aside>
+          <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+        </div>
+      </div>
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════════════
+        RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+   ════════════════════════════════════════════════════════════════ -->
+    </div> <!-- /pi-wrapper -->
+
+    <meu-footer></meu-footer>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+
+    <!-- Scripts Externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <!-- Scripts Globais (Componentes) -->
+    <script src="../../_global/js/acessibilidade-component.js"></script>
+    <script src="../../_global/js/searh-component.js"></script>
+    <script src="../../_global/js/header-component.js"></script>
+    <script src="../../_global/js/footer-component.js"></script>
+
+    <!-- Script da página: busca, filtro e accordion de requisitos -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
