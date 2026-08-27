@@ -3,15 +3,8 @@
 
   const API_URL = 'https://sibea.pmcgs.pr.gov.br';
   const PAGE_SIZE = 24;
+  const API_PAGE_SIZE = 50;
   const SEARCH_DELAY = 400;
-  const FALLBACK_IMAGE = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">' +
-    '<rect width="800" height="560" fill="#eaf6f1"/>' +
-    '<circle cx="400" cy="235" r="92" fill="#196b52" opacity=".16"/>' +
-    '<path fill="#196b52" d="M369 174c-26-38-76-23-64 22 7 26 35 47 64 64 29-17 57-38 64-64 12-45-38-60-64-22zm81 98c-15 0-27 16-27 35s12 35 27 35 27-16 27-35-12-35-27-35zm-100 0c-15 0-27 16-27 35s12 35 27 35 27-16 27-35-12-35-27-35zm50 23c-24 0-44 25-44 55 0 25 16 39 44 39s44-14 44-39c0-30-20-55-44-55z"/>' +
-    '<text x="400" y="455" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#5c6b66">Foto indisponivel</text>' +
-    '</svg>'
-  );
 
   const facetLabels = {
     sex: { M: 'Macho', F: 'Fêmea' },
@@ -22,6 +15,8 @@
   const state = {
     page: 1,
     totalPages: 1,
+    total: 0,
+    animals: [],
     facets: { species: [], breeds: [], organizations: [], sex: [], age: [], size: [] },
     listController: null,
     detailController: null,
@@ -40,7 +35,7 @@
     const tabs = Array.from(container.querySelectorAll('[role="tab"]'));
     const previousButton = container.querySelector('.bea-tabs-seta--esquerda');
     const nextButton = container.querySelector('.bea-tabs-seta--direita');
-    const adoptionButton = document.getElementById('ver-animais-disponiveis');
+    const adoptionButtons = Array.from(container.querySelectorAll('.bea-scroll-adocao'));
 
     if (!scrollArea || !tabs.length || !previousButton || !nextButton) return;
     container.dataset.beaTabsInicializadas = 'true';
@@ -115,7 +110,7 @@
     scrollArea.addEventListener('scroll', updateArrows, { passive: true });
     window.addEventListener('resize', updateArrows);
 
-    if (adoptionButton) {
+    adoptionButtons.forEach(adoptionButton => {
       adoptionButton.addEventListener('click', event => {
         event.preventDefault();
         activateTab(document.getElementById('adocao-tab'), true);
@@ -124,7 +119,7 @@
           block: 'start'
         });
       });
-    }
+    });
 
     activateTab(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0], false);
   }
@@ -159,17 +154,46 @@
     return node;
   }
 
+  function formatBreedName(name) {
+    const value = String(name || '').trim();
+    if (!value) return '';
+    if (/^s\.?\s*r\.?\s*d\.?$/i.test(value) || /^srd$/i.test(value)) return 'Sem Raça Definida';
+    return value;
+  }
+
   function addIcon(parent, iconClass) {
     const icon = createElement('i', iconClass);
     icon.setAttribute('aria-hidden', 'true');
     parent.appendChild(icon);
   }
 
+  function createImagePlaceholder(modifier) {
+    const className = modifier
+      ? `bea-image-placeholder bea-image-placeholder--${modifier}`
+      : 'bea-image-placeholder';
+    const placeholder = createElement('div', className);
+    placeholder.setAttribute('role', 'img');
+    placeholder.setAttribute('aria-label', 'Foto indisponível');
+    addIcon(placeholder, 'fas fa-paw');
+    return placeholder;
+  }
+
   function setImageSource(image, source) {
-    image.src = source || FALLBACK_IMAGE;
+    if (!source) {
+      const wrap = image.parentElement;
+      if (wrap) {
+        const isDetail = image.classList.contains('bea-animal-detail__image');
+        image.replaceWith(createImagePlaceholder(isDetail ? 'detail' : ''));
+      }
+      return;
+    }
+    image.src = source;
     image.addEventListener('error', function handleImageError() {
       image.removeEventListener('error', handleImageError);
-      image.src = FALLBACK_IMAGE;
+      const wrap = image.parentElement;
+      if (!wrap) return;
+      const isDetail = image.classList.contains('bea-animal-detail__image');
+      image.replaceWith(createImagePlaceholder(isDetail ? 'detail' : ''));
     });
   }
 
@@ -200,7 +224,11 @@
   function updateBreedOptions() {
     const speciesId = elements.species.value;
     const breeds = speciesId
-      ? state.facets.breeds.filter(breed => breed.speciesId === speciesId)
+      ? state.facets.breeds.filter(breed => breed.speciesId === speciesId).map(breed => ({
+          id: breed.id,
+          name: formatBreedName(breed.name) || breed.name,
+          count: breed.count
+        }))
       : [];
     fillSelect(elements.breed, breeds, 'id', 'name', 'Todas');
     elements.breed.value = '';
@@ -233,7 +261,7 @@
 
   function getFilters() {
     const data = new FormData(elements.filters);
-    const filters = { page: state.page, pageSize: PAGE_SIZE };
+    const filters = {};
     data.forEach((value, key) => {
       const normalized = String(value).trim();
       if (normalized !== '') filters[key] = normalized;
@@ -247,6 +275,37 @@
       if (value !== undefined && value !== null && value !== '') params.set(key, String(value));
     });
     return params.toString();
+  }
+
+  function shuffle(items) {
+    const list = items.slice();
+    for (let index = list.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      const current = list[index];
+      list[index] = list[swapIndex];
+      list[swapIndex] = current;
+    }
+    return list;
+  }
+
+  async function fetchAllAnimals(filters, controller) {
+    const animals = [];
+    let page = 1;
+    let totalPages = 1;
+    let total = 0;
+
+    do {
+      const query = buildQuery(Object.assign({}, filters, { page: page, pageSize: API_PAGE_SIZE }));
+      const body = await request(`/api/adoption/animals?${query}`, controller);
+      const pageAnimals = Array.isArray(body.data) ? body.data : [];
+      animals.push.apply(animals, pageAnimals);
+      const pagination = body.pagination || {};
+      total = Number(pagination.total) || animals.length;
+      totalPages = Math.max(1, Number(pagination.totalPages) || 1);
+      page += 1;
+    } while (page <= totalPages);
+
+    return { animals: animals, total: total };
   }
 
   function renderLoading() {
@@ -297,11 +356,19 @@
     elements.pagination.replaceChildren();
   }
 
-  function createBadge(iconClass, text) {
-    const badge = createElement('span', 'bea-animal-badge');
+  function createBadge(iconClass, text, modifier) {
+    const className = modifier ? `bea-animal-badge bea-animal-badge--${modifier}` : 'bea-animal-badge';
+    const badge = createElement('span', className);
     addIcon(badge, iconClass);
     badge.appendChild(document.createTextNode(text));
     return badge;
+  }
+
+  function sexBadge(animal) {
+    if (!animal.sexLabel) return null;
+    if (animal.sex === 'M') return createBadge('fas fa-mars', animal.sexLabel, 'male');
+    if (animal.sex === 'F') return createBadge('fas fa-venus', animal.sexLabel, 'female');
+    return createBadge('fas fa-venus-mars', animal.sexLabel);
   }
 
   function createAnimalCard(animal) {
@@ -315,17 +382,23 @@
     article.appendChild(imageWrap);
 
     const content = createElement('div', 'bea-animal-card__content');
-    const species = animal.species && animal.species.name ? animal.species.name : 'Animal';
+    const species = animal.species && (animal.species.name || animal.species.popularName)
+      ? (animal.species.name || animal.species.popularName)
+      : 'Animal';
     content.appendChild(createElement('p', 'bea-animal-card__species', species));
     content.appendChild(createElement('h3', '', animal.name || 'Sem nome informado'));
 
     const meta = createElement('div', 'bea-animal-card__meta');
-    if (animal.sexLabel) meta.appendChild(createBadge('fas fa-venus-mars', animal.sexLabel));
+    const sex = sexBadge(animal);
+    if (sex) meta.appendChild(sex);
     if (animal.ageLabel) meta.appendChild(createBadge('fas fa-cake-candles', animal.ageLabel));
     if (animal.sizeLabel) meta.appendChild(createBadge('fas fa-ruler', animal.sizeLabel));
     content.appendChild(meta);
 
-    if (animal.breed && animal.breed.name) content.appendChild(createElement('p', 'bea-animal-card__breed', animal.breed.name));
+    if (animal.breed && animal.breed.name) {
+      const breedName = formatBreedName(animal.breed.name);
+      if (breedName) content.appendChild(createElement('p', 'bea-animal-card__breed', breedName));
+    }
     if (animal.characteristics) content.appendChild(createElement('p', 'bea-animal-card__description', animal.characteristics));
 
     const button = createElement('button', 'bea-animal-card__button', 'Conhecer este animal');
@@ -375,20 +448,19 @@
     elements.pagination.appendChild(paginationButton('›', state.page + 1, state.page === state.totalPages, false, 'Próxima página'));
   }
 
-  function renderAnimals(body) {
-    const animals = Array.isArray(body.data) ? body.data : [];
-    const pagination = body.pagination || {};
-    state.page = Number(pagination.page) || 1;
-    state.totalPages = Math.max(1, Number(pagination.totalPages) || 1);
+  function renderAnimals() {
+    const start = (state.page - 1) * PAGE_SIZE;
+    const animals = state.animals.slice(start, start + PAGE_SIZE);
+    state.totalPages = Math.max(1, Math.ceil(state.animals.length / PAGE_SIZE));
     elements.results.setAttribute('aria-busy', 'false');
-    if (!animals.length) {
+    if (!state.animals.length) {
       renderEmpty();
       return;
     }
     const fragment = document.createDocumentFragment();
     animals.forEach(animal => fragment.appendChild(createAnimalCard(animal)));
     elements.results.replaceChildren(fragment);
-    const total = Number(pagination.total) || animals.length;
+    const total = state.total || state.animals.length;
     elements.summary.textContent = `${total} ${total === 1 ? 'animal encontrado' : 'animais encontrados'}`;
     renderPagination();
   }
@@ -399,13 +471,17 @@
     const sequence = ++state.requestSequence;
     renderLoading();
     try {
-      const query = buildQuery(getFilters());
-      const body = await request(`/api/adoption/animals?${query}`, state.listController);
+      const result = await fetchAllAnimals(getFilters(), state.listController);
       if (sequence !== state.requestSequence) return;
-      renderAnimals(body);
+      state.animals = shuffle(result.animals);
+      state.total = result.total;
+      state.page = Math.min(state.page, Math.max(1, Math.ceil(state.animals.length / PAGE_SIZE) || 1));
+      renderAnimals();
     } catch (error) {
       if (error.name === 'AbortError' || sequence !== state.requestSequence) return;
       elements.results.setAttribute('aria-busy', 'false');
+      state.animals = [];
+      state.total = 0;
       renderError(error);
     }
   }
@@ -430,7 +506,7 @@
   }
 
   function interestUrl(animal) {
-    const reference = [referencePart(animal.id), referencePart(animal.name)].filter(Boolean).join('-');
+    const reference = referencePart(animal.name);
     const url = new URL('https://www.campinagrandedosul.pr.gov.br/atendimento-bem-estar-animal/30');
     if (reference) url.searchParams.set('ref', reference);
     return url.toString();
@@ -456,11 +532,16 @@
     layout.appendChild(image);
 
     const content = createElement('div', 'bea-animal-detail__content');
-    content.appendChild(createElement('p', 'bea-kicker', animal.species && animal.species.name ? animal.species.name : 'Adoção responsável'));
+    content.appendChild(createElement('p', 'bea-kicker', animal.species && (animal.species.name || animal.species.popularName)
+      ? (animal.species.name || animal.species.popularName)
+      : 'Adoção responsável'));
     const title = createElement('h2', '', animal.name || 'Sem nome informado');
     title.id = 'sibea-animal-modal-title';
     content.appendChild(title);
-    if (animal.breed && animal.breed.name) content.appendChild(createElement('p', 'bea-animal-detail__breed', animal.breed.name));
+    if (animal.breed && animal.breed.name) {
+      const breedName = formatBreedName(animal.breed.name);
+      if (breedName) content.appendChild(createElement('p', 'bea-animal-detail__breed', breedName));
+    }
 
     const facts = createElement('div', 'bea-animal-detail__facts');
     if (animal.sexLabel) facts.appendChild(detailRow('fas fa-venus-mars', 'Sexo', animal.sexLabel));
@@ -548,7 +629,7 @@
       const button = event.target.closest('[data-page]');
       if (!button || button.disabled) return;
       state.page = Number(button.dataset.page);
-      loadAnimals();
+      renderAnimals();
       elements.summary.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     $('#sibea-animal-modal').on('hidden.bs.modal', () => {
@@ -581,4 +662,10 @@
   }
 
   window.SibeaAdoption = { init };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 }());

@@ -65,3 +65,208 @@
         right: max(15px, calc((100% - 1140px) / 2));
     }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   BOTÕES FLUTUANTES À ESQUERDA — Bem-estar Animal e Vagas
+════════════════════════════════════════════════════════════════ */
+.flutuantes-esquerda {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9990;
+    pointer-events: auto;
+}
+
+.flutuante-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none !important;
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.flutuante-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.flutuante-icone i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.flutuante-label {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    padding-right: 0;
+    margin-left: 0;
+    transition: opacity 0.25s ease, max-width 0.28s ease, padding-right 0.25s ease, margin-left 0.25s ease;
+}
+
+/* Estilo: Bem-estar Animal (Verde Institucional) */
+.flutuante-btn--animal {
+    border: 2px solid var(--verde, #2d7a2d);
+    color: var(--verde-escuro, #1e5c1e);
+}
+.flutuante-btn--animal .flutuante-icone {
+    color: var(--verde, #2d7a2d);
+}
+.flutuante-btn--animal .flutuante-label {
+    color: var(--verde-escuro, #1e5c1e);
+}
+
+.flutuante-btn--animal:hover,
+.flutuante-btn--animal:focus-visible {
+    background: var(--verde, #2d7a2d);
+    border-color: var(--verde-escuro, #1e5c1e);
+    box-shadow: 0 6px 20px rgba(45, 122, 45, 0.35);
+}
+.flutuante-btn--animal:hover .flutuante-icone,
+.flutuante-btn--animal:focus-visible .flutuante-icone,
+.flutuante-btn--animal:hover .flutuante-label,
+.flutuante-btn--animal:focus-visible .flutuante-label {
+    color: #ffffff;
+}
+
+/* Estilo: Vagas de Emprego (Azul Institucional) */
+.flutuante-btn--vagas {
+    border: 2px solid var(--azul-bar, #1a4f8a);
+    color: var(--azul-bar, #1a4f8a);
+}
+.flutuante-btn--vagas .flutuante-icone {
+    color: var(--azul-bar, #1a4f8a);
+}
+.flutuante-btn--vagas .flutuante-label {
+    color: var(--azul-bar, #1a4f8a);
+}
+
+.flutuante-btn--vagas:hover,
+.flutuante-btn--vagas:focus-visible {
+    background: var(--azul-bar, #1a4f8a);
+    border-color: #123761;
+    box-shadow: 0 6px 20px rgba(26, 79, 138, 0.35);
+}
+.flutuante-btn--vagas:hover .flutuante-icone,
+.flutuante-btn--vagas:focus-visible .flutuante-icone,
+.flutuante-btn--vagas:hover .flutuante-label,
+.flutuante-btn--vagas:focus-visible .flutuante-label {
+    color: #ffffff;
+}
+
+/* Expansão no Hover e Foco (Desktop) */
+@media (min-width: 769px) {
+    .flutuante-btn:hover,
+    .flutuante-btn:focus-visible {
+        width: auto;
+        max-width: 240px;
+        padding-right: 16px;
+        transform: translateX(4px);
+    }
+
+    .flutuante-btn:hover .flutuante-icone,
+    .flutuante-btn:focus-visible .flutuante-icone {
+        transform: scale(1.08);
+    }
+
+    .flutuante-btn:hover .flutuante-label,
+    .flutuante-btn:focus-visible .flutuante-label {
+        opacity: 1;
+        max-width: 180px;
+        margin-left: 2px;
+    }
+}
+
+/* Responsividade Mobile / Tablet */
+@media (max-width: 768px) {
+    .flutuantes-esquerda {
+        left: 10px;
+        gap: 10px;
+    }
+    .flutuante-btn {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+    }
+    .flutuante-icone {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 18px;
+    }
+    .flutuante-btn:hover,
+    .flutuante-btn:focus-visible {
+        width: 44px;
+        max-width: 44px;
+        padding-right: 0;
+        transform: scale(1.06);
+    }
+    .flutuante-label {
+        display: none;
+    }
+}
+
+/* Alto Contraste */
+body.high-contrast .flutuante-btn {
+    background: #000000 !important;
+    border: 2px solid #ffff00 !important;
+    box-shadow: none !important;
+}
+body.high-contrast .flutuante-icone,
+body.high-contrast .flutuante-label {
+    color: #ffff00 !important;
+}
+body.high-contrast .flutuante-btn:hover,
+body.high-contrast .flutuante-btn:focus-visible {
+    background: #ffff00 !important;
+}
+body.high-contrast .flutuante-btn:hover .flutuante-icone,
+body.high-contrast .flutuante-btn:hover .flutuante-label,
+body.high-contrast .flutuante-btn:focus-visible .flutuante-icone,
+body.high-contrast .flutuante-btn:focus-visible .flutuante-label {
+    color: #000000 !important;
+}
+
+/* Acessibilidade — Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+    .flutuante-btn,
+    .flutuante-icone,
+    .flutuante-label {
+        transition: none !important;
+        transform: none !important;
+    }
+}

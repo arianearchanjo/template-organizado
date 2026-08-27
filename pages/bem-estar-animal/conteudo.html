@@ -1,24 +1,32 @@
+
 <main id="pi-conteudo" class="bea-main" tabindex="-1">
-  <section id="pi-hero" aria-label="Identificação da página">
-    <div class="container">
+  <div id="pi-main">
+  <div class="container bea-wrap">
+
+    <section id="pi-hero" aria-label="Identificação da página">
       <div class="pi-hero-inner">
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
-            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
-            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
-            <li aria-current="page">Bem-estar animal</li>
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Bem-Estar Animal</li>
           </ol>
         </nav>
-        <h1 id="bea-titulo" class="pi-hero-titulo">Bem-estar animal</h1>
+        <h1 class="pi-hero-titulo">Bem-Estar Animal</h1>
       </div>
-    </div>
-    <div class="pi-hero-ilustracao" aria-hidden="true">
-      <img src="../../_global/img/global/ilustracao.png" alt="">
-    </div>
-  </section>
+      <div class="pi-hero-ilustracao" aria-hidden="true">
+        <img src="../../_global/img/global/ilustracao.png" alt="">
+      </div>
+    </section>
 
-  <div id="pi-main">
-  <div class="container bea-tabs-wrap">
     <nav class="bea-tabs" aria-label="Conteúdo de bem-estar animal">
       <div class="bea-tabs-faixa">
         <button class="bea-tabs-seta bea-tabs-seta--esquerda" type="button" aria-label="Ver aba anterior" hidden>
@@ -26,17 +34,17 @@
         </button>
         <div class="bea-tabs-rolagem">
           <div class="bea-tabs-lista nav" id="bea-tabs" role="tablist" aria-label="Áreas da página">
-            <button class="bea-tab active" id="bem-estar-tab" type="button" role="tab"
-              data-toggle="tab" data-target="#bem-estar"
-              aria-controls="bem-estar" aria-selected="true" tabindex="0">
-              <i class="fas fa-paw" aria-hidden="true"></i>
-              <span>Bem-estar animal</span>
-            </button>
-            <button class="bea-tab" id="adocao-tab" type="button" role="tab"
+            <button class="bea-tab active" id="adocao-tab" type="button" role="tab"
               data-toggle="tab" data-target="#adocao"
-              aria-controls="adocao" aria-selected="false" tabindex="-1">
+              aria-controls="adocao" aria-selected="true" tabindex="0">
               <i class="fas fa-heart" aria-hidden="true"></i>
               <span>Adoção</span>
+            </button>
+            <button class="bea-tab" id="bem-estar-tab" type="button" role="tab"
+              data-toggle="tab" data-target="#bem-estar"
+              aria-controls="bem-estar" aria-selected="false" tabindex="-1">
+              <i class="fas fa-paw" aria-hidden="true"></i>
+              <span>Bem-estar animal</span>
             </button>
           </div>
         </div>
@@ -47,88 +55,15 @@
     </nav>
 
     <div class="bea-tab-paineis tab-content" id="bea-tab-content">
-      <div class="bea-tab-painel tab-pane fade show active" id="bem-estar" role="tabpanel" aria-labelledby="bem-estar-tab">
-        <div class="bea-page-intro">
-          <p><strong>Cuidar é amar.</strong> Conheça seus deveres como tutor e ajude a proteger quem conta com você.</p>
-        </div>
-        <section class="bea-intro" aria-labelledby="guarda-responsavel-titulo">
-          <div class="bea-section-heading">
-            <span class="bea-section-heading__icon"><i class="fa fa-paw" aria-hidden="true"></i></span>
-            <div>
-              <p class="bea-kicker">Guarda responsável</p>
-              <h2 id="guarda-responsavel-titulo">Proteger também é cuidar</h2>
-            </div>
-          </div>
-          <p>Ter um animal é assumir um compromisso com sua saúde, segurança e qualidade de vida. Alimentação adequada,
-            abrigo, cuidados veterinários, carinho e proteção fazem parte dessa responsabilidade.</p>
-        </section>
 
-        <section class="bea-card-grid" aria-label="Orientações de bem-estar animal">
-          <article class="bea-info-card bea-info-card--alert">
-            <div class="bea-info-card__icon"><i class="fas fa-house-circle-xmark" aria-hidden="true"></i></div>
-            <div class="bea-info-card__body">
-              <p class="bea-kicker">Não ao abandono</p>
-              <h2>Abandono é crime. Diga sim à guarda responsável!</h2>
-              <p>Ao abandonar um animal, o tutor causa sofrimento e coloca toda a comunidade em risco.</p>
-              <ul class="bea-list">
-                <li><i class="fas fa-scale-balanced" aria-hidden="true"></i><span>É crime, conforme a Lei Federal nº 9.605/1998.</span></li>
-                <li><i class="fas fa-dog" aria-hidden="true"></i><span>Causa ninhadas indesejadas e aumenta o número de animais nas ruas.</span></li>
-                <li><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>Pode provocar agressividade por medo e sobrevivência.</span></li>
-                <li><i class="fas fa-car" aria-hidden="true"></i><span>Aumenta o risco de acidentes de trânsito.</span></li>
-                <li><i class="fas fa-heart-crack" aria-hidden="true"></i><span>Provoca sofrimento físico e psicológico: medo, fome, sede e desamparo.</span></li>
-              </ul>
-              <p class="bea-callout">Não abandone quem nunca vai abandonar você.</p>
-            </div>
-          </article>
-
-          <article class="bea-info-card bea-info-card--health">
-            <div class="bea-info-card__icon"><i class="fas fa-shield-cat" aria-hidden="true"></i></div>
-            <div class="bea-info-card__body">
-              <p class="bea-kicker">Saúde e prevenção</p>
-              <h2>Por que castrar o seu pet?</h2>
-              <ul class="bea-list">
-                <li><i class="fas fa-notes-medical" aria-hidden="true"></i><span><strong>Previne doenças graves,</strong> como câncer de mama, infecções uterinas e tumores prostáticos.</span></li>
-                <li><i class="fas fa-paw" aria-hidden="true"></i><span><strong>Evita ninhadas indesejadas</strong> e ajuda a reduzir o abandono.</span></li>
-                <li><i class="fas fa-heart-pulse" aria-hidden="true"></i><span><strong>Prolonga a vida</strong> do seu animal.</span></li>
-                <li><i class="fas fa-face-smile" aria-hidden="true"></i><span><strong>Melhora o comportamento:</strong> seu pet pode ficar mais tranquilo e amoroso.</span></li>
-              </ul>
-              <p class="bea-callout">Como verdadeiros guardiões responsáveis, devemos cuidar e proteger nossos companheiros animais.</p>
-            </div>
-          </article>
-        </section>
-
-        <section class="bea-report" aria-labelledby="denuncia-titulo">
-          <div class="bea-report__icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
-          <div>
-            <p class="bea-kicker">Não se cale</p>
-            <h2 id="denuncia-titulo">Como denunciar maus-tratos?</h2>
-            <p>Ao presenciar maus-tratos, anote o endereço, descreva o ocorrido e, se for possível e seguro, registre
-              fotos ou vídeos. Procure o órgão responsável do município. A denúncia também pode ser feita anonimamente
-              pelo telefone <strong>181</strong> ou pelos canais da Polícia Civil.</p>
-          </div>
-        </section>
-
-        <section class="bea-adoption-cta" aria-labelledby="animais-disponiveis-titulo">
-          <div class="bea-adoption-cta__icon"><i class="fas fa-dog" aria-hidden="true"></i></div>
-          <div class="bea-adoption-cta__content">
-            <p class="bea-kicker">Encontre seu novo companheiro</p>
-            <h2 id="animais-disponiveis-titulo">Os animais disponíveis estão na aba Adoção</h2>
-            <p>Conheça os cães e gatos que esperam por um lar responsável e cheio de carinho.</p>
-          </div>
-          <a class="bea-adoption-cta__button" id="ver-animais-disponiveis" href="#adocao">
-            Ver animais disponíveis <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </section>
-
-      </div>
-
-      <div class="bea-tab-painel tab-pane fade" id="adocao" role="tabpanel" aria-labelledby="adocao-tab">
+      <div class="bea-tab-painel tab-pane fade show active" id="adocao" role="tabpanel" aria-labelledby="adocao-tab">
         <section class="bea-adoption" aria-labelledby="adocao-titulo">
           <div class="bea-adoption__intro">
             <span class="bea-adoption__icon"><i class="fas fa-paw" aria-hidden="true"></i></span>
-            <p class="bea-kicker">Um novo amigo espera por você</p>
-            <h2 id="adocao-titulo">Adoção</h2>
-            <p>Conheça cães e gatos disponíveis para adoção e encontre um companheiro para fazer parte da sua família.</p>
+            <div>
+              <p class="bea-kicker">Adote um amigo</p>
+              <h2 id="adocao-titulo">Animais disponíveis para adoção</h2>
+            </div>
           </div>
 
           <div id="sibea-adoption-list" class="bea-sibea" data-integration="sibea">
@@ -204,6 +139,82 @@
               o espaço, os custos e o tempo necessários para oferecer um lar seguro e cheio de carinho.</p>
           </aside>
         </section>
+      </div>
+
+      <div class="bea-tab-painel tab-pane fade" id="bem-estar" role="tabpanel" aria-labelledby="bem-estar-tab">
+        <div class="bea-page-intro">
+          <p><strong>Cuidar é amar.</strong> Conheça seus deveres como tutor e ajude a proteger quem conta com você.</p>
+        </div>
+        <section class="bea-intro" aria-labelledby="guarda-responsavel-titulo">
+          <div class="bea-section-heading">
+            <span class="bea-section-heading__icon"><i class="fa fa-paw" aria-hidden="true"></i></span>
+            <div>
+              <p class="bea-kicker">Guarda responsável</p>
+              <h2 id="guarda-responsavel-titulo">Proteger também é cuidar</h2>
+            </div>
+          </div>
+          <p>Ter um animal é assumir um compromisso com sua saúde, segurança e qualidade de vida. Alimentação adequada,
+            abrigo, cuidados veterinários, carinho e proteção fazem parte dessa responsabilidade.</p>
+        </section>
+
+        <section class="bea-card-grid" aria-label="Orientações de bem-estar animal">
+          <article class="bea-info-card bea-info-card--alert">
+            <div class="bea-info-card__icon"><i class="fas fa-house-circle-xmark" aria-hidden="true"></i></div>
+            <div class="bea-info-card__body">
+              <p class="bea-kicker">Não ao abandono</p>
+              <h2>Abandono é crime. Diga sim à guarda responsável!</h2>
+              <p>Ao abandonar um animal, o tutor causa sofrimento e coloca toda a comunidade em risco.</p>
+              <ul class="bea-list">
+                <li><i class="fas fa-scale-balanced" aria-hidden="true"></i><span>É crime, conforme a Lei Federal nº 9.605/1998.</span></li>
+                <li><i class="fas fa-dog" aria-hidden="true"></i><span>Causa ninhadas indesejadas e aumenta o número de animais nas ruas.</span></li>
+                <li><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>Pode provocar agressividade por medo e sobrevivência.</span></li>
+                <li><i class="fas fa-car" aria-hidden="true"></i><span>Aumenta o risco de acidentes de trânsito.</span></li>
+                <li><i class="fas fa-heart-crack" aria-hidden="true"></i><span>Provoca sofrimento físico e psicológico: medo, fome, sede e desamparo.</span></li>
+              </ul>
+              <p class="bea-callout">Não abandone quem nunca vai abandonar você.</p>
+            </div>
+          </article>
+
+          <article class="bea-info-card bea-info-card--health">
+            <div class="bea-info-card__icon"><i class="fas fa-shield-cat" aria-hidden="true"></i></div>
+            <div class="bea-info-card__body">
+              <p class="bea-kicker">Saúde e prevenção</p>
+              <h2>Por que castrar o seu pet?</h2>
+              <ul class="bea-list">
+                <li><i class="fas fa-notes-medical" aria-hidden="true"></i><span><strong>Previne doenças graves,</strong> como câncer de mama, infecções uterinas e tumores prostáticos.</span></li>
+                <li><i class="fas fa-paw" aria-hidden="true"></i><span><strong>Evita ninhadas indesejadas</strong> e ajuda a reduzir o abandono.</span></li>
+                <li><i class="fas fa-heart-pulse" aria-hidden="true"></i><span><strong>Prolonga a vida</strong> do seu animal.</span></li>
+                <li><i class="fas fa-face-smile" aria-hidden="true"></i><span><strong>Melhora o comportamento:</strong> seu pet pode ficar mais tranquilo e amoroso.</span></li>
+              </ul>
+              <p class="bea-callout">Como verdadeiros guardiões responsáveis, devemos cuidar e proteger nossos companheiros animais.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="bea-report" aria-labelledby="denuncia-titulo">
+          <div class="bea-report__icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
+          <div>
+            <p class="bea-kicker">Não se cale</p>
+            <h2 id="denuncia-titulo">Como denunciar maus-tratos?</h2>
+            <p>Ao presenciar maus-tratos, anote o endereço, descreva o ocorrido e, se for possível e seguro, registre
+              fotos ou vídeos. Procure o órgão responsável do município. A denúncia também pode ser feita anonimamente
+              pelo telefone <strong>181</strong> ou pelos canais da Polícia Civil.</p>
+          </div>
+        </section>
+
+        <section class="bea-adoption-cta" aria-labelledby="animais-disponiveis-titulo">
+          <div class="bea-adoption-cta__icon"><i class="fas fa-dog" aria-hidden="true"></i></div>
+          <div class="bea-adoption-cta__content">
+            <p class="bea-kicker">Encontre seu novo companheiro</p>
+            <h2 id="animais-disponiveis-titulo">Pronto para mudar uma vida?</h2>
+            <p>Conheça os cães e gatos que esperam por um lar responsável e cheio de carinho. A aba
+              <strong>Adoção</strong> está logo ao lado, com todos os animais disponíveis.</p>
+          </div>
+          <a class="bea-adoption-cta__button bea-scroll-adocao" id="ver-animais-disponiveis-2" href="#adocao">
+            Ver animais disponíveis <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </section>
+
       </div>
     </div>
   </div>
