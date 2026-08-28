@@ -20,6 +20,7 @@
     facets: { species: [], breeds: [], organizations: [], sex: [], age: [], size: [] },
     listController: null,
     detailController: null,
+    interestController: null,
     searchTimer: null,
     requestSequence: 0
   };
@@ -132,11 +133,14 @@
     }
   }
 
-  async function request(path, controller) {
-    const response = await fetch(`${API_URL}${path}`, {
-      headers: { Accept: 'application/json' },
+  async function request(path, controller, options) {
+    const config = Object.assign({
+      method: 'GET',
+      headers: { Accept: 'application/json' }
+    }, options || {});
+    const response = await fetch(`${API_URL}${path}`, Object.assign({}, config, {
       signal: controller ? controller.signal : undefined
-    });
+    }));
     let body = null;
     try {
       body = await response.json();
@@ -145,6 +149,17 @@
     }
     if (!response.ok) throw new ApiError(response.status, body);
     return body;
+  }
+
+  async function postJson(path, payload, controller) {
+    return request(path, controller, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
   }
 
   function createElement(tag, className, text) {
@@ -496,20 +511,175 @@
     return item;
   }
 
-  function referencePart(value) {
-    return String(value || '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toUpperCase()
-      .replace(/[^A-Z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
+  function interestErrorMessage(error) {
+    if (error.status === 400) {
+      const details = error.body && Array.isArray(error.body.details)
+        ? error.body.details.map(item => item.message).filter(Boolean).join(' ')
+        : '';
+      return details || (error.body && error.body.error) || 'Verifique os dados informados e tente novamente.';
+    }
+    if (error.status === 404) return 'Este animal não está mais disponível para adoção.';
+    if (error.status === 409) return 'Já existe uma solicitação em andamento para este animal com este e-mail.';
+    if (error.status >= 500) return 'Não foi possível enviar sua solicitação agora. Tente novamente em alguns instantes.';
+    return 'Não foi possível enviar sua solicitação. Verifique sua conexão e tente novamente.';
   }
 
-  function interestUrl(animal) {
-    const reference = referencePart(animal.name);
-    const url = new URL('https://www.campinagrandedosul.pr.gov.br/atendimento-bem-estar-animal/30');
-    if (reference) url.searchParams.set('ref', reference);
-    return url.toString();
+  function createInterestField(id, label, name, options) {
+    const config = options || {};
+    const field = createElement('div', 'bea-interest-field');
+    const fieldLabel = createElement('label', '', label);
+    fieldLabel.htmlFor = id;
+    field.appendChild(fieldLabel);
+    const input = createElement('input');
+    input.id = id;
+    input.name = name;
+    input.type = config.type || 'text';
+    if (config.autocomplete) input.autocomplete = config.autocomplete;
+    if (config.required) input.required = true;
+    if (config.placeholder) input.placeholder = config.placeholder;
+    if (config.inputMode) input.inputMode = config.inputMode;
+    field.appendChild(input);
+    return field;
+  }
+
+  function createInterestDisclaimer() {
+    const disclaimer = createElement('p', 'text-xs');
+    disclaimer.appendChild(document.createTextNode('Ao clicar em enviar, você concorda com o tratamento dos seus dados nos termos da '));
+    const lgpdLink = createElement('a');
+    lgpdLink.href = 'https://campinagrandedosul.pr.gov.br/lgpd';
+    lgpdLink.target = '_blank';
+    lgpdLink.rel = 'noopener noreferrer';
+    lgpdLink.textContent = 'LGPD';
+    disclaimer.appendChild(lgpdLink);
+    disclaimer.appendChild(document.createTextNode(' e da nossa '));
+    const privacyLink = createElement('a');
+    privacyLink.href = 'https://campinagrandedosul.pr.gov.br/politica-de-privacidade';
+    privacyLink.target = '_blank';
+    privacyLink.rel = 'noopener noreferrer';
+    privacyLink.textContent = 'Política de Privacidade';
+    disclaimer.appendChild(privacyLink);
+    disclaimer.appendChild(document.createTextNode('.'));
+    return disclaimer;
+  }
+
+  function showInterestMessage(form, type, text) {
+    let message = form.querySelector('.bea-interest-message');
+    if (!message) {
+      message = createElement('div', 'bea-interest-message');
+      form.appendChild(message);
+    }
+    message.className = `bea-interest-message bea-interest-message--${type}`;
+    message.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    message.hidden = false;
+    message.textContent = text;
+  }
+
+  function clearInterestMessage(form) {
+    const message = form.querySelector('.bea-interest-message');
+    if (!message) return;
+    message.hidden = true;
+    message.textContent = '';
+    message.className = 'bea-interest-message';
+  }
+
+  function setInterestFormBusy(form, busy) {
+    form.querySelectorAll('input, button, textarea').forEach(control => {
+      control.disabled = busy;
+    });
+    const submit = form.querySelector('[type="submit"]');
+    if (submit) {
+      submit.dataset.defaultLabel = submit.dataset.defaultLabel || submit.textContent;
+      submit.textContent = busy ? 'Enviando…' : submit.dataset.defaultLabel;
+    }
+  }
+
+  function createInterestForm(animal) {
+    const section = createElement('section', 'bea-interest');
+    section.setAttribute('aria-labelledby', 'bea-interest-title');
+    const title = createElement('h3', 'bea-interest__title', 'Tenho interesse neste animal');
+    title.id = 'bea-interest-title';
+    section.appendChild(title);
+
+    const form = createElement('form', 'bea-interest-form');
+    form.id = 'sibea-interest-form';
+    form.setAttribute('novalidate', '');
+
+    const animalId = createElement('input');
+    animalId.type = 'hidden';
+    animalId.name = 'animalId';
+    animalId.value = animal.id || '';
+    form.appendChild(animalId);
+
+    form.appendChild(createInterestField('sibea-interest-name', 'Nome completo *', 'requesterName', {
+      autocomplete: 'name',
+      required: true
+    }));
+    form.appendChild(createInterestField('sibea-interest-email', 'E-mail *', 'requesterEmail', {
+      type: 'email',
+      autocomplete: 'email',
+      required: true
+    }));
+    form.appendChild(createInterestField('sibea-interest-phone', 'Telefone *', 'requesterPhone', {
+      type: 'tel',
+      autocomplete: 'tel',
+      inputMode: 'tel',
+      required: true,
+      placeholder: '(00) 00000-0000'
+    }));
+    form.appendChild(createInterestField('sibea-interest-address', 'Endereço (opcional)', 'address', {
+      autocomplete: 'street-address',
+      placeholder: 'Rua, número e bairro'
+    }));
+
+    form.appendChild(createInterestDisclaimer());
+
+    const submit = createElement('button', 'bea-interest-submit');
+    submit.type = 'submit';
+    addIcon(submit, 'fas fa-paper-plane');
+    submit.appendChild(document.createTextNode('Enviar interesse'));
+    form.appendChild(submit);
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      clearInterestMessage(form);
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const payload = {
+        animalId: String(data.get('animalId') || '').trim(),
+        requesterName: String(data.get('requesterName') || '').trim(),
+        requesterEmail: String(data.get('requesterEmail') || '').trim(),
+        requesterPhone: String(data.get('requesterPhone') || '').trim()
+      };
+      const address = String(data.get('address') || '').trim();
+      if (address) payload.address = address;
+
+      if (state.interestController) state.interestController.abort();
+      state.interestController = new AbortController();
+      setInterestFormBusy(form, true);
+
+      try {
+        const body = await postJson('/api/adoption/interest', payload, state.interestController);
+        const animalName = body && body.data && body.data.animalName
+          ? body.data.animalName
+          : (animal.name || 'animal');
+        showInterestMessage(
+          form,
+          'success',
+          `Solicitação enviada com sucesso! Em breve entraremos em contato sobre ${animalName}.`
+        );
+        form.reset();
+        animalId.value = animal.id || '';
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        showInterestMessage(form, 'error', interestErrorMessage(error));
+      } finally {
+        setInterestFormBusy(form, false);
+      }
+    });
+
+    section.appendChild(form);
+    return section;
   }
 
   function renderDetailLoading() {
@@ -560,11 +730,7 @@
       content.appendChild(createElement('p', 'bea-animal-detail__organization', `Disponibilizado por: ${animal.organization.name}`));
     }
 
-    const interestLink = createElement('a', 'bea-animal-detail__interest');
-    interestLink.href = interestUrl(animal);
-    addIcon(interestLink, 'fas fa-heart');
-    interestLink.appendChild(document.createTextNode('Tenho interesse neste animal'));
-    content.appendChild(interestLink);
+    content.appendChild(createInterestForm(animal));
 
     layout.appendChild(content);
     elements.detail.replaceChildren(layout);
@@ -634,6 +800,7 @@
     });
     $('#sibea-animal-modal').on('hidden.bs.modal', () => {
       if (state.detailController) state.detailController.abort();
+      if (state.interestController) state.interestController.abort();
     });
   }
 
