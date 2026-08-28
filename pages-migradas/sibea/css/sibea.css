@@ -10,7 +10,7 @@
 #pi-wrapper { overflow-x: hidden; width: 100%; }
 
 #pi-hero { background: var(--sti-green-dark); overflow: hidden; padding: 18px 0 0; position: relative; }
-.pi-hero-inner { padding-bottom: 12px; position: relative; z-index: 2; }
+.pi-hero-inner { padding-bottom: 22px; position: relative; z-index: 2; }
 .pi-breadcrumb { align-items: center; display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 12px; padding: 0; }
 .pi-breadcrumb li, .pi-breadcrumb a { color: rgba(255,255,255,.75); font-size: .75rem; }
 .pi-breadcrumb a:hover { color: #fff; text-decoration: underline; }
