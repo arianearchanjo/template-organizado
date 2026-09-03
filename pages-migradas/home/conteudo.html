@@ -1,62 +1,52 @@
-<!-- ═══════════════════════════════════════════════════════
-     BOTÕES FLUTUANTES — Acessos Rápidos (Esquerda)
-════════════════════════════════════════════════════════ -->
-<aside class="flutuantes-esquerda" aria-label="Acessos rápidos em destaque">
-  <a href="pages/bem-estar-animal/" class="flutuante-btn flutuante-btn--animal" title="Bem-estar Animal" aria-label="Acessar página de Bem-estar Animal">
-    <span class="flutuante-icone">
-      <i class="fas fa-paw" aria-hidden="true"></i>
-    </span>
-    <span class="flutuante-label">Bem-estar Animal</span>
-  </a>
-  <a href="pages/vagas-emprego/vagas.html" class="flutuante-btn flutuante-btn--vagas" title="Vagas de Emprego" aria-label="Acessar página de Vagas de Emprego">
-    <span class="flutuante-icone">
-      <i class="fas fa-briefcase" aria-hidden="true"></i>
-    </span>
-    <span class="flutuante-label">Vagas de Emprego</span>
-  </a>
-</aside>
+ <!-- ═══════════════════════════════════════════════════════
+         BOTÕES FLUTUANTES — Acessos Rápidos (Esquerda)
+    ════════════════════════════════════════════════════════ -->
+    <aside class="flutuantes-esquerda" aria-label="Acessos rápidos em destaque">
+      <a href="/bem-estar-animal" class="flutuante-btn flutuante-btn--animal" title="Bem-estar Animal" aria-label="Acessar página de Bem-estar Animal">
+        <span class="flutuante-icone">
+          <i class="fas fa-paw" aria-hidden="true"></i>
+        </span>
+        <span class="flutuante-label">Adote um Animal</span>
+      </a>
+      <a href="/vagas-emprego" class="flutuante-btn flutuante-btn--vagas" title="Vagas de Emprego" aria-label="Acessar página de Vagas de Emprego">
+        <span class="flutuante-icone">
+          <i class="fas fa-briefcase" aria-hidden="true"></i>
+        </span>
+        <span class="flutuante-label">Vagas de Emprego</span>
+      </a>
+    </aside>
 
-<!-- ═══════════════════════════════════════════════════════
-       HERO — Chamada principal da página
-  ════════════════════════════════════════════════════════ -->
-  <section id="hero" aria-label="Chamada principal">
-    <div class="container hero-wrapper">
-      <div class="hero-titulo">
-        <h1>O QUE VOCÊ <strong>PRECISA?</strong></h1>
-        <div class="hero-underline"></div>
-      </div>
-    </div>
-    <div class="hero-imagem">
-      <img src="assets/img/pagina-inicial/desenho.png" alt="Ilustração de Campina Grande do Sul">
-    </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════════════════════
-       CLIMA — Widget meteorológico (Open-Meteo, sem API key)
-  ════════════════════════════════════════════════════════ -->
-  <div id="clima-bar">
-    <div class="container">
-      <div class="clima-inner">
-        <div class="clima-cidade">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Campina Grande do Sul – PR</span>
-        </div>
-        <div class="clima-info" id="clima-info">
-          <span class="clima-loader"><i class="fas fa-circle-notch fa-spin"></i> Carregando...</span>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-  <!-- ═══════════════════════════════════════════════════════
-       PERFIS + SERVIÇOS — Seleção de perfil e grid de acesso rápido
-  ════════════════════════════════════════════════════════ -->
-  <section id="servicos" aria-label="Perfis e acesso rápido a serviços">
-    <div class="container">
- 
-      <!-- PERFIS DE ACESSO — barra horizontal acima do grid -->
-      <div class="secao-header">
-        <div class="perfis-botoes" role="group" aria-label="Selecione seu perfil">
+<section id="hero" aria-label="Chamada principal">
+	<div class="container hero-wrapper">
+		<div class="hero-titulo">
+			<h1>O QUE VOCÊ <strong>PRECISA?</strong></h1>
+			<div class="hero-underline"></div>
+		</div>
+	</div>
+	<div class="hero-imagem">
+		<img src="../site/img/barra_index.png" alt="Ilustração de Campina Grande do Sul">
+	</div>
+</section>
+
+<div id="clima-bar">
+	<div class="container">
+		<div class="clima-inner">
+			<div class="clima-cidade">
+				<i class="fas fa-map-marker-alt"></i>
+				<span>Campina Grande do Sul – PR</span>
+			</div>
+			<div class="clima-info" id="clima-info">
+				<span class="clima-loader"><i class="fas fa-circle-notch fa-spin"></i> Carregando...</span>
+   			</div>
+		</div>
+	</div>
+</div>
+
+<section id="servicos" aria-label="Perfis e acesso rápido a serviços">
+	<div class="container">
+		<!-- PERFIS DE ACESSO — barra horizontal acima do grid -->
+		<div class="secao-header">
+			<div class="perfis-botoes" role="group" aria-label="Selecione seu perfil">
           <button class="perfil-btn perfil-btn--todos ativo" data-perfil="todos" aria-expanded="true" aria-controls="grid-acesso-rapido">
             <i class="fas fa-th-large" aria-hidden="true"></i>
             <span>Todos</span>
@@ -81,198 +71,171 @@
       <!-- GRID DE SERVIÇOS -->
       <div id="grid-acesso-rapido" aria-live="polite">
  
-            <!-- Serviços visíveis para todos -->
-             <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
-              <a href="pages/transparencia/" class="servico-item">
+            <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
+              <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-globe"></i></div>
                 <span>Transparência</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/consulta-enderecos" class="servico-item">
+
+            <div class="grid-item" data-perfis="todos cidadao empreendedor">
+              <a href="https://campinagrandedosul.pr.gov.br/consulta-enderecos" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-map-marker-alt"></i></div>
                 <span>Endereços e Telefones</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos cidadao empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-layer-group"></i></div>
                 <span>Leis Municipais</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
-              <a href="pages/perguntas-frequentes/" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-question-circle"></i></div>
-                <span>Perguntas Frequentes</span>
-              </a>
-            </div>
+
             <div class="grid-item" data-perfis="todos servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/concursos" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/concursos" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-pen-square"></i></div>
                 <span>Concursos</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/servidor" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/servidor" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-id-card"></i></div>
                 <span>Servidor</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/conselhos-municipais" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/conselhos-municipais" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-hands-helping"></i></div>
                 <span>Conselhos Municipais</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/consulta-diario-oficial" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/consulta-diario-oficial" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-newspaper"></i></div>
                 <span>Diário Oficial</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/comunicados-tributarios" class="servico-item">
+
+            <div class="grid-item" data-perfis="todos empreendedor">
+              <a href="https://campinagrandedosul.pr.gov.br/comunicados-tributarios" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-file-alt"></i></div>
                 <span>Comunicados Tributários</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao">
-              <a href="pages/ouvidoria/" class="servico-item">
+
+            <div class="grid-item" data-perfis="todos cidadao empreendedor">
+              <a href="/ouvidoria" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-comments"></i></div>
                 <span>Ouvidoria</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/licitacoes" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/licitacoes" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-copy"></i></div>
                 <span>Licitações</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos cidadao empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/portal-de-geoprocessamento" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/portal-de-geoprocessamento" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-globe-americas"></i></div>
                 <span>Geoportal</span>
               </a>
             </div>
+
             <div class="grid-item" data-perfis="todos cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/noticias" class="servico-item">
+              <a href="https://campinagrandedosul.pr.gov.br/noticias" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-rss"></i></div>
                 <span>Notícias</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
-              <a href="pages/e-sic/" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-info-circle"></i></div>
-                <span>Acesso à Informação</span>
-              </a>
-            </div>
+
             <div class="grid-item" data-perfis="todos cidadao empreendedor">
-              <a href="pages/servico/" class="servico-item">
+              <a href="/consulta-de-debitos" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-file-invoice-dollar"></i></div>
                 <span>Consulta de Débitos</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="todos cidadao empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos" class="servico-item">
+
+            <div class="grid-item" data-perfis="todos empreendedor">
+              <a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-receipt"></i></div>
                 <span>Nota Fiscal de Serviços</span>
               </a>
             </div>
- 
-            <!-- Serviços exclusivos: Servidor -->
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/servidor" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-id-card"></i></div>
-                <span>Portal do Servidor</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/servidores" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-users"></i></div>
-                <span>Quadro de Servidores</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/diarias" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-route"></i></div>
-                <span>Diárias</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/previcamp" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-shield-alt"></i></div>
-                <span>PREVICAMP</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/fascamp" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-stethoscope"></i></div>
-                <span>FASCAMP</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="servidor">
-              <a href="https://campinagrandedosul.pr.gov.br/assercamp" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-handshake"></i></div>
-                <span>ASSERCAMP</span>
-              </a>
-            </div>
- 
-            <!-- Serviços exclusivos: Cidadão -->
-            <div class="grid-item" data-perfis="cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/footeasy" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-futbol"></i></div>
-                <span>Futebol</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-search"></i></div>
-                <span>Consulta de Processos</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/saude" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-heartbeat"></i></div>
-                <span>Saúde</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/educacao" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-graduation-cap"></i></div>
-                <span>Educação</span>
-              </a>
-            </div>
-            <div class="grid-item" data-perfis="cidadao">
-              <a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos" class="servico-item">
+
+            <div class="grid-item" data-perfis="cidadao empreendedor">
+              <a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos" class="servico-item" target="_blank">
                 <div class="servico-icone"><i class="fas fa-file-contract"></i></div>
                 <span>Certidão de Débitos</span>
               </a>
             </div>
- 
-            <!-- Serviços exclusivos: Empreendedor -->
-            <div class="grid-item" data-perfis="empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/contratos" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-file-signature"></i></div>
-                <span>Contratos</span>
+          
+          <div class="grid-item" data-perfis="cidadao">
+              <a href="https://campinagrandedosul.pr.gov.br/futebol" class="servico-item">
+                <div class="servico-icone"><i class="fas fa-futbol"></i></div>
+                <span>Futebol</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-chart-line"></i></div>
-                <span>Desenv. Econômico</span>
+
+            <div class="grid-item" data-perfis="cidadao empreendedor">
+              <a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-search"></i></div>
+                <span>Consulta de Protocolo</span>
               </a>
             </div>
-            <div class="grid-item" data-perfis="empreendedor">
-              <a href="https://campinagrandedosul.pr.gov.br/parcerias-voluntarias" class="servico-item">
-                <div class="servico-icone"><i class="fas fa-people-carry"></i></div>
-                <span>Parcerias Voluntárias</span>
+          
+          	<div class="grid-item" data-perfis="cidadao">
+              <a href="https://campinagrandedosul.pr.gov.br/aprovacao-de-projeto" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-drafting-compass"></i></div>
+                <span>Aprovação de Projeto Arquitetônico</span>
+              </a>
+            </div>
+          
+          	<div class="grid-item" data-perfis="cidadao">
+              <a href="https://campinagrandedosul.pr.gov.br/aprovacao-de-projeto-subdivisao-unificacao" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-object-group"></i></div>
+                <span>Aprovação de Projeto Subdivisão/Unificação</span>
+              </a>
+            </div>
+
+            <div class="grid-item" data-perfis="servidor">
+              <a href="/emissao-do-holerite" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-file-invoice"></i></div>
+                <span>Contracheque</span>
+              </a>
+            </div>
+
+            <div class="grid-item" data-perfis="servidor">
+              <a href="https://portalpmcampinagrandedosul.biofinger.com.br/" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-fingerprint"></i></div>
+                <span>BIOPORTAL<br>(consulta ponto)</span>
+              </a>
+            </div>
+
+            <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
+              <a href="/e-sic" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-info-circle"></i></div>
+                <span>Acesso à Informação</span>
+              </a>
+            </div>
+
+            <div class="grid-item" data-perfis="todos cidadao servidor empreendedor">
+              <a href="/perguntas-frequentes" class="servico-item" target="_blank">
+                <div class="servico-icone"><i class="fas fa-question-circle"></i></div>
+                <span>Perguntas Frequentes</span>
               </a>
             </div>
  
       </div><!-- fim #grid-acesso-rapido -->
  
       <div class="todos-servicos-wrapper">
-        <a href="pages/portal-servicos/index.html" class="btn-pref todos-servicos-btn">
+        <a href="/servicos" class="btn-pref todos-servicos-btn">
           <i class="fas fa-th-list mr-2"></i>Todos os serviços
         </a>
       </div>
@@ -280,61 +243,32 @@
     </div>
   </section>
  
-  <!-- ═══════════════════════════════════════════════════════
-       DESTAQUES — Carousel de banners (largura total)
-  ════════════════════════════════════════════════════════ -->
-  <section id="banner-destaque" aria-label="Destaques">
-    <div class="container">
-      <p class="sec-label">DESTAQUES</p>
-      <div id="destaquesCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators" style="bottom:-22px;">
-          <li data-target="#destaquesCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#destaquesCarousel" data-slide-to="1"></li>
-          <li data-target="#destaquesCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" style="border-radius:8px;">
-          <div class="carousel-item active">
-            <a href="https://turismo.campinagrandedosul.pr.gov.br" target="_blank" rel="noopener">
-              <img src="assets/img/pagina-inicial/banner1.png" alt="Banner 1" class="carousel-banner-img">
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="https://campinagrandedosul.pr.gov.br/infraestrutura">
-              <img src="assets/img/pagina-inicial/banner2.png" alt="Banner 2" class="carousel-banner-img">
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">
-              <img src="assets/img/pagina-inicial/banner3.png" alt="Banner 3" class="carousel-banner-img">
-            </a>
-          </div>
-        </div>
-      </div>
+<section id="secfeature" class="p-0 m-0 pt-2 pb-1 pt-sm-4 pb-sm-3">
+    <div class="container container-fluid">
+        <p class="sec-label">DESTAQUES</p>
+        <div class="spweb-view" data-model="_SectionBanners1x1" data-id="0"></div>
     </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════════════════════
-       TURISMO — Cards de turismo (abaixo do destaque)
-  ════════════════════════════════════════════════════════ -->
-  <section id="turismo" aria-label="Turismo">
+</section>
+
+<section id="turismo" aria-label="Turismo">
     <div class="container">
       <p class="sec-label">TURISMO</p>
       <div class="row turismo-row">
         <div class="col-md-4 mb-3">
           <a href="https://turismo.campinagrandedosul.pr.gov.br/" class="turismo-card turismo-card--full">
-            <img src="assets/img/pagina-inicial/represa.png" class="turismo-img" alt="Represa do Capivari">
+            <img src="https://portal.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/wistzlx3453.png" class="turismo-img" alt="Represa do Capivari">
             <div class="turismo-label">Represa do Capivari</div>
           </a>
         </div>
         <div class="col-md-4 mb-3">
           <a href="https://turismo.campinagrandedosul.pr.gov.br/" class="turismo-card turismo-card--full">
-            <img src="assets/img/pagina-inicial/praca.png" class="turismo-img" style="object-position:top;" alt="Praça Bento Munhoz da Rocha Neto">
+            <img src="https://portal.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/c25vddubcro.png" class="turismo-img" style="object-position:top;" alt="Praça Bento Munhoz da Rocha Neto">
             <div class="turismo-label">Praça Bento Munhoz da Rocha Neto</div>
           </a>
         </div>
         <div class="col-md-4 mb-3">
           <a href="https://turismo.campinagrandedosul.pr.gov.br/" class="turismo-card turismo-card--full">
-            <img src="assets/img/pagina-inicial/arena.jpg" class="turismo-img" alt="Parque de Eventos">
+            <img src="https://portal.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/kkcmufegx54.jpg" class="turismo-img" alt="Parque de Eventos">
             <div class="turismo-label">Parque de Eventos</div>
           </a>
         </div>
@@ -342,96 +276,13 @@
     </div>
   </section>
  
-  <!-- ═══════════════════════════════════════════════════════
-       NOTÍCIAS — Destaques e grid de notícias recentes
-  ════════════════════════════════════════════════════════ -->
+<!--ADICIONAR NOTICIAS-->
   <section id="noticias" aria-label="Notícias recentes">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <p class="sec-label mb-0">NOTÍCIAS RECENTES</p>
-        <a href="https://campinagrandedosul.pr.gov.br/noticias" class="btn-pref">Todas as Notícias</a>
-      </div>
- 
-      <!-- Duas notícias em destaque -->
-      <div class="noticias-destaques">
-        <article class="noticia-destaque">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" class="noticia-destaque-link">
-            <div class="noticia-destaque-thumb news-thumb">
-              <i class="fas fa-hard-hat"></i>
-              <span class="noticia-tag">Infraestrutura</span>
-            </div>
-            <div class="noticia-destaque-corpo">
-              <time class="news-date" datetime="2026-02-20"><i class="far fa-calendar-alt mr-1"></i>20/02/2026</time>
-              <h3 class="noticia-destaque-titulo">Prefeitura orienta população sobre uso consciente da água e funcionamento do sistema de abastecimento municipal</h3>
-              <p class="noticia-destaque-resumo">A Secretaria de Infraestrutura divulgou orientações importantes sobre o uso racional da água e esclareceu dúvidas sobre o sistema de abastecimento do município.</p>
-            </div>
-          </a>
-        </article>
-        <article class="noticia-destaque">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" class="noticia-destaque-link">
-            <div class="noticia-destaque-thumb news-thumb t2">
-              <i class="fas fa-graduation-cap"></i>
-              <span class="noticia-tag">Educação</span>
-            </div>
-            <div class="noticia-destaque-corpo">
-              <time class="news-date" datetime="2026-03-02"><i class="far fa-calendar-alt mr-1"></i>02/03/2026</time>
-              <h3 class="noticia-destaque-titulo">Festa das Cores encanta crianças e fortalece vínculos nos CMEIs</h3>
-              <p class="noticia-destaque-resumo">A atividade reuniu alunos, famílias e educadores em uma celebração que valorizou a diversidade e promoveu a integração na rede municipal de educação infantil.</p>
-            </div>
-          </a>
-        </article>
-      </div>
- 
-      <!-- Grid de notícias menores com imagens padronizadas -->
-      <div class="noticias-grid">
-        <article class="news-card">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" style="text-decoration:none;color:inherit;display:block;">
-            <div class="news-thumb t3"><i class="fas fa-water"></i></div>
-            <div class="news-body">
-              <p class="news-cat">Turismo</p>
-              <p class="news-title">Temporada na Represa do Capivari</p>
-              <span class="news-date"><i class="far fa-calendar-alt mr-1"></i>01/03/2026</span>
-            </div>
-          </a>
-        </article>
-        <article class="news-card">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" style="text-decoration:none;color:inherit;display:block;">
-            <div class="news-thumb t4"><i class="fas fa-heartbeat"></i></div>
-            <div class="news-body">
-              <p class="news-cat">Saúde</p>
-              <p class="news-title">Campanha de vacinação</p>
-              <span class="news-date"><i class="far fa-calendar-alt mr-1"></i>28/02/2026</span>
-            </div>
-          </a>
-        </article>
-        <article class="news-card">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" style="text-decoration:none;color:inherit;display:block;">
-            <div class="news-thumb" style="background:var(--verde-medio);"><i class="fas fa-tree"></i></div>
-            <div class="news-body">
-              <p class="news-cat">Meio Ambiente</p>
-              <p class="news-title">Semana do Meio Ambiente: confira a programação</p>
-              <span class="news-date"><i class="far fa-calendar-alt mr-1"></i>25/02/2026</span>
-            </div>
-          </a>
-        </article>
-        <article class="news-card">
-          <a href="https://campinagrandedosul.pr.gov.br/noticias" style="text-decoration:none;color:inherit;display:block;">
-            <div class="news-thumb" style="background:#6a3800;"><i class="fas fa-hands-helping"></i></div>
-            <div class="news-body">
-              <p class="news-cat">Social</p>
-              <p class="news-title">Benefícios do CRAS atendem centenas de famílias em março</p>
-              <span class="news-date"><i class="far fa-calendar-alt mr-1"></i>23/02/2026</span>
-            </div>
-          </a>
-        </article>
-      </div>
- 
+        <div class="spweb-view" data-model="_SectionNews" data-id="0"></div>
     </div>
-  </section>
- 
-<!-- ═══════════════════════════════════════════════════════
-     TRANSPARÊNCIA PÚBLICA — Acesso rápido simplificado
-════════════════════════════════════════════════════════ -->
+</section>
+
 <section id="transparencia-destaque" aria-label="Transparência pública">
   <div class="container">
  
@@ -440,7 +291,7 @@
         <p class="sec-label">TRANSPARÊNCIA PÚBLICA</p>
         <p class="transp-subtitulo">Acesse as informações públicas do município em cumprimento à Lei de Acesso à Informação — Lei nº 12.527/2011</p>
       </div>
-      <a href="pages/transparencia/" class="transp-ver-mais">
+      <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/" class="transp-ver-mais">
         <i class="fas fa-external-link-alt"></i> Ver portal completo
       </a>
     </div>
@@ -477,13 +328,13 @@
         <small>Quadro de pessoal</small>
       </a>
  
-      <a href="pages/e-sic/" class="transp-acesso-card">
+      <a href="/e-sic" class="transp-acesso-card">
         <div class="transp-acesso-icone"><i class="fas fa-envelope-open-text"></i></div>
         <strong>e-SIC</strong>
         <small>Acesso à informação</small>
       </a>
  
-      <a href="https://campinagrandedosul.pr.gov.br/ouvidoria" class="transp-acesso-card">
+      <a href="/ouvidoria" class="transp-acesso-card">
         <div class="transp-acesso-icone"><i class="fas fa-comment-dots"></i></div>
         <strong>Ouvidoria</strong>
         <small>Canal com o município</small>
@@ -501,7 +352,7 @@
         <small>Viagens e deslocamentos</small>
       </a>
  
-      <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/dadosabertos" class="transp-acesso-card">
+      <a href="/dados-abertos" class="transp-acesso-card">
         <div class="transp-acesso-icone"><i class="fas fa-database"></i></div>
         <strong>Dados Abertos</strong>
         <small>Conjuntos de dados</small>
@@ -522,10 +373,6 @@
     </div>
   </div>
 </section>
- 
-<!-- ═══════════════════════════════════════════════════════
-     DESTAQUES + OUTRAS INSTITUIÇÕES + SEGURANÇA
-════════════════════════════════════════════════════════ -->
 <section id="secdestaques" aria-label="Destaques institucionais"
   style="padding: 36px 0 40px; border-top: 1px solid #e0e8e0;">
   <div class="container">
@@ -536,7 +383,7 @@
       <div class="col">
         <a href="https://campinagrandedosul.pr.gov.br/projetos-culturais" target="_blank" rel="noopener"
           class="card-img-link card-img-link--destaque">
-          <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/cmkyqlyrbas.png"
+          <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/xsxn1t2os04.jpeg"
             alt="Projetos Culturais">
         </a>
       </div>
@@ -555,7 +402,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="https://campinagrandedosul.pr.gov.br/iluminacao-publica" target="_blank" rel="noopener"
+        <a href="https://campinagrandedosul.pr.gov.br/reparo-iluminacao-publica" target="_blank" rel="noopener"
           class="card-img-link card-img-link--destaque">
           <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/wj2lhwx5ilp.png"
             alt="Iluminação Pública">
@@ -572,8 +419,8 @@
         </a>
       </div>
       <div class="col">
-        <a href="/fascamp" target="_blank" rel="noopener" class="card-img-link card-img-link--logo">
-          <img src="../../downloads/imagens/logo/logo_fascamp_2025.png" alt="Fascamp">
+        <a href="/assercamp" target="_blank" rel="noopener" class="card-img-link card-img-link--logo">
+          <img src="./../downloads/imagens/logo/logo_assercamp.png" alt="Assercamp">
         </a>
       </div>
       <div class="col">
@@ -591,103 +438,93 @@
 
     <!-- Segurança -->
     <p class="sec-label">SEGURANÇA</p>
-    <div
-      style="background: var(--cinza-bg); border: 1px solid var(--cinza-borda); border-radius: 8px; padding: 18px 22px;">
-      <p class="text-center mb-3" style="font-size: 14px; font-weight: 500; color: var(--texto);">
-        Nossa cidade mais <span style="color: var(--verde); font-weight: 700;">SEGURA!</span>
-      </p>
-      <hr style="border-color: var(--cinza-borda); margin-bottom: 16px;">
-      <div
-        style="max-width: 620px; margin: 0 auto; width: 100%; aspect-ratio: 558 / 175; background-image: url('https://www.campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/al1p5xtwlhy.jpg'); background-size: cover; background-position: center; border-radius: 8px; position: relative;">
-        <a href="https://play.google.com/store/apps/details?id=br.com.cpninformatica.cconetpop&pcampaignid=web_share"
-          target="_blank" aria-label="Baixar na Play Store"
-          style="position: absolute; width: 15%; height: 62%; top: 25%; left: 42%; border-radius: 6px; display: block;"></a>
-        <a href="https://apps.apple.com/br/app/153-cidad%C3%A3o-v2/id1662122862" target="_blank"
-          aria-label="Baixar na App Store"
-          style="position: absolute; width: 14%; height: 63%; top: 25%; right: 25%; border-radius: 6px; display: block;"></a>
-      </div>
+    <div style="background: var(--cinza-bg); border: 1px solid var(--cinza-borda); border-radius: 8px; overflow: hidden;">
+  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2019/1/gjkbsq3blmv.jpeg" 
+  alt="Guarda Civil Municipal"
+  style="width: 100%; height: auto; display: block;">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; gap: 24px; flex-wrap: wrap;">
+    <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">
+      Baixe o app da <strong>Guarda Civil Municipal</strong><br>e fique conectado à segurança do município:
+    </p>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="https://play.google.com/store/apps/details?id=br.com.cpninformatica.cconetpop&pcampaignid=web_share"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 40px;"></a>
+      <a href="https://apps.apple.com/br/app/153-cidad%C3%A3o-v2/id1662122862"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" style="height: 40px;"></a>
     </div>
-
+  </div>
+</div>
   </div>
 </section>
-  <!-- ═══════════════════════════════════════════════════════
-       INSTITUCIONAL — Secretarias, entidades e localização
-  ════════════════════════════════════════════════════════ -->
-  <section id="institucional" aria-label="Secretarias, entidades e contato">
-    <div class="container">
-      <div class="row">
- 
-        <!-- Secretarias Municipais -->
-        <div class="col-md-4 mb-4">
-          <div class="inst-card">
-            <h5><i class="fas fa-building mr-2"></i>Secretarias Municipais</h5>
-            <ul>
-              <li><a href="https://campinagrandedosul.pr.gov.br/administracao">Administração</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/cultura">Cultura</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">Desenvolvimento Econômico</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">Desenvolvimento Social</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">Desenvolvimento Sustentável</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/educacao">Educação</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">Governo e Assuntos Jurídicos</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/infraestrutura">Infraestrutura</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/mulher">Mulher e Igualdade Racial</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/ordem-publica">Ordem Pública e Segurança</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/saude">Saúde</a></li>
-              <li><a href="pages/secretarias/">Tecnologia da Informação</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/urbanismo">Urbanismo</a></li>
-            </ul>
-          </div>
-        </div>
- 
-        <!-- Outras Entidades -->
-        <div class="col-md-4 mb-4">
-          <div class="inst-card">
-            <h5><i class="fas fa-landmark mr-2"></i>Outras Entidades</h5>
-            <ul>
-              <li><a href="https://campinagrandedosul.pr.gov.br/previcamp">PREVICAMP – Previdência Municipal</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/fascamp">FASCAMP – Fundação de Saúde</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/assercamp">ASSERCAMP – Assoc. dos Servidores</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/camara-de-vereadores">Câmara de Vereadores</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/conselhos-municipais">Conselhos Municipais</a></li>
-            </ul>
-          </div>
-        </div>
- 
-        <!-- Localização e Contato -->
-        <div class="col-md-4 mb-4">
-          <div class="inst-card">
-            <h5><i class="fas fa-map-marker-alt mr-2"></i>Localização e Contato</h5>
-            <p style="font-size:13px;color:#555;line-height:1.7;">
-              <i class="fas fa-map-pin" style="color:var(--verde);margin-right:6px;"></i>
-              Praça Bento Munhoz da Rocha Neto, 30 – Centro<br>
-              Campina Grande do Sul – PR, CEP 83.435-001
-            </p>
-            <p style="font-size:13px;color:#555;margin-top:8px;">
-              <i class="fas fa-phone" style="color:var(--verde);margin-right:6px;"></i>
-              (41) 3162-7000
-            </p>
-            <p style="font-size:13px;color:#555;">
-              <i class="fas fa-envelope" style="color:var(--verde);margin-right:6px;"></i>
-<a href="mailto:faleconosco@pmcgs.pr.gov.br" style="color:#555;">
-  faleconosco@pmcgs.pr.gov.br
-</a>            </p>
-            <p style="font-size:13px;color:#555;">
-              <i class="fas fa-clock" style="color:var(--verde);margin-right:6px;"></i>
-              Segunda a Sexta-feira –  08h30–12h · 13h30–17h30
-            </p>
-            <a href="https://maps.app.goo.gl/Kwi21W85ZFFXjGrW9" class="btn-pref mt-2" style="font-size:11px;padding:7px 14px;">
-              <i class="fas fa-map-marked-alt mr-1"></i>Ver no Mapa
-            </a>
-          </div>
-        </div>
- 
-      </div>
-    </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════════════════════
-       RODAPÉ — Links institucionais, contato e créditos
-  ════════════════════════════════════════════════════════ -->
+
+<section id="institucional" aria-label="Secretarias, entidades e contato">
+	<div class="container">
+		<div class="row">
+			<!-- Secretarias Municipais -->
+			<div class="col-md-4 mb-4">
+				<div class="inst-card">
+					<h5><i class="fas fa-building mr-2"></i>Secretarias Municipais</h5>
+					<ul>
+						<li><a href="/administracao">Administração</a></li>
+						<li><a href="/cultura">Cultura</a></li>
+						<li><a href="/desenvolvimento-economico">Desenvolvimento Econômico</a></li>
+						<li><a href="/desenvolvimento-social">Desenvolvimento Social</a></li>
+						<li><a href="/desenvolvimento-sustentavel">Desenvolvimento Sustentável</a></li>
+						<li><a href="/educacao">Educação</a></li>
+						<li><a href="/governo">Governo e Assuntos Jurídicos</a></li>
+						<li><a href="/infraestrutura">Infraestrutura</a></li>
+						<li><a href="/mulher">Mulher e Igualdade Racial</a></li>
+						<li><a href="/ordem-publica">Ordem Pública e Segurança</a></li>
+						<li><a href="/saude">Saúde</a></li>
+						<li><a href="/tecnologia-da-informacao">Tecnologia e Inovação</a></li>
+						<li><a href="/urbanismo">Urbanismo</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Outras Entidades -->
+			<div class="col-md-4 mb-4">
+				<div class="inst-card">
+					<h5><i class="fas fa-landmark mr-2"></i>Outras Entidades</h5>
+					<ul>
+						<li><a href="/previcamp">PREVICAMP – Previdência Municipal</a></li>
+						<li><a href="/fascamp">FASCAMP – Fundação de Saúde</a></li>
+						<li><a href="/camara-de-vereadores">Câmara de Vereadores</a></li>
+						<li><a href="/controladoria-geral">Controladoria Geral</a></li>
+						<li><a href="/ouvidoria-geral">Ouvidoria Geral</a></li>
+						<li><a href="/procuradoria-geral">Procuradoria Geral</a></li>
+						<li><a href="/conselhos-municipais">Conselhos Municipais</a></li>
+                        <li><a href="/escolas-municipais">Escolas Municipais</a></li>
+                        <li><a href="/cmeis">Creches Municipais</a></li>
+                        <li><a href="/unidades-saude">Unidades de Saúde</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Localização e Contato -->
+			<div class="col-md-4 mb-4">
+				<div class="inst-card">
+					<h5><i class="fas fa-map-marker-alt mr-2"></i>Localização e Contato</h5>
+					<p style="font-size:13px;color:#555;line-height:1.7;">
+						<i class="fas fa-map-pin" style="color:var(--verde);margin-right:6px;"></i>
+							Praça Bento Munhoz Da Rocha Neto, 30 - Sede<br>
+							Campina Grande Do Sul, PR, 83435-001
+					</p>
+					<p style="font-size:13px;color:#555;margin-top:8px;">
+						<i class="fas fa-phone" style="color:var(--verde);margin-right:6px;"></i>
+						(41) 3162-7000
+					</p>
+					<p style="font-size:13px;color:#555;">
+						<i class="fas fa-envelope" style="color:var(--verde);margin-right:6px;"></i>
+						<a href="mailto:faleconosco@pmcgs.pr.gov.br" style="color:#555;">
+							faleconosco@pmcgs.pr.gov.br
+						</a>
+                    </p>
+					<p style="font-size:13px;color:#555;">
+						<i class="fas fa-clock" style="color:var(--verde);margin-right:6px;"></i>
+						Segunda a Sexta-feira –  08h30–12h · 13h30–17h30
+					</p>
+						<a href="https://maps.app.goo.gl/Kwi21W85ZFFXjGrW9" class="btn-pref mt-2" style="font-size:11px;padding:7px 14px;">
+							<i class="fas fa-map-marked-alt mr-1"></i>Ver no Mapa
+						</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

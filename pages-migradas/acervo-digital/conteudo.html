@@ -1,102 +1,224 @@
-<div id="pi-wrapper">
-  <section id="pi-hero" aria-labelledby="sistema-titulo">
-    <div class="container">
-      <div class="pi-hero-inner">
-        <nav aria-label="Você está em">
-          <ol class="pi-breadcrumb">
-            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
-            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
-            <li><a href="../../pages/sistemas-ti/">Sistemas da TI</a></li>
-            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
-            <li aria-current="page">Acervo Digital</li>
+<!--
+  Acervo Digital — Catalogação de fotografias institucionais
+  Fragmento de conteúdo carregado por index.html (#dynamic-content).
+  Sistema em desenvolvimento: ainda indisponível para uso.
+  Estilos: css/acervo-digital.css | Comportamentos: js/acervo-digital.js
+-->
+<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li><a href="../../pages/sistemas-ti">Sistemas da TI</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li aria-current="page">Acervo Digital</li>
+        </ol>
+      </nav>
+      <h1 class="pi-hero-titulo">Acervo Digital</h1>
+      <p class="pi-hero-subtitulo">
+        Catalogação de fotografias para preservar a história do município.
+      </p>
+    </div>
+  </div>
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+
+<main id="pi-main">
+  <div class="container">
+
+    <!-- AVISO DE DESENVOLVIMENTO -->
+    <div class="acervo-aviso-desenvolvimento" role="status">
+      <i class="fas fa-flask" aria-hidden="true"></i>
+      <p><strong>Em desenvolvimento.</strong> O sistema está em fase de construção e ainda não está disponível para uso.</p>
+    </div>
+
+    <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+      <!-- COLUNA PRINCIPAL -->
+      <article>
+
+        <!-- SOBRE -->
+        <section id="acervo-sobre" aria-labelledby="acervo-sobre-titulo">
+          <h2 id="acervo-sobre-titulo" class="pi-secao-titulo">
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
+            Sobre o Acervo Digital
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="pi-intro-texto">
+            <p>
+              O <strong>Acervo Digital</strong> é um sistema de catalogação de fotografias
+              institucionais para a Prefeitura. Ele vai reunir em um só lugar os registros
+              fotográficos das secretarias e departamentos, mantendo cada imagem ligada à sua
+              unidade, ao seu álbum, às pessoas identificadas e aos assuntos relacionados.
+            </p>
+            <p>
+              Ao final do projeto, o objetivo é facilitar a consulta ao acervo, permitindo buscar
+              fotografias por nome, período, tag ou unidade, respeitando os limites de acesso de
+              cada usuário.
+            </p>
+          </div>
+        </section>
+
+        <!-- O QUE ESTÁ PREVISTO -->
+        <section id="acervo-previsto" aria-labelledby="acervo-previsto-titulo" class="pi-mt-secao">
+          <h2 id="acervo-previsto-titulo" class="pi-secao-titulo">
+            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+            O que está previsto
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="acervo-cards-grid" role="list">
+            <article class="acervo-card" role="listitem">
+              <div class="acervo-card-icone" aria-hidden="true"><i class="fas fa-images"></i></div>
+              <h3>Cadastro de fotografias</h3>
+              <p>Organização das imagens por álbuns e unidades.</p>
+            </article>
+            <article class="acervo-card" role="listitem">
+              <div class="acervo-card-icone" aria-hidden="true"><i class="fas fa-users"></i></div>
+              <h3>Identificação de pessoas</h3>
+              <p>Registro das pessoas identificadas em cada imagem.</p>
+            </article>
+            <article class="acervo-card" role="listitem">
+              <div class="acervo-card-icone" aria-hidden="true"><i class="fas fa-tags"></i></div>
+              <h3>Tags e classificação</h3>
+              <p>Categorias para facilitar a localização de cada foto.</p>
+            </article>
+            <article class="acervo-card" role="listitem">
+              <div class="acervo-card-icone" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></div>
+              <h3>Busca</h3>
+              <p>Pesquisa combinada por texto, período, tag e unidade.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- PERFIS DE ACESSO PREVISTOS -->
+        <section id="acervo-perfis" aria-labelledby="acervo-perfis-titulo" class="pi-mt-secao">
+          <h2 id="acervo-perfis-titulo" class="pi-secao-titulo">
+            <i class="fas fa-user-group" aria-hidden="true"></i>
+            Perfis de acesso previstos
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="acervo-perfis-grid" role="list">
+            <article class="acervo-perfil" role="listitem">
+              <div class="acervo-perfil-icone" aria-hidden="true"><i class="fas fa-eye"></i></div>
+              <h3>Consulta</h3>
+              <p>Visualização e pesquisa das fotografias liberadas.</p>
+            </article>
+            <article class="acervo-perfil" role="listitem">
+              <div class="acervo-perfil-icone" aria-hidden="true"><i class="fas fa-pen"></i></div>
+              <h3>Operação</h3>
+              <p>Cadastro e edição de fotos, pessoas e tags no seu escopo.</p>
+            </article>
+            <article class="acervo-perfil" role="listitem">
+              <div class="acervo-perfil-icone" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+              <h3>Administração</h3>
+              <p>Gestão de usuários, relatórios e controle das operações.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- FLUXO PREVISTO -->
+        <section id="acervo-fluxo" aria-labelledby="acervo-fluxo-titulo" class="pi-mt-secao">
+          <h2 id="acervo-fluxo-titulo" class="pi-secao-titulo">
+            <i class="fas fa-diagram-project" aria-hidden="true"></i>
+            Como o acervo será organizado
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <ol class="acervo-fluxo">
+            <li class="acervo-etapa">
+              <span class="acervo-etapa-numero" aria-hidden="true">1</span>
+              <div class="acervo-etapa-conteudo">
+                <h3>Organizar</h3>
+                <p>Reunir as fotografias por unidade, álbum e assunto.</p>
+              </div>
+            </li>
+            <li class="acervo-etapa">
+              <span class="acervo-etapa-numero" aria-hidden="true">2</span>
+              <div class="acervo-etapa-conteudo">
+                <h3>Identificar</h3>
+                <p>Registrar as pessoas identificadas e preservar o contexto de cada imagem.</p>
+              </div>
+            </li>
+            <li class="acervo-etapa">
+              <span class="acervo-etapa-numero" aria-hidden="true">3</span>
+              <div class="acervo-etapa-conteudo">
+                <h3>Consultar</h3>
+                <p>Encontrar o conteúdo autorizado por meio de uma busca simples.</p>
+              </div>
+            </li>
           </ol>
-        </nav>
-        <h1 id="sistema-titulo" class="pi-hero-titulo">Acervo Digital</h1>
-        <p class="pi-hero-subtitulo">Organização, preservação e consulta do acervo fotográfico de Campina Grande do Sul.</p>
-      </div>
-    </div>
-    <div class="pi-hero-ilustracao" aria-hidden="true">
-      <img src="../../_global/img/global/ilustracao.png" alt="">
-    </div>
-  </section>
+        </section>
 
-  <main id="pi-main">
-    <div class="container">
-      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
-        <article>
-          <section aria-labelledby="sobre-sistema">
-            <h2 id="sobre-sistema" class="pi-secao-titulo"><i class="fas fa-circle-info" aria-hidden="true"></i> Sobre o sistema</h2>
-            <hr class="pi-secao-divider">
-            <div class="pi-intro-texto">
-              <p>O <strong>Acervo Digital</strong> é a plataforma da Prefeitura de Campina Grande do Sul destinada à organização, preservação e consulta dos registros fotográficos produzidos pelos órgãos municipais. O sistema reúne as imagens em um ambiente único, no qual elas podem ser classificadas por entidade, álbum, assunto, data e pessoas identificadas.</p>
-              <p>A solução facilita a localização e a reutilização de fotografias institucionais, reduz a dispersão de arquivos e contribui para a preservação da memória do município. A busca integrada permite encontrar registros de forma rápida, enquanto os controles de acesso protegem conteúdos que não devem ser disponibilizados a todos os usuários.</p>
-              <p>Desenvolvido pela área de Tecnologia da Informação da Prefeitura, o sistema atende às secretarias, aos departamentos e aos servidores municipais. A gestão do acervo e dos vínculos de acesso é realizada em conjunto com o Departamento de Comunicação.</p>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="funcionalidades-sistema">
-            <h2 id="funcionalidades-sistema" class="pi-secao-titulo"><i class="fas fa-gears" aria-hidden="true"></i> Principais funcionalidades</h2>
-            <hr class="pi-secao-divider">
-            <div class="sti-recursos-grid" role="list">
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-images"></i></div><div><h3>Organização do acervo</h3><p>Fotografias organizadas por secretarias, departamentos, álbuns, assuntos e datas, facilitando a preservação e a localização dos registros municipais.</p></div></article>
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-magnifying-glass"></i></div><div><h3>Busca integrada</h3><p>Pesquisa combinada por texto, tags, pessoas, entidades e período, permitindo encontrar rapidamente as imagens autorizadas.</p></div></article>
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-user-tag"></i></div><div><h3>Identificação de pessoas</h3><p>Cadastro de pessoas e identificação visual nas fotografias, preservando informações sobre autoridades, servidores e participantes.</p></div></article>
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-shield-halved"></i></div><div><h3>Acesso seguro</h3><p>Conteúdos públicos ou restritos conforme o perfil e o vínculo institucional, com permissões e registro das operações.</p></div></article>
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-download"></i></div><div><h3>Download de arquivos originais</h3><p>Download individual, em lote ou por álbum, preservando a resolução e a qualidade dos arquivos fotográficos originais.</p></div></article>
-              <article class="sti-recurso-card" role="listitem"><div class="sti-recurso-icon"><i class="fas fa-file-pdf"></i></div><div><h3>Relatórios e catálogos</h3><p>Geração de catálogos fotográficos e relatórios de pessoas identificadas, conforme as permissões do usuário.</p></div></article>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="publico-sistema">
-            <h2 id="publico-sistema" class="pi-secao-titulo"><i class="fas fa-user-group" aria-hidden="true"></i> Para quem é o sistema?</h2>
-            <hr class="pi-secao-divider">
-            <div class="sti-publicos-grid" role="list">
-              <div class="sti-publico" role="listitem"><i class="fas fa-user"></i><strong>Usuários cadastrados</strong><span>Pessoas autorizadas a consultar e baixar os conteúdos disponíveis para seu perfil.</span></div>
-              <div class="sti-publico" role="listitem"><i class="fas fa-user-tie"></i><strong>Servidores municipais</strong><span>Responsáveis pelo cadastro, organização e atualização dos acervos de suas unidades.</span></div>
-              <div class="sti-publico" role="listitem"><i class="fas fa-building"></i><strong>Secretarias e departamentos</strong><span>Órgãos que produzem e utilizam fotografias institucionais em suas atividades.</span></div>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="como-acessar">
-            <h2 id="como-acessar" class="pi-secao-titulo"><i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i> Como acessar</h2>
-            <hr class="pi-secao-divider">
-            <ol class="sti-passos">
-              <li><span class="sti-passo-numero">1</span><div><strong>Acesse a plataforma</strong><p>Clique no botão “Acessar sistema” e abra a página do Acervo Digital.</p></div></li>
-              <li><span class="sti-passo-numero">2</span><div><strong>Entre ou crie sua conta</strong><p>Informe seu e-mail e sua senha. Caso ainda não possua cadastro, utilize a opção de criação de conta.</p></div></li>
-              <li><span class="sti-passo-numero">3</span><div><strong>Solicite o vínculo institucional</strong><p>Servidores que precisam gerenciar fotografias devem solicitar ao Departamento de Comunicação o vínculo com sua unidade.</p></div></li>
-            </ol>
-          </section>
-
-          <section class="sti-cta" aria-labelledby="cta-sistema">
-            <div><span>Acesso ao sistema</span><h2 id="cta-sistema">Consulte e preserve a memória fotográfica do município</h2><p>Acesse o Acervo Digital para pesquisar, organizar e utilizar os registros fotográficos da Prefeitura.</p></div>
-            <a href="https://acervodigital.pmcgs.pr.gov.br" class="pi-btn-verde" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Acessar sistema</a>
-          </section>
-        </article>
-
-        <aside class="pi-sidebar" aria-label="Informações e links do sistema">
-          <div class="pi-sidebar-card sti-sidebar-acesso">
-            <h3><i class="fas fa-rocket"></i> Acesso rápido</h3>
-            <p>O acesso exige cadastro. As funcionalidades disponíveis variam conforme o perfil e o vínculo do usuário com os órgãos municipais.</p>
-            <a href="https://acervodigital.pmcgs.pr.gov.br" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Abrir sistema</a>
+        <!-- CTA -->
+        <section class="pi-mt-secao" aria-labelledby="acervo-cta-titulo">
+          <div class="acervo-cta-card">
+            <i class="fas fa-camera-retro" aria-hidden="true"></i>
+            <h2 id="acervo-cta-titulo">Em breve</h2>
+            <p>Assim que o sistema for liberado, servidores autorizados poderão acessar e colaborar com o acervo.</p>
           </div>
-          <div class="pi-sidebar-card">
-            <h3><i class="fas fa-circle-info"></i> Informações</h3>
-            <dl class="sti-info-list">
-              <div><dt>Gestão do acervo</dt><dd>Departamento de Comunicação</dd></div>
-              <div><dt>Desenvolvimento</dt><dd>Tecnologia da Informação</dd></div>
-              <div><dt>Disponibilidade</dt><dd>Acesso on-line</dd></div>
-              <div><dt>Público</dt><dd>Usuários cadastrados e servidores municipais</dd></div>
-            </dl>
-          </div>
-          <div class="pi-sidebar-card">
-            <h3><i class="fas fa-link"></i> Links úteis</h3>
-            <ul class="pi-sidebar-links">
-              <li><a href="../../pages/sistemas-ti/"><span>Todos os sistemas</span><i class="fas fa-chevron-right"></i></a></li>
-              <li><a href="https://acervodigital.pmcgs.pr.gov.br" target="_blank" rel="noopener"><span>Acervo Digital</span><i class="fas fa-chevron-right"></i></a></li>
-            </ul>
-          </div>
-        </aside>
-      </div>
+        </section>
+
+      </article>
+      <!-- /COLUNA PRINCIPAL -->
+
+      <!-- CARD ROTATIVO: DESTAQUES DO ACERVO -->
+      <section id="ad-destaque" class="pi-mt-secao" aria-labelledby="ad-destaque-titulo">
+        <h2 id="ad-destaque-titulo" class="pi-secao-titulo">
+          <i class="fas fa-images" aria-hidden="true"></i>
+          Destaques do acervo
+        </h2>
+        <hr class="pi-secao-divider">
+        <div id="ad-destaque-conteudo" class="ad-card-rotativo"></div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="pi-sidebar" aria-label="Seções desta página">
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta página</h4>
+          <ul class="pi-sidebar-links" id="pi-on-this-page" aria-label="Seções desta página">
+            <li>
+              <a href="#acervo-sobre">
+                <span><i class="fas fa-circle-info pi-sidebar-ico" aria-hidden="true"></i>Sobre o sistema</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#acervo-previsto">
+                <span><i class="fas fa-puzzle-piece pi-sidebar-ico" aria-hidden="true"></i>O que está previsto</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#acervo-perfis">
+                <span><i class="fas fa-user-group pi-sidebar-ico" aria-hidden="true"></i>Perfis de acesso</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#acervo-fluxo">
+                <span><i class="fas fa-diagram-project pi-sidebar-ico" aria-hidden="true"></i>Como será organizado</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pi-sidebar-card acervo-status-card">
+          <h4><i class="fas fa-flask" aria-hidden="true"></i> Status</h4>
+          <p>O Acervo Digital está <strong>em desenvolvimento</strong> e ainda não está disponível para uso.</p>
+        </div>
+
+      </aside>
+      <!-- /SIDEBAR -->
+
     </div>
-  </main>
-</div>
+  </div>
+</main>

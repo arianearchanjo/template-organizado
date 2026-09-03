@@ -1,0 +1,165 @@
+<!--
+  Sistema de Controle de Estoque — Secretaria Municipal de Saúde
+  Fragmento de conteúdo carregado por index.html (#dynamic-content).
+  Sistema em desenvolvimento: ainda indisponível para uso.
+  Estilos: css/controle-estoque.css | Comportamentos: js/controle-estoque.js
+-->
+<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li><a href="../../pages/sistemas-ti">Sistemas da TI</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li aria-current="page">Controle de Estoque</li>
+        </ol>
+      </nav>
+
+      <span class="ce-hero-badge" aria-hidden="true">
+        <i class="fas fa-boxes-stacked"></i>
+      </span>
+      <h1 class="pi-hero-titulo">Sistema de Controle de Estoque</h1>
+      <p class="pi-hero-subtitulo">
+        Secretaria Municipal de Saúde — controle de materiais e medicamentos.
+      </p>
+      <p class="ce-status-pill">
+        <i class="fas fa-gears" aria-hidden="true"></i>
+        Em desenvolvimento · indisponível para uso
+      </p>
+    </div>
+  </div>
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+
+<main id="pi-main">
+  <div class="container">
+    <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+      <!-- COLUNA PRINCIPAL -->
+      <article>
+
+        <!-- SOBRE -->
+        <section id="ce-sobre" aria-labelledby="ce-sobre-titulo">
+          <h2 id="ce-sobre-titulo" class="pi-secao-titulo">
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
+            Sobre o sistema
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="pi-intro-texto">
+            <p>
+              O <strong>Sistema de Controle de Estoque</strong> vai ajudar a secretaria a
+              acompanhar entradas e saídas de materiais e medicamentos, controlar o saldo
+              disponível e apoiar as requisições feitas pelas unidades de saúde.
+            </p>
+            <p>
+              No momento, ele está <strong>em fase de desenvolvimento</strong>. A equipe de TI
+              ainda está ajustando as funcionalidades, e o acesso à ferramenta ainda
+              <strong>não está liberado para uso</strong>.
+            </p>
+          </div>
+        </section>
+
+        <!-- O QUE TERÁ QUANDO FOR LANÇADO -->
+        <section id="ce-funcionalidades" aria-labelledby="ce-func-titulo" class="pi-mt-secao">
+          <h2 id="ce-func-titulo" class="pi-secao-titulo">
+            <i class="fas fa-cubes" aria-hidden="true"></i>
+            O que terá quando for lançado
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="ce-cards" role="list">
+            <article class="ce-card" role="listitem">
+              <i class="fas fa-warehouse" aria-hidden="true"></i>
+              <h3>Estoque organizado</h3>
+              <p>Cadastro de materiais e medicamentos com quantidades e validade.</p>
+            </article>
+            <article class="ce-card" role="listitem">
+              <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
+              <h3>Entradas e saídas</h3>
+              <p>Registro das movimentações com histórico completo.</p>
+            </article>
+            <article class="ce-card" role="listitem">
+              <i class="fas fa-file-signature" aria-hidden="true"></i>
+              <h3>Requisições</h3>
+              <p>Solicitações de material pelas unidades, com fluxo de aprovação.</p>
+            </article>
+            <article class="ce-card" role="listitem">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+              <h3>Relatórios</h3>
+              <p>Visão geral dos saldos e do uso dos itens.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- SITUAÇÃO ATUAL -->
+        <section id="ce-situacao" aria-labelledby="ce-situacao-titulo" class="pi-mt-secao">
+          <h2 id="ce-situacao-titulo" class="pi-secao-titulo">
+            <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+            Situação atual
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="ce-aviso">
+            <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+            <p>
+              O acesso ao sistema está <strong>indisponível</strong> enquanto dura o
+              desenvolvimento. Novidades sobre a previsão de lançamento serão divulgadas pelos
+              canais oficiais da TI.
+            </p>
+          </div>
+        </section>
+
+      </article>
+      <!-- /COLUNA PRINCIPAL -->
+
+      <!-- CARD ROTATIVO: FUNCIONALIDADES EM DESTAQUE -->
+      <section id="ce-destaque" class="pi-mt-secao" aria-labelledby="ce-destaque-titulo">
+        <h2 id="ce-destaque-titulo" class="pi-secao-titulo">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          Destaques do sistema
+        </h2>
+        <hr class="pi-secao-divider">
+        <div id="ce-destaque-conteudo" class="ce-card-rotativo"></div>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="pi-sidebar" aria-label="Informações e links do sistema">
+
+        <div class="pi-sidebar-card ce-status-card">
+          <h4><i class="fas fa-lock" aria-hidden="true"></i> Acesso</h4>
+          <p class="ce-side-status">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            Indisponível
+          </p>
+          <p>Sistema restrito à Secretaria Municipal de Saúde.</p>
+        </div>
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-circle-info" aria-hidden="true"></i> Informações</h4>
+          <ul class="pi-sidebar-links">
+            <li>
+              <span><i class="fas fa-boxes-stacked pi-sidebar-ico" aria-hidden="true"></i>Materiais e medicamentos</span>
+            </li>
+            <li>
+              <span><i class="fas fa-arrows-rotate pi-sidebar-ico" aria-hidden="true"></i>Entradas e saídas</span>
+            </li>
+            <li>
+              <span><i class="fas fa-file-signature pi-sidebar-ico" aria-hidden="true"></i>Requisições</span>
+            </li>
+            <li>
+              <span><i class="fas fa-chart-line pi-sidebar-ico" aria-hidden="true"></i>Relatórios</span>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+      <!-- /SIDEBAR -->
+
+    </div>
+  </div>
+</main>

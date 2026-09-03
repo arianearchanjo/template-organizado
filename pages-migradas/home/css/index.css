@@ -59,12 +59,167 @@
     filter: grayscale(0%);
 }
 
-/* Mantém a ilustração do hero alinhada à borda direita do container. */
-@media (min-width: 1200px) {
+/* Responsividade Mobile - Hero */
+@media (max-width: 767.98px) {
+    #hero .hero-wrapper {
+        display: none;
+    }
+
+    #hero {
+        padding: 40px 0;
+        min-height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     #hero .hero-imagem {
-        right: max(15px, calc((100% - 1140px) / 2));
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    #hero .hero-imagem img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ajuste Perfis Mobile */
+    .perfil-btn--todos {
+        display: none !important;
+    }
+
+    .perfis-direita {
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .perfil-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
+    /* Grids mais limpos no Mobile */
+    #grid-acesso-rapido {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .servico-item {
+        height: 90px !important;
+        padding: 12px 8px !important;
+    }
+
+    .servico-icone i {
+        font-size: 1.5rem !important;
+    }
+
+    /* Transparência - 2 colunas para melhor leitura */
+    .transp-acesso-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .transp-acesso-card {
+        padding: 15px 10px !important;
+    }
+
+    /* Notícias - Empilhamento */
+    .noticias-destaques {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .noticia-destaque-thumb {
+        height: 140px !important;
+    }
+
+    .noticia-destaque-titulo {
+        font-size: 0.95rem !important;
+    }
+
+    .noticias-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Turismo - Empilhamento */
+    .turismo-row .col-md-4 {
+        margin-bottom: 15px;
+    }
+
+    .turismo-card--full {
+        height: 180px !important;
+    }
+
+    /* Banner Destaque */
+    .carousel-banner-img {
+        aspect-ratio: 16 / 9 !important;
+    }
+
+    /* Institucional - Ajuste de cards */
+    .inst-card {
+        padding: 15px !important;
+        margin-bottom: 10px;
+    }
+
+    /* Seção de Segurança */
+    #secdestaques [style*="aspect-ratio"] {
+        aspect-ratio: auto !important;
+        height: 120px !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
     }
 }
+
+/* Tablet - Ajustes intermediários */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #grid-acesso-rapido {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .transp-acesso-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .noticias-destaques {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .hero-imagem {
+        width: 400px;
+    }
+}
+
+
+/* Largura máxima do conteúdo conforme a tela cresce (corrige conteúdo
+   "pequeno" em monitores largos). O container do Bootstrap para em 1140px. */
+:root {
+    --home-container: 1140px;
+}
+
+@media (min-width: 1400px) { :root { --home-container: 1320px; } }
+@media (min-width: 1600px) { :root { --home-container: 1480px; } }
+@media (min-width: 1920px) { :root { --home-container: 1680px; } }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--home-container);
+    }
+
+    /* Mantém a ilustração do hero alinhada à borda direita do container. */
+    #hero .hero-imagem {
+        right: max(15px, calc((100vw - var(--home-container)) / 2));
+    }
+}
+
 
 /* ══════════════════════════════════════════════════════════════
    BOTÕES FLUTUANTES À ESQUERDA — Bem-estar Animal e Vagas
@@ -138,23 +293,23 @@
     transition: opacity 0.25s ease, max-width 0.28s ease, padding-right 0.25s ease, margin-left 0.25s ease;
 }
 
-/* Estilo: Bem-estar Animal (Verde Institucional) */
+/* Estilo: Bem-estar Animal (Laranja — cor diferente do verde padrão) */
 .flutuante-btn--animal {
-    border: 2px solid var(--verde, #2d7a2d);
-    color: var(--verde-escuro, #1e5c1e);
+    border: 2px solid #bd5a16;
+    color: #bd5a16;
 }
 .flutuante-btn--animal .flutuante-icone {
-    color: var(--verde, #2d7a2d);
+    color: #e8772e;
 }
 .flutuante-btn--animal .flutuante-label {
-    color: var(--verde-escuro, #1e5c1e);
+    color: #bd5a16;
 }
 
 .flutuante-btn--animal:hover,
 .flutuante-btn--animal:focus-visible {
-    background: var(--verde, #2d7a2d);
-    border-color: var(--verde-escuro, #1e5c1e);
-    box-shadow: 0 6px 20px rgba(45, 122, 45, 0.35);
+    background: #e8772e;
+    border-color: #bd5a16;
+    box-shadow: 0 6px 20px rgba(232, 119, 46, 0.35);
 }
 .flutuante-btn--animal:hover .flutuante-icone,
 .flutuante-btn--animal:focus-visible .flutuante-icone,
@@ -214,8 +369,12 @@
 /* Responsividade Mobile / Tablet */
 @media (max-width: 768px) {
     .flutuantes-esquerda {
-        left: 10px;
-        gap: 10px;
+        left: 50%;
+        top: auto;
+        bottom: 16px;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 12px;
     }
     .flutuante-btn {
         width: 44px;
@@ -268,5 +427,359 @@ body.high-contrast .flutuante-btn:focus-visible .flutuante-label {
     .flutuante-label {
         transition: none !important;
         transform: none !important;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TELAS GRANDES — escala proporcional e equilibrada.
+   Cresce ícone, texto e altura na mesma proporção e aumenta o número
+   de colunas para manter o card equilibrado (largura ≈ altura), sem
+   deixar nada "gigante" nem "pequeno" em monitores largos.
+   ════════════════════════════════════════════════════════════════ */
+
+/* 1200px+: leve ampliação equilibrada (ícone, texto e altura juntos) */
+@media (min-width: 1200px) {
+    .sec-label {
+        font-size: 1rem;
+    }
+
+    .servico-item {
+        height: 116px;
+        min-height: 116px;
+        max-height: 116px;
+        padding: 20px 10px 16px;
+    }
+
+    .servico-icone {
+        width: 50px;
+        height: 50px;
+    }
+
+    .servico-icone i {
+        font-size: 2rem;
+    }
+
+    .servico-item span {
+        font-size: 0.75rem;
+    }
+
+    .transp-acesso-card {
+        padding: 26px 12px 20px;
+    }
+
+    .transp-acesso-icone {
+        width: 56px;
+        height: 56px;
+    }
+
+    .transp-acesso-icone i {
+        font-size: 1.45rem;
+    }
+
+    .transp-acesso-card strong {
+        font-size: 0.8125rem;
+    }
+
+    .transp-acesso-card small {
+        font-size: 0.6563rem;
+    }
+
+    .hero-titulo h1 strong {
+        font-size: 4rem;
+    }
+
+    #hero .hero-imagem {
+        width: 620px;
+    }
+
+    #hero .hero-imagem img {
+        max-width: 620px;
+    }
+}
+
+/* 1400px+: container mais largo, proporção mantida */
+@media (min-width: 1400px) {
+    .sec-label {
+        font-size: 1.05rem;
+    }
+
+    #grid-acesso-rapido {
+        gap: 12px;
+    }
+
+    .servico-item {
+        height: 128px;
+        min-height: 128px;
+        padding: 22px 12px 18px;
+    }
+
+    .servico-icone {
+        width: 54px;
+        height: 54px;
+    }
+
+    .servico-icone i {
+        font-size: 2.15rem;
+    }
+
+    .servico-item span {
+        font-size: 0.8125rem;
+    }
+
+    .transp-acesso-grid {
+        gap: 14px;
+    }
+
+    .transp-acesso-card {
+        padding: 28px 14px 22px;
+    }
+
+    .transp-acesso-icone {
+        width: 58px;
+        height: 58px;
+    }
+
+    .transp-acesso-icone i {
+        font-size: 1.5rem;
+    }
+
+    .transp-acesso-card strong {
+        font-size: 0.875rem;
+    }
+
+    .transp-acesso-card small {
+        font-size: 0.6875rem;
+    }
+
+    .turismo-card--full {
+        height: 232px;
+    }
+
+    .inst-card {
+        padding: 26px 22px;
+    }
+
+    .inst-card h5 {
+        font-size: 0.9375rem;
+    }
+
+    .inst-card ul li a {
+        font-size: 0.875rem;
+    }
+
+    /* Hero maior em telas largas */
+    #hero {
+        padding: 80px 0;
+    }
+
+    .hero-titulo h1 strong {
+        font-size: 4.25rem;
+    }
+
+    #hero .hero-imagem {
+        width: 800px;
+    }
+
+    #hero .hero-imagem img {
+        max-width: 800px;
+    }
+
+    /* Imagens com mais altura */
+    .card-img-link--destaque img {
+        height: 170px;
+    }
+
+    /* Ícone flutuante um pouco maior */
+    .flutuante-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .flutuante-icone {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+}
+
+/* 1600px+: mantém 8 colunas (16 cards = 2 linhas limpas) e escala proporcional */
+@media (min-width: 1600px) {
+    .sec-label {
+        font-size: 1.1rem;
+    }
+
+    #grid-acesso-rapido {
+        gap: 14px;
+    }
+
+    .servico-item {
+        height: 152px;
+        min-height: 152px;
+        padding: 26px 14px 22px;
+    }
+
+    .servico-icone {
+        width: 60px;
+        height: 60px;
+    }
+
+    .servico-icone i {
+        font-size: 2.4rem;
+    }
+
+    .servico-item span {
+        font-size: 0.875rem;
+    }
+
+    .transp-acesso-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+    }
+
+    .transp-acesso-card {
+        padding: 30px 16px 24px;
+    }
+
+    .transp-acesso-icone {
+        width: 60px;
+        height: 60px;
+    }
+
+    .transp-acesso-icone i {
+        font-size: 1.55rem;
+    }
+
+    .transp-acesso-card strong {
+        font-size: 0.9375rem;
+    }
+
+    .transp-acesso-card small {
+        font-size: 0.7188rem;
+    }
+
+    .turismo-card--full {
+        height: 250px;
+    }
+
+    .inst-card h5 {
+        font-size: 1rem;
+    }
+
+    .inst-card ul li a {
+        font-size: 0.9375rem;
+    }
+
+    /* Hero maior */
+    #hero {
+        padding: 90px 0;
+    }
+
+    .hero-titulo h1 strong {
+        font-size: 4.75rem;
+    }
+
+    #hero .hero-imagem {
+        width: 880px;
+    }
+
+    #hero .hero-imagem img {
+        max-width: 880px;
+    }
+
+    /* Imagens com mais altura */
+    .card-img-link--destaque img {
+        height: 190px;
+    }
+
+    /* Ícone flutuante um pouco maior */
+    .flutuante-btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    .flutuante-icone {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+    }
+}
+
+/* 1920px+: monitores full HD+ (8 colunas, escala contida) */
+@media (min-width: 1920px) {
+    .sec-label {
+        font-size: 1.15rem;
+    }
+
+    #grid-acesso-rapido {
+        gap: 16px;
+    }
+
+    .servico-item {
+        height: 178px;
+        min-height: 178px;
+        padding: 28px 16px 24px;
+    }
+
+    .servico-icone {
+        width: 64px;
+        height: 64px;
+    }
+
+    .servico-icone i {
+        font-size: 2.6rem;
+    }
+
+    .servico-item span {
+        font-size: 0.9375rem;
+    }
+
+    .transp-acesso-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+    }
+
+    .transp-acesso-card {
+        padding: 32px 18px 26px;
+    }
+
+    .transp-acesso-icone {
+        width: 64px;
+        height: 64px;
+    }
+
+    .transp-acesso-icone i {
+        font-size: 1.6rem;
+    }
+
+    .transp-acesso-card strong {
+        font-size: 1rem;
+    }
+
+    .transp-acesso-card small {
+        font-size: 0.75rem;
+    }
+
+    .turismo-card--full {
+        height: 270px;
+    }
+
+    #hero {
+        padding: 100px 0;
+    }
+
+    .hero-titulo h1 strong {
+        font-size: 5.25rem;
+    }
+
+    #hero .hero-imagem {
+        width: 960px;
+    }
+
+    #hero .hero-imagem img {
+        max-width: 960px;
+    }
+
+    .card-img-link--destaque img {
+        height: 210px;
     }
 }

@@ -388,6 +388,10 @@
 
   function createAnimalCard(animal) {
     const article = createElement('article', 'bea-animal-card');
+    article.dataset.animalId = animal.id;
+    article.tabIndex = 0;
+    article.setAttribute('role', 'button');
+    article.setAttribute('aria-label', `Ver detalhes de ${animal.name || 'animal'}`);
     const imageWrap = createElement('div', 'bea-animal-card__image');
     const image = createElement('img');
     image.alt = animal.name ? `Foto de ${animal.name}` : 'Foto do animal disponível para adoção';
@@ -416,10 +420,8 @@
     }
     if (animal.characteristics) content.appendChild(createElement('p', 'bea-animal-card__description', animal.characteristics));
 
-    const button = createElement('button', 'bea-animal-card__button', 'Conhecer este animal');
-    button.type = 'button';
-    button.dataset.animalId = animal.id;
-    button.setAttribute('aria-label', `Ver detalhes de ${animal.name || 'animal'}`);
+    const button = createElement('span', 'bea-animal-card__button', 'Conhecer este animal');
+    button.setAttribute('aria-hidden', 'true');
     content.appendChild(button);
     article.appendChild(content);
     return article;
@@ -599,6 +601,15 @@
     const title = createElement('h3', 'bea-interest__title', 'Tenho interesse neste animal');
     title.id = 'bea-interest-title';
     section.appendChild(title);
+<<<<<<< HEAD
+    if (animal.name) {
+      const nameLine = createElement('p', 'bea-interest__animal-name');
+      nameLine.appendChild(document.createTextNode('Nome: '));
+      nameLine.appendChild(createElement('strong', 'bea-interest__animal-name-value', animal.name));
+      section.appendChild(nameLine);
+    }
+=======
+>>>>>>> 4dc6a56fb64a6df96adb3cc6e340411a77771867
 
     const form = createElement('form', 'bea-interest-form');
     form.id = 'sibea-interest-form';
@@ -730,10 +741,25 @@
       content.appendChild(createElement('p', 'bea-animal-detail__organization', `Disponibilizado por: ${animal.organization.name}`));
     }
 
+<<<<<<< HEAD
+    const interestButton = createElement('button', 'bea-interest-open-button');
+    interestButton.type = 'button';
+    addIcon(interestButton, 'fas fa-paper-plane');
+    interestButton.appendChild(document.createTextNode('Tenho interesse neste animal'));
+    interestButton.addEventListener('click', () => openInterestModal(animal));
+    content.appendChild(interestButton);
+=======
     content.appendChild(createInterestForm(animal));
+>>>>>>> 4dc6a56fb64a6df96adb3cc6e340411a77771867
 
     layout.appendChild(content);
     elements.detail.replaceChildren(layout);
+  }
+
+  function openInterestModal(animal) {
+    elements.interestFormContainer.replaceChildren(createInterestForm(animal));
+    $('#sibea-animal-modal').modal('hide');
+    $('#sibea-interest-modal').modal('show');
   }
 
   function renderDetailError(error) {
@@ -788,8 +814,15 @@
       elements.search.focus();
     });
     elements.results.addEventListener('click', event => {
-      const button = event.target.closest('[data-animal-id]');
-      if (button) openDetail(button.dataset.animalId);
+      const card = event.target.closest('[data-animal-id]');
+      if (card) openDetail(card.dataset.animalId);
+    });
+    elements.results.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const card = event.target.closest('[data-animal-id]');
+      if (!card) return;
+      event.preventDefault();
+      openDetail(card.dataset.animalId);
     });
     elements.pagination.addEventListener('click', event => {
       const button = event.target.closest('[data-page]');
@@ -801,6 +834,10 @@
     $('#sibea-animal-modal').on('hidden.bs.modal', () => {
       if (state.detailController) state.detailController.abort();
       if (state.interestController) state.interestController.abort();
+    });
+    $('#sibea-interest-modal').on('hidden.bs.modal', () => {
+      if (state.interestController) state.interestController.abort();
+      elements.interestFormContainer.replaceChildren();
     });
   }
 
@@ -821,7 +858,8 @@
       summary: document.getElementById('sibea-results-summary'),
       results: document.getElementById('sibea-results'),
       pagination: document.getElementById('sibea-pagination'),
-      detail: document.getElementById('sibea-animal-detail')
+      detail: document.getElementById('sibea-animal-detail'),
+      interestFormContainer: document.getElementById('sibea-interest-form-container')
     };
     bindEvents();
     loadFacets();

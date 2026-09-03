@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * index.js — Portal da Prefeitura de Campina Grande do Sul
  * Organização:
@@ -12,17 +11,7 @@
  *   7. Text-to-Speech (botão único inteligente)
  *   8. VLibras (inicialização)
  */
-
-// ── 1. AUTOCOMPLETE DA BUSCA ─────────────────────────────────────────────────
-(function () {
-  var searchEl = document.getElementById('search');
-  if (searchEl && typeof autocomplete === 'function') {
-    autocomplete(searchEl, 'site');
-  }
-})();
-
-
-// ── 2. WIDGET DE CLIMA ───────────────────────────────────────────────────────
+// ── 1. WIDGET DE CLIMA ───────────────────────────────────────────────────────
 (function () {
   var LAT = -25.3072;
   var LON = -49.0539;
@@ -163,9 +152,3 @@ function toggleTransp(btn) {
 
   filtrar('todos');
 })();
-
-
-// ── 5. ACESSIBILIDADE ───────────────────────────────────────────────────────
-// Toda a lógica de acessibilidade (Fonte, Contraste, Atalhos, TTS e VLibras) 
-// foi movida para o componente global _global/js/acessibilidade-component.js
-// para evitar duplicidade de eventos e facilitar a manutenção.

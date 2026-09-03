@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookEase | Prefeitura de Campina Grande do Sul</title>
+  <meta name="description" content="Biblioteca Digital da Prefeitura de Campina Grande do Sul: consulta pública do catálogo de livros e gestão bibliotecária municipal.">
+  <title>Biblioteca Digital | Prefeitura de Campina Grande do Sul</title>
   <script>
-    function getBasePath() { return "../../"; }
+    function getBasePath() { return "../.."; }
     const base = getBasePath();
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
@@ -32,6 +33,7 @@
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/bookease.js"></script>
   <script>
     fetch("conteudo.html")
       .then(function (response) {
@@ -43,7 +45,7 @@
       })
       .catch(function (error) {
         document.getElementById("dynamic-content").innerHTML =
-          '<main class="container py-5"><div class="alert alert-danger">Erro ao carregar o conteúdo do BookEase.</div></main>';
+          '<main class="container py-5"><div class="alert alert-danger">Erro ao carregar o conteúdo da Biblioteca Digital.</div></main>';
         console.error(error);
       });
   </script>

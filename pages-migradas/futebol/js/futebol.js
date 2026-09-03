@@ -61,10 +61,16 @@
   const localHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
   if (localHost) {
     const nativeFetch = window.fetch.bind(window);
-    window.fetch = function (resource, options) {
+    window.fetch = async function (resource, options) {
       const url = typeof resource === "string" ? resource : resource.url;
       const api = "https://futebol.pmcgs.pr.gov.br/api/public";
-      if (url.startsWith(api)) return nativeFetch(`/__footeasy_api${url.slice("https://futebol.pmcgs.pr.gov.br".length)}`, options);
+      if (url.startsWith(api)) {
+        try {
+          const proxied = `/__footeasy_api${url.slice("https://futebol.pmcgs.pr.gov.br".length)}`;
+          const res = await nativeFetch(proxied, options);
+          if (res.ok) return res;
+        } catch (_) {}
+      }
       return nativeFetch(resource, options);
     };
   }
@@ -166,16 +172,28 @@
     head.prepend(crest(championship.logo, championship.name, "fut-champ-logo"));
   }
 
+  function extractStandingsRows(standings) {
+    if (!standings) return [];
+    const groups = Array.isArray(standings)
+      ? (standings.length > 0 && (standings[0].rows || standings[0].standings || standings[0].table || standings[0].items) ? standings : null)
+      : (standings.groups || standings.groupStandings || standings.standingsByGroup || standings.groupsStandings || (Array.isArray(standings.standings) && standings.standings.length > 0 && (standings.standings[0].rows || standings.standings[0].standings || standings.standings[0].table || standings.standings[0].items) ? standings.standings : null));
+    if (Array.isArray(groups)) {
+      return groups.flatMap((g) => (Array.isArray(g.rows) ? g.rows : Array.isArray(g.standings) ? g.standings : Array.isArray(g.table) ? g.table : Array.isArray(g.items) ? g.items : []));
+    }
+    return Array.isArray(standings.standings) ? standings.standings : (Array.isArray(standings) ? standings : []);
+  }
+
   function addStandingsCrests(standings) {
+    const items = extractStandingsRows(standings);
     const rows = app.querySelectorAll("#fut-panel-standings tbody tr");
     rows.forEach((row, index) => {
       const cell = row.cells[1];
-      const item = standings[index];
+      const item = items[index];
       if (!cell || !item || cell.querySelector(".fut-table-crest")) return;
       const content = document.createElement("span");
       content.className = "fut-table-team";
       while (cell.firstChild) content.appendChild(cell.firstChild);
-      content.prepend(crest(item.team?.logo, item.team?.name, "fut-table-crest"));
+      content.prepend(crest(item.team?.logo, item.team?.name || item.name || item.teamName, "fut-table-crest"));
       cell.appendChild(content);
     });
   }
@@ -479,6 +497,119 @@
     };
   }
 
+  function scorers(match) {
+    // Collect candidate scorer records from multiple possible shapes
+    const candidates = [];
+    if (Array.isArray(match.goals)) candidates.push(...match.goals);
+    if (Array.isArray(match.scorers)) candidates.push(...match.scorers);
+    if (Array.isArray(match.events?.goals)) candidates.push(...match.events.goals);
+    if (Array.isArray(match.events)) {
+      match.events.filter((e) => e && (e.type === "goal" || e.type === "gol" || e.eventType === "goal")).forEach((e) => {
+        if (Array.isArray(e.payload?.goals)) candidates.push(...e.payload.goals);
+        else if (e.payload) candidates.push(e.payload);
+        else candidates.push(e);
+      });
+    }
+    const allScorers = candidates.filter(Boolean);
+
+    const homeId = String(match.teamA?.id || match.homeTeam?.id || match.teamAId || match.homeTeamId || "");
+    const awayId = String(match.teamB?.id || match.awayTeam?.id || match.teamBId || match.awayTeamId || "");
+
+    const scorerName = (s) => String(s?.playerName || s?.player?.name || s?.player?.fullName || s?.player?.displayName || s?.scorerName || s?.authorName || s?.name || "").trim();
+    const scorerTeamIdOrName = (s) => ({ id: s?.teamId ?? s?.team?.id ?? s?.scoringTeamId ?? null, name: (s?.teamName || s?.team?.name || "").toString().trim().toLowerCase() });
+
+    const homeScorers = allScorers.filter((scorer) => {
+      if (scorer?.ownGoal) return false;
+      const sId = scorerTeamIdOrName(scorer).id;
+      if (sId != null && String(sId) !== "") return String(sId) === homeId;
+      const sName = scorerTeamIdOrName(scorer).name;
+      const tName = (match.teamA?.name || match.homeTeam?.name || "").toString().trim().toLowerCase();
+      return sName && tName ? sName === tName : false;
+    });
+
+    const awayScorers = allScorers.filter((scorer) => {
+      if (scorer?.ownGoal) return false;
+      const sId = scorerTeamIdOrName(scorer).id;
+      if (sId != null && String(sId) !== "") return String(sId) === awayId;
+      const sName = scorerTeamIdOrName(scorer).name;
+      const tName = (match.teamB?.name || match.awayTeam?.name || "").toString().trim().toLowerCase();
+      return sName && tName ? sName === tName : false;
+    });
+
+    // If there are candidate goals but none matched to names, log for debugging
+    if (allScorers.length && !homeScorers.length && !awayScorers.length) {
+      try { console.debug("futebol: gols sem autores reconhecidos", { matchId: match.id || null, allScorers: allScorers.slice(0, 10) }); } catch (_) {}
+    }
+
+    if (!homeScorers.length && !awayScorers.length) {
+      // Se a partida tem placar ou existem eventos de gol, mostrar aviso de dados incompletos
+      const homeScoreVal = Number(match.teamAScore ?? match.homeScore ?? match.teamA?.score ?? 0);
+      const awayScoreVal = Number(match.teamBScore ?? match.awayScore ?? match.teamB?.score ?? 0);
+      const totalGoals = (Number.isFinite(homeScoreVal) ? homeScoreVal : 0) + (Number.isFinite(awayScoreVal) ? awayScoreVal : 0);
+      if (totalGoals > 0 || allScorers.length > 0) {
+        const containerWarn = document.createElement("div");
+        containerWarn.className = "fut-match-scorers";
+        const warn = document.createElement("div");
+        warn.className = "fut-scorers-warning";
+        warn.setAttribute("role", "status");
+        warn.textContent = "Dados incompletos: autores dos gols não fornecidos.";
+        containerWarn.appendChild(warn);
+        return containerWarn;
+      }
+      return null;
+    }
+
+    function group(items) {
+      const grouped = new Map();
+      items.forEach((item) => {
+        const name = scorerName(item);
+        if (!name) return;
+        const rawCount = item?.goals ?? item?.goalCount ?? item?.totalGoals ?? item?.quantity ?? item?.count ?? 1;
+        const count = Math.max(1, Math.trunc(Number(rawCount) || 1));
+        const minute = item?.minute != null ? item.minute : null;
+        const events = Array.from({ length: count }, (_, index) => index === 0 ? minute : null);
+        const existing = grouped.get(name);
+        if (existing) existing.push(...events); else grouped.set(name, events);
+      });
+      return [...grouped.entries()];
+    }
+
+    function row(items, side) {
+      const element = document.createElement("div");
+      element.className = `fut-scorers-row fut-scorers-row--${side}`;
+      const list = document.createElement("span");
+      list.className = "fut-scorers-list";
+      group(items).forEach(([name, events], index) => {
+        const scorer = document.createElement("span");
+        scorer.className = "fut-scorer";
+        const player = document.createElement("span");
+        player.className = "fut-scorer-name";
+        player.textContent = name;
+        scorer.appendChild(player);
+        // ícone SVG do Bootstrap (inline) — decorativo entre nome e contador
+        const iconWrapper = document.createElement("span");
+        iconWrapper.className = "fut-ball-icon-wrapper";
+        iconWrapper.setAttribute("aria-hidden", "true");
+        iconWrapper.innerHTML = `<i class="fas fa-futbol" aria-hidden="true"></i>`;
+        scorer.appendChild(iconWrapper);
+        // contador numérico (visível e acessível)
+        const countEl = document.createElement("span");
+        countEl.className = "fut-scorer-count";
+        countEl.setAttribute("aria-label", `${events.length} gol${events.length===1?"":"s"}`);
+        countEl.textContent = String(events.length);
+        scorer.appendChild(countEl);
+        list.appendChild(scorer);
+      });
+      element.appendChild(list);
+      return element;
+    }
+
+    const container = document.createElement("div");
+    container.className = "fut-match-scorers";
+    container.append(row(homeScorers, "home"), row(awayScorers, "away"));
+    return container;
+  }
+
   function matchCard(match) {
     const article = document.createElement("article");
     article.className = "fut-current-match";
@@ -507,7 +638,53 @@
     status.textContent = match.status === "FINISHED" ? "Encerrado" : match.status === "IN_PROGRESS" || match.status === "LIVE" ? "Em andamento" : "Agendado";
     details.appendChild(status);
     article.append(teams, details);
+    const goals = scorers(match);
+    if (goals) article.appendChild(goals);
     return article;
+  }
+
+  function addSelector(panel, rounds) {
+    const controls = document.createElement("div");
+    controls.className = "fut-round-controls";
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.className = "fut-round-button";
+    previous.setAttribute("aria-label", "Ver rodada anterior");
+    previous.innerHTML = '<span class="fut-arrow-symbol" aria-hidden="true">‹</span>';
+    const field = document.createElement("div");
+    field.className = "fut-round-field";
+    const label = document.createElement("label");
+    label.htmlFor = "futebol-current-round-select";
+    label.textContent = "Selecione a rodada";
+    const select = document.createElement("select");
+    select.id = "futebol-current-round-select";
+    select.className = "fut-round-select";
+    rounds.forEach((round, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = round.querySelector("h3")?.textContent || `Rodada ${index + 1}`;
+      select.appendChild(option);
+    });
+    field.append(label, select);
+    const next = document.createElement("button");
+    next.type = "button";
+    next.className = "fut-round-button";
+    next.setAttribute("aria-label", "Ver próxima rodada");
+    next.innerHTML = '<span class="fut-arrow-symbol" aria-hidden="true">›</span>';
+    controls.append(previous, field, next);
+    panel.prepend(controls);
+    let selected = 0;
+    function show(index) {
+      selected = Math.max(0, Math.min(index, rounds.length - 1));
+      rounds.forEach((round, roundIndex) => { round.hidden = roundIndex !== selected; });
+      select.value = String(selected);
+      previous.disabled = selected === 0;
+      next.disabled = selected === rounds.length - 1;
+    }
+    previous.addEventListener("click", () => show(selected - 1));
+    next.addEventListener("click", () => show(selected + 1));
+    select.addEventListener("change", () => show(Number(select.value)));
+    show(0);
   }
 
   function render(rounds, routeKey) {
@@ -516,6 +693,7 @@
     if (!panel) return;
     panel.textContent = "";
     const fragment = document.createDocumentFragment();
+    const roundElements = [];
     rounds.forEach((entry, index) => {
       const section = document.createElement("section");
       section.className = "fut-current-round";
@@ -526,8 +704,10 @@
       (Array.isArray(entry.matches) ? entry.matches : []).forEach((match) => grid.appendChild(matchCard(match)));
       section.append(heading, grid);
       fragment.appendChild(section);
+      roundElements.push(section);
     });
     panel.appendChild(fragment);
+    if (roundElements.length > 1) addSelector(panel, roundElements);
   }
 
   async function load(id, routeKey) {
@@ -639,14 +819,208 @@
     return `<div class="fut-head"><div><h2>${escapeHtml(title)}</h2><p>${escapeHtml(description)}</p></div>${backParams ? `<button class="fut-btn" type="button" data-route='${escapeHtml(JSON.stringify(backParams))}'><i class="fas fa-arrow-left" aria-hidden="true"></i>${escapeHtml(backLabel)}</button>` : ""}</div>`;
   }
 
-  function nextMatchCard(match) {
-    if (!match) return `<section class="fut-next">${empty("Não existem partidas futuras programadas.")}</section>`;
-    const date = new Date(match.dataHora);
-    const validDate = !Number.isNaN(date.getTime());
-    const dateText = validDate ? new Intl.DateTimeFormat("pt-BR", { dateStyle: "full", timeZone: "America/Sao_Paulo" }).format(date) : "Data a definir";
-    const timeText = validDate ? new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" }).format(date) : "";
-    const venue = [match.stadiumName, match.stadiumCidade].filter(Boolean).join(" — ");
-    return `<section class="fut-next" aria-labelledby="proxima-partida"><span class="fut-kicker">Próxima partida</span><h2 id="proxima-partida">${escapeHtml(match.championshipName || "Campeonato municipal")}</h2><div class="fut-match-main"><div class="fut-team"><span class="fut-logo">${logo(match.teamALogo)}</span><strong>${escapeHtml(match.teamAName || "Equipe")}</strong></div><div class="fut-when"><strong>${escapeHtml(dateText)}</strong>${escapeHtml(timeText)}</div><div class="fut-team"><span class="fut-logo">${logo(match.teamBLogo)}</span><strong>${escapeHtml(match.teamBName || "Equipe")}</strong></div></div>${venue ? `<p class="fut-venue"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${escapeHtml(venue)}</p>` : ""}</section>`;
+  function nextMatchCard(matches) {
+    const matchesArray = Array.isArray(matches) ? matches : (matches ? [matches] : []);
+    
+    if (matchesArray.length === 0) {
+      return `<section class="fut-next">${empty("Não existem partidas futuras programadas.")}</section>`;
+    }
+    
+    const isMultiple = matchesArray.length > 1;
+
+    const slidesHtml = matchesArray.map((match, index) => {
+      const date = new Date(match.dataHora);
+      const validDate = !Number.isNaN(date.getTime());
+      const dateText = validDate ? new Intl.DateTimeFormat("pt-BR", { dateStyle: "full", timeZone: "America/Sao_Paulo" }).format(date) : "Data a definir";
+      const timeText = validDate ? new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" }).format(date) : "";
+      const venue = [match.stadiumName, match.stadiumCidade].filter(Boolean).join(" — ");
+      const champ = match.championshipName || "Campeonato municipal";
+      
+      return `<div class="fut-carousel-slide" data-slide-index="${index}" role="group" aria-roledescription="slide" aria-label="${index + 1} de ${matchesArray.length}">
+        <h2 class="fut-slide-champ">${escapeHtml(champ)}</h2>
+        <div class="fut-match-main">
+          <div class="fut-team">
+            <span class="fut-logo">${logo(match.teamALogo)}</span>
+            <strong>${escapeHtml(match.teamAName || "Equipe")}</strong>
+          </div>
+          <div class="fut-when">
+            <strong>${escapeHtml(timeText ? `às ${timeText}` : "")}</strong>
+            <span>${escapeHtml(timeText ? "Horário do jogo" : "Data do jogo")}</span>
+          </div>
+          <div class="fut-team">
+            <span class="fut-logo">${logo(match.teamBLogo)}</span>
+            <strong>${escapeHtml(match.teamBName || "Equipe")}</strong>
+          </div>
+        </div>
+        <div class="fut-slide-info">
+          <span><i class="far fa-calendar-alt" aria-hidden="true"></i> ${escapeHtml(dateText)}</span>
+          ${venue ? `<span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${escapeHtml(venue)}</span>` : ""}
+        </div>
+      </div>`;
+    }).join("");
+
+    const prevBtn = isMultiple ? `<button class="fut-carousel-btn fut-carousel-prev" type="button" aria-label="Ver partida anterior"><span class="fut-arrow-symbol" aria-hidden="true">‹</span></button>` : "";
+    const nextBtn = isMultiple ? `<button class="fut-carousel-btn fut-carousel-next" type="button" aria-label="Ver próxima partida"><span class="fut-arrow-symbol" aria-hidden="true">›</span></button>` : "";
+    const counterBadge = isMultiple ? `<span class="fut-carousel-counter"><span class="fut-current-idx">1</span> de ${matchesArray.length}</span>` : "";
+    const dotsHtml = isMultiple ? `<div class="fut-carousel-dots">${matchesArray.map((_, i) => `<button class="fut-carousel-dot${i === 0 ? " active" : ""}" type="button" data-dot-index="${i}" aria-label="Ir para partida ${i + 1}" aria-current="${i === 0 ? "true" : "false"}"></button>`).join("")}</div>` : "";
+
+    const kickerText = isMultiple ? `Próximas partidas (${matchesArray.length})` : "Próxima partida";
+
+    return `<section class="fut-next"${isMultiple ? ' tabindex="0"' : ""} aria-roledescription="${isMultiple ? "carrossel" : "região"}" aria-label="Próximas partidas">
+      <div class="fut-next-head">
+        <span class="fut-kicker">${kickerText}</span>
+        ${counterBadge}
+      </div>
+      <div class="fut-carousel-wrapper">
+        ${prevBtn}
+        <div class="fut-carousel-track-container">
+          <div class="fut-carousel-track">
+            ${slidesHtml}
+          </div>
+        </div>
+        ${nextBtn}
+      </div>
+      ${dotsHtml}
+    </section>`;
+  }
+
+  function initNextMatchCarousel(container) {
+    const section = container || app.querySelector(":scope > .fut-next");
+    if (!section || section.dataset.carouselReady === "true") return;
+    const track = section.querySelector(".fut-carousel-track");
+    const slides = section.querySelectorAll(".fut-carousel-slide");
+    if (!track || slides.length <= 1) return;
+    section.dataset.carouselReady = "true";
+
+    const prevBtn = section.querySelector(".fut-carousel-prev");
+    const nextBtn = section.querySelector(".fut-carousel-next");
+    const dots = section.querySelectorAll(".fut-carousel-dot");
+    const counter = section.querySelector(".fut-current-idx");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const AUTO_DELAY = 5000;
+
+    let current = 0;
+    const total = slides.length;
+    let autoTimer = null;
+    let paused = false;
+
+    function goTo(index) {
+      current = ((index % total) + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      if (counter) counter.textContent = String(current + 1);
+      dots.forEach((dot, i) => {
+        const active = i === current;
+        dot.classList.toggle("active", active);
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+      slides.forEach((slide, i) => {
+        slide.setAttribute("aria-hidden", i === current ? "false" : "true");
+      });
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function startAuto() {
+      stopAuto();
+      if (paused || reduceMotion || document.hidden) return;
+      autoTimer = setInterval(() => goTo(current + 1), AUTO_DELAY);
+    }
+
+    function restartAuto() {
+      if (!paused) startAuto();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        goTo(current - 1);
+        restartAuto();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        goTo(current + 1);
+        restartAuto();
+      });
+    }
+    dots.forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const idx = Number(dot.dataset.dotIndex);
+        if (Number.isFinite(idx)) goTo(idx);
+        restartAuto();
+      });
+    });
+
+    let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
+
+    track.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isSwiping = true;
+        paused = true;
+        stopAuto();
+      }
+    }, { passive: true });
+
+    track.addEventListener("touchend", (e) => {
+      if (!isSwiping) return;
+      isSwiping = false;
+      const diffX = e.changedTouches[0].clientX - startX;
+      const diffY = e.changedTouches[0].clientY - startY;
+      if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) goTo(current - 1);
+        else goTo(current + 1);
+      }
+      paused = false;
+      restartAuto();
+    }, { passive: true });
+
+    section.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goTo(current - 1);
+        restartAuto();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goTo(current + 1);
+        restartAuto();
+      }
+    });
+
+    section.addEventListener("mouseenter", () => {
+      paused = true;
+      stopAuto();
+    });
+    section.addEventListener("mouseleave", () => {
+      paused = false;
+      startAuto();
+    });
+    section.addEventListener("focusin", () => {
+      paused = true;
+      stopAuto();
+    });
+    section.addEventListener("focusout", (e) => {
+      if (section.contains(e.relatedTarget)) return;
+      paused = false;
+      startAuto();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopAuto();
+      else restartAuto();
+    });
+
+    goTo(0);
+    startAuto();
   }
 
   async function renderHome(token) {
@@ -666,6 +1040,7 @@
     const yearsSection = catalogResult.status === "rejected" ? apiMessage("Não conseguimos carregar os campeonatos", "A conexão com o sistema de futebol falhou. Aguarde alguns instantes e tente novamente.") : (cards || apiMessage("Nenhum campeonato foi encontrado", "O sistema respondeu, mas ainda não há campeonatos disponíveis para exibição.", "Nenhum dado disponível"));
     app.innerHTML = `${next}${header("Campeonatos por ano", "Selecione uma temporada para ver as competições.")}<section class="fut-grid" aria-label="Anos disponíveis">${yearsSection}</section>`;
     bindNavigation();
+    initNextMatchCarousel();
     app.querySelector("[data-retry]")?.addEventListener("click", () => { catalog = null; renderRoute(); });
   }
 
@@ -726,28 +1101,76 @@
     const homeOG = match.homeOwnGoals ?? match.teamAOwnGoals;
     const awayOG = match.awayOwnGoals ?? match.teamBOwnGoals;
     const ownGoals = number(homeOG) || number(awayOG) ? `Gols contra: ${home.name} ${number(homeOG)}, ${away.name} ${number(awayOG)}` : "";
-    const allScorers = list(match.scorers || match.goals).filter((item) => !item.ownGoal);
+    // collect scorer candidates from multiple possible shapes
+    const candidates = [];
+    if (Array.isArray(match.goals)) candidates.push(...match.goals);
+    if (Array.isArray(match.scorers)) candidates.push(...match.scorers);
+    if (Array.isArray(match.events?.goals)) candidates.push(...match.events.goals);
+    if (Array.isArray(match.events)) {
+      match.events.filter((e) => e && (e.type === "goal" || e.type === "gol" || e.eventType === "goal")).forEach((e) => {
+        if (Array.isArray(e.payload?.goals)) candidates.push(...e.payload.goals);
+        else if (e.payload) candidates.push(e.payload);
+        else candidates.push(e);
+      });
+    }
+    const allScorers = list(candidates).filter((item) => !item?.ownGoal);
+    const scorerName = (i) => String(i?.playerName || i?.player?.name || i?.player?.fullName || i?.player?.displayName || i?.scorerName || i?.authorName || i?.name || "").trim();
+
     function scorerRow(items, side) {
       const g = new Map();
       items.forEach((i) => {
-        const n = i.player?.name || i.playerName || i.name || "";
+        const n = scorerName(i);
         if (!n) return;
         const m = i.minute != null ? i.minute : null;
+        const rawCount = i.goals ?? i.goalCount ?? i.totalGoals ?? i.quantity ?? i.count ?? 1;
+        const goalCount = Math.max(1, Math.trunc(Number(rawCount) || 1));
+        const events = Array.from({ length: goalCount }, (_, index) => index === 0 ? m : null);
         const e = g.get(n);
-        if (e) e.push(m); else g.set(n, [m]);
+        if (e) e.push(...events); else g.set(n, events);
       });
       const entries = [...g.entries()];
       if (!entries.length) return "";
       const inner = entries.map(([n, minutes]) => {
         const mins = minutes.filter((m) => m != null).map((m) => `<span class="fut-scorer-min">${m}&apos;</span>`).join("");
-        return `<span class="fut-scorer"><span class="fut-scorer-name">${escapeHtml(n)}</span>${mins}</span>`;
+        const count = minutes.length;
+        const iconFa = `<i class="fas fa-futbol" aria-hidden="true"></i>`;
+        const countSpan = `<span class="fut-scorer-count" aria-label="${count} gol${count===1?"":"s"}">${count}</span>`;
+        return `<span class="fut-scorer"><span class="fut-scorer-name">${escapeHtml(n)}</span>${iconFa}${countSpan}${mins}</span>`;
       }).join('<span class="fut-scorer-sep" aria-hidden="true">&middot;</span>');
       return `<div class="fut-scorers-row fut-scorers-row--${side}"><span class="fut-scorers-list">${inner}</span></div>`;
     }
-    const homeRow = scorerRow(allScorers.filter((item) => String(item.teamId) === String(home.id)), "home");
-    const awayRow = scorerRow(allScorers.filter((item) => String(item.teamId) === String(away.id)), "away");
-    const hasScorers = homeRow || awayRow;
-    return `<article class="fut-match"><div class="fut-match-team">${home.src ? logo(home.src, true) : ""}<strong>${escapeHtml(home.name)}</strong></div><div class="fut-score">${escapeHtml(score)}</div><div class="fut-match-team away">${away.src ? logo(away.src, true) : ""}<strong>${escapeHtml(away.name)}</strong></div>${hasScorers ? `<div class="fut-match-scorers">${homeRow}${awayRow}</div>` : ""}${hasPenalties ? `<div class="fut-detail"><strong>Pênaltis:</strong> ${number(match.homePenalties ?? match.teamAPenalties)} × ${number(match.awayPenalties ?? match.teamBPenalties)}${winner ? ` — vencedor: ${escapeHtml(winner)}` : ""}</div>` : ""}${info ? `<div class="fut-detail">${escapeHtml(info)}</div>` : ""}${ownGoals ? `<div class="fut-detail">${escapeHtml(ownGoals)}</div>` : ""}${match.note ? `<div class="fut-detail fut-note">${escapeHtml(match.note)}</div>` : ""}</article>`;
+
+    const homeRow = scorerRow(allScorers.filter((item) => {
+      const sId = item.teamId ?? item.team?.id ?? item.scoringTeamId ?? null;
+      if (sId != null && String(sId) !== "") return String(sId) === String(home.id);
+      const sName = (item.teamName || item.team?.name || item.team?.shortName || "").toString().trim().toLowerCase();
+      const tName = (home.name || home.shortName || "").toString().trim().toLowerCase();
+      return sName && tName ? sName === tName : false;
+    }), "home");
+    const awayRow = scorerRow(allScorers.filter((item) => {
+      const sId = item.teamId ?? item.team?.id ?? item.scoringTeamId ?? null;
+      if (sId != null && String(sId) !== "") return String(sId) === String(away.id);
+      const sName = (item.teamName || item.team?.name || item.team?.shortName || "").toString().trim().toLowerCase();
+      const tName = (away.name || away.shortName || "").toString().trim().toLowerCase();
+      return sName && tName ? sName === tName : false;
+    }), "away");
+
+    if (allScorers.length && !homeRow && !awayRow) {
+      try { console.debug("futebol: gols sem autores reconhecidos (string-render)", { matchId: match.id || null, samples: allScorers.slice(0,5) }); } catch (_) {}
+    }
+    // Montar a seção de artilheiros: se houver nomes, exibe-os; se houver gols mas sem nomes, exibe aviso
+    let scorersHtml = "";
+    if (homeRow || awayRow) {
+      scorersHtml = `<div class="fut-match-scorers">${homeRow || ""}${awayRow || ""}</div>`;
+    } else {
+      const homeScoreVal = number(match.homeScore ?? match.teamAScore ?? match.teamA?.score ?? 0);
+      const awayScoreVal = number(match.awayScore ?? match.teamBScore ?? match.teamB?.score ?? 0);
+      const totalGoals = (Number.isFinite(homeScoreVal) ? homeScoreVal : 0) + (Number.isFinite(awayScoreVal) ? awayScoreVal : 0);
+      if (totalGoals > 0 || allScorers.length > 0) {
+        scorersHtml = `<div class="fut-match-scorers"><div class="fut-scorers-warning" role="status">Dados incompletos: autores dos gols não fornecidos.</div></div>`;
+      }
+    }
+    return `<article class="fut-match"><div class="fut-match-team">${home.src ? logo(home.src, true) : ""}<strong>${escapeHtml(home.name)}</strong></div><div class="fut-score">${escapeHtml(score)}</div><div class="fut-match-team away">${away.src ? logo(away.src, true) : ""}<strong>${escapeHtml(away.name)}</strong></div>${scorersHtml}${hasPenalties ? `<div class="fut-detail"><strong>Pênaltis:</strong> ${number(match.homePenalties ?? match.teamAPenalties)} × ${number(match.awayPenalties ?? match.teamBPenalties)}${winner ? ` — vencedor: ${escapeHtml(winner)}` : ""}</div>` : ""}${info ? `<div class="fut-detail">${escapeHtml(info)}</div>` : ""}${ownGoals ? `<div class="fut-detail">${escapeHtml(ownGoals)}</div>` : ""}${match.note ? `<div class="fut-detail fut-note">${escapeHtml(match.note)}</div>` : ""}</article>`;
   }
 
   function formatDateTime(value) {
@@ -766,14 +1189,45 @@
     return `<div class="fut-list">${items.map((entry, index) => {
       const name = kind === "bestDefenses" ? (entry.team?.name || entry.teamName || entry.name) : (entry.player?.name || entry.playerName || entry.name);
       const value = kind === "bestDefenses" ? (entry.goalsConceded ?? entry.goalsAgainst ?? 0) : (entry.goals ?? entry.totalGoals ?? 0);
+      if (kind === "topScorers") {
+        // usar o mesmo padrão: nome + ícone + contador
+        const iconWrapper = `<span class="fut-ball-icon-wrapper" aria-hidden="true"><i class="fas fa-futbol" aria-hidden="true"></i></span>`;
+        const countSpan = `<span class="fut-scorer-count" aria-label="${value} gol${value===1?"":"s"}">${escapeHtml(String(value))}</span>`;
+        return `<div class="fut-rank"><span class="fut-pos">${escapeHtml(entry.position || index + 1)}</span><strong>${escapeHtml(name || "Não informado")}</strong><span class="fut-value">${iconWrapper}${countSpan}</span></div>`;
+      }
       return `<div class="fut-rank"><span class="fut-pos">${escapeHtml(entry.position || index + 1)}</span><strong>${escapeHtml(name || "Não informado")}</strong><span class="fut-value">${escapeHtml(value)} ${kind === "bestDefenses" ? "sofridos" : "gols"}</span></div>`;
     }).join("")}</div>`;
   }
 
+  function normalizeGroupName(name) {
+    const trimmed = String(name || "").trim();
+    if (!trimmed) return "Grupo";
+    if (/^grupo\s+/i.test(trimmed)) return trimmed;
+    return `Grupo ${trimmed}`;
+  }
+
   function standings(data) {
+    const rawGroups = Array.isArray(data)
+      ? (data.length > 0 && (data[0].rows || data[0].standings || data[0].table || data[0].items) ? data : null)
+      : (data?.groups || data?.groupStandings || data?.standingsByGroup || data?.groupsStandings || (Array.isArray(data?.standings) && data.standings.length > 0 && (data.standings[0].rows || data.standings[0].standings || data.standings[0].table || data.standings[0].items) ? data.standings : null));
+
+    const renderTable = (items) => {
+      if (!items || !items.length) return "";
+      return `<div class="fut-table-wrap"><table class="fut-table"><thead><tr><th>#</th><th>Equipe</th><th>PTS</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr></thead><tbody>${items.map((item, index) => `<tr><td>${escapeHtml(item.position || index + 1)}</td><td>${escapeHtml(item.team?.name || item.teamName || item.name || "Equipe")}</td><td><strong>${number(item.points)}</strong></td><td>${number(item.played ?? item.matchesPlayed)}</td><td>${number(item.wins)}</td><td>${number(item.draws)}</td><td>${number(item.losses)}</td><td>${number(item.goalsFor)}</td><td>${number(item.goalsAgainst)}</td><td>${number(item.goalDifference ?? item.goalDiff)}</td></tr>`).join("")}</tbody></table></div>`;
+    };
+
+    if (Array.isArray(rawGroups) && rawGroups.length) {
+      const groupsHtml = rawGroups.map((g) => {
+        const title = normalizeGroupName(g.name || g.groupName || g.label);
+        const items = list(g.rows || g.standings || g.table || g.items);
+        return `<div class="fut-box"><h3>${escapeHtml(title)}</h3>${renderTable(items) || empty("Nenhuma equipe cadastrada neste grupo.")}</div>`;
+      }).join("");
+      return `<div class="groups-wrapper">${groupsHtml}</div>`;
+    }
+
     const items = list(data?.standings || data);
     if (!items.length) return "";
-    return `<div class="fut-table-wrap"><table class="fut-table"><thead><tr><th>#</th><th>Equipe</th><th>PTS</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr></thead><tbody>${items.map((item, index) => `<tr><td>${escapeHtml(item.position || index + 1)}</td><td>${escapeHtml(item.team?.name || item.teamName || item.name || "Equipe")}</td><td><strong>${number(item.points)}</strong></td><td>${number(item.played ?? item.matchesPlayed)}</td><td>${number(item.wins)}</td><td>${number(item.draws)}</td><td>${number(item.losses)}</td><td>${number(item.goalsFor)}</td><td>${number(item.goalsAgainst)}</td><td>${number(item.goalDifference)}</td></tr>`).join("")}</tbody></table></div>`;
+    return `<div class="fut-box">${renderTable(items)}</div>`;
   }
 
   function annotations(data) {
@@ -812,7 +1266,7 @@
     const sections = [
       { id: "overview", label: "Visão geral", content: results[0].status === "fulfilled" ? overview(results[0].value, competition) : overview(competition, competition) },
       { id: "matches", label: "Jogos e resultados", content: `<div class="fut-box">${sectionState(results[2], matches, "As partidas aparecerão aqui assim que a competição começar.", "Os jogos ainda não começaram")}</div>` },
-      { id: "standings", label: "Classificação", content: `<div class="fut-box">${sectionState(results[3], standings, "A tabela será formada após os primeiros resultados.", "A classificação ainda não começou")}</div>` },
+      { id: "standings", label: "Classificação", content: sectionState(results[3], standings, "A tabela será formada após os primeiros resultados.", "A classificação ainda não começou") },
       { id: "teams", label: "Equipes", content: sectionState(results[1], teams, "Ainda não há equipes cadastradas.") },
       { id: "scorers", label: "Artilharia", content: `<div class="fut-box">${sectionState(results[4], (data) => ranking(data, "topScorers"), "Os jogadores aparecerão aqui conforme os gols forem registrados.", "A artilharia começa com a bola rolando")}</div>` },
       { id: "defense", label: "Defesas", content: `<div class="fut-box">${sectionState(results[5], (data) => ranking(data, "bestDefenses"), "O ranking será calculado depois das primeiras partidas.", "As melhores defesas ainda serão definidas")}</div>` }
@@ -825,10 +1279,9 @@
     try { result = await request(`/historical-championships/${encodeURIComponent(competition.id)}`); }
     catch (_) { if (token === routeToken) app.innerHTML = state("fa-exclamation-triangle", "Campeonato indisponível", "Não foi possível carregar o histórico.", `<button class="fut-btn" data-route='{}'>Voltar ao início</button>`); bindNavigation(); return; }
     if (token !== routeToken) return;
-    const historicalStandings = list(result.standings).map((item) => ({ ...item, goalDifference: item.goalDifference ?? item.goalDiff }));
     const sections = [
       { id: "overview", label: "Visão geral", content: overview(result, competition) },
-      { id: "standings", label: "Classificação", content: `<div class="fut-box">${standings({ standings: historicalStandings }) || empty("Não há classificação registrada.")}</div>` },
+      { id: "standings", label: "Classificação", content: standings(result.standings) || empty("Não há classificação registrada.") },
       { id: "matches", label: "Jogos e resultados", content: `<div class="fut-box">${matches(result.rounds) || empty("Não há partidas registradas.")}</div>` },
       { id: "teams", label: "Equipes", content: teams(result.teams) || empty("Não há equipes registradas.") },
       { id: "scorers", label: "Artilharia", content: `<div class="fut-box">${ranking(result.topScorers, "topScorers") || empty("Não há artilharia registrada.")}</div>` },
@@ -924,23 +1377,53 @@
         if (mHome === homeName && mAway === awayName) matchData = m;
       });
       if (!matchData) return;
-      const goals = list(matchData.goals || matchData.scorers).filter((g) => !g.ownGoal);
+      // collect candidate goal/scorer records
+      const candidates = [];
+      if (Array.isArray(matchData.goals)) candidates.push(...matchData.goals);
+      if (Array.isArray(matchData.scorers)) candidates.push(...matchData.scorers);
+      if (Array.isArray(matchData.events?.goals)) candidates.push(...matchData.events.goals);
+      if (Array.isArray(matchData.events)) {
+        matchData.events.filter((e) => e && (e.type === "goal" || e.type === "gol" || e.eventType === "goal")).forEach((e) => {
+          if (Array.isArray(e.payload?.goals)) candidates.push(...e.payload.goals);
+          else if (e.payload) candidates.push(e.payload);
+          else candidates.push(e);
+        });
+      }
+      const goals = list(candidates).filter((g) => !g?.ownGoal);
       if (!goals.length) return;
       const homeId = String((matchData.homeTeam || matchData.teamA || {}).id || "");
       const awayId = String((matchData.awayTeam || matchData.teamB || {}).id || "");
-      const homeScorers = goals.filter((g) => String(g.teamId) === homeId);
-      const awayScorers = goals.filter((g) => String(g.teamId) === awayId);
+
+      const scorerName = (g) => String(g?.playerName || g?.player?.name || g?.player?.fullName || g?.player?.displayName || g?.scorerName || g?.authorName || g?.name || "").trim();
+
+      const homeScorers = goals.filter((g) => {
+        const sId = g.teamId ?? g.team?.id ?? g.scoringTeamId ?? null;
+        if (sId != null && String(sId) !== "") return String(sId) === homeId;
+        const sName = (g.teamName || g.team?.name || g.team?.shortName || "").toString().trim().toLowerCase();
+        const hName = (matchData.homeTeam?.name || matchData.teamA?.name || matchData.homeTeam?.shortName || "").toString().trim().toLowerCase();
+        return sName && hName ? sName === hName : false;
+      });
+      const awayScorers = goals.filter((g) => {
+        const sId = g.teamId ?? g.team?.id ?? g.scoringTeamId ?? null;
+        if (sId != null && String(sId) !== "") return String(sId) === awayId;
+        const sName = (g.teamName || g.team?.name || g.team?.shortName || "").toString().trim().toLowerCase();
+        const aName = (matchData.awayTeam?.name || matchData.teamB?.name || matchData.awayTeam?.shortName || "").toString().trim().toLowerCase();
+        return sName && aName ? sName === aName : false;
+      });
       if (!homeScorers.length && !awayScorers.length) return;
       const existing = article.querySelector(".fut-match-scorers");
       if (existing) existing.remove();
       function groupScorers(items) {
         const grouped = new Map();
         items.forEach((g) => {
-          const name = g.playerName || g.player?.name || g.name || "";
+          const name = scorerName(g);
           if (!name) return;
           const m = g.minute != null ? g.minute : null;
+          const rawCount = g.goals ?? g.goalCount ?? g.totalGoals ?? g.quantity ?? g.count ?? 1;
+          const goalCount = Math.max(1, Math.trunc(Number(rawCount) || 1));
+          const events = Array.from({ length: goalCount }, (_, index) => index === 0 ? m : null);
           const e = grouped.get(name);
-          if (e) e.push(m); else grouped.set(name, [m]);
+          if (e) e.push(...events); else grouped.set(name, events);
         });
         return [...grouped.entries()];
       }
@@ -951,12 +1434,18 @@
         nameSpan.className = "fut-scorer-name";
         nameSpan.textContent = entries[0];
         span.appendChild(nameSpan);
-        entries[1].filter((m) => m != null).forEach((m) => {
-          const badge = document.createElement("span");
-          badge.className = "fut-scorer-min";
-          badge.textContent = m + "'";
-          span.appendChild(badge);
-        });
+        // ícone da bola (Font Awesome) como elemento decorativo
+        const iconWrapper = document.createElement("span");
+        iconWrapper.className = "fut-ball-icon-wrapper";
+        iconWrapper.setAttribute("aria-hidden", "true");
+        iconWrapper.innerHTML = `<i class="fas fa-futbol" aria-hidden="true"></i>`;
+        span.appendChild(iconWrapper);
+        // contador acessível
+        const total = document.createElement("span");
+        total.className = "fut-scorer-count";
+        total.textContent = String(entries[1].length);
+        total.setAttribute("aria-label", `${entries[1].length} gol${entries[1].length === 1 ? "" : "s"}`);
+        span.appendChild(total);
         return span;
       }
       function buildScorerRow(items, side) {
@@ -1179,8 +1668,20 @@
     const scorersList = Array.isArray(match.scorers) ? match.scorers : [];
     const homeId = String(home.id || "");
     const awayId = String(away.id || "");
-    const homeScorers = scorersList.filter((s) => String(s.teamId) === homeId);
-    const awayScorers = scorersList.filter((s) => String(s.teamId) === awayId);
+    const homeScorers = scorersList.filter((s) => {
+      const sId = s.teamId ?? s.team?.id ?? s.scoringTeamId ?? null;
+      if (sId != null && String(sId) !== "") return String(sId) === homeId;
+      const sName = (s.teamName || s.team?.name || "").toString().trim().toLowerCase();
+      const hName = (home.name || "").toString().trim().toLowerCase();
+      return sName && hName ? sName === hName : false;
+    });
+    const awayScorers = scorersList.filter((s) => {
+      const sId = s.teamId ?? s.team?.id ?? s.scoringTeamId ?? null;
+      if (sId != null && String(sId) !== "") return String(sId) === awayId;
+      const sName = (s.teamName || s.team?.name || "").toString().trim().toLowerCase();
+      const aName = (away.name || "").toString().trim().toLowerCase();
+      return sName && aName ? sName === aName : false;
+    });
     if (homeScorers.length || awayScorers.length) {
       function groupScorers(items) {
         const grouped = new Map();
@@ -1188,8 +1689,11 @@
           const name = s.playerName || s.player?.name || s.name || "";
           if (!name) return;
           const m = s.minute != null ? s.minute : null;
+          const rawCount = s.goals ?? s.goalCount ?? s.totalGoals ?? s.quantity ?? s.count ?? 1;
+          const goalCount = Math.max(1, Math.trunc(Number(rawCount) || 1));
+          const events = Array.from({ length: goalCount }, (_, index) => index === 0 ? m : null);
           const e = grouped.get(name);
-          if (e) e.push(m); else grouped.set(name, [m]);
+          if (e) e.push(...events); else grouped.set(name, events);
         });
         return [...grouped.entries()];
       }
@@ -1200,12 +1704,18 @@
         nameSpan.className = "fut-scorer-name";
         nameSpan.textContent = entries[0];
         span.appendChild(nameSpan);
-        entries[1].filter((m) => m != null).forEach((m) => {
-          const badge = document.createElement("span");
-          badge.className = "fut-scorer-min";
-          badge.textContent = m + "'";
-          span.appendChild(badge);
-        });
+        // ícone da bola (Font Awesome) como elemento decorativo
+        const iconWrapper = document.createElement("span");
+        iconWrapper.className = "fut-ball-icon-wrapper";
+        iconWrapper.setAttribute("aria-hidden", "true");
+        iconWrapper.innerHTML = `<i class="fas fa-futbol" aria-hidden="true"></i>`;
+        span.appendChild(iconWrapper);
+        // contador acessível
+        const total = document.createElement("span");
+        total.className = "fut-scorer-count";
+        total.textContent = String(entries[1].length);
+        total.setAttribute("aria-label", `${entries[1].length} gol${entries[1].length === 1 ? "" : "s"}`);
+        span.appendChild(total);
         return span;
       }
       function buildScorerRow(items, side) {
@@ -1313,18 +1823,6 @@
       grid.className = "fut-current-matches-grid";
       (round.matches || []).forEach((match) => grid.appendChild(matchCard(match, teamsById)));
       section.append(heading, grid);
-      const roundAnnotations = annotationsByRound.get(round.id || "") || [];
-      roundAnnotations.forEach((annotation) => {
-        const note = document.createElement("div");
-        note.className = "fut-round-annotation";
-        const icon = document.createElement("i");
-        icon.className = "fas fa-sticky-note";
-        icon.setAttribute("aria-hidden", "true");
-        const text = document.createElement("span");
-        text.textContent = annotation.note || "";
-        note.append(icon, text);
-        section.appendChild(note);
-      });
       panel.appendChild(section);
       roundElements.push(section);
     });
@@ -1676,4 +2174,3 @@
   }).observe(app, { childList: true });
   sortTeams();
 })();
-
