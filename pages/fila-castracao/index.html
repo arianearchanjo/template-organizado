@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Pré-Cadastro Castra Móvel - Prefeitura de Campina Grande do Sul</title>
+
+  <script>
+    // Define o caminho base para assets e links
+    function getBasePath() {
+      return "../../";
+    }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+  
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <main id="pi-conteudo">
+    <!-- ══════════════════════════════════════════════════════════════
+       HERO — Breadcrumb e título da página
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="../castra-movel/">Castra Móvel</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Pré-Cadastro</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Pré-Cadastro do Programa Castra Móvel</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+        <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
+        <section id="formulario-servico" aria-labelledby="form-titulo">
+
+          <!-- Área de feedback acessível (aria-live) -->
+          <div class="form-alert" id="form-feedback" role="alert" aria-live="polite"></div>
+
+          <!-- Card do formulário -->
+          <div class="form-card">
+
+            <div class="form-header">
+              <h2 id="form-titulo"><i class="fas fa-syringe" aria-hidden="true"></i> FICHA DE PRÉ-CADASTRO CASTRA MÓVEL</h2>
+              <p>Preencha os dados abaixo para inscrever seu cão e/ou gato no programa de castração móvel</p>
+            </div>
+
+            <div class="form-body">
+              <form id="pi-form-castra-movel" novalidate>
+
+                <!-- ─ SEÇÃO: IDENTIFICAÇÃO DO SOLICITANTE ─ -->
+                <h3 class="form-section-title"><i class="fas fa-user" aria-hidden="true"></i> Identificação do Solicitante</h3>
+
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="data">Data <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="data" name="data" class="form-control"
+                             placeholder="00/00/0000" required
+                             aria-required="true" aria-describedby="data-error"
+                             inputmode="numeric" maxlength="10" autocomplete="off">
+                      <span class="error-msg" id="data-error" aria-live="polite">Por favor, informe uma data válida.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-9">
+                    <div class="form-group">
+                      <label for="nome">Nome <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="nome" name="nome" class="form-control"
+                             placeholder="Nome completo" required
+                             aria-required="true" aria-describedby="nome-error"
+                             autocomplete="name">
+                      <span class="error-msg" id="nome-error" aria-live="polite">Por favor, informe seu nome completo.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-md-8">
+                    <div class="form-group">
+                      <label for="endereco">Endereço <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="endereco" name="endereco" class="form-control"
+                             placeholder="Rua, número e complemento" required
+                             aria-required="true" aria-describedby="endereco-error"
+                             autocomplete="street-address">
+                      <span class="error-msg" id="endereco-error" aria-live="polite">Por favor, informe o endereço.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <div class="form-group">
+                      <label for="bairro">Bairro <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="bairro" name="bairro" class="form-control"
+                             placeholder="Bairro" required
+                             aria-required="true" aria-describedby="bairro-error"
+                             autocomplete="address-level3">
+                      <span class="error-msg" id="bairro-error" aria-live="polite">Por favor, informe o bairro.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="telefone">Telefone para Contato <span class="req" aria-hidden="true">*</span></label>
+                      <input type="tel" id="telefone" name="telefone" class="form-control"
+                             placeholder="(41) 00000-0000" required
+                             aria-required="true" aria-describedby="telefone-error"
+                             inputmode="numeric" maxlength="15" autocomplete="tel">
+                      <span class="error-msg" id="telefone-error" aria-live="polite">Por favor, informe um telefone para contato.</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="cpf">CPF <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="cpf" name="cpf" class="form-control"
+                             placeholder="000.000.000-00" required
+                             aria-required="true" aria-describedby="cpf-error"
+                             inputmode="numeric" maxlength="14" autocomplete="off">
+                      <span class="error-msg" id="cpf-error" aria-live="polite">Por favor, informe um CPF válido.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ SEÇÃO: QUANTIDADE DE ANIMAIS ─ -->
+                <h3 class="form-section-title mt-2"><i class="fas fa-paw" aria-hidden="true"></i> Quantidade de Animais</h3>
+                <div class="form-alert" id="animais-feedback" role="alert" aria-live="polite"></div>
+
+                <fieldset class="form-animal-grupo">
+                  <legend class="form-subsection-title"><i class="fas fa-dog" aria-hidden="true"></i> Cão</legend>
+                  <div class="row">
+                    <div class="col-6 col-md-3">
+                      <div class="form-group">
+                        <label for="cao-machos">Machos</label>
+                        <input type="number" id="cao-machos" name="cao-machos" class="form-control"
+                               placeholder="0" min="0" step="1" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="form-group">
+                        <label for="cao-femeas">Fêmeas</label>
+                        <input type="number" id="cao-femeas" name="cao-femeas" class="form-control"
+                               placeholder="0" min="0" step="1" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Preenchido dinamicamente pelo script.js: 1 bloco de Nome/Idade por animal -->
+                  <div class="form-animal-lista" id="cao-animais-lista"></div>
+                </fieldset>
+
+                <fieldset class="form-animal-grupo">
+                  <legend class="form-subsection-title"><i class="fas fa-cat" aria-hidden="true"></i> Gato</legend>
+                  <div class="row">
+                    <div class="col-6 col-md-3">
+                      <div class="form-group">
+                        <label for="gato-machos">Machos</label>
+                        <input type="number" id="gato-machos" name="gato-machos" class="form-control"
+                               placeholder="0" min="0" step="1" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="form-group">
+                        <label for="gato-femeas">Fêmeas</label>
+                        <input type="number" id="gato-femeas" name="gato-femeas" class="form-control"
+                               placeholder="0" min="0" step="1" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Preenchido dinamicamente pelo script.js: 1 bloco de Nome/Idade por animal -->
+                  <div class="form-animal-lista" id="gato-animais-lista"></div>
+                </fieldset>
+
+                <!-- ─ SEÇÃO: OBSERVAÇÕES ─ -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="observacoes">Observações <span class="text-muted">(opcional)</span></label>
+                      <textarea id="observacoes" name="observacoes" class="form-control"
+                                placeholder="Alguma informação adicional que devemos saber?"
+                                rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─ AVISOS IMPORTANTES ─ -->
+                <div class="form-aviso" role="note" aria-label="Regras do programa Castra Móvel">
+                  <div class="form-aviso-titulo"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Atenção</div>
+                  <ul>
+                    <li>Idade entre 6 meses a 7 anos.</li>
+                    <li>Fêmeas não devem estar no cio.</li>
+                    <li>Obrigatório participar da palestra.</li>
+                  </ul>
+                </div>
+
+                <!-- ─ CAPTCHA ─ -->
+                <div class="form-captcha-wrap">
+                  <div class="g-recaptcha" data-sitekey="SEU_SITE_KEY_AQUI" aria-label="Verificação reCAPTCHA"></div>
+                </div>
+                <!-- Fallback visual quando reCAPTCHA não está configurado -->
+                <div class="form-group" id="captcha-fallback"
+                     style="border:1px solid #ced4da;border-radius:6px;padding:14px 18px;background:#f8f9fa;max-width:300px;display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;">
+                  <input type="checkbox" id="nao-sou-robo" style="width:20px;height:20px;cursor:pointer;" aria-label="Confirmar que não sou um robô">
+                  <label for="nao-sou-robo" style="margin:0;font-size:.9rem;font-weight:500;color:#333;cursor:pointer;">Não sou um robô</label>
+                  <div style="margin-left:auto;text-align:center;">
+                    <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" width="32" style="display:block;margin:0 auto 2px;">
+                    <small style="font-size:.65rem;color:#777;display:block;">reCAPTCHA</small>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <!-- fim form-body -->
+
+            <div class="form-footer">
+              <button type="button" class="btn-cancelar" onclick="history.back()" aria-label="Cancelar e voltar">
+                <i class="fas fa-times" aria-hidden="true"></i> Cancelar
+              </button>
+              <button type="submit" form="pi-form-castra-movel" class="btn-enviar" aria-label="Enviar pré-cadastro">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar
+              </button>
+            </div>
+
+          </div>
+          <!-- fim form-card -->
+
+        </section>
+        <!-- ── /COLUNA PRINCIPAL ──────────────────────────────────── -->
+
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <aside id="pi-sidebar" class="pi-sidebar" aria-label="Informações e acessibilidade">
+
+          <!-- Informações do programa -->
+          <div class="form-help-card" aria-labelledby="help-titulo">
+            <div class="help-header" id="help-titulo">
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+              <span>Informações do&nbsp;Programa</span>
+            </div>
+            <div class="help-body">
+              <div class="form-help-item">
+                <div class="help-tipo">Idade permitida</div>
+                <p>Animais entre 6 meses e 7 anos de idade.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Fêmeas</div>
+                <p>Não devem estar no cio no dia do atendimento.</p>
+              </div>
+              <div class="form-help-item">
+                <div class="help-tipo">Palestra</div>
+                <p>Participação obrigatória para efetivar a castração.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+                <button class="pi-ctrl-btn" id="pi-sb-fonte-resetar"  aria-label="Restaurar fonte">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Ativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Contato rápido -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Dúvidas</h4>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7320</p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:bemestaranimal@pmcgs.pr.gov.br">bemestaranimal@pmcgs.pr.gov.br</a>
+            </p>
+          </div>
+
+        </aside>
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
