@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistemas Desenvolvidos pela TI | Prefeitura de Campina Grande do Sul</title>
-
+  <meta name="description" content="Conheça os sistemas digitais da Prefeitura de Campina Grande do Sul: FootEasy, BookEase, SIBEA, SGA, SIRA e mais.">
+  <title>Sistemas da TI | Prefeitura de Campina Grande do Sul</title>
   <script>
     function getBasePath() { return "../../"; }
     const base = getBasePath();
   </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -18,59 +17,57 @@
 </head>
 <body>
   <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
-
   <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-  <div id="pi-wrapper">
-    <section id="pi-hero" aria-labelledby="sistemas-titulo">
-      <div class="container">
-        <div class="pi-hero-inner">
-          <nav aria-label="Você está em">
-            <ol class="pi-breadcrumb">
-              <li>
-                <a href="../../index.html">
-                  <i class="fas fa-home" aria-hidden="true"></i> Início
-                </a>
-              </li>
-              <li aria-hidden="true">
-                <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-              </li>
-              <li aria-current="page">Sistemas desenvolvidos pela TI</li>
-            </ol>
-          </nav>
-
-          <h1 id="sistemas-titulo" class="pi-hero-titulo">Sistemas desenvolvidos pela TI</h1>
-          <p class="pi-hero-subtitulo">Tecnologia municipal criada para modernizar serviços e facilitar o acesso à informação.</p>
-        </div>
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Sistemas da TI</li>
+          </ol>
+        </nav>
+        <h1 class="pi-hero-titulo">Sistemas da TI</h1>
+        <p class="pi-hero-subtitulo">Tecnologia e inovação a serviço da gestão pública</p>
       </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../_global/img/global/ilustracao.png" alt="">
+    </div>
+  </section>
 
-      <div class="pi-hero-ilustracao" aria-hidden="true">
-        <img src="../../_global/img/global/ilustracao.png" alt="">
-      </div>
-    </section>
+  <main id="pi-main">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
 
-    <main id="pi-main">
-      <div class="container">
-        <div id="pi-conteudo" tabindex="-1">
-          <section class="sti-intro" aria-labelledby="solucoes-titulo">
+        <!-- COLUNA PRINCIPAL -->
+        <article>
+
+          <!-- APRESENTAÇÃO -->
+          <section class="sti-header" aria-labelledby="sti-titulo">
             <div class="sti-intro-icon" aria-hidden="true">
               <i class="fas fa-laptop-code"></i>
             </div>
             <div>
               <span class="sti-label">Tecnologia e inovação</span>
-              <h2 id="solucoes-titulo">Soluções digitais do município</h2>
-              <p>Conheça as soluções digitais desenvolvidas pela equipe de Desenvolvimento de Sistemas da Secretaria de Tecnologia, Inovação e Transformação Digital para apoiar a gestão pública, simplificar processos e oferecer serviços mais eficientes aos cidadãos e servidores municipais.</p>
+              <h1 id="sti-titulo">Sistemas da TI</h1>
+              <p>Conheça as soluções digitais da Prefeitura de Campina Grande do Sul. Cada sistema foi desenvolvido para modernizar a gestão pública e aproximar os serviços dos cidadãos e servidores.</p>
             </div>
           </section>
 
+          <!-- SISTEMAS DISPONÍVEIS -->
           <section aria-labelledby="sistemas-disponiveis">
-            <h2 id="sistemas-disponiveis" class="sti-grupo-titulo">
+            <h2 id="sistemas-disponiveis" class="pi-secao-titulo">
               <i class="fas fa-circle-check" aria-hidden="true"></i>
               Sistemas disponíveis
             </h2>
+            <hr class="pi-secao-divider">
             <div class="sti-grid">
+
               <article class="sti-card">
                 <a href="https://campinagrandedosul.pr.gov.br/" target="_blank" rel="noopener" aria-label="Acessar o site oficial da Prefeitura de Campina Grande do Sul em uma nova aba">
                   <div class="sti-card-header sti-card-header--portal">
@@ -81,9 +78,9 @@
                     <div class="sti-card-icon" aria-hidden="true">
                       <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Site oficial da Prefeitura</h3>
-                    <span class="sti-card-subtitle">Projeto integral da equipe de TI</span>
-                    <p>Portal concebido e desenvolvido integralmente pela equipe municipal de TI, responsável pelo design, experiência do usuário (UX), front-end, back-end, implantação e evolução contínua da plataforma.</p>
+                    <h3>Portal Municipal</h3>
+                    <span class="sti-card-subtitle">Site Oficial da Prefeitura</span>
+                    <p>Site oficial da Prefeitura de Campina Grande do Sul, com conteúdo institucional, serviços, notícias e acesso a sistemas municipais.</p>
                     <span class="sti-card-link">
                       Acessar o site oficial
                       <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -93,7 +90,7 @@
               </article>
 
               <article class="sti-card">
-                <a href="../acervo-digital/" aria-label="Conhecer o Acervo Digital">
+                <a href="/acervo-digital" aria-label="Conhecer o Acervo Digital">
                   <div class="sti-card-header sti-card-header--acervo">
                     <span class="sti-card-badge">Memória</span>
                     <i class="fas fa-images" aria-hidden="true"></i>
@@ -103,7 +100,7 @@
                       <i class="fas fa-camera-retro"></i>
                     </div>
                     <h3>Acervo Digital</h3>
-                    <span class="sti-card-subtitle">Acervo fotográfico municipal</span>
+                    <span class="sti-card-subtitle">Acervo Digital municipal</span>
                     <p>Organização, preservação, consulta e utilização dos registros fotográficos dos órgãos municipais.</p>
                     <span class="sti-card-link">
                       Conhecer o sistema
@@ -114,16 +111,16 @@
               </article>
 
               <article class="sti-card">
-                <a href="../bookease/" aria-label="Conhecer o sistema BookEase">
+                <a href="/biblioteca" aria-label="Conhecer o sistema Biblioteca">
                   <div class="sti-card-header sti-card-header--biblioteca">
-                    <span class="sti-card-badge">Bibliotecas</span>
+                    <span class="sti-card-badge">Educação e Cultura</span>
                     <i class="fas fa-book-open" aria-hidden="true"></i>
                   </div>
                   <div class="sti-card-body">
                     <div class="sti-card-icon" aria-hidden="true">
                       <i class="fas fa-book"></i>
                     </div>
-                    <h3>BookEase</h3>
+                    <h3>Biblioteca</h3>
                     <span class="sti-card-subtitle">Gestão bibliotecária municipal</span>
                     <p>Organização do acervo, leitores, empréstimos, devoluções e rotinas das bibliotecas municipais.</p>
                     <span class="sti-card-link">
@@ -135,7 +132,7 @@
               </article>
 
               <article class="sti-card">
-                <a href="../footeasy/" aria-label="Conhecer o sistema FootEasy">
+                <a href="/footeasy" aria-label="Conhecer o sistema FootEasy">
                   <div class="sti-card-header sti-card-header--esporte">
                     <span class="sti-card-badge">Esporte</span>
                     <i class="fas fa-futbol" aria-hidden="true"></i>
@@ -145,8 +142,8 @@
                       <i class="fas fa-trophy"></i>
                     </div>
                     <h3>FootEasy</h3>
-                    <span class="sti-card-subtitle">Sistema Esportivo Campinense</span>
-                    <p>Gestão digital dos campeonatos municipais, com cadastro de equipes e atletas, tabelas, resultados e estatísticas.</p>
+                    <span class="sti-card-subtitle">Gestão de Campeonatos</span>
+                    <p>Gestão digital dos campeonatos municipais de futebol, com cadastro de equipes e atletas, tabelas, resultados e estatísticas.</p>
                     <span class="sti-card-link">
                       Conhecer o sistema
                       <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -156,7 +153,7 @@
               </article>
 
               <article class="sti-card">
-                <a href="../sga/" aria-label="Conhecer o sistema SGA">
+                <a href="/sga" aria-label="Conhecer o sistema SGA">
                   <div class="sti-card-header sti-card-header--gabinete">
                     <span class="sti-card-badge">Atendimentos</span>
                     <i class="fas fa-people-arrows" aria-hidden="true"></i>
@@ -166,8 +163,8 @@
                       <i class="fas fa-handshake"></i>
                     </div>
                     <h3>SGA</h3>
-                    <span class="sti-card-subtitle">Atendimentos do Gabinete</span>
-                    <p>Registro, organização e acompanhamento dos atendimentos e encaminhamentos realizados pelo Gabinete do Prefeito.</p>
+                    <span class="sti-card-subtitle">Gestão de Atendimentos</span>
+                    <p>Registro, organização e acompanhamento dos atendimentos e encaminhamentos realizados.</p>
                     <span class="sti-card-link">
                       Conhecer o sistema
                       <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -177,7 +174,7 @@
               </article>
 
               <article class="sti-card">
-                <a href="../sira/" aria-label="Conhecer o sistema SIRA">
+                <a href="/sira" aria-label="Conhecer o sistema SIRA">
                   <div class="sti-card-header sti-card-header--contratos">
                     <span class="sti-card-badge">Contratos</span>
                     <i class="fas fa-file-contract" aria-hidden="true"></i>
@@ -197,19 +194,10 @@
                 </a>
               </article>
 
-            </div>
-          </section>
-
-          <section class="sti-grupo" aria-labelledby="sistemas-desenvolvimento">
-            <h2 id="sistemas-desenvolvimento" class="sti-grupo-titulo sti-grupo-titulo--desenvolvimento">
-              <i class="fas fa-code" aria-hidden="true"></i>
-              Sistemas em desenvolvimento
-            </h2>
-            <div class="sti-grid">
               <article class="sti-card">
-                <a href="../sibea/" aria-label="Conhecer o sistema SIBEA">
+                <a href="/sibea" aria-label="Conhecer o sistema SIBEA">
                   <div class="sti-card-header sti-card-header--animais">
-                    <span class="sti-card-badge">Em desenvolvimento</span>
+                    <span class="sti-card-badge">Bem-estar animal</span>
                     <i class="fas fa-paw" aria-hidden="true"></i>
                   </div>
                   <div class="sti-card-body">
@@ -220,6 +208,39 @@
                     <span class="sti-card-subtitle">Bem-estar animal</span>
                     <p>Gestão das ações de proteção, cuidado e adoção responsável de animais atendidos pelo município.</p>
                     <span class="sti-card-link">
+                      Conhecer o sistema
+                      <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </a>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- SISTEMAS EM DESENVOLVIMENTO -->
+          <section class="sti-grupo" aria-labelledby="sistemas-desenvolvimento">
+            <h2 id="sistemas-desenvolvimento" class="pi-secao-titulo sti-grupo-titulo--desenvolvimento">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              Sistemas em desenvolvimento
+            </h2>
+            <hr class="pi-secao-divider" style="border-top-color: #f1e5d5;">
+            <div class="sti-grid">
+
+              <article class="sti-card">
+                <a href="/controle-estoque" aria-label="Conhecer o sistema Controle de Estoque">
+                  <div class="sti-card-header sti-card-header--estoque">
+                    <span class="sti-card-badge">Em desenvolvimento</span>
+                    <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
+                  </div>
+                  <div class="sti-card-body">
+                    <div class="sti-card-icon" aria-hidden="true">
+                      <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Controle de Estoque</h3>
+                    <span class="sti-card-subtitle">Secretaria Municipal de Saúde</span>
+                    <p>Acompanhamento de entradas e saídas de materiais e medicamentos, saldos e requisições das unidades de saúde.</p>
+                    <span class="sti-card-link">
                       Conhecer o projeto
                       <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </span>
@@ -228,7 +249,28 @@
               </article>
 
               <article class="sti-card">
-                <a href="../smps/" aria-label="Conhecer o sistema SMPS">
+                <a href="/acervo-digital" aria-label="Conhecer o sistema Acervo Digital">
+                  <div class="sti-card-header sti-card-header--acervo">
+                    <span class="sti-card-badge">Em desenvolvimento</span>
+                    <i class="fas fa-images" aria-hidden="true"></i>
+                  </div>
+                  <div class="sti-card-body">
+                    <div class="sti-card-icon" aria-hidden="true">
+                      <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3>Acervo Digital</h3>
+                    <span class="sti-card-subtitle">Memória institucional</span>
+                    <p>Catalogação, busca e preservação do acervo fotográfico do município.</p>
+                    <span class="sti-card-link">
+                      Conhecer o projeto
+                      <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="sti-card">
+                <a href="/smps" aria-label="Conhecer o sistema SMPS">
                   <div class="sti-card-header sti-card-header--social">
                     <span class="sti-card-badge">Em desenvolvimento</span>
                     <i class="fas fa-people-roof" aria-hidden="true"></i>
@@ -238,7 +280,7 @@
                       <i class="fas fa-people-group"></i>
                     </div>
                     <h3>SMPS</h3>
-                    <span class="sti-card-subtitle">Projetos sociais municipais</span>
+                    <span class="sti-card-subtitle">Projetos sociais</span>
                     <p>Inscrição, acompanhamento e gestão das atividades sociais gratuitas oferecidas pelo Município.</p>
                     <span class="sti-card-link">
                       Conhecer o projeto
@@ -249,7 +291,7 @@
               </article>
 
               <article class="sti-card">
-                <a href="../workflow-municipal/" aria-label="Conhecer o Workflow Municipal">
+                <a href="/workflow-municipal" aria-label="Conhecer o Workflow Municipal">
                   <div class="sti-card-header sti-card-header--workflow">
                     <span class="sti-card-badge">Em desenvolvimento</span>
                     <i class="fas fa-diagram-project" aria-hidden="true"></i>
@@ -258,7 +300,7 @@
                     <div class="sti-card-icon" aria-hidden="true">
                       <i class="fas fa-route"></i>
                     </div>
-                    <h3>Workflow Municipal</h3>
+                    <h3>Workflow</h3>
                     <span class="sti-card-subtitle">Processos administrativos</span>
                     <p>Gestão digital e rastreável da tramitação, das tarefas, dos prazos e dos documentos administrativos.</p>
                     <span class="sti-card-link">
@@ -267,6 +309,24 @@
                     </span>
                   </div>
                 </a>
+              </article>
+
+              <article class="sti-card">
+                <div class="sti-card-header sti-card-header--previdencia">
+                  <span class="sti-card-badge">Em desenvolvimento</span>
+                  <i class="fas fa-building-columns" aria-hidden="true"></i>
+                </div>
+                <div class="sti-card-body">
+                  <div class="sti-card-icon" aria-hidden="true">
+                    <i class="fas fa-shield-halved"></i>
+                  </div>
+                  <h3>Previcamp</h3>
+                  <span class="sti-card-subtitle">Site institucional</span>
+                  <p>Página oficial com informações sobre a previdência municipal. Apenas conteúdo informativo, sem sistema de gestão.</p>
+                  <span class="sti-card-link">
+                    Em breve
+                  </span>
+                </div>
               </article>
 
             </div>
@@ -279,18 +339,56 @@
               <p>Outros sistemas serão adicionados a esta página conforme forem disponibilizados pela Secretaria de Tecnologia, Inovação e Transformação Digital.</p>
             </div>
           </aside>
-        </div>
+
+        </article>
+        <!-- /COLUNA PRINCIPAL -->
+
+        <!-- SIDEBAR -->
+        <aside class="pi-sidebar" aria-label="Informações e links">
+
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h4><i class="fas fa-bolt" aria-hidden="true"></i> Acesso rápido</h4>
+            <p>Conheça todos os sistemas e soluções digitais da Prefeitura de Campina Grande do Sul.</p>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Página</h4>
+            <ul class="pi-sidebar-links" aria-label="Seções desta página">
+              <li class="ativo">
+                <a href="#sistemas-disponiveis" aria-current="page">
+                  <span><i class="fas fa-circle-check pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>Disponíveis</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#sistemas-desenvolvimento">
+                  <span><i class="fas fa-code pi-sidebar-ico" aria-hidden="true"></i>Em desenvolvimento</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pi-sidebar-card">
+            <h4><i class="fas fa-circle-info" aria-hidden="true"></i> Informações</h4>
+            <dl class="sti-info-list">
+              <div><dt>Responsável</dt><dd>Secretaria Municipal da Tecnologia, Inovação e Transformação Digital</dd></div>
+              <div><dt>Público</dt><dd>Cidadãos e servidores municipais</dd></div>
+            </dl>
+          </div>
+
+        </aside>
+        <!-- /SIDEBAR -->
+
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <meu-footer></meu-footer>
 
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -300,5 +398,6 @@
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
+  <script src="js/sistemas-ti.js"></script>
 </body>
 </html>

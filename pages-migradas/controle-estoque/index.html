@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conheça o SIBEA, Sistema Institucional de Bem-Estar Animal: cadastro de animais, adoções e atendimentos em uma única plataforma municipal.">
-  <title>SIBEA — Sistema Institucional de Bem-Estar Animal | Sistemas da TI</title>
+  <meta name="description" content="Conheça o Sistema de Controle de Estoque da Secretaria Municipal de Saúde de Campina Grande do Sul. Em fase de desenvolvimento, ainda indisponível para uso.">
+  <title>Controle de Estoque — SMS | Prefeitura de Campina Grande do Sul</title>
   <script>
     function getBasePath() { return "../../"; }
     const base = getBasePath();
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../_global/css/index.css">
-  <link rel="stylesheet" href="css/sibea.css">
+  <link rel="stylesheet" href="css/controle-estoque.css">
 </head>
 <body>
   <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
@@ -33,7 +33,7 @@
   <script src="../../_global/js/searh-component.js"></script>
   <script src="../../_global/js/header-component.js"></script>
   <script src="../../_global/js/footer-component.js"></script>
-  <script src="js/sibea.js"></script>
+  <script src="js/controle-estoque.js"></script>
   <script>
     fetch("conteudo.html")
       .then(function (response) {
@@ -45,7 +45,7 @@
       })
       .catch(function (error) {
         document.getElementById("dynamic-content").innerHTML =
-          '<main class="container py-5"><div class="alert alert-danger">Erro ao carregar o conteúdo do SIBEA.</div></main>';
+          '<main class="container py-5"><div class="alert alert-danger">Erro ao carregar o conteúdo do Controle de Estoque.</div></main>';
         console.error(error);
       });
   </script>

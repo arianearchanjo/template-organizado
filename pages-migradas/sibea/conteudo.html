@@ -1,187 +1,381 @@
 <!--
   SIBEA — Sistema Institucional de Bem-Estar Animal
   Fragmento de conteúdo carregado por index.html (#dynamic-content).
-  Estilos: css/sibea.css
+  Estilos: css/sibea.css | Comportamentos: js/sibea.js
   Acesso restrito a servidores: https://sibea.pr.gov.br
-  Animais disponíveis (público): https://campinagrandedosul.pr.gov.br/bem-estar-animal
+  Animais para adoção (público): https://campinagrandedosul.pr.gov.br/bem-estar-animal
 -->
-<div id="pi-wrapper">
-  <section id="pi-hero" aria-labelledby="sistema-titulo">
-    <div class="container">
-      <div class="pi-hero-inner">
-        <nav aria-label="Você está em">
-          <ol class="pi-breadcrumb">
+<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li><a href="../../pages/sistemas-ti">Sistemas da TI</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li aria-current="page">SIBEA</li>
+        </ol>
+      </nav>
+      <h1 class="pi-hero-titulo">SIBEA</h1>
+      <p class="pi-hero-subtitulo">
+        Sistema Institucional de Bem-Estar Animal — a plataforma da Prefeitura para gerenciar
+        animais, adoções e atendimentos em um só lugar.
+      </p>
+    </div>
+  </div>
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+
+<main id="pi-main">
+  <div class="container">
+    <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+      <!-- COLUNA PRINCIPAL -->
+      <article>
+
+         <!-- BADGE ACESSO RESTRITO -->
+        <div class="sibea-badge-interno" role="note" aria-label="Acesso restrito a servidores">
+          <i class="fas fa-user-lock" aria-hidden="true"></i>
+          <p><strong>Acesso restrito a servidores autorizados.</strong> O sistema é usado com o e-mail institucional da prefeitura, e cada município trabalha com a sua própria base de dados, isolada e protegida das demais.</p>
+        </div>
+
+        <!-- DESTAQUE: CATÁLOGO PÚBLICO DE ANIMAIS -->
+        <section id="sibea-catalogo" aria-labelledby="sibea-catalogo-titulo">
+          <div class="sibea-catalogo-destaque">
+            <div class="sibea-catalogo-destaque__ilustracao" aria-hidden="true">
+              <i class="fas fa-paw"></i>
+            </div>
+            <div class="sibea-catalogo-destaque__conteudo">
+              <span class="sibea-catalogo-destaque__tag">Consulta pública</span>
+              <h2 id="sibea-catalogo-titulo">Animais disponíveis para adoção</h2>
+              <p>Consulte os animais cadastrados no município. Filtre por espécie, raça, porte e idade — sem necessidade de login.</p>
+            </div>
+            <a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" class="sibea-catalogo-destaque__btn" target="_blank" rel="noopener">
+              <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+              Consultar animais
+            </a>
+          </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sibea-sobre" aria-labelledby="sibea-sobre-titulo">
+          <h2 id="sibea-sobre-titulo" class="pi-secao-titulo">
+            <i class="fas fa-circle-info" aria-hidden="true"></i>
+            Sobre o sistema
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="pi-intro-texto">
+            <p>
+              O <strong>SIBEA</strong> ajuda os servidores do bem-estar animal a organizar todo o
+              ciclo de cuidado aos animais em um único lugar: cadastro de animais com fotos e
+              histórico, espécies e raças, tutores, processo completo de adoção e atendimentos e
+              ocorrências com fluxo próprio.
+            </p>
+            <p>
+              O sistema substitui planilhas avulsas e registros em papel por uma base única e
+              digital. Servidores criam, acompanham e resolvem as ocorrências — de uma denúncia à
+              adoção finalizada — enquanto gestores acompanham indicadores e controlam os acessos.
+            </p>
+            <p>
+              A vitrine pública de adoção mostra à população os animais disponíveis sem precisar de
+              login, e quem se interessar pode registrar o interesse direto pelo site da prefeitura.
+            </p>
+          </div>
+        </section>
+
+        <!-- FUNCIONALIDADES (CARROSSEL) -->
+        <section id="sibea-funcionalidades" aria-labelledby="sibea-func-titulo" class="pi-mt-secao">
+          <h2 id="sibea-func-titulo" class="pi-secao-titulo">
+            <i class="fas fa-gears" aria-hidden="true"></i>
+            Principais funcionalidades
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sibea-carrossel" data-carrossel>
+            <div class="sibea-carrossel-track" data-carrossel-track="sibea-func" role="list">
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-paw"></i></div>
+                  <h3>Cadastro de animais</h3>
+                </div>
+                <p>Registre espécies, raças e animais com fotos, sexo, porte, idade, castração, vacinação e microchip. Cada animal tem histórico completo de ocorrências e adoções.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+                  <h3>Gestão de adoções</h3>
+                </div>
+                <p>Acompanhe adoções com vínculo entre animal e tutor, status (ativa, devolvida, cancelada), termos de adoção e os pedidos de interesse vindos da vitrine pública.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div>
+                  <h3>Atendimentos e ocorrências</h3>
+                </div>
+                <p>Abra ocorrências com etapas de fluxo (triagem, vistoria, castração, vacinação, conclusão), prioridade, etiquetas, responsáveis, checklist e anexos.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-address-book"></i></div>
+                  <h3>Cadastro de tutores</h3>
+                </div>
+                <p>Registre tutores com contato, endereço e histórico completo. A consulta é exclusiva por município, com situação visual de cada tutor.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-seedling"></i></div>
+                  <h3>Espécies e raças</h3>
+                </div>
+                <p>Cadastre espécies (cachorro, gato, coelho, ave...) e vincule raças a cada uma delas, tudo organizado dentro da sua cidade.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+                  <h3>Acesso protegido</h3>
+                </div>
+                <p>Acesso pelo e-mail institucional, com permissões definidas pela administração do município e o histórico das ações importantes guardado com data e autor.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
+                  <h3>Vitrine pública</h3>
+                </div>
+                <p>Página aberta à população com os animais disponíveis para adoção, filtros por espécie, raça, porte e idade, e formulário de interesse — sem login.</p>
+              </article>
+
+              <article class="sibea-card" role="listitem">
+                <div class="sibea-card-header">
+                  <div class="sibea-card-icon" aria-hidden="true"><i class="fas fa-building-flag"></i></div>
+                  <h3>Organização por município</h3>
+                </div>
+                <p>Cada cidade é uma organização independente, com dados separados e protegidos. O vínculo de cada usuário é feito automaticamente pelo e-mail institucional.</p>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- FLUXO DE ADOÇÃO -->
+        <section id="sibea-fluxo" aria-labelledby="sibea-fluxo-titulo" class="pi-mt-secao">
+          <h2 id="sibea-fluxo-titulo" class="pi-secao-titulo">
+            <i class="fas fa-arrows-spin" aria-hidden="true"></i>
+            Como funciona o fluxo de adoção
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <ol class="sibea-fluxo">
             <li>
-              <a href="../../index.html">
-                <i class="fas fa-home" aria-hidden="true"></i> Início
+              <span class="sibea-fluxo-numero">1</span>
+              <div class="sibea-fluxo-conteudo">
+                <strong>Animal disponível</strong>
+                <p>O servidor marca o animal como disponível para adoção no painel interno.</p>
+              </div>
+            </li>
+            <li>
+              <span class="sibea-fluxo-numero">2</span>
+              <div class="sibea-fluxo-conteudo">
+                <strong>Vitrine pública</strong>
+                <p>O animal aparece na página pública da prefeitura com fotos, nome e características.</p>
+              </div>
+            </li>
+            <li>
+              <span class="sibea-fluxo-numero">3</span>
+              <div class="sibea-fluxo-conteudo">
+                <strong>Interesse registrado</strong>
+                <p>O cidadão preenche o formulário de interesse e o pedido chega ao painel interno como "pendente".</p>
+              </div>
+            </li>
+            <li>
+              <span class="sibea-fluxo-numero">4</span>
+              <div class="sibea-fluxo-conteudo">
+                <strong>Análise do servidor</strong>
+                <p>O servidor avalia o pedido, cadastra o tutor (se necessário) e acompanha o status do interesse.</p>
+              </div>
+            </li>
+            <li>
+              <span class="sibea-fluxo-numero">5</span>
+              <div class="sibea-fluxo-conteudo">
+                <strong>Adoção formalizada</strong>
+                <p>Registro da adoção com termo, vínculo animal–tutor e atualização automática do status do animal.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- PAINÉIS DE ATENDIMENTO -->
+        <section id="sibea-paineis" aria-labelledby="sibea-paineis-titulo" class="pi-mt-secao">
+          <h2 id="sibea-paineis-titulo" class="pi-secao-titulo">
+            <i class="fas fa-table-columns" aria-hidden="true"></i>
+            Painéis de atendimento
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sibea-paineis-grid" role="list">
+            <div class="sibea-painel-card" role="listitem">
+              <span class="sibea-painel-badge sibea-painel-badge--bea">BEA</span>
+              <h3>Bem-Estar Animal</h3>
+              <p>Painel principal para ocorrências de resgate, abandono e maus-tratos, com etapas de triagem, vistoria, castração e vacinação.</p>
+              <ul class="sibea-painel-tags">
+                <li><span class="sibea-tag sibea-tag--denuncia">Denúncia</span></li>
+                <li><span class="sibea-tag sibea-tag--vistoria">Vistoria</span></li>
+                <li><span class="sibea-tag sibea-tag--vacinacao">Vacinação</span></li>
+                <li><span class="sibea-tag sibea-tag--urgencia">Urgência</span></li>
+              </ul>
+            </div>
+            <div class="sibea-painel-card" role="listitem">
+              <span class="sibea-painel-badge sibea-painel-badge--ouvidoria">Ouvidoria</span>
+              <h3>Ouvidoria</h3>
+              <p>Painel para manifestações da população: solicitações, elogios, sugestões e reclamações relacionadas aos animais municipais.</p>
+              <ul class="sibea-painel-tags">
+                <li><span class="sibea-tag sibea-tag--solicitacao">Solicitação</span></li>
+                <li><span class="sibea-tag sibea-tag--protetor">Protetor</span></li>
+                <li><span class="sibea-tag sibea-tag--atendimento">Atendimento</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMO ACESSAR -->
+        <section id="sibea-acessar" aria-labelledby="sibea-acessar-titulo" class="pi-mt-secao">
+          <h2 id="sibea-acessar-titulo" class="pi-secao-titulo">
+            <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+            Como acessar
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <ol class="sibea-passos">
+            <li>
+              <span class="sibea-passo-numero">1</span>
+              <div><strong>Abra o endereço do sistema</strong><p>Entre em <a href="https://sibea.pr.gov.br" target="_blank" rel="noopener">sibea.pr.gov.br</a> com seu navegador.</p></div>
+            </li>
+            <li>
+              <span class="sibea-passo-numero">2</span>
+              <div><strong>Entre com o e-mail institucional</strong><p>O e-mail da prefeitura identifica automaticamente o município e os acessos liberados para o servidor.</p></div>
+            </li>
+            <li>
+              <span class="sibea-passo-numero">3</span>
+              <div><strong>Use o painel da sua cidade</strong><p>Gerencie animais, tutores, adoções e ocorrências. Gestores acompanham indicadores e controlam os acessos.</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- CTA -->
+        <section class="sibea-cta" aria-labelledby="sibea-cta-titulo">
+          <div>
+            <span>Acesso à população</span>
+            <h2 id="sibea-cta-titulo">Conheça os animais para adoção</h2>
+            <p>A vitrine pública é aberta a toda a população — sem login, sem cadastro.</p>
+          </div>
+          <a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" class="pi-btn-verde" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            Ver animais disponíveis
+          </a>
+        </section>
+
+          </article>
+          <!-- /COLUNA PRINCIPAL -->
+
+          <!-- CARD ROTATIVO: ANIMAIS PARA ADOÇÃO -->
+          <section id="sibea-adocao-destaque" class="pi-mt-secao" aria-labelledby="sibea-adocao-titulo">
+            <h2 id="sibea-adocao-titulo" class="pi-secao-titulo">
+              <i class="fas fa-paw" aria-hidden="true"></i>
+              Animais disponíveis para adoção
+            </h2>
+            <hr class="pi-secao-divider">
+            <div id="sibea-animais-destaque" class="sibea-card-rotativo"></div>
+          </section>
+
+          <!-- SIDEBAR -->
+      <aside class="pi-sidebar" aria-label="Informações e links do sistema">
+
+        <!-- Card API: animais disponíveis -->
+        <div class="pi-sidebar-card sibea-api-card" id="sibea-api-card">
+          <h4><i class="fas fa-heart" aria-hidden="true"></i> Animais para adoção</h4>
+          <div class="sibea-api-content">
+            <div class="sibea-api-loader" aria-hidden="true">
+              <span class="sibea-api-spinner"></span>
+              <p>Consultando animais…</p>
+            </div>
+            <div class="sibea-api-count" hidden>
+              <strong id="sibea-api-total">0</strong>
+              <span>animais disponíveis</span>
+            </div>
+            <div class="sibea-api-error" hidden>
+              <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+              <p>Não foi possível carregar a contagem agora.</p>
+            </div>
+          </div>
+          <a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            Ver animais disponíveis
+          </a>
+        </div>
+
+        <div class="pi-sidebar-card sibea-sidebar-acesso">
+          <h4><i class="fas fa-rocket" aria-hidden="true"></i> Acesso rápido</h4>
+          <p><strong>Interno:</strong> servidores com e-mail institucional.</p>
+          <p><strong>Público:</strong> vitrine de adoções no site da prefeitura.</p>
+          <a href="https://sibea.pr.gov.br" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            Abrir sistema
+          </a>
+        </div>
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-circle-info" aria-hidden="true"></i> Informações</h4>
+          <dl class="sibea-info-list">
+            <div><dt>Responsável</dt><dd>Gestão de Bem-Estar Animal</dd></div>
+            <div><dt>Disponibilidade</dt><dd>24 horas</dd></div>
+            <div><dt>Público</dt><dd>Servidores e cidadãos</dd></div>
+            <div><dt>Tipo de acesso</dt><dd>Restrito e público</dd></div>
+          </dl>
+        </div>
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-link" aria-hidden="true"></i> Links úteis</h4>
+          <ul class="pi-sidebar-links">
+            <li>
+              <a href="../../pages/sistemas-ti">
+                <span><i class="fas fa-desktop pi-sidebar-ico" aria-hidden="true"></i>Todos os sistemas</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            <li>
+              <a href="https://sibea.pr.gov.br" target="_blank" rel="noopener">
+                <span><i class="fas fa-arrow-up-right-from-square pi-sidebar-ico" aria-hidden="true"></i>Acessar SIBEA</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="../../pages/sistemas-ti/">Sistemas da TI</a>
+              <a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" target="_blank" rel="noopener">
+                <span><i class="fas fa-paw pi-sidebar-ico" aria-hidden="true"></i>Animais para adoção</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
             </li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-            </li>
-            <li aria-current="page">SIBEA</li>
-          </ol>
-        </nav>
+          </ul>
+        </div>
 
-        <h1 id="sistema-titulo" class="pi-hero-titulo">SIBEA</h1>
-        <p class="pi-hero-subtitulo">
-          Sistema Institucional de Bem-Estar Animal — a plataforma da Prefeitura Municipal de Campina
-          Grande do Sul para gerenciar animais, adoções e atendimentos em um só lugar.
-        </p>
-      </div>
+        <div class="pi-sidebar-card pi-sidebar-contato">
+          <h4><i class="fas fa-headset" aria-hidden="true"></i> Suporte</h4>
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> informatica@pmcgs.pr.gov.br</p>
+          <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 0000-0000</p>
+          <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a sex., 8h às 17h</p>
+        </div>
+
+      </aside>
+      <!-- /SIDEBAR -->
+
     </div>
-  </section>
-
-  <main id="pi-main">
-    <div class="container">
-      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
-        <article>
-          <section aria-labelledby="sobre-sistema">
-            <h2 id="sobre-sistema" class="pi-secao-titulo">
-              <i class="fas fa-circle-info" aria-hidden="true"></i>
-              Sobre o sistema
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="pi-intro-texto">
-              <p><strong>SIBEA</strong> é um sistema web desenvolvido para os servidores do bem-estar animal organizarem todo o ciclo de cuidado aos animais: cadastro de animais, espécies e raças, tutores, adoções e atendimentos/ocorrências. Ele foi criado para substituir planilhas avulsas e registros em papel por uma base única, segura e acessível de qualquer lugar.</p>
-              <p>A plataforma reduz a burocracia para os servidores, padroniza os processos de bem-estar animal do município e facilita o acompanhamento de cada animal — do resgate à adoção responsável. Os cidadãos, por sua vez, conseguem ver os animais disponíveis para adoção em uma página pública, sem precisar de login.</p>
-              <p>O acesso interno é restrito a funcionários autorizados, enquanto a vitrine de adoções é pública.</p>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="funcionalidades-sistema">
-            <h2 id="funcionalidades-sistema" class="pi-secao-titulo">
-              <i class="fas fa-gears" aria-hidden="true"></i>
-              Principais funcionalidades
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="sti-recursos-grid" role="list">
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-paw"></i></div>
-                <div>
-                  <h3>Cadastro de animais</h3>
-                  <p>Registre espécies, raças e animais com fotos, histórico e vínculo à organização, tudo em uma base única.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
-                <div>
-                  <h3>Adoções</h3>
-                  <p>Gerencie o processo de adoção de ponta a ponta, com vínculo entre animal e tutor e status de acompanhamento.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div>
-                <div>
-                  <h3>Atendimentos e ocorrências</h3>
-                  <p>Abra ocorrências com etapas de fluxo, prioridade, etiquetas, responsáveis, checklist e anexos.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-                <div>
-                  <h3>Segurança e permissões</h3>
-                  <p>Acesso restrito por e-mail institucional, com papéis (dono, admin, moderador e usuário).</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="publico-sistema">
-            <h2 id="publico-sistema" class="pi-secao-titulo">
-              <i class="fas fa-user-group" aria-hidden="true"></i>
-              Para quem é o sistema?
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="sti-publicos-grid" role="list">
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-user" aria-hidden="true"></i>
-                <strong>Servidores</strong>
-                <span>Controlam cadastros, adoções e atendimentos no dia a dia.</span>
-              </div>
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-user-tie" aria-hidden="true"></i>
-                <strong>Gestores</strong>
-                <span>Acompanham indicadores e autorizam acessos.</span>
-              </div>
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-building" aria-hidden="true"></i>
-                <strong>Campina Grande do Sul</strong>
-                <span>Oferece à população a vitrine pública de animais para adoção.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="como-acessar">
-            <h2 id="como-acessar" class="pi-secao-titulo">
-              <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
-              Como acessar
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <ol class="sti-passos">
-              <li>
-                <span class="sti-passo-numero">1</span>
-                <div><strong>Acesse o sistema</strong><p>Entre em <a href="https://sibea.pr.gov.br" target="_blank" rel="noopener">sibea.pr.gov.br</a> com seu e-mail institucional cadastrado na organização.</p></div>
-              </li>
-              <li>
-                <span class="sti-passo-numero">2</span>
-                <div><strong>Faça login com o e-mail institucional</strong><p>Apenas domínios autorizados têm acesso.</p></div>
-              </li>
-              <li>
-                <span class="sti-passo-numero">3</span>
-                <div><strong>Comece a usar</strong><p>Gerencie animais, adoções e ocorrências no seu painel.</p></div>
-              </li>
-            </ol>
-          </section>
-
-          <section class="sti-cta" aria-labelledby="cta-sistema">
-            <div>
-              <span>Acesso ao sistema</span>
-              <h2 id="cta-sistema">Conheça os animais para adoção</h2>
-              <p>A vitrine pública de adoção é aberta a todos os cidadãos, sem necessidade de login.</p>
-            </div>
-            <a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" class="pi-btn-verde" target="_blank" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              Ver animais disponíveis
-            </a>
-          </section>
-        </article>
-
-        <aside class="pi-sidebar" aria-label="Informações e links do sistema">
-          <div class="pi-sidebar-card sti-sidebar-acesso">
-            <h3><i class="fas fa-rocket" aria-hidden="true"></i> Acesso rápido</h3>
-            <p><strong>Interno:</strong> restrito a servidores com e-mail institucional.</p>
-            <p><strong>Público:</strong> adoções visíveis no site da Prefeitura de Campina Grande do Sul.</p>
-            <a href="https://sibea.pr.gov.br" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              Abrir sistema
-            </a>
-          </div>
-
-          <div class="pi-sidebar-card">
-            <h3><i class="fas fa-link" aria-hidden="true"></i> Links úteis</h3>
-            <ul class="pi-sidebar-links">
-              <li><a href="../../pages/sistemas-ti/"><span>Todos os sistemas</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-              <li><a href="https://sibea.pr.gov.br" target="_blank" rel="noopener"><span>Acessar SIBEA</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-              <li><a href="https://campinagrandedosul.pr.gov.br/bem-estar-animal" target="_blank" rel="noopener"><span>Animais para adoção</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-  </main>
-</div>
+  </div>
+</main>
