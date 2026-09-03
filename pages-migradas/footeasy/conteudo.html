@@ -123,7 +123,8 @@
           </h2>
           <hr class="pi-secao-divider">
 
-          <div class="pi-recursos-grid" role="list">
+          <div class="pi-carrossel" data-carrossel>
+            <div class="pi-recursos-grid pi-carrossel-track" data-carrossel-track="pi-func" role="list">
 
             <article class="pi-recurso-card" role="listitem">
               <div class="pi-recurso-icon" aria-hidden="true">
@@ -191,41 +192,6 @@
               </div>
             </article>
 
-          </div>
-        </section>
-
-        <!-- Seção: Perfis de acesso -->
-        <section aria-labelledby="pi-perfis-titulo" class="pi-mt-secao">
-          <h2 id="pi-perfis-titulo" class="pi-secao-titulo">
-            <i class="fas fa-users" aria-hidden="true"></i>
-            Uma Plataforma, Quatro Experiências
-          </h2>
-          <hr class="pi-secao-divider">
-          <p style="font-size:0.9375rem;color:#555;margin-bottom:16px;line-height:1.6;">
-            Cada usuário visualiza apenas as funções pertinentes ao seu papel —
-            do cadastro inicial ao acompanhamento da competição.
-          </p>
-
-          <div class="pi-perfis-grid" role="list" aria-label="Perfis de usuário do sistema">
-            <div class="pi-perfil-card" role="listitem">
-              <div class="pi-perfil-num" aria-hidden="true">1</div>
-              <strong>Presidente</strong>
-              <span>Dirigentes de clubes</span>
-            </div>
-            <div class="pi-perfil-card" role="listitem">
-              <div class="pi-perfil-num" aria-hidden="true">2</div>
-              <strong>Jogador</strong>
-              <span>Atletas</span>
-            </div>
-            <div class="pi-perfil-card" role="listitem">
-              <div class="pi-perfil-num" aria-hidden="true">3</div>
-              <strong>Organizador</strong>
-              <span>Secretaria de Esportes</span>
-            </div>
-            <div class="pi-perfil-card" role="listitem">
-              <div class="pi-perfil-num" aria-hidden="true">4</div>
-              <strong>Administrador</strong>
-              <span>Governança da plataforma</span>
             </div>
           </div>
         </section>
@@ -291,30 +257,6 @@
           </div>
         </section>
 
-        <!-- Seção: Tecnologias -->
-        <section aria-labelledby="pi-tech-titulo" class="pi-mt-secao">
-          <h2 id="pi-tech-titulo" class="pi-secao-titulo">
-            <i class="fas fa-code" aria-hidden="true"></i>
-            Tecnologias Utilizadas
-          </h2>
-          <hr class="pi-secao-divider">
-          <p style="font-size:0.9375rem;color:#555;margin-bottom:16px;line-height:1.6;">
-            O FootEasy foi desenvolvido integralmente pela equipe técnica municipal,
-            utilizando tecnologias modernas e de código aberto.
-          </p>
-
-          <div class="pi-tech-grid" role="list" aria-label="Tecnologias do sistema">
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> Next.js</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> React</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-code" aria-hidden="true"></i> TypeScript</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-server" aria-hidden="true"></i> Node.js</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-database" aria-hidden="true"></i> MySQL</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-database" aria-hidden="true"></i> Prisma ORM</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-paint-brush" aria-hidden="true"></i> Tailwind CSS</div>
-            <div class="pi-tech-item" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i> Zod</div>
-          </div>
-        </section>
-
         <!-- Chamada de ação -->
         <div class="pi-compromisso-bloco" role="complementary" aria-label="Acesso ao sistema">
           <h2>Entre em campo. Faça parte.</h2>
@@ -367,6 +309,22 @@
 
       <!-- ── SIDEBAR ───────────────────────────────────────────── -->
       <aside class="pi-sidebar" aria-label="Acesso e navegação lateral">
+
+        <!-- Card: Próximas partidas -->
+        <div class="pi-sidebar-card" id="footeasy-partidas-card">
+          <h4><i class="fas fa-calendar-alt" aria-hidden="true"></i> Próximas partidas</h4>
+          <div class="pi-partidas-content" id="footeasy-partidas-destaque">
+            <div class="pi-partidas-loader" aria-hidden="true">
+              <span class="pi-partidas-spinner"></span>
+              <p>Carregando partidas…</p>
+            </div>
+          </div>
+          <a href="https://futebol.pmcgs.pr.gov.br" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener"
+             aria-label="Ver todas as partidas (abre em nova aba)">
+            <i class="fas fa-futbol" aria-hidden="true"></i>
+            Ver todas as partidas
+          </a>
+        </div>
 
         <!-- CTA de acesso -->
         <div class="pi-sidebar-acesso" role="complementary" aria-label="Acesso rápido ao sistema">
@@ -494,16 +452,6 @@
 
       </aside>
       <!-- ── /SIDEBAR ───────────────────────────────────────────── -->
-
-      <!-- CARD ROTATIVO: PRÓXIMAS PARTIDAS -->
-      <section class="pi-mt-secao" aria-labelledby="footeasy-partidas-titulo">
-        <h2 id="footeasy-partidas-titulo" class="pi-secao-titulo">
-          <i class="fas fa-futbol" aria-hidden="true"></i>
-          Próximas partidas
-        </h2>
-        <hr class="pi-secao-divider">
-        <div id="footeasy-partidas-destaque" class="footeasy-card-rotativo"></div>
-      </section>
 
     </div>
   </div>
