@@ -44,6 +44,147 @@
 @media(max-width:575.98px){.fut-next-empty .fut-state{gap:13px;grid-template-columns:48px minmax(0,1fr);min-height:110px;padding:18px 15px}.fut-next-empty-icon{font-size:1rem;height:44px;width:44px}.fut-next-empty h2{font-size:.92rem}.fut-next-empty p{font-size:.76rem}}
 body.high-contrast .fut-next-empty .fut-state,body.high-contrast .fut-next-empty-icon{background:#000!important;border-color:#fff!important;color:#ff0!important}
 
+/* Carrossel de próximas partidas */
+.fut-next-head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.fut-next-head .fut-kicker { margin-bottom: 0; }
+.fut-carousel-counter {
+  background: var(--fut-verde-claro);
+  border-radius: 999px;
+  color: var(--fut-verde-escuro);
+  flex-shrink: 0;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+.fut-carousel-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.fut-carousel-track-container {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.fut-carousel-track {
+  display: flex;
+  transition: transform .7s cubic-bezier(.22, .61, .36, 1);
+  width: 100%;
+  will-change: transform;
+}
+.fut-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 2px 4px 6px;
+}
+.fut-slide-champ {
+  color: var(--fut-texto);
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.fut-slide-info {
+  align-items: center;
+  border-top: 1px solid var(--fut-borda);
+  color: #626a65;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  justify-content: center;
+  margin: 16px 0 0;
+  padding-top: 12px;
+  text-align: center;
+}
+.fut-slide-info span {
+  align-items: center;
+  display: inline-flex;
+  font-size: .84rem;
+  gap: 7px;
+}
+.fut-slide-info i { color: var(--fut-verde); }
+.fut-carousel-btn {
+  align-items: center;
+  background: #fff;
+  border: 1.5px solid var(--fut-verde);
+  border-radius: 50%;
+  color: var(--fut-verde);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 42px;
+  justify-content: center;
+  padding: 0;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+  width: 42px;
+}
+.fut-carousel-btn:hover {
+  background: var(--fut-verde-claro);
+  border-color: var(--fut-verde-escuro);
+  color: var(--fut-verde-escuro);
+}
+.fut-carousel-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, .22);
+  outline: 0;
+}
+.fut-carousel-btn .fut-arrow-symbol {
+  font-size: 1.7rem;
+}
+.fut-carousel-dots {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.fut-carousel-dot {
+  background: #c9d4cb;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 9px;
+  padding: 0;
+  transition: background .2s ease, transform .2s ease;
+  width: 9px;
+}
+.fut-carousel-dot:hover { background: #9eb6a1; }
+.fut-carousel-dot.active {
+  background: var(--fut-verde);
+  transform: scale(1.2);
+}
+.fut-carousel-dot:focus-visible {
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, .22);
+  outline: 0;
+}
+@media (max-width: 575.98px) {
+  .fut-carousel-wrapper { gap: 4px; }
+  .fut-carousel-btn { height: 36px; width: 36px; }
+  .fut-carousel-btn .fut-arrow-symbol { font-size: 1.45rem; }
+  .fut-slide-champ { font-size: .98rem; margin-bottom: 12px; }
+  .fut-slide-info { gap: 6px 12px; }
+  .fut-slide-info span { font-size: .76rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fut-carousel-track { transition: none; }
+  .fut-carousel-dot { transition: none; }
+}
+body.high-contrast .fut-carousel-btn,
+body.high-contrast .fut-carousel-dot,
+body.high-contrast .fut-carousel-counter {
+  background: #000 !important;
+  border-color: #fff !important;
+  color: #ff0 !important;
+}
+body.high-contrast .fut-carousel-dot.active { background: #ff0 !important; }
 
 .fut-current-round { margin-bottom: 28px; }
 .fut-current-round:last-child { margin-bottom: 0; }
@@ -939,6 +1080,28 @@ body.high-contrast .fut-champion{background:#000!important;border:1px solid #fff
   padding: 0;
 }
 
+/* Grupos de Classificação */
+.groups-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+#fut-panel-standings .groups-wrapper .fut-box {
+  margin-bottom: 0;
+}
+
+#fut-panel-standings .fut-box h3 {
+  background: linear-gradient(135deg, var(--fut-verde-escuro, #1e5c1e), var(--fut-verde, #2d7a2d));
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin: 0;
+  padding: 13px 18px;
+}
+
 /* Classificação */
 #fut-panel-standings .fut-table-wrap { border: 0; border-radius: 0; box-shadow: none; }
 #fut-panel-standings .fut-table { min-width: 720px; }
@@ -1549,12 +1712,13 @@ body.high-contrast .fut-champion::before { display: none; }
   border-top: 1px solid #e6ebe7;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 10px 14px;
+  gap: 8px;
+  padding: 12px 14px;
 }
 .fut-scorers-row {
   display: flex;
-  align-items: baseline;
+  align-items: stretch;
+  flex-direction: column;
   gap: 6px;
 }
 .fut-scorers-row--home {
@@ -1573,20 +1737,74 @@ body.high-contrast .fut-champion::before { display: none; }
 }
 .fut-scorers-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2px 6px;
+  flex-direction: column;
+  gap: 6px;
   justify-content: inherit;
+  width: 100%;
 }
 .fut-scorer {
   align-items: center;
-  display: inline-flex;
-  gap: 3px;
-  font-size: .75rem;
+  display: flex;
+  gap: 6px;
+  font-size: .78rem;
   font-weight: 500;
   line-height: 1.4;
+  min-height: 24px;
+}
+/* Não usar ::before — usamos elementos explícitos .fut-ball para posicionar o ícone de forma acessível */
+.fut-scorer::before { display: none !important; }
+.fut-ball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.fut-ball-icon-wrapper { display: inline-flex; align-items: center; margin-left: 6px; margin-right: 6px; color: var(--fut-verde); }
+.fut-ball-icon-wrapper i { font-style: normal; font-size: 1rem; line-height: 1; }
+.fut-scorer-count { background: var(--fut-verde); border-radius: 12px; color: #fff; flex: 0 0 auto; font-size: .68rem; font-weight: 700; letter-spacing: .03em; min-width: 28px; padding: 4px 8px; text-align: center; white-space: nowrap; }
+@media (max-width:575.98px) { .fut-ball-icon-wrapper i { font-size: .9rem; margin-left: 4px; margin-right: 4px; } .fut-scorer-count { min-width: 24px; padding: 3px 6px; font-size: .64rem; } }
+.fut-scorers-row--away .fut-scorer {
+  justify-content: flex-end;
+  text-align: right;
+}
+.fut-scorers-row--away .fut-scorer::before {
+  order: 2;
 }
 .fut-scorer-name {
   color: #1f3625;
+  flex: 1;
+  line-height: 1.3;
+  word-wrap: break-word;
+  max-width: none;
+}
+.fut-scorer-count {
+  background: var(--fut-verde);
+  border-radius: 12px;
+  color: #fff;
+  flex: 0 0 auto;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  min-width: 32px;
+  padding: 4px 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+.fut-scorers-warning {
+  background: #fff8e4;
+  border-left: 3px solid #e6c54d;
+  color: #64551f;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: .88rem;
+  text-align: center;
+}
+@media(max-width:575.98px){
+  .fut-scorers-warning{font-size:.82rem;padding:7px 8px}
 }
 .fut-scorer-min {
   align-items: center;
@@ -1604,9 +1822,7 @@ body.high-contrast .fut-champion::before { display: none; }
   white-space: nowrap;
 }
 .fut-scorer-sep {
-  color: #aab9ac;
-  font-size: .7rem;
-  line-height: 1;
+  display: none;
 }
 @media(max-width:575.98px){
   .fut-match-scorers{padding:8px 10px}
@@ -1617,3 +1833,144 @@ body.high-contrast .fut-champion::before { display: none; }
 body.high-contrast .fut-match-scorers{background:#000!important;border-color:#fff!important}
 body.high-contrast .fut-scorer-name{color:#fff!important}
 body.high-contrast .fut-scorer-min{background:#fff!important;color:#000!important}
+
+/* Marcador nativo para não depender do carregamento da fonte de ícones. */
+
+/* Lista de gols centralizada e marcador compatível com a identidade visual. */
+.fut-current-matches-grid { align-items: start; }
+.fut-match-scorers { align-items: center; gap: 6px; }
+.fut-scorers-row,
+.fut-scorers-row--home,
+.fut-scorers-row--away {
+  justify-content: center;
+  width: 100%;
+}
+.fut-scorers-list {
+  align-items: center;
+  width: auto;
+}
+.fut-scorer,
+.fut-scorers-row--away .fut-scorer {
+  justify-content: flex-start;
+  text-align: left;
+}
+.fut-scorer::before,
+.fut-scorers-row--away .fut-scorer::before {
+  background: var(--fut-verde);
+  border: 2px solid #dceedd;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--fut-verde), inset 0 0 0 4px #fff;
+  content: "";
+  flex: 0 0 14px;
+  height: 14px;
+  order: 0;
+  width: 14px;
+}
+
+/* Fallback seguro: mantém os cartões de partida no layout original. */
+.fut-current-matches-grid { align-items: stretch; }
+.fut-match-scorers { align-items: stretch; gap: 4px; }
+.fut-scorers-row,
+.fut-scorers-row--home,
+.fut-scorers-row--away {
+  justify-content: initial;
+  width: auto;
+}
+.fut-scorers-list {
+  align-items: initial;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+  width: auto;
+}
+.fut-scorer,
+.fut-scorers-row--away .fut-scorer {
+  display: inline-flex;
+  gap: 3px;
+  justify-content: initial;
+  text-align: initial;
+}
+.fut-scorer::before,
+.fut-scorers-row--away .fut-scorer::before { display: none; }
+.fut-scorer-sep { display: inline; }
+
+/* Gols: uma linha por marcador, com indicador verde em cada lance. */
+.fut-current-matches-grid { align-items: start; }
+.fut-match-scorers { align-items: stretch; gap: 6px; }
+.fut-scorers-row {
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+.fut-scorers-row--home { justify-content: flex-start; }
+.fut-scorers-row--away { justify-content: flex-end; }
+.fut-scorers-list {
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+  width: auto;
+}
+.fut-scorer,
+.fut-scorers-row--away .fut-scorer {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+  text-align: left;
+}
+.fut-scorer::before,
+.fut-scorers-row--away .fut-scorer::before { display: none; }
+.fut-scorers-row--away .fut-scorer {
+  justify-content: flex-end;
+  text-align: right;
+}
+.fut-scorer-sep { display: none; }
+@media(max-width:575.98px){
+  .fut-scorers-row--away { justify-content: flex-end; }
+}
+
+/* Organização dos gols por equipe. */
+.fut-match-scorers {
+  align-items: start;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.fut-scorers-row,
+.fut-scorers-row--home,
+.fut-scorers-row--away {
+  align-items: start;
+  grid-row: 1;
+  width: 100%;
+}
+.fut-scorers-row--home {
+  border-right: 1px solid #e1e8e2;
+  grid-column: 1;
+  padding-right: 12px;
+}
+.fut-scorers-row--away {
+  grid-column: 2;
+  padding-left: 12px;
+}
+.fut-scorers-list {
+  gap: 6px;
+  width: 100%;
+}
+.fut-scorer,
+.fut-scorers-row--away .fut-scorer {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  gap: 5px;
+  min-height: 0;
+  padding: 0;
+}
+.fut-scorers-row--away .fut-scorer { justify-content: flex-end; }
+@media(max-width:575.98px){
+  .fut-match-scorers { gap: 8px; padding: 8px; }
+  .fut-scorers-row--home { padding-right: 6px; }
+  .fut-scorers-row--away { padding-left: 6px; }
+  .fut-scorer,
+  .fut-scorers-row--away .fut-scorer { font-size: .67rem; padding: 0; }
+}

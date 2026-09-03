@@ -1,32 +1,6 @@
-
 <main id="pi-conteudo" class="bea-main" tabindex="-1">
   <div id="pi-main">
   <div class="container bea-wrap">
-
-    <section id="pi-hero" aria-label="Identificação da página">
-      <div class="pi-hero-inner">
-        <nav aria-label="Você está em">
-          <ol class="pi-breadcrumb">
-            <li>
-              <a href="../../index.html">
-                <i class="fas fa-home" aria-hidden="true"></i> Início
-              </a>
-            </li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep">
-                <i class="fas fa-chevron-right"></i>
-              </span>
-            </li>
-            <li aria-current="page">Bem-Estar Animal</li>
-          </ol>
-        </nav>
-        <h1 class="pi-hero-titulo">Bem-Estar Animal</h1>
-      </div>
-      <div class="pi-hero-ilustracao" aria-hidden="true">
-        <img src="../../_global/img/global/ilustracao.png" alt="">
-      </div>
-    </section>
-
     <nav class="bea-tabs" aria-label="Conteúdo de bem-estar animal">
       <div class="bea-tabs-faixa">
         <button class="bea-tabs-seta bea-tabs-seta--esquerda" type="button" aria-label="Ver aba anterior" hidden>
@@ -228,6 +202,18 @@
           <i class="fas fa-xmark" aria-hidden="true"></i>
         </button>
         <div id="sibea-animal-detail" class="bea-animal-detail" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bea-interest-modal" id="sibea-interest-modal" tabindex="-1" role="dialog"
+    aria-labelledby="bea-interest-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="bea-modal-close" data-dismiss="modal" aria-label="Fechar formulário">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div id="sibea-interest-form-container" class="bea-interest-modal__body"></div>
       </div>
     </div>
   </div>

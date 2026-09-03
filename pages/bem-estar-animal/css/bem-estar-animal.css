@@ -174,7 +174,7 @@
 .bea-adoption-cta__icon { display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 14px; color: #fff; background: var(--verde); font-size: 1.4rem; box-shadow: 0 6px 16px rgba(30, 92, 30, .22); }
 .bea-adoption-cta h2 { margin: 0 0 5px; font-size: 1.35rem; font-weight: 700; color: var(--verde-escuro); }
 .bea-adoption-cta__content > p:last-child { margin: 0; color: #344334; line-height: 1.6; }
-.bea-adoption-cta__button, .bea-animal-card__button, .bea-retry-button {
+.bea-adoption-cta__button, .bea-animal-card__button, .bea-retry-button, .bea-interest-open-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +189,8 @@
   font-weight: 700;
   text-align: center;
 }
-.bea-adoption-cta__button:hover, .bea-animal-card__button:hover, .bea-retry-button:hover { color: #fff; background: var(--verde-escuro); text-decoration: none; }
+.bea-adoption-cta__button:hover, .bea-animal-card__button:hover, .bea-retry-button:hover, .bea-interest-open-button:hover { color: #fff; background: var(--verde-escuro); text-decoration: none; }
+.bea-interest-open-button { width: 100%; margin-top: 22px; cursor: pointer; }
 
 /* Adoção e filtros */
 .bea-adoption__intro { position: relative; display: flex; gap: 16px; align-items: center; margin-bottom: 22px; padding: 18px 22px; border: 1px solid var(--cinza-borda); border-left: 5px solid var(--verde); border-radius: 12px; background: #fff; box-shadow: 0 4px 14px rgba(30, 92, 30, .06); }
@@ -218,27 +219,10 @@
 
 /* Cards dos animais */
 .bea-animal-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.bea-animal-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--cinza-borda); border-radius: 8px; background: #fff; transition: border-color .2s, box-shadow .2s; }
+.bea-animal-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--cinza-borda); border-radius: 8px; background: #fff; cursor: pointer; transition: border-color .2s, box-shadow .2s; }
 .bea-animal-card:hover { border-color: var(--verde); box-shadow: 0 4px 12px rgba(30, 92, 30, .1); }
+.bea-animal-card:focus-visible { outline: 3px solid rgba(45, 122, 45, .35); outline-offset: 2px; border-color: var(--verde); }
 .bea-animal-card__image { position: relative; overflow: hidden; aspect-ratio: 1 / 1; background: var(--verde-claro); border-radius: 8px 8px 0 0; }
-.bea-animal-card__image::after {
-  content: "\f004";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  color: #fff;
-  background: rgba(30, 92, 30, .82);
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: .9rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
 .bea-animal-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
 .bea-animal-card:hover .bea-animal-card__image img { transform: scale(1.06); }
 .bea-image-placeholder {
@@ -305,8 +289,26 @@
 .bea-animal-detail__content h3 { margin-bottom: 6px; font-size: 1rem; font-weight: 700; }
 .bea-animal-detail__description { color: #4f5f4f; line-height: 1.6; }
 .bea-animal-detail__organization { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--cinza-borda); color: #4f5f4f; font-size: .75rem; }
-.bea-animal-detail__interest { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; margin-top: 18px; padding: 10px 16px; border-radius: 8px; color: #fff; background: var(--verde); font-size: .875rem; font-weight: 700; text-align: center; }
-.bea-animal-detail__interest:hover { color: #fff; background: var(--verde-escuro); text-decoration: none; }
+.bea-interest-modal .modal-content { overflow: hidden; border: 1px solid var(--cinza-borda); border-radius: 8px; }
+.bea-interest-modal__body { padding: 36px 30px 28px; }
+.bea-interest { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--cinza-borda); }
+.bea-interest-modal__body .bea-interest { margin-top: 0; padding-top: 0; border-top: 0; }
+.bea-interest__title { margin: 0 0 4px; font-size: 1.25rem; font-weight: 700; color: var(--verde-escuro); }
+.bea-interest__animal-name { margin: 0 0 14px; color: var(--texto); font-size: 1rem; font-weight: 700; }
+.bea-interest__animal-name-value { display: inline-block; margin-left: 4px; padding: 3px 10px; border-radius: 5px; color: var(--verde-escuro); background: var(--verde-claro); font-weight: 700; }
+.bea-interest-form { display: grid; gap: 12px; }
+.bea-interest-field label { display: block; margin-bottom: 6px; color: var(--texto); font-size: .8125rem; font-weight: 700; }
+.bea-interest-field input { width: 100%; height: 42px; padding: 0 10px; border: 1px solid var(--cinza-borda); border-radius: 8px; color: var(--texto); background: #fff; font: inherit; font-size: .875rem; }
+.bea-interest-field input:focus { border-color: var(--verde); outline: 3px solid rgba(45, 122, 45, .15); }
+.bea-interest-form .text-xs { margin: 2px 0 0; color: #4f5f4f; font-size: .75rem; line-height: 1.5; }
+.bea-interest-form .text-xs a { color: var(--verde-escuro); font-weight: 700; text-decoration: underline; }
+.bea-interest-form .text-xs a:hover { color: var(--verde); }
+.bea-interest-submit { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; margin-top: 4px; padding: 10px 16px; border: 0; border-radius: 8px; color: #fff; background: var(--verde); font-size: .875rem; font-weight: 700; text-align: center; cursor: pointer; }
+.bea-interest-submit:hover:not(:disabled) { color: #fff; background: var(--verde-escuro); }
+.bea-interest-submit:disabled { opacity: .7; cursor: wait; }
+.bea-interest-message { margin: 0; padding: 12px 14px; border-radius: 8px; font-size: .875rem; line-height: 1.5; }
+.bea-interest-message--success { border: 1px solid rgba(45, 122, 45, .25); color: #1f4d1f; background: var(--verde-claro); }
+.bea-interest-message--error { border: 1px solid rgba(167, 39, 39, .25); color: #7a1f1f; background: #fff1f1; }
 .bea-detail-state { display: flex; min-height: 360px; padding: 40px 24px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 .bea-detail-state > i { margin-bottom: 14px; color: #a72727; font-size: 1.75rem; }
 
@@ -341,6 +343,7 @@
   .bea-image-placeholder--detail { min-height: 250px; max-height: 350px; }
   .bea-image-placeholder--detail { font-size: 3.5rem; }
   .bea-animal-detail__content { padding: 28px 20px; }
+  .bea-interest-modal__body { padding: 28px 20px; }
 }
 
 @media (max-width: 420px) {
@@ -381,4 +384,4 @@ body.high-contrast .bea-animal-modal .modal-content {
 body.high-contrast .bea-tab.active { color: #000 !important; background: #ff0 !important; }
 body.high-contrast .bea-animal-card__button,
 body.high-contrast .bea-adoption-cta__button,
-body.high-contrast .bea-animal-detail__interest { color: #000 !important; background: #ff0 !important; }
+body.high-contrast .bea-interest-submit { color: #000 !important; background: #ff0 !important; }

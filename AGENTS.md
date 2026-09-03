@@ -29,7 +29,6 @@ Nas páginas institucionais que usam sidebar:
 - o conteúdo principal fica à esquerda;
 - a sidebar fica sempre à direita no desktop;
 - a sidebar deve ser mais estreita que o conteúdo;
-- use como referência visual as páginas de E-SIC e Ouvidoria;
 - a sidebar pode reunir ações rápidas, contato, horário e endereço;
 - não coloque o conteúdo principal dentro da sidebar;
 - no mobile, o conteúdo principal vem primeiro e a sidebar depois;
@@ -51,6 +50,23 @@ Estrutura recomendada:
   }
 }
 ```
+
+## Páginas de catálogos de software (SGA, BookEase etc.)
+
+Páginas que apresentam sistemas municipais devem seguir a estrutura usada em `pages-migradas/sga` e `pages-migradas/bookease`: hero do sistema, apresentação, cards de recursos, fluxo/status quando existir, descrição de perfis de acesso, CTA final e sidebar com ações.
+
+Quando o sistema for **restrito** (uso interno da administração, sem acesso público):
+
+- use o card de acesso restrito no mesmo padrão do SGA (`sga-badge-interno`), logo no início da apresentação:
+  - ícone `fa-user-lock`;
+  - texto com `<strong>` no início e esclarecimento em texto corrido;
+  - fungo claro alinhado à paleta institucional (verde-claro), borda e ícone verdes;
+- deixe claro no hero ou na descrição que o acesso é exclusivo de servidores autorizados;
+- no CTA final e na sidebar, use rótulos como "Exclusivo para servidores" em vez de "Acessar sistema";
+- mantenha o mesmo padrão visual dos demais cards da página (neutralidade, cantos arredondados, sombras leves);
+- preserve suporte a alto contraste (`body.high-contrast`) para o card de acesso restrito.
+
+Referência: `pages-migradas/sga/conteudo.html` (`.sga-badge-interno`) e `pages-migradas/sga/css/sga.css`.
 
 ## Abas
 

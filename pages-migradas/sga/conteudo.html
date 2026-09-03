@@ -1,232 +1,403 @@
-<div id="pi-wrapper">
-  <section id="pi-hero" aria-labelledby="sistema-titulo">
-    <div class="container">
-      <div class="pi-hero-inner">
-        <nav aria-label="Você está em">
-          <ol class="pi-breadcrumb">
-            <li>
-              <a href="../../index.html">
-                <i class="fas fa-home" aria-hidden="true"></i> Início
+﻿<section id="pi-hero" aria-label="Identificação da página">
+  <div class="container">
+    <div class="pi-hero-inner">
+      <nav aria-label="Você está em">
+        <ol class="pi-breadcrumb">
+          <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li><a href="../../pages/sistemas-ti">Sistemas da TI</a></li>
+          <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+          <li aria-current="page">SGA</li>
+        </ol>
+      </nav>
+      <h1 class="pi-hero-titulo">SGA — Sistema de Gestão de Atendimentos</h1>
+      <p class="pi-hero-subtitulo">Plataforma interna para registro e acompanhamento dos atendimentos municipais</p>
+    </div>
+  </div>
+  <div class="pi-hero-ilustracao" aria-hidden="true">
+    <img src="../../_global/img/global/ilustracao.png" alt="">
+  </div>
+</section>
+
+<main id="pi-main">
+  <div class="container">
+    <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+      <!-- COLUNA PRINCIPAL -->
+      <article>
+
+        <!-- APRESENTAÇÃO -->
+        <section id="sga-apresentacao" aria-labelledby="sga-intro-titulo">
+          <h2 id="sga-intro-titulo" class="pi-secao-titulo">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            Sobre o SGA
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sga-badge-interno">
+            <i class="fas fa-user-lock" aria-hidden="true"></i>
+            <span><strong>Uso interno da administração.</strong> O SGA é um sistema de uso exclusivo dos servidores e não está disponível para o público em geral.</span>
+          </div>
+
+          <div class="pi-intro-texto">
+            <p>
+              O <strong>SGA — Sistema de Gestão de Atendimentos</strong> ajuda as secretarias a
+              registrar e acompanhar os atendimentos prestados à população. Cada secretaria tem seu
+              próprio espaço, com seus temas, equipes e documentos, e as informações de uma área são
+              mantidas separadas das demais.
+            </p>
+          </div>
+        </section>
+
+        <!-- O QUE O SGA RESOLVE -->
+        <section id="sga-problema" aria-labelledby="sga-problema-titulo" class="pi-mt-secao">
+          <h2 id="sga-problema-titulo" class="pi-secao-titulo">
+            <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+            O que o SGA resolve
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="pi-intro-texto">
+            <p>
+              Anotações soltas em papel, agendas pessoais e planilhas sem dono fazem o atendimento
+              depender da memória de quem o recebeu. Quando o servidor sai de férias, muda de
+              secretaria ou simplesmente não recorda, a história do cidadão fica pela metade.
+            </p>
+            <p>
+              O SGA substitui esse cenário por um registro único e permanente. Cada solicitação
+              ganha um responsável, uma equipe, um assunto e um status, e tudo o que foi feito fica
+              guardado no histórico. Nada se perde — nem quando muda a pessoa por trás do balcão.
+            </p>
+          </div>
+        </section>
+
+        <!-- FUNCIONALIDADES PRINCIPAIS -->
+        <section id="sga-funcionalidades" aria-labelledby="sga-func-titulo" class="pi-mt-secao">
+          <h2 id="sga-func-titulo" class="pi-secao-titulo">
+            <i class="fas fa-gears" aria-hidden="true"></i>
+            Principais funcionalidades
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sga-carrossel" data-carrossel>
+            <div class="sga-cards-grid sga-carrossel-track" data-carrossel-track="sga-func" role="list">
+
+            <article class="sga-card" role="listitem">
+              <div class="sga-card__icone" aria-hidden="true">
+                <i class="fas fa-user-clock"></i>
+              </div>
+              <h3 class="sga-card__titulo">Um só histórico para cada cidadão</h3>
+              <p class="sga-card__texto">
+                Ao registrar um atendimento, o sistema percebe quando aquela pessoa já foi atendida
+                antes e pergunta ao servidor se é o mesmo cidadão. Assim, cada pessoa passa a ter um
+                único histórico contínuo, em vez de informações soltas.
+              </p>
+            </article>
+
+            <article class="sga-card" role="listitem">
+              <div class="sga-card__icone" aria-hidden="true">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h3 class="sga-card__titulo">Privacidade com sigilo</h3>
+              <p class="sga-card__texto">
+                Quando necessário, um atendimento pode ser marcado como sigiloso. Nesse caso, só o
+                servidor responsável, a equipe que o atendeu e os administradores autorizados podem
+                visualizá-lo. Cada secretaria trabalha com seus próprios dados, separados dos demais.
+              </p>
+            </article>
+
+            <article class="sga-card" role="listitem">
+              <div class="sga-card__icone" aria-hidden="true">
+                <i class="fas fa-users-gear"></i>
+              </div>
+              <h3 class="sga-card__titulo">Equipes de atendimento</h3>
+              <p class="sga-card__texto">
+                O responsável pode montar uma equipe ao redor de um mesmo registro. Cada arquivo
+                carregado informa quem enviou — e todos os envolvidos seguem acompanhando aquele
+                atendimento, independentemente de quem o abriu.
+              </p>
+            </article>
+
+            <article class="sga-card" role="listitem">
+              <div class="sga-card__icone" aria-hidden="true">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="sga-card__titulo">Dados a serviço da gestão</h3>
+              <p class="sga-card__texto">
+                Relatórios diários, mensais e anuais mostram o volume de atendimentos por secretaria
+                e por destino, e podem ser gerados em PDF para apresentação à gestão e à
+                transparência pública.
+              </p>
+            </article>
+
+            <article class="sga-card" role="listitem">
+              <div class="sga-card__icone" aria-hidden="true">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <h3 class="sga-card__titulo">Responsabilidade com registro</h3>
+              <p class="sga-card__texto">
+                Toda ação importante fica anotada: quem criou, quem alterou e quem enviou cada
+                documento. O sistema guarda um histórico do que foi feito, com autor e data, para
+                segurança e controle.
+              </p>
+</article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- STATUS E FLUXO -->
+        <section id="sga-status" aria-labelledby="sga-status-titulo" class="pi-mt-secao">
+          <h2 id="sga-status-titulo" class="pi-secao-titulo">
+            <i class="fas fa-route" aria-hidden="true"></i>
+            Fluxo do atendimento
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sga-status-steps" role="list" aria-label="Etapas do atendimento">
+            <div class="sga-status-step sga-status-step--verde" role="listitem">
+              <div class="sga-status-step__circulo" aria-hidden="true">
+                <i class="fas fa-folder-open"></i>
+              </div>
+              <div class="sga-status-step__conteudo">
+                <h3>Aberto</h3>
+                <p>A solicitação foi registrada e aguarda tratamento.</p>
+              </div>
+            </div>
+            <div class="sga-status-connector" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+            <div class="sga-status-step sga-status-step--azul" role="listitem">
+              <div class="sga-status-step__circulo" aria-hidden="true">
+                <i class="fas fa-spinner"></i>
+              </div>
+              <div class="sga-status-step__conteudo">
+                <h3>Em andamento</h3>
+                <p>A equipe está trabalhando na resolução do atendimento.</p>
+              </div>
+            </div>
+            <div class="sga-status-connector" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+            <div class="sga-status-step sga-status-step--amarelo" role="listitem">
+              <div class="sga-status-step__circulo" aria-hidden="true">
+                <i class="fas fa-share"></i>
+              </div>
+              <div class="sga-status-step__conteudo">
+                <h3>Encaminhado</h3>
+                <p>O atendimento foi passado para outra secretaria ou setor.</p>
+              </div>
+            </div>
+            <div class="sga-status-connector" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+            <div class="sga-status-step sga-status-step--verde-escuro" role="listitem">
+              <div class="sga-status-step__circulo" aria-hidden="true">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="sga-status-step__conteudo">
+                <h3>Resolvido</h3>
+                <p>O atendimento foi concluído com sucesso.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- O QUE O SISTEMA GUARDA -->
+        <section id="sga-dados" aria-labelledby="sga-dados-titulo" class="pi-mt-secao">
+          <h2 id="sga-dados-titulo" class="pi-secao-titulo">
+            <i class="fas fa-database" aria-hidden="true"></i>
+            O que o sistema guarda, momento a momento
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sga-carrossel" data-carrossel>
+            <dl class="sga-definicao-lista sga-carrossel-track" data-carrossel-track="sga-dados">
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-file-lines"></i></span>
+                <strong>Atendimento</strong>
+              </dt>
+              <dd>O registro da solicitação do cidadão, com data, pessoa, assunto, descrição, endereço, status e destino de encaminhamento.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-person"></i></span>
+                <strong>Cidadão</strong>
+              </dt>
+              <dd>Pessoa atendida, identificada por nome, apelido e contato, com um histórico único na organização.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-tag"></i></span>
+                <strong>Assunto</strong>
+              </dt>
+              <dd>Classificação configurável de cada secretaria para organizar e localizar os atendimentos por tema.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-share-nodes"></i></span>
+                <strong>Encaminhamento</strong>
+              </dt>
+              <dd>Passagem do atendimento de uma secretaria para outra, com destino e documentos definidos.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-paperclip"></i></span>
+                <strong>Documento</strong>
+              </dt>
+              <dd>Anexo obrigatório ou opcional vinculado ao encaminhamento, com registro de quem realizou o download e o envio.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-signal"></i></span>
+                <strong>Status</strong>
+              </dt>
+              <dd>Etapa atual do atendimento: aberto, em andamento, encaminhado ou resolvido.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-people-group"></i></span>
+                <strong>Equipe</strong>
+              </dt>
+              <dd>Conjunto de atendentes que participam de um mesmo atendimento, com o responsável à frente.</dd>
+            </div>
+            <div class="sga-definicao-item">
+              <dt class="sga-definicao-termo">
+                <span class="sga-definicao-icone" aria-hidden="true"><i class="fas fa-shield-halved"></i></span>
+                <strong>Sigilo</strong>
+              </dt>
+              <dd>Classificação que restringe a visualização do atendimento às pessoas autorizadas.</dd>
+            </div>
+          </dl>
+          </div>
+        </section>
+
+        <!-- CARÁTER INOVADOR -->
+        <section id="sga-inovacao" aria-labelledby="sga-inovacao-titulo" class="pi-mt-secao">
+          <h2 id="sga-inovacao-titulo" class="pi-secao-titulo">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            Caráter inovador
+          </h2>
+          <hr class="pi-secao-divider">
+
+          <div class="sga-inovacao-grid" role="list">
+            <article class="sga-inovacao-item" role="listitem">
+              <div class="sga-inovacao-item__icone" aria-hidden="true"><i class="fas fa-user-clock"></i></div>
+              <h3>Memória única do cidadão</h3>
+              <p>Cada atendimento se liga a um único histórico contínuo da pessoa, reconhecida já no registro da nova solicitação — a história não fica dependente de quem atendeu.</p>
+            </article>
+            <article class="sga-inovacao-item" role="listitem">
+              <div class="sga-inovacao-item__icone" aria-hidden="true"><i class="fas fa-user-shield"></i></div>
+              <h3>Governança e Sigilo</h3>
+              <p>Controle de acesso por perfis, atendimentos sigilosos para proteger informações sensíveis e registros que documentam cada ação realizada.</p>
+            </article>
+            <article class="sga-inovacao-item" role="listitem">
+              <div class="sga-inovacao-item__icone" aria-hidden="true"><i class="fas fa-users-gear"></i></div>
+              <h3>Colaboração em Equipe</h3>
+              <p>Múltiplos atendentes podem trabalhar no mesmo caso, com histórico unificado e visão compartilhada para resolver demandas complexas.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CTA ACESSO -->
+        <section class="sga-cta" aria-labelledby="sga-cta-titulo">
+          <div class="sga-cta-texto">
+            <span class="sga-cta-label">Exclusivo para servidores</span>
+            <h2 id="sga-cta-titulo">Acesse o SGA</h2>
+            <p>
+              Plataforma interna das secretarias municipais, acessada on-line com a conta
+              institucional. Registro, seguimento e resposta para cada atendimento — sem depender
+              da memória de quem o recebeu.
+            </p>
+          </div>
+          <a href="https://sga.pmcgs.pr.gov.br/" class="sga-cta-btn" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            Acessar sistema
+          </a>
+        </section>
+
+      </article>
+      <!-- /COLUNA PRINCIPAL -->
+
+      <!-- SIDEBAR -->
+      <aside class="pi-sidebar" aria-label="Informações e links do sistema">
+
+        <div class="pi-sidebar-card pi-sidebar-contato">
+          <h4><i class="fas fa-bolt" aria-hidden="true"></i> Acesso rápido</h4>
+          <p>O acesso é restrito a servidores municipais previamente cadastrados e autorizados.</p>
+          <a href="https://sga.pmcgs.pr.gov.br/" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Abrir sistema
+          </a>
+        </div>
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Página</h4>
+          <ul class="pi-sidebar-links" aria-label="Seções desta página">
+            <li class="ativo">
+              <a href="#sga-apresentacao" aria-current="page">
+                <span><i class="fas fa-info-circle pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>Sobre o SGA</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </a>
             </li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            <li>
+              <a href="#sga-funcionalidades">
+                <span><i class="fas fa-gears pi-sidebar-ico" aria-hidden="true"></i>Funcionalidades</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
             </li>
-            <li><a href="../../pages/sistemas-ti/">Sistemas da TI</a></li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+            <li>
+              <a href="#sga-status">
+                <span><i class="fas fa-route pi-sidebar-ico" aria-hidden="true"></i>Fluxo</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
             </li>
-            <li aria-current="page">SGA — Sistema de Gestão de Atendimentos</li>
-          </ol>
-        </nav>
+            <li>
+              <a href="#sga-dados">
+                <span><i class="fas fa-database pi-sidebar-ico" aria-hidden="true"></i>Dados do sistema</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#sga-publico">
+                <span><i class="fas fa-user-group pi-sidebar-ico" aria-hidden="true"></i>Servidores</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <h1 id="sistema-titulo" class="pi-hero-titulo">
-          SGA — Sistema de Gestão de Atendimentos
-        </h1>
-      </div>
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-circle-info" aria-hidden="true"></i> Informações</h4>
+          <dl class="sti-info-list">
+            <div><dt>Responsável</dt><dd>Secretaria Municipal da Tecnologia, Inovação e Transformação Digital</dd></div>
+            <div><dt>Disponibilidade</dt><dd>24 horas, sujeito a períodos de manutenção</dd></div>
+            <div><dt>Público</dt><dd>Servidores municipais autorizados</dd></div>
+            <div><dt>Tipo de acesso</dt><dd>Restrito</dd></div>
+          </dl>
+        </div>
+
+        <div class="pi-sidebar-card">
+          <h4><i class="fas fa-link" aria-hidden="true"></i> Links úteis</h4>
+          <ul class="pi-sidebar-links">
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/sistemas-ti">
+                <span><i class="fas fa-desktop pi-sidebar-ico" aria-hidden="true"></i>Todos os sistemas</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/e-sic">
+                <span><i class="fas fa-search pi-sidebar-ico" aria-hidden="true"></i>e-SIC</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/ouvidoria">
+                <span><i class="fas fa-comments pi-sidebar-ico" aria-hidden="true"></i>Ouvidoria</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+      <!-- /SIDEBAR -->
+
     </div>
-
-    <div class="pi-hero-ilustracao" aria-hidden="true">
-      <img src="../../_global/img/global/ilustracao.png" alt="">
-    </div>
-  </section>
-
-  <main id="pi-main">
-    <div class="container">
-      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
-        <article>
-          <section aria-labelledby="sobre-sistema">
-            <h2 id="sobre-sistema" class="pi-secao-titulo">
-              <i class="fas fa-circle-info" aria-hidden="true"></i>
-              Sobre o sistema
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="pi-intro-texto">
-              <p>
-                O <strong>SGA — Sistema de Gestão de Atendimentos</strong> é uma
-                plataforma interna da Prefeitura de Campina Grande do Sul
-                desenvolvida para registrar, organizar e acompanhar os
-                atendimentos realizados pelos setores municipais.
-              </p>
-              <p>
-                A solução centraliza as informações, facilita a localização do
-                histórico de atendimentos e permite acompanhar demandas,
-                encaminhamentos e documentos de forma organizada. Com isso, os
-                servidores têm mais agilidade no trabalho e a Administração
-                Municipal dispõe de informações consolidadas para apoiar o
-                planejamento e a melhoria dos serviços públicos.
-              </p>
-              <p>
-                O sistema atende diferentes secretarias e setores da Prefeitura,
-                mantendo a separação das informações por organização e
-                respeitando os perfis e as permissões de cada usuário.
-              </p>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="funcionalidades-sistema">
-            <h2 id="funcionalidades-sistema" class="pi-secao-titulo">
-              <i class="fas fa-gears" aria-hidden="true"></i>
-              Principais funcionalidades
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="sti-recursos-grid" role="list">
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-list-check"></i></div>
-                <div>
-                  <h3>Registro de atendimentos</h3>
-                  <p>Permite cadastrar e atualizar atendimentos com dados da pessoa atendida, assunto, descrição, situação e informações de encaminhamento.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></div>
-                <div>
-                  <h3>Pesquisa e acompanhamento</h3>
-                  <p>Oferece pesquisa, filtros e histórico para facilitar a localização de registros e o acompanhamento das demandas.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-                <div>
-                  <h3>Indicadores e relatórios</h3>
-                  <p>Apresenta dados consolidados por período, assunto, situação e organização, com possibilidade de emissão de relatórios em PDF.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-                <div>
-                  <h3>Controle de acesso</h3>
-                  <p>Protege as informações por meio de autenticação, perfis de usuário, separação por organização e controle de registros sigilosos.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-paperclip"></i></div>
-                <div>
-                  <h3>Documentos anexos</h3>
-                  <p>Permite anexar documentos necessários aos encaminhamentos, conforme os tipos configurados para cada entidade de destino.</p>
-                </div>
-              </article>
-
-              <article class="sti-recurso-card" role="listitem">
-                <div class="sti-recurso-icon" aria-hidden="true"><i class="fas fa-building"></i></div>
-                <div>
-                  <h3>Gestão por organização</h3>
-                  <p>Organiza assuntos, entidades, usuários e atendimentos de acordo com a estrutura administrativa do Município.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="publico-sistema">
-            <h2 id="publico-sistema" class="pi-secao-titulo">
-              <i class="fas fa-user-group" aria-hidden="true"></i>
-              Para quem é o sistema?
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="sti-publicos-grid" role="list">
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-user-tie" aria-hidden="true"></i>
-                <strong>Servidores responsáveis por atendimentos</strong>
-                <span>Profissionais autorizados a registrar, consultar e acompanhar demandas.</span>
-              </div>
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-building" aria-hidden="true"></i>
-                <strong>Secretarias e setores municipais</strong>
-                <span>Unidades que realizam atendimentos ou recebem encaminhamentos.</span>
-              </div>
-              <div class="sti-publico" role="listitem">
-                <i class="fas fa-user-shield" aria-hidden="true"></i>
-                <strong>Administradores do sistema</strong>
-                <span>Equipe responsável pela gestão de usuários, organizações, permissões e configurações.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="pi-mt-secao" aria-labelledby="como-acessar">
-            <h2 id="como-acessar" class="pi-secao-titulo">
-              <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
-              Como acessar
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <ol class="sti-passos">
-              <li>
-                <span class="sti-passo-numero">1</span>
-                <div>
-                  <strong>Solicite a autorização</strong>
-                  <p>O acesso é restrito aos servidores previamente autorizados pela Administração Municipal.</p>
-                </div>
-              </li>
-              <li>
-                <span class="sti-passo-numero">2</span>
-                <div>
-                  <strong>Acesse a plataforma</strong>
-                  <p>Abra o SGA pelo botão disponível nesta página.</p>
-                </div>
-              </li>
-              <li>
-                <span class="sti-passo-numero">3</span>
-                <div>
-                  <strong>Faça a autenticação</strong>
-                  <p>Entre com sua conta institucional Microsoft ou com as credenciais fornecidas pela equipe responsável.</p>
-                </div>
-              </li>
-            </ol>
-          </section>
-
-          <section class="sti-cta" aria-labelledby="cta-sistema">
-            <div>
-              <span>Acesso ao sistema</span>
-              <h2 id="cta-sistema">Acesse o SGA</h2>
-              <p>Entre na plataforma para registrar, consultar e acompanhar os atendimentos da sua organização.</p>
-            </div>
-            <a href="https://sga.pmcgs.pr.gov.br/" class="pi-btn-verde" target="_blank" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              Acessar sistema
-            </a>
-          </section>
-        </article>
-
-        <aside class="pi-sidebar" aria-label="Informações e links do sistema">
-          <div class="pi-sidebar-card sti-sidebar-acesso">
-            <h3><i class="fas fa-rocket" aria-hidden="true"></i> Acesso rápido</h3>
-            <p>O acesso é restrito a servidores municipais previamente cadastrados e autorizados.</p>
-            <a href="https://sga.pmcgs.pr.gov.br/" class="pi-btn-verde pi-btn-full" target="_blank" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              Abrir sistema
-            </a>
-          </div>
-
-          <div class="pi-sidebar-card">
-            <h3><i class="fas fa-circle-info" aria-hidden="true"></i> Informações</h3>
-            <dl class="sti-info-list">
-              <div><dt>Responsável</dt><dd>Secretaria Municipal de Tecnologia da Informação</dd></div>
-              <div><dt>Disponibilidade</dt><dd>24 horas, sujeito a períodos de manutenção</dd></div>
-              <div><dt>Público</dt><dd>Servidores municipais autorizados</dd></div>
-              <div><dt>Tipo de acesso</dt><dd>Restrito</dd></div>
-            </dl>
-          </div>
-
-          <div class="pi-sidebar-card">
-            <h3><i class="fas fa-link" aria-hidden="true"></i> Links úteis</h3>
-            <ul class="pi-sidebar-links">
-              <li>
-                <a href="../../pages/sistemas-ti/">
-                  <span>Todos os sistemas</span>
-                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </main>
-</div>
+  </div>
+</main>
