@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala do Empreendedor - Prefeitura de Campina Grande do Sul</title>
+  <meta name="description" content="Espaço de atendimento para empreendedores, MEI e pessoas que desejam abrir seu próprio negócio. Orientação gratuita sobre formalização, gestão e crédito.">
+
+  <script>
+    function getBasePath() { return "../../"; }
+    const base = getBasePath();
+  </script>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../../_global/css/index.css">
+  <!-- Estilos da página -->
+  <link rel="stylesheet" href="css/sala.css">
+
+</head>
+<body>
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <div id="dynamic-content"></div>
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Externos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Scripts Globais (Componentes) -->
+  <script src="../../_global/js/acessibilidade-component.js"></script>
+  <script src="../../_global/js/searh-component.js"></script>
+  <script src="../../_global/js/header-component.js"></script>
+  <script src="../../_global/js/footer-component.js"></script>
+
+  <!-- Script da página -->
+  <script src="js/sala.js"></script>
+
+  <script>
+    fetch('conteudo.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('dynamic-content').innerHTML = html;
+        if (typeof window.dispatchEvent === 'function') {
+          window.dispatchEvent(new Event('load'));
+        }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,629 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   sala.css — Sala do Empreendedor
+   Prefeitura de Campina Grande do Sul – PR
+   Identidade visual própria (não cópia de outras páginas)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. HERO
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#pi-hero {
+  background: var(--verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pi-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pi-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-subtitulo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. LAYOUT
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#dynamic-content,
+#pi-main {
+  background: #fff;
+  padding: 40px 0 56px;
+}
+
+#dynamic-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.pi-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: start;
+}
+
+.pi-layout > article,
+.pi-layout > aside {
+  min-width: 0;
+}
+
+.pi-intro-texto {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.75;
+}
+
+.pi-intro-texto p { margin-bottom: 14px; }
+.pi-intro-texto p:last-child { margin-bottom: 0; }
+
+.pi-secao-titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-secao-titulo i {
+  font-size: 1rem;
+  color: var(--verde);
+  flex-shrink: 0;
+}
+
+.pi-secao-divider {
+  border: none;
+  border-top: 2px solid var(--verde-claro);
+  margin: 0 0 24px;
+}
+
+.se-mt { margin-top: 40px; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. SIDEBAR
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-sidebar-card {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-sidebar-card h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-sidebar-card h4 i {
+  font-size: 0.875rem;
+  color: var(--verde);
+}
+
+.pi-sidebar-contato {
+  background: var(--verde-claro);
+  border-color: #b3d6be !important;
+}
+
+.pi-sidebar-contato h4 {
+  border-color: #b3d6be;
+}
+
+.pi-sidebar-contato p {
+  font-size: 0.8125rem;
+  color: #3a5a3a;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pi-sidebar-contato p:last-of-type { margin-bottom: 14px; }
+.pi-sidebar-contato p i           { color: var(--verde); flex-shrink: 0; margin-top: 3px; }
+.pi-sidebar-contato a             { color: var(--verde-escuro); text-decoration: underline; }
+.pi-sidebar-contato a:hover       { color: var(--verde); }
+
+.pi-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pi-sidebar-links li {
+  border-bottom: 1px solid #eef2ee;
+}
+
+.pi-sidebar-links li:last-child {
+  border-bottom: none;
+}
+
+.pi-sidebar-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 4px;
+  font-size: 0.8125rem;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.15s, padding-left 0.15s;
+  gap: 8px;
+}
+
+.pi-sidebar-links li a:hover {
+  color: var(--verde);
+  padding-left: 6px;
+}
+
+.pi-sidebar-links li a i.fa-chevron-right {
+  font-size: 0.625rem;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+.pi-sidebar-links li.ativo a {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+.pi-sidebar-ico       { margin-right: 8px; color: #aaa; }
+.pi-sidebar-ico-ativo { color: var(--verde); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. COMO FUNCIONA — Passos numerados
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.se-passos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.se-passo {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.se-passo:hover {
+  border-color: var(--verde);
+  box-shadow: 0 4px 16px rgba(45, 122, 45, 0.08);
+}
+
+.se-passo-num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--verde);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.se-passo-conteudo h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 6px;
+}
+
+.se-passo-conteudo p {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.se-passo-connector {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  color: var(--verde-claro);
+  font-size: 1rem;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. SERVIÇOS — Grade de cards
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.se-servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.se-servico {
+  background: #fff;
+  border: 1.5px solid var(--cinza-borda);
+  border-left: 4px solid var(--verde);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.se-servico:hover {
+  border-color: var(--verde);
+  border-left-color: var(--verde-escuro);
+  box-shadow: 0 6px 20px rgba(45, 122, 45, 0.1);
+  transform: translateY(-2px);
+}
+
+.se-servico-icone {
+  width: 44px;
+  height: 44px;
+  background: var(--verde-claro);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.se-servico-icone i {
+  color: var(--verde);
+  font-size: 1.1rem;
+}
+
+.se-servico h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.se-servico p {
+  font-size: 0.8125rem;
+  color: #616161;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. BENEFÍCIOS — Lista com ícones
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.se-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.se-beneficio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--verde-claro);
+  border: 1.5px solid #b3d6be;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+
+.se-beneficio-item:hover {
+  border-color: var(--verde);
+}
+
+.se-beneficio-item > i {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--verde);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.se-beneficio-item strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 4px;
+}
+
+.se-beneficio-item p {
+  font-size: 0.8125rem;
+  color: #3a5a3a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. O QUE TRAZER
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.se-trazer-bloco {
+  background: var(--verde-claro);
+  border: 1.5px solid #b3d6be;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 40px;
+}
+
+.se-trazer-bloco h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.se-trazer-bloco h2 i {
+  font-size: 1rem;
+  color: var(--verde);
+}
+
+.se-trazer-bloco > p {
+  font-size: 0.875rem;
+  color: #3a5a3a;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.se-trazer-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.se-trazer-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #c8ddc8;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.se-trazer-icone {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--verde);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.se-trazer-icone i {
+  color: #fff;
+}
+
+.se-trazer-lista li div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.se-trazer-lista li strong {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+
+.se-trazer-lista li span {
+  font-size: 0.8125rem;
+  color: #4a6a4a;
+  line-height: 1.5;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. ALTO CONTRASTE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast .se-passo {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .se-passo-num {
+  background: #333 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .se-passo-conteudo h3 { color: #fff !important; }
+body.high-contrast .se-passo-conteudo p { color: #ddd !important; }
+body.high-contrast .se-passo-connector { color: #555 !important; }
+
+body.high-contrast .se-servico {
+  background: #000 !important;
+  border-color: #fff !important;
+  border-left-color: #ff0 !important;
+}
+
+body.high-contrast .se-servico-icone { background: #222 !important; }
+body.high-contrast .se-servico-icone i { color: #ff0 !important; }
+body.high-contrast .se-servico h3 { color: #fff !important; }
+body.high-contrast .se-servico p { color: #ddd !important; }
+
+body.high-contrast .se-beneficio-item {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .se-beneficio-item > i {
+  background: #333 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .se-beneficio-item strong { color: #fff !important; }
+body.high-contrast .se-beneficio-item p { color: #ddd !important; }
+
+body.high-contrast .se-trazer-bloco {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .se-trazer-bloco h2 { color: #fff !important; }
+body.high-contrast .se-trazer-bloco h2 i { color: #ff0 !important; }
+body.high-contrast .se-trazer-bloco > p { color: #ddd !important; }
+
+body.high-contrast .se-trazer-lista li {
+  background: #111 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .se-trazer-icone {
+  background: #333 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .se-trazer-lista li strong { color: #fff !important; }
+body.high-contrast .se-trazer-lista li span { color: #ccc !important; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 991.98px) {
+  .pi-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .se-servicos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pi-hero-titulo { font-size: 1.125rem; }
+  .pi-hero-ilustracao img { height: 50px; }
+  #pi-main { padding: 34px 0 48px; }
+  .pi-secao-titulo { font-size: 1rem; }
+
+  .se-passo { padding: 18px; gap: 14px; }
+  .se-passo-num { width: 40px; height: 40px; font-size: 1rem; }
+
+  .se-servico { padding: 18px 16px; }
+
+  .se-beneficio-item { padding: 16px; gap: 12px; }
+  .se-beneficio-item > i { width: 36px; height: 36px; font-size: 0.875rem; }
+
+  .se-trazer-bloco { padding: 22px 18px; }
+}
+
+@media (max-width: 374.98px) {
+  .se-servicos-grid { gap: 12px; }
+  .se-passo-num { width: 36px; height: 36px; font-size: 0.875rem; }
+}
