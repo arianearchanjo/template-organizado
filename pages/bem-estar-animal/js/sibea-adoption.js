@@ -601,12 +601,15 @@
     const title = createElement('h3', 'bea-interest__title', 'Tenho interesse neste animal');
     title.id = 'bea-interest-title';
     section.appendChild(title);
+<<<<<<< HEAD
     if (animal.name) {
       const nameLine = createElement('p', 'bea-interest__animal-name');
       nameLine.appendChild(document.createTextNode('Nome: '));
       nameLine.appendChild(createElement('strong', 'bea-interest__animal-name-value', animal.name));
       section.appendChild(nameLine);
     }
+=======
+>>>>>>> 4dc6a56fb64a6df96adb3cc6e340411a77771867
 
     const form = createElement('form', 'bea-interest-form');
     form.id = 'sibea-interest-form';
@@ -738,12 +741,16 @@
       content.appendChild(createElement('p', 'bea-animal-detail__organization', `Disponibilizado por: ${animal.organization.name}`));
     }
 
+<<<<<<< HEAD
     const interestButton = createElement('button', 'bea-interest-open-button');
     interestButton.type = 'button';
     addIcon(interestButton, 'fas fa-paper-plane');
     interestButton.appendChild(document.createTextNode('Tenho interesse neste animal'));
     interestButton.addEventListener('click', () => openInterestModal(animal));
     content.appendChild(interestButton);
+=======
+    content.appendChild(createInterestForm(animal));
+>>>>>>> 4dc6a56fb64a6df96adb3cc6e340411a77771867
 
     layout.appendChild(content);
     elements.detail.replaceChildren(layout);
@@ -826,6 +833,7 @@
     });
     $('#sibea-animal-modal').on('hidden.bs.modal', () => {
       if (state.detailController) state.detailController.abort();
+      if (state.interestController) state.interestController.abort();
     });
     $('#sibea-interest-modal').on('hidden.bs.modal', () => {
       if (state.interestController) state.interestController.abort();
