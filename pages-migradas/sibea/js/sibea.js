@@ -177,22 +177,35 @@
       });
     }
 
-    carregarContagemAnimais();
+    carregarGaleriaAnimais();
   });
 
-  function carregarContagemAnimais() {
+  function embaralhar(itens) {
+    for (var i = itens.length - 1; i > 0; i--) {
+      var indice = Math.floor(Math.random() * (i + 1));
+      var temporario = itens[i];
+      itens[i] = itens[indice];
+      itens[indice] = temporario;
+    }
+    return itens;
+  }
+
+  function carregarGaleriaAnimais() {
     var card = document.getElementById('sibea-api-card');
     if (!card) return;
+    if (card.hasAttribute('data-sibea-gallery-ready')) return;
 
     var loader = card.querySelector('.sibea-api-loader');
-    var countEl = card.querySelector('.sibea-api-count');
+    var galleryEl = card.querySelector('.sibea-api-gallery');
     var errorEl = card.querySelector('.sibea-api-error');
-    var totalEl = document.getElementById('sibea-api-total');
+    var photoEl = document.getElementById('sibea-api-photo');
+    var captionEl = document.getElementById('sibea-api-photo-caption');
 
-    if (!loader || !countEl || !errorEl || !totalEl) return;
+    if (!loader || !galleryEl || !errorEl || !photoEl || !captionEl) return;
+    card.setAttribute('data-sibea-gallery-ready', 'true');
 
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://sibea.pmcgs.pr.gov.br/api/adoption/animals?pageSize=1', true);
+    xhr.open('GET', 'https://sibea.pmcgs.pr.gov.br/api/adoption/animals?pageSize=20', true);
     xhr.setRequestHeader('Accept', 'application/json');
 
     xhr.onload = function () {
@@ -200,14 +213,51 @@
       if (xhr.status >= 200 && xhr.status < 300) {
         try {
           var body = JSON.parse(xhr.responseText);
-          var total = 0;
-          if (body && typeof body.pagination !== 'undefined') {
-            total = Number(body.pagination.total) || 0;
-          } else if (Array.isArray(body.data)) {
-            total = body.data.length;
+          var animais = body && Array.isArray(body.data) ? body.data : [];
+          var fotos = [];
+          for (var i = 0; i < animais.length; i++) {
+            var animal = animais[i] || {};
+            var url = animal.image || (Array.isArray(animal.images) ? animal.images[0] : '');
+            if (url) {
+              fotos.push({
+                url: url.replace(/^http:/, 'https:'),
+                nome: animal.name || 'Animal disponível'
+              });
+            }
           }
-          totalEl.textContent = total;
-          countEl.hidden = false;
+          if (!fotos.length) {
+            errorEl.hidden = false;
+            return;
+          }
+
+          embaralhar(fotos);
+          var indice = 0;
+
+          function mostrarFoto() {
+            var foto = fotos[indice];
+            photoEl.classList.add('is-changing');
+            window.setTimeout(function () {
+              photoEl.src = foto.url;
+              photoEl.alt = 'Foto de ' + foto.nome + ', disponível para adoção';
+              captionEl.textContent = foto.nome;
+              photoEl.classList.remove('is-changing');
+            }, REDUZIDO && REDUZIDO.matches ? 0 : 180);
+          }
+
+          photoEl.addEventListener('error', function () {
+            indice = (indice + 1) % fotos.length;
+            if (indice === 0) errorEl.hidden = false;
+            else mostrarFoto();
+          });
+
+          mostrarFoto();
+          galleryEl.hidden = false;
+          if (fotos.length > 1) {
+            window.setInterval(function () {
+              indice = (indice + 1) % fotos.length;
+              mostrarFoto();
+            }, REDUZIDO && REDUZIDO.matches ? 8000 : 4500);
+          }
         } catch (e) {
           errorEl.hidden = false;
         }
@@ -222,5 +272,12 @@
     };
 
     xhr.send();
+  }
+
+  if (window.MutationObserver) {
+    var galeriaObserver = new MutationObserver(function () {
+      carregarGaleriaAnimais();
+    });
+    galeriaObserver.observe(document.documentElement, { childList: true, subtree: true });
   }
 })();

@@ -336,6 +336,17 @@
   margin-top: 8px;
 }
 
+.pi-comecar-intro {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.pi-comecar-link {
+  overflow-wrap: anywhere;
+}
+
 .pi-atalhos-tabela {
   width: 100%;
   border-collapse: collapse;
@@ -350,13 +361,20 @@
   vertical-align: top;
 }
 
+.pi-atalhos-tabela th:first-child,
+.pi-atalhos-tabela td:first-child {
+  width: 25%;
+  min-width: 150px;
+  white-space: nowrap;
+}
+
 .pi-atalhos-tabela th {
   background: var(--fe-verde-claro);
   color: var(--fe-verde-escuro);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .pi-atalhos-tabela tbody tr:last-child td {
@@ -376,6 +394,12 @@
   font-weight: 700;
   flex-shrink: 0;
   margin-right: 8px;
+}
+
+.pi-etapa-text {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 
@@ -497,7 +521,7 @@
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--fe-verde-escuro);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   text-transform: uppercase;
   margin-bottom: 14px;
   padding-bottom: 10px;
@@ -510,6 +534,15 @@
 .pi-sidebar-card h4 i {
   font-size: 0.875rem;
   color: var(--fe-verde);
+  width: 0.875rem;
+  line-height: 1;
+  text-align: center;
+}
+
+#footeasy-partidas-card h4 i {
+  font-size: 0.875rem;
+  width: 0.875rem;
+  transform: translateY(-1px);
 }
 
 .pi-sidebar-card p {
@@ -588,12 +621,25 @@
 }
 
 .pi-sidebar-acesso h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
   color: var(--fe-verde-escuro);
-  border-color: #b3d6be;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b3d6be;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .pi-sidebar-acesso h4 i {
+  font-size: 0.875rem;
   color: var(--fe-verde);
+  width: 0.875rem;
+  line-height: 1;
+  text-align: center;
 }
 
 .pi-sidebar-acesso p {
@@ -685,6 +731,83 @@
   .pi-compromisso-bloco { text-align: center; }
   .pi-compromisso-bloco .pi-btn-verde { width: 100%; justify-content: center; }
   .pi-sidebar { grid-template-columns: 1fr; }
+
+  .pi-atalhos-wrapper {
+    overflow: visible;
+  }
+
+  .pi-atalhos-tabela,
+  .pi-atalhos-tabela thead,
+  .pi-atalhos-tabela tbody,
+  .pi-atalhos-tabela tr,
+  .pi-atalhos-tabela td {
+    display: block;
+  }
+
+  .pi-atalhos-tabela thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .pi-atalhos-tabela tr {
+    border: 1px solid var(--fe-borda);
+    border-radius: var(--fe-radius);
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--fe-sombra);
+  }
+
+  .pi-atalhos-tabela tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .pi-atalhos-tabela td {
+    display: grid;
+    grid-template-columns: minmax(88px, 34%) minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--fe-borda);
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .pi-atalhos-tabela td:last-child {
+    border-bottom: none;
+  }
+
+  .pi-atalhos-tabela td::before {
+    content: attr(data-label);
+    color: var(--fe-verde-escuro);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .pi-atalhos-tabela td:first-child {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 8px;
+  }
+
+  .pi-atalhos-tabela td:first-child::before {
+    flex: 0 0 100%;
+    margin-bottom: 4px;
+  }
+
+  .pi-atalhos-tabela td:first-child .pi-badge-etapa {
+    margin-right: 0;
+  }
+
+  .pi-atalhos-tabela td:first-child .pi-etapa-text {
+    min-width: 0;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -758,6 +881,7 @@ body.high-contrast .pi-carrossel-btn:hover { background: #333 !important; }
 
 .pi-partidas-content {
   margin-bottom: 14px;
+  min-height: 42px;
 }
 
 .pi-partidas-loader {
@@ -816,6 +940,10 @@ body.high-contrast .pi-carrossel-btn:hover { background: #333 !important; }
   font-size: 0.75rem;
   color: #777;
   line-height: 1.45;
+}
+
+.pi-sidebar-acesso .pi-btn-verde {
+  overflow-wrap: anywhere;
 }
 
 

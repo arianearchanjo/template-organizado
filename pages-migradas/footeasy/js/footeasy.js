@@ -220,10 +220,10 @@ function formatarData(dataHora) {
 }
 
 function montarPartidaItem(partida) {
-    var nomeA = escapeHtml(partida.teamAName || 'Equipe A');
-    var nomeB = escapeHtml(partida.teamBName || 'Equipe B');
-    var campeonato = escapeHtml(partida.championshipName || 'Campeonato municipal');
-    var quando = formatarData(partida.dataHora);
+    var nomeA = partida.teamAName || 'Equipe A';
+    var nomeB = partida.teamBName || 'Equipe B';
+    var campeonato = partida.championshipName || 'Campeonato municipal';
+    var quando = formatarData(partida.dataHora || partida.scheduledAt || partida.matchDate);
 
     var item = document.createElement('div');
     item.className = 'pi-partida-item';
@@ -244,11 +244,6 @@ function montarPartidaItem(partida) {
 async function carregarPartidas() {
     var wrapper = document.getElementById('footeasy-partidas-destaque');
     if (!wrapper) return;
-
-    var loader = wrapper.querySelector('.pi-partidas-loader');
-    if (loader) {
-        loader.hidden = true;
-    }
 
     try {
         var response = await fetch('https://futebol.pmcgs.pr.gov.br/api/public/next-match');
